@@ -1,0 +1,52 @@
+{
+	"TALES_OF_THE_OLD_WEST": {
+		"Ability": {
+			"Labor": { "long": "Labor", "abbr": "LBR" },
+			"Presence": { "long": "Presence", "abbr": "PRE" },
+			"Fightin": { "long": "Fightin'", "abbr": "FGT" },
+			"Resilience": { "long": "Resilience", "abbr": "RES" },
+			"Move": { "long": "Move", "abbr": "MOV" },
+			"Operate": { "long": "Operate", "abbr": "OPR" },
+			"Shootin": { "long": "Shootin'", "abbr": "SHT" },
+			"Lightfingered": { "long": "Light-Fingered", "abbr": "LF" },
+			"Hawkeye": { "long": "Hawkeye", "abbr": "HAW" },
+			"Nature": { "long": "Nature", "abbr": "NAT" },
+			"Insight": { "long": "Insight", "abbr": "INS" },
+			"Animalhandlin": { "long": "Animal Handlin'", "abbr": "HA" },
+			"Performin": { "long": "Performin", "abbr": "PER" },
+			"Makin": { "long": "Makin'", "abbr": "MAK" },
+			"Doctorin": { "long": "Doctorin'", "abbr": "DR" },
+			"Booklearnin": { "long": "Book Learnin'", "abbr": "BKL" }
+		},
+		"Attributes": {
+			"grit": "Grit",
+			"quick": "Quick",
+			"cunning": "Cunning",
+			"docity": "Docity"
+		},
+		"SheetLabels": {
+			"Actor": "TOTOW Actor Sheet",
+			"Item": "TOTOW Item Sheet"
+		},
+		"Item": {
+			"Effect": {
+				"Source": "Source",
+				"Toggle": "Toggle Effect",
+				"Temporary": "Temporary Effects",
+				"Passive": "Passive Effects",
+				"Inactive": "Inactive Effects"
+			}
+		}
+	},
+
+	"TYPES": {
+		"Actor": {
+			"pc": "PC",
+			"npc": "NPC"
+		},
+		"Item": {
+			"item": "Item",
+			"skills": "Skills"
+		}
+	}
+}
