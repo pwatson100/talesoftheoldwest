@@ -3,6 +3,6 @@
 		"types": ["pc", "npc", "animal"]
 	},
 	"Item": {
-		"types": ["item", "skills"]
+		"types": ["item", "weapon"]
 	}
 }

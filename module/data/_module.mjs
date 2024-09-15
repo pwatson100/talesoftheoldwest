@@ -6,4 +6,4 @@ export { default as TOTOWNPC } from './npc.mjs';
 // Export Items
 export { default as TOTOWItemBase } from './item-base.mjs';
 export { default as TOTOWItem } from './item.mjs';
-export { default as TOTOWSkills } from './skills.mjs';
+export { default as TOTOWWeapon } from './weapon.mjs';

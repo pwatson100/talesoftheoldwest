@@ -97,7 +97,7 @@ export class TOTOWActorSheet extends ActorSheet {
 	_prepareItems(context) {
 		// Initialize containers.
 		const gear = [];
-		const skills = [];
+		const weapon = [];
 
 		// Iterate through items, allocating to containers
 		for (let i of context.items) {
@@ -107,14 +107,14 @@ export class TOTOWActorSheet extends ActorSheet {
 				gear.push(i);
 			}
 			// Append to skills.
-			else if (i.type === 'skills') {
-				skills.push(i);
+			else if (i.type === 'weapon') {
+				weapon.push(i);
 			}
 		}
 
 		// Assign and return
 		context.gear = gear;
-		context.skills = skills;
+		context.weapon = weapon;
 	}
 
 	/* -------------------------------------------- */
@@ -177,7 +177,7 @@ export class TOTOWActorSheet extends ActorSheet {
 		// Get the type of item to create.
 		const type = header.dataset.type;
 		// Grab any data associated with this control.
-		const data = duplicate(header.dataset);
+		const data = foundry.utils.duplicate(header.dataset);
 		// Initialize a default name.
 		const name = `New ${type.capitalize()}`;
 		// Prepare the item object.

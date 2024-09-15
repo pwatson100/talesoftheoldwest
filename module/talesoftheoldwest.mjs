@@ -60,7 +60,7 @@ Hooks.once('init', function () {
 	CONFIG.Item.documentClass = TOTOWItem;
 	CONFIG.Item.dataModels = {
 		item: models.TOTOWItem,
-		skills: models.TOTOWSkills,
+		weapon: models.TOTOWWeapon,
 	};
 
 	// Active Effects are never copied to the Actor,

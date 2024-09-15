@@ -6,7 +6,7 @@
 export const preloadHandlebarsTemplates = async function () {
 	return loadTemplates([
 		// Actor partials.
-		'systems/talesoftheoldwest/templates/actor/parts/actor-skills.html',
+		'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		// Item partials

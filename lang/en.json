@@ -46,7 +46,7 @@
 		},
 		"Item": {
 			"item": "Item",
-			"skills": "Skills"
+			"weapon": "Weapon"
 		}
 	}
 }

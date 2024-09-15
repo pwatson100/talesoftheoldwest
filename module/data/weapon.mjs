@@ -1,6 +1,6 @@
 import TOTOWItemBase from './item-base.mjs';
 
-export default class TOTOWSkills extends TOTOWItemBase {
+export default class TOTOWWeapon extends TOTOWItemBase {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };
@@ -10,8 +10,8 @@ export default class TOTOWSkills extends TOTOWItemBase {
 		// Break down roll formula into three independent fields
 		schema.roll = new fields.SchemaField({
 			diceNum: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1 }),
-			diceSize: new fields.StringField({ initial: 'd100' }),
-			diceBonus: new fields.StringField({ initial: '+@str.mod' }),
+			diceSize: new fields.StringField({ initial: 'd20' }),
+			diceBonus: new fields.StringField({ initial: '+@str.mod+ceil(@lvl / 2)' }),
 		});
 
 		schema.formula = new fields.StringField({ blank: true });
@@ -22,9 +22,7 @@ export default class TOTOWSkills extends TOTOWItemBase {
 	prepareDerivedData() {
 		// Build the formula dynamically using string interpolation
 		const roll = this.roll;
-		const stat = this.value;
-		const worker = stat.toString();
-		const final = `-${worker}`;
-		this.formula = `${roll.diceNum}${roll.diceSize}${final}`;
+
+		this.formula = `${roll.diceNum}${roll.diceSize}${roll.diceBonus}`;
 	}
 }
