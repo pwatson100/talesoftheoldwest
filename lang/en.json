@@ -24,6 +24,15 @@
 			"cunning": "Cunning",
 			"docity": "Docity"
 		},
+		"Ranges": {
+			"armslength": { "long": "Arms Length", "abbr": "AL" },
+			"near": { "long": "Near", "abbr": "NR" },
+			"short": { "long": "Short", "abbr": "SRT" },
+			"medium": { "long": "Medium", "abbr": "MEDI" },
+			"long": { "long": "Long", "abbr": "LNG" },
+			"distant": { "long": "Distant", "abbr": "DIS" }
+		},
+
 		"SheetLabels": {
 			"Actor": "TOTOW Actor Sheet",
 			"Item": "TOTOW Item Sheet"

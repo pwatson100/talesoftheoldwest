@@ -27,8 +27,8 @@
 					<label for="system.general.money.value" class="resource-label">MONEY</label>
 				</div>
 				<div class="resource grid grid-4col">
-					<select id="system.general.archtype" name="system.archtype">
-						{{selectOptions archtype_list selected=system.archtype labelAttr="label"}}
+					<select id="system.general.archtype" name="system.general.archtype">
+						{{selectOptions archtype_list selected=system.archtype labelAttr="label" localize=true}}
 					</select>
 					<input class="statnum" type="text" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
 					<input class="statnum" type="text" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
@@ -40,8 +40,8 @@
 					<label for="system.general.faithpoints" class="resource-label">FAITH POINTS</label>
 				</div>
 				<div class="resource grid grid-4col">
-					<select id="system.general.heritage" name="system.heritage">
-						{{selectOptions heritage_list selected=system.general.heritage labelAttr="label"}}
+					<select id="system.general.heritage" name="system.general.heritage">
+						{{selectOptions heritage_list selected=system.general.heritage labelAttr="label" localize=true}}
 					</select>
 					<input type="text" name="system.general.faith" value="{{system.general.faith}}" data-dtype="text" />
 					<input type="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />

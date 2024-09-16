@@ -5,7 +5,14 @@ export default class TOTOWWeapon extends TOTOWItemBase {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };
 		const schema = super.defineSchema();
-		schema.value = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.subtype = new fields.StringField({ required: true, blank: true });
+		schema.action = new fields.StringField({ required: true, blank: true });
+		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.damage = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.crit = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.range = new fields.StringField({ required: true, blank: true });
+		schema.ammo = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 
 		// Break down roll formula into three independent fields
 		schema.roll = new fields.SchemaField({

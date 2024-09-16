@@ -53,6 +53,10 @@ export class TOTOWItemSheet extends ItemSheet {
 		// Prepare active effects for easier access
 		context.effects = prepareActiveEffectCategories(this.item.effects);
 
+		context.subtype_list = CONFIG.TALES_OF_THE_OLD_WEST.subtype_list;
+		context.action_list = CONFIG.TALES_OF_THE_OLD_WEST.action_list;
+		context.range_list = CONFIG.TALES_OF_THE_OLD_WEST.range_list;
+
 		logger.debug('Item Sheet derived data:', context);
 
 		return context;

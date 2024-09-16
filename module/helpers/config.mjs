@@ -71,3 +71,21 @@ TALES_OF_THE_OLD_WEST.heritage_list = {
 	Commodore: { id: 'Commodore', label: 'Commodore' },
 	Admiral: { id: 'Admiral', label: 'Admiral' },
 };
+TALES_OF_THE_OLD_WEST.subtype_list = {
+	fightin: { id: 'Fightin', label: 'Fightin' },
+	shootin: { id: 'Shootin', label: 'Shootin' },
+};
+TALES_OF_THE_OLD_WEST.action_list = {
+	single: { id: 'Single', label: 'Single' },
+	double: { id: 'Double', label: 'Double' },
+	leaver: { id: 'Leaver', label: 'Leaver' },
+	breech: { id: 'Breech', label: 'Breech' },
+};
+TALES_OF_THE_OLD_WEST.range_list = {
+	armslength: { id: 'Arms Length', label: 'TALES_OF_THE_OLD_WEST.Ranges.armslength.long' },
+	near: { id: 'Near', label: 'TALES_OF_THE_OLD_WEST.Ranges.near.long' },
+	short: { id: 'Short', label: 'TALES_OF_THE_OLD_WEST.Ranges.short.long' },
+	medium: { id: 'Medium', label: 'TALES_OF_THE_OLD_WEST.Ranges.medium.long' },
+	long: { id: 'Long', label: 'TALES_OF_THE_OLD_WEST.Ranges.long.long' },
+	distant: { id: 'Distant', label: 'TALES_OF_THE_OLD_WEST.Ranges.distant.long' },
+};
