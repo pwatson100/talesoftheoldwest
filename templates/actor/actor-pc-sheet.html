@@ -74,27 +74,27 @@
 
 			<section>
 				<div>
-					<label for="system.attributes.grit" class="resource-label">GRIT</label>
+					<label for="system.attributes.grit" class="resource-label">{{localize "TALES_OF_THE_OLD_WEST.Attributes.grit"}}</label>
 					<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
 				</div>
 				<div>
-					<label for="system.attributes.quick" class="resource-label">QUICK</label>
+					<label for="system.attributes.quick" class="resource-label">{{localize "TALES_OF_THE_OLD_WEST.Attributes.quick"}}</label>
 					<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
 				</div>
 				<div>
-					<label for="system.attributes.cunning" class="resource-label">CUNNING</label>
+					<label for="system.attributes.cunning" class="resource-label">{{localize "TALES_OF_THE_OLD_WEST.Attributes.cunning"}}</label>
 					<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
 				</div>
 				<div>
-					<label for="system.attributes.docity" class="resource-label">DOCITY</label>
+					<label for="system.attributes.docity" class="resource-label">{{localize "TALES_OF_THE_OLD_WEST.Attributes.docity"}}</label>
 					<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
 				</div>
 
-				{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}}
+				{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}} {{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.html"}}
 			</section>
 		</div>
 

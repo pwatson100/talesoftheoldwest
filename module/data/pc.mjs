@@ -60,7 +60,7 @@ export default class TOTOWPC extends TOTOWActorBase {
 		for (const key in this.abilities) {
 			this.abilities[key].attr = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob) ?? key;
 			// Calculate the modifier using d20 rules.
-			this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod + this.attributes[CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob].value;
+			// this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod + this.attributes[CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob].value;
 			// Handle ability label localization.
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].name) ?? key;
 		}
@@ -151,6 +151,11 @@ export default class TOTOWPC extends TOTOWActorBase {
 		// formulas like `@str.mod + 4`.
 		if (this.abilities) {
 			for (let [k, v] of Object.entries(this.abilities)) {
+				data[k] = foundry.utils.deepClone(v);
+			}
+		}
+		if (this.attributes) {
+			for (let [k, v] of Object.entries(this.attributes)) {
 				data[k] = foundry.utils.deepClone(v);
 			}
 		}

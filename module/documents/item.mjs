@@ -29,6 +29,39 @@ export class TOTOWItem extends Item {
 		return rollData;
 	}
 
+	// async addModifier(item, ev, data) {
+	// 	// const data = await item.getData();
+	// 	const itemModifiers = data.system.itemModifiers || {};
+	// 	// To preserve order, make sure the new index is the highest
+	// 	const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
+	// 	const update = {};
+	// 	// Using a default value of Strength and 1 in order NOT to create an empty modifier.
+	// 	update[`system.itemModifiers.${modifierId}`] = {
+	// 		name: game.i18n.localize('TALES_OF_THE_OLD_WEST.Attributes.grit'),
+	// 		value: '+1',
+	// 	};
+	// 	return await item.update(update);
+	// }
+
+	// async deleteModifier(item, ev, data, modifierId) {
+	// 	// const data = await item.getData();
+	// 	const itemModifiers = foundry.utils.duplicate(data.system.itemModifiers || {});
+	// 	// const modifierId = $(ev.currentTarget).data('modifier-id');
+	// 	delete itemModifiers[modifierId];
+	// 	// Safety cleanup of null modifiers
+	// 	for (const key in Object.keys(itemModifiers)) {
+	// 		if (!itemModifiers[key]) {
+	// 			delete itemModifiers[key];
+	// 		}
+	// 	}
+	// 	// There seems to be some issue replacing an existing object, if we set
+	// 	// it to null first it works better.
+	// 	await item.update({ 'system.itemModifiers': null });
+	// 	if (Object.keys(itemModifiers).length > 0) {
+	// 		await item.update({ 'system.itemModifiers': itemModifiers });
+	// 	}
+	// }
+
 	/**
 	 * Handle clickable rolls.
 	 * @param {Event} event   The originating click event

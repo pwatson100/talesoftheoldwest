@@ -78,7 +78,7 @@ TALES_OF_THE_OLD_WEST.subtype_list = {
 TALES_OF_THE_OLD_WEST.action_list = {
 	single: { id: 'Single', label: 'Single' },
 	double: { id: 'Double', label: 'Double' },
-	leaver: { id: 'Leaver', label: 'Leaver' },
+	lever: { id: 'Lever', label: 'Lever' },
 	breech: { id: 'Breech', label: 'Breech' },
 };
 TALES_OF_THE_OLD_WEST.range_list = {
@@ -88,4 +88,27 @@ TALES_OF_THE_OLD_WEST.range_list = {
 	medium: { id: 'Medium', label: 'TALES_OF_THE_OLD_WEST.Ranges.medium.long' },
 	long: { id: 'Long', label: 'TALES_OF_THE_OLD_WEST.Ranges.long.long' },
 	distant: { id: 'Distant', label: 'TALES_OF_THE_OLD_WEST.Ranges.distant.long' },
+};
+
+TALES_OF_THE_OLD_WEST.item_modifier_list = {
+	grit: { id: 'attribute-grit', label: 'TALES_OF_THE_OLD_WEST.Attributes.grit' },
+	quick: { id: 'attribute-quick', label: 'TALES_OF_THE_OLD_WEST.Attributes.quick' },
+	cunning: { id: 'attribute-cunning', label: 'TALES_OF_THE_OLD_WEST.Attributes.cunning' },
+	docity: { id: 'attribute-docity', label: 'TALES_OF_THE_OLD_WEST.Attributes.docity' },
+	labor: { id: 'ability-labor', label: 'TALES_OF_THE_OLD_WEST.Ability.Labor.long' },
+	presence: { id: 'ability-presence', label: 'TALES_OF_THE_OLD_WEST.Ability.Presence.long' },
+	fightin: { id: 'ability-fightin', label: 'TALES_OF_THE_OLD_WEST.Ability.Fightin.long' },
+	resilience: { id: 'ability-resilience', label: 'TALES_OF_THE_OLD_WEST.Ability.Resilience.long' },
+	move: { id: 'ability-move', label: 'TALES_OF_THE_OLD_WEST.Ability.Move.long' },
+	operate: { id: 'ability-operate', label: 'TALES_OF_THE_OLD_WEST.Ability.Operate.long' },
+	shootin: { id: 'ability-shootin', label: 'TALES_OF_THE_OLD_WEST.Ability.Shootin.long' },
+	lightfingered: { id: 'ability-lightfingered', label: 'TALES_OF_THE_OLD_WEST.Ability.Lightfingered.long' },
+	hawkeye: { id: 'ability-hawkeye', label: 'TALES_OF_THE_OLD_WEST.Ability.Hawkeye.long' },
+	nature: { id: 'ability-nature', label: 'TALES_OF_THE_OLD_WEST.Ability.Nature.long' },
+	insight: { id: 'ability-insight', label: 'TALES_OF_THE_OLD_WEST.Ability.Insight.long' },
+	animalhandlin: { id: 'ability-animalhandlin', label: 'TALES_OF_THE_OLD_WEST.Ability.Animalhandlin.long' },
+	performin: { id: 'ability-dociperforminty', label: 'TALES_OF_THE_OLD_WEST.Ability.Performin.long' },
+	makin: { id: 'ability-makin', label: 'TALES_OF_THE_OLD_WEST.Ability.Makin.long' },
+	doctorin: { id: 'ability-doctorin', label: 'TALES_OF_THE_OLD_WEST.Ability.Doctorin.long' },
+	booklearnin: { id: 'ability-booklearnin', label: 'TALES_OF_THE_OLD_WEST.Ability.Booklearnin.long' },
 };

@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.dice-tooltip .roll > img {
+  width: 24px;
+}
+
 .grid,
 .grid-2col {
   display: grid;

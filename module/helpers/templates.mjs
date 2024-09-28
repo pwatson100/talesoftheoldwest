@@ -7,9 +7,10 @@ export const preloadHandlebarsTemplates = async function () {
 	return loadTemplates([
 		// Actor partials.
 		'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html',
+		'systems/talesoftheoldwest/templates/actor/parts/actor-talent.html',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		// Item partials
-		'systems/talesoftheoldwest/templates/item/parts/item-effects.hbs',
+		'systems/talesoftheoldwest/templates/item/parts/item-modifiers.html',
 	]);
 };

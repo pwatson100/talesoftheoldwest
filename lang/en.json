@@ -24,6 +24,9 @@
 			"cunning": "Cunning",
 			"docity": "Docity"
 		},
+		"ItemModifierSelect": {
+			"none": "None"
+		},
 		"Ranges": {
 			"armslength": { "long": "Arms Length", "abbr": "AL" },
 			"near": { "long": "Near", "abbr": "NR" },
@@ -55,7 +58,8 @@
 		},
 		"Item": {
 			"item": "Item",
-			"weapon": "Weapon"
+			"weapon": "Weapon",
+			"talent": "Talent"
 		}
 	}
 }

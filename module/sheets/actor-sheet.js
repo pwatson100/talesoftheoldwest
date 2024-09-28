@@ -22,6 +22,15 @@ export class TOTOWActorSheet extends ActorSheet {
 		});
 	}
 
+	/* -------------------------------------------- */
+	async _enrichTextFields(context, fieldNameArr) {
+		for (let t = 0; t < fieldNameArr.length; t++) {
+			if (foundry.utils.hasProperty(context, fieldNameArr[t])) {
+				foundry.utils.setProperty(context, fieldNameArr[t], await TextEditor.enrichHTML(foundry.utils.getProperty(context, fieldNameArr[t]), { async: true }));
+			}
+		}
+	}
+
 	/** @override */
 	get template() {
 		return `systems/talesoftheoldwest/templates/actor/actor-${this.actor.type}-sheet.html`;
@@ -30,7 +39,7 @@ export class TOTOWActorSheet extends ActorSheet {
 	/* -------------------------------------------- */
 
 	/** @override */
-	getData() {
+	async getData() {
 		// Retrieve the data structure from the base sheet. You can inspect or log
 		// the context variable to see the structure, but some key properties for
 		// sheets are the actor object, the data object, whether or not it's
@@ -46,16 +55,19 @@ export class TOTOWActorSheet extends ActorSheet {
 
 		// Prepare character data and items.
 		if (actorData.type == 'pc') {
-			this._prepareItems(context);
 			this._prepareCharacterData(context);
-		}
-
-		// Prepare NPC data and items.
-		if (actorData.type == 'npc') {
 			this._prepareItems(context);
+			let enrichedFields = ['system.biography'];
+			await this._enrichTextFields(context, enrichedFields);
 		}
 
-		// Add roll data for TinyMCE editors.
+		// // Prepare NPC data and items.
+		// if (actorData.type == 'npc') {
+		// 	this._prepareItems(context);
+		// 	let enrichedFieldsNPC = ['system.biography'];
+		// 	await this._enrichTextFields(data, enrichedFieldsNPC);
+		// }
+
 		context.rollData = context.actor.getRollData();
 
 		// Prepare active effects
@@ -80,11 +92,153 @@ export class TOTOWActorSheet extends ActorSheet {
 	 *
 	 * @return {undefined}
 	 */
-	_prepareCharacterData(context) {
-		// Handle ability scores.
-		// for (let [k, v] of Object.entries(context.system.abilities)) {
-		//   v.label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[k]) ?? k;
-		// }
+	async _prepareCharacterData(context) {
+		const aData = context.system;
+		const itemData = context.items;
+		let anyMods = 0;
+		var attrMod = {
+			grit: 0,
+			quick: 0,
+			cunning: 0,
+			docity: 0,
+		};
+		var sklMod = {
+			labor: 0,
+			presence: 0,
+			fightin: 0,
+			resilience: 0,
+			move: 0,
+			operate: 0,
+			shootin: 0,
+			lightfingered: 0,
+			hawkeye: 0,
+			nature: 0,
+			insight: 0,
+			animalhandlin: 0,
+			performin: 0,
+			makin: 0,
+			doctorin: 0,
+			booklearnin: 0,
+		};
+
+		for (let [skey, allItems] of Object.entries(itemData)) {
+			if (allItems) {
+				if (allItems.system.itemModifiers) {
+					for (let [key, mods] of Object.entries(allItems.system.itemModifiers)) {
+						switch (mods.name) {
+							case 'docity':
+								attrMod.docity = attrMod.docity += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'quick':
+								attrMod.quick = attrMod.quick += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'cunning':
+								attrMod.cunning = attrMod.cunning += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'grit':
+								attrMod.grit = attrMod.grit += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'labor':
+								sklMod.labor = sklMod.labor += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'presence':
+								sklMod.presence = sklMod.presence += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'fightin':
+								sklMod.fightin = sklMod.fightin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'resilience':
+								sklMod.resilience = sklMod.resilience += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'move':
+								sklMod.move = sklMod.move += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'operate':
+								sklMod.operate = sklMod.operate += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'shootin':
+								sklMod.shootin = sklMod.shootin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'lightfingered':
+								sklMod.lightfingered = sklMod.lightfingered += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'hawkeye':
+								sklMod.hawkeye = sklMod.hawkeye += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'nature':
+								sklMod.nature = sklMod.nature += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'insight':
+								sklMod.insight = sklMod.insight += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'animalhandlin':
+								sklMod.animalhandlin = sklMod.animalhandlin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'performin':
+								sklMod.performin = sklMod.performin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'makin':
+								sklMod.makin = sklMod.makin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'doctorin':
+								sklMod.doctorin = sklMod.doctorin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'booklearnin':
+								sklMod.booklearnin = sklMod.booklearnin += parseInt(mods.value);
+								anyMods++;
+								break;
+							default:
+								break;
+						}
+					}
+				}
+			}
+		}
+		if (anyMods > 0) {
+			let attribData = {};
+			for (let [a, abl] of Object.entries(aData.attributes)) {
+				let target = `system.attributes.${a}.mod`;
+				let field = `aData.attributes[${a}].mod`;
+				let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
+				// await this.actor.update({ [target]: (field = upData) });
+				attribData[target] = upData;
+				// abl.mod = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
+				console.log('Attribute');
+			}
+
+			for (let [s, skl] of Object.entries(aData.abilities)) {
+				const conSkl = skl.attr;
+				let target = `system.abilities.${s}.mod`;
+				let field = `aData.abilities[${s}].mod`;
+				let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
+				attribData[target] = abData;
+				// skl.mod = parseInt(skl.value || 0) + parseInt(sklMod[s] || 0) + parseInt(aData.attributes[conSkl].mod || 0);
+				console.log('Ability');
+			}
+
+			await this.actor.update(attribData);
+			// console.log('🚀 ~ TOTOWActorSheet ~ _prepareCharacterData ~ attrMod:', attrMod);
+			// console.log('🚀 ~ TOTOWActorSheet ~ _prepareCharacterData ~ sklMod:', sklMod);
+		}
 	}
 
 	/**
@@ -98,23 +252,32 @@ export class TOTOWActorSheet extends ActorSheet {
 		// Initialize containers.
 		const gear = [];
 		const weapon = [];
+		const talent = [];
 
 		// Iterate through items, allocating to containers
 		for (let i of context.items) {
 			i.img = i.img || Item.DEFAULT_ICON;
 			// Append to gear.
-			if (i.type === 'item') {
-				gear.push(i);
-			}
-			// Append to skills.
-			else if (i.type === 'weapon') {
-				weapon.push(i);
+			switch (i.type) {
+				case 'item':
+					gear.push(i);
+					break;
+				case 'weapon':
+					weapon.push(i);
+					break;
+				case 'talent':
+					talent.push(i);
+					break;
+
+				default:
+					break;
 			}
 		}
 
 		// Assign and return
 		context.gear = gear;
 		context.weapon = weapon;
+		context.talent = talent;
 	}
 
 	/* -------------------------------------------- */

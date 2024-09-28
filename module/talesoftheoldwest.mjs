@@ -9,6 +9,7 @@ import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { TALES_OF_THE_OLD_WEST } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
+import { TOTOWTroubleDie } from './helpers/totowTroubleDice.js';
 
 import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
@@ -48,6 +49,8 @@ Hooks.once('init', function () {
 
 	// Define custom Document and DataModel classes
 	CONFIG.Actor.documentClass = TOTOWActor;
+
+	CONFIG.Dice.terms['t'] = TOTOWTroubleDie;
 
 	// Note that you don't need to declare a DataModel
 	// for the base actor/item classes - they are included
@@ -92,7 +95,13 @@ Hooks.once('init', function () {
 Handlebars.registerHelper('toLowerCase', function (str) {
 	return str.toLowerCase();
 });
-
+Handlebars.registerHelper('if_eq', function (a, b, opts) {
+	if (a === b) {
+		return opts.fn(this);
+	} else {
+		return opts.inverse(this);
+	}
+});
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
@@ -100,6 +109,15 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 Hooks.once('ready', function () {
 	// Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
 	Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+	// clear the minimum resolution message faster
+
+	setTimeout(() => {
+		$('.notification.error').each((index, item) => {
+			if ($(item).text().includes('requires a minimum screen resolution')) {
+				$(item).remove();
+			}
+		});
+	}, 250);
 });
 
 /* -------------------------------------------- */

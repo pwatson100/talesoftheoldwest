@@ -1,5 +1,6 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from '../helpers/effects.mjs';
 import { logger } from '../helpers/logger.mjs';
+import { getID } from '../helpers/utils.js';
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -56,6 +57,7 @@ export class TOTOWItemSheet extends ItemSheet {
 		context.subtype_list = CONFIG.TALES_OF_THE_OLD_WEST.subtype_list;
 		context.action_list = CONFIG.TALES_OF_THE_OLD_WEST.action_list;
 		context.range_list = CONFIG.TALES_OF_THE_OLD_WEST.range_list;
+		context.item_modifier_list = CONFIG.TALES_OF_THE_OLD_WEST.item_modifier_list;
 
 		logger.debug('Item Sheet derived data:', context);
 
@@ -71,9 +73,40 @@ export class TOTOWItemSheet extends ItemSheet {
 		// Everything below here is only needed if the sheet is editable
 		if (!this.isEditable) return;
 
-		// Roll handlers, click handlers, etc. would go here.
+		html.find('.add-modifier').click(async (ev) => {
+			ev.preventDefault();
+			const data = await this.getData();
+			const itemModifiers = data.system.itemModifiers || {};
+			// To preserve order, make sure the new index is the highest
+			const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
+			const update = {};
+			// Using a default value of Strength and 1 in order NOT to create an empty modifier.
+			update[`system.itemModifiers.${modifierId}`] = {
+				name: game.i18n.localize('TALES_OF_THE_OLD_WEST.Attributes.grit'),
+				value: '+1',
+			};
+			await this.item.update(update);
+		});
 
-		// Active Effect management
-		html.on('click', '.effect-control', (ev) => onManageActiveEffect(ev, this.item));
+		html.find('.delete-modifier').click(async (ev) => {
+			ev.preventDefault();
+
+			const data = await this.getData();
+			const itemModifiers = foundry.utils.duplicate(data.system.itemModifiers || {});
+			const modifierId = $(ev.currentTarget).data('modifier-id');
+			delete itemModifiers[modifierId];
+			// Safety cleanup of null modifiers
+			for (const key in Object.keys(itemModifiers)) {
+				if (!itemModifiers[key]) {
+					delete itemModifiers[key];
+				}
+			}
+			// There seems to be some issue replacing an existing object, if we set
+			// it to null first it works better.
+			await this.item.update({ 'system.itemModifiers': null });
+			if (Object.keys(itemModifiers).length > 0) {
+				await this.item.update({ 'system.itemModifiers': itemModifiers });
+			}
+		});
 	}
 }
