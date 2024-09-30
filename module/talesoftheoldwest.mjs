@@ -10,6 +10,7 @@ import { TALES_OF_THE_OLD_WEST } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 import { TOTOWTroubleDie } from './helpers/totowTroubleDice.js';
+import { TOTOWNormalDie } from './helpers/totowTroubleDice.js';
 
 import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
@@ -51,6 +52,7 @@ Hooks.once('init', function () {
 	CONFIG.Actor.documentClass = TOTOWActor;
 
 	CONFIG.Dice.terms['t'] = TOTOWTroubleDie;
+	CONFIG.Dice.terms['s'] = TOTOWNormalDie;
 
 	// Note that you don't need to declare a DataModel
 	// for the base actor/item classes - they are included

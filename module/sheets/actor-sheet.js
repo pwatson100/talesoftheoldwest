@@ -217,7 +217,7 @@ export class TOTOWActorSheet extends ActorSheet {
 			let attribData = {};
 			for (let [a, abl] of Object.entries(aData.attributes)) {
 				let target = `system.attributes.${a}.mod`;
-				let field = `aData.attributes[${a}].mod`;
+				// let field = `aData.attributes[${a}].mod`;
 				let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
 				// await this.actor.update({ [target]: (field = upData) });
 				attribData[target] = upData;
@@ -228,7 +228,7 @@ export class TOTOWActorSheet extends ActorSheet {
 			for (let [s, skl] of Object.entries(aData.abilities)) {
 				const conSkl = skl.attr;
 				let target = `system.abilities.${s}.mod`;
-				let field = `aData.abilities[${s}].mod`;
+				// let field = `aData.abilities[${s}].mod`;
 				let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
 				attribData[target] = abData;
 				// skl.mod = parseInt(skl.value || 0) + parseInt(sklMod[s] || 0) + parseInt(aData.attributes[conSkl].mod || 0);
@@ -238,6 +238,22 @@ export class TOTOWActorSheet extends ActorSheet {
 			await this.actor.update(attribData);
 			// console.log('🚀 ~ TOTOWActorSheet ~ _prepareCharacterData ~ attrMod:', attrMod);
 			// console.log('🚀 ~ TOTOWActorSheet ~ _prepareCharacterData ~ sklMod:', sklMod);
+		} else {
+			let attribData = {};
+			for (let [a, abl] of Object.entries(aData.attributes)) {
+				let target = `system.attributes.${a}.mod`;
+				let upData = parseInt(abl.value || 0);
+				attribData[target] = upData;
+				console.log('Attribute');
+			}
+			for (let [s, skl] of Object.entries(aData.abilities)) {
+				const conSkl = skl.attr;
+				let target = `system.abilities.${s}.mod`;
+				let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0);
+				attribData[target] = abData;
+				console.log('Ability');
+			}
+			await this.actor.update(attribData);
 		}
 	}
 
@@ -365,61 +381,94 @@ export class TOTOWActorSheet extends ActorSheet {
 		event.preventDefault();
 		const element = event.currentTarget;
 		const dataset = element.dataset;
-		let d100die = '1d100';
-		let rollData = {};
+		const targetActor = this.actor.getRollData();
+		let roll = '';
+		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+		const rollMode = game.settings.get('core', 'rollMode');
+		const label = dataset.label;
+
 		// Handle item rolls.
 		if (dataset.rollType) {
-			if (dataset.rollType == 'item') {
+			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
+				switch (dataset.rollType) {
+					case 'attribute':
+						console.log('Attribute Roll', dataset);
+						roll = await this.rollAttrib(dataset);
+						break;
+
+					case 'ability':
+						console.log('Ability Roll', dataset);
+						roll = await this.rollAttrib(dataset);
+						break;
+
+					default:
+						break;
+				}
+			} else {
 				const itemId = element.closest('.item').dataset.itemId;
 				const item = this.actor.items.get(itemId);
-				if (item) return item.roll();
-			}
-		}
+				switch (dataset.rollType) {
+					case 'item':
+						console.log('Item Roll', dataset);
+						return item.roll(dataset);
+						break;
+					case 'talent':
+						console.log('Talent Roll', dataset);
+						return item.roll(dataset);
+						break;
+					case 'weapon':
+						console.log('Weapon Roll', dataset);
+						return item.roll(dataset);
+						break;
 
-		// Handle rolls that supply the formula directly.
-		if (dataset.roll) {
-			let baseRoll = await Roll.create(d100die).evaluate();
-			console.log(baseRoll);
-			debugger;
-			if (baseRoll.total <= dataset.value) {
-				rollData = {
-					hasSucceed: true,
-				};
-			} else {
-				rollData = {
-					hasSucceed: false,
-				};
+					default:
+						break;
+				}
 			}
-
-			const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', rollData);
-			let chatData = {
-				user: game.user.id,
-				speaker: ChatMessage.getSpeaker({
-					alias: this.actor.name,
-					actor: this.actor.id,
-				}),
-				// type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-				// roll: JSON.stringify(createRollData(baseRoll)),
-				roll: baseRoll,
-				rollMode: game.settings.get('core', 'rollMode'),
-				content: html,
-			};
-			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
-				chatData.whisper = ChatMessage.getWhisperRecipients('GM');
-			} else if (chatData.rollMode === 'selfroll') {
-				chatData.whisper = [game.user];
-			}
-			await ChatMessage.create(chatData);
-			return baseRoll;
-
-			// let label = dataset.label ? `[ability] ${dataset.label}` : '';
-			// let roll = new Roll(dataset.roll, this.actor.getRollData());
-			// roll.toMessage({
-			// 	speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-			// 	flavor: label,
-			// 	rollMode: game.settings.get('core', 'rollMode'),
-			// });
+			roll.toMessage({
+				speaker: speaker,
+				rollMode: rollMode,
+				flavor: label,
+			});
 			return roll;
+
+			// const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', roll);
+			// let chatData = {
+			// 	user: game.user.id,
+			// 	speaker: ChatMessage.getSpeaker({
+			// 		alias: this.actor.name,
+			// 		actor: this.actor.id,
+			// 	}),
+			// 	// type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+			// 	// roll: JSON.stringify(createRollData(baseRoll)),
+			// 	roll: roll,
+			// 	rollMode: game.settings.get('core', 'rollMode'),
+			// 	content: html,
+			// };
+			// if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
+			// 	chatData.whisper = ChatMessage.getWhisperRecipients('GM');
+			// } else if (chatData.rollMode === 'selfroll') {
+			// 	chatData.whisper = [game.user];
+			// }
+			// await ChatMessage.create(chatData);
+			// return roll;
 		}
+	}
+	async rollAttrib(dataset) {
+		let formula = '';
+		let roll = '';
+
+		if (dataset.mod - 5 <= 0) {
+			formula = `${dataset.mod}` + `dt`;
+			roll = await Roll.create(`${formula}`).evaluate();
+			console.log(roll);
+		} else {
+			formula = `5dt`;
+			const extra = `${dataset.mod}` - 5;
+			const ds = `${extra}` + `ds`;
+			roll = await Roll.create(`${formula}` + '+' + `${ds}`).evaluate();
+			console.log(roll);
+		}
+		return roll;
 	}
 }

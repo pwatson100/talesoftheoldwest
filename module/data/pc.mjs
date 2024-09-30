@@ -59,89 +59,10 @@ export default class TOTOWPC extends TOTOWActorBase {
 
 		for (const key in this.abilities) {
 			this.abilities[key].attr = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob) ?? key;
-			// Calculate the modifier using d20 rules.
-			// this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod + this.attributes[CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob].value;
+
 			// Handle ability label localization.
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].name) ?? key;
 		}
-		// }
-
-		// switch (this.abilities) {
-		// 	case 'labor':
-		// 		this.abilities.labor.mod = this.abilities.labor.value + this.attributes.grit.value;
-		// 		break;
-		// 	case 'Andorian':
-		// 		this.abilities.str.mod = +10;
-		// 		this.abilities.end.mod = +5;
-		// 		this.abilities.int.mod = 0;
-		// 		this.abilities.dex.mod = 0;
-		// 		this.abilities.cha.mod = 0;
-		// 		this.abilities.luc.mod = -20;
-		// 		this.abilities.psi.mod - 30;
-		// 		break;
-		// 	case 'Catian':
-		// 		this.abilities.str.mod = 0;
-		// 		this.abilities.end.mod = -5;
-		// 		this.abilities.int.mod = 0;
-		// 		this.abilities.dex.mod = +20;
-		// 		this.abilities.cha.mod = +5;
-		// 		this.abilities.luc.mod = -20;
-		// 		this.abilities.psi.mod = -20;
-		// 		break;
-		// 	case 'Tellerite':
-		// 		this.abilities.str.mod = +5;
-		// 		this.abilities.end.mod = +5;
-		// 		this.abilities.int.mod = 0;
-		// 		this.abilities.dex.mod = 0;
-		// 		this.abilities.cha.mod = -10;
-		// 		this.abilities.luc.mod = -20;
-		// 		this.abilities.psi.mod = -40;
-		// 		break;
-		// 	case 'Vulcan':
-		// 		this.abilities.str.mod = +20;
-		// 		this.abilities.end.mod = +10;
-		// 		this.abilities.dex.mod = 0;
-		// 		this.abilities.cha.mod = 0;
-		// 		this.abilities.int.mod = +10;
-		// 		this.abilities.luc.mod = -40;
-		// 		this.abilities.psi.mod = 0;
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
-		// Loop through ability scores, and add their modifiers to our sheet output.
-		// for (const key in this.abilities) {
-		// 	// Calculate the modifier using d20 rules.
-		// 	this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod;
-		// 	// Handle ability label localization.
-		// 	this.abilities[key].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key]) ?? key;
-		// }
-		// this.woundhealrate.value = Math.floor(this.abilities.end.total / 20);
-		// this.fatiguehealrate.value = Math.floor(this.abilities.end.total / 10);
-		// this.ap.value = Math.floor(this.abilities.dex.total / 10 + 4);
-		// this.tohitmod.value = Math.ceil(this.abilities.dex.total + this.modernmarksmanship.value);
-		// this.tohithth.value = Math.ceil(this.abilities.dex.total + this.unarmedconbat.value);
-		// if (this.abilities.str.total <= 25) {
-		// 	bhd = bhd10 + `-` + (3 + Math.floor(this.unarmedconbat.value / 10));
-		// 	this.barehanddamage = bhd.toString();
-		// } else if (this.abilities.str.total <= 50) {
-		// 	this.barehanddamage = bhd10.toString();
-		// } else if (this.abilities.str.total <= 75) {
-		// 	bhd = bhd10 + `+` + (3 + Math.floor(this.unarmedconbat.value / 10));
-		// 	this.barehanddamage = bhd.toString();
-		// } else if (this.abilities.str.total <= 100) {
-		// 	this.barehanddamage = bhd20.toString();
-		// } else if (this.abilities.str.total <= 125) {
-		// 	bhd = bhd20 + `+` + (3 + Math.floor(this.unarmedconbat.value / 10));
-		// 	this.barehanddamage = bhd.toString();
-		// } else if (this.abilities.str.total <= 150) {
-		// 	this.barehanddamage = bhd30.toString();
-		// } else if (this.abilities.str.total <= 175) {
-		// 	bhd = bhd30 + `+` + (3 + Math.floor(this.unarmedconbat.value / 10));
-		// 	this.barehanddamage = bhd.toString();
-		// }
-		// console.log(bhd);
-		// this.barehanddamage.value = Math.floor(this.abilities.str.total + this.unarmedconbat.value);
 	}
 
 	getRollData() {

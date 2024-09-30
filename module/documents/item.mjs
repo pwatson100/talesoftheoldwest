@@ -29,78 +29,87 @@ export class TOTOWItem extends Item {
 		return rollData;
 	}
 
-	// async addModifier(item, ev, data) {
-	// 	// const data = await item.getData();
-	// 	const itemModifiers = data.system.itemModifiers || {};
-	// 	// To preserve order, make sure the new index is the highest
-	// 	const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
-	// 	const update = {};
-	// 	// Using a default value of Strength and 1 in order NOT to create an empty modifier.
-	// 	update[`system.itemModifiers.${modifierId}`] = {
-	// 		name: game.i18n.localize('TALES_OF_THE_OLD_WEST.Attributes.grit'),
-	// 		value: '+1',
-	// 	};
-	// 	return await item.update(update);
-	// }
-
-	// async deleteModifier(item, ev, data, modifierId) {
-	// 	// const data = await item.getData();
-	// 	const itemModifiers = foundry.utils.duplicate(data.system.itemModifiers || {});
-	// 	// const modifierId = $(ev.currentTarget).data('modifier-id');
-	// 	delete itemModifiers[modifierId];
-	// 	// Safety cleanup of null modifiers
-	// 	for (const key in Object.keys(itemModifiers)) {
-	// 		if (!itemModifiers[key]) {
-	// 			delete itemModifiers[key];
-	// 		}
-	// 	}
-	// 	// There seems to be some issue replacing an existing object, if we set
-	// 	// it to null first it works better.
-	// 	await item.update({ 'system.itemModifiers': null });
-	// 	if (Object.keys(itemModifiers).length > 0) {
-	// 		await item.update({ 'system.itemModifiers': itemModifiers });
-	// 	}
-	// }
-
 	/**
 	 * Handle clickable rolls.
 	 * @param {Event} event   The originating click event
 	 * @private
 	 */
-	async roll() {
+	async roll(dataset) {
 		const item = this;
-
+		const rollData = this.getRollData();
+		let values = '';
 		// Initialize chat data.
 		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
 		const rollMode = game.settings.get('core', 'rollMode');
-		const label = `[${item.type}] ${item.name}`;
+		const label = `${dataset.label}`;
+		switch (dataset.rollType) {
+			case 'item':
+				console.log('Item Roll', dataset);
+				// return item.roll();
+				break;
+			case 'talent':
+				console.log('Talent Roll', dataset);
+				return;
+				break;
+			case 'weapon':
+				switch (dataset.subtype) {
+					case 'shootin':
+						values = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						console.log('Weapon Roll - shootin', dataset, values);
+						break;
+					case 'fightin':
+						values = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						console.log('Weapon Roll - Fightin', dataset, values);
+						break;
+					default:
+						break;
+				}
+
+			default:
+				break;
+		}
+
+		const roll = await this.rollItem(values);
 
 		// If there's no roll data, send a chat message.
-		if (!this.system.formula) {
-			ChatMessage.create({
-				speaker: speaker,
-				rollMode: rollMode,
-				flavor: label,
-				content: item.system.description ?? '',
-			});
-		}
+		// if (!this.system.rollData) {
+		// 	ChatMessage.create({
+		// 		speaker: speaker,
+		// 		rollMode: rollMode,
+		// 		flavor: label,
+		// 		content: item.system.description ?? '',
+		// 	});
+		// }
 		// Otherwise, create a roll and send a chat message from it.
-		else {
-			// Retrieve roll data.
-			const rollData = this.getRollData();
+		// else {
+		// Retrieve roll data.
 
-			// Invoke the roll and submit it to chat.
-			const roll = await Roll.create(rollData.formula, rollData.actor).evaluate();
-			// let baseRoll = await Roll.create(d100die).evaluate();
+		// If you need to store the value first, uncomment the next line.
+		// const result = await roll.evaluate();
+		roll.toMessage({
+			speaker: speaker,
+			rollMode: rollMode,
+			flavor: label,
+		});
+		return roll;
+		// }
+	}
 
-			// If you need to store the value first, uncomment the next line.
-			// const result = await roll.evaluate();
-			roll.toMessage({
-				speaker: speaker,
-				rollMode: rollMode,
-				flavor: label,
-			});
-			return roll;
+	async rollItem(total) {
+		let formula = '';
+		let roll = '';
+
+		if (total - 5 <= 0) {
+			formula = `${total}` + `dt`;
+			roll = await Roll.create(`${formula}`).evaluate();
+			console.log(roll);
+		} else {
+			formula = `5dt`;
+			const extra = `${total}` - 5;
+			const ds = `${extra}` + `ds`;
+			roll = await Roll.create(`${formula}` + '+' + `${ds}`).evaluate();
+			console.log(roll);
 		}
+		return roll;
 	}
 }

@@ -42,32 +42,20 @@ export class TOTOWWeapon extends Item {
 		const rollMode = game.settings.get('core', 'rollMode');
 		const label = `[${item.type}] ${item.name}`;
 
-		// If there's no roll data, send a chat message.
-		if (!this.system.formula) {
-			ChatMessage.create({
-				speaker: speaker,
-				rollMode: rollMode,
-				flavor: label,
-				content: item.system.description ?? '',
-			});
-		}
-		// Otherwise, create a roll and send a chat message from it.
-		else {
-			// Retrieve roll data.
-			const rollData = this.getRollData();
+		// Retrieve roll data.
+		const rollData = this.getRollData();
 
-			// Invoke the roll and submit it to chat.
-			const roll = await Roll.create(rollData.formula, rollData.actor).evaluate();
-			// let baseRoll = await Roll.create(d100die).evaluate();
+		// Invoke the roll and submit it to chat.
+		const roll = await Roll.create(rollData.formula, rollData.actor).evaluate();
+		// let baseRoll = await Roll.create(d100die).evaluate();
 
-			// If you need to store the value first, uncomment the next line.
-			// const result = await roll.evaluate();
-			roll.toMessage({
-				speaker: speaker,
-				rollMode: rollMode,
-				flavor: label,
-			});
-			return roll;
-		}
+		// If you need to store the value first, uncomment the next line.
+		// const result = await roll.evaluate();
+		roll.toMessage({
+			speaker: speaker,
+			rollMode: rollMode,
+			flavor: label,
+		});
+		return roll;
 	}
 }
