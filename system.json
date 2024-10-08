@@ -47,7 +47,7 @@
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "hbs", "html", "json"],
-			"paths": ["./css/talesoftheoldwest.css", "templates", "lang"]
+			"paths": ["./css/totow.css", "templates", "lang"]
 		}
 	}
 }

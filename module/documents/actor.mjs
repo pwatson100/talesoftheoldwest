@@ -41,4 +41,37 @@ export class TOTOWActor extends Actor {
 	getRollData() {
 		return { ...super.getRollData(), ...(this.system.getRollData?.() ?? null) };
 	}
+	// *************************************************
+	// Setupthe prototype token
+	// *************************************************
+	async _preCreate(data, options, user) {
+		await super._preCreate(data, options, user);
+		let tokenProto = {
+			'prototypeToken.displayName': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+			'prototypeToken.displayBars': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+			'prototypeToken.disposition': CONST.TOKEN_DISPOSITIONS.FRIENDLY,
+			'prototypeToken.name': `${data.name}`,
+			'prototypeToken.bar1': { attribute: 'header.health' },
+			'prototypeToken.bar2': { attribute: 'None' },
+			// 'prototypeToken.vision': true,
+			'prototypeToken.actorLink': true,
+			'prototypeToken.sight.enabled': 'true',
+			'prototypeToken.sight.range': '12',
+		};
+		// if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
+		switch (data.type) {
+			case 'pc':
+				tokenProto['prototypeToken.bar2'] = { attribute: 'header.stress' };
+				break;
+			case 'npc':
+				tokenProto['prototypeToken.actorLink'] = false;
+				tokenProto['prototypeToken.disposition'] = CONST.TOKEN_DISPOSITIONS.HOSTILE;
+				tokenProto['prototypeToken.sight.enabled'] = false;
+				break;
+		}
+		// }
+
+		this.updateSource(tokenProto);
+		// this.updateSource(createData);
+	}
 }

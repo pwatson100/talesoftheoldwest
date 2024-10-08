@@ -7,7 +7,7 @@ export default class TOTOWPC extends TOTOWActorBase {
 		const schema = super.defineSchema();
 		// Iterate over attribute names and create a new SchemaField for each.
 		schema.attributes = new fields.SchemaField(
-			Object.keys(CONFIG.TALES_OF_THE_OLD_WEST.attributes).reduce((obj, attribute) => {
+			Object.keys(CONFIG.TALESOFTHEOLDWEST.attributes).reduce((obj, attribute) => {
 				obj[attribute] = new fields.SchemaField({
 					value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -26,18 +26,19 @@ export default class TOTOWPC extends TOTOWActorBase {
 
 			faithpoints: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 4 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
 			}),
 			money: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			xp: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 100 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
+			canPush: new fields.BooleanField({ initial: true }),
 		});
 		// Iterate over ability names and create a new SchemaField for each.
 		schema.abilities = new fields.SchemaField(
-			Object.keys(CONFIG.TALES_OF_THE_OLD_WEST.abilities).reduce((obj, ability) => {
+			Object.keys(CONFIG.TALESOFTHEOLDWEST.abilities).reduce((obj, ability) => {
 				obj[ability] = new fields.SchemaField({
 					value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -54,14 +55,14 @@ export default class TOTOWPC extends TOTOWActorBase {
 
 	prepareDerivedData() {
 		for (const akey in this.attributes) {
-			this.attributes[akey].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.attributes[akey].name) ?? akey;
+			this.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
 		}
 
 		for (const key in this.abilities) {
-			this.abilities[key].attr = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob) ?? key;
+			this.abilities[key].attr = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].atob) ?? key;
 
 			// Handle ability label localization.
-			this.abilities[key].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].name) ?? key;
+			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name) ?? key;
 		}
 	}
 

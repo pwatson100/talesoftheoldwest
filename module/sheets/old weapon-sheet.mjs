@@ -54,10 +54,10 @@ export class TOTOWWeaponSheet extends ItemSheet {
 		// Prepare active effects for easier access
 		context.effects = prepareActiveEffectCategories(this.item.effects);
 
-		context.subtype_list = CONFIG.TALES_OF_THE_OLD_WEST.subtype_list;
-		context.action_list = CONFIG.TALES_OF_THE_OLD_WEST.action_list;
-		context.range_list = CONFIG.TALES_OF_THE_OLD_WEST.range_list;
-		context.item_modifier_list = CONFIG.TALES_OF_THE_OLD_WEST.item_modifier_list;
+		context.subtype_list = CONFIG.TALESOFTHEOLDWEST.subtype_list;
+		context.action_list = CONFIG.TALESOFTHEOLDWEST.action_list;
+		context.range_list = CONFIG.TALESOFTHEOLDWEST.range_list;
+		context.item_modifier_list = CONFIG.TALESOFTHEOLDWEST.item_modifier_list;
 
 		logger.debug('Weapon Sheet derived data:', context);
 
@@ -82,7 +82,7 @@ export class TOTOWWeaponSheet extends ItemSheet {
 			const update = {};
 			// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 			update[`system.itemModifiers.${modifierId}`] = {
-				name: game.i18n.localize('TALES_OF_THE_OLD_WEST.Attributes.grit'),
+				name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit'),
 				value: '+1',
 			};
 			await this.item.update(update);

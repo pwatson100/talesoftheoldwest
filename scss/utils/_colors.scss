@@ -5,3 +5,20 @@ $c-dark: #191813;
 $c-faint: #c9c7b8;
 $c-beige: #b5b3a4;
 $c-tan: #444;
+
+:root {
+	--blue: hsl(224, 75%, 62%);
+	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
+	--journalback: url(../images/mother-instructions/indbackground2.png);
+	--chatbackground: url(../images/IndBackground3.png);
+	--totowchatfont: 'Blinker', sans-serif;
+	--totowchatwhite: hsl(0, 0%, 100%);
+	--totowchatred: hsl(0, 100%, 50%);
+	--totowchatredshadow: hsl(0, 0%, 90%);
+	--totowchatblue: hsl(240deg 42% 72%);
+	// --totowchatlightblue: hsl(240, 96%, 70%);
+	--totowchatlightblue: hsl(120, 97%, 41%);
+	--totowchatlightgreen: hsl(120, 97%, 41%);
+	--totowchatgoldenrod: hsl(43, 74%, 49%);
+}

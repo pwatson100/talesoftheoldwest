@@ -1,5 +1,5 @@
 {
-	"TALES_OF_THE_OLD_WEST": {
+	"TALESOFTHEOLDWEST": {
 		"Ability": {
 			"Labor": { "long": "Labor", "abbr": "LBR" },
 			"Presence": { "long": "Presence", "abbr": "PRE" },
@@ -48,6 +48,10 @@
 				"Passive": "Passive Effects",
 				"Inactive": "Inactive Effects"
 			}
+		},
+		"debug": {
+			"hint": "Prints extended debug information to the console.",
+			"name": "Log Debug Output"
 		}
 	},
 

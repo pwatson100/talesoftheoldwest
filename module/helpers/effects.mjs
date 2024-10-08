@@ -40,17 +40,17 @@ export function prepareActiveEffectCategories(effects) {
 	const categories = {
 		temporary: {
 			type: 'temporary',
-			label: game.i18n.localize('TALES_OF_THE_OLD_WEST.Effect.Temporary'),
+			label: game.i18n.localize('TALESOFTHEOLDWEST.Effect.Temporary'),
 			effects: [],
 		},
 		passive: {
 			type: 'passive',
-			label: game.i18n.localize('TALES_OF_THE_OLD_WEST.Effect.Passive'),
+			label: game.i18n.localize('TALESOFTHEOLDWEST.Effect.Passive'),
 			effects: [],
 		},
 		inactive: {
 			type: 'inactive',
-			label: game.i18n.localize('TALES_OF_THE_OLD_WEST.Effect.Inactive'),
+			label: game.i18n.localize('TALESOFTHEOLDWEST.Effect.Inactive'),
 			effects: [],
 		},
 	};

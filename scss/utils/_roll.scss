@@ -1,0 +1,140 @@
+.talesoftheoldwest .chat.roll {
+	color: var(--black);
+	font-family: $font-primary;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 5px;
+}
+
+.talesoftheoldwest .chat.roll .foreground {
+	padding: 5px;
+}
+
+.talesoftheoldwest .chat.roll .border {
+	border: 1px solid transparent;
+	border-color: var(--color-border);
+	border-image: var(--chat-roll-border) 20/10px;
+}
+
+.talesoftheoldwest .chat.roll strong {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $c-beige;
+	font-size: 14px;
+}
+
+.talesoftheoldwest .chat.roll h3 {
+	font-family: $font-primary;
+	font-size: 14px;
+	font-weight: bold;
+	color: $c-beige;
+	margin: 0 0 8px;
+	text-align: center;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.talesoftheoldwest .chat.roll h4 {
+	font-family: $font-primary;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 10px 0 10px 0;
+	text-align: center;
+}
+
+.talesoftheoldwest .chat.roll p {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 4px;
+}
+
+.talesoftheoldwest .chat.roll .tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.talesoftheoldwest .chat.roll .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 10em;
+	background-color: var(--black);
+	color: var(--white);
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
+
+.talesoftheoldwest .chat.roll .right {
+	top: -15%;
+	left: 105%;
+}
+
+.talesoftheoldwest .chat.roll .tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.talesoftheoldwest .chat.roll img,
+.talesoftheoldwest .chat.roll .portrait {
+	border: 0;
+	/* display: block; */
+	margin: 0 auto 8px;
+	height: 40px;
+	width: auto;
+}
+
+.talesoftheoldwest .dice-push {
+	flex: 0 0 22px;
+	font-size: 12px;
+	text-align: center;
+	// color: #7a7971;
+}
+
+// .talesoftheoldwest .dice-push a {
+// 	color: #44191a;
+// }
+
+// .talesoftheoldwest .chat.roll .tooltip .down {
+// 	top: 100%;
+// 	left: 0%;
+// }
+
+// .talesoftheoldwest .chat.roll .tooltip .downleft {
+// 	top: -105%;
+// 	left: calc(-5% - 10em);
+// }
+
+// .talesoftheoldwest .chat.roll .tooltip .up {
+// 	top: -105%;
+// 	left: 0%;
+// }
+
+// .talesoftheoldwest .chat.roll .strike {
+// 	color: rgb(0, 0, 0);
+// 	text-decoration: line-through;
+// }
+
+// .talesoftheoldwest .chat.roll .moreinfo {
+// 	border: 0;
+// 	float: right;
+// 	height: 18px;
+// 	width: auto;
+// 	filter: sepia(0.5) contrast(0.75) opacity(0.4);
+// }
+
+// .talesoftheoldwest .totow-rolls.roll {
+// 	display: inline-block;
+// 	width: 24px;
+// 	line-height: 24px;
+// 	margin-right: 1px;
+// 	background-image: url('../../../icons/svg/d6-grey.svg');
+// 	background-repeat: no-repeat;
+// 	background-size: 24px 24px;
+// 	font-size: 16px;
+// 	color: #000;
+// 	font-weight: bold;
+// 	text-align: center;
+// }

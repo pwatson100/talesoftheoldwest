@@ -1,70 +1,82 @@
-<div class='talesoftheoldwest chat roll'>
-	<div class='foreground'>
-		<img class='portrait' src='{{subImg}}' />
-		<h3>{{name}}</h3>
-		{{#if hasSucceed}}
+<div class='talesoftheoldwest'>
+	<div>
+		<h2 style='white-space: pre-wrap;'>{{title}}</h2>
+	</div>
+	{{log 'CONTEXT!!!!'}}
+	{{log this}}
+	<div class='chat roll'>
+		<h4 class=''>Dice Rolled ({{totalRolled}})</h4>
+		<h4 class=''>TDice Success ({{troubleSucc}})</h4>
+		<h4 class=''>Trouble ({{trouble}})</h4>
+		<h4 class=''>TRest ({{troubleRest}})</h4>
+		<h4 class=''>ODice Success ({{normalSucc}})</h4>
+		<h4 class=''>Rest ({{rest}})</h4>
+		<h4 class=''>Total ({{totalSuccess}})</h4>
 
-			<div class='dice-roll dice-total'>
-				<div>
-					<h4>{{localize 'CHAT.SUCCEED'}} (<span class='symba-rolls roll d20 success'>{{diceResult}}</span>)</h4>
-					<h4>{{localize 'CHAT.MARGIN'}} {{margin}} <img class='moreinfo' src='systems/symbaroum/asset/image/orb-direction.svg' /></h4>
-				</div>
-				<div class='dice-tooltip' style='display:none; text-align: center;'>{{{diceBreakdown}}}<br />
-					{{localize 'CHAT.ATTRIBUTE_TARGET'}}
-					{{diceTarget}}
-					-
-					<span class='symba-rolls roll d20 success'>{{diceResult}}</span>
-					=
-					{{margin}}
-				</div>
+		<section>
+			{{#if successes}}
+				<h4 style='font-size: large;font-weight:bold;'>Success</h4>
+			{{/if}}
+			{{#if criticalSuccess}}
+				<h4 style='font-size: large;font-weight:bold;'>Critical Success</h4>
+			{{/if}}
+			{{#if failure}}
+				<h4 style='font-size: large;font-weight:bold;'>Failed</h4>
+			{{/if}}
+
+			<div class='roll'>
+				{{#times troubleSucc}}
+					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png' />
+				{{/times}}
+				{{#times trouble}}
+					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png' />
+				{{/times}}
+				{{#times troubleRest}}
+					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png' />
+				{{/times}}
+				<br />
+				{{#times normalSucc}}
+					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png' />
+				{{/times}}
+				{{#times rest}}
+					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png' />
+				{{/times}}
 			</div>
+		</section>
 
-		{{else}}
+		<section>
+			<hr />
+			<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
+			<hr />
+			{{#if_gt faithpoints 0}}
+				{{#if_gt trouble 0}}
 
-			<div class='dice-roll dice-total'>
-				<div>
-					<h4>{{localize 'CHAT.FAILED'}} (<span class='symba-rolls roll d20 failure'>{{diceResult}}</span>)</h4>
-					<h4>{{localize 'CHAT.MARGIN'}} {{margin}} <img class='moreinfo' src='systems/symbaroum/asset/image/orb-direction.svg' /></h4>
+					<div class='dice-formula dice-roll'>
+						<a>
+							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
+						</a>
+					</div>
+				{{/if_gt}}
+
+				{{#if canPush}}
+					<div class='dice-formula dice-roll'>
+						<a>
+							<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>PUSH</span>
+						</a>
+					</div>
+				{{else}}
+					<div class='dice-formula dice-roll'>
+						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
+					</div>
+				{{/if}}
+			{{/if_gt}}
+			{{#if_eq faithpoints 0}}
+				<div class='dice-formula dice-roll'>
+					<a>
+						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
+					</a>
 				</div>
-				<div class='dice-tooltip' style='display:none; text-align: center;'>{{{diceBreakdown}}}<br />
-					{{localize 'CHAT.ATTRIBUTE_TARGET'}}
-					{{diceTarget}}
-					-
-					<span class='symba-rolls roll d20 failure'>{{diceResult}}</span>
-					=
-					{{margin}}</div>
-			</div>
-
-			{{#if critFail}}
-				<h4>{{localize 'CHAT.CRITICAL_FAILURE'}}</h4>
-			{{/if}}
-
-			{{#if hasArmor}}
-				<img class='portrait' src='{{armor.img}}' />
-				<p style='margin-top: 5px;text-align:center' data-item-id='{{armor.id}}'>{{armor.name}}</p>
-				<div class='dice-roll dice-total'>
-					<div class='baseinfo'><strong>{{localize 'ARMOR.PROTECTION'}}:
-							{{armor.value}}</strong>
-						<img class='moreinfo' src='systems/symbaroum/asset/image/orb-direction.svg' /></div>
-					<div class='dice-tooltip' style='display: none;'>{{{armor.diceBreakdown}}}</div>
-				</div>
-			{{/if}}
-		{{/if}}
-
-		{{#if hasWeapon}}
-			{{#if critFail}}
-				<h4>{{localize 'CHAT.CRITICAL_FAILURE_FREEATTACK'}}</h4>
-			{{/if}}
-		{{/if}}
-
-		{{#if hasArmor}}
-			{{#if critSuccess}}
-				<h4>{{localize 'CHAT.CRITICAL_FREEATTACK'}}</h4>
-			{{/if}}
-			{{#if critFail}}
-				<h4>{{localize 'CHAT.CRITICAL_PLUS3DAMAGE'}}</h4>
-			{{/if}}
-		{{/if}}
-
+			{{/if_eq}}
+		</section>
 	</div>
 </div>

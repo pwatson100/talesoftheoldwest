@@ -6,7 +6,7 @@ import { TOTOWActorSheet } from './sheets/actor-sheet.js';
 import { TOTOWItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { TALES_OF_THE_OLD_WEST } from './helpers/config.mjs';
+import { TALESOFTHEOLDWEST } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 import { TOTOWTroubleDie } from './helpers/totowTroubleDice.js';
@@ -14,6 +14,8 @@ import { TOTOWNormalDie } from './helpers/totowTroubleDice.js';
 
 import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
+import registerSettings from './helpers/settings.mjs';
+import { totowDiceListeners } from './helpers/diceroll.mjs';
 
 const SUB_MODULES = {
 	COMMON,
@@ -27,16 +29,17 @@ Hooks.once('init', function () {
 	// Add utility classes to the global game object so that they're more easily
 	// accessible in global contexts.
 	game.talesoftheoldwest = {
+		registerSettings,
 		TOTOWActor,
 		TOTOWItem,
 		rollItemMacro,
 	};
 
 	// Add custom constants for configuration.
-	CONFIG.TALES_OF_THE_OLD_WEST = TALES_OF_THE_OLD_WEST;
+	CONFIG.TALESOFTHEOLDWEST = TALESOFTHEOLDWEST;
 
 	Object.values(SUB_MODULES).forEach((cl) => {
-		logger.info(COMMON.localize('TALES_OF_THE_OLD_WEST.Init.SubModule', { name: cl.NAME }));
+		logger.info(COMMON.localize('TALESOFTHEOLDWEST.Init.SubModule', { name: cl.NAME }));
 		cl.register();
 	});
 	/**
@@ -77,14 +80,14 @@ Hooks.once('init', function () {
 	Actors.unregisterSheet('core', ActorSheet);
 	Actors.registerSheet('TOTOW', TOTOWActorSheet, {
 		makeDefault: true,
-		label: 'TALES_OF_THE_OLD_WEST.SheetLabels.Actor',
+		label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
 	});
 	Items.unregisterSheet('core', ItemSheet);
 	Items.registerSheet('TOTOW', TOTOWItemSheet, {
 		makeDefault: true,
-		label: 'TALES_OF_THE_OLD_WEST.SheetLabels.Item',
+		label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
 	});
-
+	registerSettings();
 	// Preload Handlebars templates.
 	return preloadHandlebarsTemplates();
 });
@@ -97,6 +100,15 @@ Hooks.once('init', function () {
 Handlebars.registerHelper('toLowerCase', function (str) {
 	return str.toLowerCase();
 });
+
+Handlebars.registerHelper('toUpperrCase', function (str) {
+	return str.toUpperCase();
+});
+
+Handlebars.registerHelper('capitalise', function (str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+});
+
 Handlebars.registerHelper('if_eq', function (a, b, opts) {
 	if (a === b) {
 		return opts.fn(this);
@@ -104,6 +116,36 @@ Handlebars.registerHelper('if_eq', function (a, b, opts) {
 		return opts.inverse(this);
 	}
 });
+
+// Ifis not equal
+Handlebars.registerHelper('ifne', function (v1, v2, options) {
+	if (v1 !== v2) return options.fn(this);
+	else return options.inverse(this);
+});
+
+Handlebars.registerHelper('if_gt', function (a, b, opts) {
+	if (a > b) {
+		return opts.fn(this);
+	} else {
+		return opts.inverse(this);
+	}
+});
+// if not
+Handlebars.registerHelper('ifn', function (v1, options) {
+	if (!v1) return options.fn(this);
+	else return options.inverse(this);
+});
+/*
+ * Repeat given markup with n times
+ */
+Handlebars.registerHelper('times', function (n, block) {
+	var result = '';
+	for (let i = 0; i < n; ++i) {
+		result += block.fn(i);
+	}
+	return result;
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
@@ -120,6 +162,23 @@ Hooks.once('ready', function () {
 			}
 		});
 	}, 250);
+});
+
+Hooks.on('renderChatLog', (log, html, data) => {
+	totowDiceListeners(html);
+});
+
+Hooks.on('renderChatMessage', (app, html, msg) => {
+	// Do not display "Blind" chat cards to non-gm
+	if (html.hasClass('blind') && !game.user.isGM) {
+		// since the header has timestamp content we'll remove the content instead.
+		// this avoids an NPE when foundry tries to update the timestamps.
+		html.find('.message-content').remove();
+	}
+	// remove push option from non-authors
+	if (!game.user.isGM && msg.message.user !== game.user.id) {
+		html.find('.dice-push').remove();
+	}
 });
 
 /* -------------------------------------------- */

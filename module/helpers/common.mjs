@@ -60,8 +60,8 @@ export class COMMON {
 	static applySettings(settingsData, moduleKey = COMMON.DATA.name) {
 		Object.entries(settingsData).forEach(([key, data]) => {
 			game.settings.register(moduleKey, key, {
-				name: COMMON.localize(`talesoftheoldwest.${key}.name`),
-				hint: COMMON.localize(`talesoftheoldwest.${key}.hint`),
+				name: COMMON.localize(`TALESOFTHEOLDWEST.${key}.name`),
+				hint: COMMON.localize(`TALESOFTHEOLDWEST.${key}.hint`),
 				...data,
 			});
 		});

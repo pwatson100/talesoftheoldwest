@@ -30,8 +30,9 @@
 					<select id="system.general.archtype" name="system.general.archtype">
 						{{selectOptions archtype_list selected=system.archtype labelAttr="label" localize=true}}
 					</select>
-					<input class="statnum" type="text" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
-					<input class="statnum" type="text" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
+					<input class="statnum" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
+					<label for="system.general.money.value">$</label
+					><input class="currency" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
 				</div>
 
 				<div class="resource grid grid-4col">
@@ -44,7 +45,7 @@
 						{{selectOptions heritage_list selected=system.general.heritage labelAttr="label" localize=true}}
 					</select>
 					<input type="text" name="system.general.faith" value="{{system.general.faith}}" data-dtype="text" />
-					<input type="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
+					<input class="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
 				</div>
 				<div class="resource grid grid-4col">
 					<label for="system.general.bigdream" class="resource-label">BIG DREAM</label>
@@ -63,7 +64,7 @@
 						data-roll-type="attribute"
 						data-label="{{system.attributes.grit.label}}"
 						data-mod=" {{system.attributes.grit.mod}}"
-						>{{localize "TALES_OF_THE_OLD_WEST.Attributes.grit"}}</label
+						>{{localize "TALESOFTHEOLDWEST.Attributes.grit"}}</label
 					>
 					<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
@@ -75,7 +76,7 @@
 						data-roll-type="attribute"
 						data-label="{{system.attributes.quick.label}} "
 						data-mod=" {{system.attributes.quick.mod}}"
-						>{{localize "TALES_OF_THE_OLD_WEST.Attributes.quick"}}</label
+						>{{localize "TALESOFTHEOLDWEST.Attributes.quick"}}</label
 					>
 					<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
@@ -87,7 +88,7 @@
 						data-roll-type="attribute"
 						data-label="{{system.attributes.cunning.label}}"
 						data-mod=" {{system.attributes.cunning.mod}}"
-						>{{localize "TALES_OF_THE_OLD_WEST.Attributes.cunning"}}</label
+						>{{localize "TALESOFTHEOLDWEST.Attributes.cunning"}}</label
 					>
 					<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
@@ -99,7 +100,7 @@
 						data-roll-type="attribute"
 						data-label="{{system.attributes.docity.label}}"
 						data-mod="{{system.attributes.docity.mod}}"
-						>{{localize "TALES_OF_THE_OLD_WEST.Attributes.docity"}}</label
+						>{{localize "TALESOFTHEOLDWEST.Attributes.docity"}}</label
 					>
 					<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" /> /
 					<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
@@ -118,7 +119,7 @@
 						data-attr="{{ability.attr}}"
 						>{{ability.label}}</label
 					>
-					<input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+					<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
 				</div>
 				{{/each}}
 			</section>

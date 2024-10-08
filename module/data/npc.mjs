@@ -8,7 +8,7 @@ export default class TOTOWNPC extends TOTOWActorBase {
 
 		// Iterate over attribute names and create a new SchemaField for each.
 		schema.attributes = new fields.SchemaField(
-			Object.keys(CONFIG.TALES_OF_THE_OLD_WEST.attributes).reduce((obj, attribute) => {
+			Object.keys(CONFIG.TALESOFTHEOLDWEST.attributes).reduce((obj, attribute) => {
 				obj[attribute] = new fields.SchemaField({
 					value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -20,7 +20,7 @@ export default class TOTOWNPC extends TOTOWActorBase {
 		);
 		// Iterate over ability names and create a new SchemaField for each.
 		schema.abilities = new fields.SchemaField(
-			Object.keys(CONFIG.TALES_OF_THE_OLD_WEST.abilities).reduce((obj, ability) => {
+			Object.keys(CONFIG.TALESOFTHEOLDWEST.abilities).reduce((obj, ability) => {
 				obj[ability] = new fields.SchemaField({
 					value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -37,15 +37,15 @@ export default class TOTOWNPC extends TOTOWActorBase {
 
 	prepareDerivedData() {
 		for (const akey in this.attributes) {
-			this.attributes[akey].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.attributes[akey].name) ?? akey;
+			this.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
 		}
 
 		for (const key in this.abilities) {
-			this.abilities[key].attr = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob) ?? key;
+			this.abilities[key].attr = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].atob) ?? key;
 			// Calculate the modifier using d20 rules.
-			this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod + this.attributes[CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].atob].value;
+			this.abilities[key].total = this.abilities[key].value + this.abilities[key].mod + this.attributes[CONFIG.TALESOFTHEOLDWEST.abilities[key].atob].value;
 			// Handle ability label localization.
-			this.abilities[key].label = game.i18n.localize(CONFIG.TALES_OF_THE_OLD_WEST.abilities[key].name) ?? key;
+			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name) ?? key;
 		}
 	}
 	getRollData() {

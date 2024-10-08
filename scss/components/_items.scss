@@ -4,7 +4,7 @@
 	margin: 2px 0;
 	padding: 0;
 	align-items: center;
-	background: rgba(0, 0, 0, 0.05);
+	background: var(--black);
 	border: $border-groove;
 	font-weight: bold;
 	> * {
@@ -98,7 +98,7 @@
 	// Section Header
 	.items-header {
 		height: 28px;
-		margin: 2px 0;
+		margin: 2px 0 var(--black);
 		padding: 0;
 		align-items: center;
 		background: rgba(0, 0, 0, 0.05);

@@ -12,5 +12,6 @@ export const preloadHandlebarsTemplates = async function () {
 		'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		// Item partials
 		'systems/talesoftheoldwest/templates/item/parts/item-modifiers.html',
+		// 'systems/talesoftheoldwest/templates/dialog/roll-modifiers.html',
 	]);
 };

@@ -6,16 +6,17 @@
 @import 'utils/colors';
 @import 'utils/mixins';
 @import 'utils/variables';
+@import 'utils/roll';
 
 /* Global styles */
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
+@import 'components/resource';
 
 /* Styles limited to talesoftheoldwest sheets */
 .talesoftheoldwest {
 	@import 'components/forms';
-	@import 'components/resource';
 	@import 'components/items';
 	@import 'components/effects';
 }

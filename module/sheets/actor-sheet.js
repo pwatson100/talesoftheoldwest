@@ -1,4 +1,5 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from '../helpers/effects.mjs';
+import { rollAttrib } from '../helpers/diceroll.mjs';
 import { logger } from '../helpers/logger.mjs';
 
 /**
@@ -11,7 +12,7 @@ export class TOTOWActorSheet extends ActorSheet {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['talesoftheoldwest', 'sheet', 'actor'],
 			width: 600,
-			height: 600,
+			height: 850,
 			tabs: [
 				{
 					navSelector: '.sheet-tabs',
@@ -77,8 +78,8 @@ export class TOTOWActorSheet extends ActorSheet {
 			this.actor.allApplicableEffects()
 		);
 
-		context.archtype_list = CONFIG.TALES_OF_THE_OLD_WEST.archtype_list;
-		context.heritage_list = CONFIG.TALES_OF_THE_OLD_WEST.heritage_list;
+		context.archtype_list = CONFIG.TALESOFTHEOLDWEST.archtype_list;
+		context.heritage_list = CONFIG.TALESOFTHEOLDWEST.heritage_list;
 
 		logger.debug('Actor Sheet derived data:', context);
 
@@ -334,6 +335,8 @@ export class TOTOWActorSheet extends ActorSheet {
 		// Rollable abilities.
 		html.on('click', '.rollable', this._onRoll.bind(this));
 
+		// html.find('.currency').on('change', this._currencyField.bind(this));
+
 		// Drag events for macros.
 		if (this.actor.isOwner) {
 			let handler = (ev) => this._onDragStart(ev);
@@ -381,24 +384,23 @@ export class TOTOWActorSheet extends ActorSheet {
 		event.preventDefault();
 		const element = event.currentTarget;
 		const dataset = element.dataset;
-		const targetActor = this.actor.getRollData();
-		let roll = '';
-		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-		const rollMode = game.settings.get('core', 'rollMode');
-		const label = dataset.label;
+		// const targetActor = this.actor.getRollData();
+		dataset.faithpoints = this.actor.system.general.faithpoints.value;
+		dataset.canPush = this.actor.system.general.canPush;
+		let result = '';
 
 		// Handle item rolls.
 		if (dataset.rollType) {
 			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
 				switch (dataset.rollType) {
 					case 'attribute':
-						console.log('Attribute Roll', dataset);
-						roll = await this.rollAttrib(dataset);
+						// console.log('Attribute Roll', dataset);
+						result = await rollAttrib(dataset);
 						break;
 
 					case 'ability':
-						console.log('Ability Roll', dataset);
-						roll = await this.rollAttrib(dataset);
+						// console.log('Ability Roll', dataset);
+						result = await rollAttrib(dataset);
 						break;
 
 					default:
@@ -425,50 +427,29 @@ export class TOTOWActorSheet extends ActorSheet {
 						break;
 				}
 			}
-			roll.toMessage({
-				speaker: speaker,
-				rollMode: rollMode,
-				flavor: label,
-			});
-			return roll;
 
-			// const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', roll);
-			// let chatData = {
-			// 	user: game.user.id,
-			// 	speaker: ChatMessage.getSpeaker({
-			// 		alias: this.actor.name,
-			// 		actor: this.actor.id,
-			// 	}),
-			// 	// type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-			// 	// roll: JSON.stringify(createRollData(baseRoll)),
-			// 	roll: roll,
-			// 	rollMode: game.settings.get('core', 'rollMode'),
-			// 	content: html,
-			// };
-			// if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
-			// 	chatData.whisper = ChatMessage.getWhisperRecipients('GM');
-			// } else if (chatData.rollMode === 'selfroll') {
-			// 	chatData.whisper = [game.user];
-			// }
-			// await ChatMessage.create(chatData);
-			// return roll;
-		}
-	}
-	async rollAttrib(dataset) {
-		let formula = '';
-		let roll = '';
+			const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', result[1]);
+			let chatData = {
+				user: game.user.id,
+				speaker: ChatMessage.getSpeaker({
+					alias: this.actor.name,
+					actor: this.actor.id,
+				}),
+				// type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+				// roll: JSON.stringify(createRollData(baseRoll)),
+				roll: result[0],
+				rollMode: game.settings.get('core', 'rollMode'),
+				content: html,
+			};
+			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
+				chatData.whisper = ChatMessage.getWhisperRecipients('GM');
+			} else if (chatData.rollMode === 'selfroll') {
+				chatData.whisper = [game.user];
+			}
+			const msg = await ChatMessage.create(chatData);
+			await msg.setFlag('talesoftheoldwest', 'results', result);
 
-		if (dataset.mod - 5 <= 0) {
-			formula = `${dataset.mod}` + `dt`;
-			roll = await Roll.create(`${formula}`).evaluate();
-			console.log(roll);
-		} else {
-			formula = `5dt`;
-			const extra = `${dataset.mod}` - 5;
-			const ds = `${extra}` + `ds`;
-			roll = await Roll.create(`${formula}` + '+' + `${ds}`).evaluate();
-			console.log(roll);
+			return result;
 		}
-		return roll;
 	}
 }
