@@ -116,6 +116,14 @@ Handlebars.registerHelper('if_eq', function (a, b, opts) {
 		return opts.inverse(this);
 	}
 });
+// greater than or equal to
+Handlebars.registerHelper('gte', function (a, b) {
+	return a >= b;
+});
+// less than or equal to
+Handlebars.registerHelper('lte', function (a, b) {
+	return a <= b;
+});
 
 // Ifis not equal
 Handlebars.registerHelper('ifne', function (v1, v2, options) {
@@ -125,6 +133,13 @@ Handlebars.registerHelper('ifne', function (v1, v2, options) {
 
 Handlebars.registerHelper('if_gt', function (a, b, opts) {
 	if (a > b) {
+		return opts.fn(this);
+	} else {
+		return opts.inverse(this);
+	}
+});
+Handlebars.registerHelper('if_lt', function (a, b, opts) {
+	if (a < b) {
 		return opts.fn(this);
 	} else {
 		return opts.inverse(this);

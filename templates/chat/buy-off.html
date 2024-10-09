@@ -1,0 +1,33 @@
+<form class="flexcol">
+	<div style="padding: 1em 1em">
+		<h3>{{localize "TALESOFTHEOLDWEST.ModifierForRollQuestion"}}</h3>
+		<!-- prettier-ignore -->
+		{{#if_eq maxMod 5}}
+		<button type="submit" value="5" style="width: 3em">-5</button>
+		{{/if_eq}}
+
+		<!-- prettier-ignore -->
+		{{#if (gte maxMod 4)}}
+		<button type="submit" value="4" style="width: 3em">-4</button>
+		{{/if}}
+
+		<!-- prettier-ignore -->
+		{{#if (gte maxMod 3)}}
+		<button type="submit" value="3" style="width: 3em">-3</button>
+		{{/if}}
+
+		<!-- prettier-ignore -->
+
+		{{#if (gte maxMod 2)}}
+		<button type="submit" value="2" style="width: 3em">-2</button>
+		{{/if}}
+
+		<!-- prettier-ignore -->
+
+		{{#if (gte maxMod 1)}}
+		<button type="submit" value="1" style="width: 3em">-1</button>
+		{{/if}}
+	</div>
+
+	{{log "CONTEXT!!!!"}} {{log this}}
+</form>

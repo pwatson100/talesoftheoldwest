@@ -1,4 +1,5 @@
-import { TOTWModifierDialog } from './chatmodifier.js';
+// import { TOTWModifierDialog, TOTWBuyOffDialog } from './chatmodifier.js';
+import { TOTWBuyOffDialog } from './chatmodifier.js';
 
 export async function totowDiceListeners(html) {
 	html.on('click', '.dice-push', (ev) => {
@@ -6,59 +7,87 @@ export async function totowDiceListeners(html) {
 			messageId = button.parents('.message').attr('data-message-id'),
 			message = game.messages.get(messageId);
 		let results = message.getFlag('talesoftheoldwest', 'results');
-		console.log(message);
-		let originalRoll = results; // TODO: handle this in a safer manner.
-
 		if (!results[1].canPush) {
 			let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
 			return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
 		} else {
-			console.log('Do Ya push Thing', message, results.rollData, originalRoll);
-			new TOTWModifierDialog(message, results).render(true);
+			return pushRoll(message, results);
 		}
+	});
+
+	html.on('click', '.buy-off', (ev) => {
+		let button = $(ev.currentTarget),
+			messageId = button.parents('.message').attr('data-message-id'),
+			message = game.messages.get(messageId);
+		let results = message.getFlag('talesoftheoldwest', 'results');
+		console.log(message);
+		new TOTWBuyOffDialog(message, results).render(true);
+	});
+
+	html.on('click', '.roll-trouble', (ev) => {
+		rollTrouble(ev);
 	});
 }
 
+export async function rollTrouble(ev) {
+	let button = $(ev.currentTarget),
+		messageId = button.parents('.message').attr('data-message-id'),
+		message = game.messages.get(messageId);
+	let results = message.getFlag('talesoftheoldwest', 'results');
+	let trouble = parseInt(results[1].trouble);
+	let tTable = `TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(` + trouble + `)`;
+	let table = game.tables.getName(`${tTable}`);
+
+	const roll = await new Roll('1d6').evaluate();
+	return table.draw({ roll });
+}
+
 export async function pushRoll(chatMessage, origRollData, origRoll) {
-	origRollData.canPush = false;
-	// let troubleDice = `5dt`;
-	// const extra = parseInt(`${dataset.mod}`) - 5;
-	const formula = origRollData.troubleRest + `dt` + '+' + origRollData.rest + `ds`;
+	const formula = origRollData[1].troubleRest + `dt` + '+' + origRollData[1].rest + `ds`;
 	let roll = await Roll.create(`${formula}`).evaluate();
-	let result = await evaluateTOTWRoll(origRollData, roll, formula);
+	let result = await evaluateTOTWRoll(origRollData[1], roll, formula);
 
 	// remove a faith point from the actor
-	const myActor = game.actors.get(chatMessage.speaker.actor);
+	const myActor = game.actors.get(result.myActor);
 	await myActor.update({ 'system.general.faithpoints.value': myActor.system.general.faithpoints.value - 1 });
 	const totalRolled = result.troubleSucc + result.trouble + result.troubleRest + result.normalSucc + result.rest <= 0;
+	origRollData[1].canPush = false;
+	origRollData[1].formula = formula;
+	origRollData[1].troubleSucc += result.troubleSucc;
+	origRollData[1].trouble += result.trouble;
+	origRollData[1].troubleRest = result.troubleRest;
+	origRollData[1].normalSucc += result.normalSucc;
+	origRollData[1].rest = result.rest;
+	origRollData[1].totalSuccess += result.totalSuccess;
+	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
+	origRollData[1].successes = totalRolled
+		? result.totalSuccess + origRollData[1].totalSuccess === 2
+		: result.totalSuccess + origRollData[1].totalSuccess > 0 && result.totalSuccess + origRollData[1].totalSuccess < 3;
+	origRollData[1].criticalSuccess = result.totalSuccess + origRollData[1].totalSuccess >= 3;
+	origRollData[1].failure = totalRolled ? result.totalSuccess + origRollData[1].totalSuccess < 2 : result.totalSuccess + origRollData[1].totalSuccess === 0;
+	origRollData[1].totalRolled = totalRolled;
 
-	let newRoleData = {
-		results: result,
-		canPush: false,
-		formula: formula,
-		title: origRollData.title,
-		troubleSucc: result.troubleSucc + origRollData.troubleSucc,
-		trouble: result.trouble + origRollData.trouble,
-		troubleRest: result.troubleRest,
-		normalSucc: result.normalSucc + origRollData.normalSucc,
-		rest: result.rest,
-		totalSuccess: result.totalSuccess + origRollData.totalSuccess,
-		// canPush: Boolean(resultData.canPush),
-		faithpoints: parseInt(origRollData.faithpoints) - 1,
-		successes: totalRolled
-			? result.totalSuccess + origRollData.totalSuccess === 2
-			: result.totalSuccess + origRollData.totalSuccess > 0 && result.totalSuccess + origRollData.totalSuccess < 3,
-		criticalSuccess: result.totalSuccess + origRollData.totalSuccess >= 3,
-		failure: totalRolled ? result.totalSuccess + origRollData.totalSuccess < 2 : result.totalSuccess + origRollData.totalSuccess === 0,
-		totalRolled: totalRolled,
-	};
-	await updateChatMessage(chatMessage, result, newRoleData);
+	let msg = game.messages.get(chatMessage.id);
+	await msg.setFlag('talesoftheoldwest', 'results', origRollData);
+
+	await updateChatMessage(chatMessage, result, origRollData);
+}
+export async function buyOff(chatMessage, origRollData, origRoll, event) {
+	const troubleMod = Number(event.submitter.value);
+
+	// remove a faith point from the actor
+	const myActor = game.actors.get(origRollData[1].myActor);
+	await myActor.update({ 'system.general.faithpoints.value': myActor.system.general.faithpoints.value - troubleMod });
+
+	origRollData[1].trouble -= troubleMod;
+	origRollData[1].troubleRest += troubleMod;
+	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
+
+	await updateChatMessage(chatMessage, origRoll, origRollData);
 }
 
 async function updateChatMessage(chatMessage, result, newRoleData) {
-	// const totalRolled = resultData.troubleSucc + resultData.trouble + resultData.troubleRest + resultData.normalSucc + resultData.rest <= 0;
-
-	return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData).then((html) => {
+	return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
 		chatMessage['content'] = html;
 		return chatMessage
 			.update({
@@ -128,9 +157,9 @@ export async function evaluateTOTWRoll(dataset, roll) {
 		});
 	}
 
-	// let tooltip = await renderTemplate('systems/talesoftheoldwest/templates/chat/dice-results.html', this.getTooltipData(roll, normalSucc));
 	const totalRolled = troubleSucc + trouble + troubleRest + normalSucc + rest <= 0;
 	let evalResult = {
+		myActor: dataset.myActor,
 		formula: roll.formula,
 		title: dataset.label,
 		troubleSucc: troubleSucc,

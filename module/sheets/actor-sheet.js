@@ -387,6 +387,7 @@ export class TOTOWActorSheet extends ActorSheet {
 		// const targetActor = this.actor.getRollData();
 		dataset.faithpoints = this.actor.system.general.faithpoints.value;
 		dataset.canPush = this.actor.system.general.canPush;
+		dataset.myActor = this.actor.id;
 		let result = '';
 
 		// Handle item rolls.
