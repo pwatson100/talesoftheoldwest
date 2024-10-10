@@ -2,26 +2,31 @@
 	<div>
 		<h2 style='white-space: pre-wrap;'>{{title}}</h2>
 	</div>
-	{{log 'CONTEXT!!!!'}}
-	{{log this}}
-	<div class='chat roll'>
-		<h4 class=''>Dice Rolled ({{totalRolled}})</h4>
-		<h4 class=''>TDice Success ({{troubleSucc}})</h4>
-		<h4 class=''>Trouble ({{trouble}})</h4>
-		<h4 class=''>TRest ({{troubleRest}})</h4>
-		<h4 class=''>ODice Success ({{normalSucc}})</h4>
-		<h4 class=''>Rest ({{rest}})</h4>
-		<h4 class=''>Total ({{totalSuccess}})</h4>
 
+	<div style='position: relative'>
+		<details>
+			<summary>Expand To See Roll Stats</summary>
+			<br />
+
+			<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
+			<h4 class=''>Trouble Dice({{trouble}})</h4>
+			<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
+			<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
+			<h4 class=''>Normal Rest ({{rest}})</h4>
+			<h4 class=''>Total Success({{totalSuccess}})</h4>
+		</details>
+	</div>
+
+	<div class='chat roll'>
 		<section>
 			{{#if successes}}
-				<h4 style='font-size: large;font-weight:bold;'>Success</h4>
+				<h4 style='font-size: x-large;font-weight:bold;'>Success</h4>
 			{{/if}}
 			{{#if criticalSuccess}}
-				<h4 style='font-size: large;font-weight:bold;'>Critical Success</h4>
+				<h4 style='font-size: x-large;font-weight:bold;'>Critical Success</h4>
 			{{/if}}
 			{{#if failure}}
-				<h4 style='font-size: large;font-weight:bold;'>Failed</h4>
+				<h4 style='font-size: x-large;font-weight:bold;'>Failed</h4>
 			{{/if}}
 
 			<div class='roll'>
@@ -68,11 +73,15 @@
 					<div class='dice-formula dice-roll'>
 						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
 					</div>
-					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
-						</a>
-					</div>
+					{{#if_gt trouble 0}}
+
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+							</a>
+						</div>
+
+					{{/if_gt}}
 				{{/if}}
 			{{/if_gt}}
 			{{#if_eq faithpoints 0}}
@@ -81,6 +90,17 @@
 						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
 					</a>
 				</div>
+				{{#if_gt trouble 0}}
+					{{#ifn canPush}}
+
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+							</a>
+						</div>
+					{{/ifn}}
+
+				{{/if_gt}}
 			{{/if_eq}}
 
 		</section>

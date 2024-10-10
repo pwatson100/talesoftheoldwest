@@ -1,5 +1,5 @@
 // import { TOTWModifierDialog, TOTWBuyOffDialog } from './chatmodifier.js';
-import { TOTWBuyOffDialog } from './chatmodifier.js';
+import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
 
 export async function totowDiceListeners(html) {
 	html.on('click', '.dice-push', (ev) => {
@@ -25,21 +25,37 @@ export async function totowDiceListeners(html) {
 	});
 
 	html.on('click', '.roll-trouble', (ev) => {
-		rollTrouble(ev);
+		let button = $(ev.currentTarget),
+			messageId = button.parents('.message').attr('data-message-id'),
+			message = game.messages.get(messageId);
+		let results = message.getFlag('talesoftheoldwest', 'results');
+
+		new TOTWWhichTroubleDialog(results, ev).render(true);
 	});
 }
 
-export async function rollTrouble(ev) {
-	let button = $(ev.currentTarget),
-		messageId = button.parents('.message').attr('data-message-id'),
-		message = game.messages.get(messageId);
-	let results = message.getFlag('talesoftheoldwest', 'results');
-	let trouble = parseInt(results[1].trouble);
-	let tTable = `TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(` + trouble + `)`;
-	let table = game.tables.getName(`${tTable}`);
+export async function rollTrouble(results, ev) {
+	let tTable = '';
+	let table = '';
+	let roll = '';
+	const troubleTable = Number(ev.submitter.value);
 
-	const roll = await new Roll('1d6').evaluate();
-	return table.draw({ roll });
+	let trouble = parseInt(results[1].trouble);
+
+	switch (troubleTable) {
+		case 1:
+			tTable = `TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(` + trouble + `)`;
+			table = game.tables.getName(`${tTable}`);
+			roll = await new Roll('1d6').evaluate();
+			return table.draw({ roll });
+
+		case 2:
+			tTable = `TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (` + trouble + `)`;
+			table = game.tables.getName(`${tTable}`);
+			roll = await new Roll('1d6').evaluate();
+			return table.draw({ roll });
+	}
+	return;
 }
 
 export async function pushRoll(chatMessage, origRollData, origRoll) {
@@ -72,6 +88,7 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 
 	await updateChatMessage(chatMessage, result, origRollData);
 }
+
 export async function buyOff(chatMessage, origRollData, origRoll, event) {
 	const troubleMod = Number(event.submitter.value);
 
