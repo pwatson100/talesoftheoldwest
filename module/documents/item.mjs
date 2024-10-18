@@ -1,8 +1,10 @@
+import { rollAttrib } from '../helpers/diceroll.mjs';
+
 /**
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
  */
-export class TOTOWItem extends Item {
+export class totowItem extends Item {
 	/**
 	 * Augment the basic Item data model with additional dynamic data.
 	 */
@@ -17,8 +19,8 @@ export class TOTOWItem extends Item {
 	 * @override
 	 */
 	getRollData() {
-		// Starts off by populating the roll data with `this.system`
-		const rollData = { ...super.getRollData() };
+		// Starts off by populating the roll data with a shallow copy of `this.system`
+		const rollData = { ...this.system };
 
 		// Quit early if there's no parent actor
 		if (!this.actor) return rollData;
@@ -28,39 +30,36 @@ export class TOTOWItem extends Item {
 
 		return rollData;
 	}
-
 	/**
 	 * Handle clickable rolls.
 	 * @param {Event} event   The originating click event
 	 * @private
 	 */
 	async roll(dataset) {
-		const item = this;
 		const rollData = this.getRollData();
-		let values = '';
-		// Initialize chat data.
-		const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-		const rollMode = game.settings.get('core', 'rollMode');
-		const label = `${dataset.label}`;
 		switch (dataset.rollType) {
 			case 'item':
-				console.log('Item Roll', dataset);
-				// return item.roll();
-				break;
+				return console.log('Item Roll', dataset);
+
 			case 'talent':
 				console.log('Talent Roll', dataset);
 				return;
-				break;
+
 			case 'weapon':
 				switch (dataset.subtype) {
 					case 'shootin':
-						values = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
-						console.log('Weapon Roll - shootin', dataset, values);
-						break;
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						dataset.attr = dataset.subtype;
+						console.log('Weapon Roll - shootin', dataset, dataset.mod);
+						return await shootin(dataset, rollData);
 					case 'fightin':
-						values = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
-						console.log('Weapon Roll - Fightin', dataset, values);
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						dataset.attr = dataset.subtype;
+						console.log('Weapon Roll - Fightin', dataset, dataset.mod);
+						return await fightin(dataset, rollData);
+
 						break;
+
 					default:
 						break;
 				}
@@ -69,47 +68,78 @@ export class TOTOWItem extends Item {
 				break;
 		}
 
-		const roll = await this.rollItem(values);
+		async function fightin(dataset, rollData) {
+			let config = CONFIG.TALESOFTHEOLDWEST;
+			const content = await renderTemplate('systems/talesoftheoldwest/templates/chat/fightin-weapon-modifiers.html', { config });
+			const data = await foundry.applications.api.DialogV2.wait({
+				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
+				modal: true,
+				position: { width: 440 },
+				content,
+				buttons: [
+					{
+						label: 'TALESOFTHEOLDWEST.dialog.roll',
+						callback: (event, button) => new FormDataExtended(button.form).object,
+					},
+					{
+						label: 'TALESOFTHEOLDWEST.dialog.cancel',
+						action: 'cancel',
+					},
+				],
+			});
 
-		// If there's no roll data, send a chat message.
-		// if (!this.system.rollData) {
-		// 	ChatMessage.create({
-		// 		speaker: speaker,
-		// 		rollMode: rollMode,
-		// 		flavor: label,
-		// 		content: item.system.description ?? '',
-		// 	});
-		// }
-		// Otherwise, create a roll and send a chat message from it.
-		// else {
-		// Retrieve roll data.
+			if (!data || data === 'cancel') return 'cancelled';
+			dataset.fightProneMod = parseInt(data.prone || 0);
+			dataset.fightAlloutattackMod = parseInt(data.alloutattack || 0);
+			dataset.fightCalledstrikeMod = parseInt(data.calledstrike || 0);
+			dataset.fightmodifierMod = parseInt(data.modifier);
+			dataset.baseMod = parseInt(dataset.mod);
 
-		// If you need to store the value first, uncomment the next line.
-		// const result = await roll.evaluate();
-		roll.toMessage({
-			speaker: speaker,
-			rollMode: rollMode,
-			flavor: label,
-		});
-		return roll;
-		// }
-	}
-
-	async rollItem(total) {
-		let formula = '';
-		let roll = '';
-
-		if (total - 5 <= 0) {
-			formula = `${total}` + `dt`;
-			roll = await Roll.create(`${formula}`).evaluate();
-			console.log(roll);
-		} else {
-			formula = `5dt`;
-			const extra = `${total}` - 5;
-			const ds = `${extra}` + `ds`;
-			roll = await Roll.create(`${formula}` + '+' + `${ds}`).evaluate();
-			console.log(roll);
+			dataset.mod =
+				parseInt(dataset.mod) + parseInt(data.prone || 0) + parseInt(data.alloutattack || 0) + parseInt(data.calledstrike || 0) + parseInt(data.modifier);
+			const result = await rollAttrib(dataset, rollData);
+			return result;
 		}
-		return roll;
+
+		async function shootin(dataset, rollData) {
+			let config = CONFIG.TALESOFTHEOLDWEST;
+			const content = await renderTemplate('systems/talesoftheoldwest/templates/chat/ranged-weapon-modifiers.html', { config });
+			const data = await foundry.applications.api.DialogV2.wait({
+				window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
+				modal: true,
+				position: { width: 440 },
+				content,
+				buttons: [
+					{
+						label: 'TALESOFTHEOLDWEST.dialog.roll',
+						callback: (event, button) => new FormDataExtended(button.form).object,
+					},
+					{
+						label: 'TALESOFTHEOLDWEST.dialog.cancel',
+						action: 'cancel',
+					},
+				],
+			});
+
+			if (!data || data === 'cancel') return 'cancelled';
+			dataset.shootrangeMod = parseInt(data.rangeChoice);
+			dataset.shootcalledShotsMod = parseInt(data.calledShots);
+			dataset.shootcoverMod = parseInt(data.coverChoice);
+			dataset.shootsizeMod = parseInt(data.sizeChoice);
+			dataset.shootvisibilityMod = parseInt(data.visibilityChoice);
+			dataset.shootmodifierMod = parseInt(data.modifier);
+			dataset.baseMod = parseInt(dataset.mod);
+
+			dataset.mod =
+				parseInt(dataset.mod) +
+				parseInt(data.rangeChoice) +
+				parseInt(data.calledShots) +
+				parseInt(data.coverChoice) +
+				parseInt(data.sizeChoice) +
+				parseInt(data.visibilityChoice) +
+				parseInt(data.modifier);
+			const result = await rollAttrib(dataset, rollData);
+			return result;
+		}
 	}
 }

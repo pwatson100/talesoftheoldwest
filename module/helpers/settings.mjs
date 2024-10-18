@@ -2,8 +2,8 @@ export default function () {
 	// Register system settings
 
 	// game.settings.register('talesoftheoldwest', 'dollar', {
-	// 	name: 'TOTOW.Dollar',
-	// 	hint: 'TOTOW.DollarNote',
+	// 	name: 'TALESOFTHEOLDWEST.Dollar',
+	// 	hint: 'TALESOFTHEOLDWEST.DollarNote',
 	// 	scope: 'world',
 	// 	type: Boolean,
 	// 	default: true,
@@ -11,8 +11,8 @@ export default function () {
 	// });
 
 	game.settings.register('talesoftheoldwest', 'totowHideInitChat', {
-		name: 'TOTOW.hideInitChat',
-		hint: 'TOTOW.hideInitChatHint',
+		name: 'TALESOFTHEOLDWEST.hideInitChat',
+		hint: 'TALESOFTHEOLDWEST.hideInitChatHint',
 		scope: 'world',
 		config: true,
 		default: false,
@@ -20,8 +20,8 @@ export default function () {
 	});
 
 	game.settings.register('talesoftheoldwest', 'switchJournalColour', {
-		name: 'TOTOW.hideJournalBGImage',
-		hint: 'TOTOW.hideJournalBGImageNote',
+		name: 'TALESOFTHEOLDWEST.hideJournalBGImage',
+		hint: 'TALESOFTHEOLDWEST.hideJournalBGImageNote',
 		scope: 'client',
 		type: Boolean,
 		default: false,
@@ -32,8 +32,8 @@ export default function () {
 	});
 
 	game.settings.register('talesoftheoldwest', 'switchchatbackground', {
-		name: 'TOTOW.hideChatBGImage',
-		hint: 'TOTOW.hideChatBGImageNote',
+		name: 'TALESOFTHEOLDWEST.hideChatBGImage',
+		hint: 'TALESOFTHEOLDWEST.hideChatBGImageNote',
 		scope: 'client',
 		type: Boolean,
 		default: false,
@@ -61,9 +61,9 @@ export default function () {
 	});
 
 	game.settings.register('talesoftheoldwest', 'JournalFontColour', {
-		name: 'TOTOW.Fontpick',
-		label: 'TOTOW.Colpick',
-		hint: 'TOTOW.ColpickHint',
+		name: 'TALESOFTHEOLDWEST.Fontpick',
+		label: 'TALESOFTHEOLDWEST.Colpick',
+		hint: 'TALESOFTHEOLDWEST.ColpickHint',
 		icon: 'fas fa-dice-d20',
 		restricted: false,
 		type: String,

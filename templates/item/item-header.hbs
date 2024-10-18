@@ -1,0 +1,20 @@
+<header class='sheet-header'>
+	<img class='profile-img' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />
+	<div class='header-fields'>
+		<h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
+		<div class='grid grid-2col'>
+
+			{{#if_eq item.type 'item'}}
+				<div class='resource'>
+					<label class='resource-label'>Quantity</label>
+					<input type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
+				</div>
+				<div class='resource'>
+					<label class='resource-label'>Weight</label>
+					<input type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+				</div>
+			{{/if_eq}}
+
+		</div>
+	</div>
+</header>

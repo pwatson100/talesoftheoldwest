@@ -1,6 +1,6 @@
-import TOTOWActorBase from './actor-base.mjs';
+import totowActorBase from './actor-base.mjs';
 
-export default class TOTOWNPC extends TOTOWActorBase {
+export default class totowNPC extends totowActorBase {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };

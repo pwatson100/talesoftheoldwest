@@ -1,0 +1,43 @@
+<section class="tab modifiers {{tab.cssClass}}" data-group="primary" data-tab="modifiers">
+	<div class="roll-modifiers flex column gap">
+		<header class="flex row column-header">
+			<label class="grow">ROLL MODIFIERS</label>
+			<a
+				class="button"
+				data-action="addmodifier"
+				data-origin="{{item.id}}"
+				data-actor="{{@root.item.actor.id}}"
+				data-isEmbedded="{{item.isEmbedded}}"
+				title="ADD_MODIFIER"
+				><i class="fas fa-plus"></i
+			></a>
+		</header>
+		{{#each system.itemModifiers as |modifier|}} {{#if modifier}}
+		<div class="flex row align-center gap">
+			<div class="grow">
+				<select name="system.itemModifiers.{{@key}}.name">
+					{{selectOptions @root.config.item_modifier_list selected=modifier.name labelAttr="label" localize=true}}
+				</select>
+			</div>
+			<div style="flex: 1 1 10%" title="{{localize 'ITEM.ROLL_MODIFIERS_VALUE'}}">
+				<input name="system.itemModifiers.{{@key}}.value" type="text" value="{{ modifier.value }}" style="text-align: center" />
+			</div>
+			<a
+				class="button delete-modifier"
+				data-action="deletemodifier"
+				data-origin="{{@root.item.id}}"
+				data-isEmbedded="{{@root.item.isEmbedded}}"
+				data-actor="{{@root.item.actor.id}}"
+				title="{{localize 'ITEM.DELETE_MODIFIER'}}"
+				data-modifier-id="{{@key}}"
+			>
+				<i class="fas fa-trash"></i>
+			</a>
+		</div>
+		{{/if}} {{else}}
+		<div class="flex column center">
+			<i>{{localize "ITEM.NO_MODIFIERS"}}</i>
+		</div>
+		{{/each}}
+	</div>
+</section>

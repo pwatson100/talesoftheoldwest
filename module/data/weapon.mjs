@@ -1,11 +1,11 @@
-import TOTOWItemBase from './item-base.mjs';
+import totowItemBase from './item-base.mjs';
 
-export default class TOTOWWeapon extends TOTOWItemBase {
+export default class totowWeapon extends totowItemBase {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };
 		const schema = super.defineSchema();
-		schema.subtype = new fields.StringField({ required: true, blank: true });
+		schema.subtype = new fields.StringField({ required: true, blank: false, initial: 'fightin' });
 		schema.action = new fields.StringField({ required: true, blank: true });
 		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });

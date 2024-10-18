@@ -44,6 +44,14 @@
 	height: 100%;
 }
 
+.tab.description {
+	flex: 1;
+
+	.editor {
+		height: 100%;
+	}
+}
+
 .tox {
 	.tox-editor-container {
 		background: $c-white;
@@ -61,6 +69,7 @@
 .statnum {
 	width: 35px;
 	text-align: center;
+	font-size: larger;
 }
 .dicenum {
 	width: 60px;

@@ -1,4 +1,3 @@
-// import { TOTWModifierDialog, TOTWBuyOffDialog } from './chatmodifier.js';
 import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
 
 export async function totowDiceListeners(html) {
@@ -117,25 +116,25 @@ async function updateChatMessage(chatMessage, result, newRoleData) {
 	});
 }
 
-export async function rollAttrib(dataset) {
+export async function rollAttrib(dataset, itemData) {
 	let formula = '';
 	let roll = '';
 	let result = '';
 	if (dataset.mod - 5 <= 0) {
 		formula = parseInt(`${dataset.mod}`) + `dt`;
 		roll = await Roll.create(`${formula}`).evaluate();
-		result = await evaluateTOTWRoll(dataset, roll, formula);
+		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
 	} else {
 		let troubleDice = `5dt`;
 		const extra = parseInt(`${dataset.mod}`) - 5;
 		const formula = troubleDice + '+' + `${extra}` + `ds`;
 		roll = await Roll.create(`${formula}`).evaluate();
-		result = await evaluateTOTWRoll(dataset, roll, formula);
+		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
 	}
 	return [roll, result];
 }
 
-export async function evaluateTOTWRoll(dataset, roll) {
+export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 	let troubleSucc = 0;
 	let trouble = 0;
 	let troubleRest = 0;
@@ -177,6 +176,8 @@ export async function evaluateTOTWRoll(dataset, roll) {
 	const totalRolled = troubleSucc + trouble + troubleRest + normalSucc + rest <= 0;
 	let evalResult = {
 		myActor: dataset.myActor,
+		itemData: itemData,
+		rollType: dataset.rollType,
 		formula: roll.formula,
 		title: dataset.label,
 		troubleSucc: troubleSucc,
@@ -192,6 +193,7 @@ export async function evaluateTOTWRoll(dataset, roll) {
 		failure: totalRolled ? totalSuccess < 2 : totalSuccess === 0,
 		totalRolled: totalRolled,
 		oldRoll: roll,
+		modifiers: dataset,
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;

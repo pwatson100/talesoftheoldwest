@@ -1,0 +1,56 @@
+<section class="tab skills {{tab.cssClass}}" data-group="primary" data-tab="skills">
+	<div class="resource grid grid-4col">
+		<label for="system.general.archtype" class="resource-label">ARCHTYPE</label>
+		<label for="system.general.xp.value" class="resource-label">EXPERIENCE</label>
+		<label for="system.general.money.value" class="resource-label">MONEY</label>
+	</div>
+	<div class="resource grid grid-4col">
+		<select id="system.general.archtype" name="system.general.archtype">
+			{{selectOptions archtype_list selected=system.general.archtype labelAttr="label" localize=true}}
+		</select>
+		<input class="statnum" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
+		<label for="system.general.money.value">$</label
+		><input class="currency" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
+	</div>
+
+	<div class="resource grid grid-4col">
+		<label for="system.general.heritage" class="resource-label">HERITAGE</label>
+		<label for="system.general.faith" class="resource-label">FAITH</label>
+		<label for="system.general.faithpoints" class="resource-label">FAITH POINTS</label>
+	</div>
+	<div class="resource grid grid-4col">
+		<select id="system.general.heritage" name="system.general.heritage">
+			{{selectOptions heritage_list selected=system.general.heritage labelAttr="label" localize=true}}
+		</select>
+		<input type="text" name="system.general.faith" value="{{system.general.faith}}" data-dtype="text" />
+		<input class="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
+	</div>
+	<div class="resource grid grid-4col">
+		<label for="system.general.bigdream" class="resource-label">BIG DREAM</label>
+		<label for="system.general.yourpardner" class="resource-label">YOUR PARDNER</label>
+	</div>
+	<div class="resource grid grid-4col">
+		<input type="text" name="system.general.bigdream" value="{{system.general.bigdream}}" data-dtype="text" />
+		<input type="text" name="system.general.yourpardner" value="{{system.general.yourpardner}}" data-dtype="text" />
+	</div>
+
+	<div class="grid grid-7col">
+		{{#each system.abilities as |ability key|}}
+		<div class="">
+			<label
+				for="system.abilities.{{key}}.value"
+				class="resource-label rollable flexlarge align-left"
+				data-roll-type="ability"
+				data-action="roll"
+				data-value="{{ability.value}}"
+				data-label="{{ability.label}} "
+				data-mod="{{ability.mod}}"
+				data-attr="{{ability.attr}}"
+				>{{ability.label}}</label
+			>
+			<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+		</div>
+		{{/each}}
+	</div>
+	{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}} {{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.html"}}
+</section>

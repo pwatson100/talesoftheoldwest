@@ -1,23 +1,25 @@
-export default class TOTOWActorBase extends foundry.abstract.TypeDataModel {
+export default class totowActorBase extends foundry.abstract.TypeDataModel {
+	static LOCALIZATION_PREFIXES = ['TALESOFTHEOLDWEST.Actor.base'];
+
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };
 		const schema = {};
 
-		// // Iterate over attribute names and create a new SchemaField for each.
-		// schema.attributes = new fields.SchemaField(
-		// 	Object.keys(CONFIG.TALESOFTHEOLDWEST.attributes).reduce((obj, attribute) => {
-		// 		obj[attribute] = new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 		});
-		// 		return obj;
-		// 	}, {})
-		// );
+		// schema.health = new fields.SchemaField({
+		//   value: new fields.NumberField({
+		//     ...requiredInteger,
+		//     initial: 10,
+		//     min: 0,
+		//   }),
+		//   max: new fields.NumberField({ ...requiredInteger, initial: 10 }),
+		// });
+		// schema.power = new fields.SchemaField({
+		//   value: new fields.NumberField({ ...requiredInteger, initial: 5, min: 0 }),
+		//   max: new fields.NumberField({ ...requiredInteger, initial: 5 }),
+		// });
+		schema.biography = new fields.HTMLField();
 
-		schema.biography = new fields.StringField({ required: true, blank: true }); // equivalent to passing ({initial: ""}) for StringFields
 		return schema;
 	}
 }

@@ -1,0 +1,126 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "pr8E42zC2hlUchEn",
+      "text": "Your confidence is badly  shaken. Suffer 1 point of  either Vexes or Doubts  (GM decides).",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "j7Is6FHy7JQqyBBn",
+      "text": "You’re tongue-tied. You  suffer a −1 penalty on all  ability rolls relating to  social or mental tests for  the rest of the scene.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "Ziv6uK5eVFMWYpEu",
+      "text": "Either directly or through  the grapevine, people  get to know of your bad  showing. For the rest  of the scenario, all your  ability rolls relating to  social encounters suffer a  −1 penalty.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "cR5Qf2hTQqqewi8R",
+      "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "IUUecy5EqwewRuKY",
+      "text": "You’ve made such a pig’s  ear of the situation that  the object of your efforts  dismisses you. You cannot  try to influence them  again for at least 24  hours.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "8Q9k63PX4R6nemMA",
+      "text": "Your Troubles are  mounting—reroll on the  next column.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "AMS0nitF3OnstMSl",
+      "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+      "img": "icons/svg/d20-grey.svg",
+      "documentId": "K4z09Ows9VzLr9Vr",
+      "flags": {},
+      "documentCollection": "RollTable"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1728376357682,
+    "modifiedTime": 1728376824838,
+    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+  },
+  "formula": "1d6"
+}

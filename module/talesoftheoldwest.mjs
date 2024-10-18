@@ -1,16 +1,15 @@
 // Import document classes.
-import { TOTOWActor } from './documents/actor.mjs';
-import { TOTOWItem } from './documents/item.mjs';
+import { totowActor } from './documents/actor.mjs';
+import { totowItem } from './documents/item.mjs';
 // Import sheet classes.
-import { TOTOWActorSheet } from './sheets/actor-sheet.js';
-import { TOTOWItemSheet } from './sheets/item-sheet.mjs';
+import { totowActorSheet } from './sheets/actor-sheet.mjs';
+import { totowItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { TALESOFTHEOLDWEST } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
-import { TOTOWTroubleDie } from './helpers/totowTroubleDice.js';
-import { TOTOWNormalDie } from './helpers/totowTroubleDice.js';
+import { totowTroubleDie } from './helpers/totowTroubleDice.js';
+import { totowNormalDie } from './helpers/totowTroubleDice.js';
 
 import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
@@ -25,16 +24,23 @@ const SUB_MODULES = {
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', function () {
-	// Add utility classes to the global game object so that they're more easily
-	// accessible in global contexts.
-	game.talesoftheoldwest = {
+globalThis.talesoftheoldwest = {
+	documents: {
 		registerSettings,
-		TOTOWActor,
-		TOTOWItem,
+		totowActor,
+		totowItem,
+	},
+	applications: {
+		totowActorSheet,
+		totowItemSheet,
+	},
+	utils: {
 		rollItemMacro,
-	};
+	},
+	models,
+};
 
+Hooks.once('init', function () {
 	// Add custom constants for configuration.
 	CONFIG.TALESOFTHEOLDWEST = TALESOFTHEOLDWEST;
 
@@ -52,23 +58,23 @@ Hooks.once('init', function () {
 	};
 
 	// Define custom Document and DataModel classes
-	CONFIG.Actor.documentClass = TOTOWActor;
+	CONFIG.Actor.documentClass = totowActor;
 
-	CONFIG.Dice.terms['t'] = TOTOWTroubleDie;
-	CONFIG.Dice.terms['s'] = TOTOWNormalDie;
+	CONFIG.Dice.terms['t'] = totowTroubleDie;
+	CONFIG.Dice.terms['s'] = totowNormalDie;
 
 	// Note that you don't need to declare a DataModel
 	// for the base actor/item classes - they are included
 	// with the Character/NPC as part of super.defineSchema()
 	CONFIG.Actor.dataModels = {
-		pc: models.TOTOWCharacter,
-		npc: models.TOTOWNPC,
-		// animal: models.TOTOWanimal,
+		pc: models.totowCharacter,
+		npc: models.totowNPC,
+		// animal: models.totowanimal,
 	};
-	CONFIG.Item.documentClass = TOTOWItem;
+	CONFIG.Item.documentClass = totowItem;
 	CONFIG.Item.dataModels = {
-		item: models.TOTOWItem,
-		weapon: models.TOTOWWeapon,
+		item: models.totowItem,
+		weapon: models.totowWeapon,
 	};
 
 	// Active Effects are never copied to the Actor,
@@ -78,18 +84,19 @@ Hooks.once('init', function () {
 
 	// Register sheet application classes
 	Actors.unregisterSheet('core', ActorSheet);
-	Actors.registerSheet('TOTOW', TOTOWActorSheet, {
+	Actors.registerSheet('totow', totowActorSheet, {
 		makeDefault: true,
 		label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
 	});
 	Items.unregisterSheet('core', ItemSheet);
-	Items.registerSheet('TOTOW', TOTOWItemSheet, {
+	Items.registerSheet('totow', totowItemSheet, {
 		makeDefault: true,
 		label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
 	});
+
 	registerSettings();
-	// Preload Handlebars templates.
-	return preloadHandlebarsTemplates();
+	// // Preload Handlebars templates.
+	// return preloadHandlebarsTemplates();
 });
 
 /* -------------------------------------------- */
@@ -161,13 +168,23 @@ Handlebars.registerHelper('times', function (n, block) {
 	return result;
 });
 
+Handlebars.registerHelper('striptags', function (txt) {
+	// console.log(txt);
+	// exit now if text is undefined
+	if (typeof txt == 'undefined') return;
+	// the regular expresion
+	var regexp = /<[\/\w]+>/g;
+	// replacing the text
+	return txt.replace(regexp, '');
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
 
 Hooks.once('ready', function () {
 	// Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-	Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+	Hooks.on('hotbarDrop', (bar, data, slot) => createDocMacro(data, slot));
 	// clear the minimum resolution message faster
 
 	setTimeout(() => {
@@ -207,7 +224,7 @@ Hooks.on('renderChatMessage', (app, html, msg) => {
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function createItemMacro(data, slot) {
+async function createDocMacro(data, slot) {
 	// First, determine if this is a valid owned item.
 	if (data.type !== 'Item') return;
 	if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
@@ -217,7 +234,7 @@ async function createItemMacro(data, slot) {
 	const item = await Item.fromDropData(data);
 
 	// Create the macro command using the uuid.
-	const command = `game.TOTOW.rollItemMacro("${data.uuid}");`;
+	const command = `game.boilerplate.rollItemMacro("${data.uuid}");`;
 	let macro = game.macros.find((m) => m.name === item.name && m.command === command);
 	if (!macro) {
 		macro = await Macro.create({
@@ -225,7 +242,7 @@ async function createItemMacro(data, slot) {
 			type: 'script',
 			img: item.img,
 			command: command,
-			flags: { 'TOTOW.itemMacro': true },
+			flags: { 'boilerplate.itemMacro': true },
 		});
 	}
 	game.user.assignHotbarMacro(macro, slot);

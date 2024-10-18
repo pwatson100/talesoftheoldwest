@@ -48,6 +48,23 @@
 		text-align: left;
 		align-items: center;
 		display: flex;
+		font-weight: bolder;
+		h3,
+		h4 {
+			margin: 0;
+			white-space: nowrap;
+			overflow-x: hidden;
+		}
+	}
+	// Item Name
+	.item-stat {
+		flex: 2;
+		margin: 0;
+		overflow: hidden;
+		font-size: 19px;
+		/* text-align: center; */
+		/* align-items: center; */
+		display: flex;
 		h3,
 		h4 {
 			margin: 0;
@@ -109,7 +126,7 @@
 			text-align: center;
 		}
 		.item-name {
-			padding-left: 5px;
+			padding-left: 17px;
 			text-align: left;
 			// font-size: 16px;
 		}

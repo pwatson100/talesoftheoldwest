@@ -82,40 +82,58 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 		});
 	}
 
-	getData() {
-		// Send data to the template
-		// let messageResultsFlag = this.chatMessage.getFlag('talesoftheoldwest', 'results');
-		// const myActor = game.actors.get(messageResultsFlag[1].myActor);
-		// const trouble = this.chatMessage.flags.talesoftheoldwest.results[1].trouble;
-		// const faith = myActor.system.general.faithpoints.value;
-		// let maxMod = 0;
-		// if (trouble >= faith) {
-		// 	maxMod = faith;
-		// } else {
-		// 	maxMod = trouble;
-		// }
-		// return {
-		// 	trouble,
-		// 	faith,
-		// 	maxMod,
-		// };
-	}
+	getData() {}
 
-	activateListeners(html) {
-		// 	super.activateListeners(html);
-		// }
-		// async _onChangeInput(event) {
-		// 	if (event.currentTarget.name.match(/^si_.*$/)) {
-		// 		this.itemModifiers[event.currentTarget.name].checked = event.currentTarget.checked;
-		// 	}
-		// 	this.render();
-	}
+	activateListeners(html) {}
 
 	async _updateObject(event, formData) {
 		rollTrouble(this.origRollData, event);
 		return;
 	}
 }
+// export class TOTWrollWeapon extends FormApplication {
+// 	constructor(results) {
+// 		super();
+// 		// this.origRollData = results;
+// 	}
+
+// 	static get defaultOptions() {
+// 		return foundry.utils.mergeObject(super.defaultOptions, {
+// 			classes: ['form'],
+// 			popOut: true,
+// 			template: 'systems/talesoftheoldwest/templates/chat/ranged-weapon-modifiers.html',
+// 			id: 'TOTWWhichTroubleDialog',
+// 			title: game.i18n.localize('TALESOFTHEOLDWEST.ModifierForRoll'),
+// 			height: 'auto',
+// 			width: 'auto',
+// 			minimizable: false,
+// 			resizable: true,
+// 			closeOnSubmit: true,
+// 			submitOnClose: false,
+// 			submitOnChange: false,
+// 		});
+// 	}
+
+// 	getData() {
+// 		this.range_list = CONFIG.TALESOFTHEOLDWEST.range_list;
+// 		this.item_modifier_list = CONFIG.TALESOFTHEOLDWEST.item_modifier_list;
+// 		this.range_modifiers = CONFIG.TALESOFTHEOLDWEST.range_modifiers;
+// 		this.called_shots = CONFIG.TALESOFTHEOLDWEST.called_shots;
+// 		this.target_cover = CONFIG.TALESOFTHEOLDWEST.target_cover;
+// 		this.target_size = CONFIG.TALESOFTHEOLDWEST.target_size;
+// 		this.target_visibility = CONFIG.TALESOFTHEOLDWEST.target_visibility;
+// 		console.log('After Getdata', this);
+// 	}
+
+// 	activateListeners(html) {}
+
+// 	async _updateObject(event, formData) {
+// 		// rollTrouble(this.origRollData, event);
+// 		console.log('got here');
+// 		return;
+// 	}
+// }
 
 window.TOTWBuyOffDialog = TOTWBuyOffDialog;
 window.TOTWWhichTroubleDialog = TOTWWhichTroubleDialog;
+// window.TOTWWhichTroubleDialog = TOTWrollWeapon;

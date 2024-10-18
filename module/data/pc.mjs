@@ -1,6 +1,8 @@
-import TOTOWActorBase from './actor-base.mjs';
+import totowActorBase from './actor-base.mjs';
 
-export default class TOTOWPC extends TOTOWActorBase {
+export default class totowPC extends totowActorBase {
+	static LOCALIZATION_PREFIXES = [...super.LOCALIZATION_PREFIXES, 'TALESOFTHEOLDWEST.Actor.PC'];
+
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };

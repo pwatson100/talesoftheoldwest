@@ -1,0 +1,727 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Esteban&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+.esteban-regular {
+  font-family: "Esteban", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+
+.theme-dark {
+  --talesoftheoldwest-c-dark: #c9c7b8;
+  --talesoftheoldwest-c-faint: #191813;
+  --talesoftheoldwest-c-beige: #444444;
+  --talesoftheoldwest-c-tan: #b5b3a4;
+  --talesoftheoldwest-c-white: #000000;
+  --talesoftheoldwest-c-black: #ffffff;
+  --talesoftheoldwest-c-groove: #11121f;
+}
+
+.talesoftheoldwest .chat.roll {
+  color: var(--black);
+  font-family: 'Esteban", serif';
+  font-size: 12px;
+  line-height: 16px;
+  padding: 5px;
+}
+
+.talesoftheoldwest .chat.roll .foreground {
+  padding: 5px;
+}
+
+.talesoftheoldwest .chat.roll .border {
+  border: 1px solid transparent;
+  border-color: var(--color-border);
+  -o-border-image: var(--chat-roll-border) 20/10px;
+     border-image: var(--chat-roll-border) 20/10px;
+}
+
+.talesoftheoldwest .chat.roll strong {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--talesoftheoldwest-c-beige);
+  font-size: 14px;
+}
+
+.talesoftheoldwest .chat.roll h3 {
+  font-family: 'Esteban", serif';
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--talesoftheoldwest-c-beige);
+  margin: 0 0 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.talesoftheoldwest .chat.roll h4 {
+  font-family: 'Esteban", serif';
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.talesoftheoldwest .chat.roll p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+
+.talesoftheoldwest .chat.roll .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.talesoftheoldwest .chat.roll .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 10em;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.talesoftheoldwest .chat.roll .right {
+  top: -15%;
+  left: 105%;
+}
+
+.talesoftheoldwest .chat.roll .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.talesoftheoldwest .chat.roll img,
+.talesoftheoldwest .chat.roll .portrait {
+  border: 0;
+  /* display: block; */
+  margin: 0 auto 8px;
+  height: 40px;
+  width: auto;
+}
+
+.talesoftheoldwest .dice-push {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22px;
+          flex: 0 0 22px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Global styles */
+.window-app {
+  font-family: 'Esteban", serif';
+}
+
+.rollable:hover, .rollable:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+.dice-tooltip .roll > img {
+  width: 24px;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2/span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3/span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6/span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flexlarge {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.align-left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+/* Styles limited to talesoftheoldwest sheets */
+.talesoftheoldwest .item-form {
+  font-family: 'Esteban", serif';
+}
+.talesoftheoldwest .sheet-header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 auto;
+          flex: 0 auto;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.talesoftheoldwest .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.talesoftheoldwest .sheet-header .header-fields {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.talesoftheoldwest .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+.talesoftheoldwest .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.talesoftheoldwest .sheet-tabs {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+.talesoftheoldwest .sheet-body,
+.talesoftheoldwest .sheet-body .tab,
+.talesoftheoldwest .sheet-body .tab .editor {
+  height: 100%;
+}
+.talesoftheoldwest .tab.description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.talesoftheoldwest .tab.description .editor {
+  height: 100%;
+}
+.talesoftheoldwest .tox .tox-editor-container {
+  background: var(--talesoftheoldwest-c-white);
+}
+.talesoftheoldwest .tox .tox-edit-area {
+  padding: 0 8px;
+}
+.talesoftheoldwest .sidebar {
+  width: 88px;
+}
+.talesoftheoldwest .statnum {
+  width: 35px;
+  text-align: center;
+  font-size: larger;
+}
+.talesoftheoldwest .dicenum {
+  width: 60px;
+}
+.talesoftheoldwest .resource-label {
+  font-weight: bold;
+}
+.talesoftheoldwest .ability {
+  margin-bottom: 2px;
+}
+.talesoftheoldwest .ability-score,
+.talesoftheoldwest .ability-mod {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 44px;
+          flex: 0 0 44px;
+}
+.talesoftheoldwest .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--black);
+  border: 2px groove var(--talesoftheoldwest-c-groove);
+  font-weight: bold;
+}
+.talesoftheoldwest .items-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+.talesoftheoldwest .items-header .item-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.talesoftheoldwest .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--talesoftheoldwest-c-tan);
+}
+.talesoftheoldwest .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.talesoftheoldwest .items-list .item-name {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bolder;
+}
+.talesoftheoldwest .items-list .item-name h3,
+.talesoftheoldwest .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.talesoftheoldwest .items-list .item-stat {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 19px;
+  /* text-align: center; */
+  /* align-items: center; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.talesoftheoldwest .items-list .item-stat h3,
+.talesoftheoldwest .items-list .item-stat h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.talesoftheoldwest .items-list .item-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.talesoftheoldwest .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+.talesoftheoldwest .items-list .item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--talesoftheoldwest-c-faint);
+}
+.talesoftheoldwest .items-list .item:last-child {
+  border-bottom: none;
+}
+.talesoftheoldwest .items-list .item .item-name {
+  color: var(--talesoftheoldwest-c-dark);
+}
+.talesoftheoldwest .items-list .item .item-name .item-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.talesoftheoldwest .items-list .item-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.talesoftheoldwest .items-list .items-header {
+  height: 28px;
+  margin: 2px 0 var(--black);
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--talesoftheoldwest-c-groove);
+  font-weight: bold;
+}
+.talesoftheoldwest .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.talesoftheoldwest .items-list .items-header .item-name {
+  padding-left: 17px;
+  text-align: left;
+}
+.talesoftheoldwest .item-formula {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
+  padding: 0 8px;
+}
+.talesoftheoldwest .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--talesoftheoldwest-c-groove);
+  font-weight: bold;
+}
+.talesoftheoldwest .effects-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+.talesoftheoldwest .effects-header .effect-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.talesoftheoldwest .effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--talesoftheoldwest-c-tan);
+}
+.talesoftheoldwest .effects-list .effect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.talesoftheoldwest .effects-list .effect-name {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.talesoftheoldwest .effects-list .effect-name h3, .talesoftheoldwest .effects-list .effect-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.talesoftheoldwest .effects-list .effect-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.talesoftheoldwest .effects-list .effect-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+.talesoftheoldwest .effects-list .effect {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--talesoftheoldwest-c-faint);
+}
+.talesoftheoldwest .effects-list .effect:last-child {
+  border-bottom: none;
+}
+.talesoftheoldwest .effects-list .effect .effect-name {
+  color: var(--talesoftheoldwest-c-dark);
+}
+.talesoftheoldwest .effects-list .effect .effect-name .effect-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.talesoftheoldwest .effects-list .effect-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.talesoftheoldwest .effects-list .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--talesoftheoldwest-c-groove);
+  font-weight: bold;
+}
+.talesoftheoldwest .effects-list .effects-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.talesoftheoldwest .effects-list .effects-header .effect-name {
+  padding-left: 5px;
+  text-align: left;
+}
+.talesoftheoldwest .effect-formula {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
+  padding: 0 8px;
+}
+.talesoftheoldwest .effects .item .effect-source,
+.talesoftheoldwest .effects .item .effect-duration,
+.talesoftheoldwest .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.talesoftheoldwest .effects .item .effect-controls {
+  border: none;
+}/*# sourceMappingURL=talesoftheoldwest.css.map */

@@ -1,0 +1,126 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "pr8E42zC2hlUchEn",
+      "text": "You get so frustrated that  you suffer 1 point of both  Vexes and Doubts.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "j7Is6FHy7JQqyBBn",
+      "text": "You struggle to cope with  the situation. Lose your  next Round to compose  yourself.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "Ziv6uK5eVFMWYpEu",
+      "text": "Your actions seem  so disrespectful or  disgraceful that a nearby  non-player character  (NPC) attacks you with  a slap or a punch to put  you in your place.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "cR5Qf2hTQqqewi8R",
+      "text": "Things are going badly  wrong, and you can’t  cope. You need a Turn to  pull yourself together.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "IUUecy5EqwewRuKY",
+      "text": "The shameful experience  scars you, and you suffer  a 6 dice attack, dam 1,  against your Docity and  Cunning.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "8Q9k63PX4R6nemMA",
+      "text": "Your Troubles are  mounting—reroll on the  next column.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "AMS0nitF3OnstMSl",
+      "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
+      "img": "icons/svg/d20-grey.svg",
+      "documentId": "HFc4NoTiBzTeiduz",
+      "flags": {},
+      "documentCollection": "RollTable"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1728376382004,
+    "modifiedTime": 1728376856842,
+    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+  },
+  "formula": "1d6"
+}

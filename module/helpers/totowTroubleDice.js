@@ -1,4 +1,4 @@
-export class TOTOWTroubleDie extends foundry.dice.terms.Die {
+export class totowTroubleDie extends foundry.dice.terms.Die {
 	constructor(termData) {
 		termData.faces = 6;
 		super(termData);
@@ -28,7 +28,7 @@ export class TOTOWTroubleDie extends foundry.dice.terms.Die {
 		}[result.result];
 	}
 }
-export class TOTOWNormalDie extends foundry.dice.terms.Die {
+export class totowNormalDie extends foundry.dice.terms.Die {
 	constructor(termData) {
 		termData.faces = 6;
 		super(termData);

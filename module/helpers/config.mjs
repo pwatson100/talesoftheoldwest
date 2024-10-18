@@ -89,6 +89,39 @@ TALESOFTHEOLDWEST.range_list = {
 	long: { id: 'Long', label: 'TALESOFTHEOLDWEST.Ranges.long.long' },
 	distant: { id: 'Distant', label: 'TALESOFTHEOLDWEST.Ranges.distant.long' },
 };
+TALESOFTHEOLDWEST.range_modifiers = {
+	inactivearmslength: { id: 'InactiveArmsLength', label: 'TALESOFTHEOLDWEST.ModRanges.inactivearmslength', value: '3' },
+	activearmslength: { id: 'ActiveArmsLength', label: 'TALESOFTHEOLDWEST.ModRanges.activearmslength', value: '-3' },
+	near: { id: 'Near', label: 'TALESOFTHEOLDWEST.ModRanges.near', value: '1' },
+	short: { id: 'Short', label: 'TALESOFTHEOLDWEST.ModRanges.short', value: '0' },
+	medium: { id: 'Medium', label: 'TALESOFTHEOLDWEST.ModRanges.medium', value: '-1' },
+	long: { id: 'Long', label: 'TALESOFTHEOLDWEST.ModRanges.long', value: '-2' },
+	distant: { id: 'Distant', label: 'TALESOFTHEOLDWEST.ModRanges.distant', value: '-3' },
+};
+TALESOFTHEOLDWEST.called_shots = {
+	aimedshot: { id: 'aimedshot', label: 'TALESOFTHEOLDWEST.Called.aimedshot', value: '2' },
+	quickshot: { id: 'quickshot', label: 'TALESOFTHEOLDWEST.Called.quickshot', value: '-2' },
+	calledshot: { id: 'calledshot', label: 'TALESOFTHEOLDWEST.Called.calledshot', value: '-3' },
+	aimingacalledshot: { id: 'aimingacalledshot', label: 'TALESOFTHEOLDWEST.Called.aimingcalledshot', value: '1' },
+};
+TALESOFTHEOLDWEST.target_cover = {
+	none: { id: 'none', label: 'TALESOFTHEOLDWEST.Cover.none', value: '0' },
+	partialcover: { id: 'partialcover', label: 'TALESOFTHEOLDWEST.Cover.partialcover', value: '-1' },
+	goodcover: { id: 'goodcover', label: 'TALESOFTHEOLDWEST.Cover.goodcover', value: '-2' },
+	// heavycover: { id: 'heavycover', label: 'TALESOFTHEOLDWEST.Cover.heavycover', value: '+1' },
+};
+
+TALESOFTHEOLDWEST.target_size = {
+	normal: { id: 'normal', label: 'TALESOFTHEOLDWEST.TargetSize.normal', value: '0' },
+	large: { id: 'large', label: 'TALESOFTHEOLDWEST.TargetSize.large', value: '2' },
+	small: { id: 'small', label: 'TALESOFTHEOLDWEST.TargetSize.small', value: '-2' },
+};
+
+TALESOFTHEOLDWEST.target_visibility = {
+	daylight: { id: 'daylight', label: 'TALESOFTHEOLDWEST.TargetVisibility.daylight', value: '0' },
+	dimlight: { id: 'dimlight', label: 'TALESOFTHEOLDWEST.TargetVisibility.dimlight', value: '-1' },
+	darkness: { id: 'darkness', label: 'TALESOFTHEOLDWEST.TargetVisibility.darkness', value: '-3' },
+};
 
 TALESOFTHEOLDWEST.item_modifier_list = {
 	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit' },

@@ -1,69 +1,121 @@
 {
 	"TALESOFTHEOLDWEST": {
+		"SheetLabels": {
+			"Actor": "totow Actor Sheet",
+			"Item": "totow Item Sheet"
+		},
+		"Actor": {
+			"Tabs": {
+				"Skills": "Skills",
+				"Items": "Items",
+				"Description": "Description",
+				"Effects": "Effects"
+			}
+		},
 		"Ability": {
-			"Labor": { "long": "Labor", "abbr": "LBR" },
-			"Presence": { "long": "Presence", "abbr": "PRE" },
-			"Fightin": { "long": "Fightin'", "abbr": "FGT" },
-			"Resilience": { "long": "Resilience", "abbr": "RES" },
-			"Move": { "long": "Move", "abbr": "MOV" },
-			"Operate": { "long": "Operate", "abbr": "OPR" },
-			"Shootin": { "long": "Shootin'", "abbr": "SHT" },
-			"Lightfingered": { "long": "Light-Fingered", "abbr": "LF" },
-			"Hawkeye": { "long": "Hawkeye", "abbr": "HAW" },
-			"Nature": { "long": "Nature", "abbr": "NAT" },
-			"Insight": { "long": "Insight", "abbr": "INS" },
-			"Animalhandlin": { "long": "Animal Handlin'", "abbr": "HA" },
-			"Performin": { "long": "Performin", "abbr": "PER" },
-			"Makin": { "long": "Makin'", "abbr": "MAK" },
-			"Doctorin": { "long": "Doctorin'", "abbr": "DR" },
-			"Booklearnin": { "long": "Book Learnin'", "abbr": "BKL" }
+			"Animalhandlin": { "abbr": "HA", "long": "Animal Handlin'" },
+			"Booklearnin": { "abbr": "BKL", "long": "Book Learnin'" },
+			"Doctorin": { "abbr": "DR", "long": "Doctorin'" },
+			"Fightin": { "abbr": "FGT", "long": "Fightin'" },
+			"Hawkeye": { "abbr": "HAW", "long": "Hawkeye" },
+			"Insight": { "abbr": "INS", "long": "Insight" },
+			"Labor": { "abbr": "LBR", "long": "Labor" },
+			"Lightfingered": { "abbr": "LF", "long": "Light-Fingered" },
+			"Makin": { "abbr": "MAK", "long": "Makin'" },
+			"Move": { "abbr": "MOV", "long": "Move" },
+			"Nature": { "abbr": "NAT", "long": "Nature" },
+			"Operate": { "abbr": "OPR", "long": "Operate" },
+			"Performin": { "abbr": "PER", "long": "Performin" },
+			"Presence": { "abbr": "PRE", "long": "Presence" },
+			"Resilience": { "abbr": "RES", "long": "Resilience" },
+			"Shootin": { "abbr": "SHT", "long": "Shootin'" }
 		},
 		"Attributes": {
-			"grit": "Grit",
-			"quick": "Quick",
 			"cunning": "Cunning",
-			"docity": "Docity"
-		},
-		"ItemModifierSelect": {
-			"none": "None"
-		},
-		"Ranges": {
-			"armslength": { "long": "Arms Length", "abbr": "AL" },
-			"near": { "long": "Near", "abbr": "NR" },
-			"short": { "long": "Short", "abbr": "SRT" },
-			"medium": { "long": "Medium", "abbr": "MEDI" },
-			"long": { "long": "Long", "abbr": "LNG" },
-			"distant": { "long": "Distant", "abbr": "DIS" }
-		},
-
-		"SheetLabels": {
-			"Actor": "TOTOW Actor Sheet",
-			"Item": "TOTOW Item Sheet"
-		},
-		"Item": {
-			"Effect": {
-				"Source": "Source",
-				"Toggle": "Toggle Effect",
-				"Temporary": "Temporary Effects",
-				"Passive": "Passive Effects",
-				"Inactive": "Inactive Effects"
-			}
+			"docity": "Docity",
+			"grit": "Grit",
+			"quick": "Quick"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
 			"name": "Log Debug Output"
+		},
+		"Item": {
+			"Effect": {
+				"Inactive": "Inactive Effects",
+				"Passive": "Passive Effects",
+				"Source": "Source",
+				"Temporary": "Temporary Effects",
+				"Toggle": "Toggle Effect"
+			},
+			"Tabs": {
+				"Description": "Description",
+				"Modifiers": "Modifiers",
+				"Body": "Description"
+			}
+		},
+		"ItemModifierSelect": {
+			"none": "None"
+		},
+		"DiceMod": "Modifier Dice",
+		"shootinmodifiers": "Shootin' Modifiers",
+		"fightinmodifiers": "Fightin' Modifiers",
+		"Ranges": {
+			"activearmslength": { "abbr": "AAL", "long": "Active Arms Length" },
+			"inactivearmslength": { "abbr": "IAL", "long": "Inactive Arms Length" },
+			"armslength": { "abbr": "AL", "long": "Arms Length" },
+			"distant": { "abbr": "DIS", "long": "Distant" },
+			"long": { "abbr": "LNG", "long": "Long" },
+			"medium": { "abbr": "MEDI", "long": "Medium" },
+			"near": { "abbr": "NR", "long": "Near" },
+			"short": { "abbr": "SRT", "long": "Short" }
+		},
+		"ModRanges": {
+			"activearmslength": "Active Target at Arms Length (-3)",
+			"inactivearmslength": "Inactive Target at Arms Length (+3)",
+			"distant": "Distant (-3)",
+			"long": "Long (-2)",
+			"medium": "Medium (-1)",
+			"near": "Near (+1)",
+			"short": "Short (0)"
+		},
+		"Called": {
+			"aimedshot": "Aimed Shot (+2)",
+			"calledshot": "Called Shot (-3)",
+			"aimingcalledshot": "Aiming on a Called Shot (+1)",
+			"quickshot": "QuickShot (-2)"
+		},
+		"Cover": {
+			"none": "No Cover (0)",
+			"partialcover": "Partial Cover (-1)",
+			"goodcover": "Good Cover (-2)",
+			"heavycover": "Heavy Cover (+1)"
+		},
+		"TargetSize": {
+			"normal": "Normal (0)",
+			"large": "Large (+2)",
+			"small": "Small (-2)"
+		},
+		"TargetVisibility": {
+			"daylight": "Daylight (0)",
+			"dimlight": "Dim Light (-1)",
+			"darkness": "Darkness (-3)"
+		},
+		"dialog": {
+			"roll": "ROLL",
+			"cancel": "CANCEL",
+			"ok": "OK"
 		}
 	},
-
 	"TYPES": {
 		"Actor": {
-			"pc": "PC",
-			"npc": "NPC"
+			"npc": "NPC",
+			"pc": "PC"
 		},
 		"Item": {
 			"item": "Item",
-			"weapon": "Weapon",
-			"talent": "Talent"
+			"talent": "Talent",
+			"weapon": "Weapon"
 		}
 	}
 }

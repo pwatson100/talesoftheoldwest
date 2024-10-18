@@ -1,12 +1,19 @@
 {
 	"id": "talesoftheoldwest",
-	"title": "Tales of the Old West",
-	"description": "The Tales of the o#Old West system for FoundryVTT!",
+	"title": "Tales of The Old West",
+	"description": "The Tales of The Old West system for FoundryVTT!",
 	"authors": [
 		{
 			"name": "Paul Watson"
 		}
 	],
+
+	"flags": {
+		"hotReload": {
+			"extensions": ["css", "html", "hbs", "json"],
+			"paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
+		}
+	},
 	"url": "Replace this with a link to your public repository",
 	"license": "LICENSE.txt",
 	"readme": "README.md",
@@ -21,11 +28,11 @@
 	],
 	"version": "0.0.1",
 	"compatibility": {
-		"minimum": 12,
+		"minimum": "12",
 		"verified": "12"
 	},
 	"esmodules": ["module/talesoftheoldwest.mjs"],
-	"styles": ["css/totow.css"],
+	"styles": ["css/talesoftheoldwest.css"],
 	"languages": [
 		{
 			"lang": "en",
@@ -38,16 +45,13 @@
 	"socket": false,
 	"manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
 	"download": "This must link to a .zip file of the current version",
-	"background": "systems/talesoftheoldwest/assets/icons/totow.webp",
+	"background": "systems/talesoftheoldwest/assets/anvil-impact.png",
 	"grid": {
+		"type": 1,
 		"distance": 5,
-		"units": "ft"
+		"units": "ft",
+		"diagonals": 0
 	},
 	"primaryTokenAttribute": "faith",
-	"flags": {
-		"hotReload": {
-			"extensions": ["css", "hbs", "html", "json"],
-			"paths": ["./css/totow.css", "templates", "lang"]
-		}
-	}
+	"secondaryTokenAttribute": "power"
 }

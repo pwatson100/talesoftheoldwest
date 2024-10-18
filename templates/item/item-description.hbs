@@ -1,0 +1,56 @@
+{{! Description Tab }}
+<section class='tab description {{tab.cssClass}}' data-group='primary' data-tab='description'>
+	{{#if_eq item.type 'weapon'}}
+
+		<div class='grid grid-2col'>
+			<label for='system.subtype' class='resource-label'>TYPE</label>
+			<select id='system.subtype' name='system.subtype'>
+				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
+			</select>
+			{{#if_eq system.subtype 'shootin'}}
+				<label for='system.action' class='resource-label'>ACTION</label>
+				<select id='system.action' name='system.action'>
+					{{selectOptions config.action_list selected=system.action labelAttr='label' localize=true}}
+				</select>
+			{{/if_eq}}
+		</div>
+		<div class='resource grid grid-4col'>
+			{{#if_eq system.subtype 'shootin'}}
+				<label for='system.bonusdraw' class='resource-label'>BONUS DRAW</label>
+			{{/if_eq}}
+			<label for='system.attackbonus' class='resource-label'>ATTACK BONUS</label>
+			<label for='system.damage' class='resource-label'>DAMAGE</label>
+			<label for='system.crit' class='resource-label'>CRIT</label>
+		</div>
+		<div class='resource grid grid-4col'>
+			{{#if_eq system.subtype 'shootin'}}
+				<input class='statnum' type='text' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
+			{{/if_eq}}
+			<input class='statnum' type='text' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
+			<input class='statnum' type='text' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
+			<input class='statnum' type='text' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
+		</div>
+		{{#if_eq system.subtype 'shootin'}}
+			<div class='resource grid grid-4col'>
+				<label for='system.range' class='resource-label'>RANGE</label>
+				<label for='system.ammo' class='resource-label'>AMMO</label>
+			</div>
+			<div class='resource grid grid-4col'>
+				<select id='system.range' name='system.range'>
+					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
+				</select>
+				<input class='statnum' type='text' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
+			</div>
+		{{/if_eq}}
+		<hr />
+	{{/if_eq}}
+
+	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+	{{#if editable}}
+		<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' collaborate='true' toggled='true'>
+			{{{enrichedDescription}}}
+		</prose-mirror>
+	{{else}}
+		{{{enrichedDescription}}}
+	{{/if}}
+</section>

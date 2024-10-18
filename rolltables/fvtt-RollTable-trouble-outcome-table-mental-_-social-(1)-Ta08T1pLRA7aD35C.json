@@ -1,0 +1,126 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (1)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "pr8E42zC2hlUchEn",
+      "text": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "j7Is6FHy7JQqyBBn",
+      "text": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "Ziv6uK5eVFMWYpEu",
+      "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "cR5Qf2hTQqqewi8R",
+      "text": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "IUUecy5EqwewRuKY",
+      "text": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "8Q9k63PX4R6nemMA",
+      "text": "Your Troubles are  mounting—reroll on the  next column.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "AMS0nitF3OnstMSl",
+      "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
+      "img": "icons/svg/d20-grey.svg",
+      "documentId": "hSf8k6g2vL7234BW",
+      "flags": {},
+      "documentCollection": "RollTable"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1728376198152,
+    "modifiedTime": 1728376800621,
+    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+  },
+  "formula": "1d6"
+}

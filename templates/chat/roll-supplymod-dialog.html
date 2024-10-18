@@ -1,0 +1,9 @@
+<p>{{localize "ALIENRPG.DialText"}}</p>
+<div class="form-group">
+	<select name="calledshots">
+		{{selectOptions called_shots selected=calledshots localize=true}}
+	</select>
+	<label>{{localize "ALIENRPG.Supply"}} {{localize "ALIENRPG.MODIFIER"}}</label>
+	<input type="text" id="modifier" name="modifier" value="0" autofocus="autofocus" />
+</div>
+{{log this}}

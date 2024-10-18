@@ -1,0 +1,126 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "0sUSodOS4aEd4M4C",
+      "text": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "HCn3IP4fugModw93",
+      "text": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "UH5HqxX0goPm6APj",
+      "text": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "JbenPvx0JSViscji",
+      "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "gpZmE2aUp06Qtotk",
+      "text": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "pG1HkCW93GeBa0JF",
+      "text": "Your Troubles are  mounting—reroll on the  next column.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "L6z8gX2mcoJkT6br",
+      "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+      "img": "icons/svg/d20-grey.svg",
+      "documentId": "OjaUNfLD5klCkwq9",
+      "flags": {},
+      "documentCollection": "RollTable"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1728375438168,
+    "modifiedTime": 1728493240457,
+    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+  },
+  "formula": "1d6"
+}

@@ -1,108 +1,173 @@
 <div class='talesoftheoldwest'>
+	{{log 'CONTEXT!!!!'}}
+	{{log this}}
 	<div>
 		<h2 style='white-space: pre-wrap;'>{{title}}</h2>
 	</div>
+	{{#if_gt modifiers.mod 0}}
 
-	<div style='position: relative'>
-		<details>
-			<summary>Expand To See Roll Stats</summary>
-			<br />
-
-			<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
-			<h4 class=''>Trouble Dice({{trouble}})</h4>
-			<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
-			<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
-			<h4 class=''>Normal Rest ({{rest}})</h4>
-			<h4 class=''>Total Success({{totalSuccess}})</h4>
-		</details>
-	</div>
-
-	<div class='chat roll'>
-		<section>
-			{{#if successes}}
-				<h4 style='font-size: x-large;font-weight:bold;'>Success</h4>
-			{{/if}}
-			{{#if criticalSuccess}}
-				<h4 style='font-size: x-large;font-weight:bold;'>Critical Success</h4>
-			{{/if}}
-			{{#if failure}}
-				<h4 style='font-size: x-large;font-weight:bold;'>Failed</h4>
-			{{/if}}
-
-			<div class='roll'>
-				{{#times troubleSucc}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png' />
-				{{/times}}
-				{{#times trouble}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png' />
-				{{/times}}
-				{{#times troubleRest}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png' />
-				{{/times}}
+		<div style='position: relative'>
+			<details>
+				<summary>Expand To See Roll Stats</summary>
 				<br />
-				{{#times normalSucc}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png' />
-				{{/times}}
-				{{#times rest}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png' />
-				{{/times}}
-			</div>
-		</section>
 
-		<section>
-			<hr />
-			<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
-			<hr />
-			{{#if_gt faithpoints 0}}
-				{{#if_gt trouble 0}}
+				<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
+				<h4 class=''>Trouble Dice({{trouble}})</h4>
+				<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
+				<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
+				<h4 class=''>Normal Rest ({{rest}})</h4>
+				<h4 class=''>Total Success({{totalSuccess}})</h4>
+			</details>
+		</div>
 
-					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
-						</a>
-					</div>
-				{{/if_gt}}
+		<div class='chat roll'>
+			<section>
+				{{#if successes}}
+					<h4 style='font-size: x-large;font-weight:bold;'>Success</h4>
+					{{#if_eq rollType 'weapon'}}
+						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
 
-				{{#if canPush}}
-					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>PUSH</span>
-						</a>
+					{{/if_eq}}
+				{{/if}}
+				{{#if criticalSuccess}}
+					<h4 style='font-size: x-large;font-weight:bold;'>Critical Success</h4>
+					{{#if_eq rollType 'weapon'}}
+						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
+
+					{{/if_eq}}
+
+				{{/if}}
+				{{#if failure}}
+					<h4 style='font-size: x-large;font-weight:bold;'>Failed</h4>
+				{{/if}}
+
+				<div class='roll'>
+					{{#times troubleSucc}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png' />
+					{{/times}}
+					{{#times trouble}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png' />
+					{{/times}}
+					{{#times troubleRest}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png' />
+					{{/times}}
+					<br />
+					{{#times normalSucc}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png' />
+					{{/times}}
+					{{#times rest}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png' />
+					{{/times}}
+				</div>
+			</section>
+			{{#if (gte totalSuccess itemData.crit)}}
+				<section>
+					<div style='position: relative'>
+						<details>
+							<summary>Stunts</summary>
+							<br />
+							<h4 class=''>Extra Damage</h4>
+							<h4 class=''>Roll a Critical injury</h4>
+						</details>
 					</div>
-				{{else}}
-					<div class='dice-formula dice-roll'>
-						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
-					</div>
+				</section>
+			{{/if}}
+
+			<section>
+				<hr />
+				<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
+				<hr />
+				{{#if_gt faithpoints 0}}
 					{{#if_gt trouble 0}}
 
 						<div class='dice-formula dice-roll'>
 							<a>
-								<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+								<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
 							</a>
 						</div>
-
 					{{/if_gt}}
-				{{/if}}
-			{{/if_gt}}
-			{{#if_eq faithpoints 0}}
-				<div class='dice-formula dice-roll'>
-					<a>
-						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
-					</a>
-				</div>
-				{{#if_gt trouble 0}}
-					{{#ifn canPush}}
 
+					{{#if canPush}}
 						<div class='dice-formula dice-roll'>
 							<a>
-								<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+								<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>PUSH</span>
 							</a>
 						</div>
-					{{/ifn}}
+					{{else}}
+						<div class='dice-formula dice-roll'>
+							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
+						</div>
+						{{#if_gt trouble 0}}
 
+							<div class='dice-formula dice-roll'>
+								<a>
+									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+								</a>
+							</div>
+
+						{{/if_gt}}
+					{{/if}}
 				{{/if_gt}}
-			{{/if_eq}}
+				{{#if_eq faithpoints 0}}
+					<div class='dice-formula dice-roll'>
+						<a>
+							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
+						</a>
+					</div>
+					{{#if_gt trouble 0}}
+						{{#ifn canPush}}
 
-		</section>
-	</div>
+							<div class='dice-formula dice-roll'>
+								<a>
+									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
+								</a>
+							</div>
+						{{/ifn}}
+
+					{{/if_gt}}
+				{{/if_eq}}
+			</section>
+		</div>
+	{{else}}
+		<div class='dice-formula dice-roll'>
+			<a>
+				<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>You have No Dice to roll</span>
+			</a>
+		</div>
+	{{/if_gt}}
+	{{#if_eq modifiers.subtype 'shootin'}}
+		<div style='position: relative'>
+			<details>
+				<summary>Expand To See Roll modifiers</summary>
+				<br />
+
+				<h4 class=''>Attribute+Skill+Talent ({{modifiers.baseMod}})</h4>
+				<h4 class=''>Range ({{modifiers.shootrangeMod}})</h4>
+				<h4 class=''>Called Shots ({{modifiers.shootcalledShotsMod}})</h4>
+				<h4 class=''>Target Cover ({{modifiers.shootcoverMod}})</h4>
+				<h4 class=''>Target Size ({{modifiers.shootsizeMod}})</h4>
+				<h4 class=''>Target Visibility ({{modifiers.shootvisibilityMod}})</h4>
+				<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.shootmodifierMod}})</h4>
+				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
+			</details>
+		</div>
+	{{/if_eq}}
+	{{#if_eq modifiers.subtype 'fightin'}}
+		<div style='position: relative'>
+			<details>
+				<summary>Expand To See Roll modifiers</summary>
+				<br />
+
+				<h4 class=''>Attribute+Skill+Talents ({{modifiers.baseMod}})</h4>
+				<h4 class=''>Target prone ({{modifiers.fightProneMod}})</h4>
+				<h4 class=''>All-Out Attack ({{modifiers.fightAlloutattackMod}})</h4>
+				<h4 class=''>Called Strike ({{modifiers.fightCalledstrikeMod}})</h4>
+				<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.fightmodifierMod}})</h4>
+				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
+			</details>
+		</div>
+	{{/if_eq}}
+
 </div>
