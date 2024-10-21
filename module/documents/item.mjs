@@ -58,8 +58,6 @@ export class totowItem extends Item {
 						console.log('Weapon Roll - Fightin', dataset, dataset.mod);
 						return await fightin(dataset, rollData);
 
-						break;
-
 					default:
 						break;
 				}
@@ -74,8 +72,9 @@ export class totowItem extends Item {
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
 				modal: true,
-				position: { width: 440 },
+				position: { width: 300 },
 				content,
+				rejectClose: false,
 				buttons: [
 					{
 						label: 'TALESOFTHEOLDWEST.dialog.roll',
@@ -109,6 +108,7 @@ export class totowItem extends Item {
 				modal: true,
 				position: { width: 440 },
 				content,
+				rejectClose: false,
 				buttons: [
 					{
 						label: 'TALESOFTHEOLDWEST.dialog.roll',

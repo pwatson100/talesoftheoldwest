@@ -93,48 +93,16 @@
 	// color: #7a7971;
 }
 
-// .talesoftheoldwest .dice-push a {
-// 	color: #44191a;
-// }
-
-// .talesoftheoldwest .chat.roll .tooltip .down {
-// 	top: 100%;
-// 	left: 0%;
-// }
-
-// .talesoftheoldwest .chat.roll .tooltip .downleft {
-// 	top: -105%;
-// 	left: calc(-5% - 10em);
-// }
-
-// .talesoftheoldwest .chat.roll .tooltip .up {
-// 	top: -105%;
-// 	left: 0%;
-// }
-
-// .talesoftheoldwest .chat.roll .strike {
-// 	color: rgb(0, 0, 0);
-// 	text-decoration: line-through;
-// }
-
-// .talesoftheoldwest .chat.roll .moreinfo {
-// 	border: 0;
-// 	float: right;
-// 	height: 18px;
-// 	width: auto;
-// 	filter: sepia(0.5) contrast(0.75) opacity(0.4);
-// }
-
-// .talesoftheoldwest .totow-rolls.roll {
-// 	display: inline-block;
-// 	width: 24px;
-// 	line-height: 24px;
-// 	margin-right: 1px;
-// 	background-image: url('../../../icons/svg/d6-grey.svg');
-// 	background-repeat: no-repeat;
-// 	background-size: 24px 24px;
-// 	font-size: 16px;
-// 	color: #000;
-// 	font-weight: bold;
-// 	text-align: center;
+.chat-message {
+	font-family: $font-primary;
+	color: black;
+	// background: blue;
+	background-image: url('../assets/background/lapp.webp');
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: auto; /* Resize the background image to cover the entire container */
+	background-origin: content-box;
+}
+// .message-header {
+// 	background-image: url('../assets/background/header-plank.webp');
 // }

@@ -17,13 +17,18 @@
 }
 
 .theme-dark {
-  --talesoftheoldwest-c-dark: #c9c7b8;
-  --talesoftheoldwest-c-faint: #191813;
-  --talesoftheoldwest-c-beige: #444444;
-  --talesoftheoldwest-c-tan: #b5b3a4;
-  --talesoftheoldwest-c-white: #000000;
-  --talesoftheoldwest-c-black: #ffffff;
-  --talesoftheoldwest-c-groove: #11121f;
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+
+:root {
+  --color-charBG: "url(systems/talesoftheoldwest/assets/background/wrinkled-paper.webp) repeat";
+  --color-npcBG: "url(systems/talesoftheoldwest/assets/background/wrinkled-paper.webp) repeat";
 }
 
 .talesoftheoldwest .chat.roll {
@@ -122,6 +127,16 @@
   text-align: center;
 }
 
+.chat-message {
+  font-family: 'Esteban", serif';
+  color: black;
+  background-image: url("../assets/background/lapp.webp");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: auto; /* Resize the background image to cover the entire container */
+  background-origin: content-box;
+}
+
 /* Global styles */
 .window-app {
   font-family: 'Esteban", serif';
@@ -135,6 +150,55 @@
 
 .dice-tooltip .roll > img {
   width: 24px;
+}
+
+body .talesoftheoldwest.application {
+  font-family: 'Esteban", serif';
+  color: black;
+  background: url("../assets/background/lapp.webp");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 107%; /* Resize the background image to cover the entire container */
+  background-origin: content-box;
+  border: unset;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+body.theme-light .dialog .window-content {
+  color: black;
+  background: unset;
+  background-image: url("../assets/background/lapp.webp");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 120%; /* Resize the background image to cover the entire container */
+  background-origin: content-box;
+}
+body.theme-light .dialog .window-content .form-footer button {
+  min-width: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .application input[type=text],
+body .application input[type=number],
+body .application select {
+  background: white;
+  color: black;
+}
+body.theme-dark .talesoftheoldwest.application,
+body .dialog .window-content {
+  color: floralwhite;
+}
+body.theme-dark .talesoftheoldwest.application .form-footer button,
+body .dialog .window-content .form-footer button {
+  min-width: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.application .window-header {
+  background-image: url("../assets/background/header-plank.webp");
 }
 
 .grid,
@@ -433,6 +497,7 @@
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;
+  color: var(--talesoftheoldwest-c-black);
 }
 .talesoftheoldwest .ability {
   margin-bottom: 2px;

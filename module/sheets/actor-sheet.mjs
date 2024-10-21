@@ -70,7 +70,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		super._configureRenderOptions(options);
 		// Not all parts always render
 		// options.parts = ['header', 'tabs', 'body'];
-		options.parts = ['header', 'tabs', 'skills', 'items', 'description', 'effects'];
+		options.parts = ['header', 'tabs', 'skills', 'items', 'description'];
 		// Don't show the other tabs if only limited view
 		if (this.document.limited) return;
 		// Control which parts show based on document subtype
@@ -79,7 +79,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				options.parts.push('skills', 'items', 'description', 'effects');
 				break;
 			case 'npc':
-				options.parts.push('skills', 'items', 'description', 'effects');
+				options.parts.push('skills', 'items', 'description');
 				break;
 		}
 	}
@@ -589,9 +589,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					alias: this.actor.name,
 					actor: this.actor.id,
 				}),
-				roll: result[0],
+				rolls: [result[0]],
 				rollMode: game.settings.get('core', 'rollMode'),
 				content: html,
+				sound: CONFIG.sounds.dice,
 			};
 			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
 				chatData.whisper = ChatMessage.getWhisperRecipients('GM');

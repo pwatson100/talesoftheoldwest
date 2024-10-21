@@ -7,3 +7,4 @@ export { default as totowNPC } from './npc.mjs';
 export { default as totowItemBase } from './item-base.mjs';
 export { default as totowItem } from './item.mjs';
 export { default as totowWeapon } from './weapon.mjs';
+export { default as totowTalent } from './talent.mjs';
