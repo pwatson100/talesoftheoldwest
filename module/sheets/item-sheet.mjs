@@ -105,6 +105,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			case 'talent':
 			case 'item':
 			case 'weapon':
+			case 'crit':
 				// Necessary for preserving active tab on re-render
 				context.tab = context.tabs[partId];
 				break;
@@ -224,10 +225,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let update = {};
 		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 		update[`system.itemModifiers.${modifierId}`] = {
-			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit'),
+			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.name'),
 			value: '1',
 		};
-		await item.update(update).render(true);
+		// await item.update(update).render(true);
+		await item.update(update);
 	}
 	/**
 	 * Handle deleting a modifier.
@@ -263,7 +265,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		// it to null first it works better.
 		await item.update({ 'system.itemModifiers': null });
 		if (Object.keys(itemModifiers).length > 0) {
-			await item.update({ 'system.itemModifiers': itemModifiers }).render(true);
+			// await item.update({ 'system.itemModifiers': itemModifiers }).render(true);
+			await item.update({ 'system.itemModifiers': itemModifiers });
 		}
 	}
 	/**

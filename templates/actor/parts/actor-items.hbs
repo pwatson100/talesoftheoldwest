@@ -1,9 +1,8 @@
 <section class='tab items {{tab.cssClass}}' data-group='primary' data-tab='items'>
 	<ol class='items-list'>
-		<li class='item flexrow items-header'>
-			<div class='item-name'>{{localize 'Name'}}</div>
-			<div class='item-formula'>{{localize 'Roll Formula'}}</div>
-			<div class='item-controls'>
+		<li class='item grid-talent-items items-header'>
+			<div class='item-name TCol2'>{{localize 'Name'}}</div>
+			<div class='item-controls TCol4'>
 				<a
 					class='item-control item-create'
 					title='{{localize "DOCUMENT.Create" type='Item'}}'
@@ -20,17 +19,16 @@
 			</div>
 		</li>
 		{{#each item as |item id|}}
-			<li class='item flexrow' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-				<div class='item-name'>
-					<div class='item-image'>
-						<a class='rollable' data-roll-type='item' data-action='roll'>
-							<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
-						</a>
-					</div>
-					<h4 class='item-name'>{{item.name}}</h4>
+			<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+				{{! <div class='item-name'> }}
+				<div class='item-image TCol11'>
+					<a class='rollable' data-roll-type='item' data-action='roll'>
+						<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+					</a>
 				</div>
-				<div class='item-formula item-prop'>{{item.system.formula}}</div>
-				<div class='item-controls'>
+				<div class='item-name TCol12'>{{item.name}}</div>
+				{{! </div> }}
+				<div class='item-controls TCol14'>
 					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
 						<i class='fas fa-edit'></i>
 					</a>

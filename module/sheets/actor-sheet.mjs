@@ -19,7 +19,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		classes: ['talesoftheoldwest', 'actor'],
 		position: {
 			width: 600,
-			height: 850,
+			height: 896,
+		},
+		window: {
+			// icon: 'fa-solid fa-egg',
+			resizable: true,
 		},
 		actions: {
 			onEditImage: this._onEditImage,
@@ -63,14 +67,19 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		talents: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-talent.html',
 		},
+		itemsinline: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs',
+		},
+		qualityoptions: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs',
+		},
 	};
 
 	/** @override */
 	_configureRenderOptions(options) {
 		super._configureRenderOptions(options);
 		// Not all parts always render
-		// options.parts = ['header', 'tabs', 'body'];
-		options.parts = ['header', 'tabs', 'skills', 'items', 'description'];
+		options.parts = ['header', 'tabs'];
 		// Don't show the other tabs if only limited view
 		if (this.document.limited) return;
 		// Control which parts show based on document subtype
@@ -80,6 +89,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				break;
 			case 'npc':
 				options.parts.push('skills', 'items', 'description');
+				break;
+			case 'animal':
+				options.parts.push('skills');
 				break;
 		}
 	}
@@ -108,17 +120,18 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// this._prepareItems(context);
 
 		// Prepare character data and items.
-		if (context.actor.type === 'pc') {
-			this._prepareItems(context);
-			this._prepareCharacterData(context);
-			// let enrichedFields = ['system.biography'];
-			// await this._enrichTextFields(context, enrichedFields);
-		}
+		// if (context.actor.type === 'pc') {
+		this._prepareItems(context);
+		this._prepareCharacterData(context);
+		// let enrichedFields = ['system.biography'];
+		// await this._enrichTextFields(context, enrichedFields);
+		// }
 
 		// context.rollData = context.actor.getRollData();
-
-		context.archtype_list = CONFIG.TALESOFTHEOLDWEST.archtype_list;
-		context.heritage_list = CONFIG.TALESOFTHEOLDWEST.heritage_list;
+		if (context.actor.type != 'animal') {
+			context.archtype_list = CONFIG.TALESOFTHEOLDWEST.archtype_list;
+			context.heritage_list = CONFIG.TALESOFTHEOLDWEST.heritage_list;
+		}
 
 		logger.debug('Actor Sheet derived data:', context);
 		return context;
@@ -130,6 +143,15 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'skills':
 			case 'items':
 				context.tab = context.tabs[partId];
+				// Enrichment turns text like `[[/r 1d20]]` into buttons
+				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.actor.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.actor,
+				});
 				break;
 			case 'description':
 				context.tab = context.tabs[partId];
@@ -187,6 +209,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					tab.id = 'skills';
 					tab.label += 'Skills';
 					break;
+
 				case 'items':
 					tab.id = 'items';
 					tab.label += 'Items';
@@ -220,6 +243,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const allItems = [];
 		const weapon = [];
 		const talent = [];
+		const animalquality = [];
 
 		// Iterate through items, allocating to containers
 		for (let i of this.document.items) {
@@ -235,14 +259,19 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			else if (i.type === 'talent') {
 				talent.push(i);
 			}
+			// and now animal options
+			else if (i.type === 'animalquality') {
+				animalquality.push(i);
+			}
 			allItems.push(i);
 		}
 
 		// Sort then assign
-		context.allItems = item.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.allItems = allItems.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.item = item.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.weapon = weapon.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-		context.talent = talent;
+		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 	}
 	/**
 	 * Organize and classify Items for Character sheets.
@@ -278,6 +307,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			makin: 0,
 			doctorin: 0,
 			booklearnin: 0,
+			flight: 0,
 		};
 
 		for (let [skey, allItems] of Object.entries(itemData)) {
@@ -363,6 +393,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 								break;
 							case 'booklearnin':
 								sklMod.booklearnin = sklMod.booklearnin += parseInt(mods.value);
+								anyMods++;
+								break;
+							case 'flight':
+								sklMod.flight = sklMod.flight += parseInt(mods.value);
 								anyMods++;
 								break;
 							default:

@@ -73,6 +73,7 @@ export class totowItem extends Item {
 				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
 				modal: true,
 				position: { width: 300 },
+				// classes: ["my-special-class"],
 				content,
 				rejectClose: false,
 				buttons: [
@@ -108,6 +109,7 @@ export class totowItem extends Item {
 				modal: true,
 				position: { width: 440 },
 				content,
+				// classes: ["my-special-class"],
 				rejectClose: false,
 				buttons: [
 					{

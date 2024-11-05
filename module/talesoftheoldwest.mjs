@@ -69,6 +69,7 @@ Hooks.once('init', function () {
 	CONFIG.Actor.dataModels = {
 		pc: models.totowCharacter,
 		npc: models.totowNPC,
+		animal: models.totowANIMAL,
 		// animal: models.totowanimal,
 	};
 	CONFIG.Item.documentClass = totowItem;
@@ -76,6 +77,8 @@ Hooks.once('init', function () {
 		item: models.totowItem,
 		weapon: models.totowWeapon,
 		talent: models.totowTalent,
+		crit: models.totowCrit,
+		animalquality: models.totowAnimalQuality,
 	};
 
 	// Active Effects are never copied to the Actor,
@@ -117,47 +120,6 @@ Handlebars.registerHelper('capitalise', function (str) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
-Handlebars.registerHelper('if_eq', function (a, b, opts) {
-	if (a === b) {
-		return opts.fn(this);
-	} else {
-		return opts.inverse(this);
-	}
-});
-// greater than or equal to
-Handlebars.registerHelper('gte', function (a, b) {
-	return a >= b;
-});
-// less than or equal to
-Handlebars.registerHelper('lte', function (a, b) {
-	return a <= b;
-});
-
-// Ifis not equal
-Handlebars.registerHelper('ifne', function (v1, v2, options) {
-	if (v1 !== v2) return options.fn(this);
-	else return options.inverse(this);
-});
-
-Handlebars.registerHelper('if_gt', function (a, b, opts) {
-	if (a > b) {
-		return opts.fn(this);
-	} else {
-		return opts.inverse(this);
-	}
-});
-Handlebars.registerHelper('if_lt', function (a, b, opts) {
-	if (a < b) {
-		return opts.fn(this);
-	} else {
-		return opts.inverse(this);
-	}
-});
-// if not
-Handlebars.registerHelper('ifn', function (v1, options) {
-	if (!v1) return options.fn(this);
-	else return options.inverse(this);
-});
 /*
  * Repeat given markup with n times
  */
@@ -178,7 +140,9 @@ Handlebars.registerHelper('striptags', function (txt) {
 	// replacing the text
 	return txt.replace(regexp, '');
 });
-
+Handlebars.registerHelper('addstats', function (v1, v2) {
+	return v1 + v2;
+});
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

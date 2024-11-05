@@ -1,20 +1,17 @@
 <header class='sheet-header'>
-	<img class='profile-img' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />
-	<div class='header-fields'>
-		<h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
-		<div class='grid grid-2col'>
+	<div class='grid-item-header'>
 
-			{{#if_eq item.type 'item'}}
-				<div class='resource'>
-					<label class='resource-label'>Quantity</label>
-					<input type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
-				</div>
-				<div class='resource'>
-					<label class='resource-label'>Weight</label>
-					<input type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
-				</div>
-			{{/if_eq}}
-
+		<div class='document-name ItemHedCol1'>
+			<input style='font-size: 35px;max-width: 445px;	height: auto;' name='name' type='text' value='{{item.name}}' placeholder='Name' />
 		</div>
+
+		{{#if (eq item.type 'item')}}
+			<label class='resource-label ItemHedCol3'>Quantity</label>
+			<input class='ItemHedCol4' type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
+			<label class='resource-label ItemHedCol5'>Weight</label>
+			<input class='ItemHedCol6' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+		{{/if}}
+
+		<img class='item-img grid-item-header ItemHedCol2' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />
 	</div>
 </header>

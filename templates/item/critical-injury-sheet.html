@@ -1,0 +1,20 @@
+<div class="resources grid-weapon">
+	<h3 class="resource-label wItem1">{{localize 'TALESOFTHEOLDWEST.TimeLimit'}}</h3>
+
+	<select class="select-css" name="system.attributes.timelimit.value" data-dtype="{{system.attributes.timelimit.value}}">
+		{{selectOptions crit_timelimit_list selected=system.attributes.timelimit.value labelAttr="label" localize=true}}
+	</select>
+
+	<h3 class="resource-label wItem3">{{localize 'TALESOFTHEOLDWEST.HealTime'}}</h3>
+	<span>
+		<input
+			type="text"
+			class="healboxsize wItem4"
+			name="system.attributes.healingtime.value"
+			value="{{system.attributes.healingtime.value}} "
+			data-dtype="String"
+		/>
+	</span>
+	<h3 class="resource-label wItem5">{{localize 'TALESOFTHEOLDWEST.Fatal'}}</h3>
+	<input class="wItem6" name="system.attributes.fatal" type="checkbox" {{checked system.attributes.fatal}} />
+</div>

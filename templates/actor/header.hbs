@@ -1,63 +1,24 @@
 {{! Sheet Header }}
-<header class='sheet-header' data-color-scheme>
-	<img class='profile-img' src='{{actor.img}}' data-edit='img' data-action='onEditImage' title='{{actor.name}}' height='100' width='100' />
-	<div class='header-fields'>
-		<div class='document-name'>
-			<input name='name' type='text' value='{{actor.name}}' placeholder='Name' />
+<header class='sheet-header'>
+	<div class='grid-header'>
+		<div class='document-name HedCol1'>
+			<input style='font-size: 35px;max-width: 445px;	height: auto;' name='name' type='text' value='{{actor.name}}' placeholder='Name' />
 		</div>
-	</div>
-	<div>
-		<div>
-			<label
-				for='system.attributes.grit'
-				class='resource-label rollable flexlarge align-left'
-				data-roll-type='attribute'
-				data-action='roll'
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit"}}'
-				data-mod=' {{system.attributes.grit.mod}}'
-			> {{localize 'TALESOFTHEOLDWEST.Attributes.grit'}}</label>
-			<input class='statnum' name='system.attributes.grit.value' value='{{system.attributes.grit.value}}' data-dtype='Number' />
-			/
-			<input class='statnum' name='system.attributes.grit.max' value='{{system.attributes.grit.max}}' data-dtype='Number' />
-		</div>
-		<div>
-			<label
-				for='system.attributes.quick'
-				class='resource-label rollable flexlarge align-left'
-				data-roll-type='attribute'
-				data-action='roll'
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick"}}'
-				data-mod=' {{system.attributes.quick.mod}}'
-			>{{localize 'TALESOFTHEOLDWEST.Attributes.quick'}}</label>
-			<input class='statnum' name='system.attributes.quick.value' value='{{system.attributes.quick.value}}' data-dtype='Number' />
-			/
-			<input class='statnum' name='system.attributes.quick.max' value='{{system.attributes.quick.max}}' data-dtype='Number' />
-		</div>
-		<div>
-			<label
-				for='system.attributes.cunning'
-				class='resource-label rollable flexlarge align-left'
-				data-roll-type='attribute'
-				data-action='roll'
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning"}}'
-				data-mod=' {{system.attributes.cunning.mod}}'
-			>{{localize 'TALESOFTHEOLDWEST.Attributes.cunning'}}</label>
-			<input class='statnum' name='system.attributes.cunning.value' value='{{system.attributes.cunning.value}}' data-dtype='Number' />
-			/
-			<input class='statnum' name='system.attributes.cunning.max' value='{{system.attributes.cunning.max}}' data-dtype='Number' />
-		</div>
-		<div>
-			<label
-				for='system.attributes.docity'
-				class='resource-label rollable flexlarge align-left'
-				data-roll-type='attribute'
-				data-action='roll'
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity"}}'
-				data-mod='{{system.attributes.docity.mod}}'
-			>{{localize 'TALESOFTHEOLDWEST.Attributes.docity'}}</label>
-			<input class='statnum' name='system.attributes.docity.value' value='{{system.attributes.docity.value}}' data-dtype='Number' />
-			/
-			<input class='statnum' name='system.attributes.docity.max' value='{{system.attributes.docity.max}}' data-dtype='Number' />
-		</div>
+
+		{{#if (eq actor.type 'animal')}}
+			<label for='system.general.archtype' class='resource-label HedCol3'>BREED</label>
+			<input class='HedCol4' type='text' name='system.general.breed' value='{{system.general.breed}}' data-dtype='text' />
+		{{else}}
+			<label for='system.general.archtype' class='resource-label HedCol3'>ARCHTYPE</label>
+			<select class='HedCol4' id='system.general.archtype' name='system.general.archtype'>
+				{{selectOptions archtype_list selected=system.general.archtype labelAttr='label' localize=true}}
+			</select>
+			<label for='system.general.heritage' class='resource-label HedCol5'>HERITAGE</label>
+			<select class='HedCol6' id='system.general.heritage' name='system.general.heritage'>
+				{{selectOptions heritage_list selected=system.general.heritage labelAttr='label' localize=true}}
+			</select>
+		{{/if}}
+
+		<img class='profile-img grid-header HedCol2' src='{{actor.img}}' data-edit='img' data-action='onEditImage' title='{{actor.name}}' />
 	</div>
 </header>

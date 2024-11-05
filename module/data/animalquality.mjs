@@ -1,6 +1,6 @@
 import totowItemBase from './item-base.mjs';
 
-export default class totowTalent extends totowItemBase {
+export default class totowAnimalQuality extends totowItemBase {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		const requiredInteger = { required: true, nullable: false, integer: true };

@@ -2,13 +2,12 @@
 	<div>
 		<h2 style='white-space: pre-wrap;'>{{title}}</h2>
 	</div>
-	{{#if_gt modifiers.mod 0}}
+	{{#if (gt modifiers.mod 0)}}
 
 		<div style='position: relative'>
 			<details>
 				<summary>Expand To See Roll Stats</summary>
 				<br />
-
 				<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
 				<h4 class=''>Trouble Dice({{trouble}})</h4>
 				<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
@@ -22,19 +21,19 @@
 			<section>
 				{{#if successes}}
 					<h4 style='font-size: x-large;font-weight:bold;'>Success</h4>
-					{{#if_eq rollType 'weapon'}}
+					{{#if (eq rollType 'weapon')}}
 						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
 						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
 
-					{{/if_eq}}
+					{{/if}}
 				{{/if}}
 				{{#if criticalSuccess}}
 					<h4 style='font-size: x-large;font-weight:bold;'>Critical Success</h4>
-					{{#if_eq rollType 'weapon'}}
+					{{#if (eq rollType 'weapon')}}
 						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
 						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
 
-					{{/if_eq}}
+					{{/if}}
 
 				{{/if}}
 				{{#if failure}}
@@ -77,15 +76,15 @@
 				<hr />
 				<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
 				<hr />
-				{{#if_gt faithpoints 0}}
-					{{#if_gt trouble 0}}
+				{{#if (gt faithpoints 0)}}
+					{{#if (gt trouble 0)}}
 
 						<div class='dice-formula dice-roll'>
 							<a>
 								<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
 							</a>
 						</div>
-					{{/if_gt}}
+					{{/if}}
 
 					{{#if canPush}}
 						<div class='dice-formula dice-roll'>
@@ -97,7 +96,7 @@
 						<div class='dice-formula dice-roll'>
 							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
 						</div>
-						{{#if_gt trouble 0}}
+						{{#if (gt trouble 0)}}
 
 							<div class='dice-formula dice-roll'>
 								<a>
@@ -105,27 +104,27 @@
 								</a>
 							</div>
 
-						{{/if_gt}}
+						{{/if}}
 					{{/if}}
-				{{/if_gt}}
-				{{#if_eq faithpoints 0}}
+				{{/if}}
+				{{#if (eq faithpoints 0)}}
 					<div class='dice-formula dice-roll'>
 						<a>
 							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
 						</a>
 					</div>
-					{{#if_gt trouble 0}}
-						{{#ifn canPush}}
+					{{#if (gt trouble 0)}}
+						{{#if (ne canPush)}}
 
 							<div class='dice-formula dice-roll'>
 								<a>
 									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
 								</a>
 							</div>
-						{{/ifn}}
+						{{/if}}
 
-					{{/if_gt}}
-				{{/if_eq}}
+					{{/if}}
+				{{/if}}
 			</section>
 		</div>
 	{{else}}
@@ -134,8 +133,8 @@
 				<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>You have No Dice to roll</span>
 			</a>
 		</div>
-	{{/if_gt}}
-	{{#if_eq modifiers.subtype 'shootin'}}
+	{{/if}}
+	{{#if (eq modifiers.subtype 'shootin')}}
 		<div style='position: relative'>
 			<details>
 				<summary>Expand To See Roll modifiers</summary>
@@ -151,8 +150,8 @@
 				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
 			</details>
 		</div>
-	{{/if_eq}}
-	{{#if_eq modifiers.subtype 'fightin'}}
+	{{/if}}
+	{{#if (eq modifiers.subtype 'fightin')}}
 		<div style='position: relative'>
 			<details>
 				<summary>Expand To See Roll modifiers</summary>
@@ -166,6 +165,6 @@
 				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
 			</details>
 		</div>
-	{{/if_eq}}
+	{{/if}}
 
 </div>

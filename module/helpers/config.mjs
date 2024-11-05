@@ -8,10 +8,10 @@ export const TALESOFTHEOLDWEST = {};
  */
 
 TALESOFTHEOLDWEST.attributes = {
-	grit: 'TALESOFTHEOLDWEST.Attributes.grit',
-	quick: 'TALESOFTHEOLDWEST.Attributes.quick',
-	cunning: 'TALESOFTHEOLDWEST.Attributes.cunning',
-	docity: 'TALESOFTHEOLDWEST.Attributes.docity',
+	grit: 'TALESOFTHEOLDWEST.Attributes.grit.name',
+	quick: 'TALESOFTHEOLDWEST.Attributes.quick.name',
+	cunning: 'TALESOFTHEOLDWEST.Attributes.cunning.name',
+	docity: 'TALESOFTHEOLDWEST.Attributes.docity.name',
 };
 
 TALESOFTHEOLDWEST.abilities = {
@@ -31,6 +31,10 @@ TALESOFTHEOLDWEST.abilities = {
 	makin: { name: 'TALESOFTHEOLDWEST.Ability.Makin.long', atob: 'docity' },
 	doctorin: { name: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', atob: 'docity' },
 	booklearnin: { name: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', atob: 'docity' },
+};
+TALESOFTHEOLDWEST.animalabilities = {
+	flight: { name: 'TALESOFTHEOLDWEST.Ability.flight.long', atob: 'quick' },
+	resilience: { name: 'TALESOFTHEOLDWEST.Ability.resilience.long', atob: 'grit' },
 };
 
 TALESOFTHEOLDWEST.abilityAbbreviations = {
@@ -54,7 +58,7 @@ TALESOFTHEOLDWEST.abilityAbbreviations = {
 
 TALESOFTHEOLDWEST.archtype_list = {
 	Trader: { id: 'Trader', label: 'Trader' },
-	Andorian: { id: 'Andorian', label: 'Andorian' },
+	Tracker: { id: 'Tracker', label: 'Tracker' },
 	Caitian: { id: 'Caitian', label: 'Caitian' },
 	Edoan: { id: 'Edoan', label: 'Edoan' },
 	Tellerite: { id: 'Tellerite', label: 'Tellerite' },
@@ -63,7 +67,7 @@ TALESOFTHEOLDWEST.archtype_list = {
 
 TALESOFTHEOLDWEST.heritage_list = {
 	AfricanAmerican: { id: 'African American', label: 'African American' },
-	LieutenantJG: { id: 'Lieutenant, JG', label: 'Lieutenant, JG' },
+	MexicanCibolero: { id: 'Mexican Cibolero', label: 'Mexican Cibolero' },
 	Lieutenant: { id: 'Lieutenant', label: 'Lieutenant' },
 	LieutenantCommander: { id: 'Lieutenant Commander', label: 'Lieutenant Commander' },
 	Commander: { id: 'Commander', label: 'Commander' },
@@ -124,10 +128,10 @@ TALESOFTHEOLDWEST.target_visibility = {
 };
 
 TALESOFTHEOLDWEST.item_modifier_list = {
-	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit' },
-	quick: { id: 'attribute-quick', label: 'TALESOFTHEOLDWEST.Attributes.quick' },
-	cunning: { id: 'attribute-cunning', label: 'TALESOFTHEOLDWEST.Attributes.cunning' },
-	docity: { id: 'attribute-docity', label: 'TALESOFTHEOLDWEST.Attributes.docity' },
+	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name' },
+	quick: { id: 'attribute-quick', label: 'TALESOFTHEOLDWEST.Attributes.quick.name' },
+	cunning: { id: 'attribute-cunning', label: 'TALESOFTHEOLDWEST.Attributes.cunning.name' },
+	docity: { id: 'attribute-docity', label: 'TALESOFTHEOLDWEST.Attributes.docity.name' },
 	labor: { id: 'ability-labor', label: 'TALESOFTHEOLDWEST.Ability.Labor.long' },
 	presence: { id: 'ability-presence', label: 'TALESOFTHEOLDWEST.Ability.Presence.long' },
 	fightin: { id: 'ability-fightin', label: 'TALESOFTHEOLDWEST.Ability.Fightin.long' },
@@ -144,4 +148,13 @@ TALESOFTHEOLDWEST.item_modifier_list = {
 	makin: { id: 'ability-makin', label: 'TALESOFTHEOLDWEST.Ability.Makin.long' },
 	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long' },
 	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long' },
+};
+
+TALESOFTHEOLDWEST.crit_location_list = {
+	lowerleg: { id: 'lowerleg', label: 'TALESOFTHEOLDWEST.CritLocation.lowerleg' },
+	upperleg: { id: 'upperleg', label: 'TALESOFTHEOLDWEST.CritLocation.upperleg' },
+	arm: { id: 'arm', label: 'TALESOFTHEOLDWEST.CritLocation.arm' },
+	gut: { id: 'gut', label: 'TALESOFTHEOLDWEST.CritLocation.gut' },
+	chest: { id: 'chest', label: 'TALESOFTHEOLDWEST.CritLocation.chest' },
+	head: { id: 'head', label: 'TALESOFTHEOLDWEST.CritLocation.head' },
 };

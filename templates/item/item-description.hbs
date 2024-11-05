@@ -1,36 +1,36 @@
 {{! Description Tab }}
 <section class='tab description {{tab.cssClass}}' data-group='primary' data-tab='description'>
-	{{#if_eq item.type 'weapon'}}
+	{{#if (eq item.type 'weapon')}}
 
 		<div class='grid grid-2col'>
 			<label for='system.subtype' class='resource-label'>TYPE</label>
 			<select id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
-			{{#if_eq system.subtype 'shootin'}}
+			{{#if (eq system.subtype 'shootin')}}
 				<label for='system.action' class='resource-label'>ACTION</label>
 				<select id='system.action' name='system.action'>
 					{{selectOptions config.action_list selected=system.action labelAttr='label' localize=true}}
 				</select>
-			{{/if_eq}}
+			{{/if}}
 		</div>
 		<div class='resource grid grid-4col'>
-			{{#if_eq system.subtype 'shootin'}}
+			{{#if (eq system.subtype 'shootin')}}
 				<label for='system.bonusdraw' class='resource-label'>BONUS DRAW</label>
-			{{/if_eq}}
+			{{/if}}
 			<label for='system.attackbonus' class='resource-label'>ATTACK BONUS</label>
 			<label for='system.damage' class='resource-label'>DAMAGE</label>
 			<label for='system.crit' class='resource-label'>CRIT</label>
 		</div>
 		<div class='resource grid grid-4col'>
-			{{#if_eq system.subtype 'shootin'}}
+			{{#if (eq system.subtype 'shootin')}}
 				<input class='statnum' type='text' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
-			{{/if_eq}}
+			{{/if}}
 			<input class='statnum' type='text' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
 			<input class='statnum' type='text' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
 			<input class='statnum' type='text' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
 		</div>
-		{{#if_eq system.subtype 'shootin'}}
+		{{#if (eq system.subtype 'shootin')}}
 			<div class='resource grid grid-4col'>
 				<label for='system.range' class='resource-label'>RANGE</label>
 				<label for='system.ammo' class='resource-label'>AMMO</label>
@@ -41,9 +41,33 @@
 				</select>
 				<input class='statnum' type='text' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
 			</div>
-		{{/if_eq}}
+		{{/if}}
 		<hr />
-	{{/if_eq}}
+	{{/if}}
+	{{#if (eq item.type 'crit')}}
+		<div class='resources grid-weapon'>
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.location'}}</div>
+			<select id='system.location' name='system.location'>
+				{{selectOptions config.crit_location_list selected=system.location labelAttr='label' localize=true}}
+			</select>
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.HealTime'}}</div>
+			<span>
+				<input type='text' class='healboxsize' name='system.healingtime' value='{{system.healingtime}} ' data-dtype='String' />
+			</span>
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.Fatal'}}</div>
+			<input class='' name='system.attributes.fatal' type='checkbox' {{checked system.fatal}} />
+			<div class='resource-label wItem3'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}</div>
+			<span>
+				<input type='text' class='healboxsize' name='system.imediateeffect' value='{{system.imediateeffect}} ' data-dtype='String' />
+			</span>
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}}</div>
+			<span>
+				<input type='text' class='healboxsize' name='system.longtermeffect' value='{{system.longtermeffect}} ' data-dtype='String' />
+			</span>
+		</div>
+		<hr />
+
+	{{/if}}
 
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
 	{{#if editable}}

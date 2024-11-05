@@ -28,13 +28,14 @@
 			"Performin": { "abbr": "PER", "long": "Performin" },
 			"Presence": { "abbr": "PRE", "long": "Presence" },
 			"Resilience": { "abbr": "RES", "long": "Resilience" },
-			"Shootin": { "abbr": "SHT", "long": "Shootin'" }
+			"Shootin": { "abbr": "SHT", "long": "Shootin'" },
+			"flight": { "abbr": "FLI", "long": "Flight" }
 		},
 		"Attributes": {
-			"cunning": "Cunning",
-			"docity": "Docity",
-			"grit": "Grit",
-			"quick": "Quick"
+			"cunning": { "name": "Cunning", "type": "Hurts" },
+			"docity": { "name": "Docity", "type": "Shakes" },
+			"grit": { "name": "Grit", "type": "Vexes" },
+			"quick": { "name": "Quick", "type": "Doubts" }
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -105,17 +106,35 @@
 			"roll": "ROLL",
 			"cancel": "CANCEL",
 			"ok": "OK"
+		},
+		"CritLocation": {
+			"lowerleg": "Lower Leg",
+			"upperleg": "Upper Leg",
+			"arm": "Arm",
+			"gut": "Gut",
+			"chest": "Chest",
+			"head": "Head"
+		},
+		"Criticals": {
+			"location": "Location",
+			"HealTime": "Healing Time",
+			"Fatal": "Fatal",
+			"imediateeffect": "Immediate Effect",
+			"longtermeffect": "Long Term Effect"
 		}
 	},
 	"TYPES": {
 		"Actor": {
 			"npc": "NPC",
-			"pc": "PC"
+			"pc": "PC",
+			"animal": "Animal"
 		},
 		"Item": {
 			"item": "Item",
 			"talent": "Talent",
-			"weapon": "Weapon"
+			"weapon": "Weapon",
+			"crit": "Critical Injury",
+			"animalquality": "Animal Quality"
 		}
 	}
 }

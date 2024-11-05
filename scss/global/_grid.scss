@@ -127,3 +127,450 @@
 .grid-span-12 {
 	grid-column-end: span 12;
 }
+.body-container {
+	display: grid;
+	padding-left: 10px;
+	grid-template-areas: 'Col1 Col2';
+	grid-template-columns: 234px 304px;
+}
+.Col1 {
+	grid-area: Col1;
+}
+.Col2 {
+	grid-area: Col2;
+}
+.atributes-container {
+	display: grid;
+	padding-left: 10px;
+	grid-template-areas:
+		'AColHeader AColHeader'
+		'ACol1 ACol2'
+		'ACol3 ACol4'
+		'ACol5 ACol6'
+		'ACol7 ACol8';
+	grid-template-columns: 70px 140px;
+}
+
+.AColHeader {
+	grid-area: AColHeader;
+	text-align: center;
+}
+.ACol1 {
+	grid-area: ACol1;
+	justify-self: center;
+}
+.ACol2 {
+	grid-area: ACol2;
+	justify-self: center;
+	align-self: center;
+}
+.ACol3 {
+	grid-area: ACol3;
+	justify-self: center;
+}
+.ACol4 {
+	grid-area: ACol4;
+	justify-self: center;
+	align-self: center;
+}
+.ACol5 {
+	grid-area: ACol5;
+	justify-self: center;
+}
+.ACol6 {
+	grid-area: ACol6;
+	justify-self: center;
+	align-self: center;
+}
+.ACol7 {
+	grid-area: ACol7;
+	justify-self: center;
+}
+.ACol8 {
+	grid-area: ACol8;
+	justify-self: center;
+	align-self: center;
+}
+.abilities-container {
+	display: grid;
+	padding-left: 10px;
+	align-items: center;
+	grid-template-areas:
+		'ABColHeader ABColHeader'
+		'Labor Labor2'
+		'Presence Presence2'
+		'Fightin Fightin2'
+		'Move Move2'
+		'Operate Operate2'
+		'Shootin Shootin2'
+		'Lightfingered Lightfingered2'
+		'Hawkeye Hawkeye2'
+		'Nature Nature2'
+		'Insight Insight2'
+		'Animalhandlin Animalhandlin2'
+		'Performin Performin2'
+		'Makin Makin2'
+		'Doctorin Doctorin2'
+		'Booklearnin Booklearnin2';
+	grid-template-columns: 110px 120px;
+}
+.ABColHeader {
+	grid-area: ABColHeader;
+	text-align: center;
+}
+.Labor {
+	grid-area: Labor;
+}
+.Labor2 {
+	grid-area: Labor2;
+}
+.Presence {
+	grid-area: Presence;
+}
+.Presence2 {
+	grid-area: Presence2;
+}
+.Fightin {
+	grid-area: Fightin;
+}
+.Fightin2 {
+	grid-area: Fightin2;
+}
+.Move {
+	grid-area: Move;
+}
+.Move2 {
+	grid-area: Move2;
+}
+.Operate {
+	grid-area: Operate;
+}
+.Operate2 {
+	grid-area: Operate2;
+}
+.Shootin {
+	grid-area: Shootin;
+}
+.Shootin2 {
+	grid-area: Shootin2;
+}
+.Lightfingered {
+	grid-area: Lightfingered;
+}
+.Lightfingered2 {
+	grid-area: Lightfingered2;
+}
+.Hawkeye {
+	grid-area: Hawkeye;
+}
+.Hawkeye2 {
+	grid-area: Hawkeye2;
+}
+.Nature {
+	grid-area: Nature;
+}
+.Nature2 {
+	grid-area: Nature2;
+}
+.Insight {
+	grid-area: Insight;
+}
+.Insight2 {
+	grid-area: Insight2;
+}
+.Animalhandlin {
+	grid-area: Animalhandlin;
+}
+.Animalhandlin2 {
+	grid-area: Animalhandlin2;
+}
+.Performin {
+	grid-area: Performin;
+}
+.Performin2 {
+	grid-area: Performin2;
+}
+.Makin {
+	grid-area: Makin;
+}
+.Makin2 {
+	grid-area: Makin2;
+}
+.Doctorin {
+	grid-area: Doctorin;
+}
+.Doctorin2 {
+	grid-area: Doctorin2;
+}
+.Booklearnin {
+	grid-area: Booklearnin;
+}
+.Booklearnin2 {
+	grid-area: Booklearnin2;
+}
+
+.header-container {
+	display: grid;
+	gap: 5px;
+	padding: 0;
+	justify-content: center;
+	grid-template-areas:
+		'HCol1 HCol2'
+		'HCol3 HCol4';
+	grid-template-columns: 100px 200px;
+}
+.HCol1 {
+	grid-area: HCol1;
+	align-self: center;
+}
+.HCol2 {
+	grid-area: HCol2;
+	align-self: center;
+}
+
+.HCol3 {
+	grid-area: HCol3;
+	align-self: center;
+}
+.HCol4 {
+	grid-area: HCol4;
+	align-self: center;
+}
+
+.faith-container {
+	display: grid;
+	gap: 5px;
+	padding: 3px 0px 15px 0px;
+	justify-content: center;
+	grid-template-areas: 'FCol1 FCol1 FCol2 FCol2' 'FCol3 FCol4 FCol5 FCol6';
+	grid-template-columns: 77px 70px 108px 66px;
+}
+.FCol1 {
+	grid-area: FCol1;
+	align-self: center;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+.FCol2 {
+	grid-area: FCol2;
+}
+
+.FCol3 {
+	grid-area: FCol3;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.FCol4 {
+	grid-area: FCol4;
+	align-self: center;
+}
+.FCol5 {
+	grid-area: FCol5;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.FCol6 {
+	grid-area: FCol6;
+	align-self: center;
+}
+
+.grid-weapon-items {
+	display: grid;
+	grid-template-areas:
+		'lCol1 lCol2 lCol3 lCol4 lCol5 lCol6'
+		'lCol11 lCol12 lCol13 lCol14 lCol15 lCol16';
+	padding-bottom: 2px;
+	//                      l1   l2  l3    l4  l5    l6
+	grid-template-columns: 29px 177px 34px 49px 36px 48px;
+	align-items: center;
+}
+
+.lCol1 {
+	grid-area: lCol1;
+	justify-self: left;
+}
+.lCol2 {
+	grid-area: lCol2;
+	justify-self: center;
+}
+.lCol3 {
+	grid-area: lCol3;
+	justify-self: center;
+}
+.lCol4 {
+	grid-area: lCol4;
+	justify-self: center;
+}
+.lCol5 {
+	grid-area: lCol5;
+	justify-self: center;
+}
+.lCol6 {
+	grid-area: lCol6;
+	justify-self: left;
+}
+
+.lCol11 {
+	grid-area: lCol11;
+	justify-self: center;
+}
+.lCol12 {
+	grid-area: lCol12;
+	justify-self: left;
+	font-weight: bold;
+}
+.lCol13 {
+	grid-area: lCol13;
+	justify-self: center;
+}
+.lCol14 {
+	grid-area: lCol14;
+	justify-self: center;
+}
+.lCol15 {
+	grid-area: lCol15;
+	justify-self: center;
+}
+.lCol16 {
+	grid-area: lCol16;
+	justify-self: center;
+}
+.grid-talent-items {
+	display: grid;
+	grid-template-areas:
+		'TCol1 TCol2 TCol3 TCol4 '
+		'TCol11 TCol12 TCol13 TCol14 ';
+	padding-bottom: 2px;
+	//                      l1   l2  l3    l4
+	grid-template-columns: 30px 148px 143px 50px;
+	align-items: center;
+}
+
+.TCol1 {
+	grid-area: TCol1;
+	justify-self: left;
+}
+.TCol2 {
+	grid-area: TCol2;
+	justify-self: center;
+}
+.TCol3 {
+	grid-area: TCol3;
+	justify-self: center;
+}
+.TCol4 {
+	grid-area: TCol4;
+	justify-self: center;
+}
+
+.TCol11 {
+	grid-area: TCol11;
+	justify-self: center;
+}
+.TCol12 {
+	grid-area: TCol12;
+	justify-self: left;
+	font-weight: bold;
+}
+.TCol13 {
+	grid-area: TCol13;
+	justify-self: center;
+}
+.TCol14 {
+	grid-area: TCol14;
+	justify-self: center;
+}
+
+.grid-header {
+	display: grid;
+	// margin: 0px;
+	// padding-top: 0px;
+	grid-template-areas:
+		'HedCol1 HedCol1 HedCol2'
+		'HedCol3 HedCol4 HedCol2 '
+		'HedCol5 HedCol6 HedCol2 ';
+	// padding-bottom: 2px;
+	//                      l1   l2  l3
+	grid-template-columns: 150px 250px auto;
+	// align-items: center;
+}
+
+.HedCol1 {
+	grid-area: HedCol1;
+	// justify-self: left;
+}
+.HedCol2 {
+	grid-area: HedCol2;
+	// height: 140px;
+}
+.HedCol3 {
+	grid-area: HedCol3;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.HedCol4 {
+	grid-area: HedCol4;
+	align-self: center;
+}
+.HedCol5 {
+	grid-area: HedCol5;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.HedCol6 {
+	grid-area: HedCol6;
+	align-self: center;
+}
+.grid-item-header {
+	display: grid;
+	// margin: 0px;
+	// padding-top: 0px;
+	grid-template-areas:
+		'ItemHedCol1 ItemHedCol1 ItemHedCol2'
+		'ItemHedCol3 ItemHedCol4 ItemHedCol2 '
+		'ItemHedCol5 ItemHedCol6 ItemHedCol2 ';
+	// padding-bottom: 2px;
+	//                      l1   l2  l3
+	grid-template-columns: 140px 140px 160px;
+	// align-items: center;
+}
+
+.ItemHedCol1 {
+	grid-area: ItemHedCol1;
+	// justify-self: left;
+}
+.ItemHedCol2 {
+	grid-area: ItemHedCol2;
+	// height: 140px;
+}
+.ItemHedCol3 {
+	grid-area: ItemHedCol3;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.ItemHedCol4 {
+	grid-area: ItemHedCol4;
+	align-self: center;
+}
+.ItemHedCol5 {
+	grid-area: ItemHedCol5;
+	align-self: center;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+}
+.ItemHedCol6 {
+	grid-area: ItemHedCol6;
+	align-self: center;
+}

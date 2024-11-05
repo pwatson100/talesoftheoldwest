@@ -18,15 +18,28 @@ body {
 	.talesoftheoldwest.application {
 		font-family: $font-primary;
 		color: black;
-		// background: url('../assets/background/lapp.webp') ;
+		width: 600;
+		height: 896;
+	}
+	&.theme-light .application {
+		background-image: url('../assets/background/lapp.webp');
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 100% 100%;
+		border: unset;
+		filter: drop-shadow(8px 12px 8px #353232) !important;
+		box-shadow: unset;
+		// border: 3px solid black;
+	}
+	&.theme-dark .application {
 		background: url('../assets/background/lapp.webp');
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: 107%; /* Resize the background image to cover the entire container */
 		background-origin: content-box;
 		border: unset;
-		// border-radius: 6px;
+		filter: drop-shadow(8px 12px 8px #353232) !important;
 		box-shadow: unset;
+		// border: 3px solid black;
 	}
 
 	&.theme-light .dialog .window-content {
@@ -35,9 +48,24 @@ body {
 		background-image: url('../assets/background/lapp.webp');
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: 120%; /* Resize the background image to cover the entire container */
+		background-size: cover; /* Resize the background image to cover the entire container */
 		background-origin: content-box;
 
+		.form-footer {
+			button {
+				min-width: auto;
+				width: fit-content;
+			}
+		}
+	}
+	&.theme-dark .dialog .window-content {
+		color: black;
+		background: unset;
+		background-image: url('../assets/background/lapp.webp');
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: cover; /* Resize the background image to cover the entire container */
+		background-origin: content-box;
 		.form-footer {
 			button {
 				min-width: auto;
@@ -54,19 +82,18 @@ body {
 		// outline: 1px solid transparent;
 		color: black;
 	}
-	&.theme-dark .talesoftheoldwest.application,
-	.dialog .window-content {
-		color: floralwhite;
-		.form-footer {
-			button {
-				min-width: auto;
-				width: fit-content;
-			}
-		}
-	}
 }
 
 .application .window-header {
 	background-image: url('../assets/background/header-plank.webp');
 	// background: blue;
+}
+
+.application .window-resize-handle {
+	position: absolute;
+	inset: auto -2px -3px auto;
+	width: 24px;
+	height: 24px;
+	cursor: nwse-resize;
+	background: transparent url(../ui/alien-dice-b6.png) no-repeat center / contain;
 }

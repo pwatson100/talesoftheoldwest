@@ -1,56 +1,259 @@
 <section class="tab skills {{tab.cssClass}}" data-group="primary" data-tab="skills">
-	<div class="resource grid grid-4col">
-		<label for="system.general.archtype" class="resource-label">ARCHTYPE</label>
-		<label for="system.general.xp.value" class="resource-label">EXPERIENCE</label>
-		<label for="system.general.money.value" class="resource-label">MONEY</label>
-	</div>
-	<div class="resource grid grid-4col">
-		<select id="system.general.archtype" name="system.general.archtype">
-			{{selectOptions archtype_list selected=system.general.archtype labelAttr="label" localize=true}}
-		</select>
-		<input class="statnum" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
-		<label for="system.general.money.value">$</label
-		><input class="currency" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
-	</div>
-
-	<div class="resource grid grid-4col">
-		<label for="system.general.heritage" class="resource-label">HERITAGE</label>
-		<label for="system.general.faith" class="resource-label">FAITH</label>
-		<label for="system.general.faithpoints" class="resource-label">FAITH POINTS</label>
-	</div>
-	<div class="resource grid grid-4col">
-		<select id="system.general.heritage" name="system.general.heritage">
-			{{selectOptions heritage_list selected=system.general.heritage labelAttr="label" localize=true}}
-		</select>
-		<input type="text" name="system.general.faith" value="{{system.general.faith}}" data-dtype="text" />
-		<input class="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
-	</div>
-	<div class="resource grid grid-4col">
-		<label for="system.general.bigdream" class="resource-label">BIG DREAM</label>
-		<label for="system.general.yourpardner" class="resource-label">YOUR PARDNER</label>
-	</div>
-	<div class="resource grid grid-4col">
-		<input type="text" name="system.general.bigdream" value="{{system.general.bigdream}}" data-dtype="text" />
-		<input type="text" name="system.general.yourpardner" value="{{system.general.yourpardner}}" data-dtype="text" />
-	</div>
-
-	<div class="grid grid-7col">
-		{{#each system.abilities as |ability key|}}
-		<div class="">
-			<label
-				for="system.abilities.{{key}}.value"
-				class="resource-label rollable flexlarge align-left"
-				data-roll-type="ability"
-				data-action="roll"
-				data-value="{{ability.value}}"
-				data-label="{{ability.label}} "
-				data-mod="{{ability.mod}}"
-				data-attr="{{ability.attr}}"
-				>{{ability.label}}</label
-			>
-			<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+	{{#if (eq actor.type "animal")}}
+	<div class="body-container">
+		<div class="Col1">
+			<div class="atributes-container">
+				<div class="AColHeader">ATTRIBUTES</div>
+				<div class="ACol1">
+					<label
+						style="font-size: large"
+						for="system.attributes.grit"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
+						data-mod=" {{system.attributes.grit.mod}}"
+					>
+						{{localize 'TALESOFTHEOLDWEST.Attributes.grit.name'}} <br />
+						<span style="font-size: smaller">&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.grit.type'}}</span></label
+					>
+				</div>
+				<div class="ACol2">
+					<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
+				</div>
+				<div class="ACol3">
+					<label
+						style="font-size: large"
+						for="system.attributes.quick"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
+						data-mod=" {{system.attributes.quick.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Attributes.quick.name'}} <br /><span style="font-size: smaller"
+							>&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.quick.type'}}</span
+						></label
+					>
+				</div>
+				<div class="ACol4">
+					<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
+				</div>
+			</div>
+			<div class="abilities-container">
+				<div class="ABColHeader">ABILITIES</div>
+				<div class="flight">
+					<label
+						style="font-size: large"
+						for="system.abilities.flight"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Ability.flight.long"}}'
+						data-mod=" {{system.abilities.flight.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Ability.flight.long'}}</label
+					>
+				</div>
+				<div class="flight2">
+					<input class="statnum" name="system.abilities.flight.value" value="{{system.abilities.flight.value}}" data-dtype="Number" />
+				</div>
+				<div class="resilience">
+					<label
+						style="font-size: large"
+						for="system.abilities.resilience"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Ability.Resilience.long"}}'
+						data-mod=" {{system.abilities.resilience.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Ability.Resilience.long'}}</label
+					>
+				</div>
+				<div class="resilience2">
+					<input class="statnum" name="system.abilities.resilience.value" value="{{system.abilities.resilience.value}}" data-dtype="Number" />
+				</div>
+			</div>
 		</div>
-		{{/each}}
+
+		<!-- COLUMN2 -->
+
+		<div class="Col2">
+			<div class="faith-container">
+				<div class="FCol3">
+					<label for="system.general.cost.value" class="resource-label">COST $</label>
+				</div>
+				<div class="FCol4">
+					<input class="currency" name="system.general.cost.value" value="{{system.general.cost.value}}" data-dtype="Number" />
+				</div>
+				<div class="FCol5">
+					<label for="system.general.ridingmodifier.value" class="resource-label">Riding Modifier</label>
+				</div>
+				<div class="FCol6">
+					<input class="experience" name="system.general.ridingmodifier.value" value="{{system.general.ridingmodifier.value}}" data-dtype="Number" />
+				</div>
+			</div>
+			<div class="heading">
+				<label for="system.general.faith" class="resource-label">QUALITY OPTIONS</label>
+				<div style="width: 380px; margin-left: -32px">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
+			</div>
+		</div>
 	</div>
-	{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}} {{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.html"}}
+	<div>{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
+	<div style="margin-top: 100px">
+		{{#if editable}}
+		<prose-mirror name="system.biography" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
+			{{{enrichedBiography}}}
+		</prose-mirror>
+		{{else}} {{{enrichedBiography}}} {{/if}}
+	</div>
+	{{else}}
+	<div class="body-container">
+		<div class="Col1">
+			<div class="atributes-container">
+				<div class="AColHeader">ATTRIBUTES</div>
+				<div class="ACol1">
+					<label
+						style="font-size: large"
+						for="system.attributes.grit"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
+						data-mod=" {{system.attributes.grit.mod}}"
+					>
+						{{localize 'TALESOFTHEOLDWEST.Attributes.grit.name'}} <br />
+						<span style="font-size: smaller">&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.grit.type'}}</span></label
+					>
+				</div>
+				<div class="ACol2">
+					<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
+				</div>
+				<div class="ACol3">
+					<label
+						style="font-size: large"
+						for="system.attributes.quick"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
+						data-mod=" {{system.attributes.quick.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Attributes.quick.name'}} <br /><span style="font-size: smaller"
+							>&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.quick.type'}}</span
+						></label
+					>
+				</div>
+				<div class="ACol4">
+					<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
+				</div>
+				<div class="ACol5">
+					<label
+						style="font-size: large"
+						for="system.attributes.cunning"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
+						data-mod=" {{system.attributes.cunning.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Attributes.cunning.name'}} <br /><span style="font-size: smaller"
+							>&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.cunning.type'}}</span
+						></label
+					>
+				</div>
+				<div class="ACol6">
+					<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
+				</div>
+				<div class="ACol7">
+					<label
+						style="font-size: large"
+						for="system.attributes.docity"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="attribute"
+						data-action="roll"
+						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
+						data-mod="{{system.attributes.docity.mod}}"
+						>{{localize 'TALESOFTHEOLDWEST.Attributes.docity.name'}} <br /><span style="font-size: smaller"
+							>&nbsp;&nbsp; {{localize 'TALESOFTHEOLDWEST.Attributes.docity.type'}}</span
+						></label
+					>
+				</div>
+				<div class="ACol8">
+					<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" />
+					<span style="font-weight: bolder; font-size: x-large">/</span>
+					<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
+				</div>
+			</div>
+
+			<div class="abilities-container">
+				<div class="ABColHeader">ABILITIES</div>
+				{{#each system.abilities as |ability key|}}
+				<div class="{{key}}">
+					<label
+						for="system.abilities.{{key}}.value"
+						class="resource-label rollable flexlarge align-left"
+						data-roll-type="ability"
+						data-action="roll"
+						data-value="{{ability.value}}"
+						data-label="{{ability.label}}"
+						data-mod="{{ability.mod}}"
+						data-attr="{{ability.attr}}"
+						>{{ability.label}}</label
+					>
+				</div>
+				<div class="{{key}}2">
+					<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+				</div>
+				{{/each}}
+			</div>
+		</div>
+
+		<!-- COLUMN2 -->
+
+		<div class="Col2">
+			<div class="heading">
+				<label for="system.general.faith" class="resource-label">FAITH</label>
+				<textarea class="textarea-format" name="system.general.faith" data-dtype="String" rows="2">{{system.general.faith}}</textarea>
+			</div>
+			<div style="text-align: center">
+				<label class="heading" for="system.general.faithpoints" class="resource-label">FAITH POINTS</label>
+				<input class="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
+			</div>
+			<div class="faith-container">
+				<div class="FCol3">
+					<label for="system.general.money.value" class="resource-label">MONEY $</label>
+				</div>
+				<div class="FCol4">
+					<input class="currency" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
+				</div>
+				<div class="FCol5">
+					<label for="system.general.xp.value" class="resource-label">EXPERIENCE</label>
+				</div>
+				<div class="FCol6">
+					<input class="experience" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
+				</div>
+			</div>
+			<div class="heading">
+				<label for="system.general.bigdream" class="resource-label">BIG DREAM</label>
+				<textarea class="textarea-format" name="system.general.bigdream" data-dtype="String" rows="2">{{system.general.bigdream}}</textarea>
+			</div>
+
+			<div class="heading" style="margin-top: 10px">
+				<label for="system.general.yourpardner" class="resource-label">YOUR PARDNER</label>
+				<input type="text" name="system.general.yourpardner" value="{{system.general.yourpardner}}" data-dtype="text" />
+			</div>
+
+			<div style="width: 380px; margin-left: -64px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}}</div>
+
+			<div style="width: 380px; margin-left: -64px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.html"}}</div>
+		</div>
+	</div>
+	{{/if}}
 </section>
