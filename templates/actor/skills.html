@@ -97,13 +97,18 @@
 			</div>
 			<div class="heading">
 				<label for="system.general.faith" class="resource-label">QUALITY OPTIONS</label>
-				<div style="width: 380px; margin-left: -32px">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
+				<div style="width: 350px; margin-left: -32px">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
 			</div>
 		</div>
 	</div>
-	<div>{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
+	<div style="margin-top: 20px">
+		<label for="system.biography" class="heading">GEAR</label>
+		{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}
+	</div>
 	<div style="margin-top: 100px">
 		{{#if editable}}
+		<label for="system.biography" class="heading">DESCRIPTION</label>
+
 		<prose-mirror name="system.biography" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
 			{{{enrichedBiography}}}
 		</prose-mirror>

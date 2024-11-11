@@ -105,7 +105,8 @@
 		"dialog": {
 			"roll": "ROLL",
 			"cancel": "CANCEL",
-			"ok": "OK"
+			"ok": "OK",
+			"roll-modifiers": "roll modifiers"
 		},
 		"CritLocation": {
 			"lowerleg": "Lower Leg",

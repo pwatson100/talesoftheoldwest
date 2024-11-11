@@ -781,6 +781,47 @@ body .application select {
   justify-self: center;
 }
 
+.grid-talent-quality {
+  display: grid;
+  grid-template-areas: "QCol1 QCol2 QCol3 " "QCol11 QCol12 QCol13 ";
+  padding-bottom: 2px;
+  grid-template-columns: 30px 260px 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.QCol1 {
+  grid-area: QCol1;
+  justify-self: left;
+}
+
+.QCol2 {
+  grid-area: QCol2;
+  justify-self: center;
+}
+
+.QCol3 {
+  grid-area: QCol3;
+  justify-self: center;
+}
+
+.QCol11 {
+  grid-area: QCol11;
+  justify-self: center;
+}
+
+.QCol12 {
+  grid-area: QCol12;
+  justify-self: left;
+  font-weight: bold;
+}
+
+.QCol13 {
+  grid-area: QCol13;
+  justify-self: center;
+}
+
 .grid-header {
   display: grid;
   grid-template-areas: "HedCol1 HedCol1 HedCol2" "HedCol3 HedCol4 HedCol2 " "HedCol5 HedCol6 HedCol2 ";

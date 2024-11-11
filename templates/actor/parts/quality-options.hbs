@@ -1,7 +1,7 @@
 <ol class='items-list'>
-	<li class='item grid-talent-items items-header'>
-		<div class='item-name TCol2'>{{localize 'Name'}}</div>
-		<div class='item-controls TCol4'>
+	<li class='item grid-talent-quality items-header'>
+		<div class='item-name QCol2'>{{localize 'Name'}}</div>
+		<div class='item-controls QCol3'>
 			<a
 				class='item-control item-create'
 				title='{{localize "DOCUMENT.Create" type='animalquality'}}'
@@ -18,16 +18,16 @@
 		</div>
 	</li>
 	{{#each animalquality as |item id|}}
-		<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+		<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
 			{{! <div class='item-name'> }}
-			<div class='item-image TCol11'>
+			<div class='item-image QCol11'>
 				<a>
 					<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
 				</a>
 			</div>
-			<div class='item-name TCol12'>{{item.name}}</div>
+			<div class='item-name QCol12'>{{item.name}}</div>
 			{{! </div> }}
-			<div class='item-controls TCol14'>
+			<div class='item-controls QCol13'>
 				<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
 					<i class='fas fa-edit'></i>
 				</a>

@@ -40,7 +40,68 @@
 			"path": "lang/en.json"
 		}
 	],
-	"packs": [],
+	"packs": [
+		{
+			"name": "quickstart-actors",
+			"label": "Quickstart Actors",
+			"path": "packs/quickstart-actors",
+			"type": "Actor",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "talesoftheoldwest",
+			"flags": {}
+		},
+		{
+			"name": "quickstart-scenes",
+			"label": "Quickstart Scenes",
+			"path": "packs/quickstart-scenes",
+			"type": "Scene",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "talesoftheoldwest",
+			"flags": {}
+		},
+		{
+			"name": "quickstart-items",
+			"label": "Quickstart Items",
+			"path": "packs/quickstart-items",
+			"type": "Item",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "talesoftheoldwest",
+			"flags": {}
+		},
+		{
+			"name": "quickstart-rolltables",
+			"label": "Quickstart Rolltables",
+			"path": "packs/quickstart-rolltables",
+			"type": "RollTable",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "talesoftheoldwest",
+			"flags": {}
+		},
+		{
+			"name": "quickstart-adventure",
+			"label": "Quickstart Adventure",
+			"path": "packs/quickstart-adventure",
+			"type": "Adventure",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			},
+			"system": "talesoftheoldwest",
+			"flags": {}
+		}
+	],
 	"packFolders": [],
 	"socket": false,
 	"manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
