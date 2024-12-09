@@ -19,12 +19,12 @@ export class totowNormalDie extends foundry.dice.terms.Die {
 	/** @override */
 	getResultLabel(result) {
 		return {
-			1: '<img src="systems/talesoftheoldwest/ui/DsN/y1.png" />',
-			2: '<img src="systems/talesoftheoldwest/ui/DsN/y2.png" />',
-			3: '<img src="systems/talesoftheoldwest/ui/DsN/y3.png" />',
-			4: '<img src="systems/talesoftheoldwest/ui/DsN/y4.png" />',
-			5: '<img src="systems/talesoftheoldwest/ui/DsN/y5.png" />',
-			6: '<img src="systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png" />',
+			1: '<img src="systems/talesoftheoldwest/ui/DsN/1-normal.webp" />',
+			2: '<img src="systems/talesoftheoldwest/ui/DsN/2-normal.webp" />',
+			3: '<img src="systems/talesoftheoldwest/ui/DsN/3-normal.webp" />',
+			4: '<img src="systems/talesoftheoldwest/ui/DsN/4-normal.webp" />',
+			5: '<img src="systems/talesoftheoldwest/ui/DsN/5-normal.webp" />',
+			6: '<img src="systems/talesoftheoldwest/ui/DsN/6-normal.webp" />',
 		}[result.result];
 	}
 }
@@ -49,12 +49,12 @@ export class totowTroubleDie extends foundry.dice.terms.Die {
 	/** @override */
 	getResultLabel(result) {
 		return {
-			1: '<img src="systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png" />',
-			2: '<img src="systems/talesoftheoldwest/ui/DsN/b2.png" />',
-			3: '<img src="systems/talesoftheoldwest/ui/DsN/b3.png" />',
-			4: '<img src="systems/talesoftheoldwest/ui/DsN/b4.png" />',
-			5: '<img src="systems/talesoftheoldwest/ui/DsN/b5.png" />',
-			6: '<img src="systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png" />',
+			1: '<img src="systems/talesoftheoldwest/ui/DsN/trouble-face.webp" />',
+			2: '<img src="systems/talesoftheoldwest/ui/DsN/2-face.webp" />',
+			3: '<img src="systems/talesoftheoldwest/ui/DsN/3-face.webp" />',
+			4: '<img src="systems/talesoftheoldwest/ui/DsN/4-face.webp" />',
+			5: '<img src="systems/talesoftheoldwest/ui/DsN/5-face.webp" />',
+			6: '<img src="systems/talesoftheoldwest/ui/DsN/6-face.webp" />',
 		}[result.result];
 	}
 }

@@ -66,19 +66,31 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 	const myActor = game.actors.get(result.myActor);
 	await myActor.update({ 'system.general.faithpoints.value': myActor.system.general.faithpoints.value - 1 });
 	const totalRolled = result.troubleSucc + result.trouble + result.troubleRest + result.normalSucc + result.rest <= 0;
-	origRollData[1].canPush = false;
+	origRollData[1].canPush = 'pushed';
 	origRollData[1].formula = formula;
 	origRollData[1].troubleSucc += result.troubleSucc;
+	origRollData[1].troubleFive = result.troubleFive;
+	origRollData[1].troubleFour = result.troubleFour;
+	origRollData[1].troubleThree = result.troubleThree;
+	origRollData[1].troubleTwo = result.troubleTwo;
 	origRollData[1].trouble += result.trouble;
+	origRollData[1].totalTrouble += result.totalTrouble;
+	origRollData[1].troubleBlank = 0;
 	origRollData[1].troubleRest = result.troubleRest;
 	origRollData[1].normalSucc += result.normalSucc;
+	origRollData[1].normalFive = result.normalFive;
+	origRollData[1].normalFour = result.normalFour;
+	origRollData[1].normalThree = result.normalThree;
+	origRollData[1].normalTwo = result.normalTwo;
+	origRollData[1].normalOne = result.normalOne;
 	origRollData[1].rest = result.rest;
 	origRollData[1].totalSuccess += result.totalSuccess;
 	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
 	origRollData[1].successes = totalRolled
 		? result.totalSuccess + origRollData[1].totalSuccess === 2
 		: result.totalSuccess + origRollData[1].totalSuccess > 0 && result.totalSuccess + origRollData[1].totalSuccess < 3;
-	origRollData[1].criticalSuccess = result.totalSuccess + origRollData[1].totalSuccess >= 3;
+	// origRollData[1].criticalSuccess = result.totalSuccess + origRollData[1].totalSuccess >= 3;
+	origRollData[1].criticalSuccess = origRollData[1].totalSuccess >= 3;
 	origRollData[1].failure = totalRolled ? result.totalSuccess + origRollData[1].totalSuccess < 2 : result.totalSuccess + origRollData[1].totalSuccess === 0;
 	origRollData[1].totalRolled = totalRolled;
 
@@ -97,7 +109,11 @@ export async function buyOff(chatMessage, origRollData, origRoll, event) {
 
 	origRollData[1].trouble -= troubleMod;
 	origRollData[1].troubleRest += troubleMod;
+	origRollData[1].troubleBlank += troubleMod;
 	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
+	// origRollData[1].canPush = 'buyOff';
+
+	await chatMessage.setFlag('talesoftheoldwest', 'results', origRollData);
 
 	await updateChatMessage(chatMessage, origRoll, origRollData);
 }
@@ -131,30 +147,64 @@ export async function rollAttrib(dataset, itemData) {
 		roll = await Roll.create(`${formula}`).evaluate();
 		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
 	}
+	if (result.totalSuccess > 2) {
+		const myActor = game.actors.get(result.myActor);
+		if (myActor.system.general.faithpoints.value === 0 && result.totalSuccess > 3) {
+			await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
+			result.faithpoints = 1;
+		} else {
+			if (myActor.system.general.faithpoints.value > 0 && myActor.system.general.faithpoints.value < 10) {
+				await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
+			}
+		}
+	}
 	return [roll, result];
 }
 
 export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
-	let troubleSucc = 0;
-	let trouble = 0;
+	let troubleSucc = 0; // rolls of 6
+	let troubleFive = 0;
+	let troubleFour = 0;
+	let troubleThree = 0;
+	let troubleTwo = 0;
+	let trouble = 0; // Rolls of 1
 	let troubleRest = 0;
 	let normalSucc = 0;
+	let normalFive = 0;
+	let normalFour = 0;
+	let normalThree = 0;
+	let normalTwo = 0;
+	let normalOne = 0;
 	let rest = 0;
+	let troubleBlank = 0;
 	let totalSuccess = 0;
-	let maxRoll = 6;
-	let minRoll = 1;
+	let canPush = dataset.canPush;
 	const tDice = roll.dice[0];
 	tDice.results.forEach((r) => {
 		switch (r.result) {
-			case maxRoll:
+			case 6:
 				troubleSucc++;
 				totalSuccess++;
 				break;
-			case minRoll:
-				trouble++;
-				break;
-			default:
+			case 5:
+				troubleFive++;
 				troubleRest++;
+				break;
+			case 4:
+				troubleFour++;
+				troubleRest++;
+
+				break;
+			case 3:
+				troubleThree++;
+				troubleRest++;
+				break;
+			case 2:
+				troubleTwo++;
+				troubleRest++;
+				break;
+			case 1:
+				trouble++;
 				break;
 		}
 	});
@@ -162,18 +212,44 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		const eDice = roll.dice[1];
 		eDice.results.forEach((r) => {
 			switch (r.result) {
-				case maxRoll:
+				case 6:
 					normalSucc++;
 					totalSuccess++;
 					break;
-				default:
+				case 5:
+					normalFive++;
+					rest++;
+					break;
+				case 4:
+					normalFour++;
+					rest++;
+					break;
+				case 3:
+					normalThree++;
+					rest++;
+					break;
+				case 2:
+					normalTwo++;
+					rest++;
+					break;
+				case 1:
+					normalOne++;
 					rest++;
 					break;
 			}
 		});
 	}
 
-	const totalRolled = troubleSucc + trouble + troubleRest + normalSucc + rest <= 0;
+	const numberOfDice = troubleSucc + trouble + troubleRest + normalSucc + rest;
+	const totalRolled = numberOfDice <= 0;
+	if (troubleRest + rest + troubleBlank === 0) {
+		canPush = 'no';
+	} else {
+		if (totalSuccess === numberOfDice || trouble === numberOfDice) {
+			canPush = 'fullHouse';
+		}
+	}
+
 	let evalResult = {
 		myActor: dataset.myActor,
 		itemData: itemData,
@@ -181,12 +257,23 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		formula: roll.formula,
 		title: dataset.label,
 		troubleSucc: troubleSucc,
+		troubleFive: troubleFive,
+		troubleFour: troubleFour,
+		troubleThree: troubleThree,
+		troubleTwo: troubleTwo,
 		trouble: trouble,
 		troubleRest: troubleRest,
 		normalSucc: normalSucc,
+		normalFive: normalFive,
+		normalFour: normalFour,
+		normalThree: normalThree,
+		normalTwo: normalTwo,
+		normalOne: normalOne,
 		rest: rest,
 		totalSuccess: totalSuccess,
-		canPush: Boolean(dataset.canPush),
+		troubleBlank: troubleBlank,
+		canPush: canPush,
+		// push: push,
 		faithpoints: parseInt(dataset.faithpoints),
 		successes: totalRolled ? totalSuccess === 2 : totalSuccess > 0 && totalSuccess < 3,
 		criticalSuccess: totalSuccess >= 3,
@@ -194,6 +281,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		totalRolled: totalRolled,
 		oldRoll: roll,
 		modifiers: dataset,
+		messageNo: 0,
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;

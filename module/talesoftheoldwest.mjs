@@ -184,83 +184,55 @@ Hooks.on('renderChatMessage', (app, html, msg) => {
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {});
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
-	dice3d.addColorset({
-		name: 'yellow',
-		description: 'Yellow',
-		category: 'Colors',
-		foreground: ['#e3e300'],
-		background: ['#e3e300'],
-		outline: 'black',
-		texture: 'none',
-	});
+	// dice3d.addColorset({
+	// 	name: 'yellow',
+	// 	description: 'Yellow',
+	// 	category: 'Colors',
+	// 	foreground: ['#e3e300'],
+	// 	background: ['#e3e300'],
+	// 	outline: 'black',
+	// 	texture: 'none',
+	// });
 
-	dice3d.addColorset(
-		{
-			name: 'AlienBlack',
-			description: 'AlienBlack',
-			category: 'Colors',
-			foreground: ['#ffffff'],
-			background: ['#000000'],
-			outline: 'black',
-			texture: 'none',
-		},
-		'preferred'
-	);
+	// dice3d.addColorset(
+	// 	{
+	// 		name: 'AlienBlack',
+	// 		description: 'AlienBlack',
+	// 		category: 'Colors',
+	// 		foreground: ['#ffffff'],
+	// 		background: ['#000000'],
+	// 		outline: 'black',
+	// 		texture: 'none',
+	// 	},
+	// 	'preferred'
+	// );
 
-	dice3d.addSystem({ id: 'talesoftheoldwest', name: 'Alien RPG - Blank' }, 'preferred');
+	dice3d.addSystem({ id: 'talesoftheoldwest', name: 'Tales Of The Old West' }, 'preferred');
 	dice3d.addDicePreset({
 		type: 'dt',
 		labels: [
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png',
+			'systems/talesoftheoldwest/ui/DsN/trouble-face.webp',
+			'systems/talesoftheoldwest/ui/DsN/2-face.webp',
+			'systems/talesoftheoldwest/ui/DsN/3-face.webp',
+			'systems/talesoftheoldwest/ui/DsN/4-face.webp',
+			'systems/talesoftheoldwest/ui/DsN/5-face.webp',
+			'systems/talesoftheoldwest/ui/DsN/6-face.webp',
 		],
-		colorset: 'AlienBlack',
+		// colorset: 'black',
 		system: 'talesoftheoldwest',
 	});
 	dice3d.addDicePreset({
 		type: 'ds',
 		labels: [
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png',
+			'systems/talesoftheoldwest/ui/DsN/1-normal.webp',
+			'systems/talesoftheoldwest/ui/DsN/2-normal.webp',
+			'systems/talesoftheoldwest/ui/DsN/3-normal.webp',
+			'systems/talesoftheoldwest/ui/DsN/4-normal.webp',
+			'systems/talesoftheoldwest/ui/DsN/5-normal.webp',
+			'systems/talesoftheoldwest/ui/DsN/6-normal.webp',
 		],
-		colorset: 'yellow',
+		// colorset: 'black',
 		system: 'talesoftheoldwest',
-	});
-
-	dice3d.addSystem({ id: 'talesoftheoldwestf', name: 'Alien RPG - Full Dice' });
-	dice3d.addDicePreset({
-		type: 'dt',
-		labels: [
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png',
-			'systems/talesoftheoldwest/ui/DsN/b2.png',
-			'systems/talesoftheoldwest/ui/DsN/b3.png',
-			'systems/talesoftheoldwest/ui/DsN/b4.png',
-			'systems/talesoftheoldwest/ui/DsN/b5.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png',
-		],
-		colorset: 'AlienBlack',
-		system: 'talesoftheoldwestf',
-	});
-	dice3d.addDicePreset({
-		type: 'ds',
-		labels: [
-			'systems/talesoftheoldwest/ui/DsN/y1.png',
-			'systems/talesoftheoldwest/ui/DsN/y2.png',
-			'systems/talesoftheoldwest/ui/DsN/y3.png',
-			'systems/talesoftheoldwest/ui/DsN/y4.png',
-			'systems/talesoftheoldwest/ui/DsN/y5.png',
-			'systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png',
-		],
-		colorset: 'yellow',
-		system: 'talesoftheoldwestf',
 	});
 });
 

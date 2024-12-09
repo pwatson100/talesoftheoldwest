@@ -71,7 +71,6 @@ export class totowItem extends Item {
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/chat/fightin-weapon-modifiers.html', { config });
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
-				modal: true,
 				position: { width: 300 },
 				// classes: ["my-special-class"],
 				content,
@@ -106,7 +105,6 @@ export class totowItem extends Item {
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/chat/ranged-weapon-modifiers.html', { config });
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
-				modal: true,
 				position: { width: 440 },
 				content,
 				// classes: ["my-special-class"],

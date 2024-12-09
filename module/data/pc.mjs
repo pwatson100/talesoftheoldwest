@@ -36,7 +36,7 @@ export default class totowPC extends totowActorBase {
 			xp: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
-			canPush: new fields.BooleanField({ initial: true }),
+			canPush: new fields.StringField({ required: true, initial: 'push' }),
 		});
 		// Iterate over ability names and create a new SchemaField for each.
 		schema.abilities = new fields.SchemaField(

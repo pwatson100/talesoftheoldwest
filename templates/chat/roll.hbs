@@ -14,6 +14,7 @@
 				<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
 				<h4 class=''>Normal Rest ({{rest}})</h4>
 				<h4 class=''>Total Success({{totalSuccess}})</h4>
+				<h4 class=''>Total Trouble({{totalTrouble}})</h4>
 			</details>
 		</div>
 
@@ -41,22 +42,47 @@
 				{{/if}}
 
 				<div class='roll'>
+					{{#times troubleBlank}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-blank.webp' />
+					{{/times}}
 					{{#times troubleSucc}}
-						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b6.png' />
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-face.webp' />
 					{{/times}}
 					{{#times trouble}}
-						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y1.png' />
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-face.webp' />
 					{{/times}}
-					{{#times troubleRest}}
-						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-b0.png' />
+					{{#times troubleFive}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-face.webp' />
+					{{/times}}
+					{{#times troubleFour}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-face.webp' />
+					{{/times}}
+					{{#times troubleThree}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-face.webp' />
+					{{/times}}
+					{{#times troubleTwo}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-face.webp' />
 					{{/times}}
 					<br />
 					{{#times normalSucc}}
-						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y6.png' />
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-normal.webp' />
 					{{/times}}
-					{{#times rest}}
-						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/alien-dice-y0.png' />
+					{{#times normalFive}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-normal.webp' />
 					{{/times}}
+					{{#times normalFour}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-normal.webp' />
+					{{/times}}
+					{{#times normalThree}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-normal.webp' />
+					{{/times}}
+					{{#times normalTwo}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-normal.webp' />
+					{{/times}}
+					{{#times normalOne}}
+						<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/1-normal.webp' />
+					{{/times}}
+
 				</div>
 			</section>
 			{{#if (gte totalSuccess itemData.crit)}}
@@ -76,57 +102,58 @@
 				<hr />
 				<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
 				<hr />
+				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
+				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
+
 				{{#if (gt faithpoints 0)}}
 					{{#if (gt trouble 0)}}
-
 						<div class='dice-formula dice-roll'>
 							<a>
 								<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
 							</a>
 						</div>
 					{{/if}}
+					{{! If totalTrouble > 0  }}
 
-					{{#if canPush}}
+					{{#if (eq canPush 'push')}}
 						<div class='dice-formula dice-roll'>
 							<a>
 								<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>PUSH</span>
 							</a>
 						</div>
-					{{else}}
+					{{/if}}
+					{{! If Push }}
+
+					{{#if (eq canPush 'pushed')}}
+
 						<div class='dice-formula dice-roll'>
 							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
 						</div>
-						{{#if (gt trouble 0)}}
 
+						{{#if (gt trouble 0)}}
 							<div class='dice-formula dice-roll'>
 								<a>
 									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
 								</a>
 							</div>
-
 						{{/if}}
+						{{! Roll Trouble after Push If totalTrouble > 0  }}
+
 					{{/if}}
-				{{/if}}
-				{{#if (eq faithpoints 0)}}
+					{{! If Pushed }}
+
+				{{else}}
 					<div class='dice-formula dice-roll'>
 						<a>
 							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
 						</a>
 					</div>
-					{{#if (gt trouble 0)}}
-						{{#if (ne canPush)}}
-
-							<div class='dice-formula dice-roll'>
-								<a>
-									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
-								</a>
-							</div>
-						{{/if}}
-
-					{{/if}}
 				{{/if}}
+				{{! If Faith >0 }}
+
 			</section>
 		</div>
+
 	{{else}}
 		<div class='dice-formula dice-roll'>
 			<a>

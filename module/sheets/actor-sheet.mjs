@@ -590,8 +590,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
 				switch (dataset.rollType) {
 					case 'attribute':
-						result = await rollAttrib(dataset);
-						break;
 					case 'ability':
 						result = await rollAttrib(dataset);
 						break;
@@ -603,7 +601,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				const item = this.actor.items.get(itemId);
 				switch (dataset.rollType) {
 					case 'item':
-						return item.roll(dataset);
 					case 'talent':
 						return item.roll(dataset);
 					case 'weapon':
@@ -634,6 +631,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				chatData.whisper = [game.user];
 			}
 			const msg = await ChatMessage.create(chatData);
+			result[1].messageNo = msg.id;
 			await msg.setFlag('talesoftheoldwest', 'results', result);
 
 			return result;
