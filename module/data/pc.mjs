@@ -20,8 +20,8 @@ export default class totowPC extends totowActorBase {
 			}, {})
 		);
 		schema.general = new fields.SchemaField({
-			archtype: new fields.StringField({ required: true, blank: true }),
-			heritage: new fields.StringField({ required: true, blank: true }),
+			archetype: new fields.StringField({ required: true, blank: true }),
+			groupconcept: new fields.StringField({ required: true, blank: true }),
 			faith: new fields.StringField({ required: true, blank: true }),
 			bigdream: new fields.StringField({ required: true, blank: true }),
 			yourpardner: new fields.StringField({ required: true, blank: true }),

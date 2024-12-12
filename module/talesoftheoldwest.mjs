@@ -112,7 +112,7 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 	return str.toLowerCase();
 });
 
-Handlebars.registerHelper('toUpperrCase', function (str) {
+Handlebars.registerHelper('toUpperCase', function (str) {
 	return str.toUpperCase();
 });
 

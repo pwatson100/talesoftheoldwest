@@ -41,7 +41,7 @@ export default class totowANIMAL extends totowActorBase {
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			ridingmodifier: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 		});
 

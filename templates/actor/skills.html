@@ -3,7 +3,7 @@
 	<div class="body-container">
 		<div class="Col1">
 			<div class="atributes-container">
-				<div class="AColHeader">ATTRIBUTES</div>
+				<div class="AColHeader">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attributes')}}</div>
 				<div class="ACol1">
 					<label
 						style="font-size: large"
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div class="abilities-container">
-				<div class="ABColHeader">ABILITIES</div>
+				<div class="ABColHeader">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.abilities')}}</div>
 				<div class="flight">
 					<label
 						style="font-size: large"
@@ -83,31 +83,31 @@
 		<div class="Col2">
 			<div class="faith-container">
 				<div class="FCol3">
-					<label for="system.general.cost.value" class="resource-label">COST $</label>
+					<label for="system.general.cost.value" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
 				</div>
 				<div class="FCol4">
 					<input class="currency" name="system.general.cost.value" value="{{system.general.cost.value}}" data-dtype="Number" />
 				</div>
 				<div class="FCol5">
-					<label for="system.general.ridingmodifier.value" class="resource-label">Riding Modifier</label>
+					<label for="system.general.ridingmodifier.value" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.riding-modifier')}}</label>
 				</div>
 				<div class="FCol6">
 					<input class="experience" name="system.general.ridingmodifier.value" value="{{system.general.ridingmodifier.value}}" data-dtype="Number" />
 				</div>
 			</div>
 			<div class="heading">
-				<label for="system.general.faith" class="resource-label">QUALITY OPTIONS</label>
+				<label for="system.general.faith" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.qualityOptions')}}</label>
 				<div style="width: 350px; margin-left: -32px">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
 			</div>
 		</div>
 	</div>
 	<div style="margin-top: 20px">
-		<label for="system.biography" class="heading">GEAR</label>
+		<label for="system.biography" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.gear')}}</label>
 		{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}
 	</div>
 	<div style="margin-top: 100px">
 		{{#if editable}}
-		<label for="system.biography" class="heading">DESCRIPTION</label>
+		<label for="system.biography" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.description')}}</label>
 
 		<prose-mirror name="system.biography" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
 			{{{enrichedBiography}}}
@@ -118,7 +118,7 @@
 	<div class="body-container">
 		<div class="Col1">
 			<div class="atributes-container">
-				<div class="AColHeader">ATTRIBUTES</div>
+				<div class="AColHeader">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attributes')}}</div>
 				<div class="ACol1">
 					<label
 						style="font-size: large"
@@ -198,7 +198,7 @@
 			</div>
 
 			<div class="abilities-container">
-				<div class="ABColHeader">ABILITIES</div>
+				<div class="ABColHeader">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.abilities')}}</div>
 				{{#each system.abilities as |ability key|}}
 				<div class="{{key}}">
 					<label
@@ -224,34 +224,36 @@
 
 		<div class="Col2">
 			<div class="heading">
-				<label for="system.general.faith" class="resource-label">FAITH</label>
+				<label for="system.general.faith" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
 				<textarea class="textarea-format" name="system.general.faith" data-dtype="String" rows="2">{{system.general.faith}}</textarea>
 			</div>
 			<div style="text-align: center">
-				<label class="heading" for="system.general.faithpoints" class="resource-label">FAITH POINTS</label>
+				<label class="heading" for="system.general.faithpoints" class="resource-label"
+					>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}}</label
+				>
 				<input class="statnum" name="system.general.faithpoints.value" value="{{system.general.faithpoints.value}}" data-dtype="Number" />
 			</div>
 			<div class="faith-container">
 				<div class="FCol3">
-					<label for="system.general.money.value" class="resource-label">MONEY $</label>
+					<label for="system.general.money.value" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.money')}}</label>
 				</div>
 				<div class="FCol4">
 					<input class="currency" name="system.general.money.value" value="{{system.general.money.value}}" data-dtype="Number" />
 				</div>
 				<div class="FCol5">
-					<label for="system.general.xp.value" class="resource-label">EXPERIENCE</label>
+					<label for="system.general.xp.value" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
 				</div>
 				<div class="FCol6">
 					<input class="experience" name="system.general.xp.value" value="{{system.general.xp.value}}" data-dtype="Number" />
 				</div>
 			</div>
 			<div class="heading">
-				<label for="system.general.bigdream" class="resource-label">BIG DREAM</label>
+				<label for="system.general.bigdream" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.bigDream')}}</label>
 				<textarea class="textarea-format" name="system.general.bigdream" data-dtype="String" rows="2">{{system.general.bigdream}}</textarea>
 			</div>
 
 			<div class="heading" style="margin-top: 10px">
-				<label for="system.general.yourpardner" class="resource-label">YOUR PARDNER</label>
+				<label for="system.general.yourpardner" class="resource-label">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.your-pardner')}}</label>
 				<input type="text" name="system.general.yourpardner" value="{{system.general.yourpardner}}" data-dtype="text" />
 			</div>
 

@@ -6,16 +6,16 @@
 		</div>
 
 		{{#if (eq actor.type 'animal')}}
-			<label for='system.general.archtype' class='resource-label HedCol3'>BREED</label>
+			<label for='system.general.breed' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
 			<input class='HedCol4' type='text' name='system.general.breed' value='{{system.general.breed}}' data-dtype='text' />
 		{{else}}
-			<label for='system.general.archtype' class='resource-label HedCol3'>ARCHTYPE</label>
-			<select class='HedCol4' id='system.general.archtype' name='system.general.archtype'>
-				{{selectOptions archtype_list selected=system.general.archtype labelAttr='label' localize=true}}
+			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
+			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
+				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
 			</select>
-			<label for='system.general.heritage' class='resource-label HedCol5'>HERITAGE</label>
-			<select class='HedCol6' id='system.general.heritage' name='system.general.heritage'>
-				{{selectOptions heritage_list selected=system.general.heritage labelAttr='label' localize=true}}
+			<label for='system.general.groupconcept' class='resource-label HedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.groupConcept')}}</label>
+			<select class='HedCol6' id='system.general.groupconcept' name='system.general.groupconcept'>
+				{{selectOptions group_concept_list selected=system.general.groupconcept labelAttr='label' localize=true}}
 			</select>
 		{{/if}}
 

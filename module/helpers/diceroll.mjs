@@ -60,12 +60,15 @@ export async function rollTrouble(results, ev) {
 export async function pushRoll(chatMessage, origRollData, origRoll) {
 	const formula = origRollData[1].troubleRest + `dt` + '+' + origRollData[1].rest + `ds`;
 	let roll = await Roll.create(`${formula}`).evaluate();
-	let result = await evaluateTOTWRoll(origRollData[1], roll, formula);
 
 	// remove a faith point from the actor
-	const myActor = game.actors.get(result.myActor);
+	const myActor = game.actors.get(origRollData[1].myActor);
 	await myActor.update({ 'system.general.faithpoints.value': myActor.system.general.faithpoints.value - 1 });
+
+	let result = await evaluateTOTWRoll(origRollData[1], roll, formula);
+
 	const totalRolled = result.troubleSucc + result.trouble + result.troubleRest + result.normalSucc + result.rest <= 0;
+
 	origRollData[1].canPush = 'pushed';
 	origRollData[1].formula = formula;
 	origRollData[1].troubleSucc += result.troubleSucc;
@@ -89,11 +92,13 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 	origRollData[1].successes = totalRolled
 		? result.totalSuccess + origRollData[1].totalSuccess === 2
 		: result.totalSuccess + origRollData[1].totalSuccess > 0 && result.totalSuccess + origRollData[1].totalSuccess < 3;
-	// origRollData[1].criticalSuccess = result.totalSuccess + origRollData[1].totalSuccess >= 3;
 	origRollData[1].criticalSuccess = origRollData[1].totalSuccess >= 3;
 	origRollData[1].failure = totalRolled ? result.totalSuccess + origRollData[1].totalSuccess < 2 : result.totalSuccess + origRollData[1].totalSuccess === 0;
 	origRollData[1].totalRolled = totalRolled;
 
+	if (!origRollData[1].faithAdded && origRollData[1].totalSuccess > 2) {
+		result = await addFaithPoints(origRollData[1]);
+	}
 	let msg = game.messages.get(chatMessage.id);
 	await msg.setFlag('talesoftheoldwest', 'results', origRollData);
 
@@ -111,25 +116,10 @@ export async function buyOff(chatMessage, origRollData, origRoll, event) {
 	origRollData[1].troubleRest += troubleMod;
 	origRollData[1].troubleBlank += troubleMod;
 	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
-	// origRollData[1].canPush = 'buyOff';
 
 	await chatMessage.setFlag('talesoftheoldwest', 'results', origRollData);
 
 	await updateChatMessage(chatMessage, origRoll, origRollData);
-}
-
-async function updateChatMessage(chatMessage, result, newRoleData) {
-	return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
-		chatMessage['content'] = html;
-		return chatMessage
-			.update({
-				content: html,
-				['flags.data']: { results: newRoleData.results },
-			})
-			.then((newMsg) => {
-				ui.chat.updateMessage(newMsg);
-			});
-	});
 }
 
 export async function rollAttrib(dataset, itemData) {
@@ -148,17 +138,24 @@ export async function rollAttrib(dataset, itemData) {
 		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
 	}
 	if (result.totalSuccess > 2) {
-		const myActor = game.actors.get(result.myActor);
-		if (myActor.system.general.faithpoints.value === 0 && result.totalSuccess > 3) {
-			await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
-			result.faithpoints = 1;
-		} else {
-			if (myActor.system.general.faithpoints.value > 0 && myActor.system.general.faithpoints.value < 10) {
-				await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
-			}
-		}
+		result = await addFaithPoints(result);
 	}
 	return [roll, result];
+}
+
+export async function addFaithPoints(result) {
+	const myActor = game.actors.get(result.myActor);
+	if (myActor.system.general.faithpoints.value === 0 && result.totalSuccess > 3) {
+		await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
+		result.faithpoints = 1;
+		result.faithAdded = true;
+	} else {
+		if (myActor.system.general.faithpoints.value > 0 && myActor.system.general.faithpoints.value < 10) {
+			await myActor.update({ 'system.general.faithpoints.value': (myActor.system.general.faithpoints.value += 1) });
+			result.faithAdded = true;
+		}
+	}
+	return result;
 }
 
 export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
@@ -263,6 +260,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		troubleTwo: troubleTwo,
 		trouble: trouble,
 		troubleRest: troubleRest,
+		totalTrouble: trouble,
 		normalSucc: normalSucc,
 		normalFive: normalFive,
 		normalFour: normalFour,
@@ -273,7 +271,6 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		totalSuccess: totalSuccess,
 		troubleBlank: troubleBlank,
 		canPush: canPush,
-		// push: push,
 		faithpoints: parseInt(dataset.faithpoints),
 		successes: totalRolled ? totalSuccess === 2 : totalSuccess > 0 && totalSuccess < 3,
 		criticalSuccess: totalSuccess >= 3,
@@ -282,7 +279,22 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		oldRoll: roll,
 		modifiers: dataset,
 		messageNo: 0,
+		faithAdded: false,
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;
+}
+
+async function updateChatMessage(chatMessage, result, newRoleData) {
+	return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
+		chatMessage['content'] = html;
+		return chatMessage
+			.update({
+				content: html,
+				['flags.data']: { results: newRoleData.results },
+			})
+			.then((newMsg) => {
+				ui.chat.updateMessage(newMsg);
+			});
+	});
 }

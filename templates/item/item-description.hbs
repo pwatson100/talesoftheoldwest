@@ -3,12 +3,12 @@
 	{{#if (eq item.type 'weapon')}}
 
 		<div class='grid grid-2col'>
-			<label for='system.subtype' class='resource-label'>TYPE</label>
+			<label for='system.subtype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
 			<select id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
 			{{#if (eq system.subtype 'shootin')}}
-				<label for='system.action' class='resource-label'>ACTION</label>
+				<label for='system.action' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
 				<select id='system.action' name='system.action'>
 					{{selectOptions config.action_list selected=system.action labelAttr='label' localize=true}}
 				</select>
@@ -16,11 +16,11 @@
 		</div>
 		<div class='resource grid grid-4col'>
 			{{#if (eq system.subtype 'shootin')}}
-				<label for='system.bonusdraw' class='resource-label'>BONUS DRAW</label>
+				<label for='system.bonusdraw' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.bonusDraw')}}</label>
 			{{/if}}
-			<label for='system.attackbonus' class='resource-label'>ATTACK BONUS</label>
-			<label for='system.damage' class='resource-label'>DAMAGE</label>
-			<label for='system.crit' class='resource-label'>CRIT</label>
+			<label for='system.attackbonus' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attackBonus')}}</label>
+			<label for='system.damage' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</label>
+			<label for='system.crit' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</label>
 		</div>
 		<div class='resource grid grid-4col'>
 			{{#if (eq system.subtype 'shootin')}}
@@ -32,8 +32,8 @@
 		</div>
 		{{#if (eq system.subtype 'shootin')}}
 			<div class='resource grid grid-4col'>
-				<label for='system.range' class='resource-label'>RANGE</label>
-				<label for='system.ammo' class='resource-label'>AMMO</label>
+				<label for='system.range' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
+				<label for='system.ammo' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</label>
 			</div>
 			<div class='resource grid grid-4col'>
 				<select id='system.range' name='system.range'>

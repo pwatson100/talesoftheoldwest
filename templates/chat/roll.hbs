@@ -15,30 +15,33 @@
 				<h4 class=''>Normal Rest ({{rest}})</h4>
 				<h4 class=''>Total Success({{totalSuccess}})</h4>
 				<h4 class=''>Total Trouble({{totalTrouble}})</h4>
+				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
+				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
+
 			</details>
 		</div>
 
 		<div class='chat roll'>
 			<section>
 				{{#if successes}}
-					<h4 style='font-size: x-large;font-weight:bold;'>Success</h4>
+					<h4 style='font-size: x-large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.success')}}</h4>
 					{{#if (eq rollType 'weapon')}}
-						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
-						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
 
 					{{/if}}
 				{{/if}}
 				{{#if criticalSuccess}}
-					<h4 style='font-size: x-large;font-weight:bold;'>Critical Success</h4>
+					<h4 style='font-size: x-large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.critsuccess')}}</h4>
 					{{#if (eq rollType 'weapon')}}
-						<h4 style='font-size: large;font-weight:bold;'>Damage ({{itemData.damage}})</h4>
-						<h4 style='font-size: large;font-weight:bold;'>CRIT ({{itemData.crit}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
+						<h4 style='font-size: large;font-weight:bold;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
 
 					{{/if}}
 
 				{{/if}}
 				{{#if failure}}
-					<h4 style='font-size: x-large;font-weight:bold;'>Failed</h4>
+					<h4 style='font-size: x-large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.failed')}}</h4>
 				{{/if}}
 
 				<div class='roll'>
@@ -89,7 +92,7 @@
 				<section>
 					<div style='position: relative'>
 						<details>
-							<summary>Stunts</summary>
+							<summary>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
 							<br />
 							<h4 class=''>Extra Damage</h4>
 							<h4 class=''>Roll a Critical injury</h4>
@@ -100,16 +103,16 @@
 
 			<section>
 				<hr />
-				<h4 style='font-size: large;font-weight:bold;'>Faith Points ({{faithpoints}})</h4>
+				<h4 style='font-size: large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
 				<hr />
-				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
-				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
 
 				{{#if (gt faithpoints 0)}}
 					{{#if (gt trouble 0)}}
 						<div class='dice-formula dice-roll'>
 							<a>
-								<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>Buy-Off Trouble</span>
+								<span class='dice-formula dice-roll buy-off' style='font-size: large;font-weight:bold;'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.dialog.Buy-OffTrouble')
+									}}</span>
 							</a>
 						</div>
 					{{/if}}
@@ -118,46 +121,51 @@
 					{{#if (eq canPush 'push')}}
 						<div class='dice-formula dice-roll'>
 							<a>
-								<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>PUSH</span>
+								<span class='dice-formula dice-roll dice-push' style='font-size: large;font-weight:bold;'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.General.push')
+									}}</span>
 							</a>
 						</div>
 					{{/if}}
 					{{! If Push }}
 
-					{{#if (eq canPush 'pushed')}}
-
-						<div class='dice-formula dice-roll'>
-							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>PUSHED</span>
-						</div>
-
-						{{#if (gt trouble 0)}}
-							<div class='dice-formula dice-roll'>
-								<a>
-									<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>ROLL TROUBLE?</span>
-								</a>
-							</div>
-						{{/if}}
-						{{! Roll Trouble after Push If totalTrouble > 0  }}
-
-					{{/if}}
-					{{! If Pushed }}
-
 				{{else}}
 					<div class='dice-formula dice-roll'>
 						<a>
-							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>"You lack Faith!"</span>
+							<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>{{toUpperCase
+									(localize 'TALESOFTHEOLDWEST.General.lackFaith')
+								}}</span>
 						</a>
 					</div>
 				{{/if}}
 				{{! If Faith >0 }}
 
+				{{#if (eq canPush 'pushed')}}
+
+					<div class='dice-formula dice-roll'>
+						<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.pushed')}}</span>
+					</div>
+
+					{{#if (gt totalTrouble 0)}}
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll roll-trouble' style='font-size: large;font-weight:bold;'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.General.rollTrouble')
+									}}</span>
+							</a>
+						</div>
+					{{/if}}
+					{{! Roll Trouble after Push If totalTrouble > 0  }}
+
+				{{/if}}
+				{{! If Pushed }}
 			</section>
 		</div>
 
 	{{else}}
 		<div class='dice-formula dice-roll'>
 			<a>
-				<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>You have No Dice to roll</span>
+				<span class='dice-formula dice-roll' style='font-size: large;font-weight:bold;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.noDice')}}</span>
 			</a>
 		</div>
 	{{/if}}
@@ -166,7 +174,6 @@
 			<details>
 				<summary>Expand To See Roll modifiers</summary>
 				<br />
-
 				<h4 class=''>Attribute+Skill+Talent ({{modifiers.baseMod}})</h4>
 				<h4 class=''>Range ({{modifiers.shootrangeMod}})</h4>
 				<h4 class=''>Called Shots ({{modifiers.shootcalledShotsMod}})</h4>
@@ -183,7 +190,8 @@
 			<details>
 				<summary>Expand To See Roll modifiers</summary>
 				<br />
-
+				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
+				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
 				<h4 class=''>Attribute+Skill+Talents ({{modifiers.baseMod}})</h4>
 				<h4 class=''>Target prone ({{modifiers.fightProneMod}})</h4>
 				<h4 class=''>All-Out Attack ({{modifiers.fightAlloutattackMod}})</h4>

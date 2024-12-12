@@ -6,9 +6,9 @@
 		</div>
 
 		{{#if (eq item.type 'item')}}
-			<label class='resource-label ItemHedCol3'>Quantity</label>
+			<label class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quantity')}}</label>
 			<input class='ItemHedCol4' type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
-			<label class='resource-label ItemHedCol5'>Weight</label>
+			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
 			<input class='ItemHedCol6' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
 		{{/if}}
 

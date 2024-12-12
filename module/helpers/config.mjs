@@ -56,24 +56,27 @@ TALESOFTHEOLDWEST.abilityAbbreviations = {
 	booklearnin: 'TALESOFTHEOLDWEST.Ability.Booklearnin.abbr',
 };
 
-TALESOFTHEOLDWEST.archtype_list = {
-	Trader: { id: 'Trader', label: 'Trader' },
+TALESOFTHEOLDWEST.archetype_list = {
+	Gentlefolk: { id: 'Gentlefolk', label: 'Gentlefolk' },
+	Grifter: { id: 'Grifter', label: 'Grifter' },
+	Homesteader: { id: 'Homesteader', label: 'Homesteader' },
+	Laborer: { id: 'Laborer', label: 'Laborer' },
+	Lawman: { id: 'Lawman', label: 'Lawman' },
+	Outlaw: { id: 'Outlaw', label: 'Outlaw' },
+	Prospector: { id: 'Prospector', label: 'Prospector' },
+	RanchHand: { id: 'Ranch Hand', label: 'Ranch Hand' },
 	Tracker: { id: 'Tracker', label: 'Tracker' },
-	Caitian: { id: 'Caitian', label: 'Caitian' },
-	Edoan: { id: 'Edoan', label: 'Edoan' },
-	Tellerite: { id: 'Tellerite', label: 'Tellerite' },
-	Vulcan: { id: 'Vulcan', label: 'Vulcan' },
+	Trader: { id: 'Trader', label: 'Trader' },
 };
 
-TALESOFTHEOLDWEST.heritage_list = {
-	AfricanAmerican: { id: 'African American', label: 'African American' },
-	MexicanCibolero: { id: 'Mexican Cibolero', label: 'Mexican Cibolero' },
-	Lieutenant: { id: 'Lieutenant', label: 'Lieutenant' },
-	LieutenantCommander: { id: 'Lieutenant Commander', label: 'Lieutenant Commander' },
-	Commander: { id: 'Commander', label: 'Commander' },
-	Captain: { id: 'Captain', label: 'Captain' },
-	Commodore: { id: 'Commodore', label: 'Commodore' },
-	Admiral: { id: 'Admiral', label: 'Admiral' },
+TALESOFTHEOLDWEST.group_concept_list = {
+	LawmenBountyHunters: { id: 'Lawmen & Bounty Hunters', label: 'Lawmen & Bounty Hunters' },
+	Outlaws: { id: 'Outlaws', label: 'Outlaws' },
+	Ranchers: { id: 'Ranchers', label: 'Ranchers' },
+	Farmers: { id: 'Farmers', label: 'Farmers' },
+	BusinessOwners: { id: 'Business Owners', label: 'Business Owners' },
+	VaquerosCowboys: { id: 'Vaqueros & Cowboys', label: 'Vaqueros & Cowboys' },
+	MountainFolk: { id: 'Mountain Folk', label: 'Mountain Folk' },
 };
 TALESOFTHEOLDWEST.subtype_list = {
 	fightin: { id: 'Fightin', label: 'Fightin' },
@@ -97,7 +100,7 @@ TALESOFTHEOLDWEST.range_modifiers = {
 	inactivearmslength: { id: 'InactiveArmsLength', label: 'TALESOFTHEOLDWEST.ModRanges.inactivearmslength', value: '3' },
 	activearmslength: { id: 'ActiveArmsLength', label: 'TALESOFTHEOLDWEST.ModRanges.activearmslength', value: '-3' },
 	near: { id: 'Near', label: 'TALESOFTHEOLDWEST.ModRanges.near', value: '1' },
-	short: { id: 'Short', label: 'TALESOFTHEOLDWEST.ModRanges.short', value: '0' },
+	short: { id: 'Short', label: 'TALESOFTHEOLDWEST.ModRanges.short', value: '0', selected: true },
 	medium: { id: 'Medium', label: 'TALESOFTHEOLDWEST.ModRanges.medium', value: '-1' },
 	long: { id: 'Long', label: 'TALESOFTHEOLDWEST.ModRanges.long', value: '-2' },
 	distant: { id: 'Distant', label: 'TALESOFTHEOLDWEST.ModRanges.distant', value: '-3' },
@@ -128,26 +131,26 @@ TALESOFTHEOLDWEST.target_visibility = {
 };
 
 TALESOFTHEOLDWEST.item_modifier_list = {
-	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name' },
-	quick: { id: 'attribute-quick', label: 'TALESOFTHEOLDWEST.Attributes.quick.name' },
-	cunning: { id: 'attribute-cunning', label: 'TALESOFTHEOLDWEST.Attributes.cunning.name' },
-	docity: { id: 'attribute-docity', label: 'TALESOFTHEOLDWEST.Attributes.docity.name' },
-	labor: { id: 'ability-labor', label: 'TALESOFTHEOLDWEST.Ability.Labor.long' },
-	presence: { id: 'ability-presence', label: 'TALESOFTHEOLDWEST.Ability.Presence.long' },
-	fightin: { id: 'ability-fightin', label: 'TALESOFTHEOLDWEST.Ability.Fightin.long' },
-	resilience: { id: 'ability-resilience', label: 'TALESOFTHEOLDWEST.Ability.Resilience.long' },
-	move: { id: 'ability-move', label: 'TALESOFTHEOLDWEST.Ability.Move.long' },
-	operate: { id: 'ability-operate', label: 'TALESOFTHEOLDWEST.Ability.Operate.long' },
-	shootin: { id: 'ability-shootin', label: 'TALESOFTHEOLDWEST.Ability.Shootin.long' },
-	lightfingered: { id: 'ability-lightfingered', label: 'TALESOFTHEOLDWEST.Ability.Lightfingered.long' },
-	hawkeye: { id: 'ability-hawkeye', label: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long' },
-	nature: { id: 'ability-nature', label: 'TALESOFTHEOLDWEST.Ability.Nature.long' },
-	insight: { id: 'ability-insight', label: 'TALESOFTHEOLDWEST.Ability.Insight.long' },
-	animalhandlin: { id: 'ability-animalhandlin', label: 'TALESOFTHEOLDWEST.Ability.Animalhandlin.long' },
-	performin: { id: 'ability-dociperforminty', label: 'TALESOFTHEOLDWEST.Ability.Performin.long' },
-	makin: { id: 'ability-makin', label: 'TALESOFTHEOLDWEST.Ability.Makin.long' },
-	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long' },
-	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long' },
+	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	quick: { id: 'attribute-quick', label: 'TALESOFTHEOLDWEST.Attributes.quick.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	cunning: { id: 'attribute-cunning', label: 'TALESOFTHEOLDWEST.Attributes.cunning.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	docity: { id: 'attribute-docity', label: 'TALESOFTHEOLDWEST.Attributes.docity.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	labor: { id: 'ability-labor', label: 'TALESOFTHEOLDWEST.Ability.Labor.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	presence: { id: 'ability-presence', label: 'TALESOFTHEOLDWEST.Ability.Presence.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	fightin: { id: 'ability-fightin', label: 'TALESOFTHEOLDWEST.Ability.Fightin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	resilience: { id: 'ability-resilience', label: 'TALESOFTHEOLDWEST.Ability.Resilience.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	move: { id: 'ability-move', label: 'TALESOFTHEOLDWEST.Ability.Move.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	operate: { id: 'ability-operate', label: 'TALESOFTHEOLDWEST.Ability.Operate.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	shootin: { id: 'ability-shootin', label: 'TALESOFTHEOLDWEST.Ability.Shootin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	lightfingered: { id: 'ability-lightfingered', label: 'TALESOFTHEOLDWEST.Ability.Lightfingered.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	hawkeye: { id: 'ability-hawkeye', label: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	nature: { id: 'ability-nature', label: 'TALESOFTHEOLDWEST.Ability.Nature.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	insight: { id: 'ability-insight', label: 'TALESOFTHEOLDWEST.Ability.Insight.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	animalhandlin: { id: 'ability-animalhandlin', label: 'TALESOFTHEOLDWEST.Ability.Animalhandlin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	performin: { id: 'ability-dociperforminty', label: 'TALESOFTHEOLDWEST.Ability.Performin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	makin: { id: 'ability-makin', label: 'TALESOFTHEOLDWEST.Ability.Makin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
 };
 
 TALESOFTHEOLDWEST.crit_location_list = {

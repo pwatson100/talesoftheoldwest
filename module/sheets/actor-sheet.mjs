@@ -52,7 +52,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		skills: {
 			template: 'systems/talesoftheoldwest/templates/actor/skills.html',
 		},
-		items: {
+		gear: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
 		},
 		effects: {
@@ -85,10 +85,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'items', 'description', 'effects');
+				options.parts.push('skills', 'gear', 'description', 'effects');
 				break;
 			case 'npc':
-				options.parts.push('skills', 'items', 'description');
+				options.parts.push('skills', 'gear', 'description');
 				break;
 			case 'animal':
 				options.parts.push('skills');
@@ -129,8 +129,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 		// context.rollData = context.actor.getRollData();
 		if (context.actor.type != 'animal') {
-			context.archtype_list = CONFIG.TALESOFTHEOLDWEST.archtype_list;
-			context.heritage_list = CONFIG.TALESOFTHEOLDWEST.heritage_list;
+			context.archetype_list = CONFIG.TALESOFTHEOLDWEST.archetype_list;
+			context.group_concept_list = CONFIG.TALESOFTHEOLDWEST.group_concept_list;
 		}
 
 		logger.debug('Actor Sheet derived data:', context);
@@ -141,7 +141,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	async _preparePartContext(partId, context) {
 		switch (partId) {
 			case 'skills':
-			case 'items':
+			case 'gear':
 				context.tab = context.tabs[partId];
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
 				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
@@ -210,9 +210,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					tab.label += 'Skills';
 					break;
 
-				case 'items':
-					tab.id = 'items';
-					tab.label += 'Items';
+				case 'gear':
+					tab.id = 'gear';
+					tab.label += 'Gear';
 					break;
 				case 'description':
 					tab.id = 'description';
@@ -239,8 +239,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// You can just use `this.document.itemTypes` instead
 		// if you don't need to subdivide a given type like
 		// this sheet does with spells
-		const item = [];
-		const allItems = [];
+		const gear = [];
+		const allGear = [];
 		const weapon = [];
 		const talent = [];
 		const animalquality = [];
@@ -249,7 +249,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		for (let i of this.document.items) {
 			// Append to gear.
 			if (i.type === 'item') {
-				item.push(i);
+				gear.push(i);
 			}
 			// Append to features.
 			else if (i.type === 'weapon') {
@@ -263,12 +263,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			else if (i.type === 'animalquality') {
 				animalquality.push(i);
 			}
-			allItems.push(i);
+			allGear.push(i);
 		}
 
 		// Sort then assign
-		context.allItems = allItems.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-		context.item = item.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.allGear = allGear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.weapon = weapon.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
@@ -282,7 +282,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 */
 	async _prepareCharacterData(context) {
 		const aData = context.system;
-		const itemData = context.allItems;
+		const itemData = context.allGear;
 		let anyMods = 0;
 		var attrMod = {
 			grit: 0,
