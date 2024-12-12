@@ -1,0 +1,143 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(1)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "srsjUOzxidEYouzg",
+      "text": "<p>Your gun or weapon is damaged and you suffer a −1 penalty when using it from now on, or an important item breaks</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.srsjUOzxidEYouzg"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "vF5MA0BD1Mi6koev",
+      "text": "You stumble, slip or trip.  Lose your next slow  action.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.vF5MA0BD1Mi6koev"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "2iAJgvYd6LdUxyYA",
+      "text": "You drop your weapon,  lose your reins or  otherwise lose your grip  on something important.  If it was keeping you  upright or on your feet  you may need to make  a MOVE roll to avoid a  worse outcome.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.2iAJgvYd6LdUxyYA"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "hrY6K3dVpa8FG0KS",
+      "text": "Your attack is under- powered, or your action is  weak. Lose a 6 from your  pool of successes.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.hrY6K3dVpa8FG0KS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "k6SP7K7ASTqlP1wr",
+      "text": "You are thrown off  balance. Lose your next  Round.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.k6SP7K7ASTqlP1wr"
+    },
+    {
+      "type": "text",
+      "documentCollection": "RollTable",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "g5yDNR19N0XggPsl",
+      "text": "Your Troubles are  mounting—reroll on the  next column.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.g5yDNR19N0XggPsl"
+    },
+    {
+      "type": "document",
+      "documentCollection": "RollTable",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "SzcZQ5ArSEYX8Xit",
+      "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
+      "img": "icons/svg/d20-grey.svg",
+      "documentId": "So5KH0SuG6PeHwNE",
+      "flags": {},
+      "_key": "!tables.results!5FXz3kSxy7C0LNX2.SzcZQ5ArSEYX8Xit"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829662773,
+    "modifiedTime": 1730829662773,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "formula": "1d6",
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "_id": "5FXz3kSxy7C0LNX2",
+  "sort": 0,
+  "_key": "!tables!5FXz3kSxy7C0LNX2"
+}

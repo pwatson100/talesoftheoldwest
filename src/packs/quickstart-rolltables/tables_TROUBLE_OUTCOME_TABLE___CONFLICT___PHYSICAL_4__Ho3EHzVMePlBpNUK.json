@@ -1,0 +1,126 @@
+{
+  "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "fbiv5Jp6ypuw1gOz",
+      "text": "You’re so shaken and  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.fbiv5Jp6ypuw1gOz"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "kIIz3ZVGxBp6wvhp",
+      "text": "Your action has gone  catastrophically wrong. A  key item of great value is  broken beyond repair, or  your horse is killed.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.kIIz3ZVGxBp6wvhp"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "iJGQ4bD1q6n2FoRX",
+      "text": "You trip and fall, or  are thrown from your  horse, and are Prone.  Take falling damage if  the fall is far enough.  You are Stunned for  D6 Rounds minus the  number of successes on a  RESILIENCE test.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.iJGQ4bD1q6n2FoRX"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "8nZBbXOwCqGqPqpI",
+      "text": "Your attack or action  has terribly affected a  random nearby bystander.  They are immediately  Broken on Grit and  suffer a critical injury.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.8nZBbXOwCqGqPqpI"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "B5Pp3gBjb0uMZeAq",
+      "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Grit.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.B5Pp3gBjb0uMZeAq"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "WtKCjdAGYQEV2J5I",
+      "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Quick.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Ho3EHzVMePlBpNUK.WtKCjdAGYQEV2J5I"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {
+    "exportSource": {
+      "world": "tales-of-the-old-west",
+      "system": "talesoftheoldwest",
+      "coreVersion": "12.331",
+      "systemVersion": "0.0.1"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829667769,
+    "modifiedTime": 1730829667769,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "formula": "1d6",
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "_id": "Ho3EHzVMePlBpNUK",
+  "sort": 0,
+  "_key": "!tables!Ho3EHzVMePlBpNUK"
+}

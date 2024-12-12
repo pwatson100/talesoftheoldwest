@@ -1,0 +1,22 @@
+{
+  "name": "Weapons",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "PfXKklVIj8c5cX6Y",
+  "description": "",
+  "sort": 100000,
+  "color": "#1f9193",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829692152,
+    "modifiedTime": 1730829692152,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!PfXKklVIj8c5cX6Y"
+}

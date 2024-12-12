@@ -1,0 +1,3663 @@
+{
+  "name": "Tales Of The Old West - Quickstart",
+  "img": "systems/talesoftheoldwest/assets/icons/totow.webp",
+  "caption": "",
+  "sort": 0,
+  "description": "",
+  "actors": [
+    {
+      "name": "Mustang",
+      "type": "animal",
+      "_id": "ZhdtY5JbQb6xcRHC",
+      "img": "systems/talesoftheoldwest/assets/avatars/horse.webp",
+      "system": {
+        "biography": "<p><strong>Riding Modifier -1</strong></p>",
+        "attributes": {
+          "grit": {
+            "value": 5,
+            "mod": 5,
+            "max": 5,
+            "label": ""
+          },
+          "quick": {
+            "value": 3,
+            "mod": 3,
+            "max": 3,
+            "label": ""
+          }
+        },
+        "abilities": {
+          "flight": {
+            "value": 1,
+            "mod": 4,
+            "max": 0,
+            "label": ""
+          },
+          "resilience": {
+            "value": 0,
+            "mod": 5,
+            "max": 0,
+            "label": ""
+          }
+        },
+        "general": {
+          "breed": "American Quarter",
+          "cost": {
+            "value": 75
+          },
+          "ridingmodifier": {
+            "value": -1
+          }
+        }
+      },
+      "prototypeToken": {
+        "name": "Animal",
+        "displayName": 20,
+        "actorLink": true,
+        "appendNumber": false,
+        "prependAdjective": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/talesoftheoldwest/assets/avatars/horse.webp",
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "offsetX": 0,
+          "offsetY": 0,
+          "fit": "contain",
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "alphaThreshold": 0.75
+        },
+        "hexagonalShape": 0,
+        "lockRotation": false,
+        "rotation": 0,
+        "alpha": 1,
+        "disposition": 1,
+        "displayBars": 20,
+        "bar1": {
+          "attribute": null
+        },
+        "bar2": {
+          "attribute": null
+        },
+        "light": {
+          "negative": false,
+          "priority": 0,
+          "alpha": 0.5,
+          "angle": 360,
+          "bright": 0,
+          "color": null,
+          "coloration": 1,
+          "dim": 0,
+          "attenuation": 0.5,
+          "luminosity": 0.5,
+          "saturation": 0,
+          "contrast": 0,
+          "shadows": 0,
+          "animation": {
+            "type": null,
+            "speed": 5,
+            "intensity": 5,
+            "reverse": false
+          },
+          "darkness": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        "sight": {
+          "enabled": true,
+          "range": 12,
+          "angle": 360,
+          "visionMode": "basic",
+          "color": null,
+          "attenuation": 0.1,
+          "brightness": 0,
+          "saturation": 0,
+          "contrast": 0
+        },
+        "detectionModes": [],
+        "occludable": {
+          "radius": 0
+        },
+        "ring": {
+          "enabled": false,
+          "colors": {
+            "ring": null,
+            "background": null
+          },
+          "effects": 0,
+          "subject": {
+            "scale": 1,
+            "texture": null
+          }
+        },
+        "flags": {},
+        "randomImg": false
+      },
+      "items": [
+        {
+          "name": "Item (2)",
+          "type": "item",
+          "_id": "jO74PqkwU1rFGnKI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p>",
+            "itemModifiers": null,
+            "quantity": 1,
+            "weight": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 400000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.WgGKNjWeHujSCOTo",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1729773625217,
+            "modifiedTime": 1729773625217,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Aggressive",
+          "type": "animalquality",
+          "_id": "cL40E9dSFhIUjrWu",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "",
+            "itemModifiers": null
+          },
+          "effects": [],
+          "folder": "q8E9alfSeM1DCNfJ",
+          "sort": 100000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.rSUfObXklxI3XcMZ",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1730034130307,
+            "modifiedTime": 1730034130307,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "folder": "q8E9alfSeM1DCNfJ",
+          "name": "Hot Horse",
+          "type": "animalquality",
+          "_id": "a4Liy6h9gZ582nNF",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "",
+            "itemModifiers": null
+          },
+          "effects": [],
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.RWFn2S07LmTSb0IG",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1730034136585,
+            "modifiedTime": 1730034136585,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "folder": "q8E9alfSeM1DCNfJ",
+          "name": "Fast",
+          "type": "animalquality",
+          "_id": "Mu3hUoBDwL1AxLO2",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "",
+            "itemModifiers": null
+          },
+          "effects": [],
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.trJRAQdJdTZCki5c",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1730034215893,
+            "modifiedTime": 1730034215893,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        }
+      ],
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.ZhdtY5JbQb6xcRHC",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729769948012,
+        "modifiedTime": 1734026519366,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Luis Osorio",
+      "type": "pc",
+      "_id": "wwvlv2lnACjDHFCe",
+      "img": "systems/talesoftheoldwest/assets/avatars/luis-osorio.webp",
+      "system": {
+        "biography": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p>",
+        "attributes": {
+          "grit": {
+            "value": 3,
+            "mod": 3,
+            "max": 3,
+            "label": ""
+          },
+          "quick": {
+            "value": 4,
+            "mod": 4,
+            "max": 4,
+            "label": ""
+          },
+          "cunning": {
+            "value": 3,
+            "mod": 3,
+            "max": 3,
+            "label": ""
+          },
+          "docity": {
+            "value": 2,
+            "mod": 2,
+            "max": 2,
+            "label": ""
+          }
+        },
+        "general": {
+          "faith": "The wilderness is my God – it sustains me and makes me whole.",
+          "bigdream": "To live my last days in a mountain cabin with views across the plains.",
+          "yourpardner": "Bridget Lovelace",
+          "faithpoints": {
+            "value": 5,
+            "max": 4
+          },
+          "money": {
+            "value": 50
+          },
+          "xp": {
+            "value": 0
+          },
+          "canPush": "push",
+          "archetype": "RanchHand",
+          "groupconcept": "LawmenBountyHunters"
+        },
+        "abilities": {
+          "labor": {
+            "value": 1,
+            "mod": 4,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "presence": {
+            "value": 0,
+            "mod": 3,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "fightin": {
+            "value": 2,
+            "mod": 5,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "resilience": {
+            "value": 3,
+            "mod": 6,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "move": {
+            "value": 1,
+            "mod": 5,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "operate": {
+            "value": 0,
+            "mod": 4,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "shootin": {
+            "value": 2,
+            "mod": 7,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "lightfingered": {
+            "value": 2,
+            "mod": 6,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "hawkeye": {
+            "value": 3,
+            "mod": 6,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "nature": {
+            "value": 2,
+            "mod": 5,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "insight": {
+            "value": 1,
+            "mod": 4,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "animalhandlin": {
+            "value": 2,
+            "mod": 5,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "performin": {
+            "value": 0,
+            "mod": 2,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "makin": {
+            "value": 0,
+            "mod": 2,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "doctorin": {
+            "value": 0,
+            "mod": 2,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "booklearnin": {
+            "value": 0,
+            "mod": 2,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          }
+        }
+      },
+      "prototypeToken": {
+        "name": "newboy",
+        "displayName": 20,
+        "actorLink": true,
+        "appendNumber": false,
+        "prependAdjective": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/talesoftheoldwest/assets/avatars/luis-osorio.webp",
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "offsetX": 0,
+          "offsetY": 0,
+          "fit": "contain",
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "alphaThreshold": 0.75
+        },
+        "hexagonalShape": 0,
+        "lockRotation": false,
+        "rotation": 0,
+        "alpha": 1,
+        "disposition": 1,
+        "displayBars": 20,
+        "bar1": {
+          "attribute": "header.health"
+        },
+        "bar2": {
+          "attribute": "header.stress"
+        },
+        "light": {
+          "negative": false,
+          "priority": 0,
+          "alpha": 0.5,
+          "angle": 360,
+          "bright": 0,
+          "color": null,
+          "coloration": 1,
+          "dim": 0,
+          "attenuation": 0.5,
+          "luminosity": 0.5,
+          "saturation": 0,
+          "contrast": 0,
+          "shadows": 0,
+          "animation": {
+            "type": null,
+            "speed": 5,
+            "intensity": 5,
+            "reverse": false
+          },
+          "darkness": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        "sight": {
+          "enabled": true,
+          "range": 12,
+          "angle": 360,
+          "visionMode": "basic",
+          "color": null,
+          "attenuation": 0.1,
+          "brightness": 0,
+          "saturation": 0,
+          "contrast": 0
+        },
+        "detectionModes": [],
+        "occludable": {
+          "radius": 0
+        },
+        "ring": {
+          "enabled": false,
+          "colors": {
+            "ring": null,
+            "background": null
+          },
+          "effects": 1,
+          "subject": {
+            "scale": 1,
+            "texture": null
+          }
+        },
+        "flags": {},
+        "randomImg": false
+      },
+      "items": [
+        {
+          "name": "Winchester 1868",
+          "type": "weapon",
+          "_id": "HypwKCfNQRhxNALI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "",
+            "itemModifiers": null,
+            "subtype": "shootin",
+            "action": "lever",
+            "bonusdraw": 0,
+            "attackbonus": 2,
+            "damage": 3,
+            "crit": 1,
+            "range": "long",
+            "ammo": 15
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136015821,
+            "modifiedTime": 1734026432118,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Knife",
+          "type": "weapon",
+          "_id": "fY9f7jcv0mAoMgvd",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "",
+            "itemModifiers": null,
+            "subtype": "fightin",
+            "action": "",
+            "bonusdraw": 0,
+            "attackbonus": 0,
+            "damage": 1,
+            "crit": 2,
+            "range": "",
+            "ammo": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136017867,
+            "modifiedTime": 1733136017867,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Manhattan Navy",
+          "img": "systems/talesoftheoldwest/assets/icons/manhattannavy.webp",
+          "type": "weapon",
+          "_id": "C3nmtlwIhHAjLCrB",
+          "system": {
+            "description": "",
+            "itemModifiers": null,
+            "subtype": "shootin",
+            "action": "single",
+            "bonusdraw": 0,
+            "attackbonus": 2,
+            "damage": 2,
+            "crit": 1,
+            "range": "medium",
+            "ammo": 6
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136019864,
+            "modifiedTime": 1733136019864,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Sharpshooter",
+          "type": "talent",
+          "_id": "HGD9T47itJ6GSmhI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "itemModifiers": {
+              "0": {
+                "name": "shootin",
+                "value": "1"
+              }
+            },
+            "description": "<p>This is a Talent</p>"
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.xWkJzivqOlaiwCbw",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136022107,
+            "modifiedTime": 1733136022107,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Tracker",
+          "type": "talent",
+          "_id": "hw1bMbKk7fjQDzqL",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>You gain +1 bonus to <strong>HAWKEYE</strong> when tracking in the wilderness</p>",
+            "itemModifiers": null
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.z11zOk32BBGOl93G",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136024071,
+            "modifiedTime": 1733136024071,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Lucky",
+          "type": "talent",
+          "_id": "I7QzShfTdvBL8kyI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>When you suffer a Critical Injury you can reroll the Tens die and take the best result</p>",
+            "itemModifiers": null
+          },
+          "effects": [],
+          "folder": "o0HgvcRqPlzSZDM3",
+          "sort": 100000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.5q0tKk4Ijla0Nvcl",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136026345,
+            "modifiedTime": 1733136026345,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Camping Gear",
+          "img": "icons/svg/aura.svg",
+          "type": "item",
+          "_id": "ajeItMiGylS1TFTg",
+          "system": {
+            "description": "<p>Basic camping gear. Gives a +1 bonus to NATURE rolls when </p><p>making camp for the night.</p>",
+            "itemModifiers": null,
+            "quantity": 1,
+            "weight": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136033667,
+            "modifiedTime": 1734023856565,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Trapping Gear",
+          "img": "icons/svg/aura.svg",
+          "type": "item",
+          "_id": "apYtnjcxdffliHuE",
+          "system": {
+            "description": "<p>Basic items of wire, twine, maybe a spring-loaded bear trap</p>",
+            "itemModifiers": null,
+            "quantity": 1,
+            "weight": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136035827,
+            "modifiedTime": 1733136035827,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        },
+        {
+          "name": "Rope",
+          "type": "item",
+          "_id": "D5uOtWSe6YmbgIw6",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>Always handy</p>",
+            "itemModifiers": null,
+            "quantity": 1,
+            "weight": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 300000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.DsUvLVi52qKwlgjX",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1733136037942,
+            "modifiedTime": 1733136037942,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        }
+      ],
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.wwvlv2lnACjDHFCe",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1732884125630,
+        "modifiedTime": 1734026381340,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "NPC",
+      "type": "npc",
+      "_id": "Z6JlX6ZXhoTVt8sx",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "biography": "",
+        "attributes": {
+          "grit": {
+            "value": 0,
+            "mod": 0,
+            "max": 0,
+            "label": ""
+          },
+          "quick": {
+            "value": 0,
+            "mod": 0,
+            "max": 0,
+            "label": ""
+          },
+          "cunning": {
+            "value": 0,
+            "mod": 0,
+            "max": 0,
+            "label": ""
+          },
+          "docity": {
+            "value": 0,
+            "mod": 0,
+            "max": 0,
+            "label": ""
+          }
+        },
+        "abilities": {
+          "labor": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "presence": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "fightin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "resilience": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "move": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "operate": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "shootin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "lightfingered": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "hawkeye": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "nature": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "insight": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "animalhandlin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "performin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "makin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "doctorin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          },
+          "booklearnin": {
+            "value": 0,
+            "mod": 0,
+            "total": 0,
+            "label": "",
+            "attr": ""
+          }
+        }
+      },
+      "prototypeToken": {
+        "name": "NPC",
+        "displayName": 20,
+        "actorLink": false,
+        "appendNumber": false,
+        "prependAdjective": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "icons/svg/mystery-man.svg",
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "offsetX": 0,
+          "offsetY": 0,
+          "fit": "contain",
+          "scaleX": 1,
+          "scaleY": 1,
+          "rotation": 0,
+          "tint": "#ffffff",
+          "alphaThreshold": 0.75
+        },
+        "hexagonalShape": 0,
+        "lockRotation": false,
+        "rotation": 0,
+        "alpha": 1,
+        "disposition": -1,
+        "displayBars": 20,
+        "bar1": {
+          "attribute": "header.health"
+        },
+        "bar2": {
+          "attribute": "None"
+        },
+        "light": {
+          "negative": false,
+          "priority": 0,
+          "alpha": 0.5,
+          "angle": 360,
+          "bright": 0,
+          "color": null,
+          "coloration": 1,
+          "dim": 0,
+          "attenuation": 0.5,
+          "luminosity": 0.5,
+          "saturation": 0,
+          "contrast": 0,
+          "shadows": 0,
+          "animation": {
+            "type": null,
+            "speed": 5,
+            "intensity": 5,
+            "reverse": false
+          },
+          "darkness": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        "sight": {
+          "enabled": false,
+          "range": 12,
+          "angle": 360,
+          "visionMode": "basic",
+          "color": null,
+          "attenuation": 0.1,
+          "brightness": 0,
+          "saturation": 0,
+          "contrast": 0
+        },
+        "detectionModes": [],
+        "occludable": {
+          "radius": 0
+        },
+        "ring": {
+          "enabled": false,
+          "colors": {
+            "ring": null,
+            "background": null
+          },
+          "effects": 1,
+          "subject": {
+            "scale": 1,
+            "texture": null
+          }
+        },
+        "flags": {},
+        "randomImg": false
+      },
+      "items": [
+        {
+          "name": "Item",
+          "img": "icons/svg/aura.svg",
+          "type": "item",
+          "_id": "QqzalnHuT6TSBpzw",
+          "system": {
+            "description": "",
+            "itemModifiers": null,
+            "quantity": 1,
+            "weight": 0
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": 1734020377577,
+            "modifiedTime": 1734020377577,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
+        }
+      ],
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.Z6JlX6ZXhoTVt8sx",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1734019444977,
+        "modifiedTime": 1734019444977,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    }
+  ],
+  "combats": [],
+  "items": [
+    {
+      "name": "Aggressive",
+      "type": "animalquality",
+      "_id": "rSUfObXklxI3XcMZ",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770520448,
+        "modifiedTime": 1729770579556,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Easy to Ride",
+      "type": "animalquality",
+      "_id": "tlY66AfYph8n9GYS",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770605399,
+        "modifiedTime": 1729770605399,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Fast",
+      "type": "animalquality",
+      "_id": "trJRAQdJdTZCki5c",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770615299,
+        "modifiedTime": 1729770615299,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Graceful",
+      "type": "animalquality",
+      "_id": "gcpllXBPfmDAcbgW",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770628471,
+        "modifiedTime": 1729770628471,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Hot Horse",
+      "type": "animalquality",
+      "_id": "RWFn2S07LmTSb0IG",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770639638,
+        "modifiedTime": 1729770639638,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Loyal",
+      "type": "animalquality",
+      "_id": "KKY4eWNX02VfduPg",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770649899,
+        "modifiedTime": 1729770649899,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Painted Coat",
+      "type": "animalquality",
+      "_id": "pfOYZUMSUIs0Nzir",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770667433,
+        "modifiedTime": 1729770667433,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "folder": "q8E9alfSeM1DCNfJ",
+      "name": "Steady",
+      "type": "animalquality",
+      "_id": "jOk5nUPqgXumJjo3",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770676989,
+        "modifiedTime": 1729770676989,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Camping Gear",
+      "img": "icons/svg/aura.svg",
+      "type": "item",
+      "_id": "eerVkTW56rYA9F4J",
+      "system": {
+        "description": "<p>Basic camping gear. Gives a +1 bonus to NATURE rolls when </p><p>making camp for the night.</p>",
+        "itemModifiers": null,
+        "quantity": 1,
+        "weight": 0
+      },
+      "effects": [],
+      "folder": "DFBrwLylXIJKjhil",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730033937418,
+        "modifiedTime": 1730033937418,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Rope",
+      "type": "item",
+      "_id": "mp7LeXfNlVP2Mq6T",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p>Always handy</p>",
+        "itemModifiers": {
+          "1": {
+            "name": "grit",
+            "value": "1"
+          }
+        },
+        "quantity": 1,
+        "weight": 0
+      },
+      "effects": [],
+      "folder": "DFBrwLylXIJKjhil",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.DsUvLVi52qKwlgjX",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730033942876,
+        "modifiedTime": 1730033942876,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Trapping Gear",
+      "img": "icons/svg/aura.svg",
+      "type": "item",
+      "_id": "9Q8ECG3NOrW1JuKq",
+      "system": {
+        "description": "<p>Basic items of wire, twine, maybe a spring-loaded bear trap</p>",
+        "itemModifiers": null,
+        "quantity": 1,
+        "weight": 0
+      },
+      "effects": [],
+      "folder": "DFBrwLylXIJKjhil",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730033939966,
+        "modifiedTime": 1730033939966,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lucky",
+      "type": "talent",
+      "_id": "5q0tKk4Ijla0Nvcl",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p>When you suffer a Critical Injury you can reroll the Tens die and take the best result</p>",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730032663135,
+        "modifiedTime": 1730032716073,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Sharpshooter",
+      "type": "talent",
+      "_id": "xWkJzivqOlaiwCbw",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "itemModifiers": {
+          "0": {
+            "name": "shootin",
+            "value": "+1"
+          }
+        },
+        "description": "<p>This is a Talent</p>"
+      },
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729169127163,
+        "modifiedTime": 1730032718398,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Tracker",
+      "type": "talent",
+      "_id": "z11zOk32BBGOl93G",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p>You gain +1 bonus to <strong>HAWKEYE</strong> when tracking in the wilderness</p>",
+        "itemModifiers": null
+      },
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729504252501,
+        "modifiedTime": 1730032720979,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Knife",
+      "type": "weapon",
+      "_id": "p9USgu1jPMkAYdHh",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": {
+          "0": {
+            "name": "Grit",
+            "value": "1"
+          }
+        },
+        "subtype": "fightin",
+        "action": "",
+        "bonusdraw": 0,
+        "attackbonus": 0,
+        "damage": 1,
+        "crit": 2,
+        "range": "",
+        "ammo": 0
+      },
+      "effects": [],
+      "folder": "PfXKklVIj8c5cX6Y",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730035005218,
+        "modifiedTime": 1734026632840,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Manhattan Navy",
+      "img": "systems/talesoftheoldwest/assets/icons/manhattannavy.webp",
+      "type": "weapon",
+      "_id": "qP3wsYv8g0TyCQNT",
+      "system": {
+        "description": "",
+        "itemModifiers": null,
+        "subtype": "shootin",
+        "action": "single",
+        "bonusdraw": 0,
+        "attackbonus": 2,
+        "damage": 2,
+        "crit": 1,
+        "range": "medium",
+        "ammo": 6
+      },
+      "effects": [],
+      "folder": "PfXKklVIj8c5cX6Y",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730035008550,
+        "modifiedTime": 1730035008550,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Winchester 1868",
+      "type": "weapon",
+      "_id": "ZorD7jdEuRXmkIiL",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "",
+        "itemModifiers": null,
+        "subtype": "shootin",
+        "action": "lever",
+        "bonusdraw": 0,
+        "attackbonus": 2,
+        "damage": 3,
+        "crit": 1,
+        "range": "long",
+        "ammo": 15
+      },
+      "effects": [],
+      "folder": "PfXKklVIj8c5cX6Y",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730035001883,
+        "modifiedTime": 1730035001883,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    }
+  ],
+  "journal": [],
+  "scenes": [
+    {
+      "name": "Tales of the Old West",
+      "_id": "bGHDNv9MMyQppyzl",
+      "active": true,
+      "navigation": false,
+      "navOrder": 0,
+      "navName": "",
+      "background": {
+        "src": "systems/talesoftheoldwest/assets/icons/totow.webp",
+        "anchorX": 0,
+        "anchorY": 0,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0
+      },
+      "foreground": null,
+      "foregroundElevation": 20,
+      "thumb": "worlds/totow-v12/assets/scenes/bGHDNv9MMyQppyzl-thumb.webp",
+      "width": 1842,
+      "height": 1884,
+      "padding": 0,
+      "initial": {
+        "x": 998,
+        "y": 968,
+        "scale": 0.5
+      },
+      "backgroundColor": "#000000",
+      "grid": {
+        "type": 0,
+        "size": 100,
+        "style": "solidLines",
+        "thickness": 1,
+        "color": "#000000",
+        "alpha": 0.2,
+        "distance": 5,
+        "units": "ft"
+      },
+      "tokenVision": false,
+      "fog": {
+        "exploration": false,
+        "overlay": null,
+        "colors": {
+          "explored": null,
+          "unexplored": null
+        }
+      },
+      "environment": {
+        "darknessLevel": 0,
+        "darknessLock": false,
+        "globalLight": {
+          "enabled": false,
+          "alpha": 0.5,
+          "bright": false,
+          "color": null,
+          "coloration": 1,
+          "luminosity": 0,
+          "saturation": 0,
+          "contrast": 0,
+          "shadows": 0,
+          "darkness": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        "cycle": true,
+        "base": {
+          "hue": 0,
+          "intensity": 0,
+          "luminosity": 0,
+          "saturation": 0,
+          "shadows": 0
+        },
+        "dark": {
+          "hue": 0.7138888888888889,
+          "intensity": 0,
+          "luminosity": -0.25,
+          "saturation": 0,
+          "shadows": 0
+        }
+      },
+      "drawings": [],
+      "tokens": [
+        {
+          "name": "newboy",
+          "displayName": 20,
+          "actorLink": true,
+          "appendNumber": false,
+          "prependAdjective": false,
+          "width": 1,
+          "height": 1,
+          "texture": {
+            "src": "systems/talesoftheoldwest/assets/avatars/luis-osorio.webp",
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fit": "contain",
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0,
+            "tint": "#ffffff",
+            "alphaThreshold": 0.75
+          },
+          "hexagonalShape": 0,
+          "lockRotation": false,
+          "rotation": 0,
+          "alpha": 1,
+          "disposition": 1,
+          "displayBars": 20,
+          "bar1": {
+            "attribute": "header.health"
+          },
+          "bar2": {
+            "attribute": "header.stress"
+          },
+          "light": {
+            "negative": false,
+            "priority": 0,
+            "alpha": 0.5,
+            "angle": 360,
+            "bright": 0,
+            "color": null,
+            "coloration": 1,
+            "dim": 0,
+            "attenuation": 0.5,
+            "luminosity": 0.5,
+            "saturation": 0,
+            "contrast": 0,
+            "shadows": 0,
+            "animation": {
+              "type": null,
+              "speed": 5,
+              "intensity": 5,
+              "reverse": false
+            },
+            "darkness": {
+              "min": 0,
+              "max": 1
+            }
+          },
+          "sight": {
+            "enabled": true,
+            "range": 12,
+            "angle": 360,
+            "visionMode": "basic",
+            "color": null,
+            "attenuation": 0.1,
+            "brightness": 0,
+            "saturation": 0,
+            "contrast": 0
+          },
+          "detectionModes": [],
+          "occludable": {
+            "radius": 0
+          },
+          "ring": {
+            "enabled": false,
+            "colors": {
+              "ring": null,
+              "background": null
+            },
+            "effects": 1,
+            "subject": {
+              "scale": 1,
+              "texture": null
+            }
+          },
+          "flags": {},
+          "actorId": "wwvlv2lnACjDHFCe",
+          "hidden": false,
+          "sort": 2,
+          "_id": "pMdek9IyAv4V2tHz",
+          "delta": {
+            "_id": "TItRCa7tiEaWgm1u",
+            "system": {},
+            "items": [],
+            "effects": [],
+            "flags": {},
+            "name": null,
+            "type": null,
+            "img": null
+          },
+          "x": 1212,
+          "y": 770,
+          "elevation": 0,
+          "locked": false,
+          "_regions": []
+        },
+        {
+          "name": "Animal",
+          "displayName": 20,
+          "actorLink": true,
+          "appendNumber": false,
+          "prependAdjective": false,
+          "width": 1,
+          "height": 1,
+          "texture": {
+            "src": "systems/talesoftheoldwest/assets/avatars/horse.webp",
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fit": "contain",
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0,
+            "tint": "#ffffff",
+            "alphaThreshold": 0.75
+          },
+          "hexagonalShape": 0,
+          "lockRotation": false,
+          "rotation": 0,
+          "alpha": 1,
+          "disposition": 1,
+          "displayBars": 20,
+          "bar1": {
+            "attribute": null
+          },
+          "bar2": {
+            "attribute": null
+          },
+          "light": {
+            "negative": false,
+            "priority": 0,
+            "alpha": 0.5,
+            "angle": 360,
+            "bright": 0,
+            "color": null,
+            "coloration": 1,
+            "dim": 0,
+            "attenuation": 0.5,
+            "luminosity": 0.5,
+            "saturation": 0,
+            "contrast": 0,
+            "shadows": 0,
+            "animation": {
+              "type": null,
+              "speed": 5,
+              "intensity": 5,
+              "reverse": false
+            },
+            "darkness": {
+              "min": 0,
+              "max": 1
+            }
+          },
+          "sight": {
+            "enabled": true,
+            "range": 12,
+            "angle": 360,
+            "visionMode": "basic",
+            "color": null,
+            "attenuation": 0.1,
+            "brightness": 0,
+            "saturation": 0,
+            "contrast": 0
+          },
+          "detectionModes": [],
+          "occludable": {
+            "radius": 0
+          },
+          "ring": {
+            "enabled": false,
+            "colors": {
+              "ring": null,
+              "background": null
+            },
+            "effects": 0,
+            "subject": {
+              "scale": 1,
+              "texture": null
+            }
+          },
+          "flags": {},
+          "actorId": "ZhdtY5JbQb6xcRHC",
+          "hidden": false,
+          "sort": 3,
+          "_id": "ziwqjgfRYjQREMiJ",
+          "delta": {
+            "_id": "z0pBJquCYRk4xYgH",
+            "system": {},
+            "items": [],
+            "effects": [],
+            "flags": {},
+            "name": null,
+            "type": null,
+            "img": null
+          },
+          "x": 1214,
+          "y": 622,
+          "elevation": 0,
+          "locked": false,
+          "_regions": []
+        }
+      ],
+      "lights": [],
+      "notes": [],
+      "sounds": [],
+      "regions": [],
+      "templates": [],
+      "tiles": [],
+      "walls": [],
+      "playlist": null,
+      "playlistSound": null,
+      "journal": null,
+      "journalEntryPage": null,
+      "weather": "",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729605842469,
+        "modifiedTime": 1729605968908,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Critical Injuries",
+      "_id": "d6HFQcLrhNfhp6I3",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            11,
+            11
+          ],
+          "drawn": false,
+          "_id": "xAf89RmOM7ChWD0F",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Twisted Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            12,
+            12
+          ],
+          "drawn": false,
+          "_id": "qp6An4FUyE8DGckQ",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Foot</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE, cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            13,
+            13
+          ],
+          "drawn": false,
+          "_id": "SvteURJeWWJmdfBd",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE.  Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of walking with a limp.</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            14,
+            14
+          ],
+          "drawn": false,
+          "_id": "44CuXFqHDB9fgjCi",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Torn Achilles Tendon</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[4d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'.  Cannot run</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            15,
+            15
+          ],
+          "drawn": false,
+          "_id": "hJIz1TWmT15245Y5",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Fractured Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            16,
+            16
+          ],
+          "drawn": false,
+          "_id": "rjBXr3ZBXT16HVbk",
+          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Shattered Shin Bone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot Ride, Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: Lose the lower leg</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            21,
+            21
+          ],
+          "drawn": false,
+          "_id": "JWyUBgdFmnW4ErM8",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Numbed Leg</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            22,
+            22
+          ],
+          "drawn": false,
+          "_id": "rWfHeQVXxlMD0caH",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            23,
+            23
+          ],
+          "drawn": false,
+          "_id": "4M8KIzj4vl7RArjv",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Torn Hamstring</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE.  Cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            24,
+            24
+          ],
+          "drawn": false,
+          "_id": "9cKLVsriSTIN06yJ",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Cracked Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            25,
+            25
+          ],
+          "drawn": false,
+          "_id": "IiIX4aU5A5hzpaUk",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Broken Thigh</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −2 to any physical task</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            26,
+            26
+          ],
+          "drawn": false,
+          "_id": "fXHxlYIzp8v5OdCC",
+          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Arterial Bleed</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −3 to any physical task</p><p><strong>Long-Term Effect</strong>: Lose the Leg</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            31,
+            31
+          ],
+          "drawn": false,
+          "_id": "ZK44ckVyt3xQEmu7",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Numbed Arm</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            32,
+            32
+          ],
+          "drawn": false,
+          "_id": "yEirNlk0zLEGQuv9",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’ &amp; FIGHTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            33,
+            33
+          ],
+          "drawn": false,
+          "_id": "A4clwZpjhti4dmdS",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Impaled Shoulder</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            34,
+            34
+          ],
+          "drawn": false,
+          "_id": "mTluwu4o06ziqPPL",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Elbow Chipped</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            35,
+            35
+          ],
+          "drawn": false,
+          "_id": "sU61ig9xYZwxIv50",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Hand Hit</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of randomly losing a finger or thumb</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            36,
+            36
+          ],
+          "drawn": false,
+          "_id": "vhVHnFDMIDYjE8V7",
+          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Compound Fracture</p><p><strong>Fatal</strong>: Yes / [[2d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: Lose the arm</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            41,
+            41
+          ],
+          "drawn": false,
+          "_id": "qbFEVWZV0581PYf1",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Sucker Punched</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            42,
+            42
+          ],
+          "drawn": false,
+          "_id": "98MYd3zAyI8cnxcO",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Kidney Blow</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            43,
+            43
+          ],
+          "drawn": false,
+          "_id": "jbOykwgLxliNp1Wj",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Skewered Groin</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Suffer 1 damage for every LABOR, MOVE or FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: 33% chance of losing your ability to have kids</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            44,
+            44
+          ],
+          "drawn": false,
+          "_id": "VKpEgURdKMkv4OXz",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Ruptured Spleen</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  −1 to all Physical Actions and −2 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            45,
+            45
+          ],
+          "drawn": false,
+          "_id": "Uvjk9KmWmGj12kys",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Gut Shot</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Suffer 1 damage for every LABOR, MOVE or</p><p>FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: All future GUT crits get +1 to the Units Die</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            46,
+            46
+          ],
+          "drawn": false,
+          "_id": "D3l9qpKmdoYj8yd1",
+          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Lacerated Intestines</p><p><strong>Fatal</strong>: Yes −1 / [[2d6]] Rounds</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −3 to all physical tasks, and take 1 damage for every physical action</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            51,
+            51
+          ],
+          "drawn": false,
+          "_id": "zQJrRmpeNTKGM3nU",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Winded</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            52,
+            52
+          ],
+          "drawn": false,
+          "_id": "Cq7Xtu4HRbABAe7U",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Bruised Ribs</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -2 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            53,
+            53
+          ],
+          "drawn": false,
+          "_id": "lIUEH27e1VoF1QeT",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Broken Collarbone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[6d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: Cannot Run or MOVE</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            54,
+            54
+          ],
+          "drawn": false,
+          "_id": "12I4hBbOA443AyMN",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Punctured Lung</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  -1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            55,
+            55
+          ],
+          "drawn": false,
+          "_id": "9ilrg8OThyzFBtGl",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Shattered Ribs</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  −2 to all physical tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            56,
+            56
+          ],
+          "drawn": false,
+          "_id": "4VvxtAZZDrmjAMlw",
+          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Cut through the heart</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: </p><p>YOUR HEART BEATS FOR JUST ONE MORE TIME</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            61,
+            61
+          ],
+          "drawn": false,
+          "_id": "OSGkLMaKsC5c85bb",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Nasty Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to PERFORMIN’</p><p><strong>Long-Term Effect</strong>: You have a permanent scar</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            62,
+            62
+          ],
+          "drawn": false,
+          "_id": "wsPagQvAinF6U39r",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Broken Nose</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to LABOR</p><p><strong>Long-Term Effect</strong>: You have a permanent “broken-nose” look</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            63,
+            63
+          ],
+          "drawn": false,
+          "_id": "ev7a2WIgXn09E35C",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Gouged Eyes</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: −2 to SHOOTIN’ &amp; HAWKEYE</p><p><strong>Long-Term Effect</strong>: Permanent blindness in 1 eye</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            64,
+            64
+          ],
+          "drawn": false,
+          "_id": "yyriXSTn5z6QncgD",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Fractured Skull</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds. −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Cunning or Docity ability</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            65,
+            65
+          ],
+          "drawn": false,
+          "_id": "IuPJPdTtnXbgh27F",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Slashed Throat</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of permanent vocal impairment</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            66,
+            67
+          ],
+          "drawn": false,
+          "_id": "DxhtiPAtDJ04mHS4",
+          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Terrible Hit to the Head</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: YOU ARE VERY DEAD</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729587221209,
+        "modifiedTime": 1731865055381,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "10*1d6+1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(1)",
+      "_id": "O8WgxkEPMZvdkjvA",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "srsjUOzxidEYouzg",
+          "text": "<p>Your gun or weapon is damaged and you suffer a −1 penalty when using it from now on, or an important item breaks</p>",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "vF5MA0BD1Mi6koev",
+          "text": "You stumble, slip or trip.  Lose your next slow  action.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "2iAJgvYd6LdUxyYA",
+          "text": "You drop your weapon,  lose your reins or  otherwise lose your grip  on something important.  If it was keeping you  upright or on your feet  you may need to make  a MOVE roll to avoid a  worse outcome.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "hrY6K3dVpa8FG0KS",
+          "text": "Your attack is under- powered, or your action is  weak. Lose a 6 from your  pool of successes.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "k6SP7K7ASTqlP1wr",
+          "text": "You are thrown off  balance. Lose your next  Round.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "documentCollection": "RollTable",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "g5yDNR19N0XggPsl",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "documentCollection": "RollTable",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "SzcZQ5ArSEYX8Xit",
+          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "J23yks6ALSqlFpX0",
+          "flags": {}
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158803527,
+        "modifiedTime": 1733147004278,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
+      "_id": "J23yks6ALSqlFpX0",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "0sUSodOS4aEd4M4C",
+          "text": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "HCn3IP4fugModw93",
+          "text": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "UH5HqxX0goPm6APj",
+          "text": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "JbenPvx0JSViscji",
+          "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "gpZmE2aUp06Qtotk",
+          "text": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "pG1HkCW93GeBa0JF",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "L6z8gX2mcoJkT6br",
+          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "zqtm7HB37JwEXqLM",
+          "flags": {},
+          "documentCollection": "RollTable"
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158834266,
+        "modifiedTime": 1733147008658,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+      "_id": "zqtm7HB37JwEXqLM",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "2s8xEblRzMlHKWl7",
+          "text": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "glc7R39ZOQyuoDcn",
+          "text": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "M8yU2nMoXb2qAxVT",
+          "text": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "pRmG78BdFY38Na1u",
+          "text": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "jYRLedq17XL8MyS0",
+          "text": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "zJxhC33OxMq38bwp",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "Hhx96VSeqVGQQvOy",
+          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "Lj1PqruHzmvl6sDL",
+          "flags": {},
+          "documentCollection": "RollTable"
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158849440,
+        "modifiedTime": 1733147014666,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
+      "_id": "Lj1PqruHzmvl6sDL",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "fbiv5Jp6ypuw1gOz",
+          "text": "You’re so shaken and  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "kIIz3ZVGxBp6wvhp",
+          "text": "Your action has gone  catastrophically wrong. A  key item of great value is  broken beyond repair, or  your horse is killed.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "iJGQ4bD1q6n2FoRX",
+          "text": "You trip and fall, or  are thrown from your  horse, and are Prone.  Take falling damage if  the fall is far enough.  You are Stunned for  D6 Rounds minus the  number of successes on a  RESILIENCE test.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "8nZBbXOwCqGqPqpI",
+          "text": "Your attack or action  has terribly affected a  random nearby bystander.  They are immediately  Broken on Grit and  suffer a critical injury.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "B5Pp3gBjb0uMZeAq",
+          "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Grit.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "WtKCjdAGYQEV2J5I",
+          "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Quick.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158862626,
+        "modifiedTime": 1733147022038,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (1)",
+      "_id": "jj2MMCH9kEX1u11p",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "pr8E42zC2hlUchEn",
+          "text": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "j7Is6FHy7JQqyBBn",
+          "text": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "Ziv6uK5eVFMWYpEu",
+          "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "cR5Qf2hTQqqewi8R",
+          "text": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "IUUecy5EqwewRuKY",
+          "text": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "8Q9k63PX4R6nemMA",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "AMS0nitF3OnstMSl",
+          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "hSf8k6g2vL7234BW",
+          "flags": {},
+          "documentCollection": "RollTable"
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158877972,
+        "modifiedTime": 1729158891198,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
+      "_id": "xePnbOGMrCLPZf0S",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "pr8E42zC2hlUchEn",
+          "text": "Your confidence is badly  shaken. Suffer 1 point of  either Vexes or Doubts  (GM decides).",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "j7Is6FHy7JQqyBBn",
+          "text": "You’re tongue-tied. You  suffer a −1 penalty on all  ability rolls relating to  social or mental tests for  the rest of the scene.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "Ziv6uK5eVFMWYpEu",
+          "text": "Either directly or through  the grapevine, people  get to know of your bad  showing. For the rest  of the scenario, all your  ability rolls relating to  social encounters suffer a  −1 penalty.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "cR5Qf2hTQqqewi8R",
+          "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "IUUecy5EqwewRuKY",
+          "text": "You’ve made such a pig’s  ear of the situation that  the object of your efforts  dismisses you. You cannot  try to influence them  again for at least 24  hours.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "8Q9k63PX4R6nemMA",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "AMS0nitF3OnstMSl",
+          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "K4z09Ows9VzLr9Vr",
+          "flags": {},
+          "documentCollection": "RollTable"
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158894293,
+        "modifiedTime": 1729158909340,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+      "_id": "pli2vBNNCodIKrNb",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "pr8E42zC2hlUchEn",
+          "text": "You get so frustrated that  you suffer 1 point of both  Vexes and Doubts.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "j7Is6FHy7JQqyBBn",
+          "text": "You struggle to cope with  the situation. Lose your  next Round to compose  yourself.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "Ziv6uK5eVFMWYpEu",
+          "text": "Your actions seem  so disrespectful or  disgraceful that a nearby  non-player character  (NPC) attacks you with  a slap or a punch to put  you in your place.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "cR5Qf2hTQqqewi8R",
+          "text": "Things are going badly  wrong, and you can’t  cope. You need a Turn to  pull yourself together.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "IUUecy5EqwewRuKY",
+          "text": "The shameful experience  scars you, and you suffer  a 6 dice attack, dam 1,  against your Docity and  Cunning.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "8Q9k63PX4R6nemMA",
+          "text": "Your Troubles are  mounting—reroll on the  next column.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "document",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "AMS0nitF3OnstMSl",
+          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
+          "img": "icons/svg/d20-grey.svg",
+          "documentId": "HFc4NoTiBzTeiduz",
+          "flags": {},
+          "documentCollection": "RollTable"
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158912303,
+        "modifiedTime": 1729158922319,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    },
+    {
+      "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
+      "_id": "mWGec7BwhJWV2jN2",
+      "img": "icons/svg/d20-grey.svg",
+      "description": "",
+      "results": [
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            1,
+            1
+          ],
+          "drawn": false,
+          "_id": "pr8E42zC2hlUchEn",
+          "text": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            2,
+            2
+          ],
+          "drawn": false,
+          "_id": "j7Is6FHy7JQqyBBn",
+          "text": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            3,
+            3
+          ],
+          "drawn": false,
+          "_id": "Ziv6uK5eVFMWYpEu",
+          "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            4,
+            4
+          ],
+          "drawn": false,
+          "_id": "cR5Qf2hTQqqewi8R",
+          "text": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            5,
+            5
+          ],
+          "drawn": false,
+          "_id": "IUUecy5EqwewRuKY",
+          "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        },
+        {
+          "type": "text",
+          "weight": 1,
+          "range": [
+            6,
+            6
+          ],
+          "drawn": false,
+          "_id": "8Q9k63PX4R6nemMA",
+          "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
+          "img": "icons/svg/d20-black.svg",
+          "documentId": null,
+          "flags": {}
+        }
+      ],
+      "replacement": true,
+      "displayRoll": false,
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {
+        "exportSource": {
+          "world": "tales-of-the-old-west",
+          "system": "talesoftheoldwest",
+          "coreVersion": "12.331",
+          "systemVersion": "0.0.1"
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729158925601,
+        "modifiedTime": 1729158936133,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      },
+      "formula": "1d6"
+    }
+  ],
+  "macros": [],
+  "cards": [],
+  "playlists": [],
+  "folders": [
+    {
+      "name": "Animal Qualities",
+      "sorting": "a",
+      "folder": null,
+      "type": "Item",
+      "_id": "q8E9alfSeM1DCNfJ",
+      "description": "",
+      "sort": 0,
+      "color": "#1b791c",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1729770574306,
+        "modifiedTime": 1729770591652,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Items",
+      "sorting": "a",
+      "folder": null,
+      "type": "Item",
+      "_id": "DFBrwLylXIJKjhil",
+      "description": "",
+      "sort": 0,
+      "color": "#2f437f",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730033932764,
+        "modifiedTime": 1730033932764,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Talents",
+      "sorting": "a",
+      "folder": null,
+      "type": "Item",
+      "_id": "o0HgvcRqPlzSZDM3",
+      "description": "",
+      "sort": 0,
+      "color": "#a43232",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730032711376,
+        "modifiedTime": 1730032711376,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Weapons",
+      "sorting": "a",
+      "folder": null,
+      "type": "Item",
+      "_id": "PfXKklVIj8c5cX6Y",
+      "description": "",
+      "sort": 0,
+      "color": "#1f9193",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1730034995904,
+        "modifiedTime": 1730034995904,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    }
+  ],
+  "_id": "s63Y54pE6tY0T3Fj",
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829882663,
+    "modifiedTime": 1734026714021,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!adventures!s63Y54pE6tY0T3Fj"
+}

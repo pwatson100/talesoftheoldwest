@@ -1,0 +1,37 @@
+{
+  "name": "Winchester 1868",
+  "type": "weapon",
+  "_id": "ZorD7jdEuRXmkIiL",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "",
+    "itemModifiers": null,
+    "subtype": "shootin",
+    "action": "lever",
+    "bonusdraw": 0,
+    "attackbonus": 2,
+    "damage": 3,
+    "crit": 1,
+    "range": "long",
+    "ammo": 15
+  },
+  "effects": [],
+  "folder": "PfXKklVIj8c5cX6Y",
+  "sort": 100000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829692166,
+    "modifiedTime": 1730829692166,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!ZorD7jdEuRXmkIiL"
+}

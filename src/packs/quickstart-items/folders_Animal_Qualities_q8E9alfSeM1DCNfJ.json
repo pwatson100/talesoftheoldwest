@@ -1,0 +1,22 @@
+{
+  "name": "Animal Qualities",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "q8E9alfSeM1DCNfJ",
+  "description": "",
+  "sort": 100000,
+  "color": "#1b791c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829687481,
+    "modifiedTime": 1730829687481,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!q8E9alfSeM1DCNfJ"
+}

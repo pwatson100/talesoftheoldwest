@@ -1,0 +1,22 @@
+{
+  "name": "Talents",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "o0HgvcRqPlzSZDM3",
+  "description": "",
+  "sort": 100000,
+  "color": "#a43232",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829690428,
+    "modifiedTime": 1730829690428,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!o0HgvcRqPlzSZDM3"
+}

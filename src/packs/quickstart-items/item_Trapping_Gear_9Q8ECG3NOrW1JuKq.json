@@ -1,0 +1,31 @@
+{
+  "name": "Trapping Gear",
+  "img": "icons/svg/aura.svg",
+  "type": "item",
+  "_id": "9Q8ECG3NOrW1JuKq",
+  "system": {
+    "description": "<p>Basic items of wire, twine, maybe a spring-loaded bear trap</p>",
+    "itemModifiers": null,
+    "quantity": 1,
+    "weight": 0
+  },
+  "effects": [],
+  "folder": "DFBrwLylXIJKjhil",
+  "sort": 200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829688858,
+    "modifiedTime": 1730829688858,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!9Q8ECG3NOrW1JuKq"
+}

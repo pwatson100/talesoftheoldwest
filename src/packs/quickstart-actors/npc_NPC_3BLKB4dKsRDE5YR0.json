@@ -1,0 +1,289 @@
+{
+  "name": "NPC",
+  "type": "npc",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "",
+    "attributes": {
+      "grit": {
+        "value": 0,
+        "mod": 0,
+        "max": 0,
+        "label": ""
+      },
+      "quick": {
+        "value": 0,
+        "mod": 0,
+        "max": 0,
+        "label": ""
+      },
+      "cunning": {
+        "value": 0,
+        "mod": 0,
+        "max": 0,
+        "label": ""
+      },
+      "docity": {
+        "value": 0,
+        "mod": 0,
+        "max": 0,
+        "label": ""
+      }
+    },
+    "abilities": {
+      "labor": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "presence": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "fightin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "resilience": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "move": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "operate": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "shootin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "lightfingered": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "hawkeye": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "nature": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "insight": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "animalhandlin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "performin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "makin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "doctorin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      },
+      "booklearnin": {
+        "value": 0,
+        "mod": 0,
+        "total": 0,
+        "label": "",
+        "attr": ""
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "NPC",
+    "displayName": 20,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "header.health"
+    },
+    "bar2": {
+      "attribute": "None"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 12,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Item",
+      "img": "icons/svg/aura.svg",
+      "type": "item",
+      "_id": "QqzalnHuT6TSBpzw",
+      "system": {
+        "description": "",
+        "itemModifiers": null,
+        "quantity": 1,
+        "weight": 0
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!3BLKB4dKsRDE5YR0.QqzalnHuT6TSBpzw"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1734026603400,
+    "modifiedTime": 1734026603414,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_id": "3BLKB4dKsRDE5YR0",
+  "sort": 200000,
+  "_key": "!actors!3BLKB4dKsRDE5YR0"
+}

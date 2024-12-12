@@ -1,0 +1,569 @@
+{
+  "name": "Critical Injuries",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "_id": "xAf89RmOM7ChWD0F",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Twisted Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.xAf89RmOM7ChWD0F"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "_id": "qp6An4FUyE8DGckQ",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Foot</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE, cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.qp6An4FUyE8DGckQ"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "_id": "SvteURJeWWJmdfBd",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE.  Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of walking with a limp.</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.SvteURJeWWJmdfBd"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "_id": "44CuXFqHDB9fgjCi",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Torn Achilles Tendon</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[4d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'.  Cannot run</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.44CuXFqHDB9fgjCi"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "_id": "hJIz1TWmT15245Y5",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Fractured Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.hJIz1TWmT15245Y5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "_id": "rjBXr3ZBXT16HVbk",
+      "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Shattered Shin Bone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot Ride, Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: Lose the lower leg</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.rjBXr3ZBXT16HVbk"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "_id": "JWyUBgdFmnW4ErM8",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Numbed Leg</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.JWyUBgdFmnW4ErM8"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "drawn": false,
+      "_id": "rWfHeQVXxlMD0caH",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.rWfHeQVXxlMD0caH"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "drawn": false,
+      "_id": "4M8KIzj4vl7RArjv",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Torn Hamstring</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE.  Cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.4M8KIzj4vl7RArjv"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "_id": "9cKLVsriSTIN06yJ",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Cracked Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.9cKLVsriSTIN06yJ"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "drawn": false,
+      "_id": "IiIX4aU5A5hzpaUk",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Broken Thigh</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −2 to any physical task</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.IiIX4aU5A5hzpaUk"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "drawn": false,
+      "_id": "fXHxlYIzp8v5OdCC",
+      "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Arterial Bleed</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −3 to any physical task</p><p><strong>Long-Term Effect</strong>: Lose the Leg</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.fXHxlYIzp8v5OdCC"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "_id": "ZK44ckVyt3xQEmu7",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Numbed Arm</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.ZK44ckVyt3xQEmu7"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "drawn": false,
+      "_id": "yEirNlk0zLEGQuv9",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’ &amp; FIGHTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.yEirNlk0zLEGQuv9"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "drawn": false,
+      "_id": "A4clwZpjhti4dmdS",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Impaled Shoulder</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.A4clwZpjhti4dmdS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "drawn": false,
+      "_id": "mTluwu4o06ziqPPL",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Elbow Chipped</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.mTluwu4o06ziqPPL"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "drawn": false,
+      "_id": "sU61ig9xYZwxIv50",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Hand Hit</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of randomly losing a finger or thumb</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.sU61ig9xYZwxIv50"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "drawn": false,
+      "_id": "vhVHnFDMIDYjE8V7",
+      "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Compound Fracture</p><p><strong>Fatal</strong>: Yes / [[2d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: Lose the arm</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.vhVHnFDMIDYjE8V7"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "_id": "qbFEVWZV0581PYf1",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Sucker Punched</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.qbFEVWZV0581PYf1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "drawn": false,
+      "_id": "98MYd3zAyI8cnxcO",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Kidney Blow</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.98MYd3zAyI8cnxcO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "drawn": false,
+      "_id": "jbOykwgLxliNp1Wj",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Skewered Groin</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Suffer 1 damage for every LABOR, MOVE or FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: 33% chance of losing your ability to have kids</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.jbOykwgLxliNp1Wj"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "drawn": false,
+      "_id": "VKpEgURdKMkv4OXz",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Ruptured Spleen</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  −1 to all Physical Actions and −2 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.VKpEgURdKMkv4OXz"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "drawn": false,
+      "_id": "Uvjk9KmWmGj12kys",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Gut Shot</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Suffer 1 damage for every LABOR, MOVE or</p><p>FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: All future GUT crits get +1 to the Units Die</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.Uvjk9KmWmGj12kys"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "_id": "D3l9qpKmdoYj8yd1",
+      "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Lacerated Intestines</p><p><strong>Fatal</strong>: Yes −1 / [[2d6]] Rounds</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −3 to all physical tasks, and take 1 damage for every physical action</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.D3l9qpKmdoYj8yd1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        51
+      ],
+      "drawn": false,
+      "_id": "zQJrRmpeNTKGM3nU",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Winded</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.zQJrRmpeNTKGM3nU"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        52,
+        52
+      ],
+      "drawn": false,
+      "_id": "Cq7Xtu4HRbABAe7U",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Bruised Ribs</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -2 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.Cq7Xtu4HRbABAe7U"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "_id": "lIUEH27e1VoF1QeT",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Broken Collarbone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[6d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: Cannot Run or MOVE</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.lIUEH27e1VoF1QeT"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        54,
+        54
+      ],
+      "drawn": false,
+      "_id": "12I4hBbOA443AyMN",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Punctured Lung</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  -1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.12I4hBbOA443AyMN"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        55,
+        55
+      ],
+      "drawn": false,
+      "_id": "9ilrg8OThyzFBtGl",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Shattered Ribs</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  −2 to all physical tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.9ilrg8OThyzFBtGl"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        56
+      ],
+      "drawn": false,
+      "_id": "4VvxtAZZDrmjAMlw",
+      "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Cut through the heart</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: </p><p>YOUR HEART BEATS FOR JUST ONE MORE TIME</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.4VvxtAZZDrmjAMlw"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        61
+      ],
+      "drawn": false,
+      "_id": "OSGkLMaKsC5c85bb",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Nasty Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to PERFORMIN’</p><p><strong>Long-Term Effect</strong>: You have a permanent scar</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.OSGkLMaKsC5c85bb"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "_id": "wsPagQvAinF6U39r",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Broken Nose</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to LABOR</p><p><strong>Long-Term Effect</strong>: You have a permanent “broken-nose” look</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.wsPagQvAinF6U39r"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        63,
+        63
+      ],
+      "drawn": false,
+      "_id": "ev7a2WIgXn09E35C",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Gouged Eyes</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: −2 to SHOOTIN’ &amp; HAWKEYE</p><p><strong>Long-Term Effect</strong>: Permanent blindness in 1 eye</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.ev7a2WIgXn09E35C"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        64,
+        64
+      ],
+      "drawn": false,
+      "_id": "yyriXSTn5z6QncgD",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Fractured Skull</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds. −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Cunning or Docity ability</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.yyriXSTn5z6QncgD"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        65,
+        65
+      ],
+      "drawn": false,
+      "_id": "IuPJPdTtnXbgh27F",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Slashed Throat</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of permanent vocal impairment</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.IuPJPdTtnXbgh27F"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        67
+      ],
+      "drawn": false,
+      "_id": "DxhtiPAtDJ04mHS4",
+      "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Terrible Hit to the Head</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: YOU ARE VERY DEAD</p>",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!PItRluxaQsJvqgrp.DxhtiPAtDJ04mHS4"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": false,
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829660816,
+    "modifiedTime": 1730829660816,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "formula": "10*1d6+1d6",
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "_id": "PItRluxaQsJvqgrp",
+  "sort": 0,
+  "_key": "!tables!PItRluxaQsJvqgrp"
+}

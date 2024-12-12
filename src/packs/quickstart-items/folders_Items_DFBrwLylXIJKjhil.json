@@ -1,0 +1,22 @@
+{
+  "name": "Items",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "DFBrwLylXIJKjhil",
+  "description": "",
+  "sort": 100000,
+  "color": "#2f437f",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1730829688844,
+    "modifiedTime": 1730829688844,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!DFBrwLylXIJKjhil"
+}
