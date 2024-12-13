@@ -88,14 +88,12 @@
 
 				</div>
 			</section>
-			{{#if (gte totalSuccess itemData.crit)}}
+			{{#if (gt totalSuccess 1)}}
 				<section>
 					<div style='position: relative'>
 						<details>
-							<summary>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
-							<br />
-							<h4 class=''>Extra Damage</h4>
-							<h4 class=''>Roll a Critical injury</h4>
+							<summary style='font-size: large;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
+							{{{stunts}}}
 						</details>
 					</div>
 				</section>

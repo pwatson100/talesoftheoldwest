@@ -13,22 +13,102 @@
 			}
 		},
 		"Ability": {
-			"Labor": { "abbr": "LBR", "long": "Labor", "attr": "Grit" },
-			"Presence": { "abbr": "PRE", "long": "Presence", "attr": "Grit" },
-			"Fightin": { "abbr": "FGT", "long": "Fightin'", "attr": "Grit" },
-			"Resilience": { "abbr": "RES", "long": "Resilience", "attr": "Grit" },
-			"Move": { "abbr": "MOV", "long": "Move", "attr": "Quick" },
-			"Operate": { "abbr": "OPR", "long": "Operate", "attr": "Quick" },
-			"Shootin": { "abbr": "SHT", "long": "Shootin'", "attr": "Quick" },
-			"Lightfingered": { "abbr": "LF", "long": "Light-Fingered", "attr": "Quick" },
-			"Hawkeye": { "abbr": "HAW", "long": "Hawkeye", "attr": "Cunning" },
-			"Nature": { "abbr": "NAT", "long": "Nature", "attr": "Cunning" },
-			"Insight": { "abbr": "INS", "long": "Insight", "attr": "Cunning" },
-			"Animalhandlin": { "abbr": "HA", "long": "Animal Handlin'", "attr": "Cunning" },
-			"Performin": { "abbr": "PER", "long": "Performin", "attr": "Docity" },
-			"Makin": { "abbr": "MAK", "long": "Makin'", "attr": "Docity" },
-			"Doctorin": { "abbr": "DR", "long": "Doctorin'", "attr": "Docity" },
-			"Booklearnin": { "abbr": "BKL", "long": "Book Learnin'", "attr": "Docity" },
+			"Labor": {
+				"abbr": "LBR",
+				"long": "Labor",
+				"attr": "Grit",
+				"stunts": "<div> <ul><li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You do it in half the time it would normally take.</li> <li>You do it quietly.</li> <li>You show off.</li></ul></div>"
+			},
+			"Presence": {
+				"abbr": "PRE",
+				"long": "Presence",
+				"attr": "Grit",
+				"stunts": "<div> <ul><li>Your opponent does what you want without demanding a favor in return.</li> <li>Your opponent does more than you ask for, for example giving you some useful piece of information. Details are up to the GM.</li> <li>Your opponent is impressed by you and will try to help you later on in some way. Details are up to the GM.</li></ul></div>"
+			},
+			"Fightin": {
+				"abbr": "FGT",
+				"long": "Fightin'",
+				"attr": "Grit",
+				"stunts": "<div> <ul><li>You inflict 1 more point of damage, to be split between your target’s Quick and Grit as usual. You can choose this stunt multiple times if you roll several extra successes.</li> <li>You knock or pull a weapon or other object away from your opponent. You choose which. During a fight, picking up a dropped object counts as a fast action.</li> <li>Your opponent falls to the ground or is pushed back—through a door or over a cliff, for example.</li> <li>At the cost of extra successes equal to your weapon’s Crit Rating, you inflict a critical injury. Roll on the Critical Injury Table.</li></ul></div>"
+			},
+			"Resilience": {
+				"abbr": "RES",
+				"long": "Resilience",
+				"attr": "Grit",
+				"stunts": "<div> <ul><li>You may give one success to another player character in the same situation as you.</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You impress someone.</li></ul></div>"
+			},
+			"Move": {
+				"abbr": "MOV",
+				"long": "Move",
+				"attr": "Quick",
+				"stunts": "<div> <ul><li>You may give one success to another player character in the same situation as you.</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You impress someone.</li></ul></div>"
+			},
+			"Operate": {
+				"abbr": "OPR",
+				"long": "Operate",
+				"attr": "Quick",
+				"stunts": "<div> <ul><li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You do it in half the time it would normally take.</li> <li>You do it quietly.</li> <li>You show off.</li></ul></div>"
+			},
+			"Shootin": {
+				"abbr": "SHT",
+				"long": "Shootin'",
+				"attr": "Quick",
+				"stunts": "<div> <ul><li>You inflict 1 additional point of damage, which is applied to your target’s Quick and Grit as usual. You can choose this stunt multiple times if you roll several extra successes.</li> <li>You pin down your enemy. They take 1 point of Doubts. You can choose this stunt multiple times, if you roll several extra successes.</li> <li>Your opponent falls to the ground or is pushed back, for example through a doorway.</li> <li>At the cost of extra successes equal to your weapon’s Crit Rating, you inflict a critical injury. Roll on the Critical Injury Table.</li></ul></div>"
+			},
+			"Lightfingered": {
+				"abbr": "LF",
+				"long": "Light-Fingered",
+				"attr": "Quick",
+				"stunts": "<div> <ul><li>You may give one success to another player character in the same situation as you.</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>Your action impresses observers.</li></ul></div>"
+			},
+			"Hawkeye": {
+				"abbr": "HAW",
+				"long": "Hawkeye",
+				"attr": "Cunning",
+				"stunts": "<div> <ul><li>You can read more from those tracks than you thought (the GM should offer more information).</li> <li>Is it coming for me?</li> <li>Are there more of them close by?</li> <li>How do I get in/past/away?</li></ul></div>"
+			},
+			"Nature": {
+				"abbr": "NAT",
+				"long": "Nature",
+				"attr": "Cunning",
+				"stunts": "<div> <ul><li>You may give one success to another player character in the same trouble as you.</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You give an opponent a −1 penalty to their <b>HAWKEYE</b> when they try to track you. You can choose this stunt multiple times if you roll several extra successes.</li> <li>You impress someone.</li></ul></div>"
+			},
+			"Insight": {
+				"abbr": "INS",
+				"long": "Insight",
+				"attr": "Cunning",
+				"stunts": "<div> <ul><li>Are they telling the truth?</li> <li>Do they want to hurt me?</li> <li>Do they want something from me?</li></ul></div>"
+			},
+			"Animalhandlin": {
+				"abbr": "HA",
+				"long": "Animal Handlin'",
+				"attr": "Cunning",
+				"stunts": "<div> <ul><li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You can close with a quarry or put more distance between you and your pursuers during a horse chase .</li> <li>The animal regains one point of Hurts or Shakes (can only be chosen once).</li> <li>You impress someone.</li></ul></div>"
+			},
+			"Performin": {
+				"abbr": "PER",
+				"long": "Performin",
+				"attr": "Docity",
+				"stunts": "<div> <ul><li>Your opponent does what you want without demanding a favor in return.</li> <li>Your opponent does more than you ask for, for example giving you some useful piece of information. Details are up to the GM.</li> <li>Your opponent is impressed by you and will try to help you later on in some way. Details are up to the GM.</li></ul></div>"
+			},
+			"Makin": {
+				"abbr": "MAK",
+				"long": "Makin'",
+				"attr": "Docity",
+				"stunts": "<div> <ul><li>Your creation offers its users a +1 gear bonus.</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You do it in half the time it would normally take.</li><li>You do it quietly.</li> <li>You show off.</li></ul></div>"
+			},
+			"Doctorin": {
+				"abbr": "DR",
+				"long": "Doctorin'",
+				"attr": "Docity",
+				"stunts": "<div> <ul><li>No Stunts</li></ul></div>"
+			},
+			"Booklearnin": {
+				"abbr": "BKL",
+				"long": "Book Learnin'",
+				"attr": "Docity",
+				"stunts": "<div> <ul><li>You remember more than you thought you might, or glean more about the subject of your interest (at the GM’s discretion).</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You impress someone.</li></ul></div>"
+			},
 			"flight": { "abbr": "FLI", "long": "Flight" }
 		},
 		"Attributes": {

@@ -96,9 +96,9 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 	origRollData[1].failure = totalRolled ? result.totalSuccess + origRollData[1].totalSuccess < 2 : result.totalSuccess + origRollData[1].totalSuccess === 0;
 	origRollData[1].totalRolled = totalRolled;
 
-	if (!origRollData[1].faithAdded && origRollData[1].totalSuccess > 2) {
-		result = await addFaithPoints(origRollData[1]);
-	}
+	// if (!origRollData[1].faithAdded && origRollData[1].totalSuccess > 2) {
+	// 	result = await addFaithPoints(origRollData[1]);
+	// }
 	let msg = game.messages.get(chatMessage.id);
 	await msg.setFlag('talesoftheoldwest', 'results', origRollData);
 
@@ -246,6 +246,13 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 			canPush = 'fullHouse';
 		}
 	}
+	// Strip out special characters and spaces, convert to lowercase and capitalise the first letter of the String.
+	let ability = dataset.label
+		.replace(/[^A-Z0-9]/gi, '')
+		.toLowerCase()
+		.replace(/\b[a-z](?=[a-z]{2})/g, function (letter) {
+			return letter.toUpperCase();
+		});
 
 	let evalResult = {
 		myActor: dataset.myActor,
@@ -280,6 +287,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		modifiers: dataset,
 		messageNo: 0,
 		faithAdded: false,
+		stunts: game.i18n.localize('TALESOFTHEOLDWEST.Ability.' + [ability] + '.stunts'),
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;
