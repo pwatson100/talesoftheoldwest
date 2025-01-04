@@ -1,0 +1,32 @@
+{
+  "name": "Shill",
+  "type": "talent",
+  "system": {
+    "description": "You are a friendly face in the crowd.",
+    "basic": "When you act as a shill, helping someone to persuade, cheat, swindle, or scam, you give them a +2 bonus for your help, instead of the normal +1.",
+    "advanced": "You are an expert shill, and can offer excellent assistance to another character. Your help gives them a bonus success for free when you are working together on a scam.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "mOvMZ7zyPSehwnG3",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 900000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!mOvMZ7zyPSehwnG3"
+}

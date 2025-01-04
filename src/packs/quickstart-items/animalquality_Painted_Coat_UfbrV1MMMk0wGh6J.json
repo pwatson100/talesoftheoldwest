@@ -1,0 +1,29 @@
+{
+  "name": "Painted Coat",
+  "type": "animalquality",
+  "system": {
+    "description": "Striking colors and patterns. Gain a +1 bonus to ANIMAL HANDLIN’ for Native American characters.",
+    "itemModifiers": null
+  },
+  "_id": "UfbrV1MMMk0wGh6J",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 603125,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!UfbrV1MMMk0wGh6J"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Ornery",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse is always ready to kick or bite, given half the chance. Gain +1 to its FIGHTIN’",
+    "itemModifiers": null
+  },
+  "_id": "OjhZ9w7spWjpURGy",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 601563,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!OjhZ9w7spWjpURGy"
+}

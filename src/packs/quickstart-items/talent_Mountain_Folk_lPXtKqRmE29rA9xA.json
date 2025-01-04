@@ -1,0 +1,32 @@
+{
+  "name": "Mountain Folk",
+  "type": "talent",
+  "system": {
+    "description": "You have lived your life in the mountains.",
+    "basic": "Gain a +1 bonus to NATURE and RESILIENCE tests when in the wilderness.",
+    "advanced": "You do not suffer any conditions until twice the usual time has elapsed, and gain an extra +2 bonus when making camp or constructing a shelter.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "lPXtKqRmE29rA9xA",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2700000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!lPXtKqRmE29rA9xA"
+}

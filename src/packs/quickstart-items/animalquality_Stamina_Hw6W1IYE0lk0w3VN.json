@@ -1,0 +1,29 @@
+{
+  "name": "Stamina",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse can endure more than other horses. Grants +1 to the horse’s RESILIENCE.",
+    "itemModifiers": null
+  },
+  "_id": "Hw6W1IYE0lk0w3VN",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 550782,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!Hw6W1IYE0lk0w3VN"
+}

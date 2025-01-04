@@ -1,0 +1,29 @@
+{
+  "name": "Nervous",
+  "type": "animalquality",
+  "system": {
+    "description": "The horse has a nervous disposition and jumps at any surprise. Subtract 1 from the D6 roll when this horse is spooked.",
+    "itemModifiers": null
+  },
+  "_id": "5JRH45I1eRUA0er0",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 550391,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!5JRH45I1eRUA0er0"
+}

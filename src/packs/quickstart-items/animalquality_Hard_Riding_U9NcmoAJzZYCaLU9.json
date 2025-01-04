@@ -1,0 +1,29 @@
+{
+  "name": "Hard Riding",
+  "type": "animalquality",
+  "system": {
+    "description": "It’s a tough horse to handle. Suffer a −1 penalty to ANIMAL HANDLIN’ when riding this horse.",
+    "itemModifiers": null
+  },
+  "_id": "U9NcmoAJzZYCaLU9",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 550000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!U9NcmoAJzZYCaLU9"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Fast Shooter",
+  "type": "talent",
+  "system": {
+    "description": "You handle your pistol with speed and alacrity.",
+    "basic": "No one is faster than you in a gunfight. You only suffer a −1 penalty when making a Quick Shot, instead of −2.",
+    "advanced": "You’re so quick that you don’t need to spend an action to Prepare before you attack with a single-action pistol.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "H2rslBV0siiCNtEn",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2900025,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!H2rslBV0siiCNtEn"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Horse Warrior",
+  "type": "talent",
+  "system": {
+    "description": "You are trained in fighting from a moving horse.",
+    "basic": "You gain a +1 bonus to all attacks from a mount.",
+    "advanced": "You are so skilled on horseback you can use a two-handed weapon from a mount.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "Vr2hwivGDo4QdFmm",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3250000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!Vr2hwivGDo4QdFmm"
+}

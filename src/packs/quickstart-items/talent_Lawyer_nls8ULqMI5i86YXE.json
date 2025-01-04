@@ -1,0 +1,32 @@
+{
+  "name": "Lawyer",
+  "type": "talent",
+  "system": {
+    "description": "You may have gone to school or learned your law over a lantern late at night. One way or another, you know your rights.",
+    "basic": "You can add the number of successes from a BOOKLEARNIN’ roll (as a free action) as bonus dice to your PERFORMIN’ test when trying to influence someone using your knowledge of the law or other official information.",
+    "advanced": "You are so well-schooled in the law that you can act as a Judge In Good Standing. Your Fame increases by 3.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "nls8ULqMI5i86YXE",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2912500,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!nls8ULqMI5i86YXE"
+}

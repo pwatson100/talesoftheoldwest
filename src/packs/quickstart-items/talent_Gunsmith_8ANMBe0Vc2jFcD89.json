@@ -1,0 +1,32 @@
+{
+  "name": "Gunsmith",
+  "type": "talent",
+  "system": {
+    "description": "You are skilled at the art of crafting firearms.",
+    "basic": "You can make and repair all types of firearm with normal stats, using your MAKIN’ ability.",
+    "advanced": "You can make high-quality firearms. For each success after the first on your MAKIN’ test you can add a weapon quality of your choice. This can be used to add new qualities to an existing weapon.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "8ANMBe0Vc2jFcD89",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2900196,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!8ANMBe0Vc2jFcD89"
+}

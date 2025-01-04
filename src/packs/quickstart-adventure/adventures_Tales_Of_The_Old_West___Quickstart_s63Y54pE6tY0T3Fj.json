@@ -263,7 +263,7 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Actor.ZhdtY5JbQb6xcRHC",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -311,7 +311,7 @@
           "bigdream": "To live my last days in a mountain cabin with views across the plains.",
           "yourpardner": "Bridget Lovelace",
           "faithpoints": {
-            "value": 5,
+            "value": 6,
             "max": 4
           },
           "money": {
@@ -648,7 +648,10 @@
                 "value": "1"
               }
             },
-            "description": "<p>This is a Talent</p>"
+            "description": "<p>This is a Talent</p>",
+            "level": 1,
+            "basic": "",
+            "advanced": ""
           },
           "effects": [],
           "folder": null,
@@ -676,7 +679,10 @@
           "img": "icons/svg/item-bag.svg",
           "system": {
             "description": "<p>You gain +1 bonus to <strong>HAWKEYE</strong> when tracking in the wilderness</p>",
-            "itemModifiers": null
+            "itemModifiers": null,
+            "level": 1,
+            "basic": "",
+            "advanced": ""
           },
           "effects": [],
           "folder": null,
@@ -704,7 +710,10 @@
           "img": "icons/svg/item-bag.svg",
           "system": {
             "description": "<p>When you suffer a Critical Injury you can reroll the Tens die and take the best result</p>",
-            "itemModifiers": null
+            "itemModifiers": null,
+            "level": 1,
+            "basic": "",
+            "advanced": ""
           },
           "effects": [],
           "folder": "o0HgvcRqPlzSZDM3",
@@ -825,13 +834,13 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Actor.wwvlv2lnACjDHFCe",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1732884125630,
-        "modifiedTime": 1734026381340,
+        "modifiedTime": 1734096734175,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -1112,7 +1121,7 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Actor.Z6JlX6ZXhoTVt8sx",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -1125,230 +1134,6 @@
   ],
   "combats": [],
   "items": [
-    {
-      "name": "Aggressive",
-      "type": "animalquality",
-      "_id": "rSUfObXklxI3XcMZ",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "folder": "q8E9alfSeM1DCNfJ",
-      "sort": 100000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770520448,
-        "modifiedTime": 1729770579556,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Easy to Ride",
-      "type": "animalquality",
-      "_id": "tlY66AfYph8n9GYS",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770605399,
-        "modifiedTime": 1729770605399,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Fast",
-      "type": "animalquality",
-      "_id": "trJRAQdJdTZCki5c",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770615299,
-        "modifiedTime": 1729770615299,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Graceful",
-      "type": "animalquality",
-      "_id": "gcpllXBPfmDAcbgW",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770628471,
-        "modifiedTime": 1729770628471,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Hot Horse",
-      "type": "animalquality",
-      "_id": "RWFn2S07LmTSb0IG",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770639638,
-        "modifiedTime": 1729770639638,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Loyal",
-      "type": "animalquality",
-      "_id": "KKY4eWNX02VfduPg",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770649899,
-        "modifiedTime": 1729770649899,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Painted Coat",
-      "type": "animalquality",
-      "_id": "pfOYZUMSUIs0Nzir",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770667433,
-        "modifiedTime": 1729770667433,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "folder": "q8E9alfSeM1DCNfJ",
-      "name": "Steady",
-      "type": "animalquality",
-      "_id": "jOk5nUPqgXumJjo3",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729770676989,
-        "modifiedTime": 1729770676989,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
     {
       "name": "Camping Gear",
       "img": "icons/svg/aura.svg",
@@ -1445,95 +1230,6 @@
       }
     },
     {
-      "name": "Lucky",
-      "type": "talent",
-      "_id": "5q0tKk4Ijla0Nvcl",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "<p>When you suffer a Critical Injury you can reroll the Tens die and take the best result</p>",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "folder": "o0HgvcRqPlzSZDM3",
-      "sort": 100000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1730032663135,
-        "modifiedTime": 1730032716073,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "name": "Sharpshooter",
-      "type": "talent",
-      "_id": "xWkJzivqOlaiwCbw",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "itemModifiers": {
-          "0": {
-            "name": "shootin",
-            "value": "+1"
-          }
-        },
-        "description": "<p>This is a Talent</p>"
-      },
-      "effects": [],
-      "folder": "o0HgvcRqPlzSZDM3",
-      "sort": 200000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729169127163,
-        "modifiedTime": 1730032718398,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "name": "Tracker",
-      "type": "talent",
-      "_id": "z11zOk32BBGOl93G",
-      "img": "icons/svg/item-bag.svg",
-      "system": {
-        "description": "<p>You gain +1 bonus to <strong>HAWKEYE</strong> when tracking in the wilderness</p>",
-        "itemModifiers": null
-      },
-      "effects": [],
-      "folder": "o0HgvcRqPlzSZDM3",
-      "sort": 150000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729504252501,
-        "modifiedTime": 1730032720979,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
       "name": "Knife",
       "type": "weapon",
       "_id": "p9USgu1jPMkAYdHh",
@@ -1606,7 +1302,7 @@
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730035008550,
-        "modifiedTime": 1730035008550,
+        "modifiedTime": 1735991886095,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -1643,6 +1339,2843 @@
         "systemVersion": "0.0.1",
         "createdTime": 1730035001883,
         "modifiedTime": 1730035001883,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Aggressive",
+      "type": "animalquality",
+      "system": {
+        "description": "The horse will kick or bite when approached, at the GMs discretion, unless calmed with an ANIMAL HANDLIN’ roll.",
+        "itemModifiers": null
+      },
+      "_id": "FBpawjMlNd9jxWlz",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992916388,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Bronco",
+      "type": "animalquality",
+      "system": {
+        "description": "When spooked the horse automatically bucks (number 6 on the Spooked Horse Table).",
+        "itemModifiers": null
+      },
+      "_id": "6LKan3ja0zvVDBdv",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992919050,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Clumsy",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is less agile than most and has −1 to its Quick.",
+        "itemModifiers": null
+      },
+      "_id": "pDZAjvkK7dr8akc2",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992920977,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Docile",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse will never kick or bite, no matter the provocation.",
+        "itemModifiers": null
+      },
+      "_id": "lh7JFpJS6oeQkHRk",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 250000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992923078,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Easily Blown",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse has no stamina. When in a chase this horse suffers a −2 penalty to its RESILIENCE roll when testing for exhaustion.",
+        "itemModifiers": null
+      },
+      "_id": "tkVE03pOISY6oFtw",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 400000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992925957,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Easy To Ride",
+      "type": "animalquality",
+      "system": {
+        "description": "Gain a +1 bonus to ANIMAL HANDLIN’ when riding this horse.",
+        "itemModifiers": null
+      },
+      "_id": "TfqsOmnUKnz4F0kC",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 275000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992928140,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Fast",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse was meant to ride the plains. The rider can push ANIMAL HANDLIN’ twice when galloping, at the normal cost for both pushes.",
+        "itemModifiers": null
+      },
+      "_id": "5BAvCYnODUatbtwS",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 262500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992930531,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Fleet-Footed",
+      "type": "animalquality",
+      "system": {
+        "description": "Swift as the wind. Grants +1 to the horse’s Quick.",
+        "itemModifiers": null
+      },
+      "_id": "LxneGeH3t7gdIWG7",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 500000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992934462,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Good Disposition",
+      "type": "animalquality",
+      "system": {
+        "description": "Good natured and willing. Gain a +1 bonus to ANIMAL HANDLIN’ when training this horse.",
+        "itemModifiers": null
+      },
+      "_id": "rQmpqZbbS33P4jB5",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 287500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992936511,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Good Learner",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is easy to train. Grants +1 to its Cunning.",
+        "itemModifiers": null
+      },
+      "_id": "A3MOES3HLxU3CApp",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 268750,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992938437,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Graceful",
+      "type": "animalquality",
+      "system": {
+        "description": "The horse is beautiful and full of grace, and is worth double the normal price.",
+        "itemModifiers": null
+      },
+      "_id": "tpbIzpvmtJGun1ZJ",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 600000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992940327,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Hard Riding",
+      "type": "animalquality",
+      "system": {
+        "description": "It’s a tough horse to handle. Suffer a −1 penalty to ANIMAL HANDLIN’ when riding this horse.",
+        "itemModifiers": null
+      },
+      "_id": "U9NcmoAJzZYCaLU9",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 550000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992942403,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Hardy",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is tougher than most. Grants +1 to the horse’s Grit.",
+        "itemModifiers": null
+      },
+      "_id": "Gq3ojEGoFOHvwKHK",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 269141,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992999272,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "High Spirited",
+      "type": "animalquality",
+      "system": {
+        "description": "Flighty and energetic. The horse’s RESILIENCE is reduced by 1.",
+        "itemModifiers": null
+      },
+      "_id": "q3fTEaIHbwajBRMs",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 290625,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992997067,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Hot Horse",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse just loves to run. Gain a +1 bonus to ANIMAL HANDLIN’ when galloping.",
+        "itemModifiers": null
+      },
+      "_id": "nUFlTs6p9By4fMcx",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 293750,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992995478,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Infertile",
+      "type": "animalquality",
+      "system": {
+        "description": "The horse cannot be used for breeding.",
+        "itemModifiers": null
+      },
+      "_id": "XdT6JB165dSSyH7C",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 269532,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992993871,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lazy",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse just can’t be bothered. Ignore the first success rolled when making an ANIMAL HANDLIN’ roll related to this horse.",
+        "itemModifiers": null
+      },
+      "_id": "bux15UFFVVH85kuO",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 600196,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992991846,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lively Disposition",
+      "type": "animalquality",
+      "system": {
+        "description": "Excitable and lively, this horse has a mind of its own. Suffer a −1 penalty to ANIMAL HANDLIN’ when breaking or training this horse.",
+        "itemModifiers": null
+      },
+      "_id": "wZiE46yEgSlG6pot",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 550196,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992989889,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Loyal",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse has given itself to one rider, and one rider only. Anyone other than the owner suffers a −3 penalty to ANIMAL HANDLIN’ tests relating to the horse, and if an ANIMAL HANDLIN’ test is failed the horse is immediately spooked.",
+        "itemModifiers": null
+      },
+      "_id": "k2rzttm4NXXL8DQ8",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 600391,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992988269,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Nervous",
+      "type": "animalquality",
+      "system": {
+        "description": "The horse has a nervous disposition and jumps at any surprise. Subtract 1 from the D6 roll when this horse is spooked.",
+        "itemModifiers": null
+      },
+      "_id": "5JRH45I1eRUA0er0",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 550391,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992986513,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "No Fightin’ Spirit",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse shies away from trouble and doesn’t want to get involved. It suffers a −1 penalty to its FIGHTIN’.",
+        "itemModifiers": null
+      },
+      "_id": "6Ijh2W8kahfKUbF9",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 600782,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992984869,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Ornery",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is always ready to kick or bite, given half the chance. Gain +1 to its FIGHTIN’",
+        "itemModifiers": null
+      },
+      "_id": "OjhZ9w7spWjpURGy",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 601563,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992983040,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Painted Coat",
+      "type": "animalquality",
+      "system": {
+        "description": "Striking colors and patterns. Gain a +1 bonus to ANIMAL HANDLIN’ for Native American characters.",
+        "itemModifiers": null
+      },
+      "_id": "UfbrV1MMMk0wGh6J",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 603125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992980994,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Rock Solid",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse cannot be spooked.",
+        "itemModifiers": null
+      },
+      "_id": "C6hBm3hnvXklRtEa",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 606250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992979336,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Stamina",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse can endure more than other horses. Grants +1 to the horse’s RESILIENCE.",
+        "itemModifiers": null
+      },
+      "_id": "Hw6W1IYE0lk0w3VN",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 550782,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992977544,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Steady",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse stays calm when spooked. Gain +1 to the D6 roll when this horse is spooked.",
+        "itemModifiers": null
+      },
+      "_id": "GtT4b1YfNNZTaPnZ",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 612500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992970712,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Strong",
+      "type": "animalquality",
+      "system": {
+        "description": "It’s a mighty beast. The horse’s kick does 3 damage instead of 2, with a Crit Rating of 1.",
+        "itemModifiers": null
+      },
+      "_id": "zGkaLK29ByQCmVqr",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 551563,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992968470,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Stubborn",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is hard to train, either due to dim wits or a stubborn refusal to cooperate. Its Cunning is reduced by 1.",
+        "itemModifiers": null
+      },
+      "_id": "boa6iONrt2Ri9Omz",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 553125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992966736,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Stunning Steed",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse is the perfect example of its breed. Its value is 50% greater than that listed for the breed.",
+        "itemModifiers": null
+      },
+      "_id": "2J7kA1cAQykfsSsg",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 556250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992964874,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Sure-Footed",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse knows how to avoid trouble. If you suffer Trouble that relates to the horse, the scale of that Trouble is reduced by 1, to a minimum of 1.",
+        "itemModifiers": null
+      },
+      "_id": "U7BuU1NidhzSwuvm",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 562500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992963024,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Temperamental",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse gets frustrated and difficult when things go against it. Suffer a −1 penalty to ANIMAL HANDLIN’ when the horse has suffered any Shakes or Hurts.",
+        "itemModifiers": null
+      },
+      "_id": "G7qQTFxShYAc9460",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 625000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992961193,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "The Perfect Horse",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse loses any flaws it may have and cannot gain a flaw. It is the “perfect” horse.",
+        "itemModifiers": null
+      },
+      "_id": "4OU0K6KWrlrZsxCp",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 575000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992959431,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "The Worst Horse",
+      "type": "animalquality",
+      "system": {
+        "description": "Roll twice again for flaws, ignoring a score of 11–14. These new flaws are Permanent flaws.",
+        "itemModifiers": null
+      },
+      "_id": "H3FPYTqfpnPxjQVc",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 650000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992953619,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Ugly",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse looks so bad in one way or another that its value is reduced by 50%.",
+        "itemModifiers": null
+      },
+      "_id": "xgHzZk33AeSGxtj6",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 700000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992951676,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Unruly",
+      "type": "animalquality",
+      "system": {
+        "description": "This horse has an unruly nature and can be troublesome. The scale of any Trouble that relates to this horse is increased by 1, to a maximum of 4.",
+        "itemModifiers": null
+      },
+      "_id": "4U8GdL6zIjLiIukH",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 270313,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992949410,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Weak",
+      "type": "animalquality",
+      "system": {
+        "description": "The horse’s Grit is reduced by 1.",
+        "itemModifiers": null
+      },
+      "_id": "xRLFs9gJpAUInRha",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "q8E9alfSeM1DCNfJ",
+      "sort": 271875,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735992867435,
+        "modifiedTime": 1735992947896,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Animal Hunter",
+      "type": "talent",
+      "system": {
+        "description": "You know how to track the creatures of the wilds, bring down the bison, stalk the cougar and set traps for beaver and bear.",
+        "basic": "All your attacks against wild animals, and rolls to set traps, gain a +1 bonus.",
+        "advanced": "Your attacks against wild animals (including from traps) automatically cause a critical injury if you inflict any damage.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "0KRh5S3jjhomB9xC",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3600000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Authority",
+      "type": "talent",
+      "system": {
+        "description": "You have the weight of authority on your side, whether from the law, the big man in town or just your own personality.",
+        "basic": "You gain a +1 bonus to PRESENCE tests.",
+        "advanced": "In a duel you use the weight of your authority to get the drop on your enemy. After you have pushed your PRESENCE roll using a Faith Point, you can push a second time for free.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "euqmdstSkcwq4SZS",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3000000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Born In The Saddle",
+      "type": "talent",
+      "system": {
+        "description": "Riding comes as naturally to you as breathing does to everyone else.",
+        "basic": "You gain a +1 bonus to all ANIMAL HANDLIN’ rolls that relate to horses.",
+        "advanced": "There is no one better in the saddle than you. When you Drive Hard in a chase on horseback you gain a +3 bonus to ANIMAL HANDLIN’ instead of +2, and your horse gains +3 to its RESILIENCE rolls during the chase.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "oNBVpJxWasaa7UK4",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Bow Master",
+      "type": "talent",
+      "system": {
+        "description": "The bow is the weapon of a true man from a more civilized culture.",
+        "basic": "You can use a bow up to Long range with no penalties.",
+        "advanced": "You know where to hit for maximum impact: your shots with a bow inflict double the normal damage.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "8FSqBUr2UEZdTjW6",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Bowyer",
+      "type": "talent",
+      "system": {
+        "description": "You know how to turn wood, leather and twine into lethal bows.",
+        "basic": "You can use the MAKIN’ ability to make and repair bows and arrows with normal stats.",
+        "advanced": "You can make high-quality bows. For each success after the first on your MAKIN’ test you can add a weapon quality of your choice. This can be used to add new qualities to an existing bow.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "upBfCGlHHUUbjTTN",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Brawler",
+      "type": "talent",
+      "system": {
+        "description": "You don’t need weapons to bring down your enemies.",
+        "basic": "All your unarmed attacks and Blocks have a +1 bonus.",
+        "advanced": "If you gain any successes when Blocking a melee attack (even if the attack still causes some damage) you can immediately attempt to Grapple your opponent as a free action.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "raImlWFPXRMUaPtS",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Bronc Buster",
+      "type": "talent",
+      "system": {
+        "description": "You know how to handle and train horses.",
+        "basic": "You can break and train wild horses, using the Breaking & Training Horses rules (page XXX).",
+        "advanced": "You are a Horse Whisperer. When making a roll to break or train a horse you automatically gain one bonus success.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "lqEVdHbj10FbJPGt",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3400000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Business Minded",
+      "type": "talent",
+      "system": {
+        "description": "Business is in your blood.",
+        "basic": "You have great business acumen, and whether from your business strategy, good salesmanship or bad-mouthing the competition, your business always does well. Your modifier for Competition is always +1 better than it should be, up to a maximum of +3.",
+        "advanced": "You have the best business mind around. Whenever you gain a dividend from points of Capital you have invested in an outfit you increase your personal bonus by 50%.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "H1XCOHQ6tjd86Gf3",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Calming Manner",
+      "type": "talent",
+      "system": {
+        "description": "You reassure troubled minds just with the calm in your voice.",
+        "basic": "With a successful PRESENCE test you can calm those around you, and even yourself, healing 1 point of Vexes or Doubts for every success. This talent also allows you to provide help to another character who is making a DOCTORIN’ roll, without having that ability yourself, as your voice calms the patient.",
+        "advanced": "In a social conflict your calming manner is very disarming to your opponent. You gain a +2 bonus to PRESENCE or PERFORMIN’ when you attempt to inflict Doubts on an opponent.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "hWz8g0AgDf2ZSaTX",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Charming",
+      "type": "talent",
+      "system": {
+        "description": "You are skilled in the arts of persuasion.",
+        "basic": "You gain a +1 bonus to PERFORMIN’ when trying to charm, seduce or schmooze someone.",
+        "advanced": "People just seem to trust you. Trouble does not apply when you try to charm, seduce, or schmooze someone—when you push your PERFORMIN’ roll, you can reroll 1s on Trouble Dice, and you ignore any Trouble rolled.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "tfnfUIRJBHMZRJ1n",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2500000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Cold Blooded",
+      "type": "talent",
+      "system": {
+        "description": "You are completely callous and can kill defenseless enemies without so much as a second’s hesitation.",
+        "basic": "You can perform a coup de grace without needing to make a Docity test, but you still lose a point of Docity.",
+        "advanced": "You never need to make a roll to kill a person who is defenseless, but this ruthlessness can be seen in your every move and the expression on your face. When you perform a coup de grace you recover a point of Docity instead of losing one.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "pYgWUSHkMHk6qUGf",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1000000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Companion",
+      "type": "talent",
+      "system": {
+        "description": "Your horse is your closest companion (when it dies you lose this talent, but can take it again at half price when you get a new horse).",
+        "basic": "Your horse gains the LOYAL quality and will stand by your side and defend you if you’re Broken (this can take your horse’s total qualities over the normal maximum).",
+        "advanced": "You and your horse are so in tune that when you are in the saddle your steed can make one attack during combat, in addition to your actions.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "I5G4eeBczaDqWilu",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Dead Eye",
+      "type": "talent",
+      "system": {
+        "description": "You know where to shoot to make your opponent fall and not get up again. Ever.",
+        "basic": "When you make a Called Shot, reduce the penalty by 1.",
+        "advanced": "If you succeed with your Called Shot you gain an additional critical injury roll, over and above any inflicted by the attack.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "4SQtF7Nf70zq6y5N",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2525000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991758093,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Deadly Strike",
+      "type": "talent",
+      "system": {
+        "description": "You know where to hit a man to make sure he doesn’t get up again. Ever.",
+        "basic": "When you make a Called Strike, reduce the penalty by 1.",
+        "advanced": "If you succeed with your Called Strike you gain an additional critical injury roll, over and above any inflicted by the attack.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "0zEkFc4K8JG0aCkU",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2550000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991756151,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Defender",
+      "type": "talent",
+      "system": {
+        "description": "You are skilled at defending yourself in a fight.",
+        "basic": "Successfully Blocking an attack gives you a cumulative +1 to your next Block against the same target, to a maximum of +3.",
+        "advanced": "You get one free Block per Round during a fight. This does not count as one of your actions in the Round.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "GLTTiPXlrmd29AOD",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900002,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991754658,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Engineer",
+      "type": "talent",
+      "system": {
+        "description": "You know how these new-fangled machines work and are skilled at using and repairing them.",
+        "basic": "You’re a natural with these new contraptions. You have the skills and knowledge to work as an engineer on a railroad or in a manufactory and gain a +1 bonus to OPERATE when fixing machines.",
+        "advanced": "Machines just make sense to you. After you have pushed your OPERATE roll using a Faith Point, you can push a second time for free.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "mUqRBCuZZHQpGoYs",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900004,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991753115,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Expert Fanning",
+      "type": "talent",
+      "system": {
+        "description": "The calluses on your hands say you know how to fan your iron.",
+        "basic": "When you finish a fanning attack you always have one bullet left in your revolver.",
+        "advanced": "You are a skilled shot when fanning your pistol. You do not suffer the −2 penalty when fanning, but still suffer the penalties for shooting more than one target.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "yCA70JmQYk4ShKMA",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900007,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991751635,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Fast Footwork",
+      "type": "talent",
+      "system": {
+        "description": "You are fast on your feet and can avoid being hit by physical attacks.",
+        "basic": "You gain a +1 bonus to MOVE tests when Dodging or fleeing a melee or similar ruckus (not gunshots), and when retreating behind cover.",
+        "advanced": "You are hard to chase down. Every time you Drive Hard in a chase on foot you gain a +3 bonus instead of the usual +2, and you gain a +3 bonus on your RESILIENCE rolls during the chase.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "mIYGHE2gSlMCaakl",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900013,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991749971,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Fast Shooter",
+      "type": "talent",
+      "system": {
+        "description": "You handle your pistol with speed and alacrity.",
+        "basic": "No one is faster than you in a gunfight. You only suffer a −1 penalty when making a Quick Shot, instead of −2.",
+        "advanced": "You’re so quick that you don’t need to spend an action to Prepare before you attack with a single-action pistol.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "H2rslBV0siiCNtEn",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900025,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991748387,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Flying Blade",
+      "type": "talent",
+      "system": {
+        "description": "You are a master of the throwing knife or the tomahawk as a thrown weapon.",
+        "basic": "Your attack rolls gain a +1 bonus when you use a thrown weapon.",
+        "advanced": "Your throws get more accurate the more you try, and for every attack against the same target after the first you gain a +1 SHOOTIN’ bonus, to a maximum of +3.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "qqOxtu6Al3GeH0tu",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900049,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991746552,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Forger",
+      "type": "talent",
+      "system": {
+        "description": "You are a skilled forger, able to craft fake documents and papers.",
+        "basic": "You know how to make documents look good. Gain a +1 bonus to your LIGHT-FINGERED roll when drawing up a forgery.",
+        "advanced": "You are a master forger, and can make an accurate forgery of any document provided you have the time to study it and the resources to create it. You gain one bonus success on your LIGHT-FINGERED roll.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "tKi51y3wUTCjUpZK",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3203125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991744849,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Gambler",
+      "type": "talent",
+      "system": {
+        "description": "You are an expert at every kind of card game and know how to win any which way.",
+        "basic": "Choose a Gambling Tactic and gain a +1 bonus in that Tactic. This talent can be taken once for each Gambling Tactic.",
+        "advanced": "Choose a Gambling Tactic you already possess at the Basic rank and gain another +1 bonus in that Tactic. Also, you don’t suffer the penalty for repeat uses of the same Tactic when Gambling. This talent can be taken once for each Gambling Tactic.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "x8gMxeA3EU9mgxg9",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3206250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991743221,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Guard Dog",
+      "type": "talent",
+      "system": {
+        "description": "You have a loyal companion that stands by your side and will defend you to the death (when your dog dies you lose this talent, but can take it again at half price when you get a new dog).",
+        "basic": "Your dog is big and dangerous, and growls to order. Gain a +1 bonus to your PRESENCE when intimidating someone alongside your dog.",
+        "advanced": "Your dog can attack a target. You spend a fast action to give it the order and it will attack the target until that target is dead, the dog is Broken or dead, or you call it off. Calling the dog off its target requires a slow action and a successful ANIMAL HANDLIN’ roll, or the dog continues to attack.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "0LmTLT1gLThudBlT",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900098,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991741459,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Gunsmith",
+      "type": "talent",
+      "system": {
+        "description": "You are skilled at the art of crafting firearms.",
+        "basic": "You can make and repair all types of firearm with normal stats, using your MAKIN’ ability.",
+        "advanced": "You can make high-quality firearms. For each success after the first on your MAKIN’ test you can add a weapon quality of your choice. This can be used to add new qualities to an existing weapon.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "8ANMBe0Vc2jFcD89",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900196,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991731400,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Hard To Hit",
+      "type": "talent",
+      "system": {
+        "description": "You’re a tough opponent in a fight, and laying a blow on you is hard.",
+        "basic": "You gain a +1 bonus to your FIGHTIN’ dice when Blocking a melee attack.",
+        "advanced": "You’re such an expert in a fight that you can Block an attack made with a melee weapon or by an animal, even if you’re unarmed.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "DtWaTeB4MdmUOzsn",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3212500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991729712,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Hay-Maker",
+      "type": "talent",
+      "system": {
+        "description": "When you put your all into an attack there’s no stopping you.",
+        "basic": "When you spend a fast action to go for an All-Out Attack in a fight you gain a +3 bonus instead of the usual +2.",
+        "advanced": "When you make an All-Out Attack with a melee weapon, any attempt by your opponent to Block the attack suffers a −3 modifier.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "PhxJWjgP0xzOukEg",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900391,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991727993,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Healing Touch",
+      "type": "talent",
+      "system": {
+        "description": "You’re a natural healer.",
+        "basic": "When you successfully heal a Broken person you double the number of attribute points that are restored.",
+        "advanced": "You don’t let patients die. If a failed DOCTORIN’ test would cause your patient to die, you can immediately reroll it once as a free action.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "NvIUp9jEzaOrHa5x",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3225000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991726374,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Herbalist",
+      "type": "talent",
+      "system": {
+        "description": "You have learned the healing ways of nature and the land, and how they can be twisted with malicious intent. You are a healer, a druggist, or an apothecary.",
+        "basic": "You can concoct healing elixirs and salves from herbs and plants, which give you a +1 bonus to DOCTORIN’ tests.",
+        "advanced": "There is little you do not know about the healing powers and dangers of nature. You gain a +2 bonus to DOCTORIN’ when working against poison, venom or sickness, and can create poisons with a Potency of 2.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "2Huc9pISNbRUyYS3",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2900782,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991724546,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "High Society",
+      "type": "talent",
+      "system": {
+        "description": "You move in exalted circles.",
+        "basic": "You know who to talk to and what their dirty secrets are. You gain a +1 bonus to PRESENCE or PERFORMIN’ when talking to anyone where Fame or social standing might have a bearing.",
+        "advanced": "When dealing with anyone where Fame or social standing might have a bearing you gain 3 bonus points of Fame for that scene.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "UC4Ejsvybs2wwp9h",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2901563,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991722895,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Horse Warrior",
+      "type": "talent",
+      "system": {
+        "description": "You are trained in fighting from a moving horse.",
+        "basic": "You gain a +1 bonus to all attacks from a mount.",
+        "advanced": "You are so skilled on horseback you can use a two-handed weapon from a mount.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "Vr2hwivGDo4QdFmm",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 3250000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991721148,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Judge Of Character",
+      "type": "talent",
+      "system": {
+        "description": "You can read other people like a book and smell a lie a mile off.",
+        "basic": "You gain a +1 bonus to INSIGHT tests to see if someone is lying or trying to pull the wool over your eyes.",
+        "advanced": "Not only can you spot the lie, but you can see the truth that’s being hidden. For every success beyond the first on an INSIGHT test you can ask the GM a question about the lie and the truth it conceals. They must answer as truthfully as possible.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "fYOkJq4mXnvc6mtn",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2903125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991718343,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Knife Fighter",
+      "type": "talent",
+      "system": {
+        "description": "You are lethal with a knife in hand.",
+        "basic": "Gain a +1 bonus to your FIGHTIN’ rolls when you fight with a knife in your hand.",
+        "advanced": "Once per Round you can make a melee attack as a fast action using a knife, without a penalty.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "9Mjru9g4Oq9C1ZIi",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2906250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991716452,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lawyer",
+      "type": "talent",
+      "system": {
+        "description": "You may have gone to school or learned your law over a lantern late at night. One way or another, you know your rights.",
+        "basic": "You can add the number of successes from a BOOKLEARNIN’ roll (as a free action) as bonus dice to your PERFORMIN’ test when trying to influence someone using your knowledge of the law or other official information.",
+        "advanced": "You are so well-schooled in the law that you can act as a Judge In Good Standing. Your Fame increases by 3.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "nls8ULqMI5i86YXE",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2912500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991714689,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Light-Footed",
+      "type": "talent",
+      "system": {
+        "description": "You walk like the spirits, leaving no trail behind you.",
+        "basic": "You gain a +1 bonus to your NATURE roll when you’re trying to avoid someone tracking you.",
+        "advanced": "You are an expert at laying false tracks. When you’re trying to avoid being tracked, each success on your NATURE test counts as two successes.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "EpTQqdgqKTEb2XEe",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2925000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991712965,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lightning Fast",
+      "type": "talent",
+      "system": {
+        "description": "You react with the speed of a snake.",
+        "basic": "You draw two initiative cards instead of one during the initiative draw. Choose the one you want to use and discard the other.",
+        "advanced": "When you spot an ambush or a sneak attack you get a slow and a fast action before initiative is drawn.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "mh3GWOUxRTcdpHiv",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2950000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991711301,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lockpicker",
+      "type": "talent",
+      "system": {
+        "description": "You have mastered the art of picking locks and cracking safes.",
+        "basic": "Your LIGHT-FINGERED roll is modified by +1 when you pick a lock.",
+        "advanced": "You can crack safes with LIGHT-FINGERED, or use OPERATE to blow them open with dynamite. You gain a +1 bonus to your rolls.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "Bau8tlNhaf0cQ0PW",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2487500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991709514,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Lucky",
+      "type": "talent",
+      "system": {
+        "description": "No matter how bad the odds you always seem to get away unscathed.",
+        "basic": "When you suffer a critical injury you can reroll the Tens die and take the best result.",
+        "advanced": "When you suffer a critical injury you can reroll the Units die and take the best result.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "NDLbV8nN9EFV2nE0",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2475000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991707894,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Manhunter",
+      "type": "talent",
+      "system": {
+        "description": "You have spent years chasing down your quarry.",
+        "basic": "You gain a +1 bonus to HAWKEYE when tracking your quarry across the wilderness.",
+        "advanced": "You never give up when on the hunt and can push your HAWKEYE roll for a second time for free when tracking people or animals in the wild.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "PTLaOyLAI9dQ5dX2",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2400000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Man’S Best Friend",
+      "type": "talent",
+      "system": {
+        "description": "Not every dog is the perfect friend, but yours is (when your dog dies you lose this talent but can take it again at half price when you get a new dog).",
+        "basic": "Your dog can help you track, giving you a +1 bonus to HAWKEYE when tracking.",
+        "advanced": "Your loyal friend can help you when you are Broken. Once per session your dog’s presence is comforting and immediately restores 1D3 to the Broken attribute.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "tiO0PRvRmEj0BIxQ",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2450000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991706333,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Miner 49er",
+      "type": "talent",
+      "system": {
+        "description": "You are experienced in handling dangerous explosives.",
+        "basic": "You can recognize sweating dynamite and other danger signs. Treat Trouble on dynamite ability rolls as normal (that is, Trouble is not activated unless the roll is pushed—see page XXX)",
+        "advanced": "You know just where to put dynamite for best effect. When dynamite you have set detonates you double the number of successes resulting from the Blast Power roll.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "1DaxJ0pvHFuocvx5",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2800000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Mountain Folk",
+      "type": "talent",
+      "system": {
+        "description": "You have lived your life in the mountains.",
+        "basic": "Gain a +1 bonus to NATURE and RESILIENCE tests when in the wilderness.",
+        "advanced": "You do not suffer any conditions until twice the usual time has elapsed, and gain an extra +2 bonus when making camp or constructing a shelter.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "lPXtKqRmE29rA9xA",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2700000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Pistoleer",
+      "type": "talent",
+      "system": {
+        "description": "You are an expert with your pistol.",
+        "basic": "You are skilled with the iron and gain a +1 bonus to your SHOOTIN’ dice when using a pistol.",
+        "advanced": "You are so accurate that you always hit where you aimed. The Called Shot penalty is only −1 instead of −3, when using a pistol.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "LtuMWiRPXHjHeQ51",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2600000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Poisoner",
+      "type": "talent",
+      "system": {
+        "description": "You know all about the darker arts of poisons and venom.",
+        "basic": "You understand the basics of deadly plants and animals and can concoct poisons with a Potency of 2.",
+        "advanced": "You understand hemlock, arsenic and strychnine, as well as spider, scorpion and snake venom. You can mix poisons with a Potency of 3.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "urYZooYb6vMINC8q",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Pugilist",
+      "type": "talent",
+      "system": {
+        "description": "You are an expert fist fighter.",
+        "basic": "In a hand-to-hand fight you can anticipate your enemy’s every move. You may swap your initiative card with an opponent you are actively fighting.",
+        "advanced": "Once per Round, when you hit your opponent in a fight, you can immediately throw a combination punch: you punch again immediately as a free action.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "Zsck4FWSgRTNnWTA",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Quick Draw",
+      "type": "talent",
+      "system": {
+        "description": "You draw your weapon faster than your enemy can blink.",
+        "basic": "Once per Round you can draw a one-handed weapon without spending an action. This includes picking up a weapon from the ground. You also gain a +1 bonus to your Draw roll during a duel.",
+        "advanced": "Your draw is so smooth that Trouble does not apply when you Draw your pistol in a duel. When you push your LIGHT-FINGERED roll, you can reroll 1s on Trouble Dice, and you ignore any Trouble rolled.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "O2YCOhS7tR9sdql1",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Rabble Rouser",
+      "type": "talent",
+      "system": {
+        "description": "You know how to rile up a crowd or get a posse angry.",
+        "basic": "You do not suffer from the penalty to PERFORMIN’ when trying to influence a crowd that outnumbers you.",
+        "advanced": "Manipulation of the masses is mere child’s play. Upon a successful PERFORMIN’ test to influence a crowd you can incite anger or calm simply by speaking.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "tkPRXmB4Cp8EQTQv",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 2000000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Roper",
+      "type": "talent",
+      "system": {
+        "description": "You are skilled with the lasso.",
+        "basic": "You are an expert with the lasso and gain a +1 bonus to your ANIMAL HANDLIN’ roll when lassoing.",
+        "advanced": "You can lasso from horseback without the −2 penalty for taking action on a moving horse. You can make a Called Shot when attempting to lasso a person.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "qcPqamCIHWeXBiNW",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1900000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Sharp Shooter",
+      "type": "talent",
+      "system": {
+        "description": "You are an expert marksman.",
+        "basic": "You gain a +1 bonus when you use a rifle.",
+        "advanced": "You can use a rifle at Long range with no penalties, and at Distant range with only a −2 penalty.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "zq604952oPfkgjcD",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1800000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Shill",
+      "type": "talent",
+      "system": {
+        "description": "You are a friendly face in the crowd.",
+        "basic": "When you act as a shill, helping someone to persuade, cheat, swindle, or scam, you give them a +2 bonus for your help, instead of the normal +1.",
+        "advanced": "You are an expert shill, and can offer excellent assistance to another character. Your help gives them a bonus success for free when you are working together on a scam.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "mOvMZ7zyPSehwnG3",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 900000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Shotgun Master",
+      "type": "talent",
+      "system": {
+        "description": "You are unrivaled when it comes to using a shotgun, and always have one near to hand.",
+        "basic": "As a free action you can use the butt of your shotgun to beat off an enemy at Arm’s Length. With a successful FIGHTIN’ roll, you push them to Near range.",
+        "advanced": "You can fire both barrels of your double-barreled shotgun in one attack. If the attack hits, apply damage twice, using the number of successes for both attacks.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "t3KgBDpEAbZgXWfm",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 800000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Smith",
+      "type": "talent",
+      "system": {
+        "description": "You know the art of hammering coarse iron into lethal blades, horseshoes and more.",
+        "basic": "You can use the MAKIN’ ability to make and repair any metal tool or melee weapon with normal stats.",
+        "advanced": "You can make high-quality metal melee weapons. For each success after the first on your MAKIN’ test you can add a weapon quality of your choice. This can be used to add new qualities to existing weapons.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "2iEctLQTxti641ty",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 700000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Sneak",
+      "type": "talent",
+      "system": {
+        "description": "You are sneaky.",
+        "basic": "You gain a +1 bonus to any roll that relates to sneaking and hiding.",
+        "advanced": "When you make a sneak attack and do damage you automatically inflict a critical injury.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "fOCnQ31fQEtjJxDH",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 600000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Survivor",
+      "type": "talent",
+      "system": {
+        "description": "You will survive.",
+        "basic": "You are so rugged you can shake off damage from Shakes and Hurts. Each time you suffer damage, roll a number of dice equal to your Grit divided by 2 (round up)—the damage is reduced by 1 per success.",
+        "advanced": "Once per session, when you are Broken by any kind of damage, you can immediately get back up, with all attributes restored by 1 point.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "eUkVTwJGrC01PK0v",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 500000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Swindler",
+      "type": "talent",
+      "system": {
+        "description": "You are a cheat and a swindler.",
+        "basic": "You gain a +1 bonus for any tests when scamming or cheating someone. This includes cheating while gambling.",
+        "advanced": "If you fail a PERFORMIN’ roll while trying to scam someone you can immediately try again: reroll your PERFORMIN’ dice as a free action.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "cVFyo7XuB9bgND4t",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 400000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "The Voice",
+      "type": "talent",
+      "system": {
+        "description": "You have a beautiful singing voice or a way of speaking that gets people listening.",
+        "basic": "You can use PERFORMIN’ to draw the attention of everyone within Short range. They stop what they are doing and listen to you for D6 Rounds. This does not apply during conflict, and may have a reduced effect on a rampaging rabble, at the GM’s discretion.",
+        "advanced": "Your voice is so powerful and easy to listen to, you gain a +2 bonus on any PERFORMIN’ tests that relate to a performance of some kind (speech-making, singing, making a case in court, etc).",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "Nerk0s68gfxxCC7L",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1700000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Tomahawk Fighter",
+      "type": "talent",
+      "system": {
+        "description": "Nothing splits a skull like a mighty axe.",
+        "basic": "You gain a +1 bonus to your attack rolls when you fight with an axe.",
+        "advanced": "When you hit an enemy with your axe and inflict 3 or more points of damage, you automatically inflict a critical injury.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "cUdLlNyUZl13ayCd",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Tracker",
+      "type": "talent",
+      "system": {
+        "description": "You know how to move, track, and hunt.",
+        "basic": "You are an expert tracker and gain a +1 bonus when tracking in the wilderness.",
+        "advanced": "Time and distance mean nothing to you. Ignore the penalties for tracks disappearing over time unless the tracks are completely erased.",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "atv3RTL0bLhINrQw",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1600000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Two Gun",
+      "type": "talent",
+      "system": {
+        "description": "An expert with the iron, you can use one pistol in each hand.",
+        "basic": "You can draw two pistols with one fast action and use your second pistol in your off hand to perform an extra Quick Shot attack per Round. This attack gets an extra −2 penalty on top of the −2 penalty for the Quick Shot itself (−4 in total).",
+        "advanced": "As for the Basic talent, but you do not get any penalty for the bonus Quick Shot (you still have the −2 modifier for the Quick Shot itself).",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "YOFEcyqoGJnpewed",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1500000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Warcry",
+      "type": "talent",
+      "system": {
+        "description": "Your voice is commanding and full of authority.",
+        "basic": "Once per scene, and only in a fight or tense situation, you can make a call to arms that grants your comrades within Short range a +1 bonus to their next action.",
+        "advanced": "Your warcry is so terrifying that once per scene, with a successful opposed PRESENCE vs INSIGHT test, you can force an opponent to spend their next action running from you. If the opponent is on horseback you may try to spook the horse instead—roll PRESENCE vs ANIMAL HANDLIN’. If successful the horse is spooked (see page XXX).",
+        "itemModifiers": null,
+        "level": 1
+      },
+      "_id": "7NHc7gfVu4fG78EU",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "o0HgvcRqPlzSZDM3",
+      "sort": 1400000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1735991570805,
+        "modifiedTime": 1735991704641,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     }
@@ -3572,7 +6105,7 @@
       "color": "#1b791c",
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
+        "compendiumSource": "Folder.q8E9alfSeM1DCNfJ",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -3614,7 +6147,7 @@
       "color": "#a43232",
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
+        "compendiumSource": "Folder.o0HgvcRqPlzSZDM3",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -3656,7 +6189,7 @@
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
-    "modifiedTime": 1734026714021,
+    "modifiedTime": 1735993171535,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"

@@ -1,0 +1,32 @@
+{
+  "name": "Business Minded",
+  "type": "talent",
+  "system": {
+    "description": "Business is in your blood.",
+    "basic": "You have great business acumen, and whether from your business strategy, good salesmanship or bad-mouthing the competition, your business always does well. Your modifier for Competition is always +1 better than it should be, up to a maximum of +3.",
+    "advanced": "You have the best business mind around. Whenever you gain a dividend from points of Capital you have invested in an outfit you increase your personal bonus by 50%.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "H1XCOHQ6tjd86Gf3",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!H1XCOHQ6tjd86Gf3"
+}

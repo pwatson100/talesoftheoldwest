@@ -1,0 +1,29 @@
+{
+  "name": "Bronco",
+  "type": "animalquality",
+  "system": {
+    "description": "When spooked the horse automatically bucks (number 6 on the Spooked Horse Table).",
+    "itemModifiers": null
+  },
+  "_id": "6LKan3ja0zvVDBdv",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!6LKan3ja0zvVDBdv"
+}

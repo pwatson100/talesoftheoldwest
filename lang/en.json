@@ -166,7 +166,9 @@
 			"Tabs": {
 				"Description": "Description",
 				"Modifiers": "Modifiers",
-				"Body": "Description"
+				"Body": "Description",
+				"Basic": "Basic",
+				"Advanced": "Advanced"
 			},
 			"General": {
 				"type": "type",

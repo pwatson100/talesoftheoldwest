@@ -1,0 +1,29 @@
+{
+  "name": "Stubborn",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse is hard to train, either due to dim wits or a stubborn refusal to cooperate. Its Cunning is reduced by 1.",
+    "itemModifiers": null
+  },
+  "_id": "boa6iONrt2Ri9Omz",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 553125,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!boa6iONrt2Ri9Omz"
+}

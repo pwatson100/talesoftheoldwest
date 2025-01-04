@@ -1,0 +1,32 @@
+{
+  "name": "Tomahawk Fighter",
+  "type": "talent",
+  "system": {
+    "description": "Nothing splits a skull like a mighty axe.",
+    "basic": "You gain a +1 bonus to your attack rolls when you fight with an axe.",
+    "advanced": "When you hit an enemy with your axe and inflict 3 or more points of damage, you automatically inflict a critical injury.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "cUdLlNyUZl13ayCd",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 300000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!cUdLlNyUZl13ayCd"
+}

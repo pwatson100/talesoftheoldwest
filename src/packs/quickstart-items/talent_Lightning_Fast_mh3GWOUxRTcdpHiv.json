@@ -1,0 +1,32 @@
+{
+  "name": "Lightning Fast",
+  "type": "talent",
+  "system": {
+    "description": "You react with the speed of a snake.",
+    "basic": "You draw two initiative cards instead of one during the initiative draw. Choose the one you want to use and discard the other.",
+    "advanced": "When you spot an ambush or a sneak attack you get a slow and a fast action before initiative is drawn.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "mh3GWOUxRTcdpHiv",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2950000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!mh3GWOUxRTcdpHiv"
+}

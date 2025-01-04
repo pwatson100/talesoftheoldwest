@@ -1,0 +1,11 @@
+{{! Basic Tab }}
+<section class='tab basic {{tab.cssClass}}' data-group='primary' data-tab='basic'>
+	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+	{{#if editable}}
+		<prose-mirror name='system.basic' data-document-u-u-i-d='{{item.uuid}}' value='{{system.basic}}' toggled='true'>
+			{{{enrichedBasic}}}
+		</prose-mirror>
+	{{else}}
+		{{{enrichedBasic}}}
+	{{/if}}
+</section>

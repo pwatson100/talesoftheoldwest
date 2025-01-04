@@ -1,0 +1,32 @@
+{
+  "name": "Hay-Maker",
+  "type": "talent",
+  "system": {
+    "description": "When you put your all into an attack there’s no stopping you.",
+    "basic": "When you spend a fast action to go for an All-Out Attack in a fight you gain a +3 bonus instead of the usual +2.",
+    "advanced": "When you make an All-Out Attack with a melee weapon, any attempt by your opponent to Block the attack suffers a −3 modifier.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "PhxJWjgP0xzOukEg",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2900391,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!PhxJWjgP0xzOukEg"
+}

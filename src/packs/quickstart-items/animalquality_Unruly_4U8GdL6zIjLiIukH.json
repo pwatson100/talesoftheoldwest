@@ -1,0 +1,29 @@
+{
+  "name": "Unruly",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse has an unruly nature and can be troublesome. The scale of any Trouble that relates to this horse is increased by 1, to a maximum of 4.",
+    "itemModifiers": null
+  },
+  "_id": "4U8GdL6zIjLiIukH",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 270313,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!4U8GdL6zIjLiIukH"
+}

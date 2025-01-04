@@ -1,0 +1,32 @@
+{
+  "name": "Smith",
+  "type": "talent",
+  "system": {
+    "description": "You know the art of hammering coarse iron into lethal blades, horseshoes and more.",
+    "basic": "You can use the MAKIN’ ability to make and repair any metal tool or melee weapon with normal stats.",
+    "advanced": "You can make high-quality metal melee weapons. For each success after the first on your MAKIN’ test you can add a weapon quality of your choice. This can be used to add new qualities to existing weapons.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "2iEctLQTxti641ty",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 700000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!2iEctLQTxti641ty"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Expert Fanning",
+  "type": "talent",
+  "system": {
+    "description": "The calluses on your hands say you know how to fan your iron.",
+    "basic": "When you finish a fanning attack you always have one bullet left in your revolver.",
+    "advanced": "You are a skilled shot when fanning your pistol. You do not suffer the −2 penalty when fanning, but still suffer the penalties for shooting more than one target.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "yCA70JmQYk4ShKMA",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2900007,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!yCA70JmQYk4ShKMA"
+}

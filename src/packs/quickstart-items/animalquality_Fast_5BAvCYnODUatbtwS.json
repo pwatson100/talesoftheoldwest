@@ -1,0 +1,29 @@
+{
+  "name": "Fast",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse was meant to ride the plains. The rider can push ANIMAL HANDLIN’ twice when galloping, at the normal cost for both pushes.",
+    "itemModifiers": null
+  },
+  "_id": "5BAvCYnODUatbtwS",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 262500,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!5BAvCYnODUatbtwS"
+}

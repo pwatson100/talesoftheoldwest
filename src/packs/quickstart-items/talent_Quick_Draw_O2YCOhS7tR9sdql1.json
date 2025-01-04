@@ -1,0 +1,32 @@
+{
+  "name": "Quick Draw",
+  "type": "talent",
+  "system": {
+    "description": "You draw your weapon faster than your enemy can blink.",
+    "basic": "Once per Round you can draw a one-handed weapon without spending an action. This includes picking up a weapon from the ground. You also gain a +1 bonus to your Draw roll during a duel.",
+    "advanced": "Your draw is so smooth that Trouble does not apply when you Draw your pistol in a duel. When you push your LIGHT-FINGERED roll, you can reroll 1s on Trouble Dice, and you ignore any Trouble rolled.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "O2YCOhS7tR9sdql1",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2100000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!O2YCOhS7tR9sdql1"
+}

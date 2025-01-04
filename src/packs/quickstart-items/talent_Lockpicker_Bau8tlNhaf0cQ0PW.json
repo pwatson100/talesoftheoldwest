@@ -1,0 +1,32 @@
+{
+  "name": "Lockpicker",
+  "type": "talent",
+  "system": {
+    "description": "You have mastered the art of picking locks and cracking safes.",
+    "basic": "Your LIGHT-FINGERED roll is modified by +1 when you pick a lock.",
+    "advanced": "You can crack safes with LIGHT-FINGERED, or use OPERATE to blow them open with dynamite. You gain a +1 bonus to your rolls.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "Bau8tlNhaf0cQ0PW",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2487500,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!Bau8tlNhaf0cQ0PW"
+}

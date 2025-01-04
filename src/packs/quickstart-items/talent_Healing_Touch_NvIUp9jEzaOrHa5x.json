@@ -1,0 +1,32 @@
+{
+  "name": "Healing Touch",
+  "type": "talent",
+  "system": {
+    "description": "You’re a natural healer.",
+    "basic": "When you successfully heal a Broken person you double the number of attribute points that are restored.",
+    "advanced": "You don’t let patients die. If a failed DOCTORIN’ test would cause your patient to die, you can immediately reroll it once as a free action.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "NvIUp9jEzaOrHa5x",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3225000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!NvIUp9jEzaOrHa5x"
+}

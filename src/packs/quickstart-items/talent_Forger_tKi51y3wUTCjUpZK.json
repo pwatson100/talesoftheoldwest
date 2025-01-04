@@ -1,0 +1,32 @@
+{
+  "name": "Forger",
+  "type": "talent",
+  "system": {
+    "description": "You are a skilled forger, able to craft fake documents and papers.",
+    "basic": "You know how to make documents look good. Gain a +1 bonus to your LIGHT-FINGERED roll when drawing up a forgery.",
+    "advanced": "You are a master forger, and can make an accurate forgery of any document provided you have the time to study it and the resources to create it. You gain one bonus success on your LIGHT-FINGERED roll.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "tKi51y3wUTCjUpZK",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3203125,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!tKi51y3wUTCjUpZK"
+}

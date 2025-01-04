@@ -1,0 +1,29 @@
+{
+  "name": "Sure-Footed",
+  "type": "animalquality",
+  "system": {
+    "description": "This horse knows how to avoid trouble. If you suffer Trouble that relates to the horse, the scale of that Trouble is reduced by 1, to a minimum of 1.",
+    "itemModifiers": null
+  },
+  "_id": "U7BuU1NidhzSwuvm",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "q8E9alfSeM1DCNfJ",
+  "sort": 562500,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993087306,
+    "modifiedTime": 1735993087306,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!U7BuU1NidhzSwuvm"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Gambler",
+  "type": "talent",
+  "system": {
+    "description": "You are an expert at every kind of card game and know how to win any which way.",
+    "basic": "Choose a Gambling Tactic and gain a +1 bonus in that Tactic. This talent can be taken once for each Gambling Tactic.",
+    "advanced": "Choose a Gambling Tactic you already possess at the Basic rank and gain another +1 bonus in that Tactic. Also, you don’t suffer the penalty for repeat uses of the same Tactic when Gambling. This talent can be taken once for each Gambling Tactic.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "x8gMxeA3EU9mgxg9",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3206250,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!x8gMxeA3EU9mgxg9"
+}

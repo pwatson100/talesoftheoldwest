@@ -46,31 +46,36 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		description: {
 			template: 'systems/talesoftheoldwest/templates/item/item-description.hbs',
 		},
+		basic: {
+			template: 'systems/talesoftheoldwest/templates/item/item-talent-basic.hbs',
+		},
+		advanced: {
+			template: 'systems/talesoftheoldwest/templates/item/item-talent-advanced.hbs',
+		},
 		modifiers: {
 			template: 'systems/talesoftheoldwest/templates/item/item-modifiers.html',
 		},
 	};
 
 	/** @override */
-	// _configureRenderOptions(options) {
-	// 	super._configureRenderOptions(options);
-	// 	// Not all parts always render
-	// 	options.parts = ['header', 'tabs', 'description', 'modifiers'];
-	// 	// Don't show the other tabs if only limited view
-	// 	if (this.document.limited) return;
-	// 	// Control which parts show based on document subtype
-	// 	switch (this.document.type) {
-	// 		case 'talent':
-	// 			options.parts.push('header', 'tabs', 'description', 'modifiers');
-	// 			break;
-	// 		case 'item':
-	// 			options.parts.push('header', 'tabs', 'description', 'modifiers');
-	// 			break;
-	// 		case 'weapon':
-	// 			options.parts.push('header', 'tabs', 'description', 'modifiers');
-	// 			break;
-	// 	}
-	// }
+	_configureRenderOptions(options) {
+		super._configureRenderOptions(options);
+		// Not all parts always render
+		options.parts = ['header', 'tabs', 'description', 'modifiers'];
+		// Don't show the other tabs if only limited view
+		if (this.document.limited) return;
+		// Control which parts show based on document subtype
+		switch (this.document.type) {
+			case 'talent':
+				options.parts.push('basic', 'advanced');
+				break;
+			case 'item':
+			case 'weapon':
+			case 'crit':
+				options.parts.push('header', 'tabs', 'description', 'modifiers');
+				break;
+		}
+	}
 
 	/* -------------------------------------------- */
 
@@ -123,6 +128,34 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 					relativeTo: this.item,
 				});
 				break;
+			case 'basic':
+				// case 'body':
+				context.tab = context.tabs[partId];
+				// Enrich description info for display
+				// Enrichment turns text like `[[/r 1d20]]` into buttons
+				context.enrichedBasic = await TextEditor.enrichHTML(this.item.system.basic, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.item.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.item,
+				});
+				break;
+			case 'advanced':
+				// case 'body':
+				context.tab = context.tabs[partId];
+				// Enrich description info for display
+				// Enrichment turns text like `[[/r 1d20]]` into buttons
+				context.enrichedAdvanced = await TextEditor.enrichHTML(this.item.system.advanced, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.item.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.item,
+				});
+				break;
 			case 'modifiers':
 				context.tab = context.tabs[partId];
 				// Prepare active effects for easier access
@@ -159,13 +192,17 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				case 'header':
 				case 'tabs':
 					return tabs;
-				// case 'body':
-				// 	tab.id = 'body';
-				// 	tab.label += 'Body';
-				// 	break;
 				case 'description':
 					tab.id = 'description';
 					tab.label += 'Description';
+					break;
+				case 'basic':
+					tab.id = 'basic';
+					tab.label += 'Basic';
+					break;
+				case 'advanced':
+					tab.id = 'advanced';
+					tab.label += 'Advanced';
 					break;
 				case 'modifiers':
 					tab.id = 'modifiers';

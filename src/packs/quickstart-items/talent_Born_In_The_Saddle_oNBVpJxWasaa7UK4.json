@@ -1,0 +1,32 @@
+{
+  "name": "Born In The Saddle",
+  "type": "talent",
+  "system": {
+    "description": "Riding comes as naturally to you as breathing does to everyone else.",
+    "basic": "You gain a +1 bonus to all ANIMAL HANDLIN’ rolls that relate to horses.",
+    "advanced": "There is no one better in the saddle than you. When you Drive Hard in a chase on horseback you gain a +3 bonus to ANIMAL HANDLIN’ instead of +2, and your horse gains +3 to its RESILIENCE rolls during the chase.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "oNBVpJxWasaa7UK4",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 1200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!oNBVpJxWasaa7UK4"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Poisoner",
+  "type": "talent",
+  "system": {
+    "description": "You know all about the darker arts of poisons and venom.",
+    "basic": "You understand the basics of deadly plants and animals and can concoct poisons with a Potency of 2.",
+    "advanced": "You understand hemlock, arsenic and strychnine, as well as spider, scorpion and snake venom. You can mix poisons with a Potency of 3.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "urYZooYb6vMINC8q",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 2300000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!urYZooYb6vMINC8q"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Bronc Buster",
+  "type": "talent",
+  "system": {
+    "description": "You know how to handle and train horses.",
+    "basic": "You can break and train wild horses, using the Breaking & Training Horses rules (page XXX).",
+    "advanced": "You are a Horse Whisperer. When making a roll to break or train a horse you automatically gain one bonus success.",
+    "itemModifiers": null,
+    "level": 1
+  },
+  "_id": "lqEVdHbj10FbJPGt",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "o0HgvcRqPlzSZDM3",
+  "sort": 3400000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1735993094387,
+    "modifiedTime": 1735993094387,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!lqEVdHbj10FbJPGt"
+}
