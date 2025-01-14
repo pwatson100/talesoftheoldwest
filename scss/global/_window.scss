@@ -27,7 +27,7 @@ body {
 		background-repeat: no-repeat; /* Do not repeat the image */
 		background-size: 100% 100%;
 		border: unset;
-		filter: drop-shadow(8px 12px 8px #353232) !important;
+		filter: drop-shadow(8px 12px 8px #353232);
 		box-shadow: unset;
 		// border: 3px solid black;
 	}
@@ -37,7 +37,7 @@ body {
 		background-repeat: no-repeat; /* Do not repeat the image */
 		background-origin: content-box;
 		border: unset;
-		filter: drop-shadow(8px 12px 8px #353232) !important;
+		filter: drop-shadow(8px 12px 8px #353232);
 		box-shadow: unset;
 		// border: 3px solid black;
 	}
@@ -48,12 +48,15 @@ body {
 		background-image: url('../assets/background/lapp.webp');
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: cover; /* Resize the background image to cover the entire container */
-		background-origin: content-box;
+		/* background-size: cover; */ /* Resize the background image to cover the entire container */
+		/* background-origin: content-box; */
 
-		.form-footer {
+		.form-footer,
+		.dialog-buttons {
+			justify-content: center;
 			button {
-				min-width: auto;
+				max-width: max-content;
+				min-width: unset;
 				width: fit-content;
 			}
 		}
@@ -67,7 +70,9 @@ body {
 		background-size: cover; /* Resize the background image to cover the entire container */
 		background-origin: content-box;
 		.form-footer {
+			justify-content: center;
 			button {
+				max-width: max-content;
 				min-width: auto;
 				width: fit-content;
 			}
@@ -84,7 +89,8 @@ body {
 	}
 }
 
-.application .window-header {
+.application .window-header,
+.window-app .window-header {
 	background-image: url('../assets/background/header-plank.webp');
 	// background: blue;
 }

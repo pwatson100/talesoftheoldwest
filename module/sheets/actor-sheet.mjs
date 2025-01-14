@@ -31,7 +31,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			createDoc: this._createDoc,
 			deleteDoc: this._deleteDoc,
 			toggleEffect: this._toggleEffect,
-			roll: this._onRoll,
+			// roll: this._onRoll,
+			roll: { handler: this._onRoll, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
@@ -576,8 +577,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @protected
 	 */
 	static async _onRoll(event, target) {
-		event.preventDefault();
-		// const element = event.currentTarget;
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+
 		const dataset = target.dataset;
 		// const targetActor = this.actor.getRollData();
 		dataset.faithpoints = this.actor.system.general.faithpoints.value;

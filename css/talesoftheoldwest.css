@@ -159,8 +159,8 @@ body.theme-light .application {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
   border: unset;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232) !important;
-          filter: drop-shadow(8px 12px 8px #353232) !important;
+  -webkit-filter: drop-shadow(8px 12px 8px #353232);
+          filter: drop-shadow(8px 12px 8px #353232);
   -webkit-box-shadow: unset;
           box-shadow: unset;
 }
@@ -170,8 +170,8 @@ body.theme-dark .application {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-origin: content-box;
   border: unset;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232) !important;
-          filter: drop-shadow(8px 12px 8px #353232) !important;
+  -webkit-filter: drop-shadow(8px 12px 8px #353232);
+          filter: drop-shadow(8px 12px 8px #353232);
   -webkit-box-shadow: unset;
           box-shadow: unset;
 }
@@ -181,11 +181,21 @@ body.theme-light .dialog .window-content {
   background-image: url("../assets/background/lapp.webp");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  background-origin: content-box;
+  /* background-size: cover; */ /* Resize the background image to cover the entire container */
+  /* background-origin: content-box; */
 }
-body.theme-light .dialog .window-content .form-footer button {
-  min-width: auto;
+body.theme-light .dialog .window-content .form-footer,
+body.theme-light .dialog .window-content .dialog-buttons {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body.theme-light .dialog .window-content .form-footer button,
+body.theme-light .dialog .window-content .dialog-buttons button {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: unset;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -199,7 +209,15 @@ body.theme-dark .dialog .window-content {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-origin: content-box;
 }
+body.theme-dark .dialog .window-content .form-footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 body.theme-dark .dialog .window-content .form-footer button {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
   min-width: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -212,7 +230,8 @@ body .application select {
   color: black;
 }
 
-.application .window-header {
+.application .window-header,
+.window-app .window-header {
   background-image: url("../assets/background/header-plank.webp");
 }
 
