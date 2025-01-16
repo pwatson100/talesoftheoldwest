@@ -8,6 +8,7 @@
 			"Tabs": {
 				"Skills": "Skills",
 				"Gear": "Gear",
+				"Conditions": "Conditions",
 				"Description": "Description",
 				"Effects": "Effects"
 			}
@@ -257,6 +258,14 @@
 			"Fatal": "Fatal",
 			"imediateeffect": "Immediate Effect",
 			"longtermeffect": "Long Term Effect"
+		},
+		"Conditions": {
+			"Starving": "Starving",
+			"Dehydrated": "Dehydrated",
+			"Exhausted": "Exhausted",
+			"Freezing": "Freezing",
+			"Heatstroke": "Heatstroke",
+			"Overwatch": "Overwatch"
 		}
 	},
 	"TYPES": {

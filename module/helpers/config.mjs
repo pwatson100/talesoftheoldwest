@@ -161,3 +161,35 @@ TALESOFTHEOLDWEST.crit_location_list = {
 	chest: { id: 'chest', label: 'TALESOFTHEOLDWEST.CritLocation.chest' },
 	head: { id: 'head', label: 'TALESOFTHEOLDWEST.CritLocation.head' },
 };
+TALESOFTHEOLDWEST.conditionEffects = [
+	{
+		id: 'starving',
+		name: 'TALESOFTHEOLDWEST.Conditions.Starving',
+		label: 'TALESOFTHEOLDWEST.Conditions.Starving',
+		icon: 'systems/talesoftheoldwest/assets/icons/starving.webp',
+	},
+	{
+		id: 'dehydrated',
+		name: 'TALESOFTHEOLDWEST.Conditions.Dehydrated',
+		label: 'TALESOFTHEOLDWEST.Conditions.Dehydrated',
+		icon: 'systems/talesoftheoldwest/assets/icons/water-flask.webp',
+	},
+	{
+		id: 'exhausted',
+		name: 'TALESOFTHEOLDWEST.Conditions.Exhausted',
+		label: 'TALESOFTHEOLDWEST.Conditions.Exhausted',
+		icon: 'systems/talesoftheoldwest/assets/icons/exhausted.webp',
+	},
+	{
+		id: 'freezing',
+		name: 'TALESOFTHEOLDWEST.Conditions.Freezing',
+		label: 'TALESOFTHEOLDWEST.Conditions.Freezing',
+		icon: 'systems/talesoftheoldwest/assets/icons/freezing.webp',
+	},
+	{
+		id: 'overwatch',
+		name: 'TALESOFTHEOLDWEST.Conditions.Overwatch',
+		label: 'TALESOFTHEOLDWEST.Conditions.Overwatch',
+		icon: 'systems/talesoftheoldwest/assets/icons/overwatch.webp',
+	},
+];

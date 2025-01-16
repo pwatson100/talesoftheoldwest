@@ -7,6 +7,20 @@
 			"name": "Paul Watson"
 		}
 	],
+	"documentTypes": {
+		"Actor": {
+			"pc": { "htmlFields": ["biography"] },
+			"npc": { "htmlFields": ["biography"] },
+			"animal": { "htmlFields": ["biography"] }
+		},
+		"Item": {
+			"item": { "htmlFields": ["description"] },
+			"weapon": { "htmlFields": ["description"] },
+			"talent": { "htmlFields": ["description", "basic", "advanced"] },
+			"crit": { "htmlFields": ["description"] },
+			"animalquality": { "htmlFields": ["description"] }
+		}
+	},
 
 	"flags": {
 		"hotReload": {

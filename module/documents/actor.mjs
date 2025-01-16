@@ -74,4 +74,35 @@ export class totowActor extends Actor {
 		this.updateSource(tokenProto);
 		// this.updateSource(createData);
 	}
+
+	async addCondition(effect) {
+		if (typeof effect === 'string') effect = foundry.utils.duplicate(CONFIG.TALESOFTHEOLDWEST.conditionEffects.find((e) => e.id == effect));
+		if (!effect) return 'No Effect Found';
+		if (!effect.id) return 'Conditions require an id field';
+
+		let existing = await this.hasCondition(effect.id);
+		if (!existing) {
+			effect.label = game.i18n.localize(effect.label).replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+			effect.name = game.i18n.localize(effect.name).replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+			let field = `system.conditions.${effect.name}`;
+			effect['statuses'] = effect.id;
+			delete effect.id;
+			return await this.createEmbeddedDocuments('ActiveEffect', [effect]);
+		}
+	}
+
+	async removeCondition(effect) {
+		if (typeof effect === 'string') effect = foundry.utils.duplicate(CONFIG.TALESOFTHEOLDWEST.conditionEffects.find((e) => e.id == effect));
+		if (!effect) return 'No Effect Found';
+		if (!effect.id) return 'Conditions require an id field';
+		let existing = await this.hasCondition(effect.id);
+		if (existing) {
+			return await this.deleteEmbeddedDocuments('ActiveEffect', [existing._id]);
+		}
+	}
+	async hasCondition(conditionKey) {
+		let existing = '';
+		existing = this.effects.find((effect) => effect.statuses.has(conditionKey));
+		return existing;
+	}
 }

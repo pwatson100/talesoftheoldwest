@@ -33,6 +33,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			toggleEffect: this._toggleEffect,
 			// roll: this._onRoll,
 			roll: { handler: this._onRoll, buttons: [0, 2] },
+			toggleCondition: { handler: this._toggleCondition, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
@@ -58,6 +59,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		},
 		effects: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-effects.html',
+		},
+		conditions: {
+			template: 'systems/talesoftheoldwest/templates/actor/conditions.html',
 		},
 		description: {
 			template: 'systems/talesoftheoldwest/templates/actor/biography.hbs',
@@ -86,10 +90,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'gear', 'description', 'effects');
+				options.parts.push('skills', 'gear', 'conditions', 'description', 'effects');
 				break;
 			case 'npc':
-				options.parts.push('skills', 'gear', 'description');
+				options.parts.push('skills', 'gear', 'conditions', 'description');
 				break;
 			case 'animal':
 				options.parts.push('skills');
@@ -154,6 +158,18 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					relativeTo: this.actor,
 				});
 				break;
+			case 'conditions':
+				context.tab = context.tabs[partId];
+				// Enrichment turns text like `[[/r 1d20]]` into buttons
+				// context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+				// 	// Whether to show secret blocks in the finished html
+				// 	secrets: this.document.isOwner,
+				// 	// Data to fill in for inline rolls
+				// 	rollData: this.actor.getRollData(),
+				// 	// Relative UUID resolution
+				// 	relativeTo: this.actor,
+				// });
+				break;
 			case 'description':
 				context.tab = context.tabs[partId];
 				// Enrich biography info for display
@@ -210,10 +226,13 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					tab.id = 'skills';
 					tab.label += 'Skills';
 					break;
-
 				case 'gear':
 					tab.id = 'gear';
 					tab.label += 'Gear';
+					break;
+				case 'conditions':
+					tab.id = 'conditions';
+					tab.label += 'Conditions';
 					break;
 				case 'description':
 					tab.id = 'description';
@@ -245,25 +264,47 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const weapon = [];
 		const talent = [];
 		const animalquality = [];
+		const critInj = [];
 
 		// Iterate through items, allocating to containers
 		for (let i of this.document.items) {
-			// Append to gear.
-			if (i.type === 'item') {
-				gear.push(i);
+			switch (i.type) {
+				case 'item':
+					gear.push(i);
+					break;
+				case 'weapon':
+					weapon.push(i);
+					break;
+				case 'talent':
+					talent.push(i);
+					break;
+				case 'crit':
+					critInj.push(i);
+					break;
+				case 'animalquality':
+					animalquality.push(i);
+					break;
+
+				default:
+					break;
 			}
-			// Append to features.
-			else if (i.type === 'weapon') {
-				weapon.push(i);
-			}
-			// Append to spells.
-			else if (i.type === 'talent') {
-				talent.push(i);
-			}
-			// and now animal options
-			else if (i.type === 'animalquality') {
-				animalquality.push(i);
-			}
+
+			// // Append to gear.
+			// if (i.type === 'item') {
+			// 	gear.push(i);
+			// }
+			// // Append to features.
+			// else if (i.type === 'weapon') {
+			// 	weapon.push(i);
+			// }
+			// // Append to spells.
+			// else if (i.type === 'talent') {
+			// 	talent.push(i);
+			// }
+			// // and now animal options
+			// else if (i.type === 'animalquality') {
+			// 	animalquality.push(i);
+			// }
 			allGear.push(i);
 		}
 
@@ -271,6 +312,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		context.allGear = allGear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.weapon = weapon.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 	}
@@ -567,6 +609,34 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const effect = this._getEmbeddedDocument(target);
 		await effect.update({ disabled: !effect.disabled });
 	}
+	/**
+	 * Determines effect parent to pass to helper
+	 *
+	 * @this totowActorSheet
+	 * @param {PointerEvent} event   The originating click event
+	 * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
+	 * @private
+	 */
+	static async _toggleCondition(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		let field = `system.conditions.${target.dataset.key}`;
+
+		// if (target.dataset.key === 'overwatch') {
+		if (await this.actor.hasCondition(target.dataset.key)) {
+			await this.actor.removeCondition(target.dataset.key);
+			await this.actor.update({ [field]: false });
+		} else {
+			await this.actor.addCondition(target.dataset.key);
+			await this.actor.update({ [field]: true });
+		}
+		// } else {
+		// 	if (event.type === 'click') {
+		// 		if (!(await this.actor.hasCondition(target.dataset.key))) await this.actor.addCondition(target.dataset.key);
+		// 	}
+		// }
+	}
 
 	/**
 	 * Handle clickable rolls.
@@ -671,7 +741,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 */
 	_getEmbeddedDocument(target) {
 		const docRow = target.closest('li[data-document-class]');
-		if (docRow.dataset.documentClass === 'Item' || docRow.dataset.documentClass === 'Talent' || docRow.dataset.documentClass === 'Weapon') {
+		if (
+			docRow.dataset.documentClass === 'Item' ||
+			docRow.dataset.documentClass === 'Talent' ||
+			docRow.dataset.documentClass === 'Weapon' ||
+			docRow.dataset.documentClass === 'Critical Injury'
+		) {
 			return this.actor.items.get(docRow.dataset.itemId);
 		} else if (docRow.dataset.documentClass === 'ActiveEffect') {
 			const parent = docRow.dataset.parentId === this.actor.id ? this.actor : this.actor.items.get(docRow?.dataset.parentId);
