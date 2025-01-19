@@ -2,24 +2,27 @@
 	<div>
 		<h2 style='white-space: pre-wrap;'>{{title}}</h2>
 	</div>
+
 	{{#if (gt modifiers.mod 0)}}
+		{{#if debug}}
 
-		<div style='position: relative'>
-			<details>
-				<summary>Expand To See Roll Stats</summary>
-				<br />
-				<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
-				<h4 class=''>Trouble Dice({{trouble}})</h4>
-				<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
-				<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
-				<h4 class=''>Normal Rest ({{rest}})</h4>
-				<h4 class=''>Total Success({{totalSuccess}})</h4>
-				<h4 class=''>Total Trouble({{totalTrouble}})</h4>
-				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
-				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
+			<div style='position: relative'>
+				<details>
+					<summary>Expand To See Roll Stats</summary>
+					<br />
+					<h4 class=''>Trouble Dice Success ({{troubleSucc}})</h4>
+					<h4 class=''>Trouble Dice({{trouble}})</h4>
+					<h4 class=''>Trouble Rest ({{troubleRest}})</h4>
+					<h4 class=''>Normal Dice Success ({{normalSucc}})</h4>
+					<h4 class=''>Normal Rest ({{rest}})</h4>
+					<h4 class=''>Total Success({{totalSuccess}})</h4>
+					<h4 class=''>Total Trouble({{totalTrouble}})</h4>
+					<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
+					<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
 
-			</details>
-		</div>
+				</details>
+			</div>
+		{{/if}}
 
 		<div class='chat roll'>
 			<section>
@@ -89,14 +92,17 @@
 				</div>
 			</section>
 			{{#if (gt totalSuccess 1)}}
-				<section>
-					<div style='position: relative'>
-						<details>
-							<summary style='font-size: large;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
-							{{{stunts}}}
-						</details>
-					</div>
-				</section>
+				{{#if (ne stunts 'None')}}
+
+					<section>
+						<div style='position: relative'>
+							<details>
+								<summary style='font-size: large;'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
+								{{{stunts}}}
+							</details>
+						</div>
+					</section>
+				{{/if}}
 			{{/if}}
 
 			<section>
@@ -167,37 +173,40 @@
 			</a>
 		</div>
 	{{/if}}
-	{{#if (eq modifiers.subtype 'shootin')}}
-		<div style='position: relative'>
-			<details>
-				<summary>Expand To See Roll modifiers</summary>
-				<br />
-				<h4 class=''>Attribute+Skill+Talent ({{modifiers.baseMod}})</h4>
-				<h4 class=''>Range ({{modifiers.shootrangeMod}})</h4>
-				<h4 class=''>Called Shots ({{modifiers.shootcalledShotsMod}})</h4>
-				<h4 class=''>Target Cover ({{modifiers.shootcoverMod}})</h4>
-				<h4 class=''>Target Size ({{modifiers.shootsizeMod}})</h4>
-				<h4 class=''>Target Visibility ({{modifiers.shootvisibilityMod}})</h4>
-				<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.shootmodifierMod}})</h4>
-				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
-			</details>
-		</div>
-	{{/if}}
-	{{#if (eq modifiers.subtype 'fightin')}}
-		<div style='position: relative'>
-			<details>
-				<summary>Expand To See Roll modifiers</summary>
-				<br />
-				<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
-				<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
-				<h4 class=''>Attribute+Skill+Talents ({{modifiers.baseMod}})</h4>
-				<h4 class=''>Target prone ({{modifiers.fightProneMod}})</h4>
-				<h4 class=''>All-Out Attack ({{modifiers.fightAlloutattackMod}})</h4>
-				<h4 class=''>Called Strike ({{modifiers.fightCalledstrikeMod}})</h4>
-				<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.fightmodifierMod}})</h4>
-				<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
-			</details>
-		</div>
+
+	{{#if debug}}
+		{{#if (eq modifiers.subtype 'shootin')}}
+			<div style='position: relative'>
+				<details>
+					<summary>Expand To See Roll modifiers</summary>
+					<br />
+					<h4 class=''>Attribute+Skill+Talent ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Range ({{modifiers.shootrangeMod}})</h4>
+					<h4 class=''>Called Shots ({{modifiers.shootcalledShotsMod}})</h4>
+					<h4 class=''>Target Cover ({{modifiers.shootcoverMod}})</h4>
+					<h4 class=''>Target Size ({{modifiers.shootsizeMod}})</h4>
+					<h4 class=''>Target Visibility ({{modifiers.shootvisibilityMod}})</h4>
+					<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.shootmodifierMod}})</h4>
+					<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
+				</details>
+			</div>
+		{{/if}}
+		{{#if (eq modifiers.subtype 'fightin')}}
+			<div style='position: relative'>
+				<details>
+					<summary>Expand To See Roll modifiers</summary>
+					<br />
+					<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
+					<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
+					<h4 class=''>Attribute+Skill+Talents ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Target prone ({{modifiers.fightProneMod}})</h4>
+					<h4 class=''>All-Out Attack ({{modifiers.fightAlloutattackMod}})</h4>
+					<h4 class=''>Called Strike ({{modifiers.fightCalledstrikeMod}})</h4>
+					<h4 class=''>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.fightmodifierMod}})</h4>
+					<h4 class=''>Total Dice ({{modifiers.mod}})</h4>
+				</details>
+			</div>
+		{{/if}}
 	{{/if}}
 
 </div>

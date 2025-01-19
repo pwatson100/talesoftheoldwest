@@ -69,7 +69,10 @@
 
 	<div>
 		<h2>{{localize 'TYPES.Item.crit'}}</h2>
-
+		<div class="grid-crit">
+			<label class="resource-label-header">{{ localize 'TYPES.Item.crit'}}</label>
+			<a class="resource-label-header" title="{{localize 'TYPES.Item.crit'}}" data-action="rollCrit"><i class="fas fa-heartbeat"></i></a>
+		</div>
 		<ol class="items-list">
 			{{#each critInj as |item iid|}}
 			<li class="item critical-inj" data-item-id="{{item.id}}" data-drag="true" data-document-class="Critical Injury">

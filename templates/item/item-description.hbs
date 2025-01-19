@@ -50,12 +50,16 @@
 			<select id='system.location' name='system.location'>
 				{{selectOptions config.crit_location_list selected=system.location labelAttr='label' localize=true}}
 			</select>
-			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.HealTime'}}</div>
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.injury'}}</div>
+			<input type='text' class='' name='system.injury' value='{{system.injury}} ' data-dtype='String' />
+
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.healTime'}}</div>
 			<span>
 				<input type='text' class='healboxsize' name='system.healingtime' value='{{system.healingtime}} ' data-dtype='String' />
 			</span>
-			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.Fatal'}}</div>
-			<input class='' name='system.attributes.fatal' type='checkbox' {{checked system.fatal}} />
+			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.fatal'}}</div>
+			<input class='' name='system.fatal' type='checkbox' {{checked system.fatal}} />
+
 			<div class='resource-label wItem3'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}</div>
 			<span>
 				<input type='text' class='healboxsize' name='system.imediateeffect' value='{{system.imediateeffect}} ' data-dtype='String' />

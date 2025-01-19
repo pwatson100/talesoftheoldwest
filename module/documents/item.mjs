@@ -49,12 +49,12 @@ export class totowItem extends Item {
 				switch (dataset.subtype) {
 					case 'shootin':
 						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
-						dataset.attr = dataset.subtype;
+						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - shootin', dataset, dataset.mod);
 						return await shootin(dataset, rollData);
 					case 'fightin':
 						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
-						dataset.attr = dataset.subtype;
+						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - Fightin', dataset, dataset.mod);
 						return await fightin(dataset, rollData);
 

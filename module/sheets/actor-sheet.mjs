@@ -34,6 +34,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			// roll: this._onRoll,
 			roll: { handler: this._onRoll, buttons: [0, 2] },
 			toggleCondition: { handler: this._toggleCondition, buttons: [0, 2] },
+			rollCrit: { handler: this._rollCrit, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
@@ -623,7 +624,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (event.detail > 1) return; // Ignore repeated clicks
 		let field = `system.conditions.${target.dataset.key}`;
 
-		// if (target.dataset.key === 'overwatch') {
 		if (await this.actor.hasCondition(target.dataset.key)) {
 			await this.actor.removeCondition(target.dataset.key);
 			await this.actor.update({ [field]: false });
@@ -631,11 +631,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			await this.actor.addCondition(target.dataset.key);
 			await this.actor.update({ [field]: true });
 		}
-		// } else {
-		// 	if (event.type === 'click') {
-		// 		if (!(await this.actor.hasCondition(target.dataset.key))) await this.actor.addCondition(target.dataset.key);
-		// 	}
-		// }
 	}
 
 	/**
@@ -711,25 +706,18 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		}
 	}
 
-	// Handle item rolls.
-	// switch (dataset.rollType) {
-	// 	case 'item':
-	// 		const item = this._getEmbeddedDocument(target);
-	// 		if (item) return item.roll();
-	// }
+	static async _rollCrit(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
 
-	// // Handle rolls that supply the formula directly.
-	// if (dataset.roll) {
-	// 	let label = dataset.label ? `[ability] ${dataset.label}` : '';
-	// 	let roll = new Roll(dataset.roll, this.actor.getRollData());
-	// 	await roll.toMessage({
-	// 		speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-	// 		flavor: label,
-	// 		rollMode: game.settings.get('core', 'rollMode'),
-	// 	});
-	// 	return roll;
-	// }
-	// }
+		const dataset = target.dataset;
+		if (event.detail === 2) {
+			this.actor.rollCritMan(this.actor, this.actor.type, dataset);
+		} else {
+			this.actor.rollCrit(this.actor, this.actor.type, dataset);
+		}
+	}
 
 	/** Helper Functions */
 

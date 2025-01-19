@@ -1,4 +1,5 @@
 import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
+import { COMMON } from './common.mjs';
 
 export async function totowDiceListeners(html) {
 	html.on('click', '.dice-push', (ev) => {
@@ -65,11 +66,11 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 	const myActor = game.actors.get(origRollData[1].myActor);
 	await myActor.update({ 'system.general.faithpoints.value': myActor.system.general.faithpoints.value - 1 });
 
+	origRollData[1].canPush = 'pushed';
 	let result = await evaluateTOTWRoll(origRollData[1], roll, formula);
 
 	const totalRolled = result.troubleSucc + result.trouble + result.troubleRest + result.normalSucc + result.rest <= 0;
 
-	origRollData[1].canPush = 'pushed';
 	origRollData[1].formula = formula;
 	origRollData[1].troubleSucc += result.troubleSucc;
 	origRollData[1].troubleFive = result.troubleFive;
@@ -176,6 +177,8 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 	let troubleBlank = 0;
 	let totalSuccess = 0;
 	let canPush = dataset.canPush;
+	let ability = '';
+	let stunts = '';
 	const tDice = roll.dice[0];
 	tDice.results.forEach((r) => {
 		switch (r.result) {
@@ -246,13 +249,26 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 			canPush = 'fullHouse';
 		}
 	}
+
+	// Attribute = dataset.label;  Do not have stunts
+	// Ability = dataset.label;
+	// weapon = dataset.ability;
+
 	// Strip out special characters and spaces, convert to lowercase and capitalise the first letter of the String.
-	let ability = dataset.label
-		.replace(/[^A-Z0-9]/gi, '')
-		.toLowerCase()
-		.replace(/\b[a-z](?=[a-z]{2})/g, function (letter) {
-			return letter.toUpperCase();
-		});
+	if (canPush != 'pushed') {
+		if (dataset.rollType != 'attribute') {
+			ability = dataset.stunts
+				.replace(/[^A-Z0-9]/gi, '')
+				.toLowerCase()
+				.replace(/\b[a-z](?=[a-z]{2})/g, function (letter) {
+					return letter.toUpperCase();
+				});
+
+			stunts = game.i18n.localize('TALESOFTHEOLDWEST.Ability.' + [ability] + '.stunts');
+		} else {
+			stunts = game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.none');
+		}
+	}
 
 	let evalResult = {
 		myActor: dataset.myActor,
@@ -287,7 +303,9 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		modifiers: dataset,
 		messageNo: 0,
 		faithAdded: false,
-		stunts: game.i18n.localize('TALESOFTHEOLDWEST.Ability.' + [ability] + '.stunts'),
+		ability: ability,
+		stunts: stunts,
+		debug: COMMON.setting('debug'),
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;

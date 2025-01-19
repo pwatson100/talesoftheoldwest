@@ -31,7 +31,14 @@ export default class totowNPC extends totowActorBase {
 				return obj;
 			}, {})
 		);
-
+		schema.conditions = new fields.SchemaField({
+			starving: new fields.BooleanField(),
+			dehydrated: new fields.BooleanField(),
+			exhausted: new fields.BooleanField(),
+			freezing: new fields.BooleanField(),
+			encumbered: new fields.BooleanField(),
+			overwatch: new fields.BooleanField(),
+		});
 		return schema;
 	}
 

@@ -120,6 +120,8 @@
 		},
 		"General": {
 			"name": "name",
+			"yes": "Yes",
+			"no": "No",
 			"faithPoints": "faith points",
 			"success": "success",
 			"critsuccess": "critical success",
@@ -254,10 +256,16 @@
 		},
 		"Criticals": {
 			"location": "Location",
-			"HealTime": "Healing Time",
-			"Fatal": "Fatal",
+			"healTime": "Healing Time",
+			"fatal": "Fatal",
+			"injury": "Injury",
 			"imediateeffect": "Immediate Effect",
-			"longtermeffect": "Long Term Effect"
+			"longtermeffect": "Long Term Effect",
+			"manual": "Manual",
+			"rolled": "Rolled",
+			"criticalInjuryfor": "Critical Injury for",
+			"rollResilience": "Roll RESILIENCE, using your full <strong>GRIT</strong> score every ",
+			"endOfTheTrail": "YOU HAVE COME TO THE END OF THE TRAIL PARDNER"
 		},
 		"Conditions": {
 			"Starving": "Starving",

@@ -1,0 +1,44 @@
+<div class='chatBG'>
+	<h2 style='font-weight: bold'>
+		{{#if manCrit}}
+			{{localize 'TALESOFTHEOLDWEST.Criticals.manual'}}
+		{{else}}
+			{{localize 'TALESOFTHEOLDWEST.Criticals.rolled'}}
+		{{/if}}
+		{{localize 'TALESOFTHEOLDWEST.Criticals.criticalInjuryfor'}}:
+		<br />
+		{{actorname}}
+	</h2>
+	{{! <h2 style='font-weight: bold'></h2> }}
+</div>
+<div class='chatBG critchat flexrow'>
+	<img src='{{img}}' style='flex: 0 0 32px; width: 32px; height: 32px; margin-right: 8px; object-fit: cover' />
+	<div style='margin: 0; padding: 0; line-height: 16px'>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.location'}}:</strong>
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{name}}</span>
+		</h4>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.injury'}}:</strong>
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{injury}}</span>
+		</h4>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.fatal'}}:</strong>
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{fatal}}</span>
+		</h4>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.healTime'}}:</strong>
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{healingtime}}</span>
+		</h4>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}:</strong>
+			<br />
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{imediateeffect}}</span>
+		</h4>
+		<h4>
+			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}}:</strong>
+			<br />
+			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{{longtermeffect}}}</span>
+		</h4>
+	</div>
+</div>
