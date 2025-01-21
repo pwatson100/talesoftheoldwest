@@ -1,5 +1,4 @@
 import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
-import { COMMON } from './common.mjs';
 
 export async function totowDiceListeners(html) {
 	html.on('click', '.dice-push', (ev) => {
@@ -305,7 +304,6 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		faithAdded: false,
 		ability: ability,
 		stunts: stunts,
-		debug: COMMON.setting('debug'),
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;

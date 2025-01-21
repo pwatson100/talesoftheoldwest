@@ -262,7 +262,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let update = {};
 		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 		update[`system.itemModifiers.${modifierId}`] = {
-			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.name'),
+			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
 			value: '1',
 		};
 		// await item.update(update).render(true);

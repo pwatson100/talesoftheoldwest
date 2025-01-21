@@ -192,4 +192,10 @@ TALESOFTHEOLDWEST.conditionEffects = [
 		label: 'TALESOFTHEOLDWEST.Conditions.Overwatch',
 		icon: 'systems/talesoftheoldwest/assets/icons/overwatch.webp',
 	},
+	{
+		id: 'criticalinj',
+		name: 'TALESOFTHEOLDWEST.General.criticalInjury',
+		label: 'TALESOFTHEOLDWEST.General.criticalInjury',
+		icon: 'icons/skills/wounds/injury-pain-body-orange.webp',
+	},
 ];

@@ -645,64 +645,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
-
-		const dataset = target.dataset;
-		// const targetActor = this.actor.getRollData();
-		dataset.faithpoints = this.actor.system.general.faithpoints.value;
-		dataset.canPush = this.actor.system.general.canPush;
-		dataset.myActor = this.actor.id;
-		let result = '';
-
-		// Handle item rolls.
-		if (dataset.rollType) {
-			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
-				switch (dataset.rollType) {
-					case 'attribute':
-					case 'ability':
-						result = await rollAttrib(dataset);
-						break;
-					default:
-						break;
-				}
+		if (target.dataset.rollType === 'attribute' || target.dataset.rollType === 'ability') {
+			if (event.button === 0) {
+				this.actor.diceRoll(this.actor, event, target);
 			} else {
-				const itemId = target.dataset.itemId;
-				const item = this.actor.items.get(itemId);
-				switch (dataset.rollType) {
-					case 'item':
-					case 'talent':
-						return item.roll(dataset);
-					case 'weapon':
-						result = await item.roll(dataset, item);
-
-					default:
-						break;
-				}
+				this.actor.modRoll(this.actor, event, target);
 			}
-			if (result === 'cancelled') {
-				return;
-			}
-			const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', result[1]);
-			let chatData = {
-				user: game.user.id,
-				speaker: ChatMessage.getSpeaker({
-					alias: this.actor.name,
-					actor: this.actor.id,
-				}),
-				rolls: [result[0]],
-				rollMode: game.settings.get('core', 'rollMode'),
-				content: html,
-				sound: CONFIG.sounds.dice,
-			};
-			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
-				chatData.whisper = ChatMessage.getWhisperRecipients('GM');
-			} else if (chatData.rollMode === 'selfroll') {
-				chatData.whisper = [game.user];
-			}
-			const msg = await ChatMessage.create(chatData);
-			result[1].messageNo = msg.id;
-			await msg.setFlag('talesoftheoldwest', 'results', result);
-
-			return result;
+		} else {
+			this.actor.diceRoll(this.actor, event, target);
 		}
 	}
 
@@ -712,7 +662,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (event.detail > 1) return; // Ignore repeated clicks
 
 		const dataset = target.dataset;
-		if (event.detail === 2) {
+		if (event.button === 2) {
 			this.actor.rollCritMan(this.actor, this.actor.type, dataset);
 		} else {
 			this.actor.rollCrit(this.actor, this.actor.type, dataset);

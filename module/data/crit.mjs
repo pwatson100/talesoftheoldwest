@@ -9,6 +9,7 @@ export default class totowCrit extends totowItemBase {
 		schema.location = new fields.StringField({ required: true, blank: true });
 		schema.injury = new fields.StringField({ required: true, blank: true });
 		schema.fatal = new fields.BooleanField();
+		schema.fatalmessage = new fields.StringField({ required: true, blank: true });
 		schema.healingtime = new fields.StringField({ required: true, blank: true });
 		schema.imediateeffect = new fields.StringField({ required: true, blank: true });
 		schema.longtermeffect = new fields.StringField({ required: true, blank: true });

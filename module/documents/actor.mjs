@@ -1,3 +1,5 @@
+import { rollAttrib } from '../helpers/diceroll.mjs';
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -106,13 +108,6 @@ export class totowActor extends Actor {
 	}
 
 	async rollCrit(actor, type, dataset, manCrit) {
-		let description = '';
-		let itemModifiers = '';
-		let location = '';
-		let injury = '';
-		let healingtime = '';
-		let imediateeffect = '';
-		let longtermeffect = '';
 		let cFatal = false;
 		let fatal = [];
 		let rollFatal = '';
@@ -121,13 +116,12 @@ export class totowActor extends Actor {
 		let testArray = '';
 		let rollheal = '';
 		let newHealTime = '';
-		let healTime = 0;
 		let htmlData = '';
 		let resultImage = '';
-		let test1 = '';
-		let hFatal = '';
-		let hHealTime = '';
-		let hTimeLimit = '';
+		let diceRoll = '';
+		let update = {};
+		let noMods = '';
+
 		switch (type) {
 			case 'pc':
 			case 'npc':
@@ -143,18 +137,18 @@ export class totowActor extends Actor {
 		}
 
 		if (!manCrit) {
-			test1 = await atable.draw({ displayChat: false });
+			diceRoll = await atable.draw({ displayChat: false });
 		} else {
 			const formula = manCrit;
 			const roll = await new Roll(formula).evaluate();
-			test1 = await atable.draw({ roll: roll, displayChat: false });
+			diceRoll = await atable.draw({ roll: roll, displayChat: false });
 		}
-		const messG = test1.results[0].text;
+		const messG = diceRoll.results[0].text;
 		switch (type) {
 			case 'pc':
 			case 'npc':
 				{
-					resultImage = test1.results[0].img;
+					resultImage = diceRoll.results[0].img;
 					// Split out the components
 					testArray = messG
 						.replace(/(<p>)|(<strong>)|(<\/strong>)/gi, '')
@@ -164,69 +158,53 @@ export class totowActor extends Actor {
 					// Process Fatial
 					fatal = testArray[5].split(/[\/] /gi);
 					if (fatal[0] != game.i18n.localize('TALESOFTHEOLDWEST.General.no')) {
-						if (fatal[1] === 'Instant') {
+						if (fatal[1] === game.i18n.localize('TALESOFTHEOLDWEST.Criticals.instant')) {
 							cFatal = true;
-							fatal[1] = game.i18n.localize('TALESOFTHEOLDWEST.Criticals.endOfTheTrail');
+							fatal[0] =
+								'<strong style="color: red;">' + fatal[0].toUpperCase() + '</strong><br>' + game.i18n.localize('TALESOFTHEOLDWEST.Criticals.endOfTheTrail');
+							testArray[11] = '<strong style="color: red;">' + testArray[11] + '</strong>';
 						} else {
 							rollFatal = fatal[1].match(/^\[\[([0-9]d[0-9]+)]/)[1];
 							newFatalTime = fatal[1].match(/^\[\[([0-9]d[0-9]+)\]\] ?(.*)/)[2];
 							fatal[1] = (await new Roll(`${rollFatal}`).evaluate()).result + ' ' + newFatalTime;
+							fatal[0] = fatal[0].toUpperCase();
 
-							// Fatal</strong>: Yes −1 / [[1d6]] Rounds
-							// Fatal</strong>: Yes −1 / [[2d6]] Rounds
-							// Fatal</strong>: Yes / [[1d6]] Turns
-							// Fatal</strong>: Yes / [[2d6]] Turns
-							// Fatal</strong>: Yes −1 / [[1d6]] Turns
-							// Fatal</strong>: Yes / [[1d6]] Days
-							// Fatal</strong>: Yes / Instant
-
-							switch (fatal[0]) {
+							switch (testArray[5]) {
 								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' ':
-									cFatal = true;
+									{
+										cFatal = true;
+										fatal[0] = '<strong style="color: red;">' + game.i18n.localize('TALESOFTHEOLDWEST.General.yes').toUpperCase() + '</strong>';
+									}
 									break;
 								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' −1 / [[1d6]] Rounds':
 								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' −1 / [[2d6]] Rounds':
-									{
-										cFatal = true;
-										fatal[0] +=
-											game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') +
-											fatal[1] +
-											'<br> -1 to <strong>' +
-											game.i18n.localize('TALESOFTHEOLDWEST.Ability.Doctorin') +
-											'</strong> roll.';
-									}
-									break;
-								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' [[1d6]] Turns':
-								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' [[2d6]] Turns':
-									{
-										cFatal = true;
-										fatal[0] += game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') + fatal[1];
-									}
-									break;
 								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' −1 / [[1d6]] Turns':
 									{
 										cFatal = true;
-										fatal[0] +=
+										fatal[0] =
+											'<strong style="color: red;">' +
+											game.i18n.localize('TALESOFTHEOLDWEST.General.yes').toUpperCase() +
+											'</strong><br>' +
 											game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') +
 											fatal[1] +
 											'<br> -1 to <strong>' +
-											game.i18n.localize('TALESOFTHEOLDWEST.Ability.Doctorin') +
+											game.i18n.localize('TALESOFTHEOLDWEST.Ability.Doctorin.long') +
 											'</strong> roll.';
 									}
 									break;
-								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' [[1d6]] Days':
+								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' / [[1d6]] Turns':
+								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' / [[2d6]] Turns':
+								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' / [[1d6]] Days':
 									{
 										cFatal = true;
-										fatal[0] += game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') + fatal[1];
+										fatal[0] =
+											'<strong style="color: red;">' +
+											game.i18n.localize('TALESOFTHEOLDWEST.General.yes').toUpperCase() +
+											'</strong><br>' +
+											game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') +
+											fatal[1];
 									}
 									break;
-								case game.i18n.localize('TALESOFTHEOLDWEST.General.yes') + ' [[1d6]] Days':
-									{
-										cFatal = true;
-										fatal[0] += game.i18n.localize('TALESOFTHEOLDWEST.Criticals.rollResilience') + fatal[1];
-									}
-									break;
-
 								default:
 									cFatal = false;
 									break;
@@ -237,135 +215,139 @@ export class totowActor extends Actor {
 					}
 
 					// Process Healing Time
-					if (testArray[7].length > 0) {
+					if ((testArray[7].length > 0) & (fatal[1] != 'Instant')) {
 						rollheal = testArray[7].match(/^\[\[([0-9]d[0-9]+)]/)[1];
 						newHealTime = testArray[7].match(/^\[\[([0-9]d[0-9]+)\]\] ?(.*)/)[2];
 						testArray[7] = (await new Roll(`${rollheal}`).evaluate()).result + ' ' + newHealTime;
 					} else {
-						testArray[7] = game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.None');
+						testArray[7] = game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.none');
 					}
 
-					// switch (testArray[5]) {
-					// 	case game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.None') + ' ':
-					// 		healTime = 0;
-					// 		break;
-					// 	case game.i18n.localize('ALIENRPG.OneRound') + ' ':
-					// 		healTime = 1;
-					// 		break;
-					// 	case game.i18n.localize('ALIENRPG.OneTurn') + ' ':
-					// 		healTime = 2;
-					// 		break;
-					// 	case game.i18n.localize('ALIENRPG.OneShift') + ' ':
-					// 		healTime = 3;
-					// 		break;
-					// 	case game.i18n.localize('ALIENRPG.OneDay') + ' ':
-					// 		healTime = 4;
-					// 		break;
-					// 	default:
-					// 		healTime = 0;
-					// 		break;
-					// }
-
-					// switch (test1.roll._total) {
-					// 	case 14:
-					// 		mobility = -2;
-					// 		break;
-					// 	case 15:
-					// 		rangedcombat = -2;
-					// 		observation = -2;
-					// 		break;
-					// 	case 16:
-					// 		mobility = -2;
-					// 		break;
-					// 	case 21:
-					// 		observation = -2;
-					// 		break;
-					// 	case 24:
-					// 		manipulation = -2;
-					// 		break;
-					// 	case 31:
-					// 		observation = -1;
-					// 		manipulation = -1;
-					// 		break;
-					// 	case 33:
-					// 		mobility = -2;
-					// 		closecombat = -2;
-					// 		break;
-					// 	case 34:
-					// 		rangedcombat = -2;
-					// 		observation = -2;
-					// 		break;
-					// 	case 44:
-					// 		mobility = -2;
-					// 		stamina = -2;
-					// 		break;
-					// 	case 51:
-					// 		mobility = -2;
-					// 		break;
-					// 	case 61:
-					// 		stamina = -1;
-					// 		break;
-					// 	case 62:
-					// 		stamina = -2;
-					// 		break;
-
-					// 	default:
-					// 		break;
-					// }
+					// Setup Modifiers
+					switch (diceRoll.roll._total) {
+						case 11:
+						case 14:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
+								value: '-1',
+							};
+							update[`system.itemModifiers.[1]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Fightin.listName'),
+								value: '-1',
+							};
+							break;
+						case 12:
+						case 21:
+						case 23:
+						case 41:
+						case 51:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
+								value: '-1',
+							};
+							break;
+						case 22:
+						case 44:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Resilience.listName'),
+								value: '-1',
+							};
+							break;
+						case 31:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
+								value: '-1',
+							};
+							break;
+						case 32:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
+								value: '-1',
+							};
+							update[`system.itemModifiers.[1]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Fightin.listName'),
+								value: '-1',
+							};
+							break;
+						case 52:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
+								value: '-2',
+							};
+							break;
+						case 61:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Performin.listName'),
+								value: '-1',
+							};
+							break;
+						case 62:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Labor.listName'),
+								value: '-1',
+							};
+							break;
+						case 63:
+							update[`system.itemModifiers.[0]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
+								value: '-2',
+							};
+							update[`system.itemModifiers.[1]`] = {
+								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Hawkeye.listName'),
+								value: '-2',
+							};
+							break;
+						default:
+							noMods = true;
+							break;
+					}
 
 					//
 					// Now create the item on the sheet
 					//
-					// let rollData = {
-					// 	type: 'critical-injury',
-					// 	img: resultImage,
-					// 	name: `#${test1.roll._total} ${testArray[1]}`,
-					// 	'system.attributes.fatal': cFatal,
-					// 	'system.attributes.timelimit.value': healTime,
-					// 	'system.attributes.healingtime.value': testArray[7],
-					// 	'system.attributes.effects': testArray[7],
-					// 	'system.modifiers.skills.mobility.value': mobility,
-					// 	'system.modifiers.skills.rangedCbt.value': rangedcombat,
-					// 	'system.modifiers.skills.observation.value': observation,
-					// 	'system.modifiers.skills.manipulation.value': manipulation,
-					// 	'system.modifiers.skills.closeCbt.value': closecombat,
-					// 	'system.modifiers.skills.stamina.value': stamina,
-					// };
 
-					// await this.createEmbeddedDocuments('Item', [rollData]);
+					let rollData = {
+						type: 'crit',
+						img: resultImage,
+						name: `#${diceRoll.roll._total} ${testArray[1]} - ${testArray[3]}`,
+						'system.location': testArray[1].toLowerCase().replace(/\s/g, ''),
+						'system.injury': testArray[3],
+						'system.healingtime': testArray[7],
+						'system.fatal': cFatal,
+						'system.fatalmessage': fatal[0].replace(/(YES)\s/g, ''),
+						'system.imediateeffect': testArray[9],
+						'system.longtermeffect': testArray[11],
+					};
+
+					const theItem = await this.createEmbeddedDocuments('Item', [rollData]);
 
 					//
+					// Now add the Modifiers if there are any
+					//
+					if (!noMods) {
+						await theItem[0].update(update);
+					}
+
+					//)
 					// Prepare the data for the chat message
 					//
-
-					// hFatal = testArray[5] != ' ' ? testArray[3] : game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.None');
-					// hHealTime = testArray[7] != ' ' ? testArray[9] : game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.None');
-					// hTimeLimit = testArray[5] != ' ' ? testArray[5] : game.i18n.localize('TALESOFTHEOLDWEST.ItemModifierSelect.None');
 
 					htmlData = {
 						actorname: actor.name,
 						img: resultImage,
-						name: `#${test1.roll._total} ${testArray[1]}`,
+						name: `#${diceRoll.roll._total} ${testArray[1]}`,
 						injury: testArray[3],
 						fatal: fatal[0],
 						healingtime: testArray[7],
 						imediateeffect: testArray[9],
 						longtermeffect: testArray[11],
-						// effects: speanex,
 						manCrit: manCrit,
-
-						// fatal = new fields.BooleanField();
 					};
 				}
-
 				break;
 		}
 
 		// Now push the correct chat message
-
-		console.log(htmlData);
-
-		debugger;
 
 		const html = await renderTemplate(`systems/talesoftheoldwest/templates/chat/crit-roll-${actor.type}.hbs`, htmlData);
 
@@ -379,18 +361,20 @@ export class totowActor extends Actor {
 			sound: CONFIG.sounds.dice,
 		};
 
-		// switch (type) {
-		// 	case 'pc':
-		// 	case 'npc':
-		// 		await this.addCondition('criticalinj');
-		// 		break;
-		// 	// case 'creature':
-		// 	// 	console.log("it's a Creature Crit");
-		// 	// 	break;
+		// Apply the Active Effect
 
-		// 	default:
-		// 		break;
-		// }
+		switch (type) {
+			case 'pc':
+			case 'npc':
+				await this.addCondition('criticalinj');
+				break;
+			// case 'creature':criticalinj
+			// 	console.log("it's a Creature Crit");
+			// 	break;
+
+			default:
+				break;
+		}
 
 		ChatMessage.applyRollMode(chatData, game.settings.get('core', 'rollMode'));
 		return ChatMessage.create(chatData);
@@ -401,17 +385,17 @@ export class totowActor extends Actor {
 			let confirmed = false;
 			renderTemplate(template).then((dlg) => {
 				new Dialog({
-					title: game.i18n.localize('TALESOFTHEOLDWEST.RollManCrit'),
+					title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCrit'),
 					content: dlg,
 					buttons: {
 						one: {
 							icon: '<i class="fas fa-check"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.DialRoll'),
+							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll'),
 							callback: () => (confirmed = true),
 						},
 						four: {
 							icon: '<i class="fas fa-times"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.DialCancel'),
+							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.cancel'),
 							callback: () => (confirmed = false),
 						},
 					},
@@ -427,7 +411,7 @@ export class totowActor extends Actor {
 								case 'pc':
 								case 'npc':
 									if (!manCrit.match(/^[1-6]?[1-6]$/gm)) {
-										ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.RollManCharCrit'));
+										ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCharCrit'));
 										return;
 									}
 									break;
@@ -462,5 +446,110 @@ export class totowActor extends Actor {
 			default:
 				break;
 		}
+	}
+
+	async diceRoll(actor, event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+
+		const dataset = target.dataset;
+		// const targetActor = actor.getRollData();
+		dataset.faithpoints = actor.system.general.faithpoints.value;
+		dataset.canPush = actor.system.general.canPush;
+		dataset.myActor = actor.id;
+		let result = '';
+
+		// Handle item rolls.
+		if (dataset.rollType) {
+			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
+				switch (dataset.rollType) {
+					case 'attribute':
+					case 'ability':
+						result = await rollAttrib(dataset);
+						break;
+					default:
+						break;
+				}
+			} else {
+				const itemId = target.dataset.itemId;
+				const item = actor.items.get(itemId);
+				switch (dataset.rollType) {
+					case 'item':
+					case 'talent':
+						return item.roll(dataset);
+					case 'weapon':
+						result = await item.roll(dataset, item);
+
+					default:
+						break;
+				}
+			}
+			if (result === 'cancelled') {
+				return;
+			}
+			const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', result[1]);
+			let chatData = {
+				user: game.user.id,
+				speaker: ChatMessage.getSpeaker({
+					alias: actor.name,
+					actor: actor.id,
+				}),
+				rolls: [result[0]],
+				rollMode: game.settings.get('core', 'rollMode'),
+				content: html,
+				sound: CONFIG.sounds.dice,
+			};
+			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
+				chatData.whisper = ChatMessage.getWhisperRecipients('GM');
+			} else if (chatData.rollMode === 'selfroll') {
+				chatData.whisper = [game.user];
+			}
+			const msg = await ChatMessage.create(chatData);
+			result[1].messageNo = msg.id;
+			await msg.setFlag('talesoftheoldwest', 'results', result);
+
+			return result;
+		}
+	}
+
+	async modRoll(actor, event, target) {
+		function myRenderTemplate(template) {
+			let confirmed = false;
+			renderTemplate(template).then((dlg) => {
+				new Dialog({
+					title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCrit'),
+					content: dlg,
+					buttons: {
+						one: {
+							icon: '<i class="fas fa-check"></i>',
+							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll'),
+							callback: () => (confirmed = true),
+						},
+						four: {
+							icon: '<i class="fas fa-times"></i>',
+							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.cancel'),
+							callback: () => (confirmed = false),
+						},
+					},
+					default: 'one',
+					close: (html) => {
+						if (confirmed) {
+							let manCrit = parseInt(html.find('[name=manCrit]')[0]?.value);
+
+							if (manCrit == 'undefined') {
+								manCrit = '1';
+							}
+							target.dataset.mod = parseInt(target.dataset.mod) + manCrit;
+							actor.diceRoll(actor, event, target);
+
+							// actor.rollCrit(actor, type, dataset, manCrit);
+						}
+					},
+				}).render(true);
+			});
+		}
+
+		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html');
 	}
 }

@@ -10,7 +10,7 @@ export class TOTWBuyOffDialog extends FormApplication {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['form'],
 			popOut: true,
-			template: 'systems/talesoftheoldwest/templates/chat/buy-off.html',
+			template: 'systems/talesoftheoldwest/templates/dialog/buy-off.html',
 			id: 'TOTWBuyOffDialog',
 			title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.Buy-OffTrouble'),
 			height: 'auto',
@@ -69,7 +69,7 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['form'],
 			popOut: true,
-			template: 'systems/talesoftheoldwest/templates/chat/which-trouble-dialog.html',
+			template: 'systems/talesoftheoldwest/templates/dialog/which-trouble-dialog.html',
 			id: 'TOTWWhichTroubleDialog',
 			title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll-modifiers'),
 			height: 'auto',
@@ -101,7 +101,7 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 // 		return foundry.utils.mergeObject(super.defaultOptions, {
 // 			classes: ['form'],
 // 			popOut: true,
-// 			template: 'systems/talesoftheoldwest/templates/chat/ranged-weapon-modifiers.html',
+// 			template: 'systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html',
 // 			id: 'TOTWWhichTroubleDialog',
 // 			title: game.i18n.localize('TALESOFTHEOLDWEST.ModifierForRoll'),
 // 			height: 'auto',

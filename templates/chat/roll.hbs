@@ -4,7 +4,7 @@
 	</div>
 
 	{{#if (gt modifiers.mod 0)}}
-		{{#if debug}}
+		{{#ifSetting 'debug'}}
 
 			<div style='position: relative'>
 				<details>
@@ -22,7 +22,7 @@
 
 				</details>
 			</div>
-		{{/if}}
+		{{/ifSetting}}
 
 		<div class='chat roll'>
 			<section>
@@ -174,7 +174,7 @@
 		</div>
 	{{/if}}
 
-	{{#if debug}}
+	{{#ifSetting 'debug'}}
 		{{#if (eq modifiers.subtype 'shootin')}}
 			<div style='position: relative'>
 				<details>
@@ -207,6 +207,6 @@
 				</details>
 			</div>
 		{{/if}}
-	{{/if}}
+	{{/ifSetting}}
 
 </div>

@@ -130,7 +130,17 @@ Handlebars.registerHelper('times', function (n, block) {
 	}
 	return result;
 });
-
+Handlebars.registerHelper('keepMarkup', function (text) {
+	return new Handlebars.SafeString(text);
+});
+Handlebars.registerHelper('removeMarkup', function (text) {
+	const markup = /<(.*?)>/gi;
+	return new Handlebars.SafeString(text.replace(markup, ''));
+});
+Handlebars.registerHelper('ifSetting', function (v1, options) {
+	if (game.settings.get('talesoftheoldwest', v1)) return options.fn(this);
+	else return options.inverse(this);
+});
 Handlebars.registerHelper('striptags', function (txt) {
 	// console.log(txt);
 	// exit now if text is undefined
