@@ -53,12 +53,12 @@ export default class totowPC extends totowActorBase {
 		);
 
 		schema.conditions = new fields.SchemaField({
-			starving: new fields.BooleanField(),
-			dehydrated: new fields.BooleanField(),
-			exhausted: new fields.BooleanField(),
-			freezing: new fields.BooleanField(),
-			encumbered: new fields.BooleanField(),
-			overwatch: new fields.BooleanField(),
+			starving: new fields.BooleanField({ initial: false }),
+			dehydrated: new fields.BooleanField({ initial: false }),
+			exhausted: new fields.BooleanField({ initial: false }),
+			freezing: new fields.BooleanField({ initial: false }),
+			encumbered: new fields.BooleanField({ initial: false }),
+			overwatch: new fields.BooleanField({ initial: false }),
 		});
 		return schema;
 	}

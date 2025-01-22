@@ -61,13 +61,13 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	_configureRenderOptions(options) {
 		super._configureRenderOptions(options);
 		// Not all parts always render
-		options.parts = ['header', 'tabs', 'description', 'modifiers'];
+		options.parts = ['header', 'tabs', 'description'];
 		// Don't show the other tabs if only limited view
 		if (this.document.limited) return;
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'talent':
-				options.parts.push('basic', 'advanced');
+				options.parts.push('basic', 'advanced', 'modifiers');
 				break;
 			case 'item':
 			case 'weapon':
@@ -133,7 +133,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedBasic = await TextEditor.enrichHTML(this.item.system.basic, {
+				context.enrichedBasic = await TextEditor.enrichHTML(this.item.system.basicAction, {
 					// Whether to show secret blocks in the finished html
 					secrets: this.document.isOwner,
 					// Data to fill in for inline rolls
@@ -141,13 +141,14 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 					// Relative UUID resolution
 					relativeTo: this.item,
 				});
+
 				break;
 			case 'advanced':
 				// case 'body':
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedAdvanced = await TextEditor.enrichHTML(this.item.system.advanced, {
+				context.enrichedAdvanced = await TextEditor.enrichHTML(this.item.system.advAction, {
 					// Whether to show secret blocks in the finished html
 					secrets: this.document.isOwner,
 					// Data to fill in for inline rolls

@@ -150,26 +150,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'gear':
 				context.tab = context.tabs[partId];
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.actor.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.actor,
-				});
 				break;
 			case 'conditions':
 				context.tab = context.tabs[partId];
-				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				// context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
-				// 	// Whether to show secret blocks in the finished html
-				// 	secrets: this.document.isOwner,
-				// 	// Data to fill in for inline rolls
-				// 	rollData: this.actor.getRollData(),
-				// 	// Relative UUID resolution
-				// 	relativeTo: this.actor,
-				// });
 				break;
 			case 'description':
 				context.tab = context.tabs[partId];
@@ -313,7 +296,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		context.allGear = allGear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.weapon = weapon.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-		context.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.system.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 	}
@@ -562,6 +545,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 */
 	static async _deleteDoc(event, target) {
 		const doc = this._getEmbeddedDocument(target);
+		if (target.dataset.type === 'criticalinj') {
+			// let field = `system.conditions.criticalinj`;
+
+			if ((await this.actor.hasCondition('criticalinj')) && this.actor.system.critInj.length <= 1) {
+				await this.actor.removeCondition('criticalinj');
+				// await this.actor.update({ [field]: false });
+			}
+		}
 		await doc.delete();
 	}
 

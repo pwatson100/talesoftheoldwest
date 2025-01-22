@@ -1,0 +1,34 @@
+{
+  "name": "Engineer",
+  "type": "talent",
+  "system": {
+    "description": "You know how these new-fangled machines work and are skilled at using and repairing them.",
+    "basicAction": "You’re a natural with these new contraptions. You have the skills and knowledge to work as an engineer on a railroad or in a manufactory and gain a +1 bonus to OPERATE when fixing machines.",
+    "advAction": "Machines just make sense to you. After you have pushed your OPERATE roll using a Faith Point, you can push a second time for free.",
+    "reference": "engineer",
+    "itemModifiers": null,
+    "basicisActive": false,
+    "advisActive": false
+  },
+  "_id": "isTjz3AlTVn85ZkC",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "pykFFBAf8w9dTua8",
+  "sort": 4200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1737561673327,
+    "modifiedTime": 1737561673327,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!isTjz3AlTVn85ZkC"
+}

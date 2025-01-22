@@ -169,7 +169,8 @@
 			"archetype": "archetype",
 			"breed": "breed",
 			"groupConcept": "group concept",
-			"criticalInjury": "Critical Injury"
+			"criticalInjury": "Critical Injury",
+			"isActive": "Active"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -203,7 +204,8 @@
 				"addModifiers": "add modifiers",
 				"rollModifiersValue": "roll modifiers value",
 				"deleteModifiers": "Delete Modifier",
-				"noModifiers": "No Modifiers"
+				"noModifiers": "No Modifiers",
+				"reference": "Reference"
 			}
 		},
 		"ItemModifierSelect": {

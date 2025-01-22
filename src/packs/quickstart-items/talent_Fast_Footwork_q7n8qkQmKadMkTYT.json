@@ -1,0 +1,34 @@
+{
+  "name": "Fast Footwork",
+  "type": "talent",
+  "system": {
+    "description": "You are fast on your feet and can avoid being hit by physical attacks.",
+    "basicAction": "You gain a +1 bonus to MOVE tests when Dodging or fleeing a melee or similar ruckus (not gunshots), and when retreating behind cover.",
+    "advAction": "You are hard to chase down. Every time you Drive Hard in a chase on foot you gain a +3 bonus instead of the usual +2, and you gain a +3 bonus on your RESILIENCE rolls during the chase.",
+    "reference": "fastfootwork",
+    "itemModifiers": null,
+    "basicisActive": false,
+    "advisActive": false
+  },
+  "_id": "q7n8qkQmKadMkTYT",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "pykFFBAf8w9dTua8",
+  "sort": 4000000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1737561673327,
+    "modifiedTime": 1737561673327,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!q7n8qkQmKadMkTYT"
+}

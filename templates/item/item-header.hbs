@@ -4,6 +4,10 @@
 		<div class='document-name ItemHedCol1'>
 			<input style='font-size: 35px;max-width: 445px;	height: auto;' name='name' type='text' value='{{item.name}}' placeholder='Name' />
 		</div>
+		{{#ifSetting 'debug'}}
+			<label class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.reference')}}</label>
+			<input type='text' name='system.reference' value='{{system.reference}}' data-dtype='text' />
+		{{/ifSetting}}
 
 		{{#if (eq item.type 'item')}}
 			<label class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quantity')}}</label>

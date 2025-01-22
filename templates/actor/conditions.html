@@ -74,7 +74,7 @@
 			<a class="resource-label-header" title="{{localize 'TYPES.Item.crit'}}" data-action="rollCrit"><i class="fas fa-heartbeat"></i></a>
 		</div>
 		<ol class="items-list">
-			{{#each critInj as |item iid|}}
+			{{#each system.critInj as |item iid|}}
 			<li class="item critical-inj" data-item-id="{{item.id}}" data-drag="true" data-document-class="Critical Injury">
 				<a class="item-image crit1"><img src="{{item.img}}" width="24" height="24" /></a>
 				<a class="item-name crit2">{{item.name}}</a>
@@ -82,7 +82,13 @@
 				<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Update" type="Item"}}'>
 					<i class="fas fa-edit"></i>
 				</a>
-				<a class="item-control item-delete" data-action="deleteDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Delete" type="Item"}}'>
+				<a
+					class="item-control item-delete"
+					data-action="deleteDoc"
+					data-type="criticalinj"
+					data-actor="{{actor.id}}"
+					title='{{localize "DOCUMENT.Delete" type="Item"}}'
+				>
 					<i class="fas fa-trash"></i>
 				</a>
 			</li>
