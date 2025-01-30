@@ -24,7 +24,7 @@
 
 	"flags": {
 		"hotReload": {
-			"extensions": ["css", "html", "hbs", "json"],
+			"extensions": ["css", "html", "mjs", "js", "hbs", "json"],
 			"paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
 		}
 	},

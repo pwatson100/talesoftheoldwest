@@ -28,7 +28,7 @@ export default class totowPC extends totowActorBase {
 
 			faithpoints: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
 			money: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -46,6 +46,7 @@ export default class totowPC extends totowActorBase {
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 					total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 					label: new fields.StringField({ required: true, blank: true }),
+					upper: new fields.StringField({ required: true, blank: true }),
 					attr: new fields.StringField({ required: true, blank: true }),
 				});
 				return obj;
@@ -60,6 +61,26 @@ export default class totowPC extends totowActorBase {
 			encumbered: new fields.BooleanField({ initial: false }),
 			overwatch: new fields.BooleanField({ initial: false }),
 		});
+
+		schema.damage = new fields.SchemaField({
+			hurts: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			shakes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+			}),
+			vexes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+			}),
+			doubts: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+			}),
+		});
+
 		return schema;
 	}
 
@@ -73,7 +94,13 @@ export default class totowPC extends totowActorBase {
 
 			// Handle ability label localization.
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name) ?? key;
+			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
+		this.general.faithpoints.max = 10 - this.general.faithpoints.value;
+		this.damage.hurts.max = 5 - this.damage.hurts.value;
+		this.damage.shakes.max = 5 - this.damage.shakes.value;
+		this.damage.vexes.max = 5 - this.damage.vexes.value;
+		this.damage.doubts.max = 5 - this.damage.doubts.value;
 	}
 
 	getRollData() {

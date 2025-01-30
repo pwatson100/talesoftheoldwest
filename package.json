@@ -4,9 +4,7 @@
 	"description": "CSS compiler for the totow system",
 	"scripts": {
 		"pushLDBtoJSON": "node ./tools/pushLDBtoJSON.mjs",
-		"pullJSONtoLDB": "node ./tools/pullJSONtoLDB.mjs",
-		"build": "sass src/scss/talesoftheoldwest.scss css/talesoftheoldwest.css --style=expanded --no-source-map",
-		"watch": "sass src/scss/talesoftheoldwest.scss css/talesoftheoldwest.css --style=expanded --source-map --watch"
+		"pullJSONtoLDB": "node ./tools/pullJSONtoLDB.mjs"
 	},
 	"browserslist": [
 		"last 3 versions"

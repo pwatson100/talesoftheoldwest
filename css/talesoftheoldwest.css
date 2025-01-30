@@ -407,75 +407,466 @@ body .application select {
   grid-area: Col2;
 }
 
-.atributes-container {
+.body-split {
   display: grid;
   padding-left: 10px;
-  grid-template-areas: "AColHeader AColHeader" "ACol1 ACol2" "ACol3 ACol4" "ACol5 ACol6" "ACol7 ACol8";
-  grid-template-columns: 70px 140px;
+  grid-template-areas: "Split1 Split2";
+  grid-template-columns: 591px 317px;
+  margin-top: 6px;
+  border-top: solid black;
 }
 
-.AColHeader {
-  grid-area: AColHeader;
-  text-align: center;
+.Split1 {
+  grid-area: Split1;
 }
 
-.ACol1 {
-  grid-area: ACol1;
-  justify-self: center;
+.Split2 {
+  grid-area: Split2;
 }
 
-.ACol2 {
-  grid-area: ACol2;
-  justify-self: center;
-  align-self: center;
-}
-
-.ACol3 {
-  grid-area: ACol3;
-  justify-self: center;
-}
-
-.ACol4 {
-  grid-area: ACol4;
-  justify-self: center;
-  align-self: center;
-}
-
-.ACol5 {
-  grid-area: ACol5;
-  justify-self: center;
-}
-
-.ACol6 {
-  grid-area: ACol6;
-  justify-self: center;
-  align-self: center;
-}
-
-.ACol7 {
-  grid-area: ACol7;
-  justify-self: center;
-}
-
-.ACol8 {
-  grid-area: ACol8;
-  justify-self: center;
-  align-self: center;
-}
-
-.abilities-container {
+.grid-weapon-items {
   display: grid;
-  padding-left: 10px;
+  grid-template-areas: "lCol1  lCol2  lCol3  lCol4  lCol5  lCol6  lCol7  lCol8  lCol9  lCol10  lCol11 " "lColB1 lColB2 lColB3 lColB4 lColB5 lColB6 lColB7 lColB8 lColB9 lColB10 lColB11";
+  padding-bottom: 2px;
+  row-gap: 2px;
+  grid-template-columns: 40px 140px 150px 70px 70px 70px 70px 70px 70px 70px 48px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-template-areas: "ABColHeader ABColHeader" "Labor Labor2" "Presence Presence2" "Fightin Fightin2" "Move Move2" "Operate Operate2" "Shootin Shootin2" "Lightfingered Lightfingered2" "Hawkeye Hawkeye2" "Nature Nature2" "Insight Insight2" "Animalhandlin Animalhandlin2" "Performin Performin2" "Makin Makin2" "Doctorin Doctorin2" "Booklearnin Booklearnin2";
-  grid-template-columns: 110px 120px;
+  font-size: medium;
 }
 
-.ABColHeader {
-  grid-area: ABColHeader;
+.lCol1 {
+  grid-area: lCol1;
+  justify-self: left;
+}
+
+.lCol2 {
+  grid-area: lCol2;
+  justify-self: center;
+}
+
+.lCol3 {
+  grid-area: lCol3;
+  justify-self: center;
+}
+
+.lCol4 {
+  grid-area: lCol4;
+  justify-self: center;
+}
+
+.lCol5 {
+  grid-area: lCol5;
+  justify-self: center;
+}
+
+.lCol6 {
+  grid-area: lCol6;
+  justify-self: center;
+}
+
+.lCol7 {
+  grid-area: lCol7;
+  justify-self: center;
+}
+
+.lCol8 {
+  grid-area: lCol8;
+  justify-self: center;
+}
+
+.lCol9 {
+  grid-area: lCol9;
+  justify-self: center;
+}
+
+.lCol10 {
+  grid-area: lCol10;
+  justify-self: center;
+}
+
+.lCol11 {
+  grid-area: lCol11;
+  justify-self: center;
+}
+
+.lColB1 {
+  grid-area: lColB1;
+  justify-self: left;
+}
+
+.lColB2 {
+  grid-area: lColB2;
+  justify-self: left;
+  font-weight: bold;
+}
+
+.lColB3 {
+  grid-area: lColB3;
+  justify-self: center;
+}
+
+.lColB4 {
+  grid-area: lColB4;
+  justify-self: center;
+}
+
+.lColB5 {
+  grid-area: lColB5;
+  justify-self: center;
+}
+
+.lColB6 {
+  grid-area: lColB6;
+  justify-self: center;
+}
+
+.lColB7 {
+  grid-area: lColB7;
+  justify-self: center;
+}
+
+.lColB8 {
+  grid-area: lColB8;
+  justify-self: center;
+}
+
+.lColB9 {
+  grid-area: lColB9;
+  justify-self: center;
+}
+
+.lColB10 {
+  grid-area: lColB10;
+  justify-self: center;
+}
+
+.lColB11 {
+  grid-area: lColB11;
+  justify-self: center;
+}
+
+.grid-talent-items {
+  display: grid;
+  grid-template-areas: "TCol1 TCol2 TCol3 TCol4 " "TCol11 TCol12 TCol13 TCol14 ";
+  padding-bottom: 2px;
+  grid-template-columns: 28px 148px 25px 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.TCol1 {
+  grid-area: TCol1;
+  justify-self: left;
+}
+
+.TCol2 {
+  grid-area: TCol2;
+  justify-self: center;
+}
+
+.TCol3 {
+  grid-area: TCol3;
+  justify-self: center;
+}
+
+.TCol4 {
+  grid-area: TCol4;
+  justify-self: center;
+}
+
+.TCol11 {
+  grid-area: TCol11;
+  justify-self: center;
+}
+
+.TCol12 {
+  grid-area: TCol12;
+  justify-self: left;
+  font-weight: bold;
+}
+
+.TCol13 {
+  grid-area: TCol13;
+  justify-self: center;
+}
+
+.TCol14 {
+  grid-area: TCol14;
+  justify-self: center;
+}
+
+.grid-talent-quality {
+  display: grid;
+  grid-template-areas: "QCol1 QCol2 QCol3 " "QCol11 QCol12 QCol13 ";
+  padding-bottom: 2px;
+  grid-template-columns: 30px 260px 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.QCol1 {
+  grid-area: QCol1;
+  justify-self: left;
+}
+
+.QCol2 {
+  grid-area: QCol2;
+  justify-self: center;
+}
+
+.QCol3 {
+  grid-area: QCol3;
+  justify-self: center;
+}
+
+.QCol11 {
+  grid-area: QCol11;
+  justify-self: center;
+}
+
+.QCol12 {
+  grid-area: QCol12;
+  justify-self: left;
+  font-weight: bold;
+}
+
+.QCol13 {
+  grid-area: QCol13;
+  justify-self: center;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-areas: "HedCol1 HedCol1 HedCol7 HedCol10 HedCol2" "HedCol3 HedCol4 HedCol8 HedCol11 HedCol2" "HedCol5 HedCol6 HedCol9 HedCol12 HedCol2";
+  grid-template-columns: 162px 206px 94px 266px 184px;
+}
+
+.HedCol1 {
+  grid-area: HedCol1;
+}
+
+.HedCol2 {
+  grid-area: HedCol2;
+}
+
+.HedCol3 {
+  grid-area: HedCol3;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
   text-align: center;
+}
+
+.HedCol4 {
+  grid-area: HedCol4;
+  align-self: center;
+}
+
+.HedCol5 {
+  grid-area: HedCol5;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.HedCol6 {
+  grid-area: HedCol6;
+  align-self: center;
+}
+
+.HedCol7 {
+  grid-area: HedCol7;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.HedCol8 {
+  grid-area: HedCol8;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.HedCol9 {
+  grid-area: HedCol9;
+  align-self: center;
+}
+
+.HedCol10 {
+  grid-area: HedCol10;
+  align-self: center;
+}
+
+.HedCol11 {
+  grid-area: HedCol11;
+  align-self: center;
+}
+
+.HedCol12 {
+  grid-area: HedCol12;
+  align-self: center;
+}
+
+.grid-item-header {
+  display: grid;
+  grid-template-areas: "ItemHedCol1 ItemHedCol1 ItemHedCol2" "ItemHedCol3 ItemHedCol4 ItemHedCol2 " "ItemHedCol5 ItemHedCol6 ItemHedCol2 ";
+  grid-template-columns: 140px 140px 160px;
+}
+
+.ItemHedCol1 {
+  grid-area: ItemHedCol1;
+}
+
+.ItemHedCol2 {
+  grid-area: ItemHedCol2;
+}
+
+.ItemHedCol3 {
+  grid-area: ItemHedCol3;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.ItemHedCol4 {
+  grid-area: ItemHedCol4;
+  align-self: center;
+}
+
+.ItemHedCol5 {
+  grid-area: ItemHedCol5;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.ItemHedCol6 {
+  grid-area: ItemHedCol6;
+  align-self: center;
+}
+
+.sheet-main-attributes {
+  display: grid;
+  row-gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-areas: "A1 B1 A2 B2 A3 B3 A4 B4 " "H1 H2 S1 S2 V1 V2  D1 D2 ";
+  grid-template-columns: 112px 110px 112px 110px 113px 110px 134px 110px;
+}
+
+.A1 {
+  grid-area: A1;
+  text-align: center;
+  font-size: x-large;
+}
+
+.B1 {
+  grid-area: B1;
+  text-align: center;
+}
+
+.A2 {
+  grid-area: A2;
+  text-align: center;
+  font-size: x-large;
+}
+
+.B2 {
+  grid-area: B2;
+  text-align: center;
+}
+
+.A3 {
+  grid-area: A3;
+  text-align: center;
+  font-size: x-large;
+}
+
+.B3 {
+  grid-area: B3;
+  text-align: center;
+}
+
+.A4 {
+  grid-area: A4;
+  text-align: center;
+  font-size: x-large;
+}
+
+.B4 {
+  grid-area: B4;
+  text-align: center;
+}
+
+.H1 {
+  grid-area: H1;
+  text-align: center;
+  font-size: large;
+}
+
+.H2 {
+  grid-area: H2;
+  text-align: center;
+  font-size: large;
+}
+
+.S1 {
+  grid-area: S1;
+  text-align: center;
+  font-size: large;
+}
+
+.S2 {
+  grid-area: S2;
+  text-align: center;
+  font-size: large;
+}
+
+.V1 {
+  grid-area: V1;
+  text-align: center;
+  font-size: large;
+}
+
+.V2 {
+  grid-area: V2;
+  text-align: center;
+  font-size: large;
+}
+
+.D1 {
+  grid-area: D1;
+  text-align: center;
+  font-size: large;
+}
+
+.D2 {
+  grid-area: D2;
+  text-align: center;
+  font-size: large;
+}
+
+.sheet-main-abilities {
+  display: grid;
+  row-gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-areas: "Fightin Fightin2 Lightfingered Lightfingered2 Animalhandlin Animalhandlin2 Booklearnin Booklearnin2" "Labor Labor2 Move Move2 Hawkeye Hawkeye2 Doctorin Doctorin2" "Presence Presence2 Operate Operate2 Insight Insight2 Makin Makin2" "Resilience Resilience2 Shootin Shootin2 Nature Nature2 Performin Performin2";
+  grid-template-columns: 162px 55px 162px 55px 179px 55px 162px 55px;
 }
 
 .Labor {
@@ -596,329 +987,6 @@ body .application select {
 
 .Booklearnin2 {
   grid-area: Booklearnin2;
-}
-
-.header-container {
-  display: grid;
-  gap: 5px;
-  padding: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  grid-template-areas: "HCol1 HCol2" "HCol3 HCol4";
-  grid-template-columns: 100px 200px;
-}
-
-.HCol1 {
-  grid-area: HCol1;
-  align-self: center;
-}
-
-.HCol2 {
-  grid-area: HCol2;
-  align-self: center;
-}
-
-.HCol3 {
-  grid-area: HCol3;
-  align-self: center;
-}
-
-.HCol4 {
-  grid-area: HCol4;
-  align-self: center;
-}
-
-.faith-container {
-  display: grid;
-  gap: 5px;
-  padding: 3px 0px 15px 0px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  grid-template-areas: "FCol1 FCol1 FCol2 FCol2" "FCol3 FCol4 FCol5 FCol6";
-  grid-template-columns: 77px 70px 108px 66px;
-}
-
-.FCol1 {
-  grid-area: FCol1;
-  align-self: center;
-  font-weight: bold;
-  font-size: large;
-  text-align: center;
-}
-
-.FCol2 {
-  grid-area: FCol2;
-}
-
-.FCol3 {
-  grid-area: FCol3;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.FCol4 {
-  grid-area: FCol4;
-  align-self: center;
-}
-
-.FCol5 {
-  grid-area: FCol5;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.FCol6 {
-  grid-area: FCol6;
-  align-self: center;
-}
-
-.grid-weapon-items {
-  display: grid;
-  grid-template-areas: "lCol1 lCol2 lCol3 lCol4 lCol5 lCol6" "lCol11 lCol12 lCol13 lCol14 lCol15 lCol16";
-  padding-bottom: 2px;
-  grid-template-columns: 29px 177px 34px 49px 36px 48px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.lCol1 {
-  grid-area: lCol1;
-  justify-self: left;
-}
-
-.lCol2 {
-  grid-area: lCol2;
-  justify-self: center;
-}
-
-.lCol3 {
-  grid-area: lCol3;
-  justify-self: center;
-}
-
-.lCol4 {
-  grid-area: lCol4;
-  justify-self: center;
-}
-
-.lCol5 {
-  grid-area: lCol5;
-  justify-self: center;
-}
-
-.lCol6 {
-  grid-area: lCol6;
-  justify-self: left;
-}
-
-.lCol11 {
-  grid-area: lCol11;
-  justify-self: center;
-}
-
-.lCol12 {
-  grid-area: lCol12;
-  justify-self: left;
-  font-weight: bold;
-}
-
-.lCol13 {
-  grid-area: lCol13;
-  justify-self: center;
-}
-
-.lCol14 {
-  grid-area: lCol14;
-  justify-self: center;
-}
-
-.lCol15 {
-  grid-area: lCol15;
-  justify-self: center;
-}
-
-.lCol16 {
-  grid-area: lCol16;
-  justify-self: center;
-}
-
-.grid-talent-items {
-  display: grid;
-  grid-template-areas: "TCol1 TCol2 TCol3 TCol4 " "TCol11 TCol12 TCol13 TCol14 ";
-  padding-bottom: 2px;
-  grid-template-columns: 30px 148px 143px 50px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.TCol1 {
-  grid-area: TCol1;
-  justify-self: left;
-}
-
-.TCol2 {
-  grid-area: TCol2;
-  justify-self: center;
-}
-
-.TCol3 {
-  grid-area: TCol3;
-  justify-self: center;
-}
-
-.TCol4 {
-  grid-area: TCol4;
-  justify-self: center;
-}
-
-.TCol11 {
-  grid-area: TCol11;
-  justify-self: center;
-}
-
-.TCol12 {
-  grid-area: TCol12;
-  justify-self: left;
-  font-weight: bold;
-}
-
-.TCol13 {
-  grid-area: TCol13;
-  justify-self: center;
-}
-
-.TCol14 {
-  grid-area: TCol14;
-  justify-self: center;
-}
-
-.grid-talent-quality {
-  display: grid;
-  grid-template-areas: "QCol1 QCol2 QCol3 " "QCol11 QCol12 QCol13 ";
-  padding-bottom: 2px;
-  grid-template-columns: 30px 260px 50px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.QCol1 {
-  grid-area: QCol1;
-  justify-self: left;
-}
-
-.QCol2 {
-  grid-area: QCol2;
-  justify-self: center;
-}
-
-.QCol3 {
-  grid-area: QCol3;
-  justify-self: center;
-}
-
-.QCol11 {
-  grid-area: QCol11;
-  justify-self: center;
-}
-
-.QCol12 {
-  grid-area: QCol12;
-  justify-self: left;
-  font-weight: bold;
-}
-
-.QCol13 {
-  grid-area: QCol13;
-  justify-self: center;
-}
-
-.grid-header {
-  display: grid;
-  grid-template-areas: "HedCol1 HedCol1 HedCol2" "HedCol3 HedCol4 HedCol2 " "HedCol5 HedCol6 HedCol2 ";
-  grid-template-columns: 150px 250px auto;
-}
-
-.HedCol1 {
-  grid-area: HedCol1;
-}
-
-.HedCol2 {
-  grid-area: HedCol2;
-}
-
-.HedCol3 {
-  grid-area: HedCol3;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.HedCol4 {
-  grid-area: HedCol4;
-  align-self: center;
-}
-
-.HedCol5 {
-  grid-area: HedCol5;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.HedCol6 {
-  grid-area: HedCol6;
-  align-self: center;
-}
-
-.grid-item-header {
-  display: grid;
-  grid-template-areas: "ItemHedCol1 ItemHedCol1 ItemHedCol2" "ItemHedCol3 ItemHedCol4 ItemHedCol2 " "ItemHedCol5 ItemHedCol6 ItemHedCol2 ";
-  grid-template-columns: 140px 140px 160px;
-}
-
-.ItemHedCol1 {
-  grid-area: ItemHedCol1;
-}
-
-.ItemHedCol2 {
-  grid-area: ItemHedCol2;
-}
-
-.ItemHedCol3 {
-  grid-area: ItemHedCol3;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.ItemHedCol4 {
-  grid-area: ItemHedCol4;
-  align-self: center;
-}
-
-.ItemHedCol5 {
-  grid-area: ItemHedCol5;
-  align-self: center;
-  font-weight: bold;
-  font-size: larger;
-  text-align: center;
-}
-
-.ItemHedCol6 {
-  grid-area: ItemHedCol6;
-  align-self: center;
 }
 
 .flex-group-center,
@@ -1045,6 +1113,7 @@ body .application select {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
+  font-size: large;
 }
 .talesoftheoldwest .sheet-body,
 .talesoftheoldwest .sheet-body .tab,
@@ -1108,6 +1177,17 @@ body .application select {
   margin: 1px;
   text-align: center;
   border: 1px solid var(--aliengreen);
+}
+.talesoftheoldwest .newdots {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;

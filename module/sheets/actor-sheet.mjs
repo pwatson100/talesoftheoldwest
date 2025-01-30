@@ -18,7 +18,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	static DEFAULT_OPTIONS = {
 		classes: ['talesoftheoldwest', 'actor'],
 		position: {
-			width: 600,
+			width: 950,
 			height: 896,
 		},
 		window: {
@@ -35,6 +35,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			roll: { handler: this._onRoll, buttons: [0, 2] },
 			toggleCondition: { handler: this._toggleCondition, buttons: [0, 2] },
 			rollCrit: { handler: this._rollCrit, buttons: [0, 2] },
+			changeFaith: { handler: this._changeFaith, buttons: [0, 2] },
+			changeDamage: { handler: this._changeDamage, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
@@ -60,9 +62,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		},
 		effects: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-effects.html',
-		},
-		conditions: {
-			template: 'systems/talesoftheoldwest/templates/actor/conditions.html',
 		},
 		description: {
 			template: 'systems/talesoftheoldwest/templates/actor/biography.hbs',
@@ -91,10 +90,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'gear', 'conditions', 'description', 'effects');
+				options.parts.push('skills', 'gear', 'description', 'effects');
 				break;
 			case 'npc':
-				options.parts.push('skills', 'gear', 'conditions', 'description');
+				options.parts.push('skills', 'gear', 'description');
 				break;
 			case 'animal':
 				options.parts.push('skills');
@@ -150,9 +149,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'gear':
 				context.tab = context.tabs[partId];
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				break;
-			case 'conditions':
-				context.tab = context.tabs[partId];
 				break;
 			case 'description':
 				context.tab = context.tabs[partId];
@@ -213,10 +209,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				case 'gear':
 					tab.id = 'gear';
 					tab.label += 'Gear';
-					break;
-				case 'conditions':
-					tab.id = 'conditions';
-					tab.label += 'Conditions';
 					break;
 				case 'description':
 					tab.id = 'description';
@@ -657,6 +649,54 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			this.actor.rollCritMan(this.actor, this.actor.type, dataset);
 		} else {
 			this.actor.rollCrit(this.actor, this.actor.type, dataset);
+		}
+	}
+
+	static async _changeFaith(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		let faithpoints = this.actor.system.general.faithpoints;
+		if (event.button === 2) {
+			// left click
+			if (faithpoints.value > 0) {
+				if (faithpoints.value === 0) {
+					return;
+				}
+				return await this.actor.update({ ['system.general.faithpoints.value']: faithpoints.value - 1 });
+			}
+		} else {
+			// right click
+			if (faithpoints.value >= 10) {
+				return;
+			}
+			return await this.actor.update({ ['system.general.faithpoints.value']: faithpoints.value + 1 });
+		}
+	}
+	static async _changeDamage(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		const dataset = target.dataset;
+		// const damageType = dataset.label;
+
+		let damage = this.actor.system.damage[target.dataset.label];
+		let field = `system.damage.${target.dataset.label}.value`;
+
+		if (event.button === 2) {
+			// left click
+			if (damage.value > 0) {
+				if (damage.value === 0) {
+					return;
+				}
+				return await this.actor.update({ [field]: damage.value - 1 });
+			}
+		} else {
+			// right click
+			if (damage.value >= 5) {
+				return;
+			}
+			return await this.actor.update({ [field]: damage.value + 1 });
 		}
 	}
 

@@ -6,12 +6,12 @@ export default class totowWeapon extends totowItemBase {
 		const requiredInteger = { required: true, nullable: false, integer: true };
 		const schema = super.defineSchema();
 		schema.subtype = new fields.StringField({ required: true, blank: false, initial: 'fightin' });
-		schema.action = new fields.StringField({ required: true, blank: true });
+		schema.action = new fields.StringField({ required: true, blank: true, initial: 'na' });
 		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 		schema.damage = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 		schema.crit = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
-		schema.range = new fields.StringField({ required: true, blank: true });
+		schema.range = new fields.StringField({ required: true, blank: true, initial: 'armslength' });
 		schema.ammo = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 
 		// Break down roll formula into three independent fields

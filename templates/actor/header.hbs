@@ -17,6 +17,21 @@
 			<select class='HedCol6' id='system.general.groupconcept' name='system.general.groupconcept'>
 				{{selectOptions group_concept_list selected=system.general.groupconcept labelAttr='label' localize=true}}
 			</select>
+
+			<label for='system.general.yourpardner' class='resource-label HedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.your-pardner')}}</label>
+			<input class='HedCol10' type='text' name='system.general.yourpardner' value='{{system.general.yourpardner}}' data-dtype='text' />
+
+			<label for='system.general.faith' class='resource-label HedCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
+			<textarea class='textarea-format HedCol11' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
+
+			{{!-- <input class='statnum HedCol19' name='system.general.faithpoints.value' value='{{system.general.faithpoints.value}}' data-dtype='Number' /> --}}
+
+			<div class='newdots click-damage-level HedCol12' style='font-size: x-large;' data-action='changeFaith'>
+				{{#times system.general.faithpoints.value}}
+					<i class='far fa-dot-circle'></i>
+				{{/times}}
+				{{#times system.general.faithpoints.max}}<i class='far fa-circle'></i>{{/times}}
+			</div>
 		{{/if}}
 
 		<img class='profile-img grid-header HedCol2' src='{{actor.img}}' data-edit='img' data-action='onEditImage' title='{{actor.name}}' />

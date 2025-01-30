@@ -153,6 +153,16 @@ Handlebars.registerHelper('striptags', function (txt) {
 Handlebars.registerHelper('addstats', function (v1, v2) {
 	return v1 + v2;
 });
+
+Handlebars.registerHelper('totowConcat', function () {
+	var outStr = '';
+	for (var arg in arguments) {
+		if (typeof arguments[arg] != 'object') {
+			outStr += arguments[arg];
+		}
+	}
+	return outStr;
+});
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

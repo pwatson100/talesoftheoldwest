@@ -15,23 +15,24 @@ TALESOFTHEOLDWEST.attributes = {
 };
 
 TALESOFTHEOLDWEST.abilities = {
-	labor: { name: 'TALESOFTHEOLDWEST.Ability.Labor.long', atob: 'grit' },
-	presence: { name: 'TALESOFTHEOLDWEST.Ability.Presence.long', atob: 'grit' },
 	fightin: { name: 'TALESOFTHEOLDWEST.Ability.Fightin.long', atob: 'grit' },
-	resilience: { name: 'TALESOFTHEOLDWEST.Ability.Resilience.long', atob: 'grit' },
-	move: { name: 'TALESOFTHEOLDWEST.Ability.Move.long', atob: 'quick' },
-	operate: { name: 'TALESOFTHEOLDWEST.Ability.Operate.long', atob: 'quick' },
-	shootin: { name: 'TALESOFTHEOLDWEST.Ability.Shootin.long', atob: 'quick' },
 	lightfingered: { name: 'TALESOFTHEOLDWEST.Ability.Lightfingered.long', atob: 'quick' },
-	hawkeye: { name: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long', atob: 'cunning' },
-	nature: { name: 'TALESOFTHEOLDWEST.Ability.Nature.long', atob: 'cunning' },
-	insight: { name: 'TALESOFTHEOLDWEST.Ability.Insight.long', atob: 'cunning' },
 	animalhandlin: { name: 'TALESOFTHEOLDWEST.Ability.Animalhandlin.long', atob: 'cunning' },
-	performin: { name: 'TALESOFTHEOLDWEST.Ability.Performin.long', atob: 'docity' },
-	makin: { name: 'TALESOFTHEOLDWEST.Ability.Makin.long', atob: 'docity' },
-	doctorin: { name: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', atob: 'docity' },
 	booklearnin: { name: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', atob: 'docity' },
+	labor: { name: 'TALESOFTHEOLDWEST.Ability.Labor.long', atob: 'grit' },
+	move: { name: 'TALESOFTHEOLDWEST.Ability.Move.long', atob: 'quick' },
+	hawkeye: { name: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long', atob: 'cunning' },
+	doctorin: { name: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', atob: 'docity' },
+	presence: { name: 'TALESOFTHEOLDWEST.Ability.Presence.long', atob: 'grit' },
+	operate: { name: 'TALESOFTHEOLDWEST.Ability.Operate.long', atob: 'quick' },
+	insight: { name: 'TALESOFTHEOLDWEST.Ability.Insight.long', atob: 'cunning' },
+	makin: { name: 'TALESOFTHEOLDWEST.Ability.Makin.long', atob: 'docity' },
+	resilience: { name: 'TALESOFTHEOLDWEST.Ability.Resilience.long', atob: 'grit' },
+	shootin: { name: 'TALESOFTHEOLDWEST.Ability.Shootin.long', atob: 'quick' },
+	nature: { name: 'TALESOFTHEOLDWEST.Ability.Nature.long', atob: 'cunning' },
+	performin: { name: 'TALESOFTHEOLDWEST.Ability.Performin.long', atob: 'docity' },
 };
+
 TALESOFTHEOLDWEST.animalabilities = {
 	flight: { name: 'TALESOFTHEOLDWEST.Ability.flight.long', atob: 'quick' },
 	resilience: { name: 'TALESOFTHEOLDWEST.Ability.resilience.long', atob: 'grit' },
@@ -79,14 +80,15 @@ TALESOFTHEOLDWEST.group_concept_list = {
 	MountainFolk: { id: 'Mountain Folk', label: 'Mountain Folk' },
 };
 TALESOFTHEOLDWEST.subtype_list = {
-	fightin: { id: 'Fightin', label: 'Fightin' },
-	shootin: { id: 'Shootin', label: 'Shootin' },
+	fightin: { id: 'Fightin', label: 'TALESOFTHEOLDWEST.General.fightin' },
+	shootin: { id: 'Shootin', label: 'TALESOFTHEOLDWEST.General.shootin' },
 };
 TALESOFTHEOLDWEST.action_list = {
-	single: { id: 'Single', label: 'Single' },
-	double: { id: 'Double', label: 'Double' },
-	lever: { id: 'Lever', label: 'Lever' },
-	breech: { id: 'Breech', label: 'Breech' },
+	na: { id: 'na', label: 'TALESOFTHEOLDWEST.Actions.na' },
+	single: { id: 'Single', label: 'TALESOFTHEOLDWEST.Actions.single' },
+	double: { id: 'Double', label: 'TALESOFTHEOLDWEST.Actions.double' },
+	lever: { id: 'Lever', label: 'TALESOFTHEOLDWEST.Actions.lever' },
+	breech: { id: 'Breech', label: 'TALESOFTHEOLDWEST.Actions.breech' },
 };
 TALESOFTHEOLDWEST.range_list = {
 	armslength: { id: 'Arms Length', label: 'TALESOFTHEOLDWEST.Ranges.armslength.long' },

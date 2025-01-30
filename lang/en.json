@@ -8,7 +8,6 @@
 			"Tabs": {
 				"Skills": "Skills",
 				"Gear": "Gear",
-				"Conditions": "Conditions",
 				"Description": "Description",
 				"Effects": "Effects"
 			}
@@ -129,10 +128,10 @@
 			"flight": { "abbr": "FLI", "long": "Flight" }
 		},
 		"Attributes": {
-			"cunning": { "name": "Cunning", "type": "Vexes", "listName": "cunning" },
-			"docity": { "name": "Docity", "type": "Doubts", "listName": "docity" },
-			"grit": { "name": "Grit", "type": "Hurts", "listName": "grit" },
-			"quick": { "name": "Quick", "type": "Shakes", "listName": "quick" }
+			"cunning": { "name": "Cunning", "type": "vexes", "listName": "cunning" },
+			"docity": { "name": "Docity", "type": "doubts", "listName": "docity" },
+			"grit": { "name": "Grit", "type": "hurts", "listName": "grit" },
+			"quick": { "name": "Quick", "type": "shakes", "listName": "quick" }
 		},
 		"General": {
 			"name": "name",
@@ -141,6 +140,7 @@
 			"faithPoints": "faith points",
 			"success": "success",
 			"critsuccess": "critical success",
+			"conditions": "Conditions",
 			"damage": "damage",
 			"crit": "crit",
 			"failed": "failed",
@@ -157,11 +157,12 @@
 			"cost": "cost $",
 			"riding-modifier": "riding Modifier",
 			"qualityOptions": "quality options",
+			"qualityConditions": "quality/conditions",
 			"gear": "gear",
 			"description": "Description",
 			"experience": "experience",
 			"bigDream": "big dream",
-			"your-pardner": "your pardner",
+			"your-pardner": "pardner",
 			"dam": "dam",
 			"bonus": "bonus",
 			"capAttributes": "ATTRIBUTES",
@@ -170,7 +171,13 @@
 			"breed": "breed",
 			"groupConcept": "group concept",
 			"criticalInjury": "Critical Injury",
-			"isActive": "Active"
+			"criticalInjurys": "Critical Injurys",
+			"isActive": "Active",
+			"and": "and",
+			"fightin": "Fightin'",
+			"shootin": "Shootin",
+			"talents": "talents",
+			"weapons": "Weapons"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -197,7 +204,9 @@
 				"quantity": "quantity",
 				"weight": "weight",
 				"bonusDraw": "bonus Draw",
+				"draw": "draw",
 				"attackBonus": "attack bonus",
+				"attack": "attack",
 				"range": "range",
 				"ammo": "ammo",
 				"roll-modifiers": "Roll Modifiers",
@@ -214,6 +223,13 @@
 		"DiceMod": "Modifier Dice",
 		"shootinmodifiers": "Shootin' Modifiers",
 		"fightinmodifiers": "Fightin' Modifiers",
+		"Actions": {
+			"na": "N/A",
+			"single": "Single",
+			"double": "Double",
+			"lever": "Lever",
+			"breech": "Breech"
+		},
 		"Ranges": {
 			"activearmslength": { "abbr": "AAL", "long": "Active Arms Length" },
 			"inactivearmslength": { "abbr": "IAL", "long": "Inactive Arms Length" },

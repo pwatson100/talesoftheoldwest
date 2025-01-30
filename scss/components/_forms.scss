@@ -43,6 +43,7 @@
 
 .sheet-tabs {
 	flex: 0;
+	font-size: large;
 }
 
 .sheet-body,
@@ -118,4 +119,11 @@
 	margin: 1px;
 	text-align: center;
 	border: 1px solid var(--aliengreen);
+}
+
+.newdots {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
