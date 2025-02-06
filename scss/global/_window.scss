@@ -20,6 +20,7 @@ body {
 		color: black;
 		width: 600;
 		height: 896;
+		background: transparent;
 	}
 	&.theme-light .application {
 		background-image: url('../assets/background/lapp.webp');
@@ -29,19 +30,19 @@ body {
 		border: unset;
 		filter: drop-shadow(8px 12px 8px #353232);
 		box-shadow: unset;
-		// border: 3px solid black;
 	}
 	&.theme-dark .application {
-		background: url('../assets/background/lapp.webp');
+		background-image: url('../assets/background/lapp.webp');
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
-		background-origin: content-box;
+		background-size: 100% 100%;
 		border: unset;
 		filter: drop-shadow(8px 12px 8px #353232);
 		box-shadow: unset;
-		// border: 3px solid black;
 	}
-
+	&.theme-dark .application .window-content {
+		backdrop-filter: none;
+	}
 	&.theme-light .dialog .window-content {
 		color: black;
 		background: unset;
@@ -62,30 +63,35 @@ body {
 		}
 	}
 	&.theme-dark .dialog .window-content {
-		color: black;
+		// color: black;
 		background: unset;
 		background-image: url('../assets/background/lapp.webp');
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: cover; /* Resize the background image to cover the entire container */
-		background-origin: content-box;
-		.form-footer {
+		/* background-size: cover; */ /* Resize the background image to cover the entire container */
+		/* background-origin: content-box; */
+
+		.form-footer,
+		.dialog-buttons {
 			justify-content: center;
 			button {
 				max-width: max-content;
-				min-width: auto;
+				min-width: unset;
 				width: fit-content;
 			}
 		}
 	}
+
 	.application input[type='text'],
 	.application input[type='number'],
 	.application select {
 		background: white;
-		// border: 1px solid var(--input-border-color);
-		// border-radius: 4px;
-		// outline: 1px solid transparent;
 		color: black;
+		--input-background-color: rgba(0, 0, 0, 0.1);
+		--input-border-color: var(--color-dark-6);
+		--input-text-color: var(--color-dark-2);
+		--input-placeholder-color: var(--color-dark-3);
+		--input-focus-outline-color: var(--color-warm-2);
 	}
 }
 

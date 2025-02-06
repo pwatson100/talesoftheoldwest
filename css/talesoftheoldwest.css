@@ -152,6 +152,7 @@ body .talesoftheoldwest.application {
   color: black;
   width: 600;
   height: 896;
+  background: transparent;
 }
 body.theme-light .application {
   background-image: url("../assets/background/lapp.webp");
@@ -165,15 +166,19 @@ body.theme-light .application {
           box-shadow: unset;
 }
 body.theme-dark .application {
-  background: url("../assets/background/lapp.webp");
+  background-image: url("../assets/background/lapp.webp");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-origin: content-box;
+  background-size: 100% 100%;
   border: unset;
   -webkit-filter: drop-shadow(8px 12px 8px #353232);
           filter: drop-shadow(8px 12px 8px #353232);
   -webkit-box-shadow: unset;
           box-shadow: unset;
+}
+body.theme-dark .application .window-content {
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
 }
 body.theme-light .dialog .window-content {
   color: black;
@@ -201,24 +206,25 @@ body.theme-light .dialog .window-content .dialog-buttons button {
   width: fit-content;
 }
 body.theme-dark .dialog .window-content {
-  color: black;
   background: unset;
   background-image: url("../assets/background/lapp.webp");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  background-origin: content-box;
+  /* background-size: cover; */ /* Resize the background image to cover the entire container */
+  /* background-origin: content-box; */
 }
-body.theme-dark .dialog .window-content .form-footer {
+body.theme-dark .dialog .window-content .form-footer,
+body.theme-dark .dialog .window-content .dialog-buttons {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-body.theme-dark .dialog .window-content .form-footer button {
+body.theme-dark .dialog .window-content .form-footer button,
+body.theme-dark .dialog .window-content .dialog-buttons button {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
-  min-width: auto;
+  min-width: unset;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -228,6 +234,11 @@ body .application input[type=number],
 body .application select {
   background: white;
   color: black;
+  --input-background-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: var(--color-dark-6);
+  --input-text-color: var(--color-dark-2);
+  --input-placeholder-color: var(--color-dark-3);
+  --input-focus-outline-color: var(--color-warm-2);
 }
 
 .application .window-header,
@@ -438,113 +449,113 @@ body .application select {
 
 .lCol1 {
   grid-area: lCol1;
-  justify-self: left;
+  text-align: left;
 }
 
 .lCol2 {
   grid-area: lCol2;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol3 {
   grid-area: lCol3;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol4 {
   grid-area: lCol4;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol5 {
   grid-area: lCol5;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol6 {
   grid-area: lCol6;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol7 {
   grid-area: lCol7;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol8 {
   grid-area: lCol8;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol9 {
   grid-area: lCol9;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol10 {
   grid-area: lCol10;
-  justify-self: center;
+  text-align: center;
 }
 
 .lCol11 {
   grid-area: lCol11;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB1 {
   grid-area: lColB1;
-  justify-self: left;
+  text-align: left;
 }
 
 .lColB2 {
   grid-area: lColB2;
-  justify-self: left;
+  text-align: left;
   font-weight: bold;
 }
 
 .lColB3 {
   grid-area: lColB3;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB4 {
   grid-area: lColB4;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB5 {
   grid-area: lColB5;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB6 {
   grid-area: lColB6;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB7 {
   grid-area: lColB7;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB8 {
   grid-area: lColB8;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB9 {
   grid-area: lColB9;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB10 {
   grid-area: lColB10;
-  justify-self: center;
+  text-align: center;
 }
 
 .lColB11 {
   grid-area: lColB11;
-  justify-self: center;
+  text-align: center;
 }
 
 .grid-talent-items {
@@ -559,43 +570,43 @@ body .application select {
 
 .TCol1 {
   grid-area: TCol1;
-  justify-self: left;
+  text-align: left;
 }
 
 .TCol2 {
   grid-area: TCol2;
-  justify-self: center;
+  text-align: center;
 }
 
 .TCol3 {
   grid-area: TCol3;
-  justify-self: center;
+  text-align: center;
 }
 
 .TCol4 {
   grid-area: TCol4;
-  justify-self: center;
+  text-align: center;
 }
 
 .TCol11 {
   grid-area: TCol11;
-  justify-self: center;
+  text-align: center;
 }
 
 .TCol12 {
   grid-area: TCol12;
-  justify-self: left;
+  text-align: left;
   font-weight: bold;
 }
 
 .TCol13 {
   grid-area: TCol13;
-  justify-self: center;
+  text-align: center;
 }
 
 .TCol14 {
   grid-area: TCol14;
-  justify-self: center;
+  text-align: center;
 }
 
 .grid-talent-quality {
@@ -610,33 +621,33 @@ body .application select {
 
 .QCol1 {
   grid-area: QCol1;
-  justify-self: left;
+  text-align: left;
 }
 
 .QCol2 {
   grid-area: QCol2;
-  justify-self: center;
+  text-align: center;
 }
 
 .QCol3 {
   grid-area: QCol3;
-  justify-self: center;
+  text-align: center;
 }
 
 .QCol11 {
   grid-area: QCol11;
-  justify-self: center;
+  text-align: center;
 }
 
 .QCol12 {
   grid-area: QCol12;
-  justify-self: left;
+  text-align: left;
   font-weight: bold;
 }
 
 .QCol13 {
   grid-area: QCol13;
-  justify-self: center;
+  text-align: center;
 }
 
 .grid-header {
@@ -655,7 +666,7 @@ body .application select {
 
 .HedCol3 {
   grid-area: HedCol3;
-  align-self: center;
+  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -663,12 +674,12 @@ body .application select {
 
 .HedCol4 {
   grid-area: HedCol4;
-  align-self: center;
+  text-align: center;
 }
 
 .HedCol5 {
   grid-area: HedCol5;
-  align-self: center;
+  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -676,12 +687,12 @@ body .application select {
 
 .HedCol6 {
   grid-area: HedCol6;
-  align-self: center;
+  text-align: center;
 }
 
 .HedCol7 {
   grid-area: HedCol7;
-  align-self: center;
+  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -689,7 +700,7 @@ body .application select {
 
 .HedCol8 {
   grid-area: HedCol8;
-  align-self: center;
+  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -697,22 +708,22 @@ body .application select {
 
 .HedCol9 {
   grid-area: HedCol9;
-  align-self: center;
+  text-align: center;
 }
 
 .HedCol10 {
   grid-area: HedCol10;
-  align-self: center;
+  text-align: center;
 }
 
 .HedCol11 {
   grid-area: HedCol11;
-  align-self: center;
+  text-align: center;
 }
 
 .HedCol12 {
   grid-area: HedCol12;
-  align-self: center;
+  text-align: center;
 }
 
 .grid-item-header {
@@ -987,6 +998,77 @@ body .application select {
 
 .Booklearnin2 {
   grid-area: Booklearnin2;
+}
+
+.critical-inj {
+  display: grid;
+  grid-template-areas: "crit1 crit2 crit3 crit4";
+  grid-template-columns: 40px 200px 300px 26px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crit1 {
+  grid-area: crit1;
+  text-align: left;
+  padding-right: 4px;
+}
+
+.crit2 {
+  grid-area: crit2;
+  text-align: left;
+  font-weight: bold;
+  padding-right: 8px;
+}
+
+.crit3 {
+  grid-area: crit3;
+  text-align: left;
+  font-weight: bold;
+  padding-right: 8px;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.crit4 {
+  grid-area: crit4;
+  text-align: right;
+}
+
+.sheet-cash {
+  display: grid;
+  row-gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-areas: "cash1 cash2 cash3 cash4";
+  grid-template-columns: 112px 110px 140px 110px;
+}
+
+.cash1 {
+  grid-area: cash1;
+  text-align: center;
+  font-size: x-large;
+}
+
+.cash2 {
+  grid-area: cash2;
+  text-align: center;
+}
+
+.cash3 {
+  grid-area: cash3;
+  text-align: center;
+  font-size: x-large;
+}
+
+.cash4 {
+  grid-area: cash4;
+  text-align: center;
 }
 
 .flex-group-center,

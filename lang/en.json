@@ -154,6 +154,8 @@
 			"faith": "faith",
 			"abilities": "abilities",
 			"money": "money $",
+			"cash": "cash $",
+			"capital": "capital $",
 			"cost": "cost $",
 			"riding-modifier": "riding Modifier",
 			"qualityOptions": "quality options",
@@ -177,7 +179,16 @@
 			"fightin": "Fightin'",
 			"shootin": "Shootin",
 			"talents": "talents",
-			"weapons": "Weapons"
+			"weapons": "Weapons",
+			"noAmmo": "You need to reload Pardner!",
+			"calledShots": "called shots",
+			"targetCover": "target cover",
+			"targetSize": "target size",
+			"TargetVisibility": "target visibility",
+			"targetIsProne": "target is prone (+2)",
+			"allOutAttack": "all-out attack (+2)",
+			"calledStrike": "called strike (-3)",
+			"enterModifiers": "enter modifier"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

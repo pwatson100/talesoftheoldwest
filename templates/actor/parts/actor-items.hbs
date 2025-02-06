@@ -1,4 +1,20 @@
 <section class='tab items {{tab.cssClass}}' data-group='primary' data-tab='gear'>
+	<div class='sheet-cash'>
+		<div class='cash1'>
+			<label for='system.general.cash.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}}</label>
+		</div>
+		<div class='cash2'>
+			<input class='currency' name='system.general.cash.value' value='{{system.general.cash.value}}' data-dtype='Number' />
+		</div>
+
+		<div class='cash3'>
+			<label for='system.general.capital.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}}</label>
+		</div>
+		<div class='cash4'>
+			<input class='currency' name='system.general.capital.value' value='{{system.general.capital.value}}' data-dtype='Number' />
+		</div>
+	</div>
+
 	<ol class='items-list'>
 		<li class='item grid-talent-items items-header'>
 			<div class='item-name TCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>

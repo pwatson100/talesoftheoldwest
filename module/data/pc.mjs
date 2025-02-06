@@ -30,7 +30,10 @@ export default class totowPC extends totowActorBase {
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
-			money: new fields.SchemaField({
+			cash: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+			}),
+			capital: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			xp: new fields.SchemaField({

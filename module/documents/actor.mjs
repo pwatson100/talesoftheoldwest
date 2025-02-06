@@ -518,7 +518,7 @@ export class totowActor extends Actor {
 			let confirmed = false;
 			renderTemplate(template).then((dlg) => {
 				new Dialog({
-					title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCrit'),
+					title: game.i18n.localize('TALESOFTHEOLDWEST.Item.General.roll-modifiers').toUpperCase(),
 					content: dlg,
 					buttons: {
 						one: {
@@ -550,6 +550,21 @@ export class totowActor extends Actor {
 			});
 		}
 
-		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html');
+		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html');
+	}
+
+	async createChatMessage(message, actorID) {
+		let chatData = {
+			user: game.user.id,
+			speaker: {
+				actor: actorID,
+			},
+			content: new Handlebars.SafeString(message),
+			other: game.users.contents.filter((u) => u.isGM).map((u) => u.id),
+			sound: CONFIG.sounds.lock,
+		};
+
+		ChatMessage.applyRollMode(chatData, game.settings.get('core', 'rollMode'));
+		return ChatMessage.create(chatData);
 	}
 }

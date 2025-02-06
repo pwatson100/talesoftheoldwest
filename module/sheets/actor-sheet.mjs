@@ -19,7 +19,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		classes: ['talesoftheoldwest', 'actor'],
 		position: {
 			width: 950,
-			height: 896,
+			height: 910,
 		},
 		window: {
 			// icon: 'fa-solid fa-egg',
