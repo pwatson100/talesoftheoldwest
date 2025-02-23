@@ -1,0 +1,22 @@
+{
+  "name": "Ranged Qualities",
+  "sorting": "a",
+  "folder": "zgydN3pT9SGM0lTm",
+  "type": "Item",
+  "_id": "eGISG0VrE4fzswvk",
+  "description": "",
+  "sort": 0,
+  "color": "#6086d2",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1740313844688,
+    "modifiedTime": 1740313844688,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!eGISG0VrE4fzswvk"
+}

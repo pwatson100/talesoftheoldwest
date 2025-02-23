@@ -177,7 +177,7 @@
 			"isActive": "Active",
 			"and": "and",
 			"fightin": "Fightin'",
-			"shootin": "Shootin",
+			"shootin": "Shootin'",
 			"talents": "talents",
 			"weapons": "Weapons",
 			"noAmmo": "You need to reload Pardner!",
@@ -188,7 +188,13 @@
 			"targetIsProne": "target is prone (+2)",
 			"allOutAttack": "all-out attack (+2)",
 			"calledStrike": "called strike (-3)",
-			"enterModifiers": "enter modifier"
+			"enterModifiers": "enter modifier",
+			"leftclicktoroll": "Left click to roll, Right click to manually add crit number.",
+			"rightclicktomodify": "Left click to roll, Right click to Modify.",
+			"leftToAdd": "Left Click to add. Right click to remove",
+			"onlyadd": "You can only add the",
+			"once": "Once",
+			"noadd": "You can't add this Condition/Quality to this Weapon type"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -207,7 +213,8 @@
 				"Modifiers": "Modifiers",
 				"Body": "Description",
 				"Basic": "Basic",
-				"Advanced": "Advanced"
+				"Advanced": "Advanced",
+				"Qualities": "Qualities & Conditions"
 			},
 			"General": {
 				"type": "type",
@@ -225,7 +232,22 @@
 				"rollModifiersValue": "roll modifiers value",
 				"deleteModifiers": "Delete Modifier",
 				"noModifiers": "No Modifiers",
-				"reference": "Reference"
+				"reference": "Reference",
+				"rwQualities": "Ranged Weapon Qualities",
+				"mwQualities": "Melee Weapon Qualities",
+				"mwConditions": "Melee Weapon Conditions",
+				"rwConditions": "Ranged Weapon Conditions",
+				"pistol": "Pistol",
+				"rifle": "Rifle",
+				"shotgun": "Shotgun",
+				"any": "Any",
+				"quality": "Quality",
+				"condition": "Condition",
+				"feature": "Feature",
+				"impact": "Impact",
+				"weapon": "Weapon",
+				"ranged": "Ranged",
+				"melee": "Melee"
 			}
 		},
 		"ItemModifierSelect": {
@@ -250,6 +272,120 @@
 			"medium": { "abbr": "MEDI", "long": "Medium" },
 			"near": { "abbr": "NR", "long": "Near" },
 			"short": { "abbr": "SRT", "long": "Short" }
+		},
+		"RangedCondition": {
+			"dirty": { "long": "Dirty", "impact": "When you attack with this weapon your final total of successes is reduced by 1, to a minimum of 0." },
+			"damagedbore": { "long": "Damaged Bore", "impact": "The weapon is low powered. The damage rating is reduced by 1, to a minimum of 1." },
+			"hardtoload": { "long": "Hard To Load", "impact": "Loading takes an extra action per bullet." },
+			"greasy": { "long": "Greasy", "impact": "The weapon loses its punch, and its Crit Rating is increased by 1." },
+			"misaligned": { "long": "Misaligned", "impact": "The weapon ain’t shootin’ straight. Suffer a −1 penalty on SHOOTIN’ rolls." },
+			"weakhammer": { "long": "Weak Hammer", "impact": "If the weapon suffers Trouble twice in the same scene it breaks beyond repair." }
+		},
+		"RangedQuailities": {
+			"concealable": {
+				"long": "Concealable",
+				"impact": "Small and compact, a pistol with this quality is easily concealed about your person. Those trying to spot it get a −1 penalty on their HAWKEYE test.",
+				"weapon": "Pistol"
+			},
+			"calibrated": {
+				"long": "Calibrated",
+				"impact": "The weapon is so well calibrated its aim is true. Gain +1 bonus to the weapon’s Attack modifier",
+				"weapon": "Pistol"
+			},
+			"fanning": {
+				"long": "Fanning",
+				"impact": "The gun is ideal for fanning. You gain a +1 bonus to your SHOOTIN’ ability when fanning with this weapon.",
+				"weapon": "Pistol"
+			},
+			"fastdraw": { "long": "Fast Draw", "impact": "The weapon is designed for the quick draw. You gain a +1 bonus to the Draw.", "weapon": "Pistol" },
+			"heavy": {
+				"long": "Heavy",
+				"impact": "The pistol is heavy in your hand and kicks like a mule but delivers a powerful blast. It does +1 extra damage, but has a −1 penalty to Draw.",
+				"weapon": "Pistol"
+			},
+			"hidden": {
+				"long": "Hidden",
+				"impact": "A palm-sized gun designed for concealment. Those trying to spot it suffer a −3 penalty on their HAWKEYE test.",
+				"weapon": "Pistol"
+			},
+			"hotloader": {
+				"long": "Hot Loader",
+				"impact": "Loading is slow, so anything that makes it quicker can only be a good thing. This gun has a swappable revolver cylinder (2 actions for full reload).",
+				"weapon": "Pistol"
+			},
+			"light": {
+				"long": "Light",
+				"impact": "The weapon is very small and counts as a Tiny item, but it’s not made for fast drawing so you suffer a −1 penalty on the Draw.",
+				"weapon": "Pistol"
+			},
+			"longbarrel": {
+				"long": "Long Barrel",
+				"impact": "A long barrel makes gunplay easier, but it’s slower on the draw. Gain a +1 bonus to SHOOTIN’, but a −1 penalty on the Draw.",
+				"weapon": "Pistol"
+			},
+			"shortbarrel": {
+				"long": "Short Barrel",
+				"impact": "A short barrel isn’t great for accuracy, but it’s quicker to get that iron from your holster. Gain a +1 bonus on Draw, but a −1 penalty on SHOOTIN’.",
+				"weapon": "Pistol"
+			},
+			"sights": {
+				"long": "Sights",
+				"impact": "Well-made sights make shooting at range easy. Range negatives are one die less for all ranges when using an Aim action before making a shot.",
+				"weapon": "Pistol"
+			},
+			"balanced": {
+				"long": "Balanced",
+				"impact": "The weapon feels good in your hand and you can’t help but shoot straight with it. Grants a +1 bonus to SHOOTIN’.",
+				"weapon": "Any"
+			},
+			"maintained": {
+				"long": "Maintained",
+				"impact": "Beautifully made with maintenance in mind, this weapon is easy to keep working. Once per scene you may reroll all Trouble dice showing a ‘1’, but only before pushing.",
+				"weapon": "Any"
+			},
+			"piercing": {
+				"long": "Piercing",
+				"impact": "The weapon is renowned for being deadly in the hands of an expert. Gain +1 to the Units die on critical injury rolls.",
+				"weapon": "Any"
+			},
+			"powerful": { "long": "Powerful", "impact": "The weapon packs a real punch. Grants +1 to the weapon’s Damage.", "weapon": "Any" },
+			"reliable": {
+				"long": "Reliable",
+				"impact": "Tough and sturdy, this weapon is reliable and just doesn’t break. If Trouble is rolled while using this weapon, the amount of Trouble is reduced by 1, to a minimum of 1.",
+				"weapon": "Any"
+			},
+			"sawnoff": {
+				"long": "Sawn-off",
+				"impact": "A short-barreled shotgun is deadly in close quarters, but terrible further away. Grants a +1 bonus to SHOOTIN’ but the maximum range is Short.",
+				"weapon": "Shotgun"
+			}
+		},
+		"MeleeConditions": {
+			"blunt": { "long": "Blunt", "impact": "When you attack with this weapon your final total of successes is reduced by 1, to a minimum of 0." },
+			"losehandle": { "long": "Lose Handle", "impact": "The weapon loses its punch, and its Crit Rating is increased by 1." },
+			"bent": { "long": "Bent", "impact": "The weapon is bent or twisted, and harder to handle. Suffer a −1 penalty to FIGHTIN’ rolls." },
+			"hardtohold": { "long": "Hard To Hold", "impact": "When you suffer Trouble after a pushed roll, add +1 to the Trouble total when using this weapon." },
+			"chipped": { "long": "Chipped", "impact": "Your weapon loses a random weapon quality." },
+			"weakened": { "long": "Weakend", "impact": "If the weapon suffers Trouble twice in the same scene it breaks beyond repair." }
+		},
+		"MeleeQuailities": {
+			"balanced": { "long": "Balanced", "impact": "The weapon sits well in your hand and helps you make the blow. Grants a +1 bonus to FIGHTIN’." },
+			"forgiving": {
+				"long": "Forgiving",
+				"impact": "The weapon is reliable and easy to use. You can ignore one die of Trou- ble on your first roll when using this weapon as if you had spent a point of Faith (but not after a pushed roll)."
+			},
+			"mounted": {
+				"long": "Mounted",
+				"impact": "This weapon is especially deadly when used from horseback. After a pushed roll, when mounted, you can push again for free, although Trou- ble still applies."
+			},
+			"piercing": {
+				"long": "Piercing",
+				"impact": "The weapon is renowned for being deadly in the hands of an expert. Grants +1 to the Units die on critical injury rolls."
+			},
+			"sharpened": { "long": "Sharpened", "impact": "The weapon is made to inflict as much damage as possible. Gain +1 to the weapon’s Damage." },
+			"sleek": { "long": "Sleek", "impact": "It’s designed to be drawn fast. You can draw this weapon as a free action." },
+			"toughened": { "long": "Toughened", "impact": "The weapon cannot be broken by the outcome of Trouble." },
+			"weighted": { "long": "Weighted", "impact": "The weapon is beautifully weighted to give you an advantage in the fight. Gain a +1 bonus to FIGHTIN’." }
 		},
 		"ModRanges": {
 			"activearmslength": "Active Target at Arms Length (-3)",
@@ -336,7 +472,8 @@
 			"talent": "Talent",
 			"weapon": "Weapon",
 			"crit": "Critical Injury",
-			"animalquality": "Animal Quality"
+			"animalquality": "Animal Quality",
+			"weaponquality": "Weapon Quality"
 		}
 	}
 }

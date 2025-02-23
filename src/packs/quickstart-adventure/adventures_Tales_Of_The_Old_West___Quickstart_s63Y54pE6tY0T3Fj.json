@@ -6,284 +6,15 @@
   "description": "",
   "actors": [
     {
-      "name": "Mustang",
-      "type": "animal",
-      "_id": "ZhdtY5JbQb6xcRHC",
-      "img": "systems/talesoftheoldwest/assets/avatars/horse.webp",
-      "system": {
-        "biography": "<p><strong>Riding Modifier -1</strong></p>",
-        "attributes": {
-          "grit": {
-            "value": 5,
-            "mod": 5,
-            "max": 5,
-            "label": ""
-          },
-          "quick": {
-            "value": 3,
-            "mod": 3,
-            "max": 3,
-            "label": ""
-          }
-        },
-        "abilities": {
-          "flight": {
-            "value": 1,
-            "mod": 4,
-            "max": 0,
-            "label": ""
-          },
-          "resilience": {
-            "value": 0,
-            "mod": 5,
-            "max": 0,
-            "label": ""
-          }
-        },
-        "general": {
-          "breed": "American Quarter",
-          "cost": {
-            "value": 75
-          },
-          "ridingmodifier": {
-            "value": -1
-          }
-        }
-      },
-      "prototypeToken": {
-        "name": "Animal",
-        "displayName": 20,
-        "actorLink": true,
-        "appendNumber": false,
-        "prependAdjective": false,
-        "width": 1,
-        "height": 1,
-        "texture": {
-          "src": "systems/talesoftheoldwest/assets/avatars/horse.webp",
-          "anchorX": 0.5,
-          "anchorY": 0.5,
-          "offsetX": 0,
-          "offsetY": 0,
-          "fit": "contain",
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "alphaThreshold": 0.75
-        },
-        "hexagonalShape": 0,
-        "lockRotation": false,
-        "rotation": 0,
-        "alpha": 1,
-        "disposition": 1,
-        "displayBars": 20,
-        "bar1": {
-          "attribute": null
-        },
-        "bar2": {
-          "attribute": null
-        },
-        "light": {
-          "negative": false,
-          "priority": 0,
-          "alpha": 0.5,
-          "angle": 360,
-          "bright": 0,
-          "color": null,
-          "coloration": 1,
-          "dim": 0,
-          "attenuation": 0.5,
-          "luminosity": 0.5,
-          "saturation": 0,
-          "contrast": 0,
-          "shadows": 0,
-          "animation": {
-            "type": null,
-            "speed": 5,
-            "intensity": 5,
-            "reverse": false
-          },
-          "darkness": {
-            "min": 0,
-            "max": 1
-          }
-        },
-        "sight": {
-          "enabled": true,
-          "range": 12,
-          "angle": 360,
-          "visionMode": "basic",
-          "color": null,
-          "attenuation": 0.1,
-          "brightness": 0,
-          "saturation": 0,
-          "contrast": 0
-        },
-        "detectionModes": [],
-        "occludable": {
-          "radius": 0
-        },
-        "ring": {
-          "enabled": false,
-          "colors": {
-            "ring": null,
-            "background": null
-          },
-          "effects": 0,
-          "subject": {
-            "scale": 1,
-            "texture": null
-          }
-        },
-        "flags": {},
-        "randomImg": false
-      },
-      "items": [
-        {
-          "name": "Item (2)",
-          "type": "item",
-          "_id": "jO74PqkwU1rFGnKI",
-          "img": "icons/svg/item-bag.svg",
-          "system": {
-            "description": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p>",
-            "itemModifiers": null,
-            "quantity": 1,
-            "weight": 0
-          },
-          "effects": [],
-          "folder": null,
-          "sort": 400000,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.WgGKNjWeHujSCOTo",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1729773625217,
-            "modifiedTime": 1729773625217,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Aggressive",
-          "type": "animalquality",
-          "system": {
-            "description": "The horse will kick or bite when approached, at the GMs discretion, unless calmed with an ANIMAL HANDLIN’ roll.",
-            "itemModifiers": null
-          },
-          "_id": "hdrXhPexqsMzaDsa",
-          "img": "icons/svg/item-bag.svg",
-          "effects": [],
-          "folder": "q8E9alfSeM1DCNfJ",
-          "sort": 100000,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.FBpawjMlNd9jxWlz",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737308562240,
-            "modifiedTime": 1737308562240,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Fast",
-          "type": "animalquality",
-          "system": {
-            "description": "This horse was meant to ride the plains. The rider can push ANIMAL HANDLIN’ twice when galloping, at the normal cost for both pushes.",
-            "itemModifiers": null
-          },
-          "_id": "1GzrvivWfxZsTVet",
-          "img": "icons/svg/item-bag.svg",
-          "effects": [],
-          "folder": "q8E9alfSeM1DCNfJ",
-          "sort": 262500,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.5BAvCYnODUatbtwS",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737308568920,
-            "modifiedTime": 1737308568920,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Hot Horse",
-          "type": "animalquality",
-          "system": {
-            "description": "This horse just loves to run. Gain a +1 bonus to ANIMAL HANDLIN’ when galloping.",
-            "itemModifiers": null
-          },
-          "_id": "3wwyCz8FD81QQhDi",
-          "img": "icons/svg/item-bag.svg",
-          "effects": [],
-          "folder": "q8E9alfSeM1DCNfJ",
-          "sort": 293750,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.nUFlTs6p9By4fMcx",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737308574912,
-            "modifiedTime": 1737308574912,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        }
-      ],
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1729769948012,
-        "modifiedTime": 1734026519366,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
       "name": "Luis Osorio",
       "type": "pc",
-      "_id": "wwvlv2lnACjDHFCe",
       "img": "systems/talesoftheoldwest/assets/avatars/luis-osorio.webp",
       "system": {
         "biography": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto officiis voluptatem deserunt, corporis fugit nam in eveniet temporibus officia accusamus. Distinctio eum, commodi ad tempore officiis aut dignissimos ab atque?</p>",
         "attributes": {
           "grit": {
             "value": 3,
-            "mod": 3,
+            "mod": 4,
             "max": 3,
             "label": ""
           },
@@ -311,144 +42,193 @@
           "bigdream": "To live my last days in a mountain cabin with views across the plains.",
           "yourpardner": "Bridget Lovelace",
           "faithpoints": {
-            "value": 10,
+            "value": 5,
             "max": 4
-          },
-          "money": {
-            "value": 50
           },
           "xp": {
             "value": 0
           },
           "canPush": "push",
           "archetype": "RanchHand",
-          "groupconcept": "LawmenBountyHunters"
+          "groupconcept": "LawmenBountyHunters",
+          "lifestyle": "",
+          "cash": {
+            "value": 0
+          },
+          "fame": {
+            "value": 0
+          },
+          "morals": {
+            "value": 1,
+            "max": 0
+          },
+          "publicsperit": {
+            "value": 1,
+            "max": 0
+          },
+          "capital": {
+            "value": 0
+          }
         },
         "abilities": {
           "labor": {
             "value": 1,
-            "mod": 4,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "presence": {
-            "value": 0,
-            "mod": 3,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "fightin": {
-            "value": 2,
             "mod": 5,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
-          "resilience": {
-            "value": 3,
+          "presence": {
+            "value": 0,
+            "mod": 4,
+            "total": 0,
+            "label": "",
+            "attr": "",
+            "upper": ""
+          },
+          "fightin": {
+            "value": 2,
             "mod": 6,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
+          },
+          "resilience": {
+            "value": 3,
+            "mod": 7,
+            "total": 0,
+            "label": "",
+            "attr": "",
+            "upper": ""
           },
           "move": {
             "value": 1,
             "mod": 5,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "operate": {
             "value": 0,
             "mod": 4,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "shootin": {
             "value": 2,
             "mod": 7,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "lightfingered": {
             "value": 2,
             "mod": 6,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "hawkeye": {
             "value": 3,
             "mod": 6,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "nature": {
             "value": 2,
             "mod": 5,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "insight": {
             "value": 1,
             "mod": 4,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "animalhandlin": {
             "value": 2,
             "mod": 5,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "performin": {
             "value": 0,
             "mod": 2,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "makin": {
             "value": 0,
             "mod": 2,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "doctorin": {
             "value": 0,
             "mod": 2,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           },
           "booklearnin": {
             "value": 0,
             "mod": 2,
             "total": 0,
             "label": "",
-            "attr": ""
+            "attr": "",
+            "upper": ""
           }
         },
         "conditions": {
-          "overwatch": false,
           "starving": false,
           "dehydrated": false,
           "exhausted": false,
           "freezing": false,
-          "encumbered": false
+          "encumbered": false,
+          "overwatch": false
+        },
+        "damage": {
+          "hurts": {
+            "value": 0,
+            "max": 0
+          },
+          "shakes": {
+            "value": 0,
+            "max": 0
+          },
+          "vexes": {
+            "value": 0,
+            "max": 0
+          },
+          "doubts": {
+            "value": 0,
+            "max": 0
+          }
         }
       },
       "prototypeToken": {
-        "name": "newboy",
+        "name": "Luis Osorio",
         "displayName": 20,
         "actorLink": true,
         "appendNumber": false,
@@ -468,7 +248,6 @@
           "tint": "#ffffff",
           "alphaThreshold": 0.75
         },
-        "hexagonalShape": 0,
         "lockRotation": false,
         "rotation": 0,
         "alpha": 1,
@@ -533,7 +312,8 @@
           }
         },
         "flags": {},
-        "randomImg": false
+        "randomImg": false,
+        "hexagonalShape": 0
       },
       "items": [
         {
@@ -551,7 +331,9 @@
             "damage": 3,
             "crit": 1,
             "range": "long",
-            "ammo": 15
+            "ammo": 15,
+            "weight": 0,
+            "featureModifiers": []
           },
           "effects": [],
           "folder": null,
@@ -567,45 +349,9 @@
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1733136015821,
-            "modifiedTime": 1734026432118,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Knife",
-          "type": "weapon",
-          "_id": "fY9f7jcv0mAoMgvd",
-          "img": "icons/svg/item-bag.svg",
-          "system": {
-            "description": "",
-            "itemModifiers": null,
-            "subtype": "fightin",
-            "action": "",
-            "bonusdraw": 0,
-            "attackbonus": 0,
-            "damage": 1,
-            "crit": 2,
-            "range": "",
-            "ammo": 0
-          },
-          "effects": [],
-          "folder": null,
-          "sort": 0,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1733136017867,
-            "modifiedTime": 1733136017867,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
           }
         },
         {
@@ -623,7 +369,9 @@
             "damage": 2,
             "crit": 1,
             "range": "medium",
-            "ammo": 6
+            "ammo": 6,
+            "weight": 0,
+            "featureModifiers": []
           },
           "effects": [],
           "folder": null,
@@ -639,9 +387,113 @@
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1733136019864,
-            "modifiedTime": 1733136019864,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          }
+        },
+        {
+          "name": "Sharpshooter",
+          "type": "talent",
+          "_id": "HGD9T47itJ6GSmhI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "itemModifiers": {
+              "0": {
+                "name": "shootin",
+                "value": "1"
+              }
+            },
+            "description": "<p>This is a Talent</p>",
+            "weight": 0,
+            "basicisActive": false,
+            "basicAction": "",
+            "advisActive": false,
+            "advAction": ""
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.xWkJzivqOlaiwCbw",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          }
+        },
+        {
+          "name": "Tracker",
+          "type": "talent",
+          "_id": "hw1bMbKk7fjQDzqL",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>You gain +1 bonus to <strong>HAWKEYE</strong> when tracking in the wilderness</p>",
+            "itemModifiers": null,
+            "weight": 0,
+            "basicisActive": false,
+            "basicAction": "",
+            "advisActive": false,
+            "advAction": ""
+          },
+          "effects": [],
+          "folder": null,
+          "sort": 0,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.z11zOk32BBGOl93G",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          }
+        },
+        {
+          "name": "Lucky",
+          "type": "talent",
+          "_id": "I7QzShfTdvBL8kyI",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>When you suffer a Critical Injury you can reroll the Tens die and take the best result</p>",
+            "itemModifiers": null,
+            "weight": 0,
+            "basicisActive": false,
+            "basicAction": "",
+            "advisActive": false,
+            "advAction": ""
+          },
+          "effects": [],
+          "folder": "o0HgvcRqPlzSZDM3",
+          "sort": 100000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.5q0tKk4Ijla0Nvcl",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.0.1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
           }
         },
         {
@@ -669,9 +521,9 @@
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1733136033667,
-            "modifiedTime": 1734023856565,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
           }
         },
         {
@@ -699,9 +551,9 @@
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1733136035827,
-            "modifiedTime": 1733136035827,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
           }
         },
         {
@@ -729,467 +581,75 @@
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1733136037942,
-            "modifiedTime": 1733136037942,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
           }
         },
         {
-          "name": "Sharp Shooter",
-          "type": "talent",
+          "name": "Knife",
+          "type": "weapon",
+          "_id": "flbpsjH7SczN4RSY",
+          "img": "icons/svg/item-bag.svg",
           "system": {
-            "description": "You are an expert marksman.",
-            "basicAction": "You gain a +1 bonus when you use a rifle.",
-            "advAction": "You can use a rifle at Long range with no penalties, and at Distant range with only a −2 penalty.",
-            "reference": "sharpshooter",
+            "description": "",
             "itemModifiers": {
               "0": {
-                "name": "shootin",
+                "name": "grit",
                 "value": "1"
               }
             },
-            "basicisActive": false,
-            "advisActive": false
+            "subtype": "fightin",
+            "action": "na",
+            "bonusdraw": 0,
+            "attackbonus": 0,
+            "damage": 1,
+            "crit": 2,
+            "range": "armslength",
+            "ammo": 0,
+            "reference": "",
+            "weight": 0,
+            "featureModifiers": []
           },
-          "_id": "eFRmScq1BcfKXIW5",
-          "img": "icons/svg/item-bag.svg",
           "effects": [],
-          "folder": "pykFFBAf8w9dTua8",
-          "sort": 50000,
+          "folder": "PfXKklVIj8c5cX6Y",
+          "sort": 200000,
           "ownership": {
             "default": 0,
             "oo2KG31LDGhYx0MC": 3
           },
           "flags": {},
           "_stats": {
-            "compendiumSource": "Item.owdsezXRSXBjKL0M",
+            "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
             "duplicateSource": null,
             "coreVersion": "12.331",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
-            "createdTime": 1737561724448,
-            "modifiedTime": 1737561767737,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Tracker",
-          "type": "talent",
-          "system": {
-            "description": "You know how to move, track, and hunt.",
-            "basicAction": "You are an expert tracker and gain a +1 bonus when tracking in the wilderness.",
-            "advAction": "Time and distance mean nothing to you. Ignore the penalties for tracks disappearing over time unless the tracks are completely erased.",
-            "reference": "tracker",
-            "itemModifiers": null,
-            "basicisActive": false,
-            "advisActive": false
-          },
-          "_id": "9Wb7JABKPwIxeZ7B",
-          "img": "icons/svg/item-bag.svg",
-          "effects": [],
-          "folder": "pykFFBAf8w9dTua8",
-          "sort": 150000,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.qFMc3C4ZRQ93VVDb",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737561748394,
-            "modifiedTime": 1737561748394,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        },
-        {
-          "name": "Lucky",
-          "type": "talent",
-          "system": {
-            "description": "No matter how bad the odds you always seem to get away unscathed.",
-            "basicAction": "When you suffer a critical injury you can reroll the Tens die and take the best result.",
-            "advAction": "When you suffer a critical injury you can reroll the Units die and take the best result.",
-            "reference": "lucky",
-            "itemModifiers": null,
-            "basicisActive": false,
-            "advisActive": false
-          },
-          "_id": "649NTd8hqjEYuA2Z",
-          "img": "icons/svg/item-bag.svg",
-          "effects": [],
-          "folder": "pykFFBAf8w9dTua8",
-          "sort": 2100000,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": "Item.vJC2YxQTBkpLYi5X",
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737561762810,
-            "modifiedTime": 1737561762810,
+            "createdTime": 1740225485412,
+            "modifiedTime": 1740225485412,
             "lastModifiedBy": "oo2KG31LDGhYx0MC"
           }
         }
       ],
       "effects": [],
       "folder": null,
-      "sort": 0,
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Actor.wwvlv2lnACjDHFCe",
+        "compendiumSource": "Compendium.talesoftheoldwest.quickstart-actors.Actor.PYNF4fkTuJmHAzni",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
-        "createdTime": 1732884125630,
-        "modifiedTime": 1737561738935,
+        "createdTime": 1740225439367,
+        "modifiedTime": 1740235868879,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "name": "NPC",
-      "type": "npc",
-      "_id": "Z6JlX6ZXhoTVt8sx",
-      "img": "icons/svg/mystery-man.svg",
-      "system": {
-        "biography": "<p>sdfafjag</p><p></p><p>sfgfgsfg</p>",
-        "attributes": {
-          "grit": {
-            "value": 0,
-            "mod": 0,
-            "max": 0,
-            "label": ""
-          },
-          "quick": {
-            "value": 0,
-            "mod": 0,
-            "max": 0,
-            "label": ""
-          },
-          "cunning": {
-            "value": 0,
-            "mod": 0,
-            "max": 0,
-            "label": ""
-          },
-          "docity": {
-            "value": 0,
-            "mod": 0,
-            "max": 0,
-            "label": ""
-          }
-        },
-        "abilities": {
-          "labor": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "presence": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "fightin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "resilience": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "move": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "operate": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "shootin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "lightfingered": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "hawkeye": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "nature": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "insight": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "animalhandlin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "performin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "makin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "doctorin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          },
-          "booklearnin": {
-            "value": 0,
-            "mod": 0,
-            "total": 0,
-            "label": "",
-            "attr": ""
-          }
-        },
-        "conditions": {
-          "overwatch": true,
-          "starving": false,
-          "dehydrated": false,
-          "exhausted": false,
-          "freezing": false,
-          "encumbered": false
-        }
       },
-      "prototypeToken": {
-        "name": "NPC",
-        "displayName": 20,
-        "actorLink": false,
-        "appendNumber": false,
-        "prependAdjective": false,
-        "width": 1,
-        "height": 1,
-        "texture": {
-          "src": "icons/svg/mystery-man.svg",
-          "anchorX": 0.5,
-          "anchorY": 0.5,
-          "offsetX": 0,
-          "offsetY": 0,
-          "fit": "contain",
-          "scaleX": 1,
-          "scaleY": 1,
-          "rotation": 0,
-          "tint": "#ffffff",
-          "alphaThreshold": 0.75
-        },
-        "hexagonalShape": 0,
-        "lockRotation": false,
-        "rotation": 0,
-        "alpha": 1,
-        "disposition": -1,
-        "displayBars": 20,
-        "bar1": {
-          "attribute": "header.health"
-        },
-        "bar2": {
-          "attribute": "None"
-        },
-        "light": {
-          "negative": false,
-          "priority": 0,
-          "alpha": 0.5,
-          "angle": 360,
-          "bright": 0,
-          "color": null,
-          "coloration": 1,
-          "dim": 0,
-          "attenuation": 0.5,
-          "luminosity": 0.5,
-          "saturation": 0,
-          "contrast": 0,
-          "shadows": 0,
-          "animation": {
-            "type": null,
-            "speed": 5,
-            "intensity": 5,
-            "reverse": false
-          },
-          "darkness": {
-            "min": 0,
-            "max": 1
-          }
-        },
-        "sight": {
-          "enabled": false,
-          "range": 12,
-          "angle": 360,
-          "visionMode": "basic",
-          "color": null,
-          "attenuation": 0.1,
-          "brightness": 0,
-          "saturation": 0,
-          "contrast": 0
-        },
-        "detectionModes": [],
-        "occludable": {
-          "radius": 0
-        },
-        "ring": {
-          "enabled": false,
-          "colors": {
-            "ring": null,
-            "background": null
-          },
-          "effects": 1,
-          "subject": {
-            "scale": 1,
-            "texture": null
-          }
-        },
-        "flags": {},
-        "randomImg": false
-      },
-      "items": [
-        {
-          "name": "Item",
-          "img": "icons/svg/aura.svg",
-          "type": "item",
-          "_id": "QqzalnHuT6TSBpzw",
-          "system": {
-            "description": "",
-            "itemModifiers": null,
-            "quantity": 1,
-            "weight": 0
-          },
-          "effects": [],
-          "folder": null,
-          "sort": 0,
-          "ownership": {
-            "default": 0,
-            "oo2KG31LDGhYx0MC": 3
-          },
-          "flags": {},
-          "_stats": {
-            "compendiumSource": null,
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1734020377577,
-            "modifiedTime": 1734020377577,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        }
-      ],
-      "effects": [
-        {
-          "name": "Overwatch",
-          "statuses": [
-            "overwatch"
-          ],
-          "img": "systems/talesoftheoldwest/assets/icons/overwatch.webp",
-          "_id": "55mqS9AIVfmb19HT",
-          "type": "base",
-          "system": {},
-          "changes": [],
-          "disabled": false,
-          "duration": {
-            "startTime": 0,
-            "seconds": null,
-            "combat": null,
-            "rounds": null,
-            "turns": null,
-            "startRound": null,
-            "startTurn": null
-          },
-          "description": "",
-          "origin": null,
-          "tint": "#ffffff",
-          "transfer": false,
-          "sort": 0,
-          "flags": {},
-          "_stats": {
-            "compendiumSource": null,
-            "duplicateSource": null,
-            "coreVersion": "12.331",
-            "systemId": "talesoftheoldwest",
-            "systemVersion": "0.0.1",
-            "createdTime": 1737111400084,
-            "modifiedTime": 1737111400084,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
-          }
-        }
-      ],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1734019444977,
-        "modifiedTime": 1737111400125,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
+      "_id": "WsStsGwsDPKQSTBC",
+      "sort": 0
     }
   ],
   "combats": [],
@@ -1298,25 +758,29 @@
         "description": "",
         "itemModifiers": {
           "0": {
-            "name": "Grit",
+            "name": "grit",
             "value": "1"
           }
         },
         "subtype": "fightin",
-        "action": "",
+        "action": "na",
         "bonusdraw": 0,
         "attackbonus": 0,
         "damage": 1,
         "crit": 2,
-        "range": "",
-        "ammo": 0
+        "range": "armslength",
+        "ammo": 0,
+        "reference": "",
+        "weight": 0,
+        "featureModifiers": []
       },
       "effects": [],
       "folder": "PfXKklVIj8c5cX6Y",
       "sort": 200000,
       "ownership": {
         "default": 0,
-        "oo2KG31LDGhYx0MC": 3
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 2
       },
       "flags": {},
       "_stats": {
@@ -1326,43 +790,7 @@
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730035005218,
-        "modifiedTime": 1734026632840,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "name": "Manhattan Navy",
-      "img": "systems/talesoftheoldwest/assets/icons/manhattannavy.webp",
-      "type": "weapon",
-      "_id": "qP3wsYv8g0TyCQNT",
-      "system": {
-        "description": "",
-        "itemModifiers": null,
-        "subtype": "shootin",
-        "action": "single",
-        "bonusdraw": 0,
-        "attackbonus": 2,
-        "damage": 2,
-        "crit": 1,
-        "range": "medium",
-        "ammo": 6
-      },
-      "effects": [],
-      "folder": "PfXKklVIj8c5cX6Y",
-      "sort": 150000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1730035008550,
-        "modifiedTime": 1735991886095,
+        "modifiedTime": 1740228617335,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -1381,14 +809,17 @@
         "damage": 3,
         "crit": 1,
         "range": "long",
-        "ammo": 15
+        "ammo": 15,
+        "weight": 0,
+        "featureModifiers": []
       },
       "effects": [],
       "folder": "PfXKklVIj8c5cX6Y",
       "sort": 100000,
       "ownership": {
         "default": 0,
-        "oo2KG31LDGhYx0MC": 3
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 2
       },
       "flags": {},
       "_stats": {
@@ -1398,7 +829,7 @@
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730035001883,
-        "modifiedTime": 1730035001883,
+        "modifiedTime": 1740228617335,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -1407,7 +838,8 @@
       "type": "animalquality",
       "system": {
         "description": "The horse will kick or bite when approached, at the GMs discretion, unless calmed with an ANIMAL HANDLIN’ roll.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "FBpawjMlNd9jxWlz",
       "img": "icons/svg/item-bag.svg",
@@ -1435,7 +867,8 @@
       "type": "animalquality",
       "system": {
         "description": "When spooked the horse automatically bucks (number 6 on the Spooked Horse Table).",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "6LKan3ja0zvVDBdv",
       "img": "icons/svg/item-bag.svg",
@@ -1463,7 +896,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is less agile than most and has −1 to its Quick.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "pDZAjvkK7dr8akc2",
       "img": "icons/svg/item-bag.svg",
@@ -1491,7 +925,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse will never kick or bite, no matter the provocation.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "lh7JFpJS6oeQkHRk",
       "img": "icons/svg/item-bag.svg",
@@ -1519,7 +954,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse has no stamina. When in a chase this horse suffers a −2 penalty to its RESILIENCE roll when testing for exhaustion.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "tkVE03pOISY6oFtw",
       "img": "icons/svg/item-bag.svg",
@@ -1547,7 +983,8 @@
       "type": "animalquality",
       "system": {
         "description": "Gain a +1 bonus to ANIMAL HANDLIN’ when riding this horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "TfqsOmnUKnz4F0kC",
       "img": "icons/svg/item-bag.svg",
@@ -1575,7 +1012,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse was meant to ride the plains. The rider can push ANIMAL HANDLIN’ twice when galloping, at the normal cost for both pushes.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "5BAvCYnODUatbtwS",
       "img": "icons/svg/item-bag.svg",
@@ -1603,7 +1041,8 @@
       "type": "animalquality",
       "system": {
         "description": "Swift as the wind. Grants +1 to the horse’s Quick.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "LxneGeH3t7gdIWG7",
       "img": "icons/svg/item-bag.svg",
@@ -1631,7 +1070,8 @@
       "type": "animalquality",
       "system": {
         "description": "Good natured and willing. Gain a +1 bonus to ANIMAL HANDLIN’ when training this horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "rQmpqZbbS33P4jB5",
       "img": "icons/svg/item-bag.svg",
@@ -1659,7 +1099,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is easy to train. Grants +1 to its Cunning.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "A3MOES3HLxU3CApp",
       "img": "icons/svg/item-bag.svg",
@@ -1687,7 +1128,8 @@
       "type": "animalquality",
       "system": {
         "description": "The horse is beautiful and full of grace, and is worth double the normal price.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "tpbIzpvmtJGun1ZJ",
       "img": "icons/svg/item-bag.svg",
@@ -1715,7 +1157,8 @@
       "type": "animalquality",
       "system": {
         "description": "It’s a tough horse to handle. Suffer a −1 penalty to ANIMAL HANDLIN’ when riding this horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "U9NcmoAJzZYCaLU9",
       "img": "icons/svg/item-bag.svg",
@@ -1743,7 +1186,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is tougher than most. Grants +1 to the horse’s Grit.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "Gq3ojEGoFOHvwKHK",
       "img": "icons/svg/item-bag.svg",
@@ -1771,7 +1215,8 @@
       "type": "animalquality",
       "system": {
         "description": "Flighty and energetic. The horse’s RESILIENCE is reduced by 1.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "q3fTEaIHbwajBRMs",
       "img": "icons/svg/item-bag.svg",
@@ -1799,7 +1244,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse just loves to run. Gain a +1 bonus to ANIMAL HANDLIN’ when galloping.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "nUFlTs6p9By4fMcx",
       "img": "icons/svg/item-bag.svg",
@@ -1827,7 +1273,8 @@
       "type": "animalquality",
       "system": {
         "description": "The horse cannot be used for breeding.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "XdT6JB165dSSyH7C",
       "img": "icons/svg/item-bag.svg",
@@ -1855,7 +1302,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse just can’t be bothered. Ignore the first success rolled when making an ANIMAL HANDLIN’ roll related to this horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "bux15UFFVVH85kuO",
       "img": "icons/svg/item-bag.svg",
@@ -1883,7 +1331,8 @@
       "type": "animalquality",
       "system": {
         "description": "Excitable and lively, this horse has a mind of its own. Suffer a −1 penalty to ANIMAL HANDLIN’ when breaking or training this horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "wZiE46yEgSlG6pot",
       "img": "icons/svg/item-bag.svg",
@@ -1911,7 +1360,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse has given itself to one rider, and one rider only. Anyone other than the owner suffers a −3 penalty to ANIMAL HANDLIN’ tests relating to the horse, and if an ANIMAL HANDLIN’ test is failed the horse is immediately spooked.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "k2rzttm4NXXL8DQ8",
       "img": "icons/svg/item-bag.svg",
@@ -1939,7 +1389,8 @@
       "type": "animalquality",
       "system": {
         "description": "The horse has a nervous disposition and jumps at any surprise. Subtract 1 from the D6 roll when this horse is spooked.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "5JRH45I1eRUA0er0",
       "img": "icons/svg/item-bag.svg",
@@ -1967,7 +1418,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse shies away from trouble and doesn’t want to get involved. It suffers a −1 penalty to its FIGHTIN’.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "6Ijh2W8kahfKUbF9",
       "img": "icons/svg/item-bag.svg",
@@ -1995,7 +1447,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is always ready to kick or bite, given half the chance. Gain +1 to its FIGHTIN’",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "OjhZ9w7spWjpURGy",
       "img": "icons/svg/item-bag.svg",
@@ -2023,7 +1476,8 @@
       "type": "animalquality",
       "system": {
         "description": "Striking colors and patterns. Gain a +1 bonus to ANIMAL HANDLIN’ for Native American characters.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "UfbrV1MMMk0wGh6J",
       "img": "icons/svg/item-bag.svg",
@@ -2051,7 +1505,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse cannot be spooked.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "C6hBm3hnvXklRtEa",
       "img": "icons/svg/item-bag.svg",
@@ -2079,7 +1534,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse can endure more than other horses. Grants +1 to the horse’s RESILIENCE.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "Hw6W1IYE0lk0w3VN",
       "img": "icons/svg/item-bag.svg",
@@ -2107,7 +1563,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse stays calm when spooked. Gain +1 to the D6 roll when this horse is spooked.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "GtT4b1YfNNZTaPnZ",
       "img": "icons/svg/item-bag.svg",
@@ -2135,7 +1592,8 @@
       "type": "animalquality",
       "system": {
         "description": "It’s a mighty beast. The horse’s kick does 3 damage instead of 2, with a Crit Rating of 1.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "zGkaLK29ByQCmVqr",
       "img": "icons/svg/item-bag.svg",
@@ -2163,7 +1621,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is hard to train, either due to dim wits or a stubborn refusal to cooperate. Its Cunning is reduced by 1.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "boa6iONrt2Ri9Omz",
       "img": "icons/svg/item-bag.svg",
@@ -2191,7 +1650,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse is the perfect example of its breed. Its value is 50% greater than that listed for the breed.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "2J7kA1cAQykfsSsg",
       "img": "icons/svg/item-bag.svg",
@@ -2219,7 +1679,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse knows how to avoid trouble. If you suffer Trouble that relates to the horse, the scale of that Trouble is reduced by 1, to a minimum of 1.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "U7BuU1NidhzSwuvm",
       "img": "icons/svg/item-bag.svg",
@@ -2247,7 +1708,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse gets frustrated and difficult when things go against it. Suffer a −1 penalty to ANIMAL HANDLIN’ when the horse has suffered any Shakes or Hurts.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "G7qQTFxShYAc9460",
       "img": "icons/svg/item-bag.svg",
@@ -2275,7 +1737,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse loses any flaws it may have and cannot gain a flaw. It is the “perfect” horse.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "4OU0K6KWrlrZsxCp",
       "img": "icons/svg/item-bag.svg",
@@ -2303,7 +1766,8 @@
       "type": "animalquality",
       "system": {
         "description": "Roll twice again for flaws, ignoring a score of 11–14. These new flaws are Permanent flaws.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "H3FPYTqfpnPxjQVc",
       "img": "icons/svg/item-bag.svg",
@@ -2331,7 +1795,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse looks so bad in one way or another that its value is reduced by 50%.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "xgHzZk33AeSGxtj6",
       "img": "icons/svg/item-bag.svg",
@@ -2359,7 +1824,8 @@
       "type": "animalquality",
       "system": {
         "description": "This horse has an unruly nature and can be troublesome. The scale of any Trouble that relates to this horse is increased by 1, to a maximum of 4.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "4U8GdL6zIjLiIukH",
       "img": "icons/svg/item-bag.svg",
@@ -2387,7 +1853,8 @@
       "type": "animalquality",
       "system": {
         "description": "The horse’s Grit is reduced by 1.",
-        "itemModifiers": null
+        "itemModifiers": null,
+        "weight": 0
       },
       "_id": "xRLFs9gJpAUInRha",
       "img": "icons/svg/item-bag.svg",
@@ -2420,7 +1887,8 @@
         "reference": "animalhunter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "z9J4xYhuXlA12na5",
       "img": "icons/svg/item-bag.svg",
@@ -2439,7 +1907,7 @@
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
-        "modifiedTime": 1737561540748,
+        "modifiedTime": 1739275624608,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -2453,7 +1921,8 @@
         "reference": "authority",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "S9JsgS9eKh1qXi3c",
       "img": "icons/svg/item-bag.svg",
@@ -2486,7 +1955,8 @@
         "reference": "borninthesaddle",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "thYXFjB8kt5Z2RSM",
       "img": "icons/svg/item-bag.svg",
@@ -2519,7 +1989,8 @@
         "reference": "bowmaster",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "GfmEj4cwbkWsU3KO",
       "img": "icons/svg/item-bag.svg",
@@ -2552,7 +2023,8 @@
         "reference": "bowyer",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "ZWtfdzhZvGQHAgkF",
       "img": "icons/svg/item-bag.svg",
@@ -2585,7 +2057,8 @@
         "reference": "brawler",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "gTwiP4hYoEuhPQKg",
       "img": "icons/svg/item-bag.svg",
@@ -2618,7 +2091,8 @@
         "reference": "broncbuster",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "9Xhv5c8riqhv6F6s",
       "img": "icons/svg/item-bag.svg",
@@ -2651,7 +2125,8 @@
         "reference": "businessminded",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "rdJI2mW9LbRmdaNG",
       "img": "icons/svg/item-bag.svg",
@@ -2684,7 +2159,8 @@
         "reference": "calmingmanner",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "kql6UfXMU50AZpbK",
       "img": "icons/svg/item-bag.svg",
@@ -2717,7 +2193,8 @@
         "reference": "charming",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "yt4aZaFrewqQMDEq",
       "img": "icons/svg/item-bag.svg",
@@ -2750,7 +2227,8 @@
         "reference": "coldblooded",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "sv4bRUcqB7pxaaAu",
       "img": "icons/svg/item-bag.svg",
@@ -2783,7 +2261,8 @@
         "reference": "companion",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "05jjHETmivl0JgHg",
       "img": "icons/svg/item-bag.svg",
@@ -2816,7 +2295,8 @@
         "reference": "deadeye",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "hTw1yh5eOGO90ROs",
       "img": "icons/svg/item-bag.svg",
@@ -2849,7 +2329,8 @@
         "reference": "deadlystrike",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "fxmPfGu6PG0SYzg4",
       "img": "icons/svg/item-bag.svg",
@@ -2882,7 +2363,8 @@
         "reference": "defender",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "Tlow8mVgfWXLl0lI",
       "img": "icons/svg/item-bag.svg",
@@ -2915,7 +2397,8 @@
         "reference": "engineer",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "isTjz3AlTVn85ZkC",
       "img": "icons/svg/item-bag.svg",
@@ -2948,7 +2431,8 @@
         "reference": "expertfanning",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "f3pSVBgKVxRUePJz",
       "img": "icons/svg/item-bag.svg",
@@ -2981,7 +2465,8 @@
         "reference": "fastfootwork",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "q7n8qkQmKadMkTYT",
       "img": "icons/svg/item-bag.svg",
@@ -3014,7 +2499,8 @@
         "reference": "fastshooter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "gmkx5m0Dh9ruZxeI",
       "img": "icons/svg/item-bag.svg",
@@ -3047,7 +2533,8 @@
         "reference": "flyingblade",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "iatbf1L1dthrJlVj",
       "img": "icons/svg/item-bag.svg",
@@ -3080,7 +2567,8 @@
         "reference": "forger",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "Nq7i0hPOqTf7WjtU",
       "img": "icons/svg/item-bag.svg",
@@ -3113,7 +2601,8 @@
         "reference": "gambler",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "VnRsC3TdTM7C68oQ",
       "img": "icons/svg/item-bag.svg",
@@ -3146,7 +2635,8 @@
         "reference": "guarddog",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "w2HnPbqUQ5GitsYs",
       "img": "icons/svg/item-bag.svg",
@@ -3179,7 +2669,8 @@
         "reference": "gunsmith",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "LJySCV27PFRfAHUp",
       "img": "icons/svg/item-bag.svg",
@@ -3212,7 +2703,8 @@
         "reference": "hardtohit",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "l3iB2FbuVRM9Xgek",
       "img": "icons/svg/item-bag.svg",
@@ -3245,7 +2737,8 @@
         "reference": "haymaker",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "sU1YL8oOHWHHEOup",
       "img": "icons/svg/item-bag.svg",
@@ -3278,7 +2771,8 @@
         "reference": "healingtouch",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "A8OfdRBPa8WxrK6l",
       "img": "icons/svg/item-bag.svg",
@@ -3311,7 +2805,8 @@
         "reference": "herbalist",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "wPEw1alGU8BfHaOn",
       "img": "icons/svg/item-bag.svg",
@@ -3344,7 +2839,8 @@
         "reference": "highsociety",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "95YnEbSPlzCs6Ko7",
       "img": "icons/svg/item-bag.svg",
@@ -3377,7 +2873,8 @@
         "reference": "horsewarrior",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "lFTCJjHOPYiXf6CG",
       "img": "icons/svg/item-bag.svg",
@@ -3410,7 +2907,8 @@
         "reference": "judgeofcharacter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "tRcCyFg1sMI2DULW",
       "img": "icons/svg/item-bag.svg",
@@ -3443,7 +2941,8 @@
         "reference": "knifefighter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "itsT5hASjNn9eG4R",
       "img": "icons/svg/item-bag.svg",
@@ -3476,7 +2975,8 @@
         "reference": "lawyer",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "Fm9quOzsEER293t6",
       "img": "icons/svg/item-bag.svg",
@@ -3509,7 +3009,8 @@
         "reference": "lightfooted",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "ByyBp5J8XcF4Ofpj",
       "img": "icons/svg/item-bag.svg",
@@ -3542,7 +3043,8 @@
         "reference": "lightningfast",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "jMnRcnCWjlQkA9od",
       "img": "icons/svg/item-bag.svg",
@@ -3575,7 +3077,8 @@
         "reference": "lockpicker",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "7kHijV9TKGchP1Ct",
       "img": "icons/svg/item-bag.svg",
@@ -3608,7 +3111,8 @@
         "reference": "lucky",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "vJC2YxQTBkpLYi5X",
       "img": "icons/svg/item-bag.svg",
@@ -3621,7 +3125,7 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Item.vJC2YxQTBkpLYi5X",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -3641,7 +3145,8 @@
         "reference": "manhunter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "gTaTvSC3PvhOPe4R",
       "img": "icons/svg/item-bag.svg",
@@ -3674,7 +3179,8 @@
         "reference": "mansbestfriend",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "dvV33qW5HhBppefG",
       "img": "icons/svg/item-bag.svg",
@@ -3707,7 +3213,8 @@
         "reference": "miner49er",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "LxySF5fvuuTFyGh6",
       "img": "icons/svg/item-bag.svg",
@@ -3740,7 +3247,8 @@
         "reference": "mountainfolk",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "dJ49fK6P5fu4SLSV",
       "img": "icons/svg/item-bag.svg",
@@ -3773,7 +3281,8 @@
         "reference": "pistoleer",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "2reEfzyavbzg12qx",
       "img": "icons/svg/item-bag.svg",
@@ -3806,7 +3315,8 @@
         "reference": "poisoner",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "KrR5GZHAY2jPbKMi",
       "img": "icons/svg/item-bag.svg",
@@ -3839,7 +3349,8 @@
         "reference": "pugilist",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "DPa8QNxCdZrZuvll",
       "img": "icons/svg/item-bag.svg",
@@ -3872,7 +3383,8 @@
         "reference": "quickdraw",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "74ssJb4lUu8nv19b",
       "img": "icons/svg/item-bag.svg",
@@ -3905,7 +3417,8 @@
         "reference": "rabblerouser",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "FOL9RolC7uYZ5FhX",
       "img": "icons/svg/item-bag.svg",
@@ -3938,7 +3451,8 @@
         "reference": "roper",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "2ZvqV1woZTC9oP87",
       "img": "icons/svg/item-bag.svg",
@@ -3971,7 +3485,8 @@
         "reference": "sharpshooter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "owdsezXRSXBjKL0M",
       "img": "icons/svg/item-bag.svg",
@@ -3984,7 +3499,7 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Item.owdsezXRSXBjKL0M",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -4004,7 +3519,8 @@
         "reference": "shill",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "7sSDQJ7TnxuhT4Hs",
       "img": "icons/svg/item-bag.svg",
@@ -4037,7 +3553,8 @@
         "reference": "shotgunmaster",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "f1ghBvZfc2wf7SwB",
       "img": "icons/svg/item-bag.svg",
@@ -4070,7 +3587,8 @@
         "reference": "smith",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "5sbwItSPUGZw8gOs",
       "img": "icons/svg/item-bag.svg",
@@ -4103,7 +3621,8 @@
         "reference": "sneak",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "JlSM6bI1tsa1e4q3",
       "img": "icons/svg/item-bag.svg",
@@ -4136,7 +3655,8 @@
         "reference": "survivor",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "VszYZKtaJreICnr9",
       "img": "icons/svg/item-bag.svg",
@@ -4169,7 +3689,8 @@
         "reference": "swindler",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "vH41ZTlTDqyLlzlu",
       "img": "icons/svg/item-bag.svg",
@@ -4202,7 +3723,8 @@
         "reference": "thevoice",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "xEiZNymeKsZRaW8E",
       "img": "icons/svg/item-bag.svg",
@@ -4235,7 +3757,8 @@
         "reference": "tomahawkfighter",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "6ZtiyVX4wKzj0oND",
       "img": "icons/svg/item-bag.svg",
@@ -4268,7 +3791,8 @@
         "reference": "tracker",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "qFMc3C4ZRQ93VVDb",
       "img": "icons/svg/item-bag.svg",
@@ -4281,7 +3805,7 @@
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Item.qFMc3C4ZRQ93VVDb",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -4301,7 +3825,8 @@
         "reference": "twogun",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "nsFhyZg5hVvT1Rm7",
       "img": "icons/svg/item-bag.svg",
@@ -4334,7 +3859,8 @@
         "reference": "warcry",
         "itemModifiers": null,
         "basicisActive": false,
-        "advisActive": false
+        "advisActive": false,
+        "weight": 0
       },
       "_id": "mfvqT43mGojcuWGd",
       "img": "icons/svg/item-bag.svg",
@@ -4354,6 +3880,1244 @@
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561613529,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Bent",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "The weapon is bent or twisted, and harder to handle. Suffer a −1 penalty to FIGHTIN’ rolls.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "aBP4evkCIpbJyVeL",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310991779,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Blunt",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "When you attack with this weapon your final total of successes is reduced by 1, to a minimum of 0.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "R1FymwoVcUWgEFH0",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 125000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310996902,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Chipped",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "Your weapon loses a random weapon quality.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "inRistgkCgd3mWyd",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 300000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740311000838,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Hard To Hold",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "When you suffer Trouble after a pushed roll, add +1 to the Trouble total when using this weapon.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "rLyO2tondTQrG1uV",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740311005818,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Loose Handle",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "The weapon loses its punch, and its Crit Rating is increased by 1.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "xhusxsmoSWjvBC0Y",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740311010304,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Weakened",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "If the weapon suffers Trouble twice in the same scene it breaks beyond repair.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "jeh9KI7SVZPgo08H",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "ibsnLkmMVoBWGbLl",
+      "sort": 250000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740311014662,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Balanced",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "<p>The weapon feels good in your hand and you can’t help but shoot straight with it. Grants a +1 bonus to FIGHTIN’.</p>",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "be08eraWA4UG9k9X",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311019284,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Forgiving",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon is reliable and easy to use. You can ignore one die of Trou- ble on your first roll when using this weapon as if you had spent a point of Faith (but not after a pushed roll).",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "ZsNQyf8bUIsU6eSM",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311023280,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Mounted",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "This weapon is especially deadly when used from horseback. After a pushed roll, when mounted, you can push again for free, although Trou- ble still applies.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "ZReWHZO8a7adT2cK",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311027607,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Piercing",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon is renowned for being deadly in the hands of an expert. Grants +1 to the Units die on critical injury rolls.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "P2YHIFEDTDoemyfX",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 125000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311033698,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Sharpened",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon is made to inflict as much damage as possible. Gain +1 to the weapon’s Damage.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "SwQjyn3GqMEAs8rD",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 112500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311039143,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Sleek",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "It’s designed to be drawn fast. You can draw this weapon as a free action.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "mhbgr8jM2xDlhHaO",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 106250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311045893,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Toughened",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The weapon cannot be broken by the outcome of Trouble.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "mL1iWRVJMHToSCy0",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 103125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311051848,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Weighted",
+      "system": {
+        "weapontype": "fightin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon is beautifully weighted to give you an advantage in the fight. Gain a +1 bonus to FIGHTIN’.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "ILqAhGfsqD8FTp0X",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eTaKdCpdH87MZE57",
+      "sort": 101563,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739452697042,
+        "modifiedTime": 1740311056498,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Damaged Bore",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "The weapon is low powered. The damage rating is reduced by 1, to a minimum of 1.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "gfDa7K4WX9atMLcq",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310421276,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Dirty",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "When you attack with this weapon your final total of successes is reduced by 1, to a minimum of 0.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "6gySfTjBqpiwZAmY",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310424441,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Greasy",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "The weapon loses its punch, and its Crit Rating is increased by 1.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "fWPjYTR9XdnOXWsF",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 125000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310437768,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Hard To Load",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "Loading takes an extra action per bullet.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "S8kO3uoAQnTC9VHW",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310450039,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Misaligned",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "any",
+        "description": "The weapon ain’t shootin’ straight. Suffer a −1 penalty on SHOOTIN’ rolls.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "VyLiSaAAXoso2rEX",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 112500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310454239,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Weak Hammer",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "condition",
+        "onweapon": "pistol",
+        "description": "If the weapon suffers Trouble twice in the same scene it breaks beyond repair.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "WilujtErscoKoS8f",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "60vssO8JqQDRTt4a",
+      "sort": 106250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739453355628,
+        "modifiedTime": 1740310457067,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Balanced",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "<p>The weapon feels good in your hand and you can’t help but shoot straight with it. Grants a +1 bonus to SHOOTIN’.</p>",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "Vfdc6f8bDuBfLBw7",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310325497,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Calibrated",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The weapon is so well calibrated its aim is true. Gain +1 bonus to the weapon’s Attack modifier.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "t59pbCT5XVNE5M4y",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 200000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310335241,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Concealable",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "Small and compact, a pistol with this quality is easily concealed about your person. Those trying to spot it get a −1 penalty on their HAWKEYE test.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "NE7nYYfvoKGwUM34",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 150000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310338299,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Fanning",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The gun is ideal for fanning. You gain a +1 bonus to your SHOOTIN’ ability when fanning with this weapon.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "c4h47NvhxUzV88ea",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 125000,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310341008,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Fast Draw",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The weapon is designed for the quick draw. You gain a +1 bonus to the Draw.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "urvTk6FqCRAtJnKF",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 112500,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310344518,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Heavy",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The pistol is heavy in your hand and kicks like a mule but delivers a powerful blast. It does +1 extra damage, but has a −1 penalty to Draw.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "Y9Gmcxg26y182rPk",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 106250,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310353056,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Hidden",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "A palm-sized gun designed for concealment. Those trying to spot it suffer a −3 penalty on their HAWKEYE test.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "QcMQXG38GR0QGn1j",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 103125,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310358161,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Hot Loader",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "Loading is slow, so anything that makes it quicker can only be a good thing. This gun has a swappable revolver cylinder (2 actions for full reload).",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "ylmu4qgfxbazPKs8",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 101563,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310363666,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Light",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "The weapon is very small and counts as a Tiny item, but it’s not made for fast drawing so you suffer a −1 penalty on the Draw.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "8Ta13EHtSTLnE9V1",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100782,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310367492,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Long Barrel",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "A long barrel makes gunplay easier, but it’s slower on the draw. Gain a +1 bonus to SHOOTIN’, but a −1 penalty on the Draw.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "Uo622v95n9mkvKXk",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100391,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310371842,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Maintained",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "Beautifully made with maintenance in mind, this weapon is easy to keep working. Once per scene you may reroll all Trouble dice showing a ‘1’, but only before pushing.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "A6xPWznvGwa3PvLB",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100196,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310375878,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Piercing",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon is renowned for being deadly in the hands of an expert. Gain +1 to the Units die on critical injury rolls.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "SRgN7rY8PBjlZI7M",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100098,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310380624,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Powerful",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "The weapon packs a real punch. Grants +1 to the weapon’s Damage.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "fQDbcvXpXRaQIiNe",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100049,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310386392,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Reliable",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "any",
+        "description": "Tough and sturdy, this weapon is reliable and just doesn’t break. If Trouble is rolled while using this weapon, the amount of Trouble is reduced by 1, to a minimum of 1.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "fGluWMsVcXCQ39tE",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100025,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310391582,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Sawn-Off",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "shotgun",
+        "description": "A short-barreled shotgun is deadly in close quarters, but terrible further away. Grants a +1 bonus to SHOOTIN’ but the maximum range is Short.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "ZeKoV4OMVRVmViix",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100013,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310396361,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Short Barrel",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "A short barrel isn’t great for accuracy, but it’s quicker to get that iron from your holster. Gain a +1 bonus on Draw, but a −1 penalty on SHOOTIN’.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "Dxy1hTirQWJlSYTK",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100007,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310400411,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "type": "weaponquality",
+      "name": "Sights",
+      "system": {
+        "weapontype": "shootin",
+        "feature": "quality",
+        "onweapon": "pistol",
+        "description": "Well-made sights make shooting at range easy. Range negatives are one die less for all ranges when using an Aim action before making a shot.",
+        "itemModifiers": null,
+        "weight": 0,
+        "reference": ""
+      },
+      "_id": "n1bjC3vEsO2HmYS9",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": "eGISG0VrE4fzswvk",
+      "sort": 100004,
+      "ownership": {
+        "default": 0,
+        "oo2KG31LDGhYx0MC": 3,
+        "Koj2rXUxLTWUMudH": 1
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739886225865,
+        "modifiedTime": 1740310403673,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     }
@@ -4446,445 +5210,7 @@
         }
       },
       "drawings": [],
-      "tokens": [
-        {
-          "name": "Luis Osorio",
-          "displayName": 20,
-          "actorLink": true,
-          "appendNumber": false,
-          "prependAdjective": false,
-          "width": 1,
-          "height": 1,
-          "texture": {
-            "src": "systems/talesoftheoldwest/assets/avatars/luis-osorio.webp",
-            "anchorX": 0.5,
-            "anchorY": 0.5,
-            "offsetX": 0,
-            "offsetY": 0,
-            "fit": "contain",
-            "scaleX": 1,
-            "scaleY": 1,
-            "rotation": 0,
-            "tint": "#ffffff",
-            "alphaThreshold": 0.75
-          },
-          "hexagonalShape": 0,
-          "lockRotation": false,
-          "rotation": 0,
-          "alpha": 1,
-          "disposition": 1,
-          "displayBars": 20,
-          "bar1": {
-            "attribute": null
-          },
-          "bar2": {
-            "attribute": null
-          },
-          "light": {
-            "negative": false,
-            "priority": 0,
-            "alpha": 0.5,
-            "angle": 360,
-            "bright": 0,
-            "color": null,
-            "coloration": 1,
-            "dim": 0,
-            "attenuation": 0.5,
-            "luminosity": 0.5,
-            "saturation": 0,
-            "contrast": 0,
-            "shadows": 0,
-            "animation": {
-              "type": null,
-              "speed": 5,
-              "intensity": 5,
-              "reverse": false
-            },
-            "darkness": {
-              "min": 0,
-              "max": 1
-            }
-          },
-          "sight": {
-            "enabled": true,
-            "range": 12,
-            "angle": 360,
-            "visionMode": "basic",
-            "color": null,
-            "attenuation": 0.1,
-            "brightness": 0,
-            "saturation": 0,
-            "contrast": 0
-          },
-          "detectionModes": [],
-          "occludable": {
-            "radius": 0
-          },
-          "ring": {
-            "enabled": false,
-            "colors": {
-              "ring": null,
-              "background": null
-            },
-            "effects": 0,
-            "subject": {
-              "scale": 1,
-              "texture": null
-            }
-          },
-          "flags": {},
-          "actorId": "wwvlv2lnACjDHFCe",
-          "hidden": false,
-          "sort": 2,
-          "_id": "pMdek9IyAv4V2tHz",
-          "delta": {
-            "_id": "TItRCa7tiEaWgm1u",
-            "system": {},
-            "items": [],
-            "effects": [],
-            "flags": {},
-            "name": null,
-            "type": null,
-            "img": null
-          },
-          "x": 1312,
-          "y": 770,
-          "elevation": 0,
-          "locked": false,
-          "_regions": []
-        },
-        {
-          "name": "Mustang",
-          "displayName": 20,
-          "actorLink": true,
-          "appendNumber": false,
-          "prependAdjective": false,
-          "width": 1,
-          "height": 1,
-          "texture": {
-            "src": "systems/talesoftheoldwest/assets/avatars/horse.webp",
-            "anchorX": 0.5,
-            "anchorY": 0.5,
-            "offsetX": 0,
-            "offsetY": 0,
-            "fit": "contain",
-            "scaleX": 1,
-            "scaleY": 1,
-            "rotation": 0,
-            "tint": "#ffffff",
-            "alphaThreshold": 0.75
-          },
-          "hexagonalShape": 0,
-          "lockRotation": false,
-          "rotation": 0,
-          "alpha": 1,
-          "disposition": 1,
-          "displayBars": 20,
-          "bar1": {
-            "attribute": null
-          },
-          "bar2": {
-            "attribute": null
-          },
-          "light": {
-            "negative": false,
-            "priority": 0,
-            "alpha": 0.5,
-            "angle": 360,
-            "bright": 0,
-            "color": null,
-            "coloration": 1,
-            "dim": 0,
-            "attenuation": 0.5,
-            "luminosity": 0.5,
-            "saturation": 0,
-            "contrast": 0,
-            "shadows": 0,
-            "animation": {
-              "type": null,
-              "speed": 5,
-              "intensity": 5,
-              "reverse": false
-            },
-            "darkness": {
-              "min": 0,
-              "max": 1
-            }
-          },
-          "sight": {
-            "enabled": true,
-            "range": 12,
-            "angle": 360,
-            "visionMode": "basic",
-            "color": null,
-            "attenuation": 0.1,
-            "brightness": 0,
-            "saturation": 0,
-            "contrast": 0
-          },
-          "detectionModes": [],
-          "occludable": {
-            "radius": 0
-          },
-          "ring": {
-            "enabled": false,
-            "colors": {
-              "ring": null,
-              "background": null
-            },
-            "effects": 0,
-            "subject": {
-              "scale": 1,
-              "texture": null
-            }
-          },
-          "flags": {},
-          "actorId": "ZhdtY5JbQb6xcRHC",
-          "hidden": false,
-          "sort": 3,
-          "_id": "ziwqjgfRYjQREMiJ",
-          "delta": {
-            "_id": "z0pBJquCYRk4xYgH",
-            "system": {},
-            "items": [],
-            "effects": [],
-            "flags": {},
-            "name": null,
-            "type": null,
-            "img": null
-          },
-          "x": 1214,
-          "y": 622,
-          "elevation": 0,
-          "locked": false,
-          "_regions": []
-        },
-        {
-          "name": "PC",
-          "displayName": 20,
-          "actorLink": true,
-          "appendNumber": false,
-          "prependAdjective": false,
-          "width": 1,
-          "height": 1,
-          "texture": {
-            "src": "icons/svg/mystery-man.svg",
-            "anchorX": 0.5,
-            "anchorY": 0.5,
-            "offsetX": 0,
-            "offsetY": 0,
-            "fit": "contain",
-            "scaleX": 1,
-            "scaleY": 1,
-            "rotation": 0,
-            "tint": "#ffffff",
-            "alphaThreshold": 0.75
-          },
-          "hexagonalShape": 0,
-          "lockRotation": false,
-          "rotation": 0,
-          "alpha": 1,
-          "disposition": 1,
-          "displayBars": 20,
-          "bar1": {
-            "attribute": "header.health"
-          },
-          "bar2": {
-            "attribute": "header.stress"
-          },
-          "light": {
-            "negative": false,
-            "priority": 0,
-            "alpha": 0.5,
-            "angle": 360,
-            "bright": 0,
-            "color": null,
-            "coloration": 1,
-            "dim": 0,
-            "attenuation": 0.5,
-            "luminosity": 0.5,
-            "saturation": 0,
-            "contrast": 0,
-            "shadows": 0,
-            "animation": {
-              "type": null,
-              "speed": 5,
-              "intensity": 5,
-              "reverse": false
-            },
-            "darkness": {
-              "min": 0,
-              "max": 1
-            }
-          },
-          "sight": {
-            "enabled": true,
-            "range": 12,
-            "angle": 360,
-            "visionMode": "basic",
-            "color": null,
-            "attenuation": 0.1,
-            "brightness": 0,
-            "saturation": 0,
-            "contrast": 0
-          },
-          "detectionModes": [],
-          "occludable": {
-            "radius": 0
-          },
-          "ring": {
-            "enabled": false,
-            "colors": {
-              "ring": null,
-              "background": null
-            },
-            "effects": 1,
-            "subject": {
-              "scale": 1,
-              "texture": null
-            }
-          },
-          "flags": {},
-          "actorId": "3y4ggRCmerkvMx5O",
-          "hidden": false,
-          "sort": 4,
-          "_id": "Sfb8JmD5eIjr33n1",
-          "delta": {
-            "_id": "YzzmXDfnSxAZwg3N",
-            "system": {},
-            "items": [],
-            "effects": [],
-            "flags": {},
-            "name": null,
-            "type": null,
-            "img": null
-          },
-          "x": 1404,
-          "y": 756,
-          "elevation": 0,
-          "locked": false,
-          "_regions": []
-        },
-        {
-          "name": "NPC",
-          "displayName": 20,
-          "actorLink": false,
-          "appendNumber": false,
-          "prependAdjective": false,
-          "width": 1,
-          "height": 1,
-          "texture": {
-            "src": "icons/svg/mystery-man.svg",
-            "anchorX": 0.5,
-            "anchorY": 0.5,
-            "offsetX": 0,
-            "offsetY": 0,
-            "fit": "contain",
-            "scaleX": 1,
-            "scaleY": 1,
-            "rotation": 0,
-            "tint": "#ffffff",
-            "alphaThreshold": 0.75
-          },
-          "hexagonalShape": 0,
-          "lockRotation": false,
-          "rotation": 0,
-          "alpha": 1,
-          "disposition": -1,
-          "displayBars": 20,
-          "bar1": {
-            "attribute": "header.health"
-          },
-          "bar2": {
-            "attribute": "None"
-          },
-          "light": {
-            "negative": false,
-            "priority": 0,
-            "alpha": 0.5,
-            "angle": 360,
-            "bright": 0,
-            "color": null,
-            "coloration": 1,
-            "dim": 0,
-            "attenuation": 0.5,
-            "luminosity": 0.5,
-            "saturation": 0,
-            "contrast": 0,
-            "shadows": 0,
-            "animation": {
-              "type": null,
-              "speed": 5,
-              "intensity": 5,
-              "reverse": false
-            },
-            "darkness": {
-              "min": 0,
-              "max": 1
-            }
-          },
-          "sight": {
-            "enabled": false,
-            "range": 12,
-            "angle": 360,
-            "visionMode": "basic",
-            "color": null,
-            "attenuation": 0.1,
-            "brightness": 0,
-            "saturation": 0,
-            "contrast": 0
-          },
-          "detectionModes": [],
-          "occludable": {
-            "radius": 0
-          },
-          "ring": {
-            "enabled": false,
-            "colors": {
-              "ring": null,
-              "background": null
-            },
-            "effects": 1,
-            "subject": {
-              "scale": 1,
-              "texture": null
-            }
-          },
-          "flags": {},
-          "actorId": "Z6JlX6ZXhoTVt8sx",
-          "hidden": false,
-          "sort": 5,
-          "_id": "SUSbX9qZNLO9C2uF",
-          "delta": {
-            "_id": "BH1teLDZhXlBMNqJ",
-            "system": {
-              "conditions": {
-                "overwatch": false,
-                "starving": false,
-                "dehydrated": false,
-                "exhausted": false,
-                "freezing": false
-              }
-            },
-            "items": [],
-            "effects": [
-              {
-                "_id": "55mqS9AIVfmb19HT",
-                "_tombstone": true
-              }
-            ],
-            "flags": {},
-            "name": null,
-            "type": null,
-            "img": null
-          },
-          "x": 1208,
-          "y": 942,
-          "elevation": 0,
-          "locked": false,
-          "_regions": []
-        }
-      ],
+      "tokens": [],
       "lights": [],
       "notes": [],
       "sounds": [],
@@ -6508,7 +6834,7 @@
       "color": "#1b791c",
       "flags": {},
       "_stats": {
-        "compendiumSource": "Folder.q8E9alfSeM1DCNfJ",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
@@ -6571,13 +6897,118 @@
       "color": "#a43232",
       "flags": {},
       "_stats": {
-        "compendiumSource": "Folder.pykFFBAf8w9dTua8",
+        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737550541422,
         "modifiedTime": 1737561831358,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Weapon Qualities & Conditions",
+      "sorting": "a",
+      "folder": null,
+      "type": "Item",
+      "_id": "zgydN3pT9SGM0lTm",
+      "description": "",
+      "sort": 0,
+      "color": "#1056c6",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739451353699,
+        "modifiedTime": 1739451369824,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Melee Conditions",
+      "sorting": "a",
+      "folder": "zgydN3pT9SGM0lTm",
+      "type": "Item",
+      "_id": "ibsnLkmMVoBWGbLl",
+      "description": "",
+      "sort": 0,
+      "color": "#47c723",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739451535151,
+        "modifiedTime": 1739453517620,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Melee Qualities",
+      "sorting": "a",
+      "folder": "zgydN3pT9SGM0lTm",
+      "type": "Item",
+      "_id": "eTaKdCpdH87MZE57",
+      "description": "",
+      "sort": 0,
+      "color": "#6086d2",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739451517059,
+        "modifiedTime": 1739452732033,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Ranged Conditions",
+      "sorting": "a",
+      "folder": "zgydN3pT9SGM0lTm",
+      "type": "Item",
+      "_id": "60vssO8JqQDRTt4a",
+      "description": "",
+      "sort": 0,
+      "color": "#47c723",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739451505429,
+        "modifiedTime": 1739453523094,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+      }
+    },
+    {
+      "name": "Ranged Qualities",
+      "sorting": "a",
+      "folder": "zgydN3pT9SGM0lTm",
+      "type": "Item",
+      "_id": "eGISG0VrE4fzswvk",
+      "description": "",
+      "sort": 0,
+      "color": "#6086d2",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "0.0.1",
+        "createdTime": 1739885958684,
+        "modifiedTime": 1739885958684,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     }
@@ -6592,7 +7023,7 @@
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
-    "modifiedTime": 1737561984874,
+    "modifiedTime": 1740314088542,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"

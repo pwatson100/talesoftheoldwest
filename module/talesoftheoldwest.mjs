@@ -79,11 +79,13 @@ Hooks.once('init', function () {
 		talent: models.totowTalent,
 		crit: models.totowCrit,
 		animalquality: models.totowAnimalQuality,
+		weaponquality: models.totowWeaponQuality,
 	};
 
 	// Active Effects are never copied to the Actor,
 	// but will still apply to the Actor from within the Item
 	// if the transfer property on the Active Effect is true.
+	// Necessary until foundry makes this default behavior in v13
 	CONFIG.ActiveEffect.legacyTransferral = false;
 
 	// Register sheet application classes

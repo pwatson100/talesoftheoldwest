@@ -120,6 +120,23 @@ TALESOFTHEOLDWEST.target_cover = {
 	// heavycover: { id: 'heavycover', label: 'TALESOFTHEOLDWEST.Cover.heavycover', value: '+1' },
 };
 
+TALESOFTHEOLDWEST.weapon_feature_list = {
+	quality: { id: 'quality', label: 'TALESOFTHEOLDWEST.Item.General.quality' },
+	condition: { id: 'condition', label: 'TALESOFTHEOLDWEST.Item.General.condition' },
+};
+
+TALESOFTHEOLDWEST.weapon_type_list = {
+	ranged: { id: 'ranged', label: 'TALESOFTHEOLDWEST.Item.General.ranged' },
+	melee: { id: 'melee', label: 'TALESOFTHEOLDWEST.Item.General.melee' },
+};
+
+TALESOFTHEOLDWEST.onweapon_list = {
+	any: { id: 'any', label: 'TALESOFTHEOLDWEST.Item.General.any' },
+	pistol: { id: 'pistol', label: 'TALESOFTHEOLDWEST.Item.General.pistol' },
+	rifle: { id: 'rifle', label: 'TALESOFTHEOLDWEST.Item.General.rifle' },
+	shotgun: { id: 'shotgun', label: 'TALESOFTHEOLDWEST.Item.General.shotgun' },
+};
+
 TALESOFTHEOLDWEST.target_size = {
 	normal: { id: 'normal', label: 'TALESOFTHEOLDWEST.TargetSize.normal', value: '0' },
 	large: { id: 'large', label: 'TALESOFTHEOLDWEST.TargetSize.large', value: '2' },

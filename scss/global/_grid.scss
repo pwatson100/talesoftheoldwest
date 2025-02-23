@@ -370,10 +370,12 @@
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
+	align-self: center;
 }
 .HedCol4 {
 	grid-area: HedCol4;
 	text-align: center;
+	align-self: center;
 }
 .HedCol5 {
 	grid-area: HedCol5;
@@ -381,10 +383,12 @@
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
+	align-self: center;
 }
 .HedCol6 {
 	grid-area: HedCol6;
 	text-align: center;
+	align-self: center;
 }
 .HedCol7 {
 	grid-area: HedCol7;
@@ -392,13 +396,14 @@
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
+	align-self: center;
 }
 .HedCol8 {
 	grid-area: HedCol8;
-	text-align: center;
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
+	align-self: center;
 }
 .HedCol9 {
 	grid-area: HedCol9;
@@ -407,6 +412,7 @@
 .HedCol10 {
 	grid-area: HedCol10;
 	text-align: center;
+	align-self: center;
 }
 .HedCol11 {
 	grid-area: HedCol11;
@@ -414,7 +420,7 @@
 }
 .HedCol12 {
 	grid-area: HedCol12;
-	text-align: center;
+	align-self: center;
 }
 
 .grid-item-header {
@@ -661,7 +667,7 @@
 	grid-template-areas: 'crit1 crit2 crit3 crit4';
 	// grid-template-rows: 3fr;
 	// padding: 3px;
-	grid-template-columns: 40px 200px 300px 26px;
+	grid-template-columns: 29px 200px 320px 26px;
 	align-items: center;
 }
 

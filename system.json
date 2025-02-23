@@ -18,7 +18,8 @@
 			"weapon": { "htmlFields": ["description"] },
 			"talent": { "htmlFields": ["description", "basic", "advanced"] },
 			"crit": { "htmlFields": ["description"] },
-			"animalquality": { "htmlFields": ["description"] }
+			"animalquality": { "htmlFields": ["description"] },
+			"weaponquality": { "htmlFields": ["description", "impact"] }
 		}
 	},
 

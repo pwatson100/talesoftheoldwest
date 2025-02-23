@@ -1,0 +1,35 @@
+{
+  "type": "weaponquality",
+  "name": "Powerful",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "quality",
+    "onweapon": "any",
+    "description": "The weapon packs a real punch. Grants +1 to the weapon’s Damage.",
+    "itemModifiers": null,
+    "weight": 0,
+    "reference": ""
+  },
+  "_id": "fQDbcvXpXRaQIiNe",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eGISG0VrE4fzswvk",
+  "sort": 100049,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 1
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1740313844716,
+    "modifiedTime": 1740313844716,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!fQDbcvXpXRaQIiNe"
+}

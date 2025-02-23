@@ -166,7 +166,6 @@
       "tint": "#ffffff",
       "alphaThreshold": 0.75
     },
-    "hexagonalShape": 0,
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
@@ -231,7 +230,13 @@
       }
     },
     "flags": {},
-    "randomImg": false
+    "randomImg": false,
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    }
   },
   "items": [
     {
@@ -256,7 +261,7 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.335",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
@@ -276,7 +281,7 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.335",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1734026603400,

@@ -1,0 +1,35 @@
+{
+  "type": "weaponquality",
+  "name": "Short Barrel",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "quality",
+    "onweapon": "pistol",
+    "description": "A short barrel isn’t great for accuracy, but it’s quicker to get that iron from your holster. Gain a +1 bonus on Draw, but a −1 penalty on SHOOTIN’.",
+    "itemModifiers": null,
+    "weight": 0,
+    "reference": ""
+  },
+  "_id": "Dxy1hTirQWJlSYTK",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eGISG0VrE4fzswvk",
+  "sort": 100007,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 1
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1740313844716,
+    "modifiedTime": 1740313844716,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!Dxy1hTirQWJlSYTK"
+}

@@ -1,0 +1,35 @@
+{
+  "type": "weaponquality",
+  "name": "Concealable",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "quality",
+    "onweapon": "pistol",
+    "description": "Small and compact, a pistol with this quality is easily concealed about your person. Those trying to spot it get a −1 penalty on their HAWKEYE test.",
+    "itemModifiers": null,
+    "weight": 0,
+    "reference": ""
+  },
+  "_id": "NE7nYYfvoKGwUM34",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eGISG0VrE4fzswvk",
+  "sort": 150000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 1
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1740313844716,
+    "modifiedTime": 1740313844716,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!NE7nYYfvoKGwUM34"
+}

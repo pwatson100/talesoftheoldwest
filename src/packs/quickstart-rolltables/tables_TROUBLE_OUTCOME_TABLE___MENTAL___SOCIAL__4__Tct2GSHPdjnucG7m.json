@@ -12,10 +12,20 @@
       ],
       "drawn": false,
       "_id": "pr8E42zC2hlUchEn",
-      "text": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.pr8E42zC2hlUchEn"
     },
     {
@@ -27,10 +37,20 @@
       ],
       "drawn": false,
       "_id": "j7Is6FHy7JQqyBBn",
-      "text": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.j7Is6FHy7JQqyBBn"
     },
     {
@@ -42,10 +62,20 @@
       ],
       "drawn": false,
       "_id": "Ziv6uK5eVFMWYpEu",
-      "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.Ziv6uK5eVFMWYpEu"
     },
     {
@@ -57,10 +87,20 @@
       ],
       "drawn": false,
       "_id": "cR5Qf2hTQqqewi8R",
-      "text": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.cR5Qf2hTQqqewi8R"
     },
     {
@@ -72,10 +112,20 @@
       ],
       "drawn": false,
       "_id": "IUUecy5EqwewRuKY",
-      "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.IUUecy5EqwewRuKY"
     },
     {
@@ -87,10 +137,20 @@
       ],
       "drawn": false,
       "_id": "8Q9k63PX4R6nemMA",
-      "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
+      "name": "",
       "_key": "!tables.results!Tct2GSHPdjnucG7m.8Q9k63PX4R6nemMA"
     }
   ],
@@ -108,7 +168,7 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.335",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829673695,

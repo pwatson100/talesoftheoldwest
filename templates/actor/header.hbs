@@ -24,9 +24,12 @@
 			<label for='system.general.faith' class='resource-label HedCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
 			<textarea class='textarea-format HedCol11' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
 
-			{{!-- <input class='statnum HedCol19' name='system.general.faithpoints.value' value='{{system.general.faithpoints.value}}' data-dtype='Number' /> --}}
-
-			<div class='newdots click-damage-level HedCol12' style='font-size: x-large;' data-action='changeFaith'>
+			<div
+				class='newdots click-damage-level HedCol12'
+				style='font-size: x-large;'
+				title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+				data-action='changeFaith'
+			>
 				{{#times system.general.faithpoints.value}}
 					<i class='far fa-dot-circle'></i>
 				{{/times}}

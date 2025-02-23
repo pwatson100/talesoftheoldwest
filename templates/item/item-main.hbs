@@ -1,12 +1,14 @@
 {{! Description Tab }}
 <section class='tab description {{tab.cssClass}}' data-group='primary' data-tab='description'>
 	{{#if (eq item.type 'weapon')}}
-
 		<div class='grid grid-2col'>
 			<label for='system.subtype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
 			<select id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
+			<label for='system.weight' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
+			<input class='statnum' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+
 			{{#if (eq system.subtype 'shootin')}}
 				<label for='system.action' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
 				<select id='system.action' name='system.action'>
@@ -76,9 +78,48 @@
 		<hr />
 
 	{{/if}}
+	{{#if (eq item.type 'weaponquality')}}
+		{{#if isGM}}
+			<div class='grid grid-2col'>
+				<label for='system.weapontype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+				<select id='system.weapontype' name='system.weapontype'>
+					{{selectOptions config.subtype_list selected=system.weapontype labelAttr='label' localize=true}}
+				</select>
+				<label for='system.feature' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
+				<select id='system.feature' name='system.feature'>
+					{{selectOptions config.weapon_feature_list selected=system.feature labelAttr='label' localize=true}}
+				</select>
+				{{#if (ne system.feature 'condition')}}
+					<label for='system.onweapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
+					<select id='system.onweapon' name='system.onweapon'>
+						{{selectOptions config.onweapon_list selected=system.onweapon labelAttr='label' localize=true}}
+					</select>
+				{{/if}}
 
+			</div>
+		{{else}}
+			{{! You are a player so read only }}
+			<div class='grid grid-2col'>
+				<label for='system.weapontype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+				<label for='system.weapontype'>{{system.weapontype}}</label>
+
+				<label for='system.feature' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
+				<label for='system.weapontype'>{{system.feature}}</label>
+
+				{{#if (ne system.feature 'condition')}}
+					<label for='system.onweapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
+					<label for='system.weapontype'>{{system.onweapon}}</label>
+				{{/if}}
+			</div>
+		{{/if}}
+
+		<hr />
+	{{/if}}
+
+	<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
 	{{#if editable}}
+
 		<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
 			{{{enrichedDescription}}}
 		</prose-mirror>

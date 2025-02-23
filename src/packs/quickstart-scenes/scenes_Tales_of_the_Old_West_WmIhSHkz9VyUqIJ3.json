@@ -87,8 +87,6 @@
       "name": "Animal",
       "displayName": 20,
       "actorLink": true,
-      "appendNumber": false,
-      "prependAdjective": false,
       "width": 1,
       "height": 1,
       "texture": {
@@ -104,7 +102,6 @@
         "tint": "#ffffff",
         "alphaThreshold": 0.75
       },
-      "hexagonalShape": 0,
       "lockRotation": false,
       "rotation": 0,
       "alpha": 1,
@@ -182,6 +179,7 @@
         "name": null,
         "type": null,
         "img": null,
+        "ownership": null,
         "_key": "!scenes.tokens.delta!WmIhSHkz9VyUqIJ3.fYIHtz5Ep56rOOvX.65CrQTo2i3KpP5Oq"
       },
       "x": 1207,
@@ -189,14 +187,20 @@
       "elevation": 0,
       "locked": false,
       "_regions": [],
+      "shape": 4,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "_movementHistory": [],
       "_key": "!scenes.tokens!WmIhSHkz9VyUqIJ3.fYIHtz5Ep56rOOvX"
     },
     {
       "name": "PC",
       "displayName": 20,
       "actorLink": true,
-      "appendNumber": false,
-      "prependAdjective": false,
       "width": 1,
       "height": 1,
       "texture": {
@@ -212,7 +216,6 @@
         "tint": "#ffffff",
         "alphaThreshold": 0.75
       },
-      "hexagonalShape": 0,
       "lockRotation": false,
       "rotation": 0,
       "alpha": 1,
@@ -290,6 +293,7 @@
         "name": null,
         "type": null,
         "img": null,
+        "ownership": null,
         "_key": "!scenes.tokens.delta!WmIhSHkz9VyUqIJ3.BdVJ4bV1PuMpwPKa.ZUFDvbOp9ypsPXtT"
       },
       "x": 1179,
@@ -297,6 +301,14 @@
       "elevation": 0,
       "locked": false,
       "_regions": [],
+      "shape": 4,
+      "turnMarker": {
+        "mode": 1,
+        "animation": null,
+        "src": null,
+        "disposition": false
+      },
+      "_movementHistory": [],
       "_key": "!scenes.tokens!WmIhSHkz9VyUqIJ3.BdVJ4bV1PuMpwPKa"
     }
   ],
@@ -317,7 +329,7 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.335",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829647642,

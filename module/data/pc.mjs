@@ -25,6 +25,7 @@ export default class totowPC extends totowActorBase {
 			faith: new fields.StringField({ required: true, blank: true }),
 			bigdream: new fields.StringField({ required: true, blank: true }),
 			yourpardner: new fields.StringField({ required: true, blank: true }),
+			lifestyle: new fields.StringField({ required: true, blank: true }),
 
 			faithpoints: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
@@ -32,6 +33,17 @@ export default class totowPC extends totowActorBase {
 			}),
 			cash: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+			}),
+			fame: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+			}),
+			morals: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
+			}),
+			publicsperit: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
 			capital: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),

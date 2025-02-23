@@ -12,10 +12,20 @@
       ],
       "drawn": false,
       "_id": "2s8xEblRzMlHKWl7",
-      "text": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.2s8xEblRzMlHKWl7"
     },
     {
@@ -27,10 +37,20 @@
       ],
       "drawn": false,
       "_id": "glc7R39ZOQyuoDcn",
-      "text": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.glc7R39ZOQyuoDcn"
     },
     {
@@ -42,10 +62,20 @@
       ],
       "drawn": false,
       "_id": "M8yU2nMoXb2qAxVT",
-      "text": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.M8yU2nMoXb2qAxVT"
     },
     {
@@ -57,10 +87,20 @@
       ],
       "drawn": false,
       "_id": "pRmG78BdFY38Na1u",
-      "text": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.pRmG78BdFY38Na1u"
     },
     {
@@ -72,10 +112,20 @@
       ],
       "drawn": false,
       "_id": "jYRLedq17XL8MyS0",
-      "text": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.jYRLedq17XL8MyS0"
     },
     {
@@ -87,10 +137,20 @@
       ],
       "drawn": false,
       "_id": "zJxhC33OxMq38bwp",
-      "text": "Your Troubles are  mounting—reroll on the  next column.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your Troubles are  mounting—reroll on the  next column.",
+      "name": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.zJxhC33OxMq38bwp"
     },
     {
@@ -102,11 +162,21 @@
       ],
       "drawn": false,
       "_id": "Hhx96VSeqVGQQvOy",
-      "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
       "img": "icons/svg/d20-grey.svg",
-      "documentId": "kTzYLdUXnRnZKIQq",
       "flags": {},
-      "documentCollection": "RollTable",
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
+      "documentUuid": "RollTable.kTzYLdUXnRnZKIQq",
+      "description": "",
       "_key": "!tables.results!yxxzZlJXrzolSjdf.Hhx96VSeqVGQQvOy"
     }
   ],
@@ -124,7 +194,7 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.335",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829665853,

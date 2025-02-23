@@ -1,0 +1,35 @@
+{
+  "type": "weaponquality",
+  "name": "Maintained",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "quality",
+    "onweapon": "any",
+    "description": "Beautifully made with maintenance in mind, this weapon is easy to keep working. Once per scene you may reroll all Trouble dice showing a ‘1’, but only before pushing.",
+    "itemModifiers": null,
+    "weight": 0,
+    "reference": ""
+  },
+  "_id": "A6xPWznvGwa3PvLB",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eGISG0VrE4fzswvk",
+  "sort": 100196,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 1
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1740313844716,
+    "modifiedTime": 1740313844716,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!A6xPWznvGwa3PvLB"
+}

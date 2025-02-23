@@ -20,6 +20,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		actions: {
 			onEditImage: this._onEditImage,
 			viewDoc: this._viewEffect,
+			viewFeature: this._viewFeature,
+			removeFeature: this._removeWeaponFeature,
 			createDoc: this._createEffect,
 			deleteDoc: this._deleteEffect,
 			addmodifier: this._addmodifier,
@@ -44,7 +46,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			template: 'templates/generic/tab-navigation.hbs',
 		},
 		description: {
-			template: 'systems/talesoftheoldwest/templates/item/item-description.hbs',
+			template: 'systems/talesoftheoldwest/templates/item/item-main.hbs',
 		},
 		basic: {
 			template: 'systems/talesoftheoldwest/templates/item/item-talent-basic.hbs',
@@ -55,6 +57,12 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		modifiers: {
 			template: 'systems/talesoftheoldwest/templates/item/item-modifiers.html',
 		},
+		qualities: {
+			template: 'systems/talesoftheoldwest/templates/item/item-weapon-qualities.hbs',
+		},
+		// effects: {
+		// 	template: 'systems/talesoftheoldwest/templates/item/effects.hbs',
+		// },
 	};
 
 	/** @override */
@@ -70,9 +78,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				options.parts.push('basic', 'advanced', 'modifiers');
 				break;
 			case 'item':
-			case 'weapon':
 			case 'crit':
 				options.parts.push('header', 'tabs', 'description', 'modifiers');
+				break;
+			case 'weapon':
+				options.parts.push('header', 'tabs', 'description', 'qualities', 'modifiers');
 				break;
 		}
 	}
@@ -86,6 +96,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			editable: this.isEditable,
 			owner: this.document.isOwner,
 			limited: this.document.limited,
+			isGM: game.user.isGM,
 			// Add the item document.
 			item: this.item,
 			// Adding system and flags for easier access
@@ -98,7 +109,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			// Necessary for formInput and formFields helpers
 			fields: this.document.schema.fields,
 			systemFields: this.document.system.schema.fields,
+			systemSource: this.item.system._source,
 		};
+
 		logger.debug('Item Sheet derived data:', context);
 
 		return context;
@@ -162,6 +175,15 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				// Prepare active effects for easier access
 				// context.effects = prepareActiveEffectCategories(this.item.effects);
 				break;
+			case 'qualities':
+				context.tab = context.tabs[partId];
+
+				break;
+			// case 'effects':
+			// 	context.tab = context.tabs[partId];
+			// 	// Prepare active effects for easier access
+			// 	context.effects = prepareActiveEffectCategories(this.item.effects);
+			// 	break;
 		}
 
 		return context;
@@ -209,6 +231,14 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 					tab.id = 'modifiers';
 					tab.label += 'Modifiers';
 					break;
+				case 'qualities':
+					tab.id = 'qualities';
+					tab.label += 'Qualities';
+					break;
+				// case 'effects':
+				// 	tab.id = 'effects';
+				// 	tab.label += 'Effects';
+				// 	break;
 			}
 			if (this.tabGroups[tabGroup] === tab.id) tab.cssClass = 'active';
 			tabs[partId] = tab;
@@ -406,6 +436,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		await effect.update({ disabled: !effect.disabled });
 	}
 
+	static async _viewFeature(event, target) {
+		const feature = this._getFeature(target);
+		feature.sheet.render(true);
+	}
+
 	/** Helper Functions */
 
 	/**
@@ -417,6 +452,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	_getEffect(target) {
 		const li = target.closest('.effect');
 		return this.item.effects.get(li?.dataset?.effectId);
+	}
+
+	_getFeature(target) {
+		const li = target.closest('.quality');
+		return game.items.get(li?.dataset?.itemId);
 	}
 
 	/**
@@ -581,6 +621,93 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 */
 	async _onDropItem(event, data) {
 		if (!this.item.isOwner) return false;
+		const dropItem = await Item.implementation.fromDropData(data);
+		const targetType = this.item.system.subtype;
+		const dropType = dropItem.system.weapontype;
+		if (dropItem.type === 'weaponquality') {
+			if (targetType === dropType) {
+				return await this.addWeaponFeature(dropItem, this.item);
+			} else {
+				ui.notifications.error(game.i18n.localize(game.i18n.localize('TALESOFTHEOLDWEST.General.noadd')));
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	/* ------------------------------------------- */
+	/*  Weapon Condition and Quality management    */
+	/* ------------------------------------------- */
+
+	/**
+	 * @returns {WeaponFeature}
+	 */
+	async addWeaponFeature(dropItem, target) {
+		const system = target.system;
+		const weaponFeature = {
+			id: dropItem.id,
+			name: dropItem.name,
+			feature: dropItem.system.feature,
+			type: dropItem.system.weapontype,
+			description: dropItem.system.description,
+			onweapon: dropItem.system.onweapon,
+			img: dropItem.img,
+		};
+		if (system.featureModifiers.some((o) => o.id === dropItem.id)) {
+			let errormessage =
+				game.i18n.localize('TALESOFTHEOLDWEST.General.onlyadd') +
+				' ' +
+				dropItem.name +
+				' ' +
+				dropItem.system.feature +
+				' ' +
+				game.i18n.localize('TALESOFTHEOLDWEST.General.once');
+			return ui.notifications.error(game.i18n.localize(game.i18n.localize(errormessage)));
+		}
+
+		system.featureModifiers.push(weaponFeature);
+		await target.update({ 'system.featureModifiers': system.featureModifiers });
+		return weaponFeature;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * @return {WeaponFeature[]}
+	 */
+	static async _removeWeaponFeature(event, target) {
+		event.preventDefault();
+		const itemData = this.item;
+		const elem = target.currentTarget;
+		const li = target.closest('.quality');
+		let featureModifiers = itemData.system.featureModifiers.filter((o) => o.id !== li?.dataset?.itemId);
+		await itemData.update({ 'system.featureModifiers': featureModifiers });
+		return featureModifiers;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * @returns {WeaponFeature|undefined}
+	 */
+	async getWeaponFeature(featureId) {
+		// if (this.type !== 'vehicles' && this.type !== 'spacecraft') return;
+		return this.system.featureModifiers.find((o) => o.id === featureId);
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * Gets a collection of crewed actors.
+	 * @returns {Collection<string, Actor>} [id, actor]
+	 */
+	async getCWeaponConditions() {
+		const c = new foundry.utils.Collection();
+		for (const o of this.system.featureModifiers) {
+			c.set(o.id, game.items.get(o.id));
+		}
+		return c;
 	}
 
 	/* -------------------------------------------- */

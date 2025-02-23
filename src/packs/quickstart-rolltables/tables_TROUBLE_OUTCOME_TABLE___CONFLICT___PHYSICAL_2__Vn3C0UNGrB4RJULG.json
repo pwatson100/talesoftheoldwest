@@ -12,10 +12,20 @@
       ],
       "drawn": false,
       "_id": "0sUSodOS4aEd4M4C",
-      "text": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.0sUSodOS4aEd4M4C"
     },
     {
@@ -27,10 +37,20 @@
       ],
       "drawn": false,
       "_id": "HCn3IP4fugModw93",
-      "text": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.HCn3IP4fugModw93"
     },
     {
@@ -42,10 +62,20 @@
       ],
       "drawn": false,
       "_id": "UH5HqxX0goPm6APj",
-      "text": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.UH5HqxX0goPm6APj"
     },
     {
@@ -57,10 +87,20 @@
       ],
       "drawn": false,
       "_id": "JbenPvx0JSViscji",
-      "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.JbenPvx0JSViscji"
     },
     {
@@ -72,10 +112,20 @@
       ],
       "drawn": false,
       "_id": "gpZmE2aUp06Qtotk",
-      "text": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.gpZmE2aUp06Qtotk"
     },
     {
@@ -87,10 +137,20 @@
       ],
       "drawn": false,
       "_id": "pG1HkCW93GeBa0JF",
-      "text": "Your Troubles are  mounting—reroll on the  next column.",
       "img": "icons/svg/d20-black.svg",
-      "documentId": null,
       "flags": {},
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "description": "Your Troubles are  mounting—reroll on the  next column.",
+      "name": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.pG1HkCW93GeBa0JF"
     },
     {
@@ -102,11 +162,21 @@
       ],
       "drawn": false,
       "_id": "L6z8gX2mcoJkT6br",
-      "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
       "img": "icons/svg/d20-grey.svg",
-      "documentId": "OjaUNfLD5klCkwq9",
       "flags": {},
-      "documentCollection": "RollTable",
+      "_stats": {
+        "coreVersion": "13.335",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+      "documentUuid": "RollTable.OjaUNfLD5klCkwq9",
+      "description": "",
       "_key": "!tables.results!Vn3C0UNGrB4RJULG.L6z8gX2mcoJkT6br"
     }
   ],
@@ -124,7 +194,7 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.335",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829664505,

@@ -11,3 +11,4 @@ export { default as totowWeapon } from './weapon.mjs';
 export { default as totowTalent } from './talent.mjs';
 export { default as totowCrit } from './crit.mjs';
 export { default as totowAnimalQuality } from './animalquality.mjs';
+export { default as totowWeaponQuality } from './weaponquality.mjs';

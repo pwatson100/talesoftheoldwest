@@ -19,7 +19,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		classes: ['talesoftheoldwest', 'actor'],
 		position: {
 			width: 950,
-			height: 910,
+			height: 870,
 		},
 		window: {
 			// icon: 'fa-solid fa-egg',
@@ -61,16 +61,16 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
 		},
 		effects: {
-			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-effects.html',
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		},
 		description: {
 			template: 'systems/talesoftheoldwest/templates/actor/biography.hbs',
 		},
 		weapons: {
-			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html',
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs',
 		},
 		talents: {
-			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-talent.html',
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs',
 		},
 		itemsinline: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs',
@@ -111,6 +111,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			editable: this.isEditable,
 			owner: this.document.isOwner,
 			limited: this.document.limited,
+			isGM: game.user.isGM,
 			// Add the actor document.
 			actor: this.actor,
 			// Add the actor's data to context.data for easier access, as well as flags.
@@ -122,7 +123,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		};
 
 		// // Offloading context prep to a helper function
-		// this._prepareItems(context);
 
 		// Prepare character data and items.
 		// if (context.actor.type === 'pc') {
@@ -480,6 +480,15 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
+
+		const ammo = this.element.querySelectorAll('.inline-edit'); // whatever selector works for you
+
+		for (const s of ammo) {
+			s.addEventListener('change', (event) => {
+				console.log(event);
+				this._inlineedit(event);
+			});
+		}
 	}
 
 	/**************
@@ -723,6 +732,16 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		} else return console.warn('Could not find document class');
 	}
 
+	async _inlineedit(event) {
+		event.preventDefault();
+		const dataset = event.currentTarget;
+		// console.log('alienrpgActorSheet -> _inlineedit -> dataset', dataset);
+		let itemId = dataset.parentElement.dataset.itemId;
+		let item = this.actor.items.get(itemId);
+		let temp = dataset.dataset.mod;
+		// let field = temp.slice(5);
+		return await item.update({ [temp]: dataset.value }, {});
+	}
 	/***************
 	 *
 	 * Drag and Drop

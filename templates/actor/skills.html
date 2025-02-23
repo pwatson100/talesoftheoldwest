@@ -1,5 +1,279 @@
 <section class="tab skills {{tab.cssClass}}" data-group="primary" data-tab="skills">
-	{{#if (eq actor.type "animal")}}
+	{{#if (eq actor.type "pc")}}
+
+	<div class="heading" style="padding-left: 20px">
+		{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attributes')}} {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.and')}} {{toUpperCase (localize
+		'TALESOFTHEOLDWEST.General.abilities')}}
+	</div>
+	<div class="sheet-main-attributes">
+		<div class="A1">
+			<label
+				for="system.attributes.grit"
+				class="resource-label rollable flexlarge align-left"
+				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-roll-type="attribute"
+				data-action="roll"
+				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
+				data-mod="{{system.attributes.grit.mod}}"
+				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
+			>
+		</div>
+		<div class="B1">
+			<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
+			<span style="font-weight: bolder; font-size: x-large">/</span>
+			<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
+		</div>
+
+		<div class="A2">
+			<label
+				for="system.attributes.quick"
+				class="resource-label rollable flexlarge align-left"
+				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-roll-type="attribute"
+				data-action="roll"
+				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
+				data-mod="{{system.attributes.quick.mod}}"
+				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
+			>
+		</div>
+		<div class="B2">
+			<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
+			<span style="font-weight: bolder; font-size: x-large">/</span>
+			<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
+		</div>
+
+		<div class="A3">
+			<label
+				for="system.attributes.cunning"
+				class="resource-label rollable flexlarge align-left"
+				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-roll-type="attribute"
+				data-action="roll"
+				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
+				data-mod="{{system.attributes.cunning.mod}}"
+				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
+			>
+		</div>
+		<div class="B3">
+			<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
+			<span style="font-weight: bolder; font-size: x-large">/</span>
+			<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
+		</div>
+
+		<div class="A4">
+			<label
+				for="system.attributes.docity"
+				class="resource-label rollable flexlarge align-left"
+				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-roll-type="attribute"
+				data-action="roll"
+				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
+				data-mod="{{system.attributes.docity.mod}}"
+				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label
+			>
+		</div>
+		<div class="B4">
+			<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" />
+			<span style="font-weight: bolder; font-size: x-large">/</span>
+			<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
+		</div>
+
+		<div class="H1">
+			<label for="system.attributes.grit.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
+				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label
+			>
+		</div>
+
+		<div
+			class="H2 newdots HedCol12"
+			style="font-size: large; padding: 10px"
+			data-action="changeDamage"
+			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
+			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+		>
+			{{#times system.damage.hurts.value}}
+			<a class="far fa-dot-circle"></a>
+			{{/times}} {{#times system.damage.hurts.max}}<a class="far fa-circle"></a>{{/times}}
+		</div>
+
+		<div class="S1">
+			<label for="system.attributes.quick.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
+				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.quick.type')}}</em></label
+			>
+		</div>
+
+		<div
+			class="S2 newdots HedCol12"
+			style="font-size: large"
+			data-action="changeDamage"
+			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
+			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+		>
+			{{#times system.damage.shakes.value}}
+			<a class="far fa-dot-circle"></a>
+			{{/times}} {{#times system.damage.shakes.max}}<a class="far fa-circle"></a>{{/times}}
+		</div>
+		<div class="V1">
+			<label for="system.attributes.cunning.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
+				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.cunning.type')}}</em></label
+			>
+		</div>
+		<div
+			class="V2 newdots HedCol12"
+			style="font-size: large"
+			data-action="changeDamage"
+			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
+			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+		>
+			{{#times system.damage.vexes.value}}
+			<a class="far fa-dot-circle"></a>
+			{{/times}} {{#times system.damage.vexes.max}}<a class="far fa-circle"></a>{{/times}}
+		</div>
+
+		<div class="D1">
+			<label for="system.attributes.docity.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
+				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.docity.type')}}</em></label
+			>
+		</div>
+		<div
+			class="D2 newdots HedCol12"
+			style="font-size: large"
+			data-action="changeDamage"
+			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
+			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+		>
+			{{#times system.damage.doubts.value}}
+			<a class="far fa-dot-circle"></a>
+			{{/times}} {{#times system.damage.doubts.max}}<a class="far fa-circle"></a>{{/times}}
+		</div>
+	</div>
+	<div class="sheet-main-abilities">
+		{{#each system.abilities as |ability key|}}
+		<div class="{{key}}" style="font-size: large; text-align: right">
+			<label
+				class="resource-label rollable"
+				for="system.abilities.{{key}}.value"
+				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-roll-type="ability"
+				data-action="roll"
+				data-value="{{ability.value}}"
+				data-label="{{ability.label}}"
+				data-stunts="{{ability.label}}"
+				data-mod="{{ability.mod}}"
+				data-attr="{{ability.attr}}"
+				>{{ability.upper}}</label
+			>
+		</div>
+		<div class="{{key}}2" style="text-align: center">
+			<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+		</div>
+		{{/each}}
+	</div>
+	<div class="body-split">
+		<div class="Split1">
+			<div class="crit-and-conditions" style="padding-left: 10px; margin-bottom: 10px">
+				<div class="heading">
+					{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.criticalInjurys')}} / {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}
+				</div>
+				<div>
+					<label class="resource-label" style="font-size: 20px" data-action="rollCrit">{{ localize 'TYPES.Item.crit'}}</label>
+					<a class="resource-label-header" title="{{localize 'TALESOFTHEOLDWEST.General.leftclicktoroll'}}" data-action="rollCrit"
+						><i class="fas fa-heartbeat"></i
+					></a>
+				</div>
+				<div class="grid-crit">
+					<ol class="items-list">
+						{{#each system.critInj as |item iid|}}
+						<li class="item critical-inj" data-item-id="{{item.id}}" data-drag="true" data-document-class="Critical Injury">
+							<div class="item-image crit1"><img src="{{item.img}}" width="24" height="24" /></div>
+							<div class="crit2">{{item.name}}</div>
+							<div class="crit3">
+								<p>
+									<strong> {{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}} :</strong> {{striptags item.system.imediateeffect}} <br />
+									<strong> {{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}} : </strong> {{removeMarkup item.system.longtermeffect}}
+								</p>
+							</div>
+							<div class="item-controls crit4">
+								<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Update" type="Item"}}'>
+									<i class="fas fa-edit"></i>
+								</a>
+								<a
+									class="item-control item-delete"
+									data-action="deleteDoc"
+									data-type="criticalinj"
+									data-actor="{{actor.id}}"
+									title='{{localize "DOCUMENT.Delete" type="Item"}}'
+								>
+									<i class="fas fa-trash"></i>
+								</a>
+							</div>
+						</li>
+						{{/each}}
+					</ol>
+				</div>
+				<div class="heading">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="overwatch" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="overwatch">
+							{{#if (eq system.conditions.overwatch true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+
+					<label class="dots resource-label" style="padding-right: 15px" data-key="starving" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="starving">
+							{{#if (eq system.conditions.starving true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+
+					<label class="dots resource-label" style="padding-right: 15px" data-key="dehydrated" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="dehydrated">
+							{{#if (eq system.conditions.dehydrated true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+
+					<label class="dots resource-label" style="padding-right: 15px" data-key="exhausted" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="exhausted">
+							{{#if (eq system.conditions.exhausted true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+
+					<label class="dots resource-label" data-key="freezing" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="freezing">
+							{{#if (eq system.conditions.freezing true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="Split2" style="width: 380px; margin-left: 10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
+	</div>
+	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs"}}</div>
+
+	{{else}}
 	<div class="body-container">
 		<div class="Col1">
 			<div class="atributes-container">
@@ -114,247 +388,5 @@
 		</prose-mirror>
 		{{else}} {{{enrichedBiography}}} {{/if}}
 	</div>
-	{{else}}
-	<div class="heading" style="padding-left: 20px">
-		{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attributes')}} {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.and')}} {{toUpperCase (localize
-		'TALESOFTHEOLDWEST.General.abilities')}}
-	</div>
-	<div class="sheet-main-attributes">
-		<div class="A1">
-			<label
-				for="system.attributes.grit"
-				class="resource-label rollable flexlarge align-left"
-				data-roll-type="attribute"
-				data-action="roll"
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
-				data-mod="{{system.attributes.grit.mod}}"
-				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
-			>
-		</div>
-		<div class="B1">
-			<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
-			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
-		</div>
-
-		<div class="A2">
-			<label
-				for="system.attributes.quick"
-				class="resource-label rollable flexlarge align-left"
-				data-roll-type="attribute"
-				data-action="roll"
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
-				data-mod="{{system.attributes.quick.mod}}"
-				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
-			>
-		</div>
-		<div class="B2">
-			<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
-			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
-		</div>
-
-		<div class="A3">
-			<label
-				for="system.attributes.cunning"
-				class="resource-label rollable flexlarge align-left"
-				data-roll-type="attribute"
-				data-action="roll"
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
-				data-mod="{{system.attributes.cunning.mod}}"
-				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
-			>
-		</div>
-		<div class="B3">
-			<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
-			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
-		</div>
-
-		<div class="A4">
-			<label
-				for="system.attributes.docity"
-				class="resource-label rollable flexlarge align-left"
-				data-roll-type="attribute"
-				data-action="roll"
-				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
-				data-mod="{{system.attributes.docity.mod}}"
-				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label
-			>
-		</div>
-		<div class="B4">
-			<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" />
-			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
-		</div>
-
-		<div class="H1">
-			<label for="system.attributes.grit.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label
-			>
-		</div>
-
-		<div
-			class="H2 newdots HedCol12"
-			style="font-size: large; padding: 10px"
-			data-action="changeDamage"
-			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-		>
-			{{#times system.damage.hurts.value}}
-			<i class="far fa-dot-circle"></i>
-			{{/times}} {{#times system.damage.hurts.max}}<i class="far fa-circle"></i>{{/times}}
-		</div>
-
-		<div class="S1">
-			<label for="system.attributes.quick.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.quick.type')}}</em></label
-			>
-		</div>
-
-		<div class="S2 newdots HedCol12" style="font-size: large" data-action="changeDamage" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'>
-			{{#times system.damage.shakes.value}}
-			<i class="far fa-dot-circle"></i>
-			{{/times}} {{#times system.damage.shakes.max}}<i class="far fa-circle"></i>{{/times}}
-		</div>
-		<div class="V1">
-			<label for="system.attributes.cunning.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.cunning.type')}}</em></label
-			>
-		</div>
-		<div class="V2 newdots HedCol12" style="font-size: large" data-action="changeDamage" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'>
-			{{#times system.damage.vexes.value}}
-			<i class="far fa-dot-circle"></i>
-			{{/times}} {{#times system.damage.vexes.max}}<i class="far fa-circle"></i>{{/times}}
-		</div>
-
-		<div class="D1">
-			<label for="system.attributes.docity.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
-				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.docity.type')}}</em></label
-			>
-		</div>
-		<div class="D2 newdots HedCol12" style="font-size: large" data-action="changeDamage" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'>
-			{{#times system.damage.doubts.value}}
-			<i class="far fa-dot-circle"></i>
-			{{/times}} {{#times system.damage.doubts.max}}<i class="far fa-circle"></i>{{/times}}
-		</div>
-	</div>
-	<div class="sheet-main-abilities">
-		{{#each system.abilities as |ability key|}}
-		<div class="{{key}}" style="font-size: large; text-align: right">
-			<label
-				class="resource-label rollable"
-				for="system.abilities.{{key}}.value"
-				data-roll-type="ability"
-				data-action="roll"
-				data-value="{{ability.value}}"
-				data-label="{{ability.label}}"
-				data-stunts="{{ability.label}}"
-				data-mod="{{ability.mod}}"
-				data-attr="{{ability.attr}}"
-				>{{ability.upper}}</label
-			>
-		</div>
-		<div class="{{key}}2" style="text-align: center">
-			<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
-		</div>
-		{{/each}}
-	</div>
-	<div class="body-split">
-		<div class="Split1">
-			<div class="crit-and-conditions" style="padding-left: 10px; margin-bottom: 10px">
-				<div class="heading">
-					{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.criticalInjurys')}} / {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}
-				</div>
-				<div>
-					<label class="resource-label" style="font-size: 20px" data-action="rollCrit">{{ localize 'TYPES.Item.crit'}}</label>
-					<a class="resource-label-header" title="{{localize 'TYPES.Item.crit'}}" data-action="rollCrit"><i class="fas fa-heartbeat"></i></a>
-				</div>
-				<div class="grid-crit" style="margin-bottom: 20px; height: 80px; overflow-x: auto">
-					<ol class="items-list">
-						{{#each system.critInj as |item iid|}}
-						<li class="item critical-inj" data-item-id="{{item.id}}" data-drag="true" data-document-class="Critical Injury">
-							<a class="item-image crit1"><img src="{{item.img}}" width="24" height="24" /></a>
-							<a class="crit2">{{item.name}}</a>
-							<a class="item-name crit3">{{{striptags item.system.imediateeffect}}}</a>
-							<div class="item-controls crit4">
-								<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Update" type="Item"}}'>
-									<i class="fas fa-edit"></i>
-								</a>
-								<a
-									class="item-control item-delete"
-									data-action="deleteDoc"
-									data-type="criticalinj"
-									data-actor="{{actor.id}}"
-									title='{{localize "DOCUMENT.Delete" type="Item"}}'
-								>
-									<i class="fas fa-trash"></i>
-								</a>
-							</div>
-						</li>
-						{{/each}}
-					</ol>
-				</div>
-				<div class="heading">
-					<label class="dots resource-label" style="padding-right: 15px" data-key="overwatch" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="overwatch">
-							{{#if (eq system.conditions.overwatch true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-
-					<label class="dots resource-label" style="padding-right: 15px" data-key="starving" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="starving">
-							{{#if (eq system.conditions.starving true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-
-					<label class="dots resource-label" style="padding-right: 15px" data-key="dehydrated" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="dehydrated">
-							{{#if (eq system.conditions.dehydrated true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-
-					<label class="dots resource-label" style="padding-right: 15px" data-key="exhausted" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="exhausted">
-							{{#if (eq system.conditions.exhausted true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-
-					<label class="dots resource-label" data-key="freezing" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="freezing">
-							{{#if (eq system.conditions.freezing true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-				</div>
-			</div>
-		</div>
-		<div class="Split2" style="width: 380px; margin-left: 10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.html"}}</div>
-	</div>
-	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.html"}}</div>
-
 	{{/if}}
 </section>
