@@ -22,6 +22,9 @@ export default class totowWeapon extends totowItemBase {
 				description: new fields.StringField({ required: true, blank: false }),
 				onweapon: new fields.StringField({ required: true, blank: false }),
 				img: new fields.StringField({ required: true, blank: false }),
+				state: new fields.StringField({ required: false, blank: true, initial: 'conditional' }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+				attribute: new fields.StringField({ required: false, blank: true, initial: 'None' }),
 			})
 		);
 

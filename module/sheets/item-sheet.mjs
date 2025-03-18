@@ -24,6 +24,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			removeFeature: this._removeWeaponFeature,
 			createDoc: this._createEffect,
 			deleteDoc: this._deleteEffect,
+			addqualitymodifier: this._addqualitymodifier,
 			addmodifier: this._addmodifier,
 			deletemodifier: this._deletemodifier,
 		},
@@ -266,6 +267,41 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 *
 	 **************/
 
+	/**
+	 * Handle adding a talent/quality modifier.
+	 *
+	 * @this totowItemSheet
+	 * @param {PointerEvent} event   The originating click event
+	 * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
+	 * @returns {Promise}
+	 * @protected
+	 */
+	static async _addqualitymodifier(event, target) {
+		let item = '';
+		let actor = '';
+		if (target.dataset.isembedded === 'true') {
+			actor = game.actors.get(target.dataset.actor);
+			item = actor.getEmbeddedDocument('items', target.dataset.origin);
+			let myId = target.dataset.origin;
+			console.log('1 its Embedded', actor);
+		} else {
+			item = game.items.get(target.dataset.origin);
+		}
+		// const data = await item.getData();
+		const itemModifiers = item.system.itemModifiers || {};
+		// To preserve order, make sure the new index is the highest
+		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
+		let update = {};
+		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
+		update[`system.itemModifiers.${modifierId}`] = {
+			description: '',
+			attribute: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
+			value: '1',
+			state: false,
+		};
+		// await item.update(update).render(true);
+		await item.update(update);
+	}
 	/**
 	 * Handle adding a modifier.
 	 *
@@ -645,15 +681,31 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 */
 	async addWeaponFeature(dropItem, target) {
 		const system = target.system;
-		const weaponFeature = {
-			id: dropItem.id,
-			name: dropItem.name,
-			feature: dropItem.system.feature,
-			type: dropItem.system.weapontype,
-			description: dropItem.system.description,
-			onweapon: dropItem.system.onweapon,
-			img: dropItem.img,
-		};
+		let weaponFeature = {};
+		if (dropItem.system.itemModifiers) {
+			weaponFeature = {
+				attribute: dropItem.system.itemModifiers[0].attribute,
+				state: dropItem.system.itemModifiers[0].state,
+				value: dropItem.system.itemModifiers[0].value,
+				id: dropItem.id,
+				name: dropItem.name,
+				feature: dropItem.system.feature,
+				type: dropItem.system.weapontype,
+				description: dropItem.system.description.replace(/<[^>]*>?/gm, ''),
+				onweapon: dropItem.system.onweapon,
+				img: dropItem.img,
+			};
+		} else {
+			weaponFeature = {
+				id: dropItem.id,
+				name: dropItem.name,
+				feature: dropItem.system.feature,
+				type: dropItem.system.weapontype,
+				description: dropItem.system.description.replace(/<[^>]*>?/gm, ''),
+				onweapon: dropItem.system.onweapon,
+				img: dropItem.img,
+			};
+		}
 		if (system.featureModifiers.some((o) => o.id === dropItem.id)) {
 			let errormessage =
 				game.i18n.localize('TALESOFTHEOLDWEST.General.onlyadd') +
@@ -663,9 +715,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				dropItem.system.feature +
 				' ' +
 				game.i18n.localize('TALESOFTHEOLDWEST.General.once');
+
 			return ui.notifications.error(game.i18n.localize(game.i18n.localize(errormessage)));
 		}
-
 		system.featureModifiers.push(weaponFeature);
 		await target.update({ 'system.featureModifiers': system.featureModifiers });
 		return weaponFeature;

@@ -1,0 +1,104 @@
+	{{#if (eq item.type 'weaponquality')}}
+		{{#if isGM}}
+ {{!-- Here down --}}
+
+
+
+<div style="height: 155px; overflow-x: auto; width: 264px">
+	<ol class="items-list">
+		<li class="item grid-talent-items items-header">
+			<div class="item-name TCol2">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			<div class="item-controls TCol4">
+				<a	class='button'data-action='addqualitymodifier'data-origin='{{item.id}}'	data-actor='{{@root.item.actor.id}}'data-isEmbedded='{{item.isEmbedded}}'	title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'><i class='fas fa-plus'></i></a>
+			</div>
+		</li>
+		{{#each system.itemModifiers as |modifier|}}
+    					{{#if modifier}}
+
+		<li class="item grid-talent-items" data-item-id="{{item._id}}" data-drag="true" data-document-class="Talent">
+			<div class="item-image TCol11">
+						<select name='system.itemModifiers.{{@key}}.attribute'>
+							{{selectOptions @root.config.weapon_modifier_list selected=modifier.attribute labelAttr='label' localize=true}}
+						</select>
+			</div>
+			<div class="item-name TCol12">						<input name='system.itemModifiers.{{@key}}.value' type='text' value='{{modifier.value}}' style='text-align: center' />
+						<select name='system.itemModifiers.{{@key}}.state'>
+							{{selectOptions @root.config.item_modifier_state selected=modifier.state labelAttr='label' localize=true}}
+						</select>
+</div>
+			<div class="item-controls TCol14">
+						<a
+							class='button delete-modifier'
+							data-action='deletemodifier'
+							data-origin='{{@root.item.id}}'
+							data-isEmbedded='{{@root.item.isEmbedded}}'
+							data-actor='{{@root.item.actor.id}}'
+							title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
+							data-modifier-id='{{@key}}'
+						>
+							<i class='fas fa-trash'></i>
+						</a>			</div>
+		</li>
+	</ol>
+  					{{/if}}
+				{{else}}
+					<i>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.noModifiers')}}</i>
+				{{/each}}
+</div>
+
+
+			<div>
+				<label>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.roll-modifiers')}}</label>
+				<a	class='button'data-action='addqualitymodifier'data-origin='{{item.id}}'	data-actor='{{@root.item.actor.id}}'data-isEmbedded='{{item.isEmbedded}}'	title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'><i class='fas fa-plus'></i></a>
+				<br />
+				{{#each system.itemModifiers as |modifier|}}
+					{{#if modifier}}
+						<select name='system.itemModifiers.{{@key}}.attribute'>
+							{{selectOptions @root.config.weapon_modifier_list selected=modifier.attribute labelAttr='label' localize=true}}
+						</select>
+						<input name='system.itemModifiers.{{@key}}.value' type='text' value='{{modifier.value}}' style='text-align: center' />
+						<select name='system.itemModifiers.{{@key}}.state'>
+							{{selectOptions @root.config.item_modifier_state selected=modifier.state labelAttr='label' localize=true}}
+						</select>
+						<a
+							class='button delete-modifier'
+							data-action='deletemodifier'
+							data-origin='{{@root.item.id}}'
+							data-isEmbedded='{{@root.item.isEmbedded}}'
+							data-actor='{{@root.item.actor.id}}'
+							title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
+							data-modifier-id='{{@key}}'
+						>
+							<i class='fas fa-trash'></i>
+						</a>
+					{{/if}}
+				{{else}}
+					<i>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.noModifiers')}}</i>
+				{{/each}}
+
+			</div>
+
+
+
+
+
+
+
+		{{else}}
+			{{! You are a player so read only }}
+			<div class='grid grid-2col'>
+				<label for='system.weapontype' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+				<label for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.General.' system.weapontype)}}</label>
+
+				<label for='system.feature' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
+				<label for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.feature)}}</label>
+
+				{{#if (ne system.feature 'condition')}}
+					<label for='system.onweapon' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
+					<label for='system.onweapon' class='resource-label'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.onweapon)}}</label>
+				{{/if}}
+			</div>
+		{{/if}}
+
+		<hr />
+	{{/if}}

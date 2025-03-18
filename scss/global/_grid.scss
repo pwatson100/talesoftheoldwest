@@ -724,3 +724,33 @@
 	grid-area: cash4;
 	text-align: center;
 }
+
+.grid-weapon-feature-list {
+	display: grid;
+	// padding: 3px;
+	row-gap: 5px;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+	align-items: center;
+	grid-template-areas: 'grid-wfl1 grid-wfl2 grid-wfl3 grid-wfl4';
+	grid-template-columns: 150px 50px 150px 50px;
+}
+.grid-wfl1 {
+	grid-area: grid-wfl1;
+	text-align: center;
+	font-size: x-large;
+}
+.grid-wfl2 {
+	grid-area: grid-wfl2;
+	text-align: center;
+}
+.grid-wfl3 {
+	grid-area: grid-wfl3;
+	text-align: center;
+	font-size: x-large;
+}
+.grid-wfl4 {
+	grid-area: grid-wfl4;
+	text-align: center;
+}

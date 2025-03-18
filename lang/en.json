@@ -141,14 +141,15 @@
 			"success": "success",
 			"critsuccess": "critical success",
 			"conditions": "Conditions",
-			"damage": "damage",
-			"crit": "crit",
+			"damage": "Damage",
+			"crit": "Crit",
 			"failed": "failed",
 			"stunts": "stunts",
 			"push": "push",
 			"pushed": "pushed",
 			"lackFaith": "you lack faith!",
 			"rollTrouble": "roll trouble?",
+			"trouble": "Trouble",
 			"noDice": "you have no dice to roll",
 			"attributes": "attributes",
 			"faith": "faith",
@@ -175,6 +176,8 @@
 			"criticalInjury": "Critical Injury",
 			"criticalInjurys": "Critical Injurys",
 			"isActive": "Active",
+			"active": "Active",
+			"conditional": "Conditional",
 			"and": "and",
 			"fightin": "Fightin'",
 			"shootin": "Shootin'",
@@ -194,7 +197,9 @@
 			"leftToAdd": "Left Click to add. Right click to remove",
 			"onlyadd": "You can only add the",
 			"once": "Once",
-			"noadd": "You can't add this Condition/Quality to this Weapon type"
+			"noadd": "You can't add this Condition/Quality to this Weapon type",
+			"weaponStats": "Weapon Stats",
+			"other": "Other"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -221,9 +226,9 @@
 				"action": "action",
 				"quantity": "quantity",
 				"weight": "weight",
-				"bonusDraw": "bonus Draw",
+				"bonusDraw": "Bonus Draw",
 				"draw": "draw",
-				"attackBonus": "attack bonus",
+				"attackBonus": "Attack bonus",
 				"attack": "attack",
 				"range": "range",
 				"ammo": "ammo",
@@ -247,7 +252,8 @@
 				"impact": "Impact",
 				"weapon": "Weapon",
 				"ranged": "Ranged",
-				"melee": "Melee"
+				"melee": "Melee",
+				"value": "Value"
 			}
 		},
 		"ItemModifierSelect": {

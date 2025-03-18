@@ -171,6 +171,33 @@ TALESOFTHEOLDWEST.item_modifier_list = {
 	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
 	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
 };
+TALESOFTHEOLDWEST.weapon_modifier_list = {
+	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	quick: { id: 'attribute-quick', label: 'TALESOFTHEOLDWEST.Attributes.quick.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	cunning: { id: 'attribute-cunning', label: 'TALESOFTHEOLDWEST.Attributes.cunning.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	docity: { id: 'attribute-docity', label: 'TALESOFTHEOLDWEST.Attributes.docity.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
+	labor: { id: 'ability-labor', label: 'TALESOFTHEOLDWEST.Ability.Labor.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	presence: { id: 'ability-presence', label: 'TALESOFTHEOLDWEST.Ability.Presence.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	fightin: { id: 'ability-fightin', label: 'TALESOFTHEOLDWEST.Ability.Fightin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	resilience: { id: 'ability-resilience', label: 'TALESOFTHEOLDWEST.Ability.Resilience.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	move: { id: 'ability-move', label: 'TALESOFTHEOLDWEST.Ability.Move.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	operate: { id: 'ability-operate', label: 'TALESOFTHEOLDWEST.Ability.Operate.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	shootin: { id: 'ability-shootin', label: 'TALESOFTHEOLDWEST.Ability.Shootin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	lightfingered: { id: 'ability-lightfingered', label: 'TALESOFTHEOLDWEST.Ability.Lightfingered.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	hawkeye: { id: 'ability-hawkeye', label: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	nature: { id: 'ability-nature', label: 'TALESOFTHEOLDWEST.Ability.Nature.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	insight: { id: 'ability-insight', label: 'TALESOFTHEOLDWEST.Ability.Insight.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	animalhandlin: { id: 'ability-animalhandlin', label: 'TALESOFTHEOLDWEST.Ability.Animalhandlin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	performin: { id: 'ability-dociperforminty', label: 'TALESOFTHEOLDWEST.Ability.Performin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	makin: { id: 'ability-makin', label: 'TALESOFTHEOLDWEST.Ability.Makin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	attackbonus: { id: 'weapon-attackbonus', label: 'TALESOFTHEOLDWEST.Item.General.attackBonus', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
+	damage: { id: 'weapon-damage', label: 'TALESOFTHEOLDWEST.General.damage', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
+	crit: { id: 'weapon-drit', label: 'TALESOFTHEOLDWEST.General.crit', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
+	drawbonus: { id: 'weapon-drawbonus', label: 'TALESOFTHEOLDWEST.Item.General.bonusDraw', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
+	trouble: { id: 'roll-trouble', label: 'TALESOFTHEOLDWEST.General.trouble', group: 'TALESOFTHEOLDWEST.General.other' },
+};
 
 TALESOFTHEOLDWEST.crit_location_list = {
 	lowerleg: { id: 'lowerleg', label: 'TALESOFTHEOLDWEST.CritLocation.lowerleg' },
@@ -179,6 +206,11 @@ TALESOFTHEOLDWEST.crit_location_list = {
 	gut: { id: 'gut', label: 'TALESOFTHEOLDWEST.CritLocation.gut' },
 	chest: { id: 'chest', label: 'TALESOFTHEOLDWEST.CritLocation.chest' },
 	head: { id: 'head', label: 'TALESOFTHEOLDWEST.CritLocation.head' },
+};
+
+TALESOFTHEOLDWEST.item_modifier_state = {
+	Active: { name: 'TALESOFTHEOLDWEST.General.active' },
+	Conditional: { name: 'TALESOFTHEOLDWEST.General.conditional' },
 };
 TALESOFTHEOLDWEST.conditionEffects = [
 	{

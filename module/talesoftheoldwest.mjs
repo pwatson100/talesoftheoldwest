@@ -279,7 +279,7 @@ async function createDocMacro(data, slot) {
 	const item = await Item.fromDropData(data);
 
 	// Create the macro command using the uuid.
-	const command = `game.boilerplate.rollItemMacro("${data.uuid}");`;
+	const command = `game.talesoftheoldwest.rollItemMacro("${data.uuid}");`;
 	let macro = game.macros.find((m) => m.name === item.name && m.command === command);
 	if (!macro) {
 		macro = await Macro.create({
@@ -287,7 +287,7 @@ async function createDocMacro(data, slot) {
 			type: 'script',
 			img: item.img,
 			command: command,
-			flags: { 'boilerplate.itemMacro': true },
+			flags: { 'talesoftheoldwest.itemMacro': true },
 		});
 	}
 	game.user.assignHotbarMacro(macro, slot);
