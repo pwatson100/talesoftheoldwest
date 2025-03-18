@@ -15,14 +15,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
       "name": "",
@@ -40,14 +41,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
       "name": "",
@@ -65,14 +67,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
       "name": "",
@@ -90,14 +93,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
       "name": "",
@@ -115,14 +119,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
       "name": "",
@@ -140,14 +145,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
       "name": "",
@@ -157,23 +163,23 @@
   "replacement": true,
   "displayRoll": false,
   "folder": null,
-  "flags": {
-    "exportSource": {
-      "world": "tales-of-the-old-west",
-      "system": "talesoftheoldwest",
-      "coreVersion": "12.331",
-      "systemVersion": "0.0.1"
-    }
-  },
+  "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.335",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829673695,
     "modifiedTime": 1730829673695,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": {
+      "worldId": "tales-of-the-old-west",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "talesoftheoldwest",
+      "systemVersion": "0.0.1"
+    }
   },
   "formula": "1d6",
   "ownership": {

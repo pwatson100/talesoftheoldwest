@@ -15,14 +15,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You’re so shaken and  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
       "name": "",
@@ -40,14 +41,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your action has gone  catastrophically wrong. A  key item of great value is  broken beyond repair, or  your horse is killed.",
       "name": "",
@@ -65,14 +67,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You trip and fall, or  are thrown from your  horse, and are Prone.  Take falling damage if  the fall is far enough.  You are Stunned for  D6 Rounds minus the  number of successes on a  RESILIENCE test.",
       "name": "",
@@ -90,14 +93,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your attack or action  has terribly affected a  random nearby bystander.  They are immediately  Broken on Grit and  suffer a critical injury.",
       "name": "",
@@ -115,14 +119,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Grit.",
       "name": "",
@@ -140,14 +145,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Quick.",
       "name": "",
@@ -157,23 +163,23 @@
   "replacement": true,
   "displayRoll": false,
   "folder": null,
-  "flags": {
-    "exportSource": {
-      "world": "tales-of-the-old-west",
-      "system": "talesoftheoldwest",
-      "coreVersion": "12.331",
-      "systemVersion": "0.0.1"
-    }
-  },
+  "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.335",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829667769,
     "modifiedTime": 1730829667769,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": {
+      "worldId": "tales-of-the-old-west",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "talesoftheoldwest",
+      "systemVersion": "0.0.1"
+    }
   },
   "formula": "1d6",
   "ownership": {

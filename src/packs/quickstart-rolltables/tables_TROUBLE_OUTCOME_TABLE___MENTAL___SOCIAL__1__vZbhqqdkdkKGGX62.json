@@ -15,14 +15,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
       "name": "",
@@ -40,14 +41,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
       "name": "",
@@ -65,14 +67,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
       "name": "",
@@ -90,14 +93,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
       "name": "",
@@ -115,14 +119,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
       "name": "",
@@ -140,14 +145,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "Your Troubles are  mounting—reroll on the  next column.",
       "name": "",
@@ -165,14 +171,15 @@
       "img": "icons/svg/d20-grey.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
       "documentUuid": "RollTable.hSf8k6g2vL7234BW",
@@ -183,23 +190,23 @@
   "replacement": true,
   "displayRoll": false,
   "folder": null,
-  "flags": {
-    "exportSource": {
-      "world": "tales-of-the-old-west",
-      "system": "talesoftheoldwest",
-      "coreVersion": "12.331",
-      "systemVersion": "0.0.1"
-    }
-  },
+  "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.335",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829669338,
     "modifiedTime": 1730829669338,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": {
+      "worldId": "tales-of-the-old-west",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "talesoftheoldwest",
+      "systemVersion": "0.0.1"
+    }
   },
   "formula": "1d6",
   "ownership": {

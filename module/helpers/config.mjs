@@ -197,6 +197,8 @@ TALESOFTHEOLDWEST.weapon_modifier_list = {
 	crit: { id: 'weapon-drit', label: 'TALESOFTHEOLDWEST.General.crit', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
 	drawbonus: { id: 'weapon-drawbonus', label: 'TALESOFTHEOLDWEST.Item.General.bonusDraw', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
 	trouble: { id: 'roll-trouble', label: 'TALESOFTHEOLDWEST.General.trouble', group: 'TALESOFTHEOLDWEST.General.other' },
+	success: { id: 'roll-success', label: 'TALESOFTHEOLDWEST.General.success', group: 'TALESOFTHEOLDWEST.General.other' },
+	pushdescription: { id: 'roll-pushdescription', label: 'TALESOFTHEOLDWEST.General.pushdescription', group: 'TALESOFTHEOLDWEST.General.other' },
 };
 
 TALESOFTHEOLDWEST.crit_location_list = {
@@ -211,6 +213,7 @@ TALESOFTHEOLDWEST.crit_location_list = {
 TALESOFTHEOLDWEST.item_modifier_state = {
 	Active: { name: 'TALESOFTHEOLDWEST.General.active' },
 	Conditional: { name: 'TALESOFTHEOLDWEST.General.conditional' },
+	Chat: { name: 'TALESOFTHEOLDWEST.General.chat' },
 };
 TALESOFTHEOLDWEST.conditionEffects = [
 	{

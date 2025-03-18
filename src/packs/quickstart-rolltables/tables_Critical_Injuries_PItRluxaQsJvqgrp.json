@@ -15,14 +15,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Twisted Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -40,14 +41,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Foot</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE, cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -65,14 +67,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE.  Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of walking with a limp.</p>",
       "name": "",
@@ -90,14 +93,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Torn Achilles Tendon</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[4d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'.  Cannot run</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
       "name": "",
@@ -115,14 +119,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Fractured Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
       "name": "",
@@ -140,14 +145,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Shattered Shin Bone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot Ride, Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: Lose the lower leg</p>",
       "name": "",
@@ -165,14 +171,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Numbed Leg</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -190,14 +197,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -215,14 +223,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Torn Hamstring</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE.  Cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -240,14 +249,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Cracked Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
       "name": "",
@@ -265,14 +275,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Broken Thigh</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −2 to any physical task</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
       "name": "",
@@ -290,14 +301,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Arterial Bleed</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −3 to any physical task</p><p><strong>Long-Term Effect</strong>: Lose the Leg</p>",
       "name": "",
@@ -315,14 +327,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Numbed Arm</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -340,14 +353,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’ &amp; FIGHTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -365,14 +379,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Impaled Shoulder</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -390,14 +405,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Elbow Chipped</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
       "name": "",
@@ -415,14 +431,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Hand Hit</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of randomly losing a finger or thumb</p>",
       "name": "",
@@ -440,14 +457,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Compound Fracture</p><p><strong>Fatal</strong>: Yes / [[2d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: Lose the arm</p>",
       "name": "",
@@ -465,14 +483,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Sucker Punched</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -490,14 +509,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Kidney Blow</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -515,14 +535,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Skewered Groin</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Suffer 1 damage for every LABOR, MOVE or FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: 33% chance of losing your ability to have kids</p>",
       "name": "",
@@ -540,14 +561,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Ruptured Spleen</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  −1 to all Physical Actions and −2 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -565,14 +587,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Gut Shot</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Suffer 1 damage for every LABOR, MOVE or</p><p>FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: All future GUT crits get +1 to the Units Die</p>",
       "name": "",
@@ -590,14 +613,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Lacerated Intestines</p><p><strong>Fatal</strong>: Yes −1 / [[2d6]] Rounds</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −3 to all physical tasks, and take 1 damage for every physical action</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
       "name": "",
@@ -615,14 +639,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Winded</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -640,14 +665,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Bruised Ribs</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -2 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -665,14 +691,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Broken Collarbone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[6d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: Cannot Run or MOVE</p>",
       "name": "",
@@ -690,14 +717,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Punctured Lung</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  -1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
       "name": "",
@@ -715,14 +743,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Shattered Ribs</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  −2 to all physical tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
       "name": "",
@@ -740,14 +769,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Cut through the heart</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: </p><p>YOUR HEART BEATS FOR JUST ONE MORE TIME</p>",
       "name": "",
@@ -765,14 +795,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Nasty Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to PERFORMIN’</p><p><strong>Long-Term Effect</strong>: You have a permanent scar</p>",
       "name": "",
@@ -790,14 +821,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Broken Nose</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to LABOR</p><p><strong>Long-Term Effect</strong>: You have a permanent “broken-nose” look</p>",
       "name": "",
@@ -815,14 +847,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Gouged Eyes</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: −2 to SHOOTIN’ &amp; HAWKEYE</p><p><strong>Long-Term Effect</strong>: Permanent blindness in 1 eye</p>",
       "name": "",
@@ -840,14 +873,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Fractured Skull</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds. −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Cunning or Docity ability</p>",
       "name": "",
@@ -865,14 +899,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Slashed Throat</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of permanent vocal impairment</p>",
       "name": "",
@@ -890,14 +925,15 @@
       "img": "icons/svg/d20-black.svg",
       "flags": {},
       "_stats": {
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
         "modifiedTime": null,
         "lastModifiedBy": null,
         "compendiumSource": null,
-        "duplicateSource": null
+        "duplicateSource": null,
+        "exportSource": null
       },
       "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Terrible Hit to the Head</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: YOU ARE VERY DEAD</p>",
       "name": "",
@@ -911,12 +947,13 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.335",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829660816,
     "modifiedTime": 1730829660816,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": null
   },
   "formula": "10*1d6+1d6",
   "ownership": {

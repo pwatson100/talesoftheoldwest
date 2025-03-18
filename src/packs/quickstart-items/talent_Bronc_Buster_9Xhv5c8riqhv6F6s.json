@@ -23,12 +23,13 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1737561673327,
     "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": null
   },
   "_key": "!items!9Xhv5c8riqhv6F6s"
 }

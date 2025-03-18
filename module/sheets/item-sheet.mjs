@@ -296,7 +296,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		update[`system.itemModifiers.${modifierId}`] = {
 			description: '',
 			attribute: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
-			value: '1',
+			value: '0',
 			state: false,
 		};
 		// await item.update(update).render(true);

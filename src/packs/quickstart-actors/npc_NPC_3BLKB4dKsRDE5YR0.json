@@ -261,12 +261,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "13.335",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!3BLKB4dKsRDE5YR0.QqzalnHuT6TSBpzw"
     }
@@ -281,12 +282,13 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.335",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1734026603400,
     "modifiedTime": 1734026603414,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": null
   },
   "_id": "3BLKB4dKsRDE5YR0",
   "sort": 200000,

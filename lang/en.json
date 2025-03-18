@@ -138,7 +138,7 @@
 			"yes": "Yes",
 			"no": "No",
 			"faithPoints": "faith points",
-			"success": "success",
+			"success": "Success",
 			"critsuccess": "critical success",
 			"conditions": "Conditions",
 			"damage": "Damage",
@@ -198,8 +198,10 @@
 			"onlyadd": "You can only add the",
 			"once": "Once",
 			"noadd": "You can't add this Condition/Quality to this Weapon type",
-			"weaponStats": "Weapon Stats",
-			"other": "Other"
+			"weaponStats": "WEAPON STATS",
+			"other": "OTHER",
+			"chat": "Chat",
+			"pushdescription": "Push Description"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

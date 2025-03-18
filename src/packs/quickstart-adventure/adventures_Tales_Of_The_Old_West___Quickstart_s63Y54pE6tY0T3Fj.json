@@ -313,7 +313,12 @@
         },
         "flags": {},
         "randomImg": false,
-        "hexagonalShape": 0
+        "turnMarker": {
+          "mode": 1,
+          "animation": null,
+          "src": null,
+          "disposition": false
+        }
       },
       "items": [
         {
@@ -346,12 +351,13 @@
           "_stats": {
             "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -384,12 +390,13 @@
           "_stats": {
             "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -422,12 +429,13 @@
           "_stats": {
             "compendiumSource": "Item.xWkJzivqOlaiwCbw",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -455,12 +463,13 @@
           "_stats": {
             "compendiumSource": "Item.z11zOk32BBGOl93G",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -488,12 +497,13 @@
           "_stats": {
             "compendiumSource": "Item.5q0tKk4Ijla0Nvcl",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -518,12 +528,13 @@
           "_stats": {
             "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -548,12 +559,13 @@
           "_stats": {
             "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -578,12 +590,13 @@
           "_stats": {
             "compendiumSource": "Item.DsUvLVi52qKwlgjX",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null
+            "lastModifiedBy": null,
+            "exportSource": null
           }
         },
         {
@@ -622,12 +635,13 @@
           "_stats": {
             "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
             "duplicateSource": null,
-            "coreVersion": "12.331",
+            "coreVersion": "13.336",
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": 1740225485412,
             "modifiedTime": 1740225485412,
-            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+            "lastModifiedBy": "oo2KG31LDGhYx0MC",
+            "exportSource": null
           }
         }
       ],
@@ -641,12 +655,13 @@
       "_stats": {
         "compendiumSource": "Compendium.talesoftheoldwest.quickstart-actors.Actor.PYNF4fkTuJmHAzni",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1740225439367,
         "modifiedTime": 1740235868879,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       },
       "_id": "WsStsGwsDPKQSTBC",
       "sort": 0
@@ -676,12 +691,13 @@
       "_stats": {
         "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730033937418,
         "modifiedTime": 1730033937418,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -711,12 +727,13 @@
       "_stats": {
         "compendiumSource": "Item.DsUvLVi52qKwlgjX",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730033942876,
         "modifiedTime": 1730033942876,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -741,12 +758,13 @@
       "_stats": {
         "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730033939966,
         "modifiedTime": 1730033939966,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -786,12 +804,13 @@
       "_stats": {
         "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730035005218,
         "modifiedTime": 1740228617335,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -825,12 +844,13 @@
       "_stats": {
         "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730035001883,
         "modifiedTime": 1740228617335,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -854,12 +874,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992916388,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -883,12 +904,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992919050,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -912,12 +934,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992920977,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -941,12 +964,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992923078,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -970,12 +994,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992925957,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -999,12 +1024,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992928140,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1028,12 +1054,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992930531,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1057,12 +1084,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992934462,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1086,12 +1114,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992936511,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1115,12 +1144,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992938437,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1144,12 +1174,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992940327,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1173,12 +1204,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992942403,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1202,12 +1234,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992999272,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1231,12 +1264,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992997067,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1260,12 +1294,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992995478,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1289,12 +1324,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992993871,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1318,12 +1354,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992991846,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1347,12 +1384,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992989889,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1376,12 +1414,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992988269,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1405,12 +1444,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992986513,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1434,12 +1474,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992984869,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1463,12 +1504,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992983040,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1492,12 +1534,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992980994,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1521,12 +1564,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992979336,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1550,12 +1594,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992977544,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1579,12 +1624,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992970712,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1608,12 +1654,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992968470,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1637,12 +1684,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992966736,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1666,12 +1714,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992964874,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1695,12 +1744,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992963024,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1724,12 +1774,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992961193,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1753,12 +1804,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992959431,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1782,12 +1834,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992953619,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1811,12 +1864,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992951676,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1840,12 +1894,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992949410,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1869,12 +1924,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1735992867435,
         "modifiedTime": 1735992947896,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1903,12 +1959,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1739275624608,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1937,12 +1994,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -1971,12 +2029,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2005,12 +2064,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2039,12 +2099,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2073,12 +2134,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2107,12 +2169,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2141,12 +2204,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2175,12 +2239,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2209,12 +2274,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2243,12 +2309,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2277,12 +2344,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2311,12 +2379,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2345,12 +2414,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2379,12 +2449,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2413,12 +2484,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2447,12 +2519,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2481,12 +2554,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2515,12 +2589,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2549,12 +2624,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2583,12 +2659,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2617,12 +2694,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2651,12 +2729,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2685,12 +2764,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2719,12 +2799,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2753,12 +2834,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2787,12 +2869,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2821,12 +2904,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2855,12 +2939,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2889,12 +2974,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2923,12 +3009,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2957,12 +3044,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -2991,12 +3079,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3025,12 +3114,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3059,12 +3149,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3093,12 +3184,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3127,12 +3219,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3161,12 +3254,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3195,12 +3289,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3229,12 +3324,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3263,12 +3359,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3297,12 +3394,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3331,12 +3429,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3365,12 +3464,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3399,12 +3499,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3433,12 +3534,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3467,12 +3569,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3501,12 +3604,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3535,12 +3639,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3569,12 +3674,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3603,12 +3709,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3637,12 +3744,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3671,12 +3779,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3705,12 +3814,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3739,12 +3849,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3773,12 +3884,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561609909,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3807,12 +3919,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561611174,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3841,12 +3954,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561612426,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3875,12 +3989,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1737561613529,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3908,12 +4023,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310991779,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3941,12 +4057,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310996902,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -3974,12 +4091,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740311000838,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4007,12 +4125,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740311005818,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4040,12 +4159,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740311010304,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4073,12 +4193,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740311014662,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4106,12 +4227,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311019284,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4139,12 +4261,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311023280,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4172,12 +4295,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311027607,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4205,12 +4329,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311033698,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4238,12 +4363,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311039143,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4271,12 +4397,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311045893,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4304,12 +4431,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311051848,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4337,12 +4465,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739452697042,
         "modifiedTime": 1740311056498,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4370,12 +4499,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310421276,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4403,12 +4533,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310424441,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4436,12 +4567,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310437768,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4469,12 +4601,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310450039,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4502,12 +4635,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310454239,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4535,12 +4669,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739453355628,
         "modifiedTime": 1740310457067,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4569,12 +4704,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310325497,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4603,12 +4739,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310335241,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4637,12 +4774,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310338299,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4671,12 +4809,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310341008,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4705,12 +4844,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310344518,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4739,12 +4879,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310353056,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4773,12 +4914,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310358161,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4807,12 +4949,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310363666,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4841,12 +4984,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310367492,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4875,12 +5019,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310371842,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4909,12 +5054,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310375878,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4943,12 +5089,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310380624,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -4977,12 +5124,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310386392,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -5011,12 +5159,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310391582,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -5045,12 +5194,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310396361,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -5079,12 +5229,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310400411,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -5113,12 +5264,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739886225865,
         "modifiedTime": 1740310403673,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     }
   ],
@@ -5233,12 +5385,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729605842469,
         "modifiedTime": 1729605968908,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     }
   ],
@@ -5258,10 +5411,21 @@
           ],
           "drawn": false,
           "_id": "xAf89RmOM7ChWD0F",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Twisted Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Twisted Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5272,10 +5436,21 @@
           ],
           "drawn": false,
           "_id": "qp6An4FUyE8DGckQ",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Foot</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE, cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Foot</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE, cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5286,10 +5461,21 @@
           ],
           "drawn": false,
           "_id": "SvteURJeWWJmdfBd",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE.  Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of walking with a limp.</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Broken Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE.  Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of walking with a limp.</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5300,10 +5486,21 @@
           ],
           "drawn": false,
           "_id": "44CuXFqHDB9fgjCi",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Torn Achilles Tendon</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[4d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'.  Cannot run</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Torn Achilles Tendon</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[4d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE &amp; FIGHTIN'.  Cannot run</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5314,10 +5511,21 @@
           ],
           "drawn": false,
           "_id": "hJIz1TWmT15245Y5",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Fractured Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Fractured Ankle</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5328,10 +5536,21 @@
           ],
           "drawn": false,
           "_id": "rjBXr3ZBXT16HVbk",
-          "text": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Shattered Shin Bone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot Ride, Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: Lose the lower leg</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Lower Leg</p><p><strong>Injury</strong>: Shattered Shin Bone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot Ride, Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: Lose the lower leg</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5342,10 +5561,21 @@
           ],
           "drawn": false,
           "_id": "JWyUBgdFmnW4ErM8",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Numbed Leg</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Numbed Leg</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5356,10 +5586,21 @@
           ],
           "drawn": false,
           "_id": "rWfHeQVXxlMD0caH",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5370,10 +5611,21 @@
           ],
           "drawn": false,
           "_id": "4M8KIzj4vl7RArjv",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Torn Hamstring</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE.  Cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Torn Hamstring</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: -1 to MOVE.  Cannot Run</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5384,10 +5636,21 @@
           ],
           "drawn": false,
           "_id": "9cKLVsriSTIN06yJ",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Cracked Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Cracked Knee</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot Run or MOVE. Walks at half pace</p><p><strong>Long-Term Effect</strong>: 66% chance of walking with a limp</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5398,10 +5661,21 @@
           ],
           "drawn": false,
           "_id": "IiIX4aU5A5hzpaUk",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Broken Thigh</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −2 to any physical task</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Broken Thigh</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −2 to any physical task</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5412,10 +5686,21 @@
           ],
           "drawn": false,
           "_id": "fXHxlYIzp8v5OdCC",
-          "text": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Arterial Bleed</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −3 to any physical task</p><p><strong>Long-Term Effect</strong>: Lose the Leg</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Upper Leg</p><p><strong>Injury</strong>: Arterial Bleed</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds, −3 to any physical task</p><p><strong>Long-Term Effect</strong>: Lose the Leg</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5426,10 +5711,21 @@
           ],
           "drawn": false,
           "_id": "ZK44ckVyt3xQEmu7",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Numbed Arm</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Numbed Arm</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Turns</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5440,10 +5736,21 @@
           ],
           "drawn": false,
           "_id": "yEirNlk0zLEGQuv9",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’ &amp; FIGHTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to SHOOTIN’ &amp; FIGHTIN’</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5454,10 +5761,21 @@
           ],
           "drawn": false,
           "_id": "A4clwZpjhti4dmdS",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Impaled Shoulder</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Impaled Shoulder</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5468,10 +5786,21 @@
           ],
           "drawn": false,
           "_id": "mTluwu4o06ziqPPL",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Elbow Chipped</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Elbow Chipped</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Quick ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5482,10 +5811,21 @@
           ],
           "drawn": false,
           "_id": "sU61ig9xYZwxIv50",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Hand Hit</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of randomly losing a finger or thumb</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Hand Hit</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: 33% chance of randomly losing a finger or thumb</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5496,10 +5836,21 @@
           ],
           "drawn": false,
           "_id": "vhVHnFDMIDYjE8V7",
-          "text": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Compound Fracture</p><p><strong>Fatal</strong>: Yes / [[2d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: Lose the arm</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Arm</p><p><strong>Injury</strong>: Compound Fracture</p><p><strong>Fatal</strong>: Yes / [[2d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Cannot take actions that require the use of two hands</p><p><strong>Long-Term Effect</strong>: Lose the arm</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5510,10 +5861,21 @@
           ],
           "drawn": false,
           "_id": "qbFEVWZV0581PYf1",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Sucker Punched</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Sucker Punched</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5524,10 +5886,21 @@
           ],
           "drawn": false,
           "_id": "98MYd3zAyI8cnxcO",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Kidney Blow</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Kidney Blow</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[1d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5538,10 +5911,21 @@
           ],
           "drawn": false,
           "_id": "jbOykwgLxliNp1Wj",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Skewered Groin</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Suffer 1 damage for every LABOR, MOVE or FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: 33% chance of losing your ability to have kids</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Skewered Groin</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Suffer 1 damage for every LABOR, MOVE or FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: 33% chance of losing your ability to have kids</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5552,10 +5936,21 @@
           ],
           "drawn": false,
           "_id": "VKpEgURdKMkv4OXz",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Ruptured Spleen</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  −1 to all Physical Actions and −2 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Ruptured Spleen</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  −1 to all Physical Actions and −2 to RESILIENCE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5566,10 +5961,21 @@
           ],
           "drawn": false,
           "_id": "Uvjk9KmWmGj12kys",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Gut Shot</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Suffer 1 damage for every LABOR, MOVE or</p><p>FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: All future GUT crits get +1 to the Units Die</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Gut Shot</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[4d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  Suffer 1 damage for every LABOR, MOVE or</p><p>FIGHTIN’ roll</p><p><strong>Long-Term Effect</strong>: All future GUT crits get +1 to the Units Die</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5580,10 +5986,21 @@
           ],
           "drawn": false,
           "_id": "D3l9qpKmdoYj8yd1",
-          "text": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Lacerated Intestines</p><p><strong>Fatal</strong>: Yes −1 / [[2d6]] Rounds</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −3 to all physical tasks, and take 1 damage for every physical action</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Gut</p><p><strong>Injury</strong>: Lacerated Intestines</p><p><strong>Fatal</strong>: Yes −1 / [[2d6]] Rounds</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −3 to all physical tasks, and take 1 damage for every physical action</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5594,10 +6011,21 @@
           ],
           "drawn": false,
           "_id": "zQJrRmpeNTKGM3nU",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Winded</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Winded</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Rounds</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5608,10 +6036,21 @@
           ],
           "drawn": false,
           "_id": "Cq7Xtu4HRbABAe7U",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Bruised Ribs</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -2 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Bruised Ribs</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: -2 to MOVE</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5622,10 +6061,21 @@
           ],
           "drawn": false,
           "_id": "lIUEH27e1VoF1QeT",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Broken Collarbone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[6d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: Cannot Run or MOVE</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Broken Collarbone</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[6d6]] Days</p><p><strong>Immediate Effect</strong>: -1 to MOVE</p><p><strong>Long-Term Effect</strong>: Cannot Run or MOVE</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5636,10 +6086,21 @@
           ],
           "drawn": false,
           "_id": "12I4hBbOA443AyMN",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Punctured Lung</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  -1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Punctured Lung</p><p><strong>Fatal</strong>: Yes / [[1d6]] Days</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 1 Round.  -1 to all physical tasks</p><p><strong>Long-Term Effect</strong>: None</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5650,10 +6111,21 @@
           ],
           "drawn": false,
           "_id": "9ilrg8OThyzFBtGl",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Shattered Ribs</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  −2 to all physical tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Shattered Ribs</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[1d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 2 Rounds.  −2 to all physical tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to random Grit ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5664,10 +6136,21 @@
           ],
           "drawn": false,
           "_id": "4VvxtAZZDrmjAMlw",
-          "text": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Cut through the heart</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>:</p><p>YOUR HEART BEATS FOR JUST ONE MORE TIME</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Chest</p><p><strong>Injury</strong>: Cut through the heart</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>:</p><p>YOUR HEART BEATS FOR JUST ONE MORE TIME</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5678,10 +6161,21 @@
           ],
           "drawn": false,
           "_id": "OSGkLMaKsC5c85bb",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Nasty Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to PERFORMIN’</p><p><strong>Long-Term Effect</strong>: You have a permanent scar</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Nasty Flesh Wound</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to PERFORMIN’</p><p><strong>Long-Term Effect</strong>: You have a permanent scar</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5692,10 +6186,21 @@
           ],
           "drawn": false,
           "_id": "wsPagQvAinF6U39r",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Broken Nose</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to LABOR</p><p><strong>Long-Term Effect</strong>: You have a permanent “broken-nose” look</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Broken Nose</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[2d6]] Days</p><p><strong>Immediate Effect</strong>: −1 to LABOR</p><p><strong>Long-Term Effect</strong>: You have a permanent “broken-nose” look</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5706,10 +6211,21 @@
           ],
           "drawn": false,
           "_id": "ev7a2WIgXn09E35C",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Gouged Eyes</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: −2 to SHOOTIN’ &amp; HAWKEYE</p><p><strong>Long-Term Effect</strong>: Permanent blindness in 1 eye</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Gouged Eyes</p><p><strong>Fatal</strong>: No</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: −2 to SHOOTIN’ &amp; HAWKEYE</p><p><strong>Long-Term Effect</strong>: Permanent blindness in 1 eye</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5720,10 +6236,21 @@
           ],
           "drawn": false,
           "_id": "yyriXSTn5z6QncgD",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Fractured Skull</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds. −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Cunning or Docity ability</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Fractured Skull</p><p><strong>Fatal</strong>: Yes / [[1d6]] Turns</p><p><strong>Healing Time</strong>: [[2d6]] Weeks</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds. −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of −1 to a random Cunning or Docity ability</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5734,10 +6261,21 @@
           ],
           "drawn": false,
           "_id": "IuPJPdTtnXbgh27F",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Slashed Throat</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of permanent vocal impairment</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Slashed Throat</p><p><strong>Fatal</strong>: Yes −1 / [[1d6]] Rounds</p><p><strong>Healing Time</strong>: [[3d6]] Days</p><p><strong>Immediate Effect</strong>: Stunned for 3 Rounds.  −2 to all tasks</p><p><strong>Long-Term Effect</strong>: 33% chance of permanent vocal impairment</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5748,10 +6286,21 @@
           ],
           "drawn": false,
           "_id": "DxhtiPAtDJ04mHS4",
-          "text": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Terrible Hit to the Head</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: YOU ARE VERY DEAD</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p><strong>Location</strong>: Head</p><p><strong>Injury</strong>: Terrible Hit to the Head</p><p><strong>Fatal</strong>: Yes / Instant</p><p><strong>Healing Time</strong>: -</p><p><strong>Immediate Effect</strong>: -</p><p><strong>Long-Term Effect</strong>: YOU ARE VERY DEAD</p>",
+          "name": ""
         }
       ],
       "replacement": true,
@@ -5766,12 +6315,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729587221209,
         "modifiedTime": 1737112561435,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       },
       "formula": "10*1d6+1d6"
     },
@@ -5790,10 +6340,21 @@
           ],
           "drawn": false,
           "_id": "srsjUOzxidEYouzg",
-          "text": "<p>Your gun or weapon is damaged and you suffer a −1 penalty when using it from now on, or an important item breaks</p>",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "<p>Your gun or weapon is damaged and you suffer a −1 penalty when using it from now on, or an important item breaks</p>",
+          "name": ""
         },
         {
           "type": "text",
@@ -5804,10 +6365,21 @@
           ],
           "drawn": false,
           "_id": "vF5MA0BD1Mi6koev",
-          "text": "You stumble, slip or trip.  Lose your next slow  action.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You stumble, slip or trip.  Lose your next slow  action.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5818,10 +6390,21 @@
           ],
           "drawn": false,
           "_id": "2iAJgvYd6LdUxyYA",
-          "text": "You drop your weapon,  lose your reins or  otherwise lose your grip  on something important.  If it was keeping you  upright or on your feet  you may need to make  a MOVE roll to avoid a  worse outcome.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You drop your weapon,  lose your reins or  otherwise lose your grip  on something important.  If it was keeping you  upright or on your feet  you may need to make  a MOVE roll to avoid a  worse outcome.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5832,10 +6415,21 @@
           ],
           "drawn": false,
           "_id": "hrY6K3dVpa8FG0KS",
-          "text": "Your attack is under- powered, or your action is  weak. Lose a 6 from your  pool of successes.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your attack is under- powered, or your action is  weak. Lose a 6 from your  pool of successes.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5846,14 +6440,24 @@
           ],
           "drawn": false,
           "_id": "k6SP7K7ASTqlP1wr",
-          "text": "You are thrown off  balance. Lose your next  Round.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You are thrown off  balance. Lose your next  Round.",
+          "name": ""
         },
         {
           "type": "text",
-          "documentCollection": "RollTable",
           "weight": 1,
           "range": [
             6,
@@ -5861,14 +6465,24 @@
           ],
           "drawn": false,
           "_id": "g5yDNR19N0XggPsl",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
-          "documentCollection": "RollTable",
           "weight": 1,
           "range": [
             6,
@@ -5876,10 +6490,22 @@
           ],
           "drawn": false,
           "_id": "SzcZQ5ArSEYX8Xit",
-          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "J23yks6ALSqlFpX0",
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(2)",
+          "documentUuid": "RollTable.J23yks6ALSqlFpX0",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -5890,23 +6516,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158803527,
         "modifiedTime": 1733147004278,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -5925,10 +6551,21 @@
           ],
           "drawn": false,
           "_id": "0sUSodOS4aEd4M4C",
-          "text": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You are bashed and  battered. Suffer 1 point  of either Hurts or Shakes  (GM decides).",
+          "name": ""
         },
         {
           "type": "text",
@@ -5939,10 +6576,21 @@
           ],
           "drawn": false,
           "_id": "HCn3IP4fugModw93",
-          "text": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You trip and fall, or are  thrown from your horse,  and are Prone. A fall  from height may cause  further damage.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5953,10 +6601,21 @@
           ],
           "drawn": false,
           "_id": "UH5HqxX0goPm6APj",
-          "text": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your bullet was a dud, or  your deadly blow wasn’t  as good as you thought.  An otherwise successful  attack does no damage.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5967,10 +6626,21 @@
           ],
           "drawn": false,
           "_id": "JbenPvx0JSViscji",
-          "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5981,10 +6651,21 @@
           ],
           "drawn": false,
           "_id": "gpZmE2aUp06Qtotk",
-          "text": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your action results in  an impact on a random  bystander or unintended  target. They suffer a 4  dice attack, dam 1, crit 2.",
+          "name": ""
         },
         {
           "type": "text",
@@ -5995,10 +6676,21 @@
           ],
           "drawn": false,
           "_id": "pG1HkCW93GeBa0JF",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
@@ -6009,11 +6701,22 @@
           ],
           "drawn": false,
           "_id": "L6z8gX2mcoJkT6br",
-          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "zqtm7HB37JwEXqLM",
           "flags": {},
-          "documentCollection": "RollTable"
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+          "documentUuid": "RollTable.zqtm7HB37JwEXqLM",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -6024,23 +6727,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158834266,
         "modifiedTime": 1733147008658,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6059,10 +6762,21 @@
           ],
           "drawn": false,
           "_id": "2s8xEblRzMlHKWl7",
-          "text": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6073,10 +6787,21 @@
           ],
           "drawn": false,
           "_id": "glc7R39ZOQyuoDcn",
-          "text": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6087,10 +6812,21 @@
           ],
           "drawn": false,
           "_id": "M8yU2nMoXb2qAxVT",
-          "text": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6101,10 +6837,21 @@
           ],
           "drawn": false,
           "_id": "pRmG78BdFY38Na1u",
-          "text": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6115,10 +6862,21 @@
           ],
           "drawn": false,
           "_id": "jYRLedq17XL8MyS0",
-          "text": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6129,10 +6887,21 @@
           ],
           "drawn": false,
           "_id": "zJxhC33OxMq38bwp",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
@@ -6143,11 +6912,22 @@
           ],
           "drawn": false,
           "_id": "Hhx96VSeqVGQQvOy",
-          "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "Lj1PqruHzmvl6sDL",
           "flags": {},
-          "documentCollection": "RollTable"
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
+          "documentUuid": "RollTable.Lj1PqruHzmvl6sDL",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -6158,23 +6938,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158849440,
         "modifiedTime": 1733147014666,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6193,10 +6973,21 @@
           ],
           "drawn": false,
           "_id": "fbiv5Jp6ypuw1gOz",
-          "text": "You’re so shaken and  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re so shaken and  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6207,10 +6998,21 @@
           ],
           "drawn": false,
           "_id": "kIIz3ZVGxBp6wvhp",
-          "text": "Your action has gone  catastrophically wrong. A  key item of great value is  broken beyond repair, or  your horse is killed.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your action has gone  catastrophically wrong. A  key item of great value is  broken beyond repair, or  your horse is killed.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6221,10 +7023,21 @@
           ],
           "drawn": false,
           "_id": "iJGQ4bD1q6n2FoRX",
-          "text": "You trip and fall, or  are thrown from your  horse, and are Prone.  Take falling damage if  the fall is far enough.  You are Stunned for  D6 Rounds minus the  number of successes on a  RESILIENCE test.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You trip and fall, or  are thrown from your  horse, and are Prone.  Take falling damage if  the fall is far enough.  You are Stunned for  D6 Rounds minus the  number of successes on a  RESILIENCE test.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6235,10 +7048,21 @@
           ],
           "drawn": false,
           "_id": "8nZBbXOwCqGqPqpI",
-          "text": "Your attack or action  has terribly affected a  random nearby bystander.  They are immediately  Broken on Grit and  suffer a critical injury.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your attack or action  has terribly affected a  random nearby bystander.  They are immediately  Broken on Grit and  suffer a critical injury.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6249,10 +7073,21 @@
           ],
           "drawn": false,
           "_id": "B5Pp3gBjb0uMZeAq",
-          "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Grit.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Grit.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6263,10 +7098,21 @@
           ],
           "drawn": false,
           "_id": "WtKCjdAGYQEV2J5I",
-          "text": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Quick.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You have bashed yourself  terribly in some way, and  are immediately Broken  on Quick.",
+          "name": ""
         }
       ],
       "replacement": true,
@@ -6277,23 +7123,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158862626,
         "modifiedTime": 1733147022038,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6312,10 +7158,21 @@
           ],
           "drawn": false,
           "_id": "pr8E42zC2hlUchEn",
-          "text": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6326,10 +7183,21 @@
           ],
           "drawn": false,
           "_id": "j7Is6FHy7JQqyBBn",
-          "text": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6340,10 +7208,21 @@
           ],
           "drawn": false,
           "_id": "Ziv6uK5eVFMWYpEu",
-          "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6354,10 +7233,21 @@
           ],
           "drawn": false,
           "_id": "cR5Qf2hTQqqewi8R",
-          "text": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6368,10 +7258,21 @@
           ],
           "drawn": false,
           "_id": "IUUecy5EqwewRuKY",
-          "text": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6382,10 +7283,21 @@
           ],
           "drawn": false,
           "_id": "8Q9k63PX4R6nemMA",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
@@ -6396,11 +7308,22 @@
           ],
           "drawn": false,
           "_id": "AMS0nitF3OnstMSl",
-          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "hSf8k6g2vL7234BW",
           "flags": {},
-          "documentCollection": "RollTable"
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
+          "documentUuid": "RollTable.hSf8k6g2vL7234BW",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -6411,23 +7334,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158877972,
         "modifiedTime": 1729158891198,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6446,10 +7369,21 @@
           ],
           "drawn": false,
           "_id": "pr8E42zC2hlUchEn",
-          "text": "Your confidence is badly  shaken. Suffer 1 point of  either Vexes or Doubts  (GM decides).",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your confidence is badly  shaken. Suffer 1 point of  either Vexes or Doubts  (GM decides).",
+          "name": ""
         },
         {
           "type": "text",
@@ -6460,10 +7394,21 @@
           ],
           "drawn": false,
           "_id": "j7Is6FHy7JQqyBBn",
-          "text": "You’re tongue-tied. You  suffer a −1 penalty on all  ability rolls relating to  social or mental tests for  the rest of the scene.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re tongue-tied. You  suffer a −1 penalty on all  ability rolls relating to  social or mental tests for  the rest of the scene.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6474,10 +7419,21 @@
           ],
           "drawn": false,
           "_id": "Ziv6uK5eVFMWYpEu",
-          "text": "Either directly or through  the grapevine, people  get to know of your bad  showing. For the rest  of the scenario, all your  ability rolls relating to  social encounters suffer a  −1 penalty.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Either directly or through  the grapevine, people  get to know of your bad  showing. For the rest  of the scenario, all your  ability rolls relating to  social encounters suffer a  −1 penalty.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6488,10 +7444,21 @@
           ],
           "drawn": false,
           "_id": "cR5Qf2hTQqqewi8R",
-          "text": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re badly shaken by  the turn of events. Until  the end of the scene, you  suffer Trouble on a roll  of 1 or 2, but may recover  by taking a slow action  to draw breath, and  spending 1 Faith Point.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6502,10 +7469,21 @@
           ],
           "drawn": false,
           "_id": "IUUecy5EqwewRuKY",
-          "text": "You’ve made such a pig’s  ear of the situation that  the object of your efforts  dismisses you. You cannot  try to influence them  again for at least 24  hours.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’ve made such a pig’s  ear of the situation that  the object of your efforts  dismisses you. You cannot  try to influence them  again for at least 24  hours.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6516,10 +7494,21 @@
           ],
           "drawn": false,
           "_id": "8Q9k63PX4R6nemMA",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
@@ -6530,11 +7519,22 @@
           ],
           "drawn": false,
           "_id": "AMS0nitF3OnstMSl",
-          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "K4z09Ows9VzLr9Vr",
           "flags": {},
-          "documentCollection": "RollTable"
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+          "documentUuid": "RollTable.K4z09Ows9VzLr9Vr",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -6545,23 +7545,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158894293,
         "modifiedTime": 1729158909340,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6580,10 +7580,21 @@
           ],
           "drawn": false,
           "_id": "pr8E42zC2hlUchEn",
-          "text": "You get so frustrated that  you suffer 1 point of both  Vexes and Doubts.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You get so frustrated that  you suffer 1 point of both  Vexes and Doubts.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6594,10 +7605,21 @@
           ],
           "drawn": false,
           "_id": "j7Is6FHy7JQqyBBn",
-          "text": "You struggle to cope with  the situation. Lose your  next Round to compose  yourself.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You struggle to cope with  the situation. Lose your  next Round to compose  yourself.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6608,10 +7630,21 @@
           ],
           "drawn": false,
           "_id": "Ziv6uK5eVFMWYpEu",
-          "text": "Your actions seem  so disrespectful or  disgraceful that a nearby  non-player character  (NPC) attacks you with  a slap or a punch to put  you in your place.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your actions seem  so disrespectful or  disgraceful that a nearby  non-player character  (NPC) attacks you with  a slap or a punch to put  you in your place.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6622,10 +7655,21 @@
           ],
           "drawn": false,
           "_id": "cR5Qf2hTQqqewi8R",
-          "text": "Things are going badly  wrong, and you can’t  cope. You need a Turn to  pull yourself together.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Things are going badly  wrong, and you can’t  cope. You need a Turn to  pull yourself together.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6636,10 +7680,21 @@
           ],
           "drawn": false,
           "_id": "IUUecy5EqwewRuKY",
-          "text": "The shameful experience  scars you, and you suffer  a 6 dice attack, dam 1,  against your Docity and  Cunning.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "The shameful experience  scars you, and you suffer  a 6 dice attack, dam 1,  against your Docity and  Cunning.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6650,10 +7705,21 @@
           ],
           "drawn": false,
           "_id": "8Q9k63PX4R6nemMA",
-          "text": "Your Troubles are  mounting—reroll on the  next column.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your Troubles are  mounting—reroll on the  next column.",
+          "name": ""
         },
         {
           "type": "document",
@@ -6664,11 +7730,22 @@
           ],
           "drawn": false,
           "_id": "AMS0nitF3OnstMSl",
-          "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
           "img": "icons/svg/d20-grey.svg",
-          "documentId": "HFc4NoTiBzTeiduz",
           "flags": {},
-          "documentCollection": "RollTable"
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
+          "documentUuid": "RollTable.HFc4NoTiBzTeiduz",
+          "description": ""
         }
       ],
       "replacement": true,
@@ -6679,23 +7756,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158912303,
         "modifiedTime": 1729158922319,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     },
@@ -6714,10 +7791,21 @@
           ],
           "drawn": false,
           "_id": "pr8E42zC2hlUchEn",
-          "text": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6728,10 +7816,21 @@
           ],
           "drawn": false,
           "_id": "j7Is6FHy7JQqyBBn",
-          "text": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6742,10 +7841,21 @@
           ],
           "drawn": false,
           "_id": "Ziv6uK5eVFMWYpEu",
-          "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6756,10 +7866,21 @@
           ],
           "drawn": false,
           "_id": "cR5Qf2hTQqqewi8R",
-          "text": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6770,10 +7891,21 @@
           ],
           "drawn": false,
           "_id": "IUUecy5EqwewRuKY",
-          "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
+          "name": ""
         },
         {
           "type": "text",
@@ -6784,10 +7916,21 @@
           ],
           "drawn": false,
           "_id": "8Q9k63PX4R6nemMA",
-          "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
           "img": "icons/svg/d20-black.svg",
-          "documentId": null,
-          "flags": {}
+          "flags": {},
+          "_stats": {
+            "coreVersion": "13.336",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "description": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
+          "name": ""
         }
       ],
       "replacement": true,
@@ -6798,23 +7941,23 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3
       },
-      "flags": {
-        "exportSource": {
-          "world": "tales-of-the-old-west",
-          "system": "talesoftheoldwest",
-          "coreVersion": "12.331",
-          "systemVersion": "0.0.1"
-        }
-      },
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729158925601,
         "modifiedTime": 1729158936133,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": {
+          "worldId": "tales-of-the-old-west",
+          "uuid": null,
+          "coreVersion": "12.331",
+          "systemId": "talesoftheoldwest",
+          "systemVersion": "0.0.1"
+        }
       },
       "formula": "1d6"
     }
@@ -6836,12 +7979,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1729770574306,
         "modifiedTime": 1737561596616,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6857,12 +8001,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730033932764,
         "modifiedTime": 1737561596616,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6878,12 +8023,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1730034995904,
         "modifiedTime": 1737561596616,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6899,12 +8045,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1737550541422,
         "modifiedTime": 1737561831358,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6920,12 +8067,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739451353699,
         "modifiedTime": 1739451369824,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6941,12 +8089,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739451535151,
         "modifiedTime": 1739453517620,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6962,12 +8111,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739451517059,
         "modifiedTime": 1739452732033,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -6983,12 +8133,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739451505429,
         "modifiedTime": 1739453523094,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     },
     {
@@ -7004,12 +8155,13 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.336",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": 1739885958684,
         "modifiedTime": 1739885958684,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
+        "lastModifiedBy": "oo2KG31LDGhYx0MC",
+        "exportSource": null
       }
     }
   ],
@@ -7019,12 +8171,13 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "13.336",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
     "modifiedTime": 1740314088542,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+    "lastModifiedBy": "oo2KG31LDGhYx0MC",
+    "exportSource": null
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"
 }
