@@ -1,4 +1,15 @@
-<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</div>
+<div class='heading'>
+	<label class='dots resource-label' style='padding-right: 15px' data-key='overwatch' title='{{localize "ALIENRPG.ConButtons"}}'>
+		{{localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
+		<a class='overwatch-toggle' data-action='toggleCondition' data-key='overwatch'>
+			{{#if (eq system.conditions.overwatch true)}}
+				<i class='far fa-dot-circle'></i>
+			{{else}}
+				<i class='far fa-circle'></i>
+			{{/if}}
+		</a>
+	</label>
+	{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</div>
 <div>
 	<ol class='items-list'>
 		<li class='item grid-weapon-items items-header' style='width: 880px'>

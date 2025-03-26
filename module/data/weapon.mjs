@@ -7,12 +7,12 @@ export default class totowWeapon extends totowItemBase {
 		const schema = super.defineSchema();
 		schema.subtype = new fields.StringField({ required: true, blank: true, initial: 'fightin' });
 		schema.action = new fields.StringField({ required: true, blank: true, initial: 'na' });
-		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
-		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
-		schema.damage = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
-		schema.crit = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0 });
+		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0 });
+		schema.damage = new fields.NumberField({ ...requiredInteger, initial: 0 });
+		schema.crit = new fields.NumberField({ ...requiredInteger, initial: 0 });
 		schema.range = new fields.StringField({ required: true, blank: true, initial: 'armslength' });
-		schema.ammo = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
+		schema.ammo = new fields.NumberField({ ...requiredInteger, initial: 0 });
 		schema.featureModifiers = new fields.ArrayField(
 			new fields.SchemaField({
 				id: new fields.StringField({ required: true, blank: false }),
@@ -22,9 +22,11 @@ export default class totowWeapon extends totowItemBase {
 				description: new fields.StringField({ required: true, blank: false }),
 				onweapon: new fields.StringField({ required: true, blank: false }),
 				img: new fields.StringField({ required: true, blank: false }),
-				state: new fields.StringField({ required: false, blank: true, initial: 'conditional' }),
-				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
-				attribute: new fields.StringField({ required: false, blank: true, initial: 'None' }),
+				itemModifiers: new fields.ObjectField({ nullable: true }),
+
+				// state: new fields.StringField({ required: false, blank: true, initial: 'conditional' }),
+				// value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+				// attribute: new fields.StringField({ required: false, blank: true, initial: 'None' }),
 			})
 		);
 
@@ -40,9 +42,5 @@ export default class totowWeapon extends totowItemBase {
 		return schema;
 	}
 
-	prepareDerivedData() {
-		// Build the formula dynamically using string interpolation
-		// const roll = this.roll;
-		// this.formula = `${roll.diceNum}${roll.diceSize}${roll.diceBonus}`;
-	}
+	prepareDerivedData() {}
 }

@@ -41,7 +41,7 @@ export default class totowPC extends totowActorBase {
 				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
-			publicsperit: new fields.SchemaField({
+			publicspirit: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
@@ -75,6 +75,7 @@ export default class totowPC extends totowActorBase {
 			freezing: new fields.BooleanField({ initial: false }),
 			encumbered: new fields.BooleanField({ initial: false }),
 			overwatch: new fields.BooleanField({ initial: false }),
+			heatstroke: new fields.BooleanField({ initial: false }),
 		});
 
 		schema.damage = new fields.SchemaField({
@@ -84,15 +85,15 @@ export default class totowPC extends totowActorBase {
 			}),
 			shakes: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 			}),
 			vexes: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 			}),
 			doubts: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 			}),
 		});
 
@@ -112,10 +113,15 @@ export default class totowPC extends totowActorBase {
 			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
 		this.general.faithpoints.max = 10 - this.general.faithpoints.value;
-		this.damage.hurts.max = 5 - this.damage.hurts.value;
-		this.damage.shakes.max = 5 - this.damage.shakes.value;
-		this.damage.vexes.max = 5 - this.damage.vexes.value;
-		this.damage.doubts.max = 5 - this.damage.doubts.value;
+		// this.damage.hurts.max = 5 - this.damage.hurts.value;
+		// this.damage.shakes.max = 5 - this.damage.shakes.value;
+		// this.damage.vexes.max = 5 - this.damage.vexes.value;
+		// this.damage.doubts.max = 5 - this.damage.doubts.value;
+
+		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
+		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
+		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
+		this.damage.doubts.max = this.attributes.docity.max - this.damage.doubts.value;
 	}
 
 	getRollData() {

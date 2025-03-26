@@ -212,17 +212,6 @@
 					</ol>
 				</div>
 				<div class="heading">
-					<label class="dots resource-label" style="padding-right: 15px" data-key="overwatch" title="{{ localize 'ALIENRPG.ConButtons'}}">
-						{{ localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
-						<a class="overwatch-toggle" data-action="toggleCondition" data-key="overwatch">
-							{{#if (eq system.conditions.overwatch true)}}
-							<i class="far fa-dot-circle"></i>
-							{{else}}
-							<i class="far fa-circle"></i>
-							{{/if}}
-						</a>
-					</label>
-
 					<label class="dots resource-label" style="padding-right: 15px" data-key="starving" title="{{ localize 'ALIENRPG.ConButtons'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="starving">
@@ -256,10 +245,20 @@
 						</a>
 					</label>
 
-					<label class="dots resource-label" data-key="freezing" title="{{ localize 'ALIENRPG.ConButtons'}}">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="freezing" title="{{ localize 'ALIENRPG.ConButtons'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="freezing">
 							{{#if (eq system.conditions.freezing true)}}
+							<i class="far fa-dot-circle"></i>
+							{{else}}
+							<i class="far fa-circle"></i>
+							{{/if}}
+						</a>
+					</label>
+					<label class="dots resource-label" data-key="heatstroke" title="{{ localize 'ALIENRPG.ConButtons'}}">
+						{{ localize 'TALESOFTHEOLDWEST.Conditions.Heatstroke'}}
+						<a class="overwatch-toggle" data-action="toggleCondition" data-key="heatstroke">
+							{{#if (eq system.conditions.heatstroke true)}}
 							<i class="far fa-dot-circle"></i>
 							{{else}}
 							<i class="far fa-circle"></i>

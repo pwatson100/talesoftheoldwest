@@ -91,9 +91,20 @@
 
 				</div>
 			</section>
+			{{#if modifiers.talent}}
+				<section>
+					<div style='position: relative'>
+						<details>
+							<summary style='font-size: large;'>Talents/Weapon Features</summary>
+							<br />
+							{{keepMarkup modifiers.talent}}
+						</details>
+					</div>
+				</section>
+			{{/if}}
+
 			{{#if (gt totalSuccess 1)}}
 				{{#if (ne stunts 'None')}}
-
 					<section>
 						<div style='position: relative'>
 							<details>
@@ -180,7 +191,10 @@
 				<details>
 					<summary>Expand To See Roll modifiers</summary>
 					<br />
-					<h4 class=''>Attribute+Skill+Talent ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Success Mod ({{modifiers.successMod}})</h4>
+					<h4 class=''>Trouble Mod ({{modifiers.troubleMod}})</h4>
+					<h4 class=''>Shootin Mod ({{modifiers.shootinMod}})</h4>
 					<h4 class=''>Range ({{modifiers.shootrangeMod}})</h4>
 					<h4 class=''>Called Shots ({{modifiers.shootcalledShotsMod}})</h4>
 					<h4 class=''>Target Cover ({{modifiers.shootcoverMod}})</h4>
@@ -198,7 +212,10 @@
 					<br />
 					<h4 style='font-size: large;font-weight:bold;'>trouble ({{trouble}})</h4>
 					<h4 style='font-size: large;font-weight:bold;'>canPush ({{canPush}})</h4>
-					<h4 class=''>Attribute+Skill+Talents ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Fightin Mod ({{modifiers.fightinMod}})</h4>
+					<h4 class=''>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</h4>
+					<h4 class=''>Success Mod ({{modifiers.successMod}})</h4>
+					<h4 class=''>Trouble Mod ({{modifiers.troubleMod}})</h4>
 					<h4 class=''>Target prone ({{modifiers.fightProneMod}})</h4>
 					<h4 class=''>All-Out Attack ({{modifiers.fightAlloutattackMod}})</h4>
 					<h4 class=''>Called Strike ({{modifiers.fightCalledstrikeMod}})</h4>

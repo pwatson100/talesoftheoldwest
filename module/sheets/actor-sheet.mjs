@@ -422,6 +422,98 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 								break;
 						}
 					}
+					// if (allItems.type === 'weapon') {
+					// 	for (let [key, featuremods] of Object.entries(allItems.system.featureModifiers)) {
+					// 		switch (featuremods.name) {
+					// 			case 'docity':
+					// 				attrMod.docity = attrMod.docity += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'quick':
+					// 				attrMod.quick = attrMod.quick += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'cunning':
+					// 				attrMod.cunning = attrMod.cunning += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'grit':
+					// 				attrMod.grit = attrMod.grit += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'labor':
+					// 				sklMod.labor = sklMod.labor += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'presence':
+					// 				sklMod.presence = sklMod.presence += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'fightin':
+					// 				sklMod.fightin = sklMod.fightin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'resilience':
+					// 				sklMod.resilience = sklMod.resilience += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'move':
+					// 				sklMod.move = sklMod.move += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'operate':
+					// 				sklMod.operate = sklMod.operate += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'shootin':
+					// 				sklMod.shootin = sklMod.shootin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'lightfingered':
+					// 				sklMod.lightfingered = sklMod.lightfingered += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'hawkeye':
+					// 				sklMod.hawkeye = sklMod.hawkeye += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'nature':
+					// 				sklMod.nature = sklMod.nature += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'insight':
+					// 				sklMod.insight = sklMod.insight += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'animalhandlin':
+					// 				sklMod.animalhandlin = sklMod.animalhandlin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'performin':
+					// 				sklMod.performin = sklMod.performin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'makin':
+					// 				sklMod.makin = sklMod.makin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'doctorin':
+					// 				sklMod.doctorin = sklMod.doctorin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'booklearnin':
+					// 				sklMod.booklearnin = sklMod.booklearnin += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			case 'flight':
+					// 				sklMod.flight = sklMod.flight += parseInt(featuremods.value);
+					// 				anyMods++;
+					// 				break;
+					// 			default:
+					// 				break;
+					// 		}
+					// 	}
+					// }
 				}
 			}
 		}

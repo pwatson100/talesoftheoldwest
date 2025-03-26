@@ -34,5 +34,11 @@
 			<label style="color: black">{{localize 'TALESOFTHEOLDWEST.DiceMod'}}</label>
 			<input class="statnum" style="width: 20px" id="modifier" name="modifier" value="0" data-dtype="Number" />
 		</div>
+		{{#if dataset.conditional}}
+		<h4 style="color: black">{{localize 'TALESOFTHEOLDWEST.General.conditional'}}</h4>
+		<div>
+			<label style="color: black">{{keepMarkup dataset.conditional}}</label>
+		</div>
+		{{/if}}
 	</section>
 </form>

@@ -119,6 +119,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	}
 
 	/** @override */
+
 	async _preparePartContext(partId, context) {
 		switch (partId) {
 			case 'talent':
@@ -294,10 +295,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let update = {};
 		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 		update[`system.itemModifiers.${modifierId}`] = {
-			description: '',
 			attribute: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
-			value: '0',
-			state: false,
+			value: Number(0),
+			state: 'Conditional',
 		};
 		// await item.update(update).render(true);
 		await item.update(update);
@@ -684,9 +684,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let weaponFeature = {};
 		if (dropItem.system.itemModifiers) {
 			weaponFeature = {
-				attribute: dropItem.system.itemModifiers[0].attribute,
-				state: dropItem.system.itemModifiers[0].state,
-				value: dropItem.system.itemModifiers[0].value,
+				itemModifiers: dropItem.system.itemModifiers,
 				id: dropItem.id,
 				name: dropItem.name,
 				feature: dropItem.system.feature,
@@ -718,8 +716,60 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 
 			return ui.notifications.error(game.i18n.localize(game.i18n.localize(errormessage)));
 		}
-		system.featureModifiers.push(weaponFeature);
+		let fkey = system.featureModifiers.push(weaponFeature);
+
 		await target.update({ 'system.featureModifiers': system.featureModifiers });
+
+		for (const ikey in target.system.featureModifiers[fkey - 1].itemModifiers) {
+			switch (target.system.featureModifiers[fkey - 1].itemModifiers[ikey].attribute) {
+				case 'attackbonus':
+					if (Math.sign(Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value))) {
+						await target.update({
+							'system.attackbonus': target.system.attackbonus + Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					} else {
+						await target.update({
+							'system.attackbonus': target.system.attackbonus - Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					}
+
+					break;
+				case 'drawbonus':
+					if (Math.sign(Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value))) {
+						await target.update({
+							'system.bonusdraw': target.system.bonusdraw + Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					} else {
+						await target.update({
+							'system.bonusdraw': target.system.bonusdraw - Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					}
+					break;
+				case 'damage':
+					if (Math.sign(Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value))) {
+						await target.update({
+							'system.damage': target.system.damage + Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					} else {
+						await target.update({
+							'system.damage': target.system.damage - Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					}
+					break;
+				case 'crit':
+					if (Math.sign(Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value))) {
+						await target.update({
+							'system.crit': target.system.crit + Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					} else {
+						await target.update({
+							'system.crit': target.system.crit - Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value),
+						});
+					}
+					break;
+			}
+		}
+
 		return weaponFeature;
 	}
 
@@ -733,6 +783,58 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		const itemData = this.item;
 		const elem = target.currentTarget;
 		const li = target.closest('.quality');
+
+		let temp = itemData.system.featureModifiers.filter((o) => o.id === li?.dataset?.itemId);
+
+		for (const ikey in temp[0].itemModifiers) {
+			switch (temp[0].itemModifiers[ikey].attribute) {
+				case 'attackbonus':
+					if (Math.sign(Number(temp[0].itemModifiers[ikey].value))) {
+						await itemData.update({
+							'system.attackbonus': itemData.system.attackbonus - Number(temp[0].itemModifiers[ikey].value),
+						});
+					} else {
+						await itemData.update({
+							'system.attackbonus': itemData.system.attackbonus + Number(temp[0].itemModifiers[ikey].value),
+						});
+					}
+					break;
+				case 'drawbonus':
+					if (Math.sign(Number(temp[0].itemModifiers[ikey].value))) {
+						await itemData.update({
+							'system.bonusdraw': itemData.system.bonusdraw - Number(temp[0].itemModifiers[ikey].value),
+						});
+					} else {
+						await itemData.update({
+							'system.bonusdraw': itemData.system.bonusdraw + Number(temp[0].itemModifiers[ikey].value),
+						});
+					}
+					break;
+				case 'damage':
+					if (Math.sign(Number(temp[0].itemModifiers[ikey].value))) {
+						await itemData.update({
+							'system.damage': itemData.system.damage - Number(temp[0].itemModifiers[ikey].value),
+						});
+					} else {
+						await itemData.update({
+							'system.damage': itemData.system.damage + Number(temp[0].itemModifiers[ikey].value),
+						});
+					}
+					break;
+				case 'crit':
+					if (Math.sign(Number(temp[0].itemModifiers[ikey].value))) {
+						await itemData.update({
+							'system.crit': itemData.system.crit - Number(temp[0].itemModifiers[ikey].value),
+						});
+					} else {
+						await itemData.update({
+							'system.crit': itemData.system.crit + Number(temp[0].itemModifiers[ikey].value),
+						});
+					}
+					break;
+			}
+		}
+
 		let featureModifiers = itemData.system.featureModifiers.filter((o) => o.id !== li?.dataset?.itemId);
 		await itemData.update({ 'system.featureModifiers': featureModifiers });
 		return featureModifiers;
@@ -744,14 +846,12 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 * @returns {WeaponFeature|undefined}
 	 */
 	async getWeaponFeature(featureId) {
-		// if (this.type !== 'vehicles' && this.type !== 'spacecraft') return;
 		return this.system.featureModifiers.find((o) => o.id === featureId);
 	}
 
 	/* ------------------------------------------- */
 
 	/**
-	 * Gets a collection of crewed actors.
 	 * @returns {Collection<string, Actor>} [id, actor]
 	 */
 	async getCWeaponConditions() {

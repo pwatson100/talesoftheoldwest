@@ -39,7 +39,7 @@ export async function rollTrouble(results, ev) {
 	let roll = '';
 	const troubleTable = Number(ev.submitter.value);
 
-	let trouble = parseInt(results[1].trouble);
+	let trouble = Nunber(results[1].trouble);
 
 	switch (troubleTable) {
 		case 1:
@@ -179,6 +179,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 	let ability = '';
 	let stunts = '';
 	const tDice = roll.dice[0];
+
 	tDice.results.forEach((r) => {
 		switch (r.result) {
 			case 6:
@@ -238,6 +239,8 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 			}
 		});
 	}
+
+	// This is where the sucess and troupble mods from weapons and talents needs to go.
 
 	const numberOfDice = troubleSucc + trouble + troubleRest + normalSucc + rest;
 	const totalRolled = numberOfDice <= 0;
