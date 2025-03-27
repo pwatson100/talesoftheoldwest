@@ -11,4 +11,64 @@
 	{{else}}
 		{{{enrichedBasic}}}
 	{{/if}}
+
+	{{#if isGM}}
+		<div class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.roll-modifiers')}}</div>
+		<div style=' overflow-x: auto; '>
+			<ol class='items-list'>
+				<li class='item grid-weapon-feature-list items-header'>
+					<div class='item-name grid-wfl1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+					<div class='item-name grid-wfl2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.value')}}</div>
+					<div class='item-name grid-wfl3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.condition')}}</div>
+					<div class='item-controls grid-wfl4'>
+						<a
+							class='button'
+							data-action='addTalentModifier'
+							data-origin='{{item.id}}'
+							data-actor='{{@root.item.actor.id}}'
+							data-isEmbedded='{{item.isEmbedded}}'
+							data-talentType='basic'
+							title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'
+						><i class='fas fa-plus'></i></a>
+					</div>
+				</li>
+				{{#each system.itemModifiers as |modifier|}}
+					{{#if (eq modifier.talenttype 'basic')}}
+
+						<li class='item grid-weapon-feature-list' data-item-id='{{item._id}}' data-drag='false' data-document-class='talent'>
+							<div class='item-image grid-wfl1'>
+								<select name='system.itemModifiers.{{@key}}.name'>
+									{{selectOptions @root.config.item_modifier_list selected=modifier.name labelAttr='label' localize=true}}
+								</select>
+							</div>
+							<div class='item-name grid-wfl2'>
+								<input name='system.itemModifiers.{{@key}}.value' type='number' value='{{modifier.value}}' style='text-align: center' />
+							</div>
+							<div class='item-name grid-wfl3'>
+								<select name='system.itemModifiers.{{@key}}.state'>
+									{{selectOptions @root.config.item_modifier_state selected=modifier.state labelAttr='label' localize=true}}
+								</select>
+							</div>
+							<div class='item-controls grid-wfl4'>
+								<a
+									class='button delete-modifier'
+									data-action='deletemodifier'
+									data-origin='{{@root.item.id}}'
+									data-isEmbedded='{{@root.item.isEmbedded}}'
+									data-actor='{{@root.item.actor.id}}'
+									title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
+									data-modifier-id='{{@key}}'
+								>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{else}}
+					<i>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.noModifiers')}}</i>
+				{{/each}}
+			</ol>
+		</div>
+	{{/if}}
+
 </section>

@@ -738,7 +738,7 @@ body .application select {
 
 .grid-item-header {
   display: grid;
-  grid-template-areas: "ItemHedCol1 ItemHedCol1 ItemHedCol2" "ItemHedCol3 ItemHedCol4 ItemHedCol2 " "ItemHedCol5 ItemHedCol6 ItemHedCol2 ";
+  grid-template-areas: "ItemHedCol1 ItemHedCol1 ItemHedCol2" "ItemHedCol3 ItemHedCol4 ItemHedCol2 " "ItemHedCol5 ItemHedCol6 ItemHedCol2 " "ItemHedCol7 ItemHedCol8 ItemHedCol2 ";
   grid-template-columns: 140px 140px 160px;
 }
 
@@ -773,6 +773,19 @@ body .application select {
 
 .ItemHedCol6 {
   grid-area: ItemHedCol6;
+  align-self: center;
+}
+
+.ItemHedCol7 {
+  grid-area: ItemHedCol7;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+.ItemHedCol8 {
+  grid-area: ItemHedCol8;
   align-self: center;
 }
 

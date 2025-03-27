@@ -10,7 +10,7 @@
 				{{#each system.featureModifiers as |item id|}}
 					{{#if (eq item.type 'shootin')}}
 						{{#if (eq item.feature 'quality')}}
-							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon Quality'>
+							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
 									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
 								</div>
@@ -50,7 +50,7 @@
 				{{#each system.featureModifiers as |item id|}}
 					{{#if (eq item.type 'shootin')}}
 						{{#if (eq item.feature 'condition')}}
-							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon Quality'>
+							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
 									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
 								</div>
@@ -97,7 +97,7 @@
 					{{#if (eq item.type 'fightin')}}
 
 						{{#if (eq item.feature 'quality')}}
-							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon Quality'>
+							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
 									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
 								</div>
@@ -138,7 +138,7 @@
 				{{#each system.featureModifiers as |item id|}}
 					{{#if (eq item.type 'fightin')}}
 						{{#if (eq item.feature 'condition')}}
-							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon Quality'>
+							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
 									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
 								</div>

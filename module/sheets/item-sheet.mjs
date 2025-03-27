@@ -25,6 +25,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			createDoc: this._createEffect,
 			deleteDoc: this._deleteEffect,
 			addqualitymodifier: this._addqualitymodifier,
+			addTalentModifier: this._addTalentModifier,
 			addmodifier: this._addmodifier,
 			deletemodifier: this._deletemodifier,
 		},
@@ -76,7 +77,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'talent':
-				options.parts.push('basic', 'advanced', 'modifiers');
+				options.parts.push('basic', 'advanced');
 				break;
 			case 'item':
 			case 'crit':
@@ -295,13 +296,40 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let update = {};
 		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 		update[`system.itemModifiers.${modifierId}`] = {
-			attribute: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
+			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
 			value: Number(0),
 			state: 'Conditional',
 		};
 		// await item.update(update).render(true);
 		await item.update(update);
 	}
+	static async _addTalentModifier(event, target) {
+		let item = '';
+		let actor = '';
+		if (target.dataset.isembedded === 'true') {
+			actor = game.actors.get(target.dataset.actor);
+			item = actor.getEmbeddedDocument('items', target.dataset.origin);
+			let myId = target.dataset.origin;
+			console.log('1 its Embedded', actor);
+		} else {
+			item = game.items.get(target.dataset.origin);
+		}
+		// const data = await item.getData();
+		const itemModifiers = item.system.itemModifiers || {};
+		// To preserve order, make sure the new index is the highest
+		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
+		let update = {};
+		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
+		update[`system.itemModifiers.${modifierId}`] = {
+			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
+			value: Number(0),
+			state: 'Conditional',
+			talenttype: target.dataset.talenttype,
+		};
+		// await item.update(update).render(true);
+		await item.update(update);
+	}
+
 	/**
 	 * Handle adding a modifier.
 	 *

@@ -6,8 +6,8 @@
 			<select id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
-			<label for='system.weight' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
-			<input class='statnum' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+			{{!-- <label for='system.weight' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label> --}}
+			{{!-- <input class='statnum' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' /> --}}
 
 			{{#if (eq system.subtype 'shootin')}}
 				<label for='system.action' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
@@ -119,10 +119,10 @@
 					{{#each system.itemModifiers as |modifier|}}
 						{{#if modifier}}
 
-							<li class='item grid-weapon-feature-list' data-item-id='{{item._id}}' data-drag='true' data-document-class='Talent'>
+							<li class='item grid-weapon-feature-list' data-item-id='{{item._id}}' data-drag='false' data-document-class='"weaponquality"'>
 								<div class='item-image grid-wfl1'>
-									<select name='system.itemModifiers.{{@key}}.attribute'>
-										{{selectOptions @root.config.weapon_modifier_list selected=modifier.attribute labelAttr='label' localize=true}}
+									<select name='system.itemModifiers.{{@key}}.name'>
+										{{selectOptions @root.config.weapon_modifier_list selected=modifier.name labelAttr='label' localize=true}}
 									</select>
 								</div>
 								<div class='item-name grid-wfl2'>

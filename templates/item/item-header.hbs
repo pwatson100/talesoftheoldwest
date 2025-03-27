@@ -4,19 +4,29 @@
 		<div class='document-name ItemHedCol1'>
 			<input style='font-size: 35px;max-width: 445px;	height: auto;' name='name' type='text' value='{{item.name}}' placeholder='Name' />
 		</div>
-		{{#if isGM}}
-			{{#ifSetting 'debug'}}
-				<label class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.reference')}}</label>
-				{{formInput systemFields.reference value=systemSource.reference placeholder=(localize 'TALESOFTHEOLDWEST.Item.General.reference')}}
-			{{/ifSetting}}
-		{{/if}}
+
 		{{#if (eq item.type 'item')}}
 			<label class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quantity')}}</label>
 			<input class='ItemHedCol4' type='text' name='system.quantity' value='{{system.quantity}}' data-dtype='Number' />
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
 			<input class='ItemHedCol6' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+			<label class='resource-label ItemHedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
+			<input class='ItemHedCol8' type='text' name='system.cost' value='{{system.cost}}' data-dtype='Number' />
+		{{/if}}
+
+		{{#if (eq item.type 'weapon')}}
+			<label class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
+			<input class='ItemHedCol4' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
+			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
+			<input class='ItemHedCol6' type='text' name='system.cost' value='{{system.cost}}' data-dtype='Number' />
 		{{/if}}
 
 		<img class='item-img grid-item-header ItemHedCol2' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />
-	</div>
+		{{#if isGM}}
+			{{#ifSetting 'debug'}}
+				<br />
+				<label class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.reference')}}</label>
+				{{formInput systemFields.reference value=systemSource.reference placeholder=(localize 'TALESOFTHEOLDWEST.Item.General.reference')}}
+			{{/ifSetting}}
+		{{/if}}</div>
 </header>

@@ -78,7 +78,7 @@ export class totowItem extends Item {
 				for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
 					switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
 						case 'Active':
-							switch (rollData.featureModifiers[fkey].itemModifiers[ikey].attribute) {
+							switch (rollData.featureModifiers[fkey].itemModifiers[ikey].name) {
 								case 'fightin':
 									fightinMod = fightinMod + Number(rollData.featureModifiers[fkey].itemModifiers[ikey].value);
 									break;
@@ -96,7 +96,7 @@ export class totowItem extends Item {
 								'<strong style="color:black">' +
 								rollData.featureModifiers[fkey].name +
 								'</strong> - ' +
-								rollData.featureModifiers[fkey].itemModifiers[ikey].attribute +
+								rollData.featureModifiers[fkey].itemModifiers[ikey].name +
 								' - ' +
 								rollData.featureModifiers[fkey].itemModifiers[ikey].value +
 								' - ' +
@@ -179,7 +179,7 @@ export class totowItem extends Item {
 					for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
 						switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
 							case 'Active':
-								switch (rollData.featureModifiers[fkey].itemModifiers[ikey].attribute) {
+								switch (rollData.featureModifiers[fkey].itemModifiers[ikey].name) {
 									case 'shootin':
 										shootinMod = shootinMod + Number(rollData.featureModifiers[fkey].itemModifiers[ikey].value);
 										break;
@@ -197,7 +197,7 @@ export class totowItem extends Item {
 									'<strong style="color:black">' +
 									rollData.featureModifiers[fkey].name +
 									'</strong> - ' +
-									rollData.featureModifiers[fkey].itemModifiers[ikey].attribute +
+									rollData.featureModifiers[fkey].itemModifiers[ikey].name +
 									' - ' +
 									rollData.featureModifiers[fkey].itemModifiers[ikey].value +
 									' - ' +

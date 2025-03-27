@@ -333,93 +333,95 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			if (allItems) {
 				if (allItems.system.itemModifiers) {
 					for (let [key, mods] of Object.entries(allItems.system.itemModifiers)) {
-						switch (mods.name) {
-							case 'docity':
-								attrMod.docity = attrMod.docity += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'quick':
-								attrMod.quick = attrMod.quick += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'cunning':
-								attrMod.cunning = attrMod.cunning += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'grit':
-								attrMod.grit = attrMod.grit += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'labor':
-								sklMod.labor = sklMod.labor += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'presence':
-								sklMod.presence = sklMod.presence += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'fightin':
-								sklMod.fightin = sklMod.fightin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'resilience':
-								sklMod.resilience = sklMod.resilience += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'move':
-								sklMod.move = sklMod.move += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'operate':
-								sklMod.operate = sklMod.operate += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'shootin':
-								sklMod.shootin = sklMod.shootin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'lightfingered':
-								sklMod.lightfingered = sklMod.lightfingered += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'hawkeye':
-								sklMod.hawkeye = sklMod.hawkeye += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'nature':
-								sklMod.nature = sklMod.nature += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'insight':
-								sklMod.insight = sklMod.insight += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'animalhandlin':
-								sklMod.animalhandlin = sklMod.animalhandlin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'performin':
-								sklMod.performin = sklMod.performin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'makin':
-								sklMod.makin = sklMod.makin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'doctorin':
-								sklMod.doctorin = sklMod.doctorin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'booklearnin':
-								sklMod.booklearnin = sklMod.booklearnin += parseInt(mods.value);
-								anyMods++;
-								break;
-							case 'flight':
-								sklMod.flight = sklMod.flight += parseInt(mods.value);
-								anyMods++;
-								break;
-							default:
-								break;
+						if (mods.state === 'Active') {
+							switch (mods.name) {
+								case 'docity':
+									attrMod.docity = attrMod.docity += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'quick':
+									attrMod.quick = attrMod.quick += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'cunning':
+									attrMod.cunning = attrMod.cunning += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'grit':
+									attrMod.grit = attrMod.grit += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'labor':
+									sklMod.labor = sklMod.labor += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'presence':
+									sklMod.presence = sklMod.presence += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'fightin':
+									sklMod.fightin = sklMod.fightin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'resilience':
+									sklMod.resilience = sklMod.resilience += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'move':
+									sklMod.move = sklMod.move += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'operate':
+									sklMod.operate = sklMod.operate += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'shootin':
+									sklMod.shootin = sklMod.shootin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'lightfingered':
+									sklMod.lightfingered = sklMod.lightfingered += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'hawkeye':
+									sklMod.hawkeye = sklMod.hawkeye += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'nature':
+									sklMod.nature = sklMod.nature += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'insight':
+									sklMod.insight = sklMod.insight += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'animalhandlin':
+									sklMod.animalhandlin = sklMod.animalhandlin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'performin':
+									sklMod.performin = sklMod.performin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'makin':
+									sklMod.makin = sklMod.makin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'doctorin':
+									sklMod.doctorin = sklMod.doctorin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'booklearnin':
+									sklMod.booklearnin = sklMod.booklearnin += parseInt(mods.value);
+									anyMods++;
+									break;
+								case 'flight':
+									sklMod.flight = sklMod.flight += parseInt(mods.value);
+									anyMods++;
+									break;
+								default:
+									break;
+							}
 						}
 					}
 					// if (allItems.type === 'weapon') {
