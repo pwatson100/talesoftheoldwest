@@ -230,10 +230,12 @@ export class totowActor extends Actor {
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							update[`system.itemModifiers.[1]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Fightin.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 12:
@@ -244,6 +246,7 @@ export class totowActor extends Actor {
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 22:
@@ -251,50 +254,59 @@ export class totowActor extends Actor {
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Resilience.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 31:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 32:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							update[`system.itemModifiers.[1]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Fightin.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 52:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Move.listName'),
 								value: '-2',
+								state: 'Active',
 							};
 							break;
 						case 61:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Performin.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 62:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Labor.listName'),
 								value: '-1',
+								state: 'Active',
 							};
 							break;
 						case 63:
 							update[`system.itemModifiers.[0]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Shootin.listName'),
 								value: '-2',
+								state: 'Active',
 							};
 							update[`system.itemModifiers.[1]`] = {
 								name: game.i18n.localize('TALESOFTHEOLDWEST.Ability.Hawkeye.listName'),
 								value: '-2',
+								state: 'Active',
 							};
 							break;
 						default:

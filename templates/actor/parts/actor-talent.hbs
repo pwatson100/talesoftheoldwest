@@ -1,42 +1,42 @@
-<div class="heading" style="width: 264px">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.talents')}}</div>
-<div style="height: 155px; overflow-x: auto; width: 264px">
-	<ol class="items-list">
-		<li class="item grid-talent-items items-header">
-			<div class="item-name TCol2">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
-			<div class="item-controls TCol4">
+<div class='heading' style='width: 264px'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.talents')}}</div>
+<div style='height: 155px; overflow-x: auto; width: 264px'>
+	<ol class='items-list'>
+		<li class='item grid-talent-items items-header'>
+			<div class='item-name TCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			<div class='item-controls TCol4'>
 				<a
-					class="item-control item-create"
-					title='{{localize "DOCUMENT.Create" type="Talent"}}'
-					data-action="createDoc"
-					data-document-class="Item"
-					data-origin="{{@root.talent.uuid}}"
-					data-actor="{{actor.id}}"
-					data-img="icons/svg/aura.svg"
-					data-type="talent"
+					class='item-control item-create'
+					title='{{localize "DOCUMENT.Create" type='Talent'}}'
+					data-action='createDoc'
+					data-document-class='Item'
+					data-origin='{{@root.talent.uuid}}'
+					data-actor='{{actor.id}}'
+					data-img='icons/svg/aura.svg'
+					data-type='talent'
 				>
-					<i class="fas fa-plus"></i>
+					<i class='fas fa-plus'></i>
 					{{localize 'DOCUMENT.New' type='talent'}}
 				</a>
 			</div>
 		</li>
 		{{#each talent as |item id|}}
-		<li class="item grid-talent-items" data-item-id="{{item._id}}" data-drag="true" data-document-class="Talent">
-			<div class="item-image TCol11">
-				<a data-roll-type="talent">
-					<img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-				</a>
-			</div>
-			<div class="item-name TCol12">{{item.name}}</div>
-			<!-- <div class="TCol13">{{ striptags item.system.description}}</div> -->
-			<div class="item-controls TCol14">
-				<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Update" type="Talent"}}'>
-					<i class="fas fa-edit"></i>
-				</a>
-				<a class="item-control item-delete" data-action="deleteDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Delete" type="Talent"}}'>
-					<i class="fas fa-trash"></i>
-				</a>
-			</div>
-		</li>
+			<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Talent'>
+				<div class='item-image TCol11'>
+					<a data-roll-type='talent'>
+						<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+					</a>
+				</div>
+				<div class='item-name TCol12' title='{{item.system.description}}'>{{item.name}}</div>
+				<!-- <div class="TCol13">{{ striptags item.system.description}}</div> -->
+				<div class='item-controls TCol14'>
+					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Talent'}}'>
+						<i class='fas fa-edit'></i>
+					</a>
+					<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Talent'}}'>
+						<i class='fas fa-trash'></i>
+					</a>
+				</div>
+			</li>
 		{{/each}}
 	</ol>
 </div>

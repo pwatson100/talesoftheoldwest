@@ -336,87 +336,87 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 						if (mods.state === 'Active') {
 							switch (mods.name) {
 								case 'docity':
-									attrMod.docity = attrMod.docity += parseInt(mods.value);
+									attrMod.docity = attrMod.docity += Number(mods.value);
 									anyMods++;
 									break;
 								case 'quick':
-									attrMod.quick = attrMod.quick += parseInt(mods.value);
+									attrMod.quick = attrMod.quick += Number(mods.value);
 									anyMods++;
 									break;
 								case 'cunning':
-									attrMod.cunning = attrMod.cunning += parseInt(mods.value);
+									attrMod.cunning = attrMod.cunning += Number(mods.value);
 									anyMods++;
 									break;
 								case 'grit':
-									attrMod.grit = attrMod.grit += parseInt(mods.value);
+									attrMod.grit = attrMod.grit += Number(mods.value);
 									anyMods++;
 									break;
 								case 'labor':
-									sklMod.labor = sklMod.labor += parseInt(mods.value);
+									sklMod.labor = sklMod.labor += Number(mods.value);
 									anyMods++;
 									break;
 								case 'presence':
-									sklMod.presence = sklMod.presence += parseInt(mods.value);
+									sklMod.presence = sklMod.presence += Number(mods.value);
 									anyMods++;
 									break;
 								case 'fightin':
-									sklMod.fightin = sklMod.fightin += parseInt(mods.value);
+									sklMod.fightin = sklMod.fightin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'resilience':
-									sklMod.resilience = sklMod.resilience += parseInt(mods.value);
+									sklMod.resilience = sklMod.resilience += Number(mods.value);
 									anyMods++;
 									break;
 								case 'move':
-									sklMod.move = sklMod.move += parseInt(mods.value);
+									sklMod.move = sklMod.move += Number(mods.value);
 									anyMods++;
 									break;
 								case 'operate':
-									sklMod.operate = sklMod.operate += parseInt(mods.value);
+									sklMod.operate = sklMod.operate += Number(mods.value);
 									anyMods++;
 									break;
 								case 'shootin':
-									sklMod.shootin = sklMod.shootin += parseInt(mods.value);
+									sklMod.shootin = sklMod.shootin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'lightfingered':
-									sklMod.lightfingered = sklMod.lightfingered += parseInt(mods.value);
+									sklMod.lightfingered = sklMod.lightfingered += Number(mods.value);
 									anyMods++;
 									break;
 								case 'hawkeye':
-									sklMod.hawkeye = sklMod.hawkeye += parseInt(mods.value);
+									sklMod.hawkeye = sklMod.hawkeye += Number(mods.value);
 									anyMods++;
 									break;
 								case 'nature':
-									sklMod.nature = sklMod.nature += parseInt(mods.value);
+									sklMod.nature = sklMod.nature += Number(mods.value);
 									anyMods++;
 									break;
 								case 'insight':
-									sklMod.insight = sklMod.insight += parseInt(mods.value);
+									sklMod.insight = sklMod.insight += Number(mods.value);
 									anyMods++;
 									break;
 								case 'animalhandlin':
-									sklMod.animalhandlin = sklMod.animalhandlin += parseInt(mods.value);
+									sklMod.animalhandlin = sklMod.animalhandlin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'performin':
-									sklMod.performin = sklMod.performin += parseInt(mods.value);
+									sklMod.performin = sklMod.performin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'makin':
-									sklMod.makin = sklMod.makin += parseInt(mods.value);
+									sklMod.makin = sklMod.makin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'doctorin':
-									sklMod.doctorin = sklMod.doctorin += parseInt(mods.value);
+									sklMod.doctorin = sklMod.doctorin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'booklearnin':
-									sklMod.booklearnin = sklMod.booklearnin += parseInt(mods.value);
+									sklMod.booklearnin = sklMod.booklearnin += Number(mods.value);
 									anyMods++;
 									break;
 								case 'flight':
-									sklMod.flight = sklMod.flight += parseInt(mods.value);
+									sklMod.flight = sklMod.flight += Number(mods.value);
 									anyMods++;
 									break;
 								default:
@@ -424,141 +424,145 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							}
 						}
 					}
-					// if (allItems.type === 'weapon') {
-					// 	for (let [key, featuremods] of Object.entries(allItems.system.featureModifiers)) {
-					// 		switch (featuremods.name) {
-					// 			case 'docity':
-					// 				attrMod.docity = attrMod.docity += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'quick':
-					// 				attrMod.quick = attrMod.quick += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'cunning':
-					// 				attrMod.cunning = attrMod.cunning += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'grit':
-					// 				attrMod.grit = attrMod.grit += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'labor':
-					// 				sklMod.labor = sklMod.labor += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'presence':
-					// 				sklMod.presence = sklMod.presence += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'fightin':
-					// 				sklMod.fightin = sklMod.fightin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'resilience':
-					// 				sklMod.resilience = sklMod.resilience += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'move':
-					// 				sklMod.move = sklMod.move += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'operate':
-					// 				sklMod.operate = sklMod.operate += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'shootin':
-					// 				sklMod.shootin = sklMod.shootin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'lightfingered':
-					// 				sklMod.lightfingered = sklMod.lightfingered += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'hawkeye':
-					// 				sklMod.hawkeye = sklMod.hawkeye += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'nature':
-					// 				sklMod.nature = sklMod.nature += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'insight':
-					// 				sklMod.insight = sklMod.insight += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'animalhandlin':
-					// 				sklMod.animalhandlin = sklMod.animalhandlin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'performin':
-					// 				sklMod.performin = sklMod.performin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'makin':
-					// 				sklMod.makin = sklMod.makin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'doctorin':
-					// 				sklMod.doctorin = sklMod.doctorin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'booklearnin':
-					// 				sklMod.booklearnin = sklMod.booklearnin += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			case 'flight':
-					// 				sklMod.flight = sklMod.flight += parseInt(featuremods.value);
-					// 				anyMods++;
-					// 				break;
-					// 			default:
-					// 				break;
-					// 		}
-					// 	}
-					// }
+				}
+				if (allItems.system.featureModifiers) {
+					for (let [key, feature] of Object.entries(allItems.system.featureModifiers)) {
+						for (let [key, mods] of Object.entries(feature.itemModifiers)) {
+							if (mods.state === 'Active') {
+								switch (mods.name) {
+									case 'docity':
+										attrMod.docity = attrMod.docity += Number(mods.value);
+										anyMods++;
+										break;
+									case 'quick':
+										attrMod.quick = attrMod.quick += Number(mods.value);
+										anyMods++;
+										break;
+									case 'cunning':
+										attrMod.cunning = attrMod.cunning += Number(mods.value);
+										anyMods++;
+										break;
+									case 'grit':
+										attrMod.grit = attrMod.grit += Number(mods.value);
+										anyMods++;
+										break;
+									case 'labor':
+										sklMod.labor = sklMod.labor += Number(mods.value);
+										anyMods++;
+										break;
+									case 'presence':
+										sklMod.presence = sklMod.presence += Number(mods.value);
+										anyMods++;
+										break;
+									case 'fightin':
+										sklMod.fightin = sklMod.fightin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'resilience':
+										sklMod.resilience = sklMod.resilience += Number(mods.value);
+										anyMods++;
+										break;
+									case 'move':
+										sklMod.move = sklMod.move += Number(mods.value);
+										anyMods++;
+										break;
+									case 'operate':
+										sklMod.operate = sklMod.operate += Number(mods.value);
+										anyMods++;
+										break;
+									case 'shootin':
+										sklMod.shootin = sklMod.shootin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'lightfingered':
+										sklMod.lightfingered = sklMod.lightfingered += Number(mods.value);
+										anyMods++;
+										break;
+									case 'hawkeye':
+										sklMod.hawkeye = sklMod.hawkeye += Number(mods.value);
+										anyMods++;
+										break;
+									case 'nature':
+										sklMod.nature = sklMod.nature += Number(mods.value);
+										anyMods++;
+										break;
+									case 'insight':
+										sklMod.insight = sklMod.insight += Number(mods.value);
+										anyMods++;
+										break;
+									case 'animalhandlin':
+										sklMod.animalhandlin = sklMod.animalhandlin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'performin':
+										sklMod.performin = sklMod.performin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'makin':
+										sklMod.makin = sklMod.makin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'doctorin':
+										sklMod.doctorin = sklMod.doctorin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'booklearnin':
+										sklMod.booklearnin = sklMod.booklearnin += Number(mods.value);
+										anyMods++;
+										break;
+									case 'flight':
+										sklMod.flight = sklMod.flight += Number(mods.value);
+										anyMods++;
+										break;
+									default:
+										break;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
-		if (anyMods > 0) {
-			let attribData = {};
-			for (let [a, abl] of Object.entries(aData.attributes)) {
-				let target = `system.attributes.${a}.mod`;
-				// let field = `aData.attributes[${a}].mod`;
-				let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
-				// await this.actor.update({ [target]: (field = upData) });
-				attribData[target] = upData;
-				// abl.mod = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
-				console.log('Attribute');
-			}
 
-			for (let [s, skl] of Object.entries(aData.abilities)) {
-				const conSkl = skl.attr;
-				let target = `system.abilities.${s}.mod`;
-				// let field = `aData.abilities[${s}].mod`;
-				let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
-				attribData[target] = abData;
-				// skl.mod = parseInt(skl.value || 0) + parseInt(sklMod[s] || 0) + parseInt(aData.attributes[conSkl].mod || 0);
-				console.log('Ability');
-			}
-
-			await this.actor.update(attribData);
-		} else {
-			let attribData = {};
-			for (let [a, abl] of Object.entries(aData.attributes)) {
-				let target = `system.attributes.${a}.mod`;
-				let upData = parseInt(abl.value || 0);
-				attribData[target] = upData;
-				console.log('Attribute');
-			}
-			for (let [s, skl] of Object.entries(aData.abilities)) {
-				const conSkl = skl.attr;
-				let target = `system.abilities.${s}.mod`;
-				let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0);
-				attribData[target] = abData;
-				console.log('Ability');
-			}
-			await this.actor.update(attribData);
+		// if (anyMods) {
+		let attribData = {};
+		for (let [a, abl] of Object.entries(aData.attributes)) {
+			let target = `system.attributes.${a}.mod`;
+			let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
+			// await this.actor.update({ [target]: (field = upData) });
+			attribData[target] = upData;
+			// abl.mod = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
+			console.log('Attribute', attribData);
 		}
+
+		for (let [s, skl] of Object.entries(aData.abilities)) {
+			const conSkl = skl.attr;
+			let target = `system.abilities.${s}.mod`;
+			// let field = `aData.abilities[${s}].mod`;
+			let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
+			attribData[target] = abData;
+			// skl.mod = parseInt(skl.value || 0) + parseInt(sklMod[s] || 0) + parseInt(aData.attributes[conSkl].mod || 0);
+			console.log('Ability', abData);
+		}
+
+		await this.actor.update(attribData);
+		// } else {
+		// 	let attribData = {};
+		// 	for (let [a, abl] of Object.entries(aData.attributes)) {
+		// 		let target = `system.attributes.${a}.mod`;
+		// 		let upData = parseInt(abl.value || 0);
+		// 		attribData[target] = upData;
+		// 		console.log('Attribute');
+		// 	}
+		// 	for (let [s, skl] of Object.entries(aData.abilities)) {
+		// 		const conSkl = skl.attr;
+		// 		let target = `system.abilities.${s}.mod`;
+		// 		let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0);
+		// 		attribData[target] = abData;
+		// 		console.log('Ability');
+		// 	}
+		// 	await this.actor.update(attribData);
+		// }
 	}
 	/**
 	 * Actions performed after any render of the Application.

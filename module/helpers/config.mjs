@@ -170,6 +170,9 @@ TALESOFTHEOLDWEST.item_modifier_list = {
 	makin: { id: 'ability-makin', label: 'TALESOFTHEOLDWEST.Ability.Makin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
 	doctorin: { id: 'ability-doctorin', label: 'TALESOFTHEOLDWEST.Ability.Doctorin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
 	booklearnin: { id: 'ability-booklearnin', label: 'TALESOFTHEOLDWEST.Ability.Booklearnin.long', group: 'TALESOFTHEOLDWEST.General.capAbilities' },
+	trouble: { id: 'roll-trouble', label: 'TALESOFTHEOLDWEST.General.trouble', group: 'TALESOFTHEOLDWEST.General.other' },
+	success: { id: 'roll-success', label: 'TALESOFTHEOLDWEST.General.success', group: 'TALESOFTHEOLDWEST.General.other' },
+	pushdescription: { id: 'roll-pushdescription', label: 'TALESOFTHEOLDWEST.General.pushdescription', group: 'TALESOFTHEOLDWEST.General.other' },
 };
 TALESOFTHEOLDWEST.weapon_modifier_list = {
 	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },

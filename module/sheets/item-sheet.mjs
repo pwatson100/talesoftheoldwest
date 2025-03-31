@@ -57,7 +57,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			template: 'systems/talesoftheoldwest/templates/item/item-talent-advanced.hbs',
 		},
 		modifiers: {
-			template: 'systems/talesoftheoldwest/templates/item/item-modifiers.html',
+			template: 'systems/talesoftheoldwest/templates/item/item-modifiers.hbs',
 		},
 		qualities: {
 			template: 'systems/talesoftheoldwest/templates/item/item-weapon-qualities.hbs',
@@ -306,6 +306,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	static async _addTalentModifier(event, target) {
 		let item = '';
 		let actor = '';
+		let update = {};
 		if (target.dataset.isembedded === 'true') {
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
@@ -314,18 +315,36 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
-		// const data = await item.getData();
+
 		const itemModifiers = item.system.itemModifiers || {};
 		// To preserve order, make sure the new index is the highest
-		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
-		let update = {};
-		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
-		update[`system.itemModifiers.${modifierId}`] = {
-			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
-			value: Number(0),
-			state: 'Conditional',
-			talenttype: target.dataset.talenttype,
-		};
+		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1 || 0;
+		if (item.type === 'talent') {
+			update[`system.itemModifiers.${modifierId}`] = {
+				name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
+				value: Number(0),
+				state: 'Conditional',
+				modtype: target.dataset.modtype,
+				name: item.name,
+				id: item.id,
+				description: item.system.description.replace(/<[^>]*>?/gm, ''),
+				basicisActive: item.system.basicisActive,
+				advisActive: item.system.advisActive,
+				basicAction: item.system.basicAction.replace(/<[^>]*>?/gm, ''),
+				advAction: item.system.advAction.replace(/<[^>]*>?/gm, ''),
+			};
+		} else {
+			update[`system.itemModifiers.${modifierId}`] = {
+				name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
+				value: Number(0),
+				state: 'Conditional',
+				modtype: target.dataset.modtype,
+				name: item.name,
+				id: item.id,
+				description: item.system.description.replace(/<[^>]*>?/gm, ''),
+			};
+		}
+
 		// await item.update(update).render(true);
 		await item.update(update);
 	}
