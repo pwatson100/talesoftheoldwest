@@ -1,4 +1,5 @@
 import { rollAttrib } from '../helpers/diceroll.mjs';
+import { prepModOutput } from '../helpers/utils.mjs';
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -37,6 +38,7 @@ export class totowItem extends Item {
 	 */
 	async roll(dataset, item) {
 		const rollData = this.getRollData();
+		let qualityMod = 0;
 		switch (dataset.rollType) {
 			case 'item':
 				return console.log('Item Roll', dataset);
@@ -46,14 +48,23 @@ export class totowItem extends Item {
 				return;
 
 			case 'weapon':
+				if (item.system.featureModifiers.length > 0) {
+					for (let [key, feature] of Object.entries(item.system.featureModifiers)) {
+						for (let [key, mods] of Object.entries(feature.itemModifiers)) {
+							if (mods.state === 'Active') {
+								qualityMod = await _switchMods(qualityMod, mods);
+							}
+						}
+					}
+				}
 				switch (dataset.subtype) {
 					case 'shootin':
-						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus + qualityMod;
 						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - shootin', dataset, dataset.mod);
 						return await shootin(dataset, rollData, item);
 					case 'fightin':
-						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus + qualityMod;
 						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - Fightin', dataset, dataset.mod);
 						return await fightin(dataset, rollData, item);
@@ -66,63 +77,44 @@ export class totowItem extends Item {
 				break;
 		}
 
+		async function _switchMods(qualityMod, mods) {
+			switch (mods.name) {
+				case 'docity':
+				case 'quick':
+				case 'cunning':
+				case 'grit':
+				case 'labor':
+				case 'presence':
+				case 'fightin':
+				case 'resilience':
+				case 'move':
+				case 'operate':
+				case 'shootin':
+				case 'lightfingered':
+				case 'hawkeye':
+				case 'nature':
+				case 'insight':
+				case 'animalhandlin':
+				case 'performin':
+				case 'makin':
+				case 'doctorin':
+				case 'booklearnin':
+				case 'flight':
+					qualityMod += Number(mods.value);
+					break;
+				default:
+					break;
+			}
+			return qualityMod;
+		}
+
 		async function fightin(dataset, rollData, item) {
 			let config = CONFIG.TALESOFTHEOLDWEST;
 			dataset.conditional = '';
 			dataset.talent = '';
 			let successMod = 0;
 			let troubleMod = 0;
-
-			for (const fkey in rollData.featureModifiers) {
-				for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
-					switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
-						case 'Conditional':
-							dataset.conditional +=
-								'<strong style="color:black">' +
-								rollData.featureModifiers[fkey].name +
-								'</strong> - ' +
-								rollData.featureModifiers[fkey].itemModifiers[ikey].name +
-								' - ' +
-								rollData.featureModifiers[fkey].itemModifiers[ikey].value +
-								' - ' +
-								rollData.featureModifiers[fkey].description +
-								'<br /><br />';
-
-							break;
-
-						case 'Chat':
-							dataset.talent +=
-								'<strong style="color:black">' +
-								rollData.featureModifiers[fkey].name +
-								'</strong> - ' +
-								rollData.featureModifiers[fkey].description +
-								'<br /><br />';
-							break;
-					}
-				}
-			}
-
-			for (const ikey in rollData.itemModifiers) {
-				switch (rollData.itemModifiers[ikey].state) {
-					case 'Conditional':
-						dataset.conditional +=
-							'<strong style="color:black">' +
-							rollData.itemModifiers[ikey].name +
-							'</strong> - ' +
-							rollData.itemModifiers[ikey].value +
-							' - ' +
-							rollData.itemModifiers[ikey].description +
-							'<br /><br />';
-
-						break;
-
-					case 'Chat':
-						dataset.talent +=
-							'<strong style="color:black">' + rollData.itemModifiers[ikey].name + '</strong> - ' + rollData.itemModifiers[ikey].description + '<br /><br />';
-						break;
-				}
-			}
-
+			await prepModOutput(rollData, dataset);
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', { config, dataset });
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
@@ -173,54 +165,7 @@ export class totowItem extends Item {
 				return 'cancelled';
 			} else {
 				// Get and proess Weapon Modifier data
-				for (const fkey in rollData.featureModifiers) {
-					for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
-						switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
-							case 'Conditional':
-								dataset.conditional +=
-									'<strong style="color:black">' +
-									rollData.featureModifiers[fkey].name +
-									'</strong> - ' +
-									rollData.featureModifiers[fkey].itemModifiers[ikey].name +
-									' - ' +
-									rollData.featureModifiers[fkey].itemModifiers[ikey].value +
-									' - ' +
-									rollData.featureModifiers[fkey].description +
-									'<br /><br />';
-
-								break;
-
-							case 'Chat':
-								dataset.talent +=
-									'<strong style="color:black">' +
-									rollData.featureModifiers[fkey].name +
-									'</strong> - ' +
-									rollData.featureModifiers[fkey].description +
-									'<br /><br />';
-								break;
-						}
-					}
-				}
-				for (const ikey in rollData.itemModifiers) {
-					switch (rollData.itemModifiers[ikey].state) {
-						case 'Conditional':
-							dataset.conditional +=
-								'<strong style="color:black">' +
-								rollData.itemModifiers[ikey].name +
-								'</strong> - ' +
-								rollData.itemModifiers[ikey].value +
-								' - ' +
-								rollData.itemModifiers[ikey].description +
-								'<br /><br />';
-
-							break;
-
-						case 'Chat':
-							dataset.talent +=
-								'<strong style="color:black">' + rollData.itemModifiers[ikey].name + '</strong> - ' + rollData.itemModifiers[ikey].description + '<br /><br />';
-							break;
-					}
-				}
+				await prepModOutput(rollData, dataset);
 			}
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', { config, dataset });
 			const data = await foundry.applications.api.DialogV2.wait({

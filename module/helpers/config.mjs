@@ -262,3 +262,5 @@ TALESOFTHEOLDWEST.conditionEffects = [
 		icon: 'icons/skills/wounds/injury-pain-body-orange.webp',
 	},
 ];
+
+TALESOFTHEOLDWEST.physicalItems = [];

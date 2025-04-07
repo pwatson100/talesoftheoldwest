@@ -206,29 +206,6 @@ Hooks.on('renderChatMessage', (app, html, msg) => {
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {});
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
-	// dice3d.addColorset({
-	// 	name: 'yellow',
-	// 	description: 'Yellow',
-	// 	category: 'Colors',
-	// 	foreground: ['#e3e300'],
-	// 	background: ['#e3e300'],
-	// 	outline: 'black',
-	// 	texture: 'none',
-	// });
-
-	// dice3d.addColorset(
-	// 	{
-	// 		name: 'AlienBlack',
-	// 		description: 'AlienBlack',
-	// 		category: 'Colors',
-	// 		foreground: ['#ffffff'],
-	// 		background: ['#000000'],
-	// 		outline: 'black',
-	// 		texture: 'none',
-	// 	},
-	// 	'preferred'
-	// );
-
 	dice3d.addSystem({ id: 'talesoftheoldwest', name: 'Tales Of The Old West' }, 'preferred');
 	dice3d.addDicePreset({
 		type: 'dt',

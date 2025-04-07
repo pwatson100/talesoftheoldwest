@@ -464,7 +464,7 @@ export class totowActor extends Actor {
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
-
+		const rollData = this.getRollData();
 		const dataset = target.dataset;
 		// const targetActor = actor.getRollData();
 		dataset.faithpoints = actor.system.general.faithpoints.value;
@@ -478,7 +478,7 @@ export class totowActor extends Actor {
 				switch (dataset.rollType) {
 					case 'attribute':
 					case 'ability':
-						result = await rollAttrib(dataset);
+						result = await rollAttrib(dataset, rollData);
 						break;
 					default:
 						break;
@@ -486,9 +486,10 @@ export class totowActor extends Actor {
 			} else {
 				const itemId = target.dataset.itemId;
 				const item = actor.items.get(itemId);
+
 				switch (dataset.rollType) {
 					case 'item':
-					case 'talent':
+						// case 'talent':
 						return item.roll(dataset);
 					case 'weapon':
 						result = await item.roll(dataset, item);

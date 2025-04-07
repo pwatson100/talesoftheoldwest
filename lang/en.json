@@ -201,7 +201,8 @@
 			"weaponStats": "WEAPON STATS",
 			"other": "OTHER",
 			"chat": "Chat",
-			"pushdescription": "Push Description"
+			"pushdescription": "Push Description",
+			"NotifWrongItemType": "\"{type}\" items cannot be added to a {actor}!"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

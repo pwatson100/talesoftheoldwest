@@ -1,4 +1,5 @@
 import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
+import { prepModOutput } from './utils.mjs';
 
 export async function totowDiceListeners(html) {
 	html.on('click', '.dice-push', (ev) => {
@@ -122,20 +123,20 @@ export async function buyOff(chatMessage, origRollData, origRoll, event) {
 	await updateChatMessage(chatMessage, origRoll, origRollData);
 }
 
-export async function rollAttrib(dataset, itemData) {
+export async function rollAttrib(dataset, rollData) {
 	let formula = '';
 	let roll = '';
 	let result = '';
 	if (dataset.mod - 5 <= 0) {
 		formula = parseInt(`${dataset.mod}`) + `dt`;
 		roll = await Roll.create(`${formula}`).evaluate();
-		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
+		result = await evaluateTOTWRoll(dataset, roll, formula, rollData);
 	} else {
 		let troubleDice = `5dt`;
 		const extra = parseInt(`${dataset.mod}`) - 5;
 		const formula = troubleDice + '+' + `${extra}` + `ds`;
 		roll = await Roll.create(`${formula}`).evaluate();
-		result = await evaluateTOTWRoll(dataset, roll, formula, itemData);
+		result = await evaluateTOTWRoll(dataset, roll, formula, rollData);
 	}
 	if (result.totalSuccess > 2) {
 		result = await addFaithPoints(result);

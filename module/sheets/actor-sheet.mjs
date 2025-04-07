@@ -31,7 +31,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			createDoc: this._createDoc,
 			deleteDoc: this._deleteDoc,
 			toggleEffect: this._toggleEffect,
-			// roll: this._onRoll,
 			roll: { handler: this._onRoll, buttons: [0, 2] },
 			toggleCondition: { handler: this._toggleCondition, buttons: [0, 2] },
 			rollCrit: { handler: this._rollCrit, buttons: [0, 2] },
@@ -241,18 +240,22 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const talent = [];
 		const animalquality = [];
 		const critInj = [];
+		const itemMods = [];
 
 		// Iterate through items, allocating to containers
 		for (let i of this.document.items) {
 			switch (i.type) {
 				case 'item':
 					gear.push(i);
+					_findmods(i, itemMods);
 					break;
 				case 'weapon':
 					weapon.push(i);
+					_findmods(i, itemMods);
 					break;
 				case 'talent':
 					talent.push(i);
+					_findmods(i, itemMods);
 					break;
 				case 'crit':
 					critInj.push(i);
@@ -264,19 +267,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				default:
 					break;
 			}
-
-			// // Append to gear.
-			// if (i.type === 'item') {
-			// 	gear.push(i);
-			// }
-			// // Append to features.
-			// else if (i.type === 'weapon') {
-			// 	weapon.push(i);
-			// }
-			// // Append to spells.
-			// else if (i.type === 'talent') {
-			// 	talent.push(i);
-			// }
 			// // and now animal options
 			// else if (i.type === 'animalquality') {
 			// 	animalquality.push(i);
@@ -291,6 +281,48 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		context.system.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.itemMods = Object.groupBy(itemMods, ({ name }) => name);
+
+		async function _findmods(i, itemMods) {
+			if (i.system.itemModifiers) {
+				for (let [key, mods] of Object.entries(i.system.itemModifiers)) {
+					itemMods.push({
+						name: mods.name,
+						itemname: i.name,
+						itemtype: i.type,
+						modtype: mods.modtype,
+						state: mods.state,
+						description: mods.description,
+						value: mods.value,
+						basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+						advisActive: i.system.advisActive ? i.system.advisActive : false,
+						basicAction: i.system.basicAction ? i.system.basicAction : '',
+						advAction: i.system.advAction ? i.system.advAction : '',
+					});
+				}
+			}
+			if (i.system.featureModifiers) {
+				for (let [key, feature] of Object.entries(i.system.featureModifiers)) {
+					for (let [key, mods] of Object.entries(feature.itemModifiers)) {
+						itemMods.push({
+							name: feature.name,
+							itemname: i.name,
+							itemtype: i.type,
+							feature: feature.feature ? feature.feature : false,
+							modtype: mods.name,
+							state: mods.state,
+							description: feature.description,
+							value: mods.value,
+							basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+							advisActive: i.system.advisActive ? i.system.advisActive : false,
+							basicAction: i.system.basicAction ? i.system.basicAction : '',
+							advAction: i.system.advAction ? i.system.advAction : '',
+						});
+					}
+				}
+			}
+			return itemMods;
+		}
 	}
 	/**
 	 * Organize and classify Items for Character sheets.
@@ -302,6 +334,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	async _prepareCharacterData(context) {
 		const aData = context.system;
 		const itemData = context.allGear;
+		const itemMods = context.itemMods;
 		let anyMods = 0;
 		var attrMod = {
 			grit: 0,
@@ -329,241 +362,66 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			flight: 0,
 		};
 
-		for (let [skey, allItems] of Object.entries(itemData)) {
-			if (allItems) {
-				if (allItems.system.itemModifiers) {
-					for (let [key, mods] of Object.entries(allItems.system.itemModifiers)) {
-						if (mods.state === 'Active') {
-							switch (mods.name) {
-								case 'docity':
-									attrMod.docity = attrMod.docity += Number(mods.value);
+		if (itemData[0].type !== 'weapon' && itemMods) {
+			for (let [attrib, allItems] of Object.entries(itemMods)) {
+				for (let [skey, subAttar] of Object.entries(allItems)) {
+					if (subAttar.state === 'Active' && subAttar.itemtype != 'talent') {
+						switch (attrib) {
+							case 'docity':
+							case 'quick':
+							case 'cunning':
+							case 'grit':
+								attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+								anyMods++;
+								break;
+							default:
+								if (!subAttar.feature) {
+									sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
 									anyMods++;
-									break;
-								case 'quick':
-									attrMod.quick = attrMod.quick += Number(mods.value);
-									anyMods++;
-									break;
-								case 'cunning':
-									attrMod.cunning = attrMod.cunning += Number(mods.value);
-									anyMods++;
-									break;
-								case 'grit':
-									attrMod.grit = attrMod.grit += Number(mods.value);
-									anyMods++;
-									break;
-								case 'labor':
-									sklMod.labor = sklMod.labor += Number(mods.value);
-									anyMods++;
-									break;
-								case 'presence':
-									sklMod.presence = sklMod.presence += Number(mods.value);
-									anyMods++;
-									break;
-								case 'fightin':
-									sklMod.fightin = sklMod.fightin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'resilience':
-									sklMod.resilience = sklMod.resilience += Number(mods.value);
-									anyMods++;
-									break;
-								case 'move':
-									sklMod.move = sklMod.move += Number(mods.value);
-									anyMods++;
-									break;
-								case 'operate':
-									sklMod.operate = sklMod.operate += Number(mods.value);
-									anyMods++;
-									break;
-								case 'shootin':
-									sklMod.shootin = sklMod.shootin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'lightfingered':
-									sklMod.lightfingered = sklMod.lightfingered += Number(mods.value);
-									anyMods++;
-									break;
-								case 'hawkeye':
-									sklMod.hawkeye = sklMod.hawkeye += Number(mods.value);
-									anyMods++;
-									break;
-								case 'nature':
-									sklMod.nature = sklMod.nature += Number(mods.value);
-									anyMods++;
-									break;
-								case 'insight':
-									sklMod.insight = sklMod.insight += Number(mods.value);
-									anyMods++;
-									break;
-								case 'animalhandlin':
-									sklMod.animalhandlin = sklMod.animalhandlin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'performin':
-									sklMod.performin = sklMod.performin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'makin':
-									sklMod.makin = sklMod.makin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'doctorin':
-									sklMod.doctorin = sklMod.doctorin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'booklearnin':
-									sklMod.booklearnin = sklMod.booklearnin += Number(mods.value);
-									anyMods++;
-									break;
-								case 'flight':
-									sklMod.flight = sklMod.flight += Number(mods.value);
-									anyMods++;
-									break;
-								default:
-									break;
-							}
-						}
-					}
-				}
-				if (allItems.system.featureModifiers) {
-					for (let [key, feature] of Object.entries(allItems.system.featureModifiers)) {
-						for (let [key, mods] of Object.entries(feature.itemModifiers)) {
-							if (mods.state === 'Active') {
-								switch (mods.name) {
-									case 'docity':
-										attrMod.docity = attrMod.docity += Number(mods.value);
-										anyMods++;
-										break;
-									case 'quick':
-										attrMod.quick = attrMod.quick += Number(mods.value);
-										anyMods++;
-										break;
-									case 'cunning':
-										attrMod.cunning = attrMod.cunning += Number(mods.value);
-										anyMods++;
-										break;
-									case 'grit':
-										attrMod.grit = attrMod.grit += Number(mods.value);
-										anyMods++;
-										break;
-									case 'labor':
-										sklMod.labor = sklMod.labor += Number(mods.value);
-										anyMods++;
-										break;
-									case 'presence':
-										sklMod.presence = sklMod.presence += Number(mods.value);
-										anyMods++;
-										break;
-									case 'fightin':
-										sklMod.fightin = sklMod.fightin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'resilience':
-										sklMod.resilience = sklMod.resilience += Number(mods.value);
-										anyMods++;
-										break;
-									case 'move':
-										sklMod.move = sklMod.move += Number(mods.value);
-										anyMods++;
-										break;
-									case 'operate':
-										sklMod.operate = sklMod.operate += Number(mods.value);
-										anyMods++;
-										break;
-									case 'shootin':
-										sklMod.shootin = sklMod.shootin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'lightfingered':
-										sklMod.lightfingered = sklMod.lightfingered += Number(mods.value);
-										anyMods++;
-										break;
-									case 'hawkeye':
-										sklMod.hawkeye = sklMod.hawkeye += Number(mods.value);
-										anyMods++;
-										break;
-									case 'nature':
-										sklMod.nature = sklMod.nature += Number(mods.value);
-										anyMods++;
-										break;
-									case 'insight':
-										sklMod.insight = sklMod.insight += Number(mods.value);
-										anyMods++;
-										break;
-									case 'animalhandlin':
-										sklMod.animalhandlin = sklMod.animalhandlin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'performin':
-										sklMod.performin = sklMod.performin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'makin':
-										sklMod.makin = sklMod.makin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'doctorin':
-										sklMod.doctorin = sklMod.doctorin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'booklearnin':
-										sklMod.booklearnin = sklMod.booklearnin += Number(mods.value);
-										anyMods++;
-										break;
-									case 'flight':
-										sklMod.flight = sklMod.flight += Number(mods.value);
-										anyMods++;
-										break;
-									default:
-										break;
 								}
-							}
+								break;
+						}
+					} else if (
+						(subAttar.itemtype === 'talent' && subAttar.modtype === 'basic' && subAttar.basicisActive) ||
+						(subAttar.modtype === 'advanced' && subAttar.advisActive)
+					) {
+						switch (attrib) {
+							case 'docity':
+							case 'quick':
+							case 'cunning':
+							case 'grit':
+								attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+								anyMods++;
+								break;
+							default:
+								if (!subAttar.feature) {
+									sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+									anyMods++;
+								}
+								break;
 						}
 					}
 				}
 			}
 		}
 
-		// if (anyMods) {
 		let attribData = {};
 		for (let [a, abl] of Object.entries(aData.attributes)) {
 			let target = `system.attributes.${a}.mod`;
 			let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
-			// await this.actor.update({ [target]: (field = upData) });
 			attribData[target] = upData;
-			// abl.mod = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
-			console.log('Attribute', attribData);
 		}
 
 		for (let [s, skl] of Object.entries(aData.abilities)) {
 			const conSkl = skl.attr;
 			let target = `system.abilities.${s}.mod`;
-			// let field = `aData.abilities[${s}].mod`;
 			let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
 			attribData[target] = abData;
-			// skl.mod = parseInt(skl.value || 0) + parseInt(sklMod[s] || 0) + parseInt(aData.attributes[conSkl].mod || 0);
-			console.log('Ability', abData);
 		}
 
 		await this.actor.update(attribData);
-		// } else {
-		// 	let attribData = {};
-		// 	for (let [a, abl] of Object.entries(aData.attributes)) {
-		// 		let target = `system.attributes.${a}.mod`;
-		// 		let upData = parseInt(abl.value || 0);
-		// 		attribData[target] = upData;
-		// 		console.log('Attribute');
-		// 	}
-		// 	for (let [s, skl] of Object.entries(aData.abilities)) {
-		// 		const conSkl = skl.attr;
-		// 		let target = `system.abilities.${s}.mod`;
-		// 		let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0);
-		// 		attribData[target] = abData;
-		// 		console.log('Ability');
-		// 	}
-		// 	await this.actor.update(attribData);
-		// }
 	}
+
 	/**
 	 * Actions performed after any render of the Application.
 	 * Post-render steps are not awaited by the render process.
@@ -645,11 +503,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	static async _deleteDoc(event, target) {
 		const doc = this._getEmbeddedDocument(target);
 		if (target.dataset.type === 'criticalinj') {
-			// let field = `system.conditions.criticalinj`;
-
 			if ((await this.actor.hasCondition('criticalinj')) && this.actor.system.critInj.length <= 1) {
 				await this.actor.removeCondition('criticalinj');
-				// await this.actor.update({ [field]: false });
 			}
 		}
 		await doc.delete();
@@ -837,7 +692,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		let itemId = dataset.parentElement.dataset.itemId;
 		let item = this.actor.items.get(itemId);
 		let temp = dataset.dataset.mod;
-		// let field = temp.slice(5);
+
 		return await item.update({ [temp]: dataset.value }, {});
 	}
 	/***************
@@ -1047,6 +902,32 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @private
 	 */
 	async _onDropItemCreate(itemData, event) {
+		const type = itemData.type;
+		const alwaysAllowedItems = CONFIG.TALESOFTHEOLDWEST.physicalItems;
+		const allowedItems = {
+			pc: ['item', 'weapon', 'talent', 'critical-injury'],
+			npc: ['item', 'weapon', 'talent', 'critical-injury'],
+			animal: ['critical-injury'],
+			// vehicles: ['item', 'weapon', 'armor'],
+			// territory: ['planet-system'],
+		};
+		let allowed = true;
+		if (!alwaysAllowedItems.includes(type)) {
+			if (!allowedItems[this.actor.type].includes(type)) {
+				allowed = false;
+			}
+		}
+
+		if (!allowed) {
+			const msg = game.i18n.format('TALESOFTHEOLDWEST.General.NotifWrongItemType', {
+				type: type,
+				actor: this.actor.type,
+			});
+			console.warn(`TOTOW RPG | ${msg}`);
+			ui.notifications.warn(msg);
+			return false;
+		}
+
 		itemData = itemData instanceof Array ? itemData : [itemData];
 		return this.actor.createEmbeddedDocuments('Item', itemData);
 	}

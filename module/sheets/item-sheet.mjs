@@ -285,11 +285,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			console.log('1 its Embedded', actor);
+			// console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
-		// const data = await item.getData();
+
 		const itemModifiers = item.system.itemModifiers || {};
 		// To preserve order, make sure the new index is the highest
 		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
@@ -311,7 +311,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			console.log('1 its Embedded', actor);
+			// console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
@@ -328,8 +328,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				name: item.name,
 				id: item.id,
 				description: item.system.description.replace(/<[^>]*>?/gm, ''),
-				basicisActive: item.system.basicisActive,
-				advisActive: item.system.advisActive,
 				basicAction: item.system.basicAction.replace(/<[^>]*>?/gm, ''),
 				advAction: item.system.advAction.replace(/<[^>]*>?/gm, ''),
 			};
@@ -768,7 +766,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		await target.update({ 'system.featureModifiers': system.featureModifiers });
 
 		for (const ikey in target.system.featureModifiers[fkey - 1].itemModifiers) {
-			switch (target.system.featureModifiers[fkey - 1].itemModifiers[ikey].attribute) {
+			switch (target.system.featureModifiers[fkey - 1].itemModifiers[ikey].name) {
 				case 'attackbonus':
 					if (Math.sign(Number(target.system.featureModifiers[fkey - 1].itemModifiers[ikey].value))) {
 						await target.update({
@@ -834,7 +832,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		let temp = itemData.system.featureModifiers.filter((o) => o.id === li?.dataset?.itemId);
 
 		for (const ikey in temp[0].itemModifiers) {
-			switch (temp[0].itemModifiers[ikey].attribute) {
+			switch (temp[0].itemModifiers[ikey].name) {
 				case 'attackbonus':
 					if (Math.sign(Number(temp[0].itemModifiers[ikey].value))) {
 						await itemData.update({
