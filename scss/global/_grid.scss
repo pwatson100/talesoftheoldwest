@@ -483,16 +483,17 @@
 .sheet-main-attributes {
 	display: grid;
 	// padding: 3px;
-	row-gap: 5px;
+	/* row-gap: 5px; */
 
-	margin-top: 10px;
-	margin-bottom: 10px;
+	/* margin-top: 3px; */
+	/* margin-bottom: -2px; */
 	align-items: center;
 	grid-template-areas:
 		'A1 B1 A2 B2 A3 B3 A4 B4 '
 		'H1 H2 S1 S2 V1 V2  D1 D2 ';
 	grid-template-columns: 112px 110px 112px 110px 113px 110px 134px 110px;
 	// grid-template-columns: 112.5px;
+	background: rgb(139 106 44 / 21%);
 }
 .A1 {
 	grid-area: A1;
@@ -715,13 +716,12 @@
 	margin-bottom: 10px;
 	align-items: center;
 	grid-template-areas: 'cash1 cash2 cash3 cash4';
-	grid-template-columns: 112px 110px 140px 110px;
+	grid-template-columns: 154px 302px 148px 303px;
 	// grid-template-columns: 112.5px;
 }
 .cash1 {
 	grid-area: cash1;
 	text-align: center;
-	font-size: x-large;
 }
 .cash2 {
 	grid-area: cash2;
@@ -730,11 +730,10 @@
 .cash3 {
 	grid-area: cash3;
 	text-align: center;
-	font-size: x-large;
 }
 .cash4 {
 	grid-area: cash4;
-	text-align: center;
+	// text-align: center;
 }
 
 .grid-weapon-feature-list {
@@ -764,5 +763,116 @@
 }
 .grid-wfl4 {
 	grid-area: grid-wfl4;
+	text-align: center;
+}
+
+.overwatch_header {
+	display: grid;
+	margin-top: 5px;
+	// padding-left: 10px;
+	grid-template-areas: 'Ow1 Ow2';
+	grid-template-columns: 116px 687px;
+}
+.Ow1 {
+	grid-area: Ow1;
+	font-size: 18px;
+}
+.Ow2 {
+	grid-area: Ow2;
+	font-weight: bold;
+	font-size: large;
+	text-align: center;
+}
+
+.sheet-gear-cash {
+	display: grid;
+	row-gap: 10px;
+	align-items: center;
+	grid-template-areas:
+		'L1C1 L1C2 L1C3 L1C4 L1C5 L1C6 L1C7 L1C8'
+		'L2C1 L2C2 L2C3 L2C4 L2C5 L2C6 L2C6 L2C6'
+		'L3C1 L3C2 L3C2 L3C2 L3C3 L3C4 L3C4 L3C4';
+	grid-template-columns: 141px 87px 133px 79px 131px 72px 157px 69px;
+	margin: 10px 0px 10px 0px;
+}
+.L1C1 {
+	grid-area: L1C1;
+	font-size: large;
+	text-align: right;
+}
+.L1C2 {
+	grid-area: L1C2;
+	text-align: center;
+}
+.L1C3 {
+	grid-area: L1C3;
+	font-size: large;
+	text-align: right;
+}
+.L1C4 {
+	grid-area: L1C4;
+	text-align: center;
+}
+.L1C5 {
+	grid-area: L1C5;
+	font-size: large;
+	text-align: right;
+}
+.L1C6 {
+	grid-area: L1C6;
+	text-align: center;
+}
+.L1C7 {
+	grid-area: L1C7;
+	font-size: large;
+	text-align: right;
+}
+.L1C8 {
+	grid-area: L1C8;
+	text-align: center;
+}
+.L2C1 {
+	grid-area: L2C1;
+	font-size: large;
+	text-align: right;
+}
+.L2C2 {
+	grid-area: L2C2;
+	text-align: center;
+}
+.L2C3 {
+	grid-area: L2C3;
+	font-size: large;
+	text-align: right;
+}
+.L2C4 {
+	grid-area: L2C4;
+	text-align: center;
+}
+.L2C5 {
+	grid-area: L2C5;
+	font-size: large;
+	text-align: right;
+}
+.L2C6 {
+	grid-area: L2C6;
+	font-size: x-large;
+}
+.L3C1 {
+	grid-area: L3C1;
+	font-size: large;
+	text-align: center;
+}
+.L3C2 {
+	grid-area: L3C2;
+	text-align: center;
+}
+.L3C3 {
+	grid-area: L3C3;
+	font-size: large;
+	text-align: center;
+}
+.L3C4 {
+	grid-area: L3C4;
 	text-align: center;
 }

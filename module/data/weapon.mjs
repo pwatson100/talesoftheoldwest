@@ -6,6 +6,7 @@ export default class totowWeapon extends totowItemBase {
 		const requiredInteger = { required: true, nullable: false, integer: true };
 		const schema = super.defineSchema();
 		schema.subtype = new fields.StringField({ required: true, blank: true, initial: 'fightin' });
+		schema.conditionNames = new fields.StringField({ required: false, blank: true, initial: '' });
 		schema.action = new fields.StringField({ required: true, blank: true, initial: 'na' });
 		schema.bonusdraw = new fields.NumberField({ ...requiredInteger, initial: 0 });
 		schema.attackbonus = new fields.NumberField({ ...requiredInteger, initial: 0 });

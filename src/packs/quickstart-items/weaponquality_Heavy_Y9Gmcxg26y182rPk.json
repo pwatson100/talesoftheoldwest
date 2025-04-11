@@ -6,9 +6,23 @@
     "feature": "quality",
     "onweapon": "pistol",
     "description": "The pistol is heavy in your hand and kicks like a mule but delivers a powerful blast. It does +1 extra damage, but has a −1 penalty to Draw.",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "attribute": "damage",
+        "value": 1,
+        "state": "Active",
+        "name": "shootin"
+      },
+      "1": {
+        "attribute": "drawbonus",
+        "value": -1,
+        "state": "Active",
+        "name": "drawbonus"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "Y9Gmcxg26y182rPk",
   "img": "icons/svg/item-bag.svg",
@@ -24,13 +38,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!Y9Gmcxg26y182rPk"
 }

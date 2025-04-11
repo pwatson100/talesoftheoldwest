@@ -6,9 +6,16 @@
     "feature": "quality",
     "onweapon": "pistol",
     "description": "The weapon is so well calibrated its aim is true. Gain +1 bonus to the weapon’s Attack modifier.",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "attackbonus",
+        "value": 1,
+        "state": "Active"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "t59pbCT5XVNE5M4y",
   "img": "icons/svg/item-bag.svg",
@@ -24,13 +31,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!t59pbCT5XVNE5M4y"
 }

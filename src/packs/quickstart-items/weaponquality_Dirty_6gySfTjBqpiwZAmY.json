@@ -6,9 +6,18 @@
     "feature": "condition",
     "onweapon": "any",
     "description": "When you attack with this weapon your final total of successes is reduced by 1, to a minimum of 0.",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "success",
+        "value": -1,
+        "state": "Active",
+        "name": "success"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "6gySfTjBqpiwZAmY",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +32,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!6gySfTjBqpiwZAmY"
 }

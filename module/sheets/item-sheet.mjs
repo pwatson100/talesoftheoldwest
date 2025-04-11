@@ -84,7 +84,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				options.parts.push('header', 'tabs', 'description', 'modifiers');
 				break;
 			case 'weapon':
-				options.parts.push('header', 'tabs', 'description', 'qualities', 'modifiers');
+				options.parts.push('header', 'tabs', 'description', 'qualities');
 				break;
 		}
 	}
@@ -180,7 +180,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				break;
 			case 'qualities':
 				context.tab = context.tabs[partId];
-
 				break;
 			// case 'effects':
 			// 	context.tab = context.tabs[partId];
@@ -294,12 +293,14 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		// To preserve order, make sure the new index is the highest
 		const modifierId = Math.max(-1, ...Object.getOwnPropertyNames(itemModifiers)) + 1;
 		let update = {};
+		let update2 = {};
 		// Using a default value of Strength and 1 in order NOT to create an empty modifier.
 		update[`system.itemModifiers.${modifierId}`] = {
 			name: game.i18n.localize('TALESOFTHEOLDWEST.Attributes.grit.lower'),
 			value: Number(0),
 			state: 'Conditional',
 		};
+
 		// await item.update(update).render(true);
 		await item.update(update);
 	}
@@ -707,7 +708,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		const dropType = dropItem.system.weapontype;
 		if (dropItem.type === 'weaponquality') {
 			if (targetType === dropType) {
-				return await this.addWeaponFeature(dropItem, this.item);
+				await this.addWeaponFeature(dropItem, this.item);
+				return;
 			} else {
 				ui.notifications.error(game.i18n.localize(game.i18n.localize('TALESOFTHEOLDWEST.General.noadd')));
 				return false;
@@ -762,8 +764,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			return ui.notifications.error(game.i18n.localize(game.i18n.localize(errormessage)));
 		}
 		let fkey = system.featureModifiers.push(weaponFeature);
+		let update = this.getCWeaponConditionNames(target);
 
-		await target.update({ 'system.featureModifiers': system.featureModifiers });
+		await target.update({ 'system.featureModifiers': system.featureModifiers, 'system.conditionNames': update });
 
 		for (const ikey in target.system.featureModifiers[fkey - 1].itemModifiers) {
 			switch (target.system.featureModifiers[fkey - 1].itemModifiers[ikey].name) {
@@ -814,7 +817,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 					break;
 			}
 		}
-
 		return weaponFeature;
 	}
 
@@ -882,6 +884,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 
 		let featureModifiers = itemData.system.featureModifiers.filter((o) => o.id !== li?.dataset?.itemId);
 		await itemData.update({ 'system.featureModifiers': featureModifiers });
+		let update = this.getCWeaponConditionNames(itemData);
+		await itemData.update({ 'system.conditionNames': update });
+
 		return featureModifiers;
 	}
 
@@ -899,10 +904,22 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	/**
 	 * @returns {Collection<string, Actor>} [id, actor]
 	 */
+	getCWeaponConditionNames(target) {
+		let c = ' ';
+		if (target.system.featureModifiers) {
+			for (const o of target.system.featureModifiers) {
+				c += o.name + ' ';
+			}
+			return c;
+		} else {
+			return 'None';
+		}
+	}
+
 	async getCWeaponConditions() {
 		const c = new foundry.utils.Collection();
-		for (const o of this.system.featureModifiers) {
-			c.set(o.id, game.items.get(o.id));
+		for (const o of this.item.system.featureModifiers) {
+			c.set(o.name, game.items.get(o.id));
 		}
 		return c;
 	}

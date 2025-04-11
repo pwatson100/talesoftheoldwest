@@ -6,13 +6,19 @@
   "system": {
     "description": "<p>Always handy</p>",
     "itemModifiers": {
-      "1": {
+      "0": {
         "name": "grit",
-        "value": "1"
+        "value": 1,
+        "state": "Active",
+        "modtype": "na",
+        "id": "mp7LeXfNlVP2Mq6T",
+        "description": "Always handy"
       }
     },
     "quantity": 1,
-    "weight": 0
+    "weight": 0,
+    "reference": "",
+    "cost": 0
   },
   "effects": [],
   "folder": "DFBrwLylXIJKjhil",
@@ -25,13 +31,12 @@
   "_stats": {
     "compendiumSource": "Item.DsUvLVi52qKwlgjX",
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1730829688858,
-    "modifiedTime": 1730829688858,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392076998,
+    "modifiedTime": 1744392076998,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!mp7LeXfNlVP2Mq6T"
 }

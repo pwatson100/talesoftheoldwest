@@ -5,9 +5,20 @@
   "_id": "eerVkTW56rYA9F4J",
   "system": {
     "description": "<p>Basic camping gear. Gives a +1 bonus to NATURE rolls when </p><p>making camp for the night.</p>",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "nature",
+        "value": 1,
+        "state": "Active",
+        "modtype": "na",
+        "id": "eerVkTW56rYA9F4J",
+        "description": "Basic camping gear. Gives a +1 bonus to NATURE rolls when making camp for the night."
+      }
+    },
     "quantity": 1,
-    "weight": 0
+    "weight": 0,
+    "cost": 5,
+    "reference": ""
   },
   "effects": [],
   "folder": "DFBrwLylXIJKjhil",
@@ -20,13 +31,12 @@
   "_stats": {
     "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1730829688858,
-    "modifiedTime": 1730829688858,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392076998,
+    "modifiedTime": 1744392076998,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!eerVkTW56rYA9F4J"
 }

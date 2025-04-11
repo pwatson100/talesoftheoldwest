@@ -6,9 +6,18 @@
     "feature": "quality",
     "onweapon": "pistol",
     "description": "A palm-sized gun designed for concealment. Those trying to spot it suffer a −3 penalty on their HAWKEYE test.",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "QcMQXG38GR0QGn1j",
   "img": "icons/svg/item-bag.svg",
@@ -24,13 +33,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!QcMQXG38GR0QGn1j"
 }

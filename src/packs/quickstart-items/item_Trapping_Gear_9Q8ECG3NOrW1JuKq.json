@@ -7,7 +7,8 @@
     "description": "<p>Basic items of wire, twine, maybe a spring-loaded bear trap</p>",
     "itemModifiers": null,
     "quantity": 1,
-    "weight": 0
+    "weight": 0,
+    "cost": 0
   },
   "effects": [],
   "folder": "DFBrwLylXIJKjhil",
@@ -20,13 +21,12 @@
   "_stats": {
     "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1730829688858,
-    "modifiedTime": 1730829688858,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392076998,
+    "modifiedTime": 1744392076998,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!9Q8ECG3NOrW1JuKq"
 }

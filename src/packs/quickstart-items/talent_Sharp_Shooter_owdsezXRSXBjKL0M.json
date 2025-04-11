@@ -6,9 +6,32 @@
     "basicAction": "You gain a +1 bonus when you use a rifle.",
     "advAction": "You can use a rifle at Long range with no penalties, and at Distant range with only a −2 penalty.",
     "reference": "sharpshooter",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "shootin",
+        "value": 1,
+        "state": "Conditional",
+        "modtype": "basic",
+        "id": "owdsezXRSXBjKL0M",
+        "description": "You are an expert marksman.",
+        "basicAction": "You gain a +1 bonus when you use a rifle.",
+        "advAction": "You can use a rifle at Long range with no penalties, and at Distant range with only a −2 penalty."
+      },
+      "1": {
+        "name": "pushdescription",
+        "value": 0,
+        "state": "Conditional",
+        "modtype": "advanced",
+        "id": "owdsezXRSXBjKL0M",
+        "description": "You are an expert marksman.",
+        "basicAction": "You gain a +1 bonus when you use a rifle.",
+        "advAction": "You can use a rifle at Long range with no penalties, and at Distant range with only a −2 penalty."
+      }
+    },
     "basicisActive": false,
-    "advisActive": false
+    "advisActive": false,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "owdsezXRSXBjKL0M",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +46,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1737561673327,
-    "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392079514,
+    "modifiedTime": 1744392079514,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!owdsezXRSXBjKL0M"
 }

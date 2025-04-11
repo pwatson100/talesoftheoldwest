@@ -6,9 +6,32 @@
     "basicAction": "You gain a +1 bonus to your FIGHTIN’ dice when Blocking a melee attack.",
     "advAction": "You’re such an expert in a fight that you can Block an attack made with a melee weapon or by an animal, even if you’re unarmed.",
     "reference": "hardtohit",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "fightin",
+        "value": 1,
+        "state": "Conditional",
+        "modtype": "basic",
+        "id": "l3iB2FbuVRM9Xgek",
+        "description": "You’re a tough opponent in a fight, and laying a blow on you is hard.",
+        "basicAction": "You gain a +1 bonus to your FIGHTIN’ dice when Blocking a melee attack.",
+        "advAction": "You’re such an expert in a fight that you can Block an attack made with a melee weapon or by an animal, even if you’re unarmed."
+      },
+      "1": {
+        "name": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "modtype": "advanced",
+        "id": "l3iB2FbuVRM9Xgek",
+        "description": "You’re a tough opponent in a fight, and laying a blow on you is hard.",
+        "basicAction": "You gain a +1 bonus to your FIGHTIN’ dice when Blocking a melee attack.",
+        "advAction": "You’re such an expert in a fight that you can Block an attack made with a melee weapon or by an animal, even if you’re unarmed."
+      }
+    },
     "basicisActive": false,
-    "advisActive": false
+    "advisActive": false,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "l3iB2FbuVRM9Xgek",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +46,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1737561673327,
-    "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392079514,
+    "modifiedTime": 1744392079514,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!l3iB2FbuVRM9Xgek"
 }

@@ -26,8 +26,13 @@
 						<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
 					</a>
 				</div>
-				<div class='item-name TCol12' title='{{item.system.description}}'>{{item.name}}</div>
-				<!-- <div class="TCol13">{{ striptags item.system.description}}</div> -->
+<div
+				class='item-name TCol12'
+					title='{{removeMarkup item.system.description}} 
+Basic -  {{#if item.system.basicisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.basicAction}} 
+Advanced - {{#if item.system.advisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.advAction}}'
+				>{{item.name}}</div>
+
 				<div class='item-controls TCol14'>
 					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Talent'}}'>
 						<i class='fas fa-edit'></i>

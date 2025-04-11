@@ -19,7 +19,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		classes: ['talesoftheoldwest', 'actor'],
 		position: {
 			width: 950,
-			height: 870,
+			height: 886,
 		},
 		window: {
 			// icon: 'fa-solid fa-egg',
@@ -35,6 +35,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			toggleCondition: { handler: this._toggleCondition, buttons: [0, 2] },
 			rollCrit: { handler: this._rollCrit, buttons: [0, 2] },
 			changeFaith: { handler: this._changeFaith, buttons: [0, 2] },
+			changeXp: { handler: this._changeXp, buttons: [0, 2] },
 			changeDamage: { handler: this._changeDamage, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
@@ -89,7 +90,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'gear', 'description', 'effects');
+				options.parts.push('skills', 'gear', 'description');
 				break;
 			case 'npc':
 				options.parts.push('skills', 'gear', 'description');
@@ -361,50 +362,51 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			booklearnin: 0,
 			flight: 0,
 		};
-
-		if (itemData[0].type !== 'weapon' && itemMods) {
+		if (itemData.length) {
 			for (let [attrib, allItems] of Object.entries(itemMods)) {
-				for (let [skey, subAttar] of Object.entries(allItems)) {
-					if (subAttar.state === 'Active' && subAttar.itemtype != 'talent') {
-						switch (attrib) {
-							case 'docity':
-							case 'quick':
-							case 'cunning':
-							case 'grit':
-								attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
-								anyMods++;
-								break;
-							default:
-								if (!subAttar.feature) {
-									sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+				if (allItems.type !== 'weapon' && itemMods) {
+					for (let [skey, subAttar] of Object.entries(allItems)) {
+						if (subAttar.state === 'Active' && subAttar.itemtype != 'talent') {
+							switch (attrib) {
+								case 'docity':
+								case 'quick':
+								case 'cunning':
+								case 'grit':
+									attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
 									anyMods++;
-								}
-								break;
-						}
-					} else if (
-						(subAttar.itemtype === 'talent' && subAttar.modtype === 'basic' && subAttar.basicisActive) ||
-						(subAttar.modtype === 'advanced' && subAttar.advisActive)
-					) {
-						switch (attrib) {
-							case 'docity':
-							case 'quick':
-							case 'cunning':
-							case 'grit':
-								attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
-								anyMods++;
-								break;
-							default:
-								if (!subAttar.feature) {
-									sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+									break;
+								default:
+									if (!subAttar.feature) {
+										sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+										anyMods++;
+									}
+									break;
+							}
+						} else if (
+							subAttar.itemtype === 'talent' &&
+							((subAttar.modtype === 'basic' && subAttar.basicisActive) || (subAttar.modtype === 'advanced' && subAttar.advisActive)) &&
+							subAttar.state === 'Active'
+						) {
+							switch (attrib) {
+								case 'docity':
+								case 'quick':
+								case 'cunning':
+								case 'grit':
+									attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
 									anyMods++;
-								}
-								break;
+									break;
+								default:
+									if (!subAttar.feature) {
+										sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+										anyMods++;
+									}
+									break;
+							}
 						}
 					}
 				}
 			}
 		}
-
 		let attribData = {};
 		for (let [a, abl] of Object.entries(aData.attributes)) {
 			let target = `system.attributes.${a}.mod`;
@@ -633,6 +635,27 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				return;
 			}
 			return await this.actor.update({ ['system.general.faithpoints.value']: faithpoints.value + 1 });
+		}
+	}
+	static async _changeXp(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		let xp = this.actor.system.general.xp;
+		if (event.button === 2) {
+			// left click
+			if (xp.value > 0) {
+				if (xp.value === 0) {
+					return;
+				}
+				return await this.actor.update({ ['system.general.xp.value']: xp.value - 1 });
+			}
+		} else {
+			// right click
+			if (xp.value >= 10) {
+				return;
+			}
+			return await this.actor.update({ ['system.general.xp.value']: xp.value + 1 });
 		}
 	}
 	static async _changeDamage(event, target) {

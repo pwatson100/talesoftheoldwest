@@ -6,9 +6,16 @@
     "feature": "quality",
     "onweapon": "any",
     "description": "<p>The weapon feels good in your hand and you can’t help but shoot straight with it. Grants a +1 bonus to SHOOTIN’.</p>",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "shootin",
+        "value": 1,
+        "state": "Active"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "Vfdc6f8bDuBfLBw7",
   "img": "icons/svg/item-bag.svg",
@@ -24,13 +31,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!Vfdc6f8bDuBfLBw7"
 }

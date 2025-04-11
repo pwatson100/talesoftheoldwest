@@ -200,6 +200,20 @@ Hooks.on('renderChatMessage', (app, html, msg) => {
 	}
 });
 
+Hooks.on('renderPause', (_app, html, options) => {
+	// console.log(document);
+	document.getElementById(
+		'pause'
+	).innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
+});
+
+// V13 spinner
+Hooks.on('renderGamePause', (_app, html, options) => {
+	document.getElementById(
+		'pause'
+	).innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
+});
+
 // ***************************
 // DsN V3 Hooks
 // ***************************

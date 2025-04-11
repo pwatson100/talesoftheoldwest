@@ -26,6 +26,7 @@ export default class totowPC extends totowActorBase {
 			bigdream: new fields.StringField({ required: true, blank: true }),
 			yourpardner: new fields.StringField({ required: true, blank: true }),
 			lifestyle: new fields.StringField({ required: true, blank: true }),
+			reputation: new fields.StringField({ required: false, blank: true }),
 
 			faithpoints: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
@@ -34,22 +35,24 @@ export default class totowPC extends totowActorBase {
 			cash: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
+			age: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+			}),
 			fame: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			morals: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 3, min: 1, max: 6 }),
 			}),
 			publicspirit: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 6 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 3, min: 1, max: 6 }),
 			}),
 			capital: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			xp: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 			}),
 			canPush: new fields.StringField({ required: true, initial: 'push' }),
 		});
@@ -113,15 +116,158 @@ export default class totowPC extends totowActorBase {
 			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
 		this.general.faithpoints.max = 10 - this.general.faithpoints.value;
-		// this.damage.hurts.max = 5 - this.damage.hurts.value;
-		// this.damage.shakes.max = 5 - this.damage.shakes.value;
-		// this.damage.vexes.max = 5 - this.damage.vexes.value;
-		// this.damage.doubts.max = 5 - this.damage.doubts.value;
-
+		this.general.xp.max = 10 - this.general.xp.value;
 		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
 		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
 		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
 		this.damage.doubts.max = this.attributes.docity.max - this.damage.doubts.value;
+
+		// Rem the Try/Catch back in when the table data is included in the Core Rules Module and we have a registered setting.
+		// try {
+		// 	if (game.settings.get('talesoftheoldwest.corerules', 'imported')) {
+		let x = this.general.publicspirit.value;
+		let y = this.general.morals.value;
+		switch (x) {
+			case 1:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.oneone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.onetwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.onethree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.onefour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.onefive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.onesix.label);
+						break;
+				}
+				break;
+			case 2:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twoone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twotwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twothree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twofour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twofive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.twosix.label);
+						break;
+				}
+				break;
+			case 3:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threeone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threetwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threethree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threefour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threefive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.threesix.label);
+						break;
+				}
+				break;
+			case 4:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fourone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fourtwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fourthree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fourfour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fourfive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.foursix.label);
+						break;
+				}
+				break;
+			case 5:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fiveone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fivetwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fivethree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fivefour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fivefive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.fivesix.label);
+						break;
+				}
+				break;
+			case 6:
+				switch (y) {
+					case 1:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixone.label);
+						break;
+					case 2:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixtwo.label);
+						break;
+					case 3:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixthree.label);
+						break;
+					case 4:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixfour.label);
+						break;
+					case 5:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixfive.label);
+						break;
+					case 6:
+						this.general.reputation = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.Reputation.sixsix.label);
+						break;
+				}
+				break;
+
+			default:
+				this.general.reputation = '';
+
+				break;
+		}
+		// 	}
+		// } catch (error) {}
 	}
 
 	getRollData() {

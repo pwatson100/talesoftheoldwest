@@ -1,0 +1,60 @@
+{
+  "name": "Manhattan Navy",
+  "img": "systems/talesoftheoldwest/assets/icons/manhattannavy.webp",
+  "type": "weapon",
+  "_id": "lLTrl3jBrfzo0EZ2",
+  "system": {
+    "description": "",
+    "itemModifiers": null,
+    "subtype": "shootin",
+    "action": "single",
+    "bonusdraw": 0,
+    "attackbonus": 2,
+    "damage": 2,
+    "crit": 1,
+    "range": "medium",
+    "ammo": 6,
+    "reference": "",
+    "weight": 0.5,
+    "featureModifiers": [
+      {
+        "itemModifiers": {
+          "0": {
+            "attribute": "attackbonus",
+            "value": 1,
+            "state": "Active"
+          }
+        },
+        "id": "t59pbCT5XVNE5M4y",
+        "name": "Calibrated",
+        "feature": "quality",
+        "type": "shootin",
+        "description": "The weapon is so well calibrated its aim is true. Gain +1 bonus to the weapon’s Attack modifier.",
+        "onweapon": "pistol",
+        "img": "icons/svg/item-bag.svg"
+      }
+    ],
+    "cost": 0,
+    "conditionNames": ""
+  },
+  "effects": [],
+  "folder": "PfXKklVIj8c5cX6Y",
+  "sort": 175000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 2
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1744392084777,
+    "modifiedTime": 1744392084777,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!lLTrl3jBrfzo0EZ2"
+}

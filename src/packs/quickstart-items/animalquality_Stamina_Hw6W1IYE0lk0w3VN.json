@@ -3,7 +3,9 @@
   "type": "animalquality",
   "system": {
     "description": "This horse can endure more than other horses. Grants +1 to the horse’s RESILIENCE.",
-    "itemModifiers": null
+    "itemModifiers": null,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "Hw6W1IYE0lk0w3VN",
   "img": "icons/svg/item-bag.svg",
@@ -18,13 +20,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1735993087306,
-    "modifiedTime": 1735993087306,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392074027,
+    "modifiedTime": 1744392074027,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!Hw6W1IYE0lk0w3VN"
 }

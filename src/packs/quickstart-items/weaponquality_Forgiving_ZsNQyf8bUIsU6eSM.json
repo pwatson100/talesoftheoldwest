@@ -5,10 +5,19 @@
     "weapontype": "fightin",
     "feature": "quality",
     "onweapon": "any",
-    "description": "The weapon is reliable and easy to use. You can ignore one die of Trou- ble on your first roll when using this weapon as if you had spent a point of Faith (but not after a pushed roll).",
-    "itemModifiers": null,
+    "description": "<p>The weapon is reliable and easy to use. You can ignore one die of Trouble on your first roll when using this weapon as if you had spent a point of Faith (but not after a pushed roll).</p>",
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "ZsNQyf8bUIsU6eSM",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +32,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!ZsNQyf8bUIsU6eSM"
 }

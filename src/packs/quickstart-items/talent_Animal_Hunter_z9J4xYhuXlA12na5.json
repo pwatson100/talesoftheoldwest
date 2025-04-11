@@ -6,9 +6,24 @@
     "basicAction": "All your attacks against wild animals, and rolls to set traps, gain a +1 bonus.",
     "advAction": "Your attacks against wild animals (including from traps) automatically cause a critical injury if you inflict any damage.",
     "reference": "animalhunter",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "pushdescription",
+        "value": 1,
+        "state": "Chat",
+        "talenttype": "basic"
+      },
+      "1": {
+        "name": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "talenttype": "advanced"
+      }
+    },
     "basicisActive": false,
-    "advisActive": false
+    "advisActive": false,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "z9J4xYhuXlA12na5",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +38,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1737561673327,
-    "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392079514,
+    "modifiedTime": 1744392079514,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!z9J4xYhuXlA12na5"
 }

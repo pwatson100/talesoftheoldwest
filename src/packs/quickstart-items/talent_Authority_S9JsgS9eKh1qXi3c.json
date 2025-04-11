@@ -6,9 +6,18 @@
     "basicAction": "You gain a +1 bonus to PRESENCE tests.",
     "advAction": "In a duel you use the weight of your authority to get the drop on your enemy. After you have pushed your PRESENCE roll using a Faith Point, you can push a second time for free.",
     "reference": "authority",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "presence",
+        "value": 1,
+        "state": "Active",
+        "talenttype": "basic"
+      }
+    },
     "basicisActive": false,
-    "advisActive": false
+    "advisActive": false,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "S9JsgS9eKh1qXi3c",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +32,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1737561673327,
-    "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392079514,
+    "modifiedTime": 1744392079514,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!S9JsgS9eKh1qXi3c"
 }

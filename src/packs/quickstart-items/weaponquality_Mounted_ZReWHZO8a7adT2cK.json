@@ -5,10 +5,19 @@
     "weapontype": "fightin",
     "feature": "quality",
     "onweapon": "any",
-    "description": "This weapon is especially deadly when used from horseback. After a pushed roll, when mounted, you can push again for free, although Trou- ble still applies.",
-    "itemModifiers": null,
+    "description": "<p>This weapon is especially deadly when used from horseback. After a pushed roll, when mounted, you can push again for free, although Trouble still applies.</p>",
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
     "weight": 0,
-    "reference": ""
+    "reference": "",
+    "cost": 0
   },
   "_id": "ZReWHZO8a7adT2cK",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +32,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1740313844716,
-    "modifiedTime": 1740313844716,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392082189,
+    "modifiedTime": 1744392082189,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!ZReWHZO8a7adT2cK"
 }

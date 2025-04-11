@@ -6,9 +6,24 @@
     "basicAction": "You gain a +1 bonus to all ANIMAL HANDLIN’ rolls that relate to horses.",
     "advAction": "There is no one better in the saddle than you. When you Drive Hard in a chase on horseback you gain a +3 bonus to ANIMAL HANDLIN’ instead of +2, and your horse gains +3 to its RESILIENCE rolls during the chase.",
     "reference": "borninthesaddle",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "animalhandlin",
+        "value": 1,
+        "state": "Conditional",
+        "talenttype": "basic"
+      },
+      "1": {
+        "name": "animalhandlin",
+        "value": 3,
+        "state": "Conditional",
+        "talenttype": "advanced"
+      }
+    },
     "basicisActive": false,
-    "advisActive": false
+    "advisActive": false,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "thYXFjB8kt5Z2RSM",
   "img": "icons/svg/item-bag.svg",
@@ -23,13 +38,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1737561673327,
-    "modifiedTime": 1737561673327,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392079514,
+    "modifiedTime": 1744392079514,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!thYXFjB8kt5Z2RSM"
 }

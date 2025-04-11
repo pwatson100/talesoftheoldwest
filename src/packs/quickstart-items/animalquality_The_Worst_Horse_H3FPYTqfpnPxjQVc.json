@@ -3,7 +3,9 @@
   "type": "animalquality",
   "system": {
     "description": "Roll twice again for flaws, ignoring a score of 11–14. These new flaws are Permanent flaws.",
-    "itemModifiers": null
+    "itemModifiers": null,
+    "weight": 0,
+    "cost": 0
   },
   "_id": "H3FPYTqfpnPxjQVc",
   "img": "icons/svg/item-bag.svg",
@@ -18,13 +20,12 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.336",
+    "coreVersion": "12.331",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1735993087306,
-    "modifiedTime": 1735993087306,
-    "lastModifiedBy": "oo2KG31LDGhYx0MC",
-    "exportSource": null
+    "createdTime": 1744392074027,
+    "modifiedTime": 1744392074027,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!H3FPYTqfpnPxjQVc"
 }
