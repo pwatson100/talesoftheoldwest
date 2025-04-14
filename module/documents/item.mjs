@@ -115,7 +115,10 @@ export class totowItem extends Item {
 			let successMod = 0;
 			let troubleMod = 0;
 			await prepModOutput(rollData, dataset);
-			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', { config, dataset });
+			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
+				config,
+				dataset,
+			});
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
 				position: { width: 350 },
@@ -167,7 +170,10 @@ export class totowItem extends Item {
 				// Get and proess Weapon Modifier data
 				await prepModOutput(rollData, dataset);
 			}
-			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', { config, dataset });
+			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
+				config,
+				dataset,
+			});
 			const data = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
 				position: { width: 440 },

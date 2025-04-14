@@ -412,9 +412,9 @@ export class totowActor extends Actor {
 						},
 					},
 					default: 'one',
-					close: (html) => {
+					close: ([html]) => {
 						if (confirmed) {
-							let manCrit = html.find('[name=manCrit]')[0]?.value;
+							let manCrit = html.querySelector('[name=manCrit]')?.value;
 
 							if (manCrit == 'undefined') {
 								manCrit = '1';
@@ -546,14 +546,14 @@ export class totowActor extends Actor {
 						},
 					},
 					default: 'one',
-					close: (html) => {
+					close: ([html]) => {
 						if (confirmed) {
-							let manCrit = parseInt(html.find('[name=manCrit]')[0]?.value);
+							let manCrit = Number(html.querySelector('[name=manCrit]')?.value);
 
 							if (manCrit == 'undefined') {
 								manCrit = '1';
 							}
-							target.dataset.mod = parseInt(target.dataset.mod) + manCrit;
+							target.dataset.mod = Number(target.dataset.mod) + Number(manCrit);
 							actor.diceRoll(actor, event, target);
 
 							// actor.rollCrit(actor, type, dataset, manCrit);
