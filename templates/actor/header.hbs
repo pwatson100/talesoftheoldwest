@@ -8,7 +8,8 @@
 		{{#if (eq actor.type 'animal')}}
 			<label for='system.general.breed' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
 			<input class='HedCol4' type='text' name='system.general.breed' value='{{system.general.breed}}' data-dtype='text' />
-		{{else}}
+			{{/if}}
+	{{#if (eq actor.type 'pc')}}
 			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
 			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
 				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
@@ -35,6 +36,12 @@
 				{{/times}}
 				{{#times system.general.faithpoints.max}}<i class='far fa-circle'></i>{{/times}}
 			</div>
+		{{/if}}
+	{{#if (eq actor.type 'npc')}}
+			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
+			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
+				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
+			</select>
 		{{/if}}
 
 		<img class='profile-img grid-header HedCol2' src='{{actor.img}}' data-edit='img' data-action='onEditImage' title='{{actor.name}}' />

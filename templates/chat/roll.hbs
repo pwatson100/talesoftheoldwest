@@ -117,6 +117,9 @@
 			{{/if}}
 
 			<section>
+
+								{{#if (eq actor.type 'pc')}}
+
 				<hr />
 				<h4 style='font-size: large;font-weight:bold;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
 				<hr />
@@ -177,6 +180,7 @@
 			</section>
 		</div>
 
+	{{/if}}
 	{{else}}
 		<div class='dice-formula dice-roll'>
 			<a>

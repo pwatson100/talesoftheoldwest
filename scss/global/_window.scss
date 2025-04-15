@@ -93,18 +93,15 @@ body {
 		--input-placeholder-color: var(--color-dark-3);
 		--input-focus-outline-color: var(--color-warm-2);
 	}
-	// .application input[type='checkbox'],
-	// // .application input[type='checkbox']::after,
-	// .application input[type='checkbox']::before {
-	// 	background: white;
-	// 	color: black;
-	// 	content: '\f0c8';
-	// 	--input-background-color: blue;
-	// 	--input-border-color: blue;
-	// 	--input-text-color: blue;
-	// 	--input-placeholder-color: blue;
-	// 	--input-focus-outline-color: blue;
-	// }
+
+	.application input[type='checkbox'] {
+		--checkbox-checked-color: transparent;
+		--checkbox-disabled-color: var(--color-cool-4);
+		--checkbox-background-color: transparent;
+		--checkbox-checkmark-color: bleck;
+		--checkbox-font-weight: bold;
+		border: solid 1px black;
+	}
 }
 
 .application .window-header,
@@ -124,4 +121,8 @@ body {
 
 .talesoftheoldwest.application .window-content {
 	display: block;
+}
+
+.div-border {
+	border: 3px solid black;
 }

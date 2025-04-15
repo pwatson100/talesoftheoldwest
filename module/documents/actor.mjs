@@ -467,8 +467,14 @@ export class totowActor extends Actor {
 		const rollData = this.getRollData();
 		const dataset = target.dataset;
 		// const targetActor = actor.getRollData();
-		dataset.faithpoints = actor.system.general.faithpoints.value;
-		dataset.canPush = actor.system.general.canPush;
+		if (actor.type === 'pc') {
+			dataset.faithpoints = actor.system.general.faithpoints.value;
+			dataset.canPush = actor.system.general.canPush;
+		} else {
+			dataset.faithpoints = 0;
+			dataset.canPush = false;
+		}
+
 		dataset.myActor = actor.id;
 		let result = '';
 
@@ -478,7 +484,7 @@ export class totowActor extends Actor {
 				switch (dataset.rollType) {
 					case 'attribute':
 					case 'ability':
-						result = await rollAttrib(dataset, rollData);
+						result = await rollAttrib(dataset, rollData, actor);
 						break;
 					default:
 						break;
@@ -579,5 +585,75 @@ export class totowActor extends Actor {
 
 		ChatMessage.applyRollMode(chatData, game.settings.get('core', 'rollMode'));
 		return ChatMessage.create(chatData);
+	}
+
+	/* ------------------------------------------- */
+	/*  Vehicle: Crew Management                   */
+	/* ------------------------------------------- */
+
+	/**
+	 * Adds an occupant to the vehicle.
+	 * @param {string}  compId              The id of the added actor
+	 * @param {string}  [position='PASSENGER'] Crew position flag ('PASSENGER', 'DRIVER', 'GUNNER', or 'COMMANDER')
+	 * @param {boolean} [isExposed=false]   Whether it's an exposed position
+	 * @returns {VehicleOccupant}
+	 */
+	async addCompadres(compId) {
+		if (this.type !== 'pc') return;
+
+		const system = this.system;
+		const details = {
+			id: compId,
+		};
+		// Removes duplicates.
+		if (system.compadres.details.some((o) => o.id === compId)) this.removeCompadres(compId);
+		// Adds the new occupant.
+		system.compadres.details.push(details);
+		await this.update({ 'system.compadres.details': system.compadres.details });
+
+		await this.update({ 'system.compadres.compadresQty': system.compadres.details.length });
+
+		return details;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * Removes an occupant from the vehicle.
+	 * @param {string} compId The id of the occupant to remove
+	 * @return {Compadres[]}
+	 */
+	removeCompadres(compId) {
+		if (this.type !== 'pc') return;
+		const compadres = this.system.compadres;
+		compadres.details = compadres.details.filter((o) => o.id !== compId);
+		return compadres.details;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * Gets a specific occupant in the vehicle.
+	 * @param {string} compId The id of the occupant to find
+	 * @returns {VehicleOccupant|undefined}
+	 */
+	getCompadres(compId) {
+		if (this.type !== 'pc') return;
+		return this.system.compadres.details.find((o) => o.id === compId);
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * Gets a collection of crewed actors.
+	 * @returns {Collection<string, Actor>} [id, actor]
+	 */
+	getCrew() {
+		if (this.type !== 'pc') return undefined;
+		const c = new foundry.utils.Collection();
+		for (const o of this.system.compadres.details) {
+			c.set(o.id, game.actors.get(o.id));
+		}
+		return c;
 	}
 }

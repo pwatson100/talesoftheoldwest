@@ -11,14 +11,14 @@
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
 			<input class='ItemHedCol6' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
 			<label class='resource-label ItemHedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
-			<input class='ItemHedCol8' type='text' name='system.cost' value='{{system.cost}}' data-dtype='Number' />
+			<input class='ItemHedCol8 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' />
 		{{/if}}
 
 		{{#if (eq item.type 'weapon')}}
 			<label class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
 			<input class='ItemHedCol4' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' />
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
-			<input class='ItemHedCol6' type='text' name='system.cost' value='{{system.cost}}' data-dtype='Number' />
+			<input class='ItemHedCol6 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' />
 		{{/if}}
 
 		<img class='item-img grid-item-header ItemHedCol2' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />

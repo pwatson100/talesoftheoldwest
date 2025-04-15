@@ -18,6 +18,24 @@ export default class totowNPC extends totowActorBase {
 				return obj;
 			}, {})
 		);
+		schema.damage = new fields.SchemaField({
+			hurts: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			shakes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			vexes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			doubts: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+		});
 		// Iterate over ability names and create a new SchemaField for each.
 		schema.abilities = new fields.SchemaField(
 			Object.keys(CONFIG.TALESOFTHEOLDWEST.abilities).reduce((obj, ability) => {
@@ -31,6 +49,13 @@ export default class totowNPC extends totowActorBase {
 				return obj;
 			}, {})
 		);
+		schema.general = new fields.SchemaField({
+			archetype: new fields.StringField({ required: true, blank: true }),
+			cash: new fields.StringField({ required: false, blank: true }),
+			age: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+			}),
+		});
 		schema.conditions = new fields.SchemaField({
 			starving: new fields.BooleanField({ initial: false }),
 			dehydrated: new fields.BooleanField({ initial: false }),
@@ -52,8 +77,14 @@ export default class totowNPC extends totowActorBase {
 
 			// Handle ability label localization.
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name) ?? key;
+			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
+		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
+		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
+		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
+		this.damage.doubts.max = this.attributes.docity.max - this.damage.doubts.value;
 	}
+
 	getRollData() {
 		const data = {};
 

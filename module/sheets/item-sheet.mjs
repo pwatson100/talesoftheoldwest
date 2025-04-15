@@ -260,6 +260,10 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
+		this.element.querySelector('.currency').addEventListener('change', (event) => {
+			console.log(event);
+			this._currencyField(event);
+		});
 	}
 
 	/**************
@@ -970,5 +974,25 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			};
 			return new DragDrop(d);
 		});
+	}
+
+	_currencyField(event) {
+		event.preventDefault();
+		const element = event.currentTarget;
+		// format initial value
+		onBlur({ target: event.currentTarget });
+
+		function localStringToNumber(s) {
+			return Number(String(s).replace(/[^0-9.-]+/g, ''));
+		}
+		function onBlur(e) {
+			let value = localStringToNumber(e.target.value);
+			if (game.settings.get('talesoftheoldwest', 'dollar'))
+				e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
+			else
+				e.target.value = value
+					? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
+					: '0.00';
+		}
 	}
 }

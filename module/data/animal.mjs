@@ -37,9 +37,8 @@ export default class totowANIMAL extends totowActorBase {
 
 		schema.general = new fields.SchemaField({
 			breed: new fields.StringField({ required: true, blank: true }),
-			cost: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-			}),
+			cost: new fields.StringField({ required: false, blank: true }),
+
 			ridingmodifier: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),

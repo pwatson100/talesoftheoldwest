@@ -17,4 +17,13 @@ export default function () {
 		default: 0,
 		type: Number,
 	});
+
+	game.settings.register('talesoftheoldwest', 'dollar', {
+		name: 'TALESOFTHEOLDWEST.General.Dollar',
+		hint: 'TALESOFTHEOLDWEST.General.DollarNote',
+		scope: 'world',
+		type: Boolean,
+		default: true,
+		config: true,
+	});
 }

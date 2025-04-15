@@ -4,13 +4,15 @@
 		<input class='' name='system.basicisActive' type='checkbox' {{checked system.basicisActive}} />
 	</div>
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	{{#if editable}}
-		<prose-mirror name='system.basicAction' data-document-u-u-i-d='{{item.uuid}}' value='{{system.basicAction}}' toggled='true'>
+	<div class="div-border">
+		{{#if editable}}
+			<prose-mirror name='system.basicAction' data-document-u-u-i-d='{{item.uuid}}' value='{{system.basicAction}}' toggled='true'>
+				{{{enrichedBasic}}}
+			</prose-mirror>
+		{{else}}
 			{{{enrichedBasic}}}
-		</prose-mirror>
-	{{else}}
-		{{{enrichedBasic}}}
-	{{/if}}
+		{{/if}}
+	</div>
 
 	{{#if isGM}}
 		<div class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.roll-modifiers')}}</div>

@@ -1,6 +1,6 @@
 <section class="tab skills {{tab.cssClass}}" data-group="primary" data-tab="skills">
-	{{#if (eq actor.type "pc")}}
 
+	{{#if (ne actor.type "animal")}}
 	<div class="heading" style="padding-left: 20px">
 		{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attributes')}} {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.and')}} {{toUpperCase (localize
 		'TALESOFTHEOLDWEST.General.abilities')}}
@@ -9,7 +9,7 @@
 		<div class="A1">
 			<label
 				for="system.attributes.grit"
-				class="resource-label rollable flexlarge align-left"
+				class="resource-label rollable align-left"
 				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
@@ -27,7 +27,7 @@
 		<div class="A2">
 			<label
 				for="system.attributes.quick"
-				class="resource-label rollable flexlarge align-left"
+				class="resource-label rollable align-left"
 				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
@@ -45,7 +45,7 @@
 		<div class="A3">
 			<label
 				for="system.attributes.cunning"
-				class="resource-label rollable flexlarge align-left"
+				class="resource-label rollable align-left"
 				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
@@ -63,7 +63,7 @@
 		<div class="A4">
 			<label
 				for="system.attributes.docity"
-				class="resource-label rollable flexlarge align-left"
+				class="resource-label rollable align-left"
 				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
@@ -169,6 +169,8 @@
 		</div>
 		{{/each}}
 	</div>
+{{/if}}
+	{{#if (eq actor.type "pc")}}
 	<div class="body-split">
 		<div class="Split1">
 			<div class="crit-and-conditions" style="padding-left: 10px; margin-bottom: 10px">
@@ -271,8 +273,78 @@
 		<div class="Split2" style="width: 380px; margin-left: 10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
 	</div>
 	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs"}}</div>
+{{/if}}
+{{#if (eq actor.type "npc")}}
+	<div class="three-body-split">
+			<div class="TSplit1 heading" style="padding-left: 10px; margin-bottom: 10px;">
+				<div class='heading' style="width: 264px">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}</div>
+				<div class="conditions-split">
+	
+						<label class="dots resource-label CSplit11"  data-key="starving" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+							{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
+						</label>
+							<a class="overwatch-toggle CSplit12" data-action="toggleCondition" data-key="starving">
+								{{#if (eq system.conditions.starving true)}}
+								<i class="far fa-dot-circle"></i>
+								{{else}}
+								<i class="far fa-circle"></i>
+								{{/if}}
+							</a>
 
-	{{else}}
+						<label class="dots resource-label CSplit21" data-key="dehydrated" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+							{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
+						</label>
+							<a class="overwatch-toggle CSplit22" data-action="toggleCondition" data-key="dehydrated">
+								{{#if (eq system.conditions.dehydrated true)}}
+								<i class="far fa-dot-circle"></i>
+								{{else}}
+								<i class="far fa-circle"></i>
+								{{/if}}
+							</a>
+
+						<label class="dots resource-label CSplit31"  data-key="exhausted" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+							{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
+						</label>
+							<a class="overwatch-toggle CSplit32" data-action="toggleCondition" data-key="exhausted">
+								{{#if (eq system.conditions.exhausted true)}}
+								<i class="far fa-dot-circle"></i>
+								{{else}}
+								<i class="far fa-circle"></i>
+								{{/if}}
+							</a>
+
+						<label class="dots resource-label CSplit41"  data-key="freezing" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+							{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
+						</label>
+							<a class="overwatch-toggle CSplit42" data-action="toggleCondition" data-key="freezing">
+								{{#if (eq system.conditions.freezing true)}}
+								<i class="far fa-dot-circle"></i>
+								{{else}}
+								<i class="far fa-circle"></i>
+								{{/if}}
+							</a>
+
+						<label class="dots resource-label CSplit51" data-key="heatstroke" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+							{{ localize 'TALESOFTHEOLDWEST.Conditions.Heatstroke'}}
+						</label>
+							<a class="overwatch-toggle CSplit52" data-action="toggleCondition" data-key="heatstroke">
+								{{#if (eq system.conditions.heatstroke true)}}
+								<i class="far fa-dot-circle"></i>
+								{{else}}
+								<i class="far fa-circle"></i>
+								{{/if}}
+							</a>
+	
+</div>
+			</div>
+				<div class="TSplit2" style="width: 317px; ">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
+		<div class="TSplit3" style="width: 317px; ">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
+		</div>
+	</div>
+	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs"}}</div>
+{{/if}}
+
+{{#if (eq actor.type "animal")}}
 	<div class="body-container">
 		<div class="Col1">
 			<div class="atributes-container">
@@ -281,7 +353,7 @@
 					<label
 						style="font-size: large"
 						for="system.attributes.grit"
-						class="resource-label rollable flexlarge align-left"
+						class="resource-label rollable align-left"
 						data-roll-type="attribute"
 						data-action="roll"
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -300,7 +372,7 @@
 					<label
 						style="font-size: large"
 						for="system.attributes.quick"
-						class="resource-label rollable flexlarge align-left"
+						class="resource-label rollable align-left"
 						data-roll-type="attribute"
 						data-action="roll"
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -322,7 +394,7 @@
 					<label
 						style="font-size: large"
 						for="system.abilities.flight"
-						class="resource-label rollable flexlarge align-left"
+						class="resource-label rollable align-left"
 						data-roll-type="attribute"
 						data-action="roll"
 						data-label='{{localize "TALESOFTHEOLDWEST.Ability.flight.long"}}'
@@ -337,7 +409,7 @@
 					<label
 						style="font-size: large"
 						for="system.abilities.resilience"
-						class="resource-label rollable flexlarge align-left"
+						class="resource-label rollable align-left"
 						data-roll-type="attribute"
 						data-action="roll"
 						data-label='{{localize "TALESOFTHEOLDWEST.Ability.Resilience.long"}}'

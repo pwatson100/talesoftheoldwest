@@ -9,7 +9,8 @@
 				"Skills": "Skills",
 				"Gear": "Gear",
 				"Description": "Description",
-				"Effects": "Effects"
+				"Effects": "Effects",
+				"Compadres": "Compadres"
 			}
 		},
 		"Ability": {
@@ -154,10 +155,9 @@
 			"attributes": "attributes",
 			"faith": "faith",
 			"abilities": "abilities",
-			"money": "money $",
-			"cash": "cash $ ",
-			"capital": "capital $ ",
-			"cost": "cost $",
+			"cash": "cash ",
+			"capital": "capital ",
+			"cost": "cost ",
 			"riding-modifier": "riding Modifier",
 			"qualityOptions": "quality options",
 			"qualityConditions": "quality/conditions",
@@ -208,7 +208,10 @@
 			"reputation": "Reputation",
 			"fame": "Fame",
 			"age": "Age",
-			"lifestyle": "Lifestyle"
+			"lifestyle": "Lifestyle",
+			"Dollar": "Add $",
+			"DollarNote": "Automatically add $ symbol after editing Cash or Cost",
+			"gmDrag": "Ask the GM to drag your Compadres onto your sheet"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

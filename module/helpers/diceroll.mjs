@@ -130,7 +130,7 @@ export async function buyOff(chatMessage, origRollData, origRoll, event) {
 	await updateChatMessage(chatMessage, origRoll, origRollData);
 }
 
-export async function rollAttrib(dataset, rollData) {
+export async function rollAttrib(dataset, rollData, actor) {
 	let formula = '';
 	let roll = '';
 	let result = '';
@@ -145,7 +145,7 @@ export async function rollAttrib(dataset, rollData) {
 		roll = await Roll.create(`${formula}`).evaluate();
 		result = await evaluateTOTWRoll(dataset, roll, formula, rollData);
 	}
-	if (result.totalSuccess > 2) {
+	if (result.totalSuccess > 2 && actor.type === 'pc') {
 		result = await addFaithPoints(result);
 	}
 	return [roll, result];

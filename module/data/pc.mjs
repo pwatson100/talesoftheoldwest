@@ -27,13 +27,12 @@ export default class totowPC extends totowActorBase {
 			yourpardner: new fields.StringField({ required: true, blank: true }),
 			lifestyle: new fields.StringField({ required: true, blank: true }),
 			reputation: new fields.StringField({ required: false, blank: true }),
+			cash: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
+			capital: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
 
 			faithpoints: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 4, min: 0, max: 10 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
-			}),
-			cash: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			age: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
@@ -46,9 +45,6 @@ export default class totowPC extends totowActorBase {
 			}),
 			publicspirit: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 3, min: 1, max: 6 }),
-			}),
-			capital: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 			}),
 			xp: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
@@ -100,6 +96,14 @@ export default class totowPC extends totowActorBase {
 			}),
 		});
 
+		schema.compadres = new fields.SchemaField({
+			details: new fields.ArrayField(
+				new fields.SchemaField({
+					id: new fields.StringField({ required: true, blank: false }),
+				})
+			),
+			compadresQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
+		});
 		return schema;
 	}
 
@@ -117,6 +121,7 @@ export default class totowPC extends totowActorBase {
 		}
 		this.general.faithpoints.max = 10 - this.general.faithpoints.value;
 		this.general.xp.max = 10 - this.general.xp.value;
+
 		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
 		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
 		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;

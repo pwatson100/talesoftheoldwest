@@ -26,17 +26,17 @@
 		</div>
 
 		<div class='L2C1'>
-			<label for='system.general.cash.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}} </label>
+			<label for='system.general.cash' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}} </label>
 		</div>
 		<div class='L2C2'>
-			<input class='currency' name='system.general.cash.value' value='{{system.general.cash.value}}' data-dtype='Number' />
+			<input class='currency' name='system.general.cash' value='{{system.general.cash}}' data-dtype='String' />
 		</div>
 
 		<div class='L2C3'>
-			<label for='system.general.capital.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}} </label>
+			<label for='system.general.capital' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}} </label>
 		</div>
 		<div class='L2C4'>
-			<input class='currency' name='system.general.capital.value' value='{{system.general.capital.value}}' data-dtype='Number' />
+			<input class='currency' name='system.general.capital' value='{{system.general.capital}}' data-dtype='String' />
 		</div>
 		<div class='L2C5'>
 			<label for='system.general.xp.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
@@ -83,14 +83,14 @@
 			</li>
 			{{#each gear as |item id|}}
 				<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-					{{! <div class='item-name'> }}
+
 					<div class='item-image TCol11'>
 						<a class='rollable' data-roll-type='item' data-action='roll'>
 							<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
 						</a>
 					</div>
 					<div class='item-name TCol12' title='{{removeMarkup item.system.description}}'>{{item.name}}</div>
-					{{! </div> }}
+
 					<div class='item-controls TCol14'>
 						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
 							<i class='fas fa-edit'></i>
@@ -103,4 +103,5 @@
 			{{/each}}
 		</ol>
 	</div>
+
 </section>

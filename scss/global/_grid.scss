@@ -156,6 +156,24 @@
 	grid-area: Split2;
 }
 
+.three-body-split {
+	display: grid;
+	padding-left: 10px;
+	grid-template-areas: 'TSplit1 TSplit2 TSplit3';
+	grid-template-columns: 250px 317px 317px;
+	margin-top: 6px;
+	border-top: solid black;
+}
+.TSplit1 {
+	grid-area: TSplit1;
+}
+.TSplit2 {
+	grid-area: TSplit2;
+}
+.TSplit2 {
+	grid-area: TSplit2;
+}
+
 .grid-weapon-items {
 	display: grid;
 	grid-template-areas:
@@ -874,5 +892,245 @@
 }
 .L3C4 {
 	grid-area: L3C4;
+	text-align: center;
+}
+
+.conditions-split {
+	display: grid;
+	grid-template-areas:
+		'CSplit11 CSplit12'
+		'CSplit21 CSplit22'
+		'CSplit31 CSplit32'
+		'CSplit41 CSplit42'
+		'CSplit51 CSplit52';
+	grid-template-columns: 150px 50px;
+	margin-top: 6px;
+	row-gap: 2px;
+}
+.CSplit11 {
+	grid-area: CSplit11;
+	text-align: right;
+}
+.CSplit12 {
+	grid-area: CSplit12;
+}
+.CSplit21 {
+	grid-area: CSplit21;
+	text-align: right;
+}
+.CSplit22 {
+	grid-area: CSplit22;
+}
+.CSplit31 {
+	grid-area: CSplit31;
+	text-align: right;
+}
+.CSplit32 {
+	grid-area: CSplit32;
+}
+.CSplit41 {
+	grid-area: CSplit41;
+	text-align: right;
+}
+.CSplit42 {
+	grid-area: CSplit42;
+}
+.CSplit51 {
+	grid-area: CSplit51;
+	text-align: right;
+}
+.CSplit52 {
+	grid-area: CSplit52;
+}
+
+.grid-ship-crew {
+	display: grid;
+	grid-template-areas:
+		'gSC1 gSC2 gSC3 gSC4 gSC5'
+		' gSC6 gSC7 gSC8 gSC9 gSC10';
+	grid-template-columns: 43% 25% 20% 6%;
+}
+.gSC1 {
+	justify-self: center;
+	grid-area: gSC1;
+}
+.gSC2 {
+	justify-self: center;
+	grid-area: gSC2;
+}
+.gSC3 {
+	justify-self: center;
+	grid-area: gSC3;
+}
+.gSC4 {
+	justify-self: right;
+	grid-area: gSC4;
+}
+.gSC5 {
+	justify-self: right;
+	grid-area: gSC5;
+}
+.gSC6 {
+	justify-self: left;
+	grid-area: gSC6;
+}
+.gSC7 {
+	justify-self: center;
+	grid-area: gSC7;
+}
+.gSC8 {
+	justify-self: right;
+	grid-area: gSC8;
+}
+.gSC9 {
+	justify-self: center;
+	grid-area: gSC9;
+}
+.gSC10 {
+	justify-self: right;
+	grid-area: gSC10;
+}
+
+.sheet-compadres-header {
+	display: grid;
+	align-items: center;
+	width: 720px;
+	justify-self: center;
+	grid-template-areas: 'schA1 schB1 schA2';
+	grid-template-columns: 620px 40px 40px;
+	// background: rgb(139 106 44 / 21%);
+}
+.schA1 {
+	grid-area: schA1;
+	font-size: x-large;
+	font-weight: bold;
+}
+.schB1 {
+	grid-area: schB1;
+	margin: 5px;
+}
+.schA2 {
+	grid-area: schA2;
+	margin: 5px;
+}
+
+.sheet-compadres-attributes {
+	display: grid;
+	align-items: center;
+	width: 800px;
+	justify-self: center;
+	grid-template-areas:
+		'scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 '
+		'scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ';
+	grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+	background: rgb(139 106 44 / 21%);
+}
+.scaA1 {
+	grid-area: scaA1;
+	text-align: center;
+	font-size: large;
+}
+.scaB1 {
+	grid-area: scaB1;
+	text-align: center;
+}
+.scaA2 {
+	grid-area: scaA2;
+	text-align: center;
+	font-size: large;
+}
+.scaB2 {
+	grid-area: scaB2;
+	text-align: center;
+}
+.scaA3 {
+	grid-area: scaA3;
+	text-align: center;
+	font-size: large;
+}
+.scaB3 {
+	grid-area: scaB3;
+	text-align: center;
+}
+.scaA4 {
+	grid-area: scaA4;
+	text-align: center;
+	font-size: large;
+}
+.scaB4 {
+	grid-area: scaB4;
+	text-align: center;
+}
+.scaH1 {
+	grid-area: scaH1;
+	text-align: center;
+	font-size: large;
+}
+.scaH2 {
+	grid-area: scaH2;
+	text-align: center;
+	font-size: large;
+}
+.scaS1 {
+	grid-area: scaS1;
+	text-align: center;
+	font-size: large;
+}
+.scaS2 {
+	grid-area: scaS2;
+	text-align: center;
+	font-size: large;
+}
+.scaV1 {
+	grid-area: scaV1;
+	text-align: center;
+	font-size: large;
+}
+.scaV2 {
+	grid-area: scaV2;
+	text-align: center;
+	font-size: large;
+}
+.scaD1 {
+	grid-area: scaD1;
+	text-align: center;
+	font-size: large;
+}
+.scaD2 {
+	grid-area: scaD2;
+	text-align: center;
+	font-size: large;
+}
+
+.compadre-split {
+	display: grid;
+	align-items: center;
+	width: 800px;
+	justify-self: center;
+	grid-template-areas:
+		'CompSplit11 CompSplit12'
+		'CompSplit21 CompSplit22';
+	grid-template-columns: 400px 400px;
+	grid-gap: 1px;
+	border: solid black;
+}
+.CompSplit11 {
+	grid-area: CompSplit11;
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+}
+.CompSplit12 {
+	grid-area: CompSplit12;
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+}
+.CompSplit21 {
+	grid-area: CompSplit21;
+	text-align: center;
+}
+.CompSplit22 {
+	grid-area: CompSplit22;
 	text-align: center;
 }

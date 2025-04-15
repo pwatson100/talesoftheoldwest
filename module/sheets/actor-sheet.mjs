@@ -55,7 +55,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			template: 'templates/generic/tab-navigation.hbs',
 		},
 		skills: {
-			template: 'systems/talesoftheoldwest/templates/actor/skills.html',
+			template: 'systems/talesoftheoldwest/templates/actor/skills.hbs',
 		},
 		gear: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
@@ -78,6 +78,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		qualityoptions: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs',
 		},
+		compadres: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-compadres.hbs',
+		},
 	};
 
 	/** @override */
@@ -90,10 +93,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'gear', 'description');
+				options.parts.push('skills', 'gear', 'compadres', 'description');
 				break;
 			case 'npc':
-				options.parts.push('skills', 'gear', 'description');
+				options.parts.push('skills', 'description');
 				break;
 			case 'animal':
 				options.parts.push('skills');
@@ -125,9 +128,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// // Offloading context prep to a helper function
 
 		// Prepare character data and items.
-		// if (context.actor.type === 'pc') {
 		this._prepareItems(context);
 		this._prepareCharacterData(context);
+
+		if (context.actor.type === 'pc') {
+			this._prepareCompadres(context);
+		}
 		// let enrichedFields = ['system.biography'];
 		// await this._enrichTextFields(context, enrichedFields);
 		// }
@@ -147,9 +153,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		switch (partId) {
 			case 'skills':
 			case 'gear':
+			case 'compadres':
 				context.tab = context.tabs[partId];
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
 				break;
+
 			case 'description':
 				context.tab = context.tabs[partId];
 				// Enrich biography info for display
@@ -209,6 +217,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				case 'gear':
 					tab.id = 'gear';
 					tab.label += 'Gear';
+					break;
+				case 'compadres':
+					tab.id = 'compadres';
+					tab.label += 'Compadres';
 					break;
 				case 'description':
 					tab.id = 'description';
@@ -424,6 +436,23 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		await this.actor.update(attribData);
 	}
 
+	async _prepareCompadres(sheetData) {
+		sheetData.compadres = sheetData.actor.system.compadres.details.reduce((arr, o) => {
+			o.actor = game.actors.get(o.id);
+			// Creates a fake actor if it doesn't exist anymore in the database.
+			if (!o.actor) {
+				o.actor = {
+					name: '{MISSING_CREW}',
+					system: { system: { health: { value: 0, max: 0 } } },
+					isCrewDeleted: true,
+				};
+			}
+			arr.push(o);
+			return arr;
+		}, []);
+		return sheetData;
+	}
+
 	/**
 	 * Actions performed after any render of the Application.
 	 * Post-render steps are not awaited by the render process.
@@ -443,8 +472,28 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 		for (const s of ammo) {
 			s.addEventListener('change', (event) => {
-				console.log(event);
 				this._inlineedit(event);
+			});
+		}
+
+		const CompEdit = this.element.querySelectorAll('.crew-edit');
+		for (const s of CompEdit) {
+			s.addEventListener('click', (event) => {
+				this._onCompadresView(event);
+			});
+		}
+		const CompRemove = this.element.querySelectorAll('.crew-remove');
+		for (const s of CompRemove) {
+			s.addEventListener('click', (event) => {
+				this._onCompadresRemove(event);
+			});
+		}
+
+		const currency = this.element.querySelectorAll('.currency');
+		for (const s of currency) {
+			s.addEventListener('change', (event) => {
+				console.log(event);
+				this._currencyField(event);
 			});
 		}
 	}
@@ -669,19 +718,15 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		let field = `system.damage.${target.dataset.label}.value`;
 
 		if (event.button === 2) {
-			// left click
-			if (damage.value > 0) {
-				if (damage.value === 0) {
-					return;
-				}
+			// right click
+			if (damage.value) {
 				return await this.actor.update({ [field]: damage.value - 1 });
 			}
 		} else {
-			// right click
-			if (damage.value >= 5) {
-				return;
+			// left click
+			if (damage.max) {
+				return await this.actor.update({ [field]: damage.value + 1 });
 			}
-			return await this.actor.update({ [field]: damage.value + 1 });
 		}
 	}
 
@@ -873,6 +918,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 */
 	async _onDropActor(event, data) {
 		if (!this.actor.isOwner) return false;
+		let fred = await fromUuid(data.uuid);
+		const actor = game.actors.get(fred.id);
+
+		if (actor.type === 'npc') {
+			// When dropping an actor on a vehicle sheet.
+			// let crew = await fromUuid(data.uuid);
+			if (data.type === 'Actor') await this._dropCompadres(actor.id);
+		}
 	}
 
 	/* -------------------------------------------- */
@@ -928,7 +981,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const type = itemData.type;
 		const alwaysAllowedItems = CONFIG.TALESOFTHEOLDWEST.physicalItems;
 		const allowedItems = {
-			pc: ['item', 'weapon', 'talent', 'critical-injury'],
+			pc: ['item', 'weapon', 'talent', 'critical-injury', 'npc'],
 			npc: ['item', 'weapon', 'talent', 'critical-injury'],
 			animal: ['critical-injury'],
 			// vehicles: ['item', 'weapon', 'armor'],
@@ -1060,4 +1113,65 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			}
 		}
 	}
+
+	_currencyField(event) {
+		event.preventDefault();
+		const element = event.currentTarget;
+		// format initial value
+		onBlur({ target: event.currentTarget });
+
+		function localStringToNumber(s) {
+			return Number(String(s).replace(/[^0-9.-]+/g, ''));
+		}
+		function onBlur(e) {
+			let value = localStringToNumber(e.target.value);
+			if (game.settings.get('talesoftheoldwest', 'dollar'))
+				e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
+			else
+				e.target.value = value
+					? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
+					: '0.00';
+		}
+	}
+
+	async _dropCompadres(actorId) {
+		const crew = game.actors.get(actorId);
+		const actorData = this.actor;
+		if (!crew) return;
+		if (crew.type === 'pc') return ui.notifications.info('PC inceptions are not allowed!');
+		if (crew.type !== 'npc') return;
+		if (actorData.type === 'pc') {
+			if (actorData.system.compadres.compadresQty >= 3) {
+				return ui.notifications.warn(game.i18n.localize('ALIENRPG.fullCrew'));
+			}
+			return await actorData.addCompadres(actorId);
+		}
+	}
+	async _onCompadresView(event) {
+		event.preventDefault();
+		const elem = event.currentTarget;
+		const compId = elem.closest('.compardre').dataset.compid;
+		const actor = game.actors.get(compId);
+		return actor.sheet.render(true);
+	}
+
+	async _onCompadresRemove(event) {
+		event.preventDefault();
+		const actorData = this.actor;
+		const elem = event.currentTarget;
+		const compId = elem.closest('.compardre').dataset.compid;
+		const details = this.actor.removeCompadres(compId);
+		let compadresNumber = actorData.system.compadres.compadresQty;
+		compadresNumber--;
+		await actorData.update({ 'system.compadres.compadresQty': compadresNumber });
+		return await actorData.update({ 'system.compadres.details': details });
+	}
+
+	// async _onChangePosition(event) {
+	// 	event.preventDefault();
+	// 	const elem = event.currentTarget;
+	// 	const compId = elem.querySelector('.compardre').details.compid;
+	// 	const position = elem.value;
+	// 	return await this.actor.addCompadres(compId, position);
+	// }
 }

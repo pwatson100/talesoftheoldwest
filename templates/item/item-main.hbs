@@ -174,13 +174,14 @@
 
 	<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	{{#if editable}}
-
-		<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
+	<div class="div-border">
+		{{#if editable}}
+			<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
+				{{{enrichedDescription}}}
+			</prose-mirror>
+		{{else}}
 			{{{enrichedDescription}}}
-		</prose-mirror>
-	{{else}}
-		{{{enrichedDescription}}}
-	{{/if}}
+		{{/if}}
+	</div>
 
 </section>

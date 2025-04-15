@@ -110,6 +110,7 @@ export class totowItem extends Item {
 
 		async function fightin(dataset, rollData, item) {
 			let config = CONFIG.TALESOFTHEOLDWEST;
+			const actor = game.actors.get(dataset.myActor);
 			dataset.conditional = '';
 			dataset.talent = '';
 			let successMod = 0;
@@ -147,18 +148,18 @@ export class totowItem extends Item {
 			dataset.baseMod = Number(dataset.mod);
 
 			dataset.mod = Number(dataset.mod) + Number(data.prone || 0) + Number(data.alloutattack || 0) + Number(data.calledstrike || 0) + Number(data.modifier);
-			const result = await rollAttrib(dataset, rollData);
+			const result = await rollAttrib(dataset, rollData, actor);
 			return result;
 		}
 
 		async function shootin(dataset, rollData, item) {
 			let config = CONFIG.TALESOFTHEOLDWEST;
+			const actor = game.actors.get(dataset.myActor);
 			let successMod = 0;
 			let troubleMod = 0;
 			dataset.conditional = '';
 			dataset.talent = '';
 			if (dataset.itemAmmo <= 0) {
-				const actor = game.actors.get(dataset.myActor);
 				let actorID = actor.id;
 				let chatMessage =
 					`<div class="chatBG" + ${actorID} "><span class="warnblink alienchatred"; style="font-weight: bold; font-size: larger">` +
@@ -211,7 +212,7 @@ export class totowItem extends Item {
 				Number(data.sizeChoice) +
 				Number(data.visibilityChoice) +
 				Number(data.modifier);
-			const result = await rollAttrib(dataset, rollData);
+			const result = await rollAttrib(dataset, rollData, actor);
 			await item.update({ 'system.ammo': item.system.ammo - 1 });
 			return result;
 		}
