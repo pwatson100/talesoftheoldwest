@@ -1,15 +1,35 @@
 {{! Sheet Header }}
-<header class='sheet-header'>
+<header class='sheet-header grid-header'>
 	<div class='grid-header'>
 		<div class='document-name HedCol1'>
 			<input style='font-size: 35px;max-width: 445px;	height: auto;' name='name' type='text' value='{{actor.name}}' placeholder='Name' />
 		</div>
 
 		{{#if (eq actor.type 'animal')}}
-			<label for='system.general.breed' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
-			<input class='HedCol4' type='text' name='system.general.breed' value='{{system.general.breed}}' data-dtype='text' />
+			<label for='system.general.subtype' class='resource-label HedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+			<select class='HedCol10' id='system.general.subtype' name='system.general.subtype'>
+				{{selectOptions config.animal_subtypes_list selected=system.general.subtype labelAttr='label' localize=true}}
+			</select>
+
+			{{#if (eq actor.system.general.subtype 'horse')}}
+				<label for='system.general.breed' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
+				<select class='HedCol4' id='system.general.breed' name='system.general.breed'>
+					{{selectOptions config.animal_breed_list selected=system.general.breed labelAttr='label' localize=true}}
+				</select>
+
+				<label class='resource-label HedCol5' for='system.general.ridingmodifier.value'>{{toUpperCase
+						(localize 'TALESOFTHEOLDWEST.General.riding-bonus')
+					}}</label>
+				<input class='experience HedCol6' name='system.general.ridingmodifier.value' value='{{system.general.ridingmodifier.value}}' data-dtype='Number' />
+
+				<label class='resource-label HedCol9' style='text-align: center; align-self: center;font-size: larger;' for='system.general.cost'>{{toUpperCase
+						(localize 'TALESOFTHEOLDWEST.General.cost')
+					}}</label>
+				<input class='currency HedCol12' name='system.general.cost' value='{{system.general.cost}}' data-dtype='String' />
+
 			{{/if}}
-	{{#if (eq actor.type 'pc')}}
+		{{/if}}
+		{{#if (eq actor.type 'pc')}}
 			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
 			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
 				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
@@ -37,7 +57,7 @@
 				{{#times system.general.faithpoints.max}}<i class='far fa-circle'></i>{{/times}}
 			</div>
 		{{/if}}
-	{{#if (eq actor.type 'npc')}}
+		{{#if (eq actor.type 'npc')}}
 			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
 			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
 				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}

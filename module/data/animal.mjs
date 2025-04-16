@@ -19,6 +19,12 @@ export default class totowANIMAL extends totowActorBase {
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
+			cunning: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				label: new fields.StringField({ required: true, blank: true }),
+			}),
 		});
 		schema.abilities = new fields.SchemaField({
 			flight: new fields.SchemaField({
@@ -26,21 +32,71 @@ export default class totowANIMAL extends totowActorBase {
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),
+				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				upper: new fields.StringField({ required: true, blank: true }),
+				attr: new fields.StringField({ required: true, blank: true }),
 			}),
 			resilience: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),
+				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				upper: new fields.StringField({ required: true, blank: true }),
+				attr: new fields.StringField({ required: true, blank: true }),
+			}),
+			fightin: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				label: new fields.StringField({ required: true, blank: true }),
+				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				upper: new fields.StringField({ required: true, blank: true }),
+				attr: new fields.StringField({ required: true, blank: true }),
+			}),
+			move: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				label: new fields.StringField({ required: true, blank: true }),
+				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				upper: new fields.StringField({ required: true, blank: true }),
+				attr: new fields.StringField({ required: true, blank: true }),
+			}),
+			hawkeye: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				label: new fields.StringField({ required: true, blank: true }),
+				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				upper: new fields.StringField({ required: true, blank: true }),
+				attr: new fields.StringField({ required: true, blank: true }),
 			}),
 		});
 
 		schema.general = new fields.SchemaField({
 			breed: new fields.StringField({ required: true, blank: true }),
-			cost: new fields.StringField({ required: false, blank: true }),
+			cost: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
+			attacks: new fields.StringField({ required: false, blank: true, initial: '' }),
+			subtype: new fields.StringField({ required: false, blank: true, initial: 'horse' }),
 
 			ridingmodifier: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+			}),
+		});
+
+		schema.damage = new fields.SchemaField({
+			hurts: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			shakes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+			}),
+			vexes: new fields.SchemaField({
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 			}),
 		});
 
@@ -57,7 +113,11 @@ export default class totowANIMAL extends totowActorBase {
 
 			// Handle ability label localization.
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name) ?? key;
+			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name).toUpperCase() ?? key;
 		}
+		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
+		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
+		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
 	}
 	getRollData() {
 		const data = {};
@@ -75,7 +135,6 @@ export default class totowANIMAL extends totowActorBase {
 			}
 		}
 
-		// data.lvl = this.attributes.level.value;
 		return data;
 	}
 }

@@ -121,8 +121,16 @@ body {
 
 .talesoftheoldwest.application .window-content {
 	display: block;
+	overflow: auto;
+	scrollbar-color: #d36913 transparent;
+	scrollbar-width: thin;
 }
 
-.div-border {
+.talesoftheoldwest .div-border {
 	border: 3px solid black;
+}
+
+.talesoftheoldwest.application .hr-style {
+	background-image: linear-gradient(90deg, transparent 0%, #000000 50%, transparent 100%);
+	margin: 5px;
 }

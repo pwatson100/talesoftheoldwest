@@ -34,8 +34,39 @@ TALESOFTHEOLDWEST.abilities = {
 };
 
 TALESOFTHEOLDWEST.animalabilities = {
-	flight: { name: 'TALESOFTHEOLDWEST.Ability.flight.long', atob: 'quick' },
-	resilience: { name: 'TALESOFTHEOLDWEST.Ability.resilience.long', atob: 'grit' },
+	flight: { name: 'TALESOFTHEOLDWEST.Ability.Flight.long', atob: 'quick' },
+	resilience: { name: 'TALESOFTHEOLDWEST.Ability.Resilience.long', atob: 'grit' },
+	fightin: { name: 'TALESOFTHEOLDWEST.Ability.Fightin.long', atob: 'grit' },
+	move: { name: 'TALESOFTHEOLDWEST.Ability.Move.long', atob: 'quick' },
+	hawkeye: { name: 'TALESOFTHEOLDWEST.Ability.Hawkeye.long', atob: 'cunning' },
+};
+TALESOFTHEOLDWEST.animal_subtypes_list = {
+	horse: { id: 'horse', label: 'TALESOFTHEOLDWEST.Animals.horse' },
+	wolf: { id: 'wolf', label: 'TALESOFTHEOLDWEST.Animals.wolf' },
+	dog: { id: 'dog', label: 'TALESOFTHEOLDWEST.Animals.dog' },
+	other: { id: 'other', label: 'TALESOFTHEOLDWEST.Animals.other' },
+};
+
+TALESOFTHEOLDWEST.animal_quality_types_list = {
+	quality: { id: 'quality', label: 'TALESOFTHEOLDWEST.Item.General.quality' },
+	flaw: { id: 'flaw', label: 'TALESOFTHEOLDWEST.Item.General.flaw' },
+};
+
+TALESOFTHEOLDWEST.animal_breed_list = {
+	americanquarter: { id: 'americanquarter', label: 'TALESOFTHEOLDWEST.HorseBreed.americanquarter' },
+	americansaddlebred: { id: 'americansaddlebred', label: 'TALESOFTHEOLDWEST.HorseBreed.americansaddlebred' },
+	appaloosa: { id: 'appaloosa', label: 'TALESOFTHEOLDWEST.HorseBreed.appaloosa' },
+	arabian: { id: 'arabian', label: 'TALESOFTHEOLDWEST.HorseBreed.arabian' },
+	cayuse: { id: 'cayuse', label: 'TALESOFTHEOLDWEST.HorseBreed.cayuse' },
+	criollo: { id: 'criollo', label: 'TALESOFTHEOLDWEST.HorseBreed.criollo' },
+	missourifoxtrotter: { id: 'missourifoxtrotter', label: 'TALESOFTHEOLDWEST.HorseBreed.missourifoxtrotter' },
+	morgan: { id: 'morgan', label: 'TALESOFTHEOLDWEST.HorseBreed.morgan' },
+	mustang: { id: 'mustang', label: 'TALESOFTHEOLDWEST.HorseBreed.mustang' },
+	paintpinto: { id: 'paintpinto', label: 'TALESOFTHEOLDWEST.HorseBreed.paintpinto' },
+	palomino: { id: 'palomino', label: 'TALESOFTHEOLDWEST.HorseBreed.palomino' },
+	tennesseewalker: { id: 'tennesseewalker', label: 'TALESOFTHEOLDWEST.HorseBreed.tennesseewalker' },
+	donkeymule: { id: 'donkeymule', label: 'TALESOFTHEOLDWEST.HorseBreed.donkeymule' },
+	other: { id: 'other', label: 'TALESOFTHEOLDWEST.Animals.other' },
 };
 
 TALESOFTHEOLDWEST.abilityAbbreviations = {
@@ -58,26 +89,26 @@ TALESOFTHEOLDWEST.abilityAbbreviations = {
 };
 
 TALESOFTHEOLDWEST.archetype_list = {
-	Gentlefolk: { id: 'Gentlefolk', label: 'Gentlefolk' },
-	Grifter: { id: 'Grifter', label: 'Grifter' },
-	Homesteader: { id: 'Homesteader', label: 'Homesteader' },
-	Laborer: { id: 'Laborer', label: 'Laborer' },
-	Lawman: { id: 'Lawman', label: 'Lawman' },
-	Outlaw: { id: 'Outlaw', label: 'Outlaw' },
-	Prospector: { id: 'Prospector', label: 'Prospector' },
-	RanchHand: { id: 'Ranch Hand', label: 'Ranch Hand' },
-	Tracker: { id: 'Tracker', label: 'Tracker' },
-	Trader: { id: 'Trader', label: 'Trader' },
+	Gentlefolk: { id: 'Gentlefolk', label: 'TALESOFTHEOLDWEST.Archetype.Gentlefolk' },
+	Grifter: { id: 'Grifter', label: 'TALESOFTHEOLDWEST.Archetype.Grifter' },
+	Homesteader: { id: 'Homesteader', label: 'TALESOFTHEOLDWEST.Archetype.Homesteader' },
+	Laborer: { id: 'Laborer', label: 'TALESOFTHEOLDWEST.Archetype.Laborer' },
+	Lawman: { id: 'Lawman', label: 'TALESOFTHEOLDWEST.Archetype.Lawman' },
+	Outlaw: { id: 'Outlaw', label: 'TALESOFTHEOLDWEST.Archetype.Outlaw' },
+	Prospector: { id: 'Prospector', label: 'TALESOFTHEOLDWEST.Archetype.Prospector' },
+	RanchHand: { id: 'RanchHand', label: 'TALESOFTHEOLDWEST.Archetype.Ranchhand' },
+	Tracker: { id: 'Tracker', label: 'TALESOFTHEOLDWEST.Archetype.Tracker' },
+	Trader: { id: 'Trader', label: 'TALESOFTHEOLDWEST.Archetype.Trader' },
 };
 
 TALESOFTHEOLDWEST.group_concept_list = {
-	LawmenBountyHunters: { id: 'Lawmen & Bounty Hunters', label: 'Lawmen & Bounty Hunters' },
-	Outlaws: { id: 'Outlaws', label: 'Outlaws' },
-	Ranchers: { id: 'Ranchers', label: 'Ranchers' },
-	Farmers: { id: 'Farmers', label: 'Farmers' },
-	BusinessOwners: { id: 'Business Owners', label: 'Business Owners' },
-	VaquerosCowboys: { id: 'Vaqueros & Cowboys', label: 'Vaqueros & Cowboys' },
-	MountainFolk: { id: 'Mountain Folk', label: 'Mountain Folk' },
+	LawmenBountyHunters: { id: 'Lawmen & Bounty Hunters', label: 'TALESOFTHEOLDWEST.GroupConcept.LawmenBountyHunters' },
+	Outlaws: { id: 'Outlaws', label: 'TALESOFTHEOLDWEST.GroupConcept.Outlaws' },
+	Ranchers: { id: 'Ranchers', label: 'TALESOFTHEOLDWEST.GroupConcept.Ranchers' },
+	Farmers: { id: 'Farmers', label: 'TALESOFTHEOLDWEST.GroupConcept.Farmers' },
+	BusinessOwners: { id: 'Business Owners', label: 'TALESOFTHEOLDWEST.GroupConcept.BusinessOwners' },
+	VaquerosCowboys: { id: 'Vaqueros & Cowboys', label: 'TALESOFTHEOLDWEST.GroupConcept.VaquerosCowboys' },
+	MountainFolk: { id: 'Mountain Folk', label: 'TALESOFTHEOLDWEST.GroupConcept.MountainFolk' },
 };
 TALESOFTHEOLDWEST.subtype_list = {
 	fightin: { id: 'Fightin', label: 'TALESOFTHEOLDWEST.General.fightin' },

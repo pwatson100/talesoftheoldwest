@@ -81,6 +81,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				break;
 			case 'item':
 			case 'crit':
+			case 'animalquality':
 				options.parts.push('header', 'tabs', 'description', 'modifiers');
 				break;
 			case 'weapon':
@@ -260,10 +261,13 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
-		this.element.querySelector('.currency').addEventListener('change', (event) => {
-			console.log(event);
-			this._currencyField(event);
-		});
+		const currency = this.element.querySelectorAll('.currency');
+		for (const s of currency) {
+			s.addEventListener('change', (event) => {
+				console.log(event);
+				this._currencyField(event);
+			});
+		}
 	}
 
 	/**************

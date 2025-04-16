@@ -384,7 +384,6 @@
 }
 .HedCol3 {
 	grid-area: HedCol3;
-	text-align: center;
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
@@ -397,7 +396,6 @@
 }
 .HedCol5 {
 	grid-area: HedCol5;
-	text-align: center;
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
@@ -410,7 +408,6 @@
 }
 .HedCol7 {
 	grid-area: HedCol7;
-	text-align: center;
 	font-weight: bold;
 	font-size: larger;
 	text-align: center;
@@ -1104,33 +1101,146 @@
 
 .compadre-split {
 	display: grid;
-	align-items: center;
 	width: 800px;
 	justify-self: center;
 	grid-template-areas:
 		'CompSplit11 CompSplit12'
 		'CompSplit21 CompSplit22';
 	grid-template-columns: 400px 400px;
-	grid-gap: 1px;
-	border: solid black;
 }
 .CompSplit11 {
 	grid-area: CompSplit11;
 	text-align: center;
 	font-size: large;
 	font-weight: bold;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
 }
 .CompSplit12 {
 	grid-area: CompSplit12;
 	text-align: center;
 	font-size: large;
 	font-weight: bold;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
 }
 .CompSplit21 {
 	grid-area: CompSplit21;
 	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
 }
 .CompSplit22 {
 	grid-area: CompSplit22;
 	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+
+.sheet-animal-attributes {
+	display: grid;
+	align-items: center;
+	grid-template-areas:
+		'aA1 aB1 aA2 aB2 aA3 aB3 '
+		'aH1 aH2 aS1 aS2 aV1 aV2 ';
+	grid-template-columns: 112px 110px 112px 110px 113px 110px;
+	background: rgb(139 106 44 / 21%);
+}
+.aA1 {
+	grid-area: aA1;
+	text-align: center;
+	font-size: x-large;
+}
+.aB1 {
+	grid-area: aB1;
+	text-align: center;
+}
+.aA2 {
+	grid-area: aA2;
+	text-align: center;
+	font-size: x-large;
+}
+.aB2 {
+	grid-area: aB2;
+	text-align: center;
+}
+.aA3 {
+	grid-area: aA3;
+	text-align: center;
+	font-size: x-large;
+}
+.aB3 {
+	grid-area: aB3;
+	text-align: center;
+}
+
+.aH1 {
+	grid-area: aH1;
+	text-align: center;
+	font-size: large;
+}
+.aH2 {
+	grid-area: aH2;
+	text-align: center;
+	font-size: large;
+}
+.aS1 {
+	grid-area: aS1;
+	text-align: center;
+	font-size: large;
+}
+.aS2 {
+	grid-area: aS2;
+	text-align: center;
+	font-size: large;
+}
+.aV1 {
+	grid-area: aV1;
+	text-align: center;
+	font-size: large;
+}
+.aV2 {
+	grid-area: aV2;
+	text-align: center;
+	font-size: large;
+}
+
+.sheet-animal-abilities {
+	display: grid;
+	row-gap: 5px;
+	align-items: center;
+	grid-template-areas:
+		'aResilience aResilience2 aMove aMove2 aFightin aFightin2'
+		'aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2';
+	grid-template-columns: 162px 55px 162px 55px 179px 55px;
+	border-bottom: solid black;
+	margin: 5px;
+}
+.aFightin {
+	grid-area: aFightin;
+}
+.aFightin2 {
+	grid-area: aFightin2;
+}
+.aMove {
+	grid-area: aMove;
+}
+.aMove2 {
+	grid-area: aMove2;
+}
+.aResilience {
+	grid-area: aResilience;
+}
+.aResilience2 {
+	grid-area: aResilience2;
+}
+.aHawkeye {
+	grid-area: aHawkeye;
+}
+.aHawkeye2 {
+	grid-area: aHawkeye2;
 }

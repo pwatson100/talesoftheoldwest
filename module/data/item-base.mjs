@@ -7,7 +7,7 @@ export default class totowItemBase extends foundry.abstract.TypeDataModel {
 		schema.itemModifiers = new fields.ObjectField({ nullable: true });
 		schema.reference = new fields.StringField({ required: false });
 		schema.weight = new fields.NumberField({ initial: 0, min: 0 });
-		schema.cost = new fields.StringField({ required: false, blank: true });
+		schema.cost = new fields.StringField({ required: false, blank: true, initial: '0' });
 		// new StringField()
 		return schema;
 	}

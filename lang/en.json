@@ -126,7 +126,7 @@
 				"attr": "Docity",
 				"stunts": "<div> <ul><li>You remember more than you thought you might, or glean more about the subject of your interest (at the GM’s discretion).</li> <li>You gain a +1 bonus to a later ability roll relating to this one.</li> <li>You impress someone.</li></ul></div>"
 			},
-			"flight": { "abbr": "FLI", "long": "Flight" }
+			"Flight": { "abbr": "FLI", "long": "Flight" }
 		},
 		"Attributes": {
 			"cunning": { "name": "Cunning", "type": "vexes", "listName": "cunning" },
@@ -158,7 +158,7 @@
 			"cash": "cash ",
 			"capital": "capital ",
 			"cost": "cost ",
-			"riding-modifier": "riding Modifier",
+			"riding-bonus": "riding Bonus",
 			"qualityOptions": "quality options",
 			"qualityConditions": "quality/conditions",
 			"gear": "gear",
@@ -259,6 +259,8 @@
 				"shotgun": "Shotgun",
 				"any": "Any",
 				"quality": "Quality",
+				"flaws": "Flaws",
+				"flaw": "Flaw",
 				"condition": "Condition",
 				"feature": "Feature",
 				"impact": "Impact",
@@ -436,6 +438,27 @@
 			"dimlight": "Dim Light (-1)",
 			"darkness": "Darkness (-3)"
 		},
+		"Animals": {
+			"horse": "Horse",
+			"wolf": "Wolf",
+			"dog": "Dog",
+			"other": "Other"
+		},
+		"HorseBreed": {
+			"americanquarter": "American Quarter",
+			"americansaddlebred": "American Saddlebred",
+			"appaloosa": "Appaloosa",
+			"arabian": "Arabian",
+			"cayuse": "Cayuse",
+			"criollo": "Criollo",
+			"missourifoxtrotter": "Missouri Fox Trotter",
+			"morgan": "Morgan",
+			"mustang": "Mustang",
+			"paintpinto": "Paint / Pinto",
+			"palomino": "Palomino",
+			"tennesseewalker": "Tennessee Walker",
+			"donkeymule": "Donkey / Mule"
+		},
 		"dialog": {
 			"roll": "ROLL",
 			"cancel": "CANCEL",
@@ -477,6 +500,28 @@
 			"Freezing": "Freezing",
 			"Heatstroke": "Heatstroke",
 			"Overwatch": "Overwatch"
+		},
+		"Archetype": {
+			"Gentlefolk": "Gentlefolk",
+			"Grifter": "Grifter",
+			"Homesteader": "Homesteader",
+			"Laborer": "Laborer",
+			"Lawman": "Lawman",
+			"Outlaw": "Outlaw",
+			"Prospector": "Prospector",
+			"Ranchhand": "Ranch Hand",
+			"Tracker": "Tracker",
+			"Trader": "Trader"
+		},
+
+		"GroupConcept": {
+			"LawmenBountyHunters": "Lawmen & Bounty Hunters",
+			"Outlaws": "Outlaws",
+			"Ranchers": "Ranchers",
+			"Farmers": "Farmers",
+			"BusinessOwners": "Business Owners",
+			"VaquerosCowboys": "Vaqueros & Cowboys",
+			"MountainFolk": "Mountain Folk"
 		},
 		"Reputation": {
 			"oneone": "Self-Serving, Scum of the Earth",
@@ -528,7 +573,7 @@
 			"talent": "Talent",
 			"weapon": "Weapon",
 			"crit": "Critical Injury",
-			"animalquality": "Animal Quality",
+			"animalquality": "Animal Temperament",
 			"weaponquality": "Weapon Quality"
 		}
 	}

@@ -265,10 +265,19 @@ body .application input[type=checkbox] {
 
 .talesoftheoldwest.application .window-content {
   display: block;
+  overflow: auto;
+  scrollbar-color: #d36913 transparent;
+  scrollbar-width: thin;
 }
 
-.div-border {
+.talesoftheoldwest .div-border {
   border: 3px solid black;
+}
+
+.talesoftheoldwest.application .hr-style {
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #000000), to(transparent));
+  background-image: linear-gradient(90deg, transparent 0%, #000000 50%, transparent 100%);
+  margin: 5px;
 }
 
 .grid,
@@ -703,7 +712,6 @@ body .application input[type=checkbox] {
 
 .HedCol3 {
   grid-area: HedCol3;
-  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -718,7 +726,6 @@ body .application input[type=checkbox] {
 
 .HedCol5 {
   grid-area: HedCol5;
-  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -733,7 +740,6 @@ body .application input[type=checkbox] {
 
 .HedCol7 {
   grid-area: HedCol7;
-  text-align: center;
   font-weight: bold;
   font-size: larger;
   text-align: center;
@@ -1530,15 +1536,10 @@ body .application input[type=checkbox] {
 
 .compadre-split {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 800px;
   justify-self: center;
   grid-template-areas: "CompSplit11 CompSplit12" "CompSplit21 CompSplit22";
   grid-template-columns: 400px 400px;
-  grid-gap: 1px;
-  border: solid black;
 }
 
 .CompSplit11 {
@@ -1546,6 +1547,9 @@ body .application input[type=checkbox] {
   text-align: center;
   font-size: large;
   font-weight: bold;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 
 .CompSplit12 {
@@ -1553,16 +1557,148 @@ body .application input[type=checkbox] {
   text-align: center;
   font-size: large;
   font-weight: bold;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 
 .CompSplit21 {
   grid-area: CompSplit21;
   text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 
 .CompSplit22 {
   grid-area: CompSplit22;
   text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.sheet-animal-attributes {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-areas: "aA1 aB1 aA2 aB2 aA3 aB3 " "aH1 aH2 aS1 aS2 aV1 aV2 ";
+  grid-template-columns: 112px 110px 112px 110px 113px 110px;
+  background: rgba(139, 106, 44, 0.21);
+}
+
+.aA1 {
+  grid-area: aA1;
+  text-align: center;
+  font-size: x-large;
+}
+
+.aB1 {
+  grid-area: aB1;
+  text-align: center;
+}
+
+.aA2 {
+  grid-area: aA2;
+  text-align: center;
+  font-size: x-large;
+}
+
+.aB2 {
+  grid-area: aB2;
+  text-align: center;
+}
+
+.aA3 {
+  grid-area: aA3;
+  text-align: center;
+  font-size: x-large;
+}
+
+.aB3 {
+  grid-area: aB3;
+  text-align: center;
+}
+
+.aH1 {
+  grid-area: aH1;
+  text-align: center;
+  font-size: large;
+}
+
+.aH2 {
+  grid-area: aH2;
+  text-align: center;
+  font-size: large;
+}
+
+.aS1 {
+  grid-area: aS1;
+  text-align: center;
+  font-size: large;
+}
+
+.aS2 {
+  grid-area: aS2;
+  text-align: center;
+  font-size: large;
+}
+
+.aV1 {
+  grid-area: aV1;
+  text-align: center;
+  font-size: large;
+}
+
+.aV2 {
+  grid-area: aV2;
+  text-align: center;
+  font-size: large;
+}
+
+.sheet-animal-abilities {
+  display: grid;
+  row-gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-areas: "aResilience aResilience2 aMove aMove2 aFightin aFightin2" "aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2";
+  grid-template-columns: 162px 55px 162px 55px 179px 55px;
+  border-bottom: solid black;
+  margin: 5px;
+}
+
+.aFightin {
+  grid-area: aFightin;
+}
+
+.aFightin2 {
+  grid-area: aFightin2;
+}
+
+.aMove {
+  grid-area: aMove;
+}
+
+.aMove2 {
+  grid-area: aMove2;
+}
+
+.aResilience {
+  grid-area: aResilience;
+}
+
+.aResilience2 {
+  grid-area: aResilience2;
+}
+
+.aHawkeye {
+  grid-area: aHawkeye;
+}
+
+.aHawkeye2 {
+  grid-area: aHawkeye2;
 }
 
 .flex-group-center,
@@ -1765,6 +1901,12 @@ body .application input[type=checkbox] {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.talesoftheoldwest .animal-stats {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-self: anchor-center;
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;

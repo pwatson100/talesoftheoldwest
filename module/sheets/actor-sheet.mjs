@@ -81,6 +81,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		compadres: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-compadres.hbs',
 		},
+		compadresweapon: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs',
+		},
 	};
 
 	/** @override */
@@ -155,7 +158,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'gear':
 			case 'compadres':
 				context.tab = context.tabs[partId];
-				// Enrichment turns text like `[[/r 1d20]]` into buttons
+				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.actor.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.actor,
+				});
 				break;
 
 			case 'description':
@@ -983,7 +993,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const allowedItems = {
 			pc: ['item', 'weapon', 'talent', 'critical-injury', 'npc'],
 			npc: ['item', 'weapon', 'talent', 'critical-injury'],
-			animal: ['critical-injury'],
+			animal: ['item', 'weapon', 'animalquality'],
 			// vehicles: ['item', 'weapon', 'armor'],
 			// territory: ['planet-system'],
 		};

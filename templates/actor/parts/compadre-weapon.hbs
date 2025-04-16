@@ -1,0 +1,56 @@
+<div class='overwatch_header'>
+	<label class='Ow2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</label></div>
+<div>
+	<ol class='items-list'>
+		<li class='item grid-weapon-items items-header' style='width: 880px'>
+			<div class='item-name lCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			<div class='item-name lCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.qualityConditions')}}</div>
+			<div class='item-name lCol4'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</div>
+			<div class='item-name lCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.draw')}}</div>
+			<div class='item-name lCol6'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attack')}}</div>
+			<div class='item-name lCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</div>
+			<div class='item-name lCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</div>
+			<div class='item-name lCol9'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</div>
+			<div class='item-name lCol10'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</div>
+		</li>
+
+		<div style='margin-top: 3px; overflow-x: auto'>
+			{{#each actor.items as |item id|}}
+				{{#if (eq type 'weapon')}}
+
+					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
+						<div class='item-image lColB1'>
+							<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+						</div>
+						<div
+							class='lColB2'
+							data-roll-type='weapon'
+							data-label='{{item.name}} '
+							data-subtype='{{item.system.subtype}}'
+							data-drag='true'
+							data-document-class='Weapon'
+							{{! data-action='roll' }}
+							data-item-id='{{item._id}}'
+							data-item-ammo='{{item.system.ammo}}'
+						>
+							{{item.name}}
+						</div>
+						<div class='lColB3'>{{item.system.conditionNames}}</div>
+						<div class='lColB6'>{{item.system.attackbonus}}</div>
+						<div class='lColB7'>{{item.system.damage}}</div>
+						<div class='lColB8'>{{item.system.crit}}</div>
+						<div class='lColB9'>{{localize (totowConcat (totowConcat 'TALESOFTHEOLDWEST.Ranges.' item.system.range) '.long')}}</div>
+
+						{{#if (ne item.system.subtype 'fightin')}}
+							<div class='lColB5'>{{item.system.bonusdraw}}</div>
+							<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
+							<input type='text' class='lColB10 statnum' data-mod='system.ammo' name='item.system.ammo' value='{{item.system.ammo}}' data-dtype='String' />
+						{{/if}}
+					</li>
+				{{/if}}
+
+			{{/each}}
+		</div>
+	</ol>
+	<hr class='hr-style' />
+</div>

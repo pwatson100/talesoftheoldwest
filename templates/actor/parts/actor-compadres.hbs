@@ -128,7 +128,7 @@
 						{{#times actor.system.damage.doubts.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
 				</div>
-				<div class='compadre-split'>
+				<div class='compadre-split  div-border'>
 					<label class='CompSplit11'>Talents</label>
 					<div class='CompSplit21'>
 						{{#each actor.items}}
@@ -138,8 +138,8 @@
 						{{/each}}
 					</div>
 
-					<label class='CompSplit12'>Abilities</label>
-					<div class='CompSplit22'>
+					<label class='CompSplit12' style="border-left: solid 2px black;">Abilities</label>
+					<div class='CompSplit22' style="border-left: solid 2px black;">
 						{{#each actor.system.abilities}}
 							{{#if (gt value 0)}}
 								<span>{{label}} - {{value}} ||</span>
@@ -147,6 +147,9 @@
 						{{/each}}
 					</div>
 				</div>
+
+				<div style="margin-left: 20px;">{{>"systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs"}}</div>
+
 			</div>
 
 		{{else}}
@@ -154,4 +157,5 @@
 			<div class='crew-empty resource-label'>{{localize 'TALESOFTHEOLDWEST.General.gmDrag'}}</div>
 		{{/each}}
 	</div>
+
 </section>

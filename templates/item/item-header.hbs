@@ -20,13 +20,20 @@
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
 			<input class='ItemHedCol6 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' />
 		{{/if}}
+		{{#if (eq item.type 'animalquality')}}
+			<label for='system.general.subtype' class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+			<select class='ItemHedCol4' id='system.general.subtype' name='system.general.subtype'>
+				{{selectOptions config.animal_quality_types_list selected=system.general.subtype labelAttr='label' localize=true}}
+			</select>
+		{{/if}}
 
 		<img class='item-img grid-item-header ItemHedCol2' src='{{item.img}}' data-edit='img' data-action='onEditImage' title='{{item.name}}' />
-		{{#if isGM}}
-			{{#ifSetting 'debug'}}
-				<br />
-				<label class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.reference')}}</label>
-				{{formInput systemFields.reference value=systemSource.reference placeholder=(localize 'TALESOFTHEOLDWEST.Item.General.reference')}}
-			{{/ifSetting}}
-		{{/if}}</div>
+		{{!-- {{#if isGM}} --}}
+		{{!-- {{#ifSetting 'debug'}} --}}
+		{{! <br /> }}
+		{{!-- <label class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.reference')}}</label> --}}
+		{{!-- {{formInput systemFields.reference value=systemSource.reference placeholder=(localize 'TALESOFTHEOLDWEST.Item.General.reference')}} --}}
+		{{!-- {{/ifSetting}} --}}
+		{{!-- {{/if}} --}}
+	</div>
 </header>
