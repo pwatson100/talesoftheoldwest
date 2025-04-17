@@ -134,6 +134,7 @@ export async function rollAttrib(dataset, rollData, actor) {
 	let formula = '';
 	let roll = '';
 	let result = '';
+	rollData.actor.actorType = actor.type;
 	if (dataset.mod - 5 <= 0) {
 		formula = parseInt(`${dataset.mod}`) + `dt`;
 		roll = await Roll.create(`${formula}`).evaluate();
