@@ -104,6 +104,14 @@ export default class totowPC extends totowActorBase {
 			),
 			compadresQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
 		});
+		schema.remuda = new fields.SchemaField({
+			details: new fields.ArrayField(
+				new fields.SchemaField({
+					id: new fields.StringField({ required: true, blank: false }),
+				})
+			),
+			remudaQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
+		});
 		return schema;
 	}
 

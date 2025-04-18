@@ -105,61 +105,63 @@
 					</div>
 				{{/if}}
 			{{/if}}
-			{{!-- {{#if (eq itemData.actorType 'pc')}} --}}
+			{{#if (eq itemData.actorType 'pc')}}
 
-			<hr />
-			<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
-			<hr />
+				<hr />
+				<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
+				<hr />
 
-			{{#if (gt faithpoints 0)}}
-				{{#if (gt trouble 0)}}
+				{{#if (gt faithpoints 0)}}
+					{{#if (gt trouble 0)}}
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll buy-off' style='font-size: large; font-weight: bold'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.dialog.Buy-OffTrouble')
+									}}</span>
+							</a>
+						</div>
+					{{/if}}
+					{{! If totalTrouble > 0 }}
+					{{#if (eq canPush 'push')}}
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll dice-push' style='font-size: large; font-weight: bold'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.General.push')
+									}}</span>
+							</a>
+						</div>
+					{{/if}}
+					{{! If Push }}
+				{{else}}
 					<div class='dice-formula dice-roll'>
 						<a>
-							<span class='dice-formula dice-roll buy-off' style='font-size: large; font-weight: bold'>{{toUpperCase
-									(localize 'TALESOFTHEOLDWEST.dialog.Buy-OffTrouble')
+							<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{toUpperCase
+									(localize 'TALESOFTHEOLDWEST.General.lackFaith')
 								}}</span>
 						</a>
 					</div>
 				{{/if}}
-				{{! If totalTrouble > 0 }}
-				{{#if (eq canPush 'push')}}
+				{{! If Faith >0 }}
+				{{#if (eq canPush 'pushed')}}
 					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll dice-push' style='font-size: large; font-weight: bold'>{{toUpperCase
-									(localize 'TALESOFTHEOLDWEST.General.push')
-								}}</span>
-						</a>
-					</div>
-				{{/if}}
-				{{! If Push }}
-			{{else}}
-				<div class='dice-formula dice-roll'>
-					<a>
 						<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{toUpperCase
-								(localize 'TALESOFTHEOLDWEST.General.lackFaith')
+								(localize 'TALESOFTHEOLDWEST.General.pushed')
 							}}</span>
-					</a>
-				</div>
-			{{/if}}
-			{{! If Faith >0 }}
-			{{#if (eq canPush 'pushed')}}
-				<div class='dice-formula dice-roll'>
-					<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.pushed')}}</span>
-				</div>
-				{{#if (gt totalTrouble 0)}}
-					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll roll-trouble' style='font-size: large; font-weight: bold'>{{toUpperCase
-									(localize 'TALESOFTHEOLDWEST.General.rollTrouble')
-								}}</span>
-						</a>
 					</div>
+					{{#if (gt totalTrouble 0)}}
+						<div class='dice-formula dice-roll'>
+							<a>
+								<span class='dice-formula dice-roll roll-trouble' style='font-size: large; font-weight: bold'>{{toUpperCase
+										(localize 'TALESOFTHEOLDWEST.General.rollTrouble')
+									}}</span>
+							</a>
+						</div>
+					{{/if}}
+					{{! Roll Trouble after Push If totalTrouble > 0 }}
 				{{/if}}
-				{{! Roll Trouble after Push If totalTrouble > 0 }}
-			{{/if}}
-			{{! If Pushed }}
+				{{! If Pushed }}
 
-			{{!-- {{/if}} --}}
+			{{/if}}
 		</div>
 	{{else}}
 		<div class='dice-formula dice-roll'>

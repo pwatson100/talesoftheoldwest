@@ -14,6 +14,7 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
 				data-mod="{{system.attributes.grit.mod}}"
+				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
 			>
 		</div>
@@ -32,6 +33,7 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
 				data-mod="{{system.attributes.quick.mod}}"
+				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
 			>
 		</div>
@@ -50,6 +52,7 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
 				data-mod="{{system.attributes.cunning.mod}}"
+				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
 			>
 		</div>
@@ -68,6 +71,7 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
 				data-mod="{{system.attributes.docity.mod}}"
+				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label
 			>
 		</div>
@@ -160,6 +164,7 @@
 				data-stunts="{{ability.label}}"
 				data-mod="{{ability.mod}}"
 				data-attr="{{ability.attr}}"
+				data-speaker='{{actor.id}}'
 				>{{ability.upper}}</label
 			>
 		</div>
@@ -336,7 +341,6 @@
 	{{/if}} 
 
 	{{#if (eq actor.type "animal")}}
-			{{#if (eq actor.system.general.subtype 'horse')}}
 				<div class="sheet-animal-attributes animal-stats ">
 					<div class="aA1">
 						<label
@@ -347,6 +351,7 @@
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
 							data-mod="{{system.attributes.grit.mod}}"
+							data-speaker='{{actor.id}}'
 							>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
 						>
 					</div>
@@ -365,6 +370,7 @@
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
 							data-mod="{{system.attributes.quick.mod}}"
+							data-speaker='{{actor.id}}'
 							>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
 						>
 					</div>
@@ -382,6 +388,7 @@
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
 							data-mod="{{system.attributes.cunning.mod}}"
+							data-speaker='{{actor.id}}'
 							>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
 						>
 					</div>
@@ -390,55 +397,8 @@
 						<span style="font-weight: bolder; font-size: x-large">/</span>
 						<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
 					</div>
-					<div class="aH1">
-						<label for="system.attributes.grit.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-							><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label
-						>
-					</div>
-					<div
-						class="aH2 newdots HedCol12"
-						style="font-size: large; padding: 10px"
-						data-action="changeDamage"
-						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-						title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
-					>
-						{{#times system.damage.hurts.value}}
-						<a class="far fa-dot-circle"></a>
-						{{/times}} {{#times system.damage.hurts.max}}<a class="far fa-circle"></a>{{/times}}
-					</div>
-					<div class="aS1">
-						<label for="system.attributes.quick.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-							><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.quick.type')}}</em></label
-						>
-					</div>
-					<div
-						class="aS2 newdots HedCol12"
-						style="font-size: large"
-						data-action="changeDamage"
-						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-						title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
-					>
-						{{#times system.damage.shakes.value}}
-						<a class="far fa-dot-circle"></a>
-						{{/times}} {{#times system.damage.shakes.max}}<a class="far fa-circle"></a>{{/times}}
-					</div>
-					<div class="aV1">
-						<label for="system.attributes.cunning.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-							><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.cunning.type')}}</em></label
-						>
-					</div>
-					<div
-						class="aV2 newdots HedCol12"
-						style="font-size: large"
-						data-action="changeDamage"
-						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-						title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
-					>
-						{{#times system.damage.vexes.value}}
-						<a class="far fa-dot-circle"></a>
-						{{/times}} {{#times system.damage.vexes.max}}<a class="far fa-circle"></a>{{/times}}
-					</div>
 				</div>
+		{{#if (eq actor.system.general.subtype 'horse')}}
 				<div class="sheet-animal-abilities  animal-stats" >
 					<div class="aresilience" style="font-size: large; text-align: right">
 						<label
@@ -452,6 +412,7 @@
 							data-stunts="{{system.abilities.resilience.label}}"
 							data-mod="{{system.abilities.resilience.mod}}"
 							data-attr="{{system.abilities.resilience.attr}}"
+							data-speaker='{{actor.id}}'
 							>{{system.abilities.resilience.upper}}</label
 						>
 					</div>
@@ -470,6 +431,7 @@
 							data-stunts="{{system.abilities.move.label}}"
 							data-mod="{{system.abilities.move.mod}}"
 							data-attr="{{system.abilities.move.attr}}"
+							data-speaker='{{actor.id}}'
 							>{{system.abilities.move.upper}}</label
 						>
 					</div>
@@ -488,6 +450,7 @@
 							data-stunts="{{system.abilities.fightin.label}}"
 							data-mod="{{system.abilities.fightin.mod}}"
 							data-attr="{{system.abilities.fightin.attr}}"
+							data-speaker='{{actor.id}}'
 							>{{system.abilities.fightin.upper}}</label
 						>
 					</div>
@@ -499,10 +462,84 @@
 					<div class="CompSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
 					<div class="CompSplit12">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
 				</div>
-				<div style="justify-self: anchor-center">
+
+				{{else}}
+							<div class="sheet-animal-abilities  animal-stats" >
+									<div class="aresilience" style="font-size: large; text-align: right">
+						<label
+							class="resource-label rollable"
+							for="system.abilities.fightin.value"
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type="ability"
+							data-action="roll"
+							data-value="{{system.abilities.fightin.value}}"
+							data-label="{{system.abilities.fightin.label}}"
+							data-stunts="{{system.abilities.fightin.label}}"
+							data-mod="{{system.abilities.fightin.mod}}"
+							data-attr="{{system.abilities.fightin.attr}}"
+							data-speaker='{{actor.id}}'
+							>{{system.abilities.fightin.upper}}</label
+						>
+					</div>
+					<div class="aresilience2" style="text-align: center">
+						<input class="statnum" name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
+					</div>	
+					<div class="amove" style="font-size: large; text-align: right">
+						<label
+							class="resource-label rollable"
+							for="system.abilities.move.value"
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type="ability"
+							data-action="roll"
+							data-value="{{system.abilities.move.value}}"
+							data-label="{{system.abilities.move.label}}"
+							data-stunts="{{system.abilities.move.label}}"
+							data-mod="{{system.abilities.move.mod}}"
+							data-attr="{{system.abilities.move.attr}}"
+							data-speaker='{{actor.id}}'
+							>{{system.abilities.move.upper}}</label
+						>
+					</div>
+					<div class="amove2" style="text-align: center">
+						<input class="statnum" name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
+					</div>
+					<div class="afightin" style="font-size: large; text-align: right">
+						<label
+							class="resource-label rollable"
+							for="system.abilities.hawkeye.value"
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type="ability"
+							data-action="roll"
+							data-value="{{system.abilities.hawkeye.value}}"
+							data-label="{{system.abilities.hawkeye.label}}"
+							data-stunts="{{system.abilities.hawkeye.label}}"
+							data-mod="{{system.abilities.hawkeye.mod}}"
+							data-attr="{{system.abilities.hawkeye.attr}}"
+							data-speaker='{{actor.id}}'
+							>{{system.abilities.hawkeye.upper}}</label
+						>
+					</div>
+					<div class="afightin2" style="text-align: center">
+						<input class="statnum" name="system.abilities.hawkeye.value" value="{{system.abilities.hawkeye.value}}" data-dtype="Number" />
+					</div>
+				</div>
+											<div style="justify-self: anchor-center">
+					<label for="system.general.attacks" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attacks')}}</label>
+				</div>
+				<div class="div-border" style="height: 200px; width: 850px; justify-self: anchor-center; margin-bottom:50px">
+					{{#if editable}}
+					<prose-mirror name="system.general.attacks" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.general.attacks}}" toggled="true">
+						{{{enrichedAttacks}}}
+					</prose-mirror>
+					{{else}} 
+						{{{enrichedAttacks}}} 
+					{{/if}}
+				</div>
+			{{/if}}
+							<div style="justify-self: anchor-center">
 					<label for="system.biography" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.description')}}</label>
 				</div>
-				<div class="div-border" style="height: 100px; width: 850px; justify-self: anchor-center">
+							<div class="div-border" style="height: 130px; width: 850px; justify-self: anchor-center">
 					{{#if editable}}
 					<prose-mirror name="system.biography" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
 						{{{enrichedBiography}}}
@@ -511,6 +548,5 @@
 						{{{enrichedBiography}}} 
 					{{/if}}
 				</div>
-			{{/if}}
 	{{/if}}
 </section>

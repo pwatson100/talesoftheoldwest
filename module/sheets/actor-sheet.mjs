@@ -84,6 +84,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		compadresweapon: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs',
 		},
+		remuda: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-remuda.hbs',
+		},
 	};
 
 	/** @override */
@@ -96,7 +99,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 			case 'pc':
-				options.parts.push('skills', 'gear', 'compadres', 'description');
+				options.parts.push('skills', 'gear', 'compadres', 'remuda', 'description');
 				break;
 			case 'npc':
 				options.parts.push('skills', 'description');
@@ -136,6 +139,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 		if (context.actor.type === 'pc') {
 			this._prepareCompadres(context);
+			this._prepareRemuda(context);
 		}
 		// let enrichedFields = ['system.biography'];
 		// await this._enrichTextFields(context, enrichedFields);
@@ -153,8 +157,17 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'skills':
 			case 'gear':
 			case 'compadres':
+			case 'remuda':
 				context.tab = context.tabs[partId];
 				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.actor.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.actor,
+				});
+				context.enrichedAttacks = await TextEditor.enrichHTML(this.actor.system.general.attacks, {
 					// Whether to show secret blocks in the finished html
 					secrets: this.document.isOwner,
 					// Data to fill in for inline rolls
@@ -228,6 +241,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					tab.id = 'compadres';
 					tab.label += 'Compadres';
 					break;
+				case 'remuda':
+					tab.id = 'remuda';
+					tab.label += 'Remuda';
+					break;
 				case 'description':
 					tab.id = 'description';
 					tab.label += 'Description';
@@ -281,6 +298,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					break;
 				case 'animalquality':
 					animalquality.push(i);
+					_findmods(i, itemMods);
 					break;
 
 				default:
@@ -384,7 +402,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			for (let [attrib, allItems] of Object.entries(itemMods)) {
 				if (allItems.type !== 'weapon' && itemMods) {
 					for (let [skey, subAttar] of Object.entries(allItems)) {
-						if (subAttar.state === 'Active' && subAttar.itemtype != 'talent') {
+						if ((subAttar.state === 'Active' || subAttar.state === 'onAnimal') && subAttar.itemtype != 'talent') {
 							switch (attrib) {
 								case 'docity':
 								case 'quick':
@@ -458,6 +476,22 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		}, []);
 		return sheetData;
 	}
+	async _prepareRemuda(sheetData) {
+		sheetData.remuda = sheetData.actor.system.remuda.details.reduce((arr, o) => {
+			o.actor = game.actors.get(o.id);
+			// Creates a fake actor if it doesn't exist anymore in the database.
+			if (!o.actor) {
+				o.actor = {
+					name: '{MISSING_CREW}',
+					system: { system: { health: { value: 0, max: 0 } } },
+					isCrewDeleted: true,
+				};
+			}
+			arr.push(o);
+			return arr;
+		}, []);
+		return sheetData;
+	}
 
 	/**
 	 * Actions performed after any render of the Application.
@@ -482,16 +516,28 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			});
 		}
 
-		const CompEdit = this.element.querySelectorAll('.crew-edit');
+		const CompEdit = this.element.querySelectorAll('.compadre-edit');
 		for (const s of CompEdit) {
 			s.addEventListener('click', (event) => {
 				this._onCompadresView(event);
 			});
 		}
-		const CompRemove = this.element.querySelectorAll('.crew-remove');
+		const CompRemove = this.element.querySelectorAll('.compadre-remove');
 		for (const s of CompRemove) {
 			s.addEventListener('click', (event) => {
 				this._onCompadresRemove(event);
+			});
+		}
+		const RemudaEdit = this.element.querySelectorAll('.remuda-edit');
+		for (const s of RemudaEdit) {
+			s.addEventListener('click', (event) => {
+				this._onRemudaView(event);
+			});
+		}
+		const RemudaRemove = this.element.querySelectorAll('.remuda-remove');
+		for (const s of RemudaRemove) {
+			s.addEventListener('click', (event) => {
+				this._onRemudaRemove(event);
 			});
 		}
 
@@ -932,6 +978,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			// let crew = await fromUuid(data.uuid);
 			if (data.type === 'Actor') await this._dropCompadres(actor.id);
 		}
+		if (actor.type === 'animal' && actor.system.general.subtype === 'horse') {
+			// When dropping an actor on a vehicle sheet.
+			// let crew = await fromUuid(data.uuid);
+			if (data.type === 'Actor') await this._dropRemuda(actor.id);
+		}
 	}
 
 	/* -------------------------------------------- */
@@ -1173,11 +1224,36 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		return await actorData.update({ 'system.compadres.details': details });
 	}
 
-	// async _onChangePosition(event) {
-	// 	event.preventDefault();
-	// 	const elem = event.currentTarget;
-	// 	const compId = elem.querySelector('.compardre').details.compid;
-	// 	const position = elem.value;
-	// 	return await this.actor.addCompadres(compId, position);
-	// }
+	async _dropRemuda(actorId) {
+		const crew = game.actors.get(actorId);
+		const actorData = this.actor;
+		if (!crew) return;
+		if (crew.type === 'pc') return ui.notifications.info('PC inceptions are not allowed!');
+		if (crew.type !== 'animal') return;
+		if (actorData.type === 'pc') {
+			if (actorData.system.remuda.remudaQty >= 3) {
+				return ui.notifications.warn(game.i18n.localize('ALIENRPG.fullCrew'));
+			}
+			return await actorData.addRemuda(actorId);
+		}
+	}
+	async _onRemudaView(event) {
+		event.preventDefault();
+		const elem = event.currentTarget;
+		const compId = elem.closest('.remuda').dataset.compid;
+		const actor = game.actors.get(compId);
+		return actor.sheet.render(true);
+	}
+
+	async _onRemudaRemove(event) {
+		event.preventDefault();
+		const actorData = this.actor;
+		const elem = event.currentTarget;
+		const compId = elem.closest('.remuda').dataset.compid;
+		const details = this.actor.removeRemuda(compId);
+		let remudaNumber = actorData.system.remuda.remudaQty;
+		remudaNumber--;
+		await actorData.update({ 'system.remuda.remudaQty': remudaNumber });
+		return await actorData.update({ 'system.remuda.details': details });
+	}
 }

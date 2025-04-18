@@ -379,7 +379,7 @@ export class totowActor extends Actor {
 
 		switch (type) {
 			case 'pc':
-			case 'npc':
+				// case 'npc':
 				await this.addCondition('criticalinj');
 				break;
 			// case 'creature':criticalinj
@@ -423,7 +423,7 @@ export class totowActor extends Actor {
 							}
 							switch (type) {
 								case 'pc':
-								case 'npc':
+									// case 'npc':
 									if (!manCrit.match(/^[1-6]?[1-6]$/gm)) {
 										ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCharCrit'));
 										return;
@@ -440,23 +440,10 @@ export class totowActor extends Actor {
 		}
 		switch (actor.type) {
 			case 'pc':
-			case 'npc':
+				// case 'npc':
 				myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html');
 
 				break;
-			// case 'synthetic':
-			// case 'creature':
-			// 	myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-syn-manual-crit-dialog.html');
-			// 	break;
-			// case 'spacecraft':
-			// 	if (dataset.crbut === 'minor') {
-			// 		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-spacecraft-minor-crit-dialog.html');
-			// 	} else {
-			// 		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-spacecraft-major-crit-dialog.html');
-			// 	}
-
-			// 	break;
-
 			default:
 				break;
 		}
@@ -590,15 +577,12 @@ export class totowActor extends Actor {
 	}
 
 	/* ------------------------------------------- */
-	/*  Vehicle: Crew Management                   */
+	/*  linked actors Management                   */
 	/* ------------------------------------------- */
 
 	/**
-	 * Adds an occupant to the vehicle.
 	 * @param {string}  compId              The id of the added actor
-	 * @param {string}  [position='PASSENGER'] Crew position flag ('PASSENGER', 'DRIVER', 'GUNNER', or 'COMMANDER')
-	 * @param {boolean} [isExposed=false]   Whether it's an exposed position
-	 * @returns {VehicleOccupant}
+	 * @returns {details}
 	 */
 	async addCompadres(compId) {
 		if (this.type !== 'pc') return;
@@ -621,7 +605,6 @@ export class totowActor extends Actor {
 	/* ------------------------------------------- */
 
 	/**
-	 * Removes an occupant from the vehicle.
 	 * @param {string} compId The id of the occupant to remove
 	 * @return {Compadres[]}
 	 */
@@ -635,7 +618,6 @@ export class totowActor extends Actor {
 	/* ------------------------------------------- */
 
 	/**
-	 * Gets a specific occupant in the vehicle.
 	 * @param {string} compId The id of the occupant to find
 	 * @returns {VehicleOccupant|undefined}
 	 */
@@ -645,6 +627,51 @@ export class totowActor extends Actor {
 	}
 
 	/* ------------------------------------------- */
+	/**
+	 * @param {string}  compId              The id of the added actor
+	 * @returns {details}
+	 */
+	async addRemuda(compId) {
+		if (this.type !== 'pc') return;
+
+		const system = this.system;
+		const details = {
+			id: compId,
+		};
+		// Removes duplicates.
+		if (system.remuda.details.some((o) => o.id === compId)) this.removeRemuda(compId);
+		// Adds the new occupant.
+		system.remuda.details.push(details);
+		await this.update({ 'system.remuda.details': system.remuda.details });
+
+		await this.update({ 'system.remuda.remudaQty': system.remuda.details.length });
+
+		return details;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * @param {string} compId The id of the occupant to remove
+	 * @return {Remuda[]}
+	 */
+	removeRemuda(compId) {
+		if (this.type !== 'pc') return;
+		const remuda = this.system.remuda;
+		remuda.details = remuda.details.filter((o) => o.id !== compId);
+		return remuda.details;
+	}
+
+	/* ------------------------------------------- */
+
+	/**
+	 * @param {string} compId The id of the occupant to find
+	 * @returns {VehicleOccupant|undefined}
+	 */
+	getRemuda(compId) {
+		if (this.type !== 'pc') return;
+		return this.system.remuda.details.find((o) => o.id === compId);
+	}
 
 	/**
 	 * Gets a collection of crewed actors.

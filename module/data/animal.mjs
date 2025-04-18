@@ -77,29 +77,13 @@ export default class totowANIMAL extends totowActorBase {
 		schema.general = new fields.SchemaField({
 			breed: new fields.StringField({ required: true, blank: true }),
 			cost: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
-			attacks: new fields.StringField({ required: false, blank: true, initial: '' }),
+			attacks: new fields.HTMLField(),
 			subtype: new fields.StringField({ required: false, blank: true, initial: 'horse' }),
 
 			ridingmodifier: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 		});
-
-		schema.damage = new fields.SchemaField({
-			hurts: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-			}),
-			shakes: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-			}),
-			vexes: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 15 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-			}),
-		});
-
 		return schema;
 	}
 
@@ -115,9 +99,6 @@ export default class totowANIMAL extends totowActorBase {
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name) ?? key;
 			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name).toUpperCase() ?? key;
 		}
-		this.damage.hurts.max = this.attributes.grit.max - this.damage.hurts.value;
-		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
-		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
 	}
 	getRollData() {
 		const data = {};

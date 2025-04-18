@@ -1,0 +1,157 @@
+<section class='tab remuda {{tab.cssClass}}' data-group='primary' data-tab='remuda'>
+	<div>
+		{{#each actor.system.remuda.details}}
+			<div class='remuda' data-compId='{{id}}' style='margin-bottom: 10px;'>
+				<div class='sheet-compadres-header'>
+					<div class='schA1'>{{actor.name}}</div>
+					<a class='button remuda-edit schB1' title='EDIT' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+					<a class='button remuda-remove schA2' title='REMOVE' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
+				</div>
+				<div class='sheet-animal-attributes animal-stats'>
+					<div class='aA1'>
+						<label
+							for='actor.system.attributes.grit'
+							class='resource-label rollable align-left'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='attribute'
+							data-action='roll'
+							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
+							data-mod='{{actor.system.attributes.grit.mod}}'
+							data-speaker='{{actor.id}}'
+						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
+					</div>
+					<div class='aB1'>
+						<input class='statnum' name='actor.system.attributes.grit.value' value='{{actor.system.attributes.grit.value}}' data-dtype='Number' disabled />
+						<span style='font-weight: bolder; font-size: x-large'>/</span>
+						<input class='statnum' name='actor.system.attributes.grit.max' value='{{actor.system.attributes.grit.max}}' data-dtype='Number' disabled />
+					</div>
+
+					<div class='aA2'>
+						<label
+							for='actor.system.attributes.quick'
+							class='resource-label rollable align-left'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='attribute'
+							data-action='roll'
+							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
+							data-mod='{{actor.system.attributes.quick.mod}}'
+							data-speaker='{{actor.id}}'
+						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
+					</div>
+					<div class='aB2'>
+						<input class='statnum' name='actor.system.attributes.quick.value' value='{{actor.system.attributes.quick.value}}' data-dtype='Number' disabled />
+						<span style='font-weight: bolder; font-size: x-large'>/</span>
+						<input class='statnum' name='actor.system.attributes.quick.max' value='{{actor.system.attributes.quick.max}}' data-dtype='Number' disabled />
+					</div>
+					<div class='aA3'>
+						<label
+							for='actor.system.attributes.cunning'
+							class='resource-label rollable align-left'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='attribute'
+							data-action='roll'
+							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
+							data-mod='{{actor.system.attributes.cunning.mod}}'
+							data-speaker='{{actor.id}}'
+						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
+					</div>
+					<div class='aB3'>
+						<input
+							class='statnum'
+							name='actor.system.attributes.cunning.value'
+							value='{{actor.system.attributes.cunning.value}}'
+							data-dtype='Number'
+							disabled
+						/>
+						<span style='font-weight: bolder; font-size: x-large'>/</span>
+						<input class='statnum' name='actor.system.attributes.cunning.max' value='{{actor.system.attributes.cunning.max}}' data-dtype='Number' disabled />
+					</div>
+				</div>
+				<div class='sheet-animal-abilities animal-stats'>
+					<div class='aresilience' style='font-size: large; text-align: right'>
+						<label
+							class='resource-label rollable'
+							for='actor.system.abilities.resilience.value'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='ability'
+							data-action='roll'
+							data-value='{{actor.system.abilities.resilience.value}}'
+							data-label='{{actor.system.abilities.resilience.label}}'
+							data-stunts='{{system.abilities.resilience.label}}'
+							data-mod='{{actor.system.abilities.resilience.mod}}'
+							data-attr='{{actor.system.abilities.resilience.attr}}'
+							data-speaker='{{actor.id}}'
+						>{{actor.system.abilities.resilience.upper}}</label>
+					</div>
+					<div class='aresilience2' style='text-align: center'>
+						<input
+							class='statnum'
+							name='actor.system.abilities.resilience.value'
+							value='{{actor.system.abilities.resilience.value}}'
+							data-dtype='Number'
+							disabled
+						/>
+					</div>
+					<div class='amove' style='font-size: large; text-align: right'>
+						<label
+							class='resource-label rollable'
+							for='actor.system.abilities.move.value'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='ability'
+							data-action='roll'
+							data-value='{{actor.system.abilities.move.value}}'
+							data-label='{{actor.system.abilities.move.label}}'
+							data-stunts='{{actor.system.abilities.move.label}}'
+							data-mod='{{actor.system.abilities.move.mod}}'
+							data-attr='{{actor.system.abilities.move.attr}}'
+							data-speaker='{{actor.id}}'
+						>{{actor.system.abilities.move.upper}}</label>
+					</div>
+					<div class='amove2' style='text-align: center'>
+						<input class='statnum' name='actor.system.abilities.move.value' value='{{actor.system.abilities.move.value}}' data-dtype='Number' disabled />
+					</div>
+					<div class='afightin' style='font-size: large; text-align: right'>
+						<label
+							class='resource-label rollable'
+							for='actor.system.abilities.fightin.value'
+							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-roll-type='ability'
+							data-action='roll'
+							data-value='{{actor.system.abilities.fightin.value}}'
+							data-label='{{actor.system.abilities.fightin.label}}'
+							data-stunts='{{actor.system.abilities.fightin.label}}'
+							data-mod='{{actor.system.abilities.fightin.mod}}'
+							data-attr='{{actor.system.abilities.fightin.attr}}'
+							data-speaker='{{actor.id}}'
+						>{{actor.system.abilities.fightin.upper}}</label>
+					</div>
+					<div class='afightin2' style='text-align: center'>
+						<input class='statnum' name='actor.system.abilities.fightin.value' value='{{actor.system.abilities.fightin.value}}' data-dtype='Number' disabled />
+					</div>
+				</div>
+				<div class='compadre-split div-border'>
+					<label class='CompSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</label>
+					<div class='CompSplit21'>
+						{{#each actor.items}}
+							{{#if (eq system.general.subtype 'quality')}}
+								<span> {{name}} ||</span>
+							{{/if}}
+						{{/each}}
+					</div>
+
+					<label class='CompSplit12' style='border-left: solid 2px black;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</label>
+					<div class='CompSplit22' style='border-left: solid 2px black;'>
+						{{#each actor.items}}
+							{{#if (eq system.general.subtype 'flaw')}}
+								<span> {{name}} ||</span>
+							{{/if}}
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		{{else}}
+
+			<div class='crew-empty resource-label'>{{localize 'TALESOFTHEOLDWEST.General.gmDragRemuda'}}</div>
+		{{/each}}
+	</div>
+</section>

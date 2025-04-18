@@ -10,7 +10,8 @@
 				"Gear": "Gear",
 				"Description": "Description",
 				"Effects": "Effects",
-				"Compadres": "Compadres"
+				"Compadres": "Compadres",
+				"Remuda": "Remuda"
 			}
 		},
 		"Ability": {
@@ -211,7 +212,11 @@
 			"lifestyle": "Lifestyle",
 			"Dollar": "Add $",
 			"DollarNote": "Automatically add $ symbol after editing Cash or Cost",
-			"gmDrag": "Ask the GM to drag your Compadres onto your sheet"
+			"gmDrag": "Ask the GM to drag your Compadres onto your sheet",
+			"gmDragRemuda": "Ask the GM to drag your Horses onto your sheet",
+			"onAnimal": "On Animal",
+			"onPC": "On PC",
+			"attacks": "Attacks"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -442,7 +447,7 @@
 			"horse": "Horse",
 			"wolf": "Wolf",
 			"dog": "Dog",
-			"other": "Other"
+			"critters": "Critters"
 		},
 		"HorseBreed": {
 			"americanquarter": "American Quarter",

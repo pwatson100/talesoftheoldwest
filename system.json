@@ -11,7 +11,7 @@
 		"Actor": {
 			"pc": { "htmlFields": ["biography"] },
 			"npc": { "htmlFields": ["biography"] },
-			"animal": { "htmlFields": ["biography"] }
+			"animal": { "htmlFields": ["biography", "attacks"] }
 		},
 		"Item": {
 			"item": { "htmlFields": ["description"] },

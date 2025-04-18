@@ -31,9 +31,15 @@
 							<input name='system.itemModifiers.{{@key}}.value' type='number' value='{{modifiers.value}}' style='text-align: center' />
 						</div>
 						<div class='item-name grid-wfl3'>
-							<select name='system.itemModifiers.{{@key}}.state'>
-								{{selectOptions @root.config.item_modifier_state selected=modifiers.state labelAttr='label' localize=true}}
-							</select>
+							{{#if (eq @root.item.type 'animalquality')}}
+								<select name='system.itemModifiers.{{@key}}.state'>
+									{{selectOptions @root.config.animal_quality_modifier_state selected=modifiers.state labelAttr='label' localize=true}}
+								</select>
+							{{else}}
+								<select name='system.itemModifiers.{{@key}}.state'>
+									{{selectOptions @root.config.item_modifier_state selected=modifiers.state labelAttr='label' localize=true}}
+								</select>
+							{{/if}}
 						</div>
 						<div class='item-controls grid-wfl4'>
 							<a

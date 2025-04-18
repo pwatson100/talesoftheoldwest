@@ -44,7 +44,7 @@ TALESOFTHEOLDWEST.animal_subtypes_list = {
 	horse: { id: 'horse', label: 'TALESOFTHEOLDWEST.Animals.horse' },
 	wolf: { id: 'wolf', label: 'TALESOFTHEOLDWEST.Animals.wolf' },
 	dog: { id: 'dog', label: 'TALESOFTHEOLDWEST.Animals.dog' },
-	other: { id: 'other', label: 'TALESOFTHEOLDWEST.Animals.other' },
+	critters: { id: 'critters', label: 'TALESOFTHEOLDWEST.Animals.critters' },
 };
 
 TALESOFTHEOLDWEST.animal_quality_types_list = {
@@ -284,10 +284,16 @@ TALESOFTHEOLDWEST.crit_location_list = {
 };
 
 TALESOFTHEOLDWEST.item_modifier_state = {
-	Active: { name: 'TALESOFTHEOLDWEST.General.active' },
-	Conditional: { name: 'TALESOFTHEOLDWEST.General.conditional' },
-	Chat: { name: 'TALESOFTHEOLDWEST.General.chat' },
+	Active: { label: 'TALESOFTHEOLDWEST.General.active' },
+	Conditional: { label: 'TALESOFTHEOLDWEST.General.conditional' },
+	Chat: { label: 'TALESOFTHEOLDWEST.General.chat' },
 };
+TALESOFTHEOLDWEST.animal_quality_modifier_state = {
+	onAnimal: { label: 'TALESOFTHEOLDWEST.General.onAnimal' },
+	Conditional: { label: 'TALESOFTHEOLDWEST.General.conditional' },
+	onPC: { label: 'TALESOFTHEOLDWEST.General.onPC' },
+};
+
 TALESOFTHEOLDWEST.conditionEffects = [
 	{
 		id: 'starving',
