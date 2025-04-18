@@ -2,43 +2,36 @@ import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
 import { prepModOutput } from './utils.mjs';
 
 export async function totowDiceListeners(html) {
-	try {
-		html.querySelector('.dice-push').addEventListener('click', (ev) => {
-			let button = $(ev.currentTarget),
-				messageId = button.parents('.message').attr('data-message-id'),
-				message = game.messages.get(messageId);
-			let results = message.getFlag('talesoftheoldwest', 'results');
-			if (!results[1].canPush) {
-				let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
-				return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
-			} else {
-				return pushRoll(message, results);
-			}
-		});
-	} catch (error) {}
+	html.on('click', '.dice-push', (ev) => {
+		let button = $(ev.currentTarget),
+			messageId = button.parents('.message').attr('data-message-id'),
+			message = game.messages.get(messageId);
+		let results = message.getFlag('talesoftheoldwest', 'results');
+		if (!results[1].canPush) {
+			let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
+			return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
+		} else {
+			return pushRoll(message, results);
+		}
+	});
 
-	try {
-		html.querySelector('.buy-off').addEventListener('click', (ev) => {
-			// html.on('click', '.buy-off', (ev) => {
-			let button = $(ev.currentTarget),
-				messageId = button.parents('.message').attr('data-message-id'),
-				message = game.messages.get(messageId);
-			let results = message.getFlag('talesoftheoldwest', 'results');
-			console.log(message);
-			new TOTWBuyOffDialog(message, results).render(true);
-		});
-	} catch (error) {}
+	html.on('click', '.buy-off', (ev) => {
+		let button = $(ev.currentTarget),
+			messageId = button.parents('.message').attr('data-message-id'),
+			message = game.messages.get(messageId);
+		let results = message.getFlag('talesoftheoldwest', 'results');
+		console.log(message);
+		new TOTWBuyOffDialog(message, results).render(true);
+	});
 
-	try {
-		html.querySelector('.roll-trouble').addEventListener('click', (ev) => {
-			let button = $(ev.currentTarget),
-				messageId = button.parents('.message').attr('data-message-id'),
-				message = game.messages.get(messageId);
-			let results = message.getFlag('talesoftheoldwest', 'results');
+	html.on('click', '.roll-trouble', (ev) => {
+		let button = $(ev.currentTarget),
+			messageId = button.parents('.message').attr('data-message-id'),
+			message = game.messages.get(messageId);
+		let results = message.getFlag('talesoftheoldwest', 'results');
 
-			new TOTWWhichTroubleDialog(results, ev).render(true);
-		});
-	} catch (error) {}
+		new TOTWWhichTroubleDialog(results, ev).render(true);
+	});
 }
 
 export async function rollTrouble(results, ev) {
@@ -134,7 +127,6 @@ export async function rollAttrib(dataset, rollData, actor) {
 	let formula = '';
 	let roll = '';
 	let result = '';
-	rollData.actor.actorType = actor.type;
 	if (dataset.mod - 5 <= 0) {
 		formula = parseInt(`${dataset.mod}`) + `dt`;
 		roll = await Roll.create(`${formula}`).evaluate();

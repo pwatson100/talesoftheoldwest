@@ -32,11 +32,11 @@
 		{{#if (eq actor.type 'pc')}}
 			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
 			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
-				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
+				{{selectOptions config.archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
 			</select>
 			<label for='system.general.groupconcept' class='resource-label HedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.groupConcept')}}</label>
 			<select class='HedCol6' id='system.general.groupconcept' name='system.general.groupconcept'>
-				{{selectOptions group_concept_list selected=system.general.groupconcept labelAttr='label' localize=true}}
+				{{selectOptions config.group_concept_list selected=system.general.groupconcept labelAttr='label' localize=true}}
 			</select>
 
 			<label for='system.general.yourpardner' class='resource-label HedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.your-pardner')}}</label>
@@ -60,7 +60,7 @@
 		{{#if (eq actor.type 'npc')}}
 			<label for='system.general.archetype' class='resource-label HedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.archetype')}}</label>
 			<select class='HedCol4' id='system.general.archetype' name='system.general.archetype'>
-				{{selectOptions archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
+				{{selectOptions config.archetype_list selected=system.general.archetype labelAttr='label' localize=true}}
 			</select>
 		{{/if}}
 

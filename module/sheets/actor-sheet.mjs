@@ -142,10 +142,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// }
 
 		// context.rollData = context.actor.getRollData();
-		if (context.actor.type != 'animal') {
-			context.archetype_list = CONFIG.TALESOFTHEOLDWEST.archetype_list;
-			context.group_concept_list = CONFIG.TALESOFTHEOLDWEST.group_concept_list;
-		}
 
 		logger.debug('Actor Sheet derived data:', context);
 		return context;

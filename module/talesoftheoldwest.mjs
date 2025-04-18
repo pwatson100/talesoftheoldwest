@@ -194,7 +194,7 @@ Hooks.once('ready', function () {
 	}, 250);
 });
 
-Hooks.on('renderChatLog', (log, [html], data) => {
+Hooks.on('renderChatLog', (log, html, data) => {
 	totowDiceListeners(html);
 });
 

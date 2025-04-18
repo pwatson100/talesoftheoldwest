@@ -28,7 +28,7 @@ export class totowItem extends Item {
 
 		// If present, add the actor's roll data
 		rollData.actor = this.actor.getRollData();
-
+		rollData.actorType = this.actor.type;
 		return rollData;
 	}
 	/**

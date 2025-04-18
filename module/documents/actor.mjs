@@ -41,7 +41,9 @@ export class totowActor extends Actor {
 	 * but have slightly different data preparation needs.
 	 */
 	getRollData() {
-		return { ...super.getRollData(), ...(this.system.getRollData?.() ?? null) };
+		let spanner = { ...super.getRollData(), ...(this.system.getRollData?.() ?? null) };
+		spanner.actorType = this.type;
+		return spanner;
 	}
 	// *************************************************
 	// Setupthe prototype token
