@@ -99,7 +99,7 @@ export class totowItem extends Item {
 				case 'makin':
 				case 'doctorin':
 				case 'booklearnin':
-				case 'flight':
+					// case 'flight':
 					qualityMod += Number(mods.value);
 					break;
 				default:

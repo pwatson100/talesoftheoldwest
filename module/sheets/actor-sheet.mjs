@@ -87,6 +87,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		remuda: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-remuda.hbs',
 		},
+		horse: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs',
+		},
+		horsequalityoptions: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs',
+		},
 	};
 
 	/** @override */
@@ -155,7 +161,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	async _preparePartContext(partId, context) {
 		switch (partId) {
 			case 'skills':
-			case 'gear':
 			case 'compadres':
 			case 'remuda':
 				context.tab = context.tabs[partId];
@@ -168,6 +173,17 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					relativeTo: this.actor,
 				});
 				context.enrichedAttacks = await TextEditor.enrichHTML(this.actor.system.general.attacks, {
+					// Whether to show secret blocks in the finished html
+					secrets: this.document.isOwner,
+					// Data to fill in for inline rolls
+					rollData: this.actor.getRollData(),
+					// Relative UUID resolution
+					relativeTo: this.actor,
+				});
+				break;
+			case 'gear':
+				context.tab = context.tabs[partId];
+				context.enrichedHorseNotes = await TextEditor.enrichHTML(this.actor.system.horse.horseNotes, {
 					// Whether to show secret blocks in the finished html
 					secrets: this.document.isOwner,
 					// Data to fill in for inline rolls
@@ -370,14 +386,20 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 */
 	async _prepareCharacterData(context) {
 		const aData = context.system;
+		const aType = context.actor.type;
 		const itemData = context.allGear;
 		const itemMods = context.itemMods;
+		let attribData = {};
+
 		let anyMods = 0;
 		var attrMod = {
 			grit: 0,
 			quick: 0,
 			cunning: 0,
 			docity: 0,
+			hgrit: 0,
+			hquick: 0,
+			hcunning: 0,
 		};
 		var sklMod = {
 			labor: 0,
@@ -396,67 +418,164 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			makin: 0,
 			doctorin: 0,
 			booklearnin: 0,
-			flight: 0,
+			hresilience: 0,
+			hfightin: 0,
+			hmove: 0,
+			hhawkeye: 0,
 		};
 		if (itemData.length) {
-			for (let [attrib, allItems] of Object.entries(itemMods)) {
-				if (allItems.type !== 'weapon' && itemMods) {
-					for (let [skey, subAttar] of Object.entries(allItems)) {
-						if ((subAttar.state === 'Active' || subAttar.state === 'onAnimal') && subAttar.itemtype != 'talent') {
-							switch (attrib) {
-								case 'docity':
-								case 'quick':
-								case 'cunning':
-								case 'grit':
-									attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
-									anyMods++;
-									break;
-								default:
-									if (!subAttar.feature) {
-										sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
-										anyMods++;
+			switch (aType) {
+				case 'animal':
+					for (let [attrib, modItems] of Object.entries(itemMods)) {
+						// if (modItems.type !== 'weapon' && itemMods) {
+						for (let [skey, subAttar] of Object.entries(modItems)) {
+							switch (subAttar.state) {
+								case 'onAnimal':
+									switch (attrib) {
+										case 'quick':
+										case 'cunning':
+										case 'grit':
+											attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+											anyMods++;
+											break;
+										default:
+											if (!subAttar.feature) {
+												sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+												anyMods++;
+											}
+											break;
 									}
 									break;
-							}
-						} else if (
-							subAttar.itemtype === 'talent' &&
-							((subAttar.modtype === 'basic' && subAttar.basicisActive) || (subAttar.modtype === 'advanced' && subAttar.advisActive)) &&
-							subAttar.state === 'Active'
-						) {
-							switch (attrib) {
-								case 'docity':
-								case 'quick':
-								case 'cunning':
-								case 'grit':
-									attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
-									anyMods++;
-									break;
+								// case 'onPC':
+								// 	switch (attrib) {
+								// 		case 'quick':
+								// 		case 'cunning':
+								// 		case 'grit':
+								// 			attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+								// 			anyMods++;
+								// 			break;
+								// 		default:
+								// 			if (!subAttar.feature) {
+								// 				sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+								// 				anyMods++;
+								// 			}
+								// 			break;
+								// 	}
+								// 	break;
+
 								default:
-									if (!subAttar.feature) {
-										sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
-										anyMods++;
-									}
 									break;
+							} //switch (subAttar.state) {
+						} // for (let [skey, subAttar] of Object.entries(allItems)) {
+						// } // if (allItems.type !== 'weapon' && itemMods) {
+					} // for (let [attrib, allItems] of Object.entries(itemMods)) {
+
+					break;
+
+				case 'pc':
+					for (let [attrib, modItems] of Object.entries(itemMods)) {
+						for (let [skey, subAttar] of Object.entries(modItems)) {
+							if ((subAttar.state === 'Active' || subAttar.state === 'onPC') && subAttar.itemtype != 'talent' && subAttar.itemtype != 'weapon') {
+								switch (attrib) {
+									case 'docity':
+									case 'quick':
+									case 'cunning':
+									case 'grit':
+										attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+										anyMods++;
+										break;
+									default:
+										if (!subAttar.feature) {
+											sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+											anyMods++;
+										}
+										break;
+								}
+							} else if (
+								subAttar.itemtype === 'talent' &&
+								((subAttar.modtype === 'basic' && subAttar.basicisActive) || (subAttar.modtype === 'advanced' && subAttar.advisActive)) &&
+								subAttar.state === 'Active'
+							) {
+								switch (attrib) {
+									case 'docity':
+									case 'quick':
+									case 'cunning':
+									case 'grit':
+										attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
+										anyMods++;
+										break;
+									default:
+										if (!subAttar.feature) {
+											sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+											anyMods++;
+										}
+										break;
+								}
+							} else if (subAttar.state === 'onAnimal') {
+								let prefix = 'h' + attrib;
+								switch (attrib) {
+									case 'quick':
+									case 'cunning':
+									case 'grit':
+										attrMod[prefix] = attrMod[prefix] += Number(subAttar.value);
+										anyMods++;
+										break;
+									default:
+										if (!subAttar.feature) {
+											sklMod[prefix] = sklMod[prefix] += Number(subAttar.value);
+											anyMods++;
+										}
+										break;
+								}
+							} else if (subAttar.state === 'Active' && subAttar.itemtype === 'weapon') {
+								switch (subAttar.modtype) {
+									case 'docity':
+									case 'quick':
+									case 'cunning':
+									case 'grit':
+										attrMod[subAttar.modtype] = attrMod[subAttar.modtype] += Number(subAttar.value);
+										anyMods++;
+										break;
+									default:
+										sklMod[subAttar.modtype] = sklMod[subAttar.modtype] += Number(subAttar.value);
+										anyMods++;
+										break;
+								}
 							}
 						}
-					}
-				}
+					} //for (let [attrib, allItems] of Object.entries(itemMods)) {
+
+					break;
 			}
 		}
-		let attribData = {};
 		for (let [a, abl] of Object.entries(aData.attributes)) {
 			let target = `system.attributes.${a}.mod`;
-			let upData = parseInt(abl.value || 0) + parseInt(attrMod[a] || 0);
+			let upData = Number(abl.value) + Number(attrMod[a]);
 			attribData[target] = upData;
 		}
 
 		for (let [s, skl] of Object.entries(aData.abilities)) {
 			const conSkl = skl.attr;
 			let target = `system.abilities.${s}.mod`;
-			let abData = parseInt(skl.value || 0) + parseInt(aData.attributes[conSkl].mod || 0) + parseInt(sklMod[s] || 0);
+			let abData = Number(skl.value) + Number(aData.attributes[conSkl].mod) + Number(sklMod[s]);
 			attribData[target] = abData;
 		}
 
+		if (aType === 'pc') {
+			for (let [a, abl] of Object.entries(aData.horse.attributes)) {
+				let prefix = 'h' + a;
+				let target = `system.horse.attributes.${a}.mod`;
+				let upData = Number(abl.value) + Number(attrMod[prefix]);
+				attribData[target] = upData;
+			}
+			for (let [s, skl] of Object.entries(aData.horse.abilities)) {
+				let prefix = 'h' + s;
+				const conSkl = skl.attr;
+				let target = `system.horse.abilities.${s}.mod`;
+				let abData = Number(skl.value) + Number(aData.horse.attributes[conSkl].mod) + Number(sklMod[prefix]);
+				attribData[target] = abData;
+			}
+		}
 		await this.actor.update(attribData);
 	}
 
@@ -1038,7 +1157,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const type = itemData.type;
 		const alwaysAllowedItems = CONFIG.TALESOFTHEOLDWEST.physicalItems;
 		const allowedItems = {
-			pc: ['item', 'weapon', 'talent', 'critical-injury', 'npc'],
+			pc: ['item', 'weapon', 'talent', 'critical-injury', 'npc', 'animalquality'],
 			npc: ['item', 'weapon', 'talent', 'critical-injury'],
 			animal: ['item', 'weapon', 'animalquality'],
 			// vehicles: ['item', 'weapon', 'armor'],

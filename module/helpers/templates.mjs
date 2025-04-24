@@ -12,8 +12,10 @@ export const preloadHandlebarsTemplates = async function () {
 		'systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs',
+		'systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-compadres.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-remuda.hbs',
+		'systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs',
 		// Item partials
 		'systems/talesoftheoldwest/templates/item/parts/item-effects.hbs',

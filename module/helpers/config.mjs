@@ -34,7 +34,7 @@ TALESOFTHEOLDWEST.abilities = {
 };
 
 TALESOFTHEOLDWEST.animalabilities = {
-	flight: { name: 'TALESOFTHEOLDWEST.Ability.Flight.long', atob: 'quick' },
+	// flight: { name: 'TALESOFTHEOLDWEST.Ability.Flight.long', atob: 'quick' },
 	resilience: { name: 'TALESOFTHEOLDWEST.Ability.Resilience.long', atob: 'grit' },
 	fightin: { name: 'TALESOFTHEOLDWEST.Ability.Fightin.long', atob: 'grit' },
 	move: { name: 'TALESOFTHEOLDWEST.Ability.Move.long', atob: 'quick' },

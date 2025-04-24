@@ -9,7 +9,7 @@
 	],
 	"documentTypes": {
 		"Actor": {
-			"pc": { "htmlFields": ["biography"] },
+			"pc": { "htmlFields": ["biography", "horseNotes"] },
 			"npc": { "htmlFields": ["biography"] },
 			"animal": { "htmlFields": ["biography", "attacks"] }
 		},

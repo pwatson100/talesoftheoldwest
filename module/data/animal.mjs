@@ -27,15 +27,6 @@ export default class totowANIMAL extends totowActorBase {
 			}),
 		});
 		schema.abilities = new fields.SchemaField({
-			flight: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				label: new fields.StringField({ required: true, blank: true }),
-				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				upper: new fields.StringField({ required: true, blank: true }),
-				attr: new fields.StringField({ required: true, blank: true }),
-			}),
 			resilience: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
