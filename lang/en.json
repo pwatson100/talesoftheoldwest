@@ -159,7 +159,7 @@
 			"cash": "cash ",
 			"capital": "capital ",
 			"cost": "cost ",
-			"riding-bonus": "riding Bonus",
+			"riding-bonus": "Riding Bonus",
 			"qualityOptions": "quality options",
 			"qualityConditions": "quality/conditions",
 			"gear": "gear",
@@ -216,7 +216,9 @@
 			"gmDragRemuda": "Ask the GM to drag your Horses onto your sheet",
 			"onAnimal": "On Animal",
 			"onPC": "On PC",
-			"attacks": "Attacks"
+			"attacks": "Attacks",
+			"saddlebag": "Saddle Bag",
+			"rightToStore": "Right click to Store, left click to Retrieve"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

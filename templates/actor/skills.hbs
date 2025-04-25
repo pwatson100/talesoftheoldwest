@@ -272,7 +272,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="Split2" style="width: 380px; margin-left: 10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
+		<div class="Split2" >
+			<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.talents')}}</div>
+				{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
 	</div>
 	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs"}}</div>
 	{{/if}} 
@@ -334,7 +336,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="TSplit2">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
+		<div class="TSplit2"><div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.gear')}}</div>
+{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
 		<div class="TSplit3">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs"}}</div>
 	</div>
 	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs"}}</div>
@@ -460,8 +463,10 @@
 				</div>
 				<div class="compadre-split" style="height: 360px;">
 					<div class="CompSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
-					<div class="CompSplit12">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
-				</div>
+					<div class="CompSplit12">
+						<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
+						{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
+						</div>
 
 				{{else}}
 							<div class="sheet-animal-abilities  animal-stats" >

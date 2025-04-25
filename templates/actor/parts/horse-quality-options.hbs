@@ -1,86 +1,66 @@
-<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</div>
-<div style='height: 160px; overflow:auto'>
-	<ol class='items-list'>
-		<li class='item grid-talent-quality items-header'>
-			<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
-			<div class='item-controls QCol3'>
-				<a
-					class='item-control item-create'
-					title='{{localize "DOCUMENT.Create" type='animalquality'}}'
-					data-action='createDoc'
-					data-document-class='Item'
-					data-origin='{{@root.animalquality.uuid}}'
-					data-actor='{{actor.id}}'
-					data-img='icons/svg/aura.svg'
-					data-type='animalquality'
-				>
-					<i class='fas fa-plus'></i>
-					{{localize 'DOCUMENT.New' type='Quality'}}
-				</a>
-			</div>
-		</li>
-		{{#each animalquality as |item id|}}
-			{{#if (eq item.system.general.subtype 'quality')}}
-				<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-					<div class='item-image QCol11'>
-						<a>
-							<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
-						</a>
-					</div>
-					<div class='item-name QCol12'>{{item.name}}</div>
-					<div class='item-controls QCol13'>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
-							<i class='fas fa-edit'></i>
-						</a>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
-							<i class='fas fa-trash'></i>
-						</a>
-					</div>
-				</li>
-			{{/if}}
-		{{/each}}
-	</ol>
-</div>
-<div class='heading' style='margin-top:10px;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</div>
-<div style='height: 160px; overflow:auto'>
-	<ol class='items-list'>
-		<li class='item grid-talent-quality items-header'>
-			<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
-			<div class='item-controls QCol3'>
-				<a
-					class='item-control item-create'
-					title='{{localize "DOCUMENT.Create" type='animalquality'}}'
-					data-action='createDoc'
-					data-document-class='Item'
-					data-origin='{{@root.animalquality.uuid}}'
-					data-actor='{{actor.id}}'
-					data-img='icons/svg/aura.svg'
-					data-type='animalquality'
-				>
-					<i class='fas fa-plus'></i>
-					{{localize 'DOCUMENT.New' type='Quality'}}
-				</a>
-			</div>
-		</li>
-		{{#each animalquality as |item id|}}
-			{{#if (eq item.system.general.subtype 'flaw')}}
-				<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-					<div class='item-image QCol11'>
-						<a>
-							<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
-						</a>
-					</div>
-					<div class='item-name QCol12'>{{item.name}}</div>
-					<div class='item-controls QCol13'>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
-							<i class='fas fa-edit'></i>
-						</a>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
-							<i class='fas fa-trash'></i>
-						</a>
-					</div>
-				</li>
-			{{/if}}
-		{{/each}}
-	</ol>
+<div class='compadre-split'>
+	<div class='heading CompSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}
+		<ol class='items-list'>
+			<li class='item grid-talent-quality items-header'>
+				<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			</li>
+		</ol>
+		<div class='small-box' style='max-height: 100px;'>
+			<ol class='items-list'>
+				{{#each animalquality as |item id|}}
+					{{#if (eq item.system.general.subtype 'quality')}}
+						<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+							<div class='item-image QCol11'>
+								<a>
+									<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+								</a>
+							</div>
+							<div class='item-name QCol12'>{{item.name}}</div>
+							<div class='item-controls QCol13'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+	<div class='heading CompSplit12'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}
+		<ol class='items-list'>
+			<li class='item grid-talent-quality items-header'>
+				<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+
+			</li>
+		</ol>
+		<div class='small-box' style='max-height: 100px;'>
+			<ol class='items-list'>
+				{{#each animalquality as |item id|}}
+					{{#if (eq item.system.general.subtype 'flaw')}}
+						<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+							<div class='item-image QCol11'>
+								<a>
+									<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+								</a>
+							</div>
+							<div class='item-name QCol12'>{{item.name}}</div>
+							<div class='item-controls QCol13'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+
 </div>

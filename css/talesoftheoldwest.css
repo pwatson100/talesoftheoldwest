@@ -775,6 +775,60 @@ body .application input[type=checkbox] {
   align-self: center;
 }
 
+.horse-header {
+  display: grid;
+  justify-self: center;
+  margin-bottom: 5px;
+  grid-template-areas: "HorseCol1 HorseCol1 HorseCol2 HorseCol3" "HorseCol4 HorseCol5 HorseCol6 HorseCol7 ";
+  padding-bottom: 2px;
+  grid-template-columns: 167px 206px 94px 266px;
+}
+
+.HorseCol1 {
+  grid-area: HorseCol1;
+}
+
+.HorseCol2 {
+  grid-area: HorseCol2;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.HorseCol3 {
+  grid-area: HorseCol3;
+  text-align: center;
+  align-self: center;
+}
+
+.HorseCol4 {
+  grid-area: HorseCol4;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.HorseCol5 {
+  grid-area: HorseCol5;
+  text-align: center;
+  align-self: center;
+}
+
+.HorseCol6 {
+  grid-area: HorseCol6;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.HorseCol7 {
+  grid-area: HorseCol7;
+  text-align: center;
+}
+
 .grid-item-header {
   display: grid;
   grid-template-areas: "ItemHedCol1 ItemHedCol1 ItemHedCol2" "ItemHedCol3 ItemHedCol4 ItemHedCol2 " "ItemHedCol5 ItemHedCol6 ItemHedCol2 " "ItemHedCol7 ItemHedCol8 ItemHedCol2 ";
@@ -1186,13 +1240,15 @@ body .application input[type=checkbox] {
 
 .sheet-gear-cash {
   display: grid;
-  row-gap: 10px;
+  row-gap: 5px;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-template-areas: "L1C1 L1C2 L1C3 L1C4 L1C5 L1C6 L1C7 L1C8" "L2C1 L2C2 L2C3 L2C4 L2C5 L2C6 L2C6 L2C6" "L3C1 L3C2 L3C2 L3C2 L3C3 L3C4 L3C4 L3C4";
-  grid-template-columns: 141px 87px 133px 79px 131px 72px 157px 69px;
-  margin: 10px 0px 10px 0px;
+  grid-template-areas: "L1C1 L1C2 L1C3 L1C4" "L2C1 L2C2 L2C3 L2C4" "L3C1 L3C2 L3C3 L3C4" "L4C1 L4C2 L4C2 L4C2" "L5C1 L5C2 L5C2 L5C2" "L6C1 L6C2 L6C2 L6C2";
+  grid-template-columns: 150px 50px 150px 50px;
 }
 
 .L1C1 {
@@ -1203,7 +1259,6 @@ body .application input[type=checkbox] {
 
 .L1C2 {
   grid-area: L1C2;
-  text-align: center;
 }
 
 .L1C3 {
@@ -1214,29 +1269,6 @@ body .application input[type=checkbox] {
 
 .L1C4 {
   grid-area: L1C4;
-  text-align: center;
-}
-
-.L1C5 {
-  grid-area: L1C5;
-  font-size: large;
-  text-align: right;
-}
-
-.L1C6 {
-  grid-area: L1C6;
-  text-align: center;
-}
-
-.L1C7 {
-  grid-area: L1C7;
-  font-size: large;
-  text-align: right;
-}
-
-.L1C8 {
-  grid-area: L1C8;
-  text-align: center;
 }
 
 .L2C1 {
@@ -1245,9 +1277,8 @@ body .application input[type=checkbox] {
   text-align: right;
 }
 
-.L2C2 {
+.L12C2 {
   grid-area: L2C2;
-  text-align: center;
 }
 
 .L2C3 {
@@ -1258,40 +1289,59 @@ body .application input[type=checkbox] {
 
 .L2C4 {
   grid-area: L2C4;
-  text-align: center;
-}
-
-.L2C5 {
-  grid-area: L2C5;
-  font-size: large;
-  text-align: right;
-}
-
-.L2C6 {
-  grid-area: L2C6;
-  font-size: x-large;
 }
 
 .L3C1 {
   grid-area: L3C1;
   font-size: large;
-  text-align: center;
+  text-align: right;
 }
 
 .L3C2 {
   grid-area: L3C2;
-  text-align: center;
 }
 
 .L3C3 {
   grid-area: L3C3;
   font-size: large;
-  text-align: center;
+  text-align: right;
 }
 
 .L3C4 {
   grid-area: L3C4;
+}
+
+.L4C1 {
+  grid-area: L4C1;
+  font-size: large;
+  text-align: right;
+}
+
+.L4C2 {
+  grid-area: L4C2;
+}
+
+.L5C1 {
+  grid-area: L5C1;
+  font-size: large;
+  text-align: right;
+}
+
+.L5C2 {
+  grid-area: L5C2;
+  font-size: large;
   text-align: center;
+}
+
+.L6C1 {
+  grid-area: L6C1;
+  font-size: large;
+  text-align: right;
+}
+
+.L6C2 {
+  grid-area: L6C2;
+  font-size: X-large;
 }
 
 .conditions-split {
@@ -1701,6 +1751,21 @@ body .application input[type=checkbox] {
   grid-area: aHawkeye2;
 }
 
+.gear-split {
+  display: grid;
+  grid-template-areas: "gearSplit1 gearSplit2";
+  grid-template-columns: 531px 352px;
+}
+
+.gearSplit1 {
+  grid-area: gearSplit1;
+}
+
+.gearSplit2 {
+  grid-area: gearSplit2;
+  justify-self: center;
+}
+
 .flex-group-center,
 .flex-group-left,
 .flex-group-right {
@@ -1907,6 +1972,11 @@ body .application input[type=checkbox] {
   width: -moz-fit-content;
   width: fit-content;
   justify-self: anchor-center;
+}
+.talesoftheoldwest .small-box {
+  min-height: 100px;
+  max-height: 120px;
+  overflow-x: auto;
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;

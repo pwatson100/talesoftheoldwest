@@ -1,108 +1,44 @@
 <section class='tab items {{tab.cssClass}}' data-group='primary' data-tab='gear'>
-	<div class='sheet-gear-cash'>
-		<div class='L1C1'>
-			<label for='system.general.age.value' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.age')}}</label>
-		</div>
-		<div class='L1C2'>
-			<input class='statnum' name='system.general.age.value' value='{{system.general.age.value}}' data-dtype='Number' />
-		</div>
-		<div class='L1C3'>
-			<label for='system.general.fame.value' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.fame')}}</label>
-		</div>
-		<div class='L1C4'>
-			<input class='statnum' name='system.general.fame.value' value='{{system.general.fame.value}}' data-dtype='Number' />
-		</div>
-		<div class='L1C5'>
-			<label for='system.general.morals.value' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.morals')}}</label>
-		</div>
-		<div class='L1C6'>
-			<input class='statnum' name='system.general.morals.value' value='{{system.general.morals.value}}' data-dtype='Number' />
-		</div>
-		<div class='L1C7'>
-			<label for='system.general.publicspirit.value' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.publicspirit')}}</label>
-		</div>
-		<div class='L1C8'>
-			<input class='statnum' name='system.general.publicspirit.value' value='{{system.general.publicspirit.value}}' data-dtype='Number' />
-		</div>
+	<div class='gear-split'>
+		<div class='gearSplit1 sheet-gear-cash'>
 
-		<div class='L2C1'>
-			<label for='system.general.cash' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}} </label>
-		</div>
-		<div class='L2C2'>
-			<input class='currency' name='system.general.cash' value='{{system.general.cash}}' data-dtype='String' />
-		</div>
+			<label for='system.general.age.value' class='resource-label L1C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.age')}}</label>
+			<input class='statnum L1C2' name='system.general.age.value' value='{{system.general.age.value}}' data-dtype='Number' />
 
-		<div class='L2C3'>
-			<label for='system.general.capital' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}} </label>
+			<label for='system.general.fame.value' class='resource-label L1C3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.fame')}}</label>
+			<input class='statnum L1C4' name='system.general.fame.value' value='{{system.general.fame.value}}' data-dtype='Number' />
+
+			<label for='system.general.cash' class='resource-label L2C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}} </label>
+			<input class='currency L2C2' name='system.general.cash' value='{{system.general.cash}}' data-dtype='String' />
+
+			<label for='system.general.capital' class='resource-label L2C3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}} </label>
+			<input class='currency L2C4' name='system.general.capital' value='{{system.general.capital}}' data-dtype='String' />
+
+			<label for='system.general.morals.value' class='resource-label L3C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.morals')}}</label>
+			<input class='statnum L3C2' name='system.general.morals.value' value='{{system.general.morals.value}}' data-dtype='Number' />
+
+			<label for='system.general.publicspirit.value' class='resource-label L3C3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.publicspirit')}}</label>
+			<input class='statnum L3C4' name='system.general.publicspirit.value' value='{{system.general.publicspirit.value}}' data-dtype='Number' />
+
+			<label for='system.general.reputation' class='resource-label L4C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.reputation')}}</label>
+			<input name='system.general.reputation' class='resource-label L4C2' style='width: 300px' value='{{system.general.reputation}}' data-dtype='String' />
+
+			<label for='system.general.lifestyle' class='resource-label L5C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.lifestyle')}}</label>
+			<input name='system.general.lifestyle' class='resource-label L5C2' style='width: 300px' value='{{system.general.lifestyle}}' data-dtype='String' />
+
+			<label for='system.general.xp.value' class='resource-label L6C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
+			<div class='newdots click-damage-level L6C2' title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeXp'>
+				{{#times system.general.xp.value}}
+					<i class='far fa-dot-circle'></i>
+				{{/times}}
+				{{#times system.general.xp.max}}<i class='far fa-circle'></i>{{/times}}
+			</div>
 		</div>
-		<div class='L2C4'>
-			<input class='currency' name='system.general.capital' value='{{system.general.capital}}' data-dtype='String' />
-		</div>
-		<div class='L2C5'>
-			<label for='system.general.xp.value' class='resource-label align-left'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
-		</div>
-		<div class='newdots click-damage-level L2C6' title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeXp'>
-			{{#times system.general.xp.value}}
-				<i class='far fa-dot-circle'></i>
-			{{/times}}
-			{{#times system.general.xp.max}}<i class='far fa-circle'></i>{{/times}}
-		</div>
-		<div class='L3C1'>
-			<label for='system.general.reputation' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.reputation')}}</label>
-		</div>
-		<div class='L3C2'>
-			<input name='system.general.reputation' class='resource-label' style='width: 300px;' value='{{system.general.reputation}}' data-dtype='String' />
-		</div>
-		<div class='L3C3'>
-			<label for='system.general.lifestyle' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.lifestyle')}}</label>
-		</div>
-		<div class='L3C4'>
-			<input name='system.general.lifestyle' class='resource-label' style='width: 300px;' value='{{system.general.lifestyle}}' data-dtype='String' />
-		</div>
+		<div class="gearSplit2" style=" width: 264px; overflow-x: auto"> <div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.gear')}}</div>
+
+	{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}} 
+	</div> 
 	</div>
-
-	<div>
-		<ol class='items-list'>
-			<li class='item grid-talent-items items-header'>
-				<div class='item-name TCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
-				<div class='item-controls TCol4'>
-					<a
-						class='item-control item-create'
-						title='{{localize "DOCUMENT.Create" type='Item'}}'
-						data-action='createDoc'
-						data-document-class='Item'
-						data-origin='{{@root.item.uuid}}'
-						data-actor='{{actor.id}}'
-						data-img='icons/svg/aura.svg'
-						data-type='item'
-					>
-						<i class='fas fa-plus'></i>
-						{{localize 'DOCUMENT.New' type='item'}}
-					</a>
-				</div>
-			</li>
-			{{#each gear as |item id|}}
-				<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-
-					<div class='item-image TCol11'>
-						<a class='rollable' data-roll-type='item' data-action='roll'>
-							<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
-						</a>
-					</div>
-					<div class='item-name TCol12' title='{{removeMarkup item.system.description}}'>{{item.name}}</div>
-
-					<div class='item-controls TCol14'>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
-							<i class='fas fa-edit'></i>
-						</a>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
-							<i class='fas fa-trash'></i>
-						</a>
-					</div>
-				</li>
-			{{/each}}
-		</ol>
-	</div>
-	<div style="margin-left: 20px; border-top: solid black">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs"}}</div>
+	<div style="margin-left: 15px; margin-top:10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs"}}</div>
 
 </section>

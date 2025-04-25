@@ -133,3 +133,9 @@
 	width: fit-content;
 	justify-self: anchor-center;
 }
+
+.small-box {
+	min-height: 100px;
+	max-height: 120px;
+	overflow-x: auto;
+}

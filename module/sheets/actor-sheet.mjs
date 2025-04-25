@@ -37,6 +37,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			changeFaith: { handler: this._changeFaith, buttons: [0, 2] },
 			changeXp: { handler: this._changeXp, buttons: [0, 2] },
 			changeDamage: { handler: this._changeDamage, buttons: [0, 2] },
+			storeItem: { handler: this._storeItem, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
@@ -900,6 +901,46 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			}
 		}
 	}
+
+	static async _storeItem(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		const dataset = target.dataset;
+		const li = target.closest('.item');
+		// return game.items.get(li?.dataset?.itemId);
+
+		// let itemId = dataset.parentElement.dataset.itemId;
+		let item = this.actor.items.get(li?.dataset?.itemId);
+
+		if (event.button === 2) {
+			// right click
+			return await item.update({ 'system.stored': true });
+		} else {
+			// left click
+			return await item.update({ 'system.stored': false });
+		}
+	}
+
+	// static async _store(event, target) {
+	// 	event.preventDefault(); // Don't open context menu
+	// 	event.stopPropagation(); // Don't trigger other events
+	// 	if (event.detail > 1) return; // Ignore repeated clicks
+	// 	const dataset = target.dataset;
+	// 	let itemId = dataset.parentElement.dataset.itemId;
+	// 	let item = this.actor.items.get(itemId);
+	// 	await item.update({ 'system.header.stored': true });
+	// }
+
+	// static async _unstore(event, target) {
+	// 	event.preventDefault(); // Don't open context menu
+	// 	event.stopPropagation(); // Don't trigger other events
+	// 	if (event.detail > 1) return; // Ignore repeated clicks
+	// 	const dataset = target.dataset;
+	// 	let itemId = dataset.parentElement.dataset.itemId;
+	// 	let item = this.actor.items.get(itemId);
+	// 	await item.update({ 'system.header.stored': false });
+	// }
 
 	/** Helper Functions */
 
