@@ -1,11 +1,11 @@
-<section class='tab remuda {{tab.cssClass}}' data-group='primary' data-tab='remuda'>
+<section class='tab remuda {{tab.cssClass}}' id='remudaList' data-group='primary' data-tab='remuda'>
 	<div>
 		{{#each actor.system.remuda.details}}
 			<div class='remuda' data-compId='{{id}}' style='margin-bottom: 10px;'>
 				<div class='sheet-compadres-header'>
 					<div class='schA1'>{{actor.name}}</div>
-					<a class='button remuda-edit schB1' title='EDIT' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
-					<a class='button remuda-remove schA2' title='REMOVE' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
+					<a class='button remuda-edit schB1' title='{{localize "DOCUMENT.Update" type='Horse'}}' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+					<a class='button remuda-remove schA2' title='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
 				</div>
 				<div class='sheet-animal-attributes animal-stats'>
 					<div class='aA1'>

@@ -218,7 +218,8 @@
 			"onPC": "On PC",
 			"attacks": "Attacks",
 			"saddlebag": "Saddle Bag",
-			"rightToStore": "Right click to Store, left click to Retrieve"
+			"rightToStore": "Right click to Store, left click to Retrieve",
+			"remove": "Remove"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

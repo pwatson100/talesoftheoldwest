@@ -18,7 +18,7 @@
 			{{#each actor.items as |item id|}}
 				{{#if (eq type 'weapon')}}
 
-					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
+					<li class='item grid-weapon-items' id='actorWeaponList' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
 						<div class='item-image lColB1'>
 							<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
 						</div>

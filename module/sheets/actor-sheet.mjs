@@ -634,38 +634,45 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
 
-		const ammo = this.element.querySelectorAll('.inline-edit'); // whatever selector works for you
-
-		for (const s of ammo) {
-			s.addEventListener('change', (event) => {
+		const ammo = document.getElementById('actorWeaponList');
+		if (!ammo) return;
+		ammo.addEventListener('change', (event) => {
+			if (event.target.classList.contains('inline-edit')) {
 				this._inlineedit(event);
-			});
-		}
+			}
+		});
 
-		const CompEdit = this.element.querySelectorAll('.compadre-edit');
-		for (const s of CompEdit) {
-			s.addEventListener('click', (event) => {
+		const CompEdit = document.getElementById('compadresList');
+		if (!CompEdit) return;
+		CompEdit.addEventListener('click', (event) => {
+			if (event.target.classList.contains('compadre-edit')) {
 				this._onCompadresView(event);
-			});
-		}
-		const CompRemove = this.element.querySelectorAll('.compadre-remove');
-		for (const s of CompRemove) {
-			s.addEventListener('click', (event) => {
+			}
+		});
+
+		const CompRemove = document.getElementById('compadresList');
+		if (!CompRemove) return;
+		CompRemove.addEventListener('click', (event) => {
+			if (event.target.classList.contains('compadre-remove')) {
 				this._onCompadresRemove(event);
-			});
-		}
-		const RemudaEdit = this.element.querySelectorAll('.remuda-edit');
-		for (const s of RemudaEdit) {
-			s.addEventListener('click', (event) => {
+			}
+		});
+
+		const RemudaEdit = document.getElementById('remudaList');
+		if (!RemudaEdit) return;
+		RemudaEdit.addEventListener('click', (event) => {
+			if (event.target.classList.contains('remuda-edit')) {
 				this._onRemudaView(event);
-			});
-		}
-		const RemudaRemove = this.element.querySelectorAll('.remuda-remove');
-		for (const s of RemudaRemove) {
-			s.addEventListener('click', (event) => {
+			}
+		});
+
+		const RemudaRemove = document.getElementById('remudaList');
+		if (!RemudaRemove) return;
+		RemudaRemove.addEventListener('click', (event) => {
+			if (event.target.classList.contains('remuda-remove')) {
 				this._onRemudaRemove(event);
-			});
-		}
+			}
+		});
 
 		const currency = this.element.querySelectorAll('.currency');
 		for (const s of currency) {
@@ -973,13 +980,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 	async _inlineedit(event) {
 		event.preventDefault();
-		const dataset = event.currentTarget;
-		// console.log('alienrpgActorSheet -> _inlineedit -> dataset', dataset);
-		let itemId = dataset.parentElement.dataset.itemId;
+		let itemId = event.target.parentElement.dataset.itemId;
 		let item = this.actor.items.get(itemId);
-		let temp = dataset.dataset.mod;
+		let temp = event.target.dataset.mod;
+		console.log('TOTOWActorSheet -> _inlineedit -> event', event, event.target.dataset.mod);
 
-		return await item.update({ [temp]: dataset.value }, {});
+		return await item.update({ [temp]: event.target.value }, {});
 	}
 	/***************
 	 *
@@ -1372,8 +1378,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	}
 	async _onCompadresView(event) {
 		event.preventDefault();
-		const elem = event.currentTarget;
-		const compId = elem.closest('.compardre').dataset.compid;
+		const compId = event.target.closest('.compardre').dataset.compid;
 		const actor = game.actors.get(compId);
 		return actor.sheet.render(true);
 	}
@@ -1381,10 +1386,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	async _onCompadresRemove(event) {
 		event.preventDefault();
 		const actorData = this.actor;
-		const elem = event.currentTarget;
-		const compId = elem.closest('.compardre').dataset.compid;
-		const details = this.actor.removeCompadres(compId);
-		let compadresNumber = actorData.system.compadres.compadresQty;
+		const compId = event.target.closest('.compardre').dataset.compid;
+		const details = await this.actor.removeCompadres(compId);
+		let compadresNumber = actorData.system.compadres.compadresQty || 0;
 		compadresNumber--;
 		await actorData.update({ 'system.compadres.compadresQty': compadresNumber });
 		return await actorData.update({ 'system.compadres.details': details });
@@ -1405,8 +1409,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	}
 	async _onRemudaView(event) {
 		event.preventDefault();
-		const elem = event.currentTarget;
-		const compId = elem.closest('.remuda').dataset.compid;
+		const compId = event.target.closest('.remuda').dataset.compid;
 		const actor = game.actors.get(compId);
 		return actor.sheet.render(true);
 	}
@@ -1414,10 +1417,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	async _onRemudaRemove(event) {
 		event.preventDefault();
 		const actorData = this.actor;
-		const elem = event.currentTarget;
-		const compId = elem.closest('.remuda').dataset.compid;
-		const details = this.actor.removeRemuda(compId);
-		let remudaNumber = actorData.system.remuda.remudaQty;
+		const compId = event.target.closest('.remuda').dataset.compid;
+		const details = await this.actor.removeRemuda(compId);
+		let remudaNumber = actorData.system.remuda.remudaQty || 0;
 		remudaNumber--;
 		await actorData.update({ 'system.remuda.remudaQty': remudaNumber });
 		return await actorData.update({ 'system.remuda.details': details });

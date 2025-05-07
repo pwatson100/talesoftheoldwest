@@ -1,11 +1,11 @@
-<section class='tab compadres {{tab.cssClass}}' data-group='primary' data-tab='compadres'>
+<section class='tab compadres {{tab.cssClass}}'  id='compadresList'data-group='primary' data-tab='compadres'>
 	<div>
 		{{#each actor.system.compadres.details}}
 			<div class='compardre' data-compId='{{id}}' style='margin-bottom: 10px;'>
-				<div class='sheet-compadres-header'>
+				<div class='sheet-compadres-header'  >
 					<div class='schA1'>{{actor.name}}</div>
-					<a class='button compadre-edit schB1' title='EDIT' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
-					<a class='button compadre-remove schA2' title='REMOVE' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
+					<a class='button compadre-edit schB1' title='{{localize "DOCUMENT.Update" type='NPC'}}'  data-action='viewDoc' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+					<a class='button compadre-remove schA2' title='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
 				</div>
 				<div class='sheet-compadres-attributes'>
 					<div class='scaA1'>
