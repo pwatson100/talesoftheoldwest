@@ -16,13 +16,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 	/** @override */
 	static DEFAULT_OPTIONS = {
-		classes: ['talesoftheoldwest', 'actor'],
+		classes: ['actor', 'talesoftheoldwest'],
 		position: {
 			width: 950,
 			height: 886,
 		},
 		window: {
-			// icon: 'fa-solid fa-egg',
 			resizable: true,
 		},
 		actions: {
@@ -348,6 +347,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 						state: mods.state,
 						description: mods.description,
 						value: mods.value,
+						stored: i.system.stored,
 						basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
 						advisActive: i.system.advisActive ? i.system.advisActive : false,
 						basicAction: i.system.basicAction ? i.system.basicAction : '',
@@ -367,6 +367,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							state: mods.state,
 							description: feature.description,
 							value: mods.value,
+							stored: i.system.stored,
 							basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
 							advisActive: i.system.advisActive ? i.system.advisActive : false,
 							basicAction: i.system.basicAction ? i.system.basicAction : '',
@@ -476,7 +477,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				case 'pc':
 					for (let [attrib, modItems] of Object.entries(itemMods)) {
 						for (let [skey, subAttar] of Object.entries(modItems)) {
-							if ((subAttar.state === 'Active' || subAttar.state === 'onPC') && subAttar.itemtype != 'talent' && subAttar.itemtype != 'weapon') {
+							if (
+								(subAttar.state === 'Active' || subAttar.state === 'onPC') &&
+								subAttar.itemtype != 'talent' &&
+								subAttar.itemtype != 'weapon' &&
+								!subAttar.stored
+							) {
 								switch (attrib) {
 									case 'docity':
 									case 'quick':
@@ -528,7 +534,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 										}
 										break;
 								}
-							} else if (subAttar.state === 'Active' && subAttar.itemtype === 'weapon') {
+							} else if (subAttar.state === 'Active' && subAttar.itemtype === 'weapon' && !subAttar.stored) {
 								switch (subAttar.modtype) {
 									case 'docity':
 									case 'quick':

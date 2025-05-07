@@ -1,0 +1,241 @@
+.talesoftheoldwest .imagecontainer {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+/* Bottom left text */
+.talesoftheoldwest .image-text-box {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 30px;
+}
+
+.talesoftheoldwest .content-link-I {
+	color: hsl(39, 77%, 83%);
+	background: transparent;
+	font-size: 15pt;
+	border: 0;
+}
+.talesoftheoldwest a.inline-link {
+	background-color: transparent;
+	color: hsl(6, 56%, 30%);
+	font-size: 15pt;
+	border: 0;
+	font-family: 'Esteban';
+}
+
+.talesoftheoldwest .inline-link2 .content-link {
+	background-color: transparent;
+	color: hsl(6, 56%, 30%);
+	font-size: 16pt;
+	border: 0;
+	font-family: 'Esteban';
+}
+.talesoftheoldwest .arpgtable {
+	height: 36px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+}
+.talesoftheoldwest .arpgtable tr:nth-child(even) {
+	background-color: transparent;
+}
+
+.talesoftheoldwest .tdstyle {
+	width: 40%;
+	height: 18px;
+	text-align: left;
+}
+.talesoftheoldwest .tdstyleR {
+	width: 40%;
+	height: 18px;
+	text-align: Right;
+}
+.talesoftheoldwest .tdstyleC {
+	width: 100%;
+	height: 18px;
+	text-align: center;
+}
+.talesoftheoldwest .tdstyle3D {
+	width: 30%;
+	height: 18px;
+	text-align: center;
+}
+.talesoftheoldwest .tdstyle2D {
+	width: 50%;
+	height: 18px;
+	text-align: center;
+}
+
+.talesoftheoldwest .blockquoteright {
+	background-color: rgba(0, 0, 0, 0.05);
+	max-width: 35%;
+	padding: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 15px;
+	break-inside: avoid;
+	font-style: normal;
+	float: right;
+	border: 5px double hsl(0, 0%, 0%);
+	border-radius: 25px;
+	box-shadow: 3px 3px;
+	font-family: 'Esteban';
+}
+.talesoftheoldwest .blockquoteleft {
+	background-color: rgba(0, 0, 0, 0.05);
+	max-width: 35%;
+	padding: 10px;
+	margin-top: 10px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	break-inside: avoid;
+	font-style: normal;
+	float: left;
+	border: 5px double hsl(0, 0%, 0%);
+	border-radius: 25px;
+	box-shadow: 3px 3px;
+	font-family: 'Esteban';
+}
+
+.talesoftheoldwest .blockquotecenter {
+	background-color: rgba(0, 0, 0, 0.05);
+	max-width: 35%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	break-inside: avoid;
+	font-style: normal;
+	float: center;
+	border: 2px solid hsl(0, 0%, 0%);
+	font-family: 'Esteban';
+}
+
+.talesoftheoldwest .blockquoteplainleft {
+	max-width: 50%;
+	break-inside: avoid;
+	float: left;
+	border: none;
+	padding: 0;
+	margin: 10px;
+	font-family: 'Esteban';
+}
+.talesoftheoldwest .blockquoteplainright {
+	max-width: 50%;
+	break-inside: avoid;
+	float: right;
+	border: none;
+	padding: 0;
+	margin: 10px;
+	font-family: 'Esteban';
+}
+.talesoftheoldwest .blockquoteplaincenter {
+	// max-width: 50%;
+	break-inside: avoid;
+	float: center;
+	border: none;
+	padding: 0;
+	margin: 10px;
+	font-family: 'Esteban';
+}
+
+.talesoftheoldwest .textover figcaption {
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	text-align: left;
+	width: auto;
+	margin: 0;
+	padding: 0px;
+	font-family: 'Esteban';
+	font-weight: normal;
+}
+.talesoftheoldwest p {
+	font-family: 'Esteban';
+	font-size: 15px;
+}
+
+.talesoftheoldwest h1 {
+	font-family: 'Esteban';
+	font-weight: bold;
+}
+
+.talesoftheoldwest h2 {
+	font-family: 'Esteban';
+	font-weight: bold;
+}
+
+.talesoftheoldwest h3 {
+	font-family: 'Esteban';
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	margin-top: 5px;
+	border-bottom: none;
+}
+.talesoftheoldwest .h3center {
+	text-align: center;
+	text-align: center;
+	border-bottom: 2px solid black;
+}
+
+.talesoftheoldwest h4 {
+	font-family: 'Esteban';
+	font-weight: bold;
+}
+
+.talesoftheoldwest h5 {
+	font-weight: bold;
+	font-family: 'Esteban';
+	color: hsl(19, 70%, 37%);
+	margin: 0px 20px 0px 10px;
+	border-bottom: none;
+}
+
+.talesoftheoldwest h6 {
+	font-weight: bold;
+	font-family: 'Esteban';
+	color: hsl(0, 0%, 100%);
+	margin: 0;
+}
+
+.talesoftheoldwest .h1NoUnder {
+	border: 0;
+	margin-bottom: 0;
+}
+.talesoftheoldwest .h2NoUnder {
+	border: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.talesoftheoldwest .h2subHead {
+	font-weight: bold;
+	color: hsl(19, 70%, 37%);
+	border: 0;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-family: 'Esteban';
+	font-size: 20pt;
+}
+
+.talesoftheoldwest .arpgtablesmall {
+	height: 36px;
+	width: 34%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0;
+	text-align: center;
+	font-family: 'Esteban';
+	font-size: 18px;
+}
+
+.talesoftheoldwest .arpgtablesmall tr:nth-child(even) {
+	background-color: transparent;
+}

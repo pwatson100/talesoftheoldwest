@@ -1,40 +1,111 @@
 import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
 import { prepModOutput } from './utils.mjs';
 
-export async function totowDiceListeners(html) {
-	html.on('click', '.dice-push', (ev) => {
-		let button = $(ev.currentTarget),
-			messageId = button.parents('.message').attr('data-message-id'),
-			message = game.messages.get(messageId);
+export async function totowDiceButtons(html) {
+	let messageId = html.getAttribute('data-message-id');
+	let message = game.messages.get(messageId);
+
+	let buttonArea = html.querySelector('#buttonlist');
+
+	if (message) {
 		let results = message.getFlag('talesoftheoldwest', 'results');
-		if (!results[1].canPush) {
-			let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
-			return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
-		} else {
-			return pushRoll(message, results);
+		if (results) {
+			if (results[1].faithpoints >= 1) {
+				if ((results[1].trouble > 0 && results[1].buyoff) || (results[1].trouble > 0 && results[1].canPush !== 'pushed')) {
+					let span = document.createElement('span');
+					span.classList.add('dice-formula', 'dice-roll', 'buy-off');
+					span.setAttribute('data-message-id', messageId);
+					span.setAttribute('data-roll-type', results[1].rollType);
+					span.setAttribute('data-roll-button', 'buy-off');
+					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.dialog.Buy-OffTrouble');
+					buttonArea.appendChild(span);
+				}
+				if (results[1].trouble > 0 && results[1].totalTrouble !== 'rolledTrouble') {
+					let span = document.createElement('span');
+					span.classList.add('dice-formula', 'dice-roll', 'roll-trouble');
+					span.setAttribute('data-message-id', messageId);
+					span.setAttribute('data-roll-type', results[1].rollType);
+					span.setAttribute('data-roll-button', 'roll-trouble');
+					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.rollTrouble');
+					buttonArea.appendChild(span);
+				}
+				if (results[1].canPush === 'push' && results[1].totalTrouble !== 'rolledTrouble') {
+					let span = document.createElement('span');
+					span.classList.add('dice-formula', 'dice-roll', 'dice-push');
+					span.setAttribute('data-message-id', messageId);
+					span.setAttribute('data-roll-type', results[1].rollType);
+					span.setAttribute('data-roll-button', 'push');
+					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.push');
+					buttonArea.appendChild(span);
+				}
+
+				if (results[1].canPush === 'pushed' && results[1].totalTrouble !== 'rolledTrouble') {
+					let span = document.createElement('span');
+					span.classList.add('dice-formula', 'dice-roll');
+					span.setAttribute('data-message-id', messageId);
+					span.setAttribute('data-roll-type', results[1].rollType);
+					span.setAttribute('data-roll-button', 'pushed');
+					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.pushed');
+					buttonArea.appendChild(span);
+				}
+
+				if (results[1].faithpoints === 0) {
+					let buttonArea = message.querySelector('#buttonlist');
+					let span = document.createElement('span');
+					span.classList.add('dice-formula', 'dice-roll');
+					span.setAttribute('data-message-id', messageId);
+					span.setAttribute('data-roll-type', results[1].rollType);
+					span.setAttribute('data-roll-button', 'no-faith');
+					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.lackFaith');
+					buttonArea.appendChild(span);
+				}
+			}
 		}
-	});
+	}
+}
+export async function totowDiceListeners(html) {
+	let listenArea = document.getElementById('chat-log');
+	if (!listenArea) return;
 
-	html.on('click', '.buy-off', (ev) => {
-		let button = $(ev.currentTarget),
-			messageId = button.parents('.message').attr('data-message-id'),
-			message = game.messages.get(messageId);
-		let results = message.getFlag('talesoftheoldwest', 'results');
-		console.log(message);
-		new TOTWBuyOffDialog(message, results).render(true);
-	});
+	listenArea.addEventListener('click', (ev) => {
+		switch (ev.target.getAttribute('data-roll-button')) {
+			case 'push': {
+				ev.preventDefault();
+				ev.stopPropagation();
+				let message = game.messages.get(ev.target.getAttribute('data-message-id'));
+				let results = message.getFlag('talesoftheoldwest', 'results');
+				if (!results[1].canPush) {
+					let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
+					return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
+				} else {
+					return pushRoll(message, results);
+				}
+			}
+			case 'buy-off':
+				{
+					ev.preventDefault();
+					ev.stopPropagation();
+					let message = game.messages.get(ev.target.getAttribute('data-message-id'));
+					let results = message.getFlag('talesoftheoldwest', 'results');
+					new TOTWBuyOffDialog(message, results).render(true);
+				}
+				break;
 
-	html.on('click', '.roll-trouble', (ev) => {
-		let button = $(ev.currentTarget),
-			messageId = button.parents('.message').attr('data-message-id'),
-			message = game.messages.get(messageId);
-		let results = message.getFlag('talesoftheoldwest', 'results');
-
-		new TOTWWhichTroubleDialog(results, ev).render(true);
+			case 'roll-trouble':
+				{
+					ev.preventDefault();
+					ev.stopPropagation();
+					let messageId = ev.target.getAttribute('data-message-id');
+					let message = game.messages.get(messageId);
+					let results = message.getFlag('talesoftheoldwest', 'results');
+					new TOTWWhichTroubleDialog(results, ev, messageId).render(true);
+				}
+				break;
+		}
 	});
 }
 
-export async function rollTrouble(results, ev) {
+export async function rollTrouble(results, ev, messageId) {
 	let tTable = '';
 	let table = '';
 	let roll = '';
@@ -47,14 +118,21 @@ export async function rollTrouble(results, ev) {
 			tTable = `TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(` + trouble + `)`;
 			table = game.tables.getName(`${tTable}`);
 			roll = await new Roll('1d6').evaluate();
-			return table.draw({ roll });
-
+			await table.draw({ roll: roll });
+			break;
 		case 2:
 			tTable = `TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (` + trouble + `)`;
 			table = game.tables.getName(`${tTable}`);
 			roll = await new Roll('1d6').evaluate();
-			return table.draw({ roll });
+			await table.draw({ roll: roll });
+			break;
 	}
+	// remove the Roll Trouble Button
+	results[1].totalTrouble = 'rolledTrouble';
+
+	let message = game.messages.get(results[1].messageNo);
+	message.setFlag('talesoftheoldwest', 'results', results);
+	messageId.target.remove();
 	return;
 }
 
@@ -96,10 +174,8 @@ export async function pushRoll(chatMessage, origRollData, origRoll) {
 	origRollData[1].criticalSuccess = origRollData[1].totalSuccess >= 3;
 	origRollData[1].failure = totalRolled ? result.totalSuccess + origRollData[1].totalSuccess < 2 : result.totalSuccess + origRollData[1].totalSuccess === 0;
 	origRollData[1].totalRolled = totalRolled;
+	origRollData[1].buyoff += result.trouble > 0 ? true : false;
 
-	// if (!origRollData[1].faithAdded && origRollData[1].totalSuccess > 2) {
-	// 	result = await addFaithPoints(origRollData[1]);
-	// }
 	let msg = game.messages.get(chatMessage.id);
 	await msg.setFlag('talesoftheoldwest', 'results', origRollData);
 
@@ -117,7 +193,7 @@ export async function buyOff(chatMessage, origRollData, origRoll, event) {
 	origRollData[1].troubleRest += troubleMod;
 	origRollData[1].troubleBlank += troubleMod;
 	origRollData[1].faithpoints = myActor.system.general.faithpoints.value;
-
+	origRollData[1].buyoff -= troubleMod > 0 ? true : false;
 	await chatMessage.setFlag('talesoftheoldwest', 'results', origRollData);
 
 	await updateChatMessage(chatMessage, origRoll, origRollData);
@@ -308,6 +384,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		faithAdded: false,
 		ability: ability,
 		stunts: stunts,
+		buyoff: trouble > 0 ? true : false,
 	};
 	console.log('evalResult', evalResult);
 	return evalResult;

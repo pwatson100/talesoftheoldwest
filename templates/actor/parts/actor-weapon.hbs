@@ -41,50 +41,59 @@
 
 		<div style='margin-top: 3px; height: 150px; overflow-x: auto'>
 			{{#each weapon as |item id|}}
-				<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
-					<div class='item-image lColB1'>
-						<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
-					</div>
-					<div
-						class='lColB2 rollable'
-						data-roll-type='weapon'
-						data-label='{{item.name}} '
-						data-subtype='{{item.system.subtype}}'
-						data-drag='true'
-						data-document-class='Weapon'
-						data-action='roll'
-						data-item-id='{{item._id}}'
-						data-item-ammo='{{item.system.ammo}}'
-					>
-						{{item.name}}
-					</div>
-					<div class='lColB3'>{{item.system.conditionNames}}</div>
-					<div class='lColB6'>{{item.system.attackbonus}}</div>
-					<div class='lColB7'>{{item.system.damage}}</div>
-					<div class='lColB8'>{{item.system.crit}}</div>
-					<div class='lColB9'>{{localize (totowConcat (totowConcat 'TALESOFTHEOLDWEST.Ranges.' item.system.range) '.long')}}</div>
+				{{#if (eq item.system.stored false)}}
 
-					{{#if (ne item.system.subtype 'fightin')}}
-						<div class='lColB5'>{{item.system.bonusdraw}}</div>
-						<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
-						<input
-							type='text'
-							class='inline-edit lColB10 statnum'
-							data-mod='system.ammo'
-							name='item.system.ammo'
-							value='{{item.system.ammo}}'
-							data-dtype='String'
-						/>
-					{{/if}}
-					<div class='item-controls lColB11'>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Weapon'}}'>
-							<i class='fas fa-edit'></i>
-						</a>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Weapon'}}'>
-							<i class='fas fa-trash'></i>
-						</a>
-					</div>
-				</li>
+					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
+						<div class='item-image lColB1'>
+							<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+						</div>
+						<div
+							class='lColB2 rollable'
+							data-roll-type='weapon'
+							data-label='{{item.name}} '
+							data-subtype='{{item.system.subtype}}'
+							data-drag='true'
+							data-document-class='Weapon'
+							data-action='roll'
+							data-item-id='{{item._id}}'
+							data-item-ammo='{{item.system.ammo}}'
+						>
+							{{item.name}}
+						</div>
+						<div class='lColB3'>{{item.system.conditionNames}}</div>
+						<div class='lColB6'>{{item.system.attackbonus}}</div>
+						<div class='lColB7'>{{item.system.damage}}</div>
+						<div class='lColB8'>{{item.system.crit}}</div>
+						<div class='lColB9'>{{localize (totowConcat (totowConcat 'TALESOFTHEOLDWEST.Ranges.' item.system.range) '.long')}}</div>
+
+						{{#if (ne item.system.subtype 'fightin')}}
+							<div class='lColB5'>{{item.system.bonusdraw}}</div>
+							<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
+							<input
+								type='text'
+								class='inline-edit lColB10 statnum'
+								data-mod='system.ammo'
+								name='item.system.ammo'
+								value='{{item.system.ammo}}'
+								data-dtype='String'
+							/>
+						{{/if}}
+						<div class='item-controls lColB11'>
+							<a
+								class='item-control storeItem'
+								data-action='storeItem'
+								data-item-id='{{item._id}}'
+								title='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
+							><i class='fa-solid fa-sack-dollar'></i> </a>
+							<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Weapon'}}'>
+								<i class='fas fa-edit'></i>
+							</a>
+							<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Weapon'}}'>
+								<i class='fas fa-trash'></i>
+							</a>
+						</div>
+					</li>
+				{{/if}}
 			{{/each}}
 		</div>
 	</ol>

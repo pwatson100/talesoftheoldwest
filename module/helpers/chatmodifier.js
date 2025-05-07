@@ -60,9 +60,10 @@ export class TOTWBuyOffDialog extends FormApplication {
 }
 
 export class TOTWWhichTroubleDialog extends FormApplication {
-	constructor(results) {
+	constructor(results, messageId) {
 		super();
 		this.origRollData = results;
+		this.messageId = messageId;
 	}
 
 	static get defaultOptions() {
@@ -86,54 +87,10 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 
 	activateListeners(html) {}
 
-	async _updateObject(event, formData) {
-		rollTrouble(this.origRollData, event);
-		return;
+	async _updateObject(event, formData, messageId) {
+		return rollTrouble(this.origRollData, event, this.messageId);
 	}
 }
-// export class TOTWrollWeapon extends FormApplication {
-// 	constructor(results) {
-// 		super();
-// 		// this.origRollData = results;
-// 	}
-
-// 	static get defaultOptions() {
-// 		return foundry.utils.mergeObject(super.defaultOptions, {
-// 			classes: ['form'],
-// 			popOut: true,
-// 			template: 'systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html',
-// 			id: 'TOTWWhichTroubleDialog',
-// 			title: game.i18n.localize('TALESOFTHEOLDWEST.ModifierForRoll'),
-// 			height: 'auto',
-// 			width: 'auto',
-// 			minimizable: false,
-// 			resizable: true,
-// 			closeOnSubmit: true,
-// 			submitOnClose: false,
-// 			submitOnChange: false,
-// 		});
-// 	}
-
-// 	getData() {
-// 		this.range_list = CONFIG.TALESOFTHEOLDWEST.range_list;
-// 		this.item_modifier_list = CONFIG.TALESOFTHEOLDWEST.item_modifier_list;
-// 		this.range_modifiers = CONFIG.TALESOFTHEOLDWEST.range_modifiers;
-// 		this.called_shots = CONFIG.TALESOFTHEOLDWEST.called_shots;
-// 		this.target_cover = CONFIG.TALESOFTHEOLDWEST.target_cover;
-// 		this.target_size = CONFIG.TALESOFTHEOLDWEST.target_size;
-// 		this.target_visibility = CONFIG.TALESOFTHEOLDWEST.target_visibility;
-// 		console.log('After Getdata', this);
-// 	}
-
-// 	activateListeners(html) {}
-
-// 	async _updateObject(event, formData) {
-// 		// rollTrouble(this.origRollData, event);
-// 		console.log('got here');
-// 		return;
-// 	}
-// }
 
 window.TOTWBuyOffDialog = TOTWBuyOffDialog;
 window.TOTWWhichTroubleDialog = TOTWWhichTroubleDialog;
-// window.TOTWWhichTroubleDialog = TOTWrollWeapon;

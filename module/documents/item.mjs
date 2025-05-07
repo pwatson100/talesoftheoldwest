@@ -1,5 +1,5 @@
 import { rollAttrib } from '../helpers/diceroll.mjs';
-import { prepModOutput } from '../helpers/utils.mjs';
+import * as argpUtils from '../helpers/utils.mjs';
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -115,7 +115,7 @@ export class totowItem extends Item {
 			dataset.talent = '';
 			let successMod = 0;
 			let troubleMod = 0;
-			await prepModOutput(rollData, dataset);
+			await argpUtils.prepModOutput(rollData, dataset);
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
 				config,
 				dataset,
@@ -169,7 +169,7 @@ export class totowItem extends Item {
 				return 'cancelled';
 			} else {
 				// Get and proess Weapon Modifier data
-				await prepModOutput(rollData, dataset);
+				await argpUtils.prepModOutput(rollData, dataset);
 			}
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
 				config,

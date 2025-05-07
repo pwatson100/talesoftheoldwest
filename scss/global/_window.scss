@@ -1,8 +1,8 @@
-.window-app {
+.talesoftheoldwest.window-app {
 	font-family: $font-primary;
 }
 
-.rollable {
+.talesoftheoldwest .rollable {
 	&:hover,
 	&:focus {
 		color: #000;
@@ -10,107 +10,130 @@
 		cursor: pointer;
 	}
 }
-.dice-tooltip .roll > img {
+.talesoftheoldwest.dice-tooltip .roll > img {
 	width: 24px;
 }
 
-body {
-	.talesoftheoldwest.application {
-		font-family: $font-primary;
-		color: black;
-		width: 600;
-		height: 896;
-		background: transparent;
-	}
-	&.theme-light .application {
-		background-image: url('../assets/background/lapp.webp');
-		background-position: center; /* Center the image */
-		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: 100% 100%;
-		border: unset;
-		filter: drop-shadow(8px 12px 8px #353232);
-		box-shadow: unset;
-	}
-	&.theme-dark .application {
-		background-image: url('../assets/background/lapp.webp');
-		background-position: center; /* Center the image */
-		background-repeat: no-repeat; /* Do not repeat the image */
-		background-size: 100% 100%;
-		border: unset;
-		filter: drop-shadow(8px 12px 8px #353232);
-		box-shadow: unset;
-	}
-	&.theme-dark .application .window-content {
-		backdrop-filter: none;
-	}
-	&.theme-light .dialog .window-content {
-		color: black;
-		background: unset;
-		background-image: url('../assets/background/lapp.webp');
-		background-position: center; /* Center the image */
-		background-repeat: no-repeat; /* Do not repeat the image */
-		/* background-size: cover; */ /* Resize the background image to cover the entire container */
-		/* background-origin: content-box; */
+// body {
+// 	.talesoftheoldwest.application {
+// 		font-family: $font-primary;
+// 		color: black;
+// 		width: 600;
+// 		height: 896;
+// 		background: transparent;
+// 	}
+// 	&.theme-light .application {
+// 		background-image: $app-background;
+// 		background-position: center; /* Center the image */
+// 		background-repeat: no-repeat; /* Do not repeat the image */
+// 		background-size: 100% 100%;
+// 		border: unset;
+// 		filter: drop-shadow(8px 12px 8px #353232);
+// 		box-shadow: unset;
+// 	}
+// 	// &.theme-light .sheet.journal-entry .journal-entry-content {
+// 	// 	flex: 1;
+// 	// 	height: 100%;
+// 	// 	border: 2px solid #000;
+// 	// 	border-radius: 6px 0 0 0;
+// 	// 	background: url('../ui/parchment.jpg') repeat;
+// 	// }
+// 	&.theme-dark .application {
+// 		background-image: $app-background;
+// 		background-position: center; /* Center the image */
+// 		background-repeat: no-repeat; /* Do not repeat the image */
+// 		background-size: 100% 100%;
+// 		border: unset;
+// 		filter: drop-shadow(8px 12px 8px #353232);
+// 		box-shadow: unset;
+// 	}
+// 	// &.theme-dark .sheet.journal-entry .journal-entry-content {
+// 	// 	flex: 1;
+// 	// 	height: 100%;
+// 	// 	background: url(../ui/parchment.jpg) repeat;
+// 	// 	border: 2px solid #000;
+// 	// 	border-radius: 6px 0 0 0;
+// 	// }
+// 	&.theme-dark .application .window-content {
+// 		backdrop-filter: none;
+// 	}
+// 	&.theme-light .dialog .window-content {
+// 		color: black;
+// 		background: unset;
+// 		background-image: $app-background;
+// 		background-position: center; /* Center the image */
+// 		background-repeat: no-repeat; /* Do not repeat the image */
+// 		/* background-size: cover; */ /* Resize the background image to cover the entire container */
+// 		/* background-origin: content-box; */
 
-		.form-footer,
-		.dialog-buttons {
-			justify-content: center;
-			button {
-				max-width: max-content;
-				min-width: unset;
-				width: fit-content;
-			}
-		}
-	}
-	&.theme-dark .dialog .window-content {
-		// color: black;
-		background: unset;
-		background-image: url('../assets/background/lapp.webp');
-		background-position: center; /* Center the image */
-		background-repeat: no-repeat; /* Do not repeat the image */
-		/* background-size: cover; */ /* Resize the background image to cover the entire container */
-		/* background-origin: content-box; */
+// 		.talesoftheoldwest .form-footer,
+// 		.dialog-buttons {
+// 			justify-content: center;
+// 			button {
+// 				max-width: max-content;
+// 				min-width: unset;
+// 				width: fit-content;
+// 			}
+// 		}
+// 	}
+// 	&.theme-dark .dialog .window-content {
+// 		// color: black;
+// 		background: unset;
+// 		background-image: url('../assets/background/lapp.webp');
+// 		background-position: center; /* Center the image */
+// 		background-repeat: no-repeat; /* Do not repeat the image */
+// 		/* background-size: cover; */ /* Resize the background image to cover the entire container */
+// 		/* background-origin: content-box; */
 
-		.form-footer,
-		.dialog-buttons {
-			justify-content: center;
-			button {
-				max-width: max-content;
-				min-width: unset;
-				width: fit-content;
-			}
-		}
-	}
+// .talesoftheoldwest .form-footer,
+// .dialog-buttons {
+// 	justify-content: center;
+// 	button {
+// 		max-width: max-content;
+// 		min-width: unset;
+// 		width: fit-content;
+// 	}
+// }
+// }
 
-	.application input[type='text'],
-	.application input[type='number'],
-	.application select {
-		background: white;
-		color: black;
-		--input-background-color: rgba(0, 0, 0, 0.1);
-		--input-border-color: var(--color-dark-6);
-		--input-text-color: var(--color-dark-2);
-		--input-placeholder-color: var(--color-dark-3);
-		--input-focus-outline-color: var(--color-warm-2);
-	}
+// .talesoftheoldwest .application input[type='text'],
+// .talesoftheoldwest .application input[type='number'],
+// .talesoftheoldwest .application select {
+// 	background: white;
+// 	color: black;
+// 	--input-background-color: rgba(0, 0, 0, 0.1);
+// 	--input-border-color: var(--color-dark-6);
+// 	--input-text-color: var(--color-dark-2);
+// 	--input-placeholder-color: var(--color-dark-3);
+// 	--input-focus-outline-color: var(--color-warm-2);
+// }
 
-	.application input[type='checkbox'] {
-		--checkbox-checked-color: transparent;
-		--checkbox-disabled-color: var(--color-cool-4);
-		--checkbox-background-color: transparent;
-		--checkbox-checkmark-color: bleck;
-		--checkbox-font-weight: bold;
-		border: solid 1px black;
-	}
+// .talesoftheoldwest .application input[type='checkbox'] {
+// 	--checkbox-checked-color: transparent;
+// 	--checkbox-disabled-color: var(--color-cool-4);
+// 	--checkbox-background-color: transparent;
+// 	--checkbox-checkmark-color: bleck;
+// 	--checkbox-font-weight: bold;
+// 	border: solid 1px black;
+// }
+// }
+.talesoftheoldwest.application {
+	font-family: $font-primary;
+	color: black;
+	width: 600;
+	height: 896;
+	background: transparent;
+	box-shadow: none;
+	border: none;
 }
 
-.application .window-header,
+.talesoftheoldwest.application .window-header,
 .window-app .window-header {
 	background-image: url('../assets/background/header-plank.webp');
 	// background: blue;
 }
 
-.application .window-resize-handle {
+.talesoftheoldwest.application .window-resize-handle {
 	position: absolute;
 	inset: auto -2px -3px auto;
 	width: 24px;
@@ -124,6 +147,22 @@ body {
 	overflow: auto;
 	scrollbar-color: #d36913 transparent;
 	scrollbar-width: thin;
+	background-image: $app-background;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: 100% 100%;
+	border: transparent;
+	filter: drop-shadow(8px 12px 8px #353232);
+}
+
+.talesoftheoldwest.dialog .form-footer,
+.dialog-buttons {
+	justify-content: center;
+	button {
+		max-width: max-content;
+		min-width: unset;
+		width: fit-content;
+	}
 }
 
 .talesoftheoldwest .div-border {
@@ -133,4 +172,11 @@ body {
 .talesoftheoldwest.application .hr-style {
 	background-image: linear-gradient(90deg, transparent 0%, #000000 50%, transparent 100%);
 	margin: 5px;
+}
+
+.talesoftheoldwest.application nav.tabs {
+	background-image: url(../assets/background/header-plank.webp);
+	width: 97%;
+	// margin-left: 10px;
+	justify-self: anchor-center;
 }

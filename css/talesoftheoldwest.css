@@ -108,7 +108,7 @@
 .talesoftheoldwest .chat.roll img,
 .talesoftheoldwest .chat.roll .portrait {
   border: 0;
-  /* display: block; */
+  display: inline-block;
   margin: 0 auto 8px;
   height: 40px;
   width: auto;
@@ -122,6 +122,22 @@
   text-align: center;
 }
 
+.talesoftheoldwest .dice-background {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  position: relative;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 2px #fff inset;
+          box-shadow: 0 0 2px #fff inset;
+  word-break: break-all;
+}
+
 .chat-message {
   font-family: 'Esteban", serif';
   color: black;
@@ -133,128 +149,37 @@
 }
 
 /* Global styles */
-.window-app {
+.talesoftheoldwest.window-app {
   font-family: 'Esteban", serif';
 }
 
-.rollable:hover, .rollable:focus {
+.talesoftheoldwest .rollable:hover, .talesoftheoldwest .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
 }
 
-.dice-tooltip .roll > img {
+.talesoftheoldwest.dice-tooltip .roll > img {
   width: 24px;
 }
 
-body .talesoftheoldwest.application {
+.talesoftheoldwest.application {
   font-family: 'Esteban", serif';
   color: black;
   width: 600;
   height: 896;
   background: transparent;
-}
-body.theme-light .application {
-  background-image: url("../assets/background/lapp.webp");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100% 100%;
-  border: unset;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232);
-          filter: drop-shadow(8px 12px 8px #353232);
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-}
-body.theme-dark .application {
-  background-image: url("../assets/background/lapp.webp");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100% 100%;
-  border: unset;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232);
-          filter: drop-shadow(8px 12px 8px #353232);
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-}
-body.theme-dark .application .window-content {
-  -webkit-backdrop-filter: none;
-          backdrop-filter: none;
-}
-body.theme-light .dialog .window-content {
-  color: black;
-  background: unset;
-  background-image: url("../assets/background/lapp.webp");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  /* background-size: cover; */ /* Resize the background image to cover the entire container */
-  /* background-origin: content-box; */
-}
-body.theme-light .dialog .window-content .form-footer,
-body.theme-light .dialog .window-content .dialog-buttons {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body.theme-light .dialog .window-content .form-footer button,
-body.theme-light .dialog .window-content .dialog-buttons button {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  min-width: unset;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-body.theme-dark .dialog .window-content {
-  background: unset;
-  background-image: url("../assets/background/lapp.webp");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  /* background-size: cover; */ /* Resize the background image to cover the entire container */
-  /* background-origin: content-box; */
-}
-body.theme-dark .dialog .window-content .form-footer,
-body.theme-dark .dialog .window-content .dialog-buttons {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body.theme-dark .dialog .window-content .form-footer button,
-body.theme-dark .dialog .window-content .dialog-buttons button {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  min-width: unset;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-body .application input[type=text],
-body .application input[type=number],
-body .application select {
-  background: white;
-  color: black;
-  --input-background-color: rgba(0, 0, 0, 0.1);
-  --input-border-color: var(--color-dark-6);
-  --input-text-color: var(--color-dark-2);
-  --input-placeholder-color: var(--color-dark-3);
-  --input-focus-outline-color: var(--color-warm-2);
-}
-body .application input[type=checkbox] {
-  --checkbox-checked-color: transparent;
-  --checkbox-disabled-color: var(--color-cool-4);
-  --checkbox-background-color: transparent;
-  --checkbox-checkmark-color: bleck;
-  --checkbox-font-weight: bold;
-  border: solid 1px black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
 }
 
-.application .window-header,
+.talesoftheoldwest.application .window-header,
 .window-app .window-header {
   background-image: url("../assets/background/header-plank.webp");
 }
 
-.application .window-resize-handle {
+.talesoftheoldwest.application .window-resize-handle {
   position: absolute;
   inset: auto -2px -3px auto;
   width: 24px;
@@ -268,6 +193,30 @@ body .application input[type=checkbox] {
   overflow: auto;
   scrollbar-color: #d36913 transparent;
   scrollbar-width: thin;
+  background-image: url("../assets/background/lapp.webp");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%;
+  border: transparent;
+  -webkit-filter: drop-shadow(8px 12px 8px #353232);
+          filter: drop-shadow(8px 12px 8px #353232);
+}
+
+.talesoftheoldwest.dialog .form-footer,
+.dialog-buttons {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.talesoftheoldwest.dialog .form-footer button,
+.dialog-buttons button {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: unset;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .talesoftheoldwest .div-border {
@@ -278,6 +227,12 @@ body .application input[type=checkbox] {
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #000000), to(transparent));
   background-image: linear-gradient(90deg, transparent 0%, #000000 50%, transparent 100%);
   margin: 5px;
+}
+
+.talesoftheoldwest.application nav.tabs {
+  background-image: url(../assets/background/header-plank.webp);
+  width: 97%;
+  justify-self: anchor-center;
 }
 
 .grid,
@@ -486,7 +441,7 @@ body .application input[type=checkbox] {
   grid-template-areas: "lCol1  lCol2  lCol3  lCol4  lCol5  lCol6  lCol7  lCol8  lCol9  lCol10  lCol11 " "lColB1 lColB2 lColB3 lColB4 lColB5 lColB6 lColB7 lColB8 lColB9 lColB10 lColB11";
   padding-bottom: 2px;
   row-gap: 2px;
-  grid-template-columns: 40px 140px 150px 70px 70px 70px 70px 70px 70px 70px 48px;
+  grid-template-columns: 40px 140px 128px 70px 70px 70px 70px 70px 70px 70px 75px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1829,6 +1784,275 @@ body .application input[type=checkbox] {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+}
+
+.talesoftheoldwest .imagecontainer {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.talesoftheoldwest .image-text-box {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 30px;
+}
+
+.talesoftheoldwest .content-link-I {
+  color: hsl(39, 77%, 83%);
+  background: transparent;
+  font-size: 15pt;
+  border: 0;
+}
+
+.talesoftheoldwest a.inline-link {
+  background-color: transparent;
+  color: hsl(6, 56%, 30%);
+  font-size: 15pt;
+  border: 0;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .inline-link2 .content-link {
+  background-color: transparent;
+  color: hsl(6, 56%, 30%);
+  font-size: 16pt;
+  border: 0;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .arpgtable {
+  height: 36px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
+
+.talesoftheoldwest .arpgtable tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.talesoftheoldwest .tdstyle {
+  width: 40%;
+  height: 18px;
+  text-align: left;
+}
+
+.talesoftheoldwest .tdstyleR {
+  width: 40%;
+  height: 18px;
+  text-align: Right;
+}
+
+.talesoftheoldwest .tdstyleC {
+  width: 100%;
+  height: 18px;
+  text-align: center;
+}
+
+.talesoftheoldwest .tdstyle3D {
+  width: 30%;
+  height: 18px;
+  text-align: center;
+}
+
+.talesoftheoldwest .tdstyle2D {
+  width: 50%;
+  height: 18px;
+  text-align: center;
+}
+
+.talesoftheoldwest .blockquoteright {
+  background-color: rgba(0, 0, 0, 0.05);
+  max-width: 35%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  font-style: normal;
+  float: right;
+  border: 5px double hsl(0, 0%, 0%);
+  border-radius: 25px;
+  -webkit-box-shadow: 3px 3px;
+          box-shadow: 3px 3px;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .blockquoteleft {
+  background-color: rgba(0, 0, 0, 0.05);
+  max-width: 35%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  font-style: normal;
+  float: left;
+  border: 5px double hsl(0, 0%, 0%);
+  border-radius: 25px;
+  -webkit-box-shadow: 3px 3px;
+          box-shadow: 3px 3px;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .blockquotecenter {
+  background-color: rgba(0, 0, 0, 0.05);
+  max-width: 35%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  font-style: normal;
+  float: center;
+  border: 2px solid hsl(0, 0%, 0%);
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .blockquoteplainleft {
+  max-width: 50%;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  float: left;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .blockquoteplainright {
+  max-width: 50%;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  float: right;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .blockquoteplaincenter {
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  float: center;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  font-family: "Esteban";
+}
+
+.talesoftheoldwest .textover figcaption {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  text-align: left;
+  width: auto;
+  margin: 0;
+  padding: 0px;
+  font-family: "Esteban";
+  font-weight: normal;
+}
+
+.talesoftheoldwest p {
+  font-family: "Esteban";
+  font-size: 15px;
+}
+
+.talesoftheoldwest h1 {
+  font-family: "Esteban";
+  font-weight: bold;
+}
+
+.talesoftheoldwest h2 {
+  font-family: "Esteban";
+  font-weight: bold;
+}
+
+.talesoftheoldwest h3 {
+  font-family: "Esteban";
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  border-bottom: none;
+}
+
+.talesoftheoldwest .h3center {
+  text-align: center;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.talesoftheoldwest h4 {
+  font-family: "Esteban";
+  font-weight: bold;
+}
+
+.talesoftheoldwest h5 {
+  font-weight: bold;
+  font-family: "Esteban";
+  color: hsl(19, 70%, 37%);
+  margin: 0px 20px 0px 10px;
+  border-bottom: none;
+}
+
+.talesoftheoldwest h6 {
+  font-weight: bold;
+  font-family: "Esteban";
+  color: hsl(0, 0%, 100%);
+  margin: 0;
+}
+
+.talesoftheoldwest .h1NoUnder {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.talesoftheoldwest .h2NoUnder {
+  border: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.talesoftheoldwest .h2subHead {
+  font-weight: bold;
+  color: hsl(19, 70%, 37%);
+  border: 0;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-family: "Esteban";
+  font-size: 20pt;
+}
+
+.talesoftheoldwest .arpgtablesmall {
+  height: 36px;
+  width: 34%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  text-align: center;
+  font-family: "Esteban";
+  font-size: 18px;
+}
+
+.talesoftheoldwest .arpgtablesmall tr:nth-child(even) {
+  background-color: transparent;
 }
 
 /* Styles limited to talesoftheoldwest sheets */
