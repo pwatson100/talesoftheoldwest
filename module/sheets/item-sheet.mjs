@@ -42,25 +42,32 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	static PARTS = {
 		header: {
 			template: 'systems/talesoftheoldwest/templates/item/item-header.hbs',
+			scrollable: [''],
 		},
 		tabs: {
 			// Foundry-provided generic template
 			template: 'templates/generic/tab-navigation.hbs',
+			scrollable: [''],
 		},
 		description: {
 			template: 'systems/talesoftheoldwest/templates/item/item-main.hbs',
+			scrollable: [''],
 		},
 		basic: {
 			template: 'systems/talesoftheoldwest/templates/item/item-talent-basic.hbs',
+			scrollable: [''],
 		},
 		advanced: {
 			template: 'systems/talesoftheoldwest/templates/item/item-talent-advanced.hbs',
+			scrollable: [''],
 		},
 		modifiers: {
 			template: 'systems/talesoftheoldwest/templates/item/item-modifiers.hbs',
+			scrollable: [''],
 		},
 		qualities: {
 			template: 'systems/talesoftheoldwest/templates/item/item-weapon-qualities.hbs',
+			scrollable: [''],
 		},
 		// effects: {
 		// 	template: 'systems/talesoftheoldwest/templates/item/effects.hbs',

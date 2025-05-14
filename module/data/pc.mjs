@@ -195,10 +195,6 @@ export default class totowPC extends totowActorBase {
 			this.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
 		}
 
-		for (const akey in this.horse.attributes) {
-			this.horse.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
-		}
-
 		for (const key in this.abilities) {
 			this.abilities[key].attr = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].atob) ?? key;
 
@@ -206,6 +202,11 @@ export default class totowPC extends totowActorBase {
 			this.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name) ?? key;
 			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
+
+		for (const akey in this.horse.attributes) {
+			this.horse.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
+		}
+
 		for (const key in this.horse.abilities) {
 			this.horse.abilities[key].attr = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].atob) ?? key;
 
@@ -370,33 +371,5 @@ export default class totowPC extends totowActorBase {
 		// } catch (error) {}
 	}
 
-	getRollData() {
-		const data = {};
-
-		// Copy the ability scores to the top level, so that rolls can use
-		// formulas like `@str.mod + 4`.
-		if (this.abilities) {
-			for (let [k, v] of Object.entries(this.abilities)) {
-				data[k] = foundry.utils.deepClone(v);
-			}
-		}
-		if (this.attributes) {
-			for (let [k, v] of Object.entries(this.attributes)) {
-				data[k] = foundry.utils.deepClone(v);
-			}
-		}
-		if (this.horse.abilities) {
-			for (let [k, v] of Object.entries(this.horse.abilities)) {
-				data[k] = foundry.utils.deepClone(v);
-			}
-		}
-		if (this.horse.attributes) {
-			for (let [k, v] of Object.entries(this.horse.attributes)) {
-				data[k] = foundry.utils.deepClone(v);
-			}
-		}
-
-		// data.lvl = this.attributes.level.value;
-		return data;
-	}
+	getRollData() {}
 }

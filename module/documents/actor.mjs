@@ -1,4 +1,5 @@
 import { rollAttrib } from '../helpers/diceroll.mjs';
+import * as argpUtils from '../helpers/utils.mjs';
 
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
@@ -395,66 +396,41 @@ export class totowActor extends Actor {
 	}
 
 	async rollCritMan(actor, type, dataset) {
-		function myRenderTemplate(template) {
-			let confirmed = false;
-			renderTemplate(template).then((dlg) => {
-				new Dialog({
-					title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCrit'),
-					content: dlg,
-					buttons: {
-						one: {
-							icon: '<i class="fas fa-check"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll'),
-							callback: () => (confirmed = true),
-						},
-						four: {
-							icon: '<i class="fas fa-times"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.cancel'),
-							callback: () => (confirmed = false),
-						},
-					},
-					default: 'one',
-					close: ([html]) => {
-						if (confirmed) {
-							let manCrit = html.querySelector('[name=manCrit]')?.value;
-
-							if (manCrit == 'undefined') {
-								manCrit = '1';
-							}
-							switch (type) {
-								case 'pc':
-									// case 'npc':
-									if (!manCrit.match(/^[1-6]?[1-6]$/gm)) {
-										ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCharCrit'));
-										return;
-									}
-									break;
-								default:
-									break;
-							}
-							actor.rollCrit(actor, type, dataset, manCrit);
-						}
-					},
-				}).render(true);
-			});
+		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html', actor, type, dataset);
+		const response = await foundry.applications.api.DialogV2.wait({
+			window: { title: 'Proceed' },
+			content,
+			rejectClose: false,
+			buttons: [
+				{
+					label: 'TALESOFTHEOLDWEST.dialog.roll',
+					callback: (event, button) => new FormDataExtended(button.form).object,
+				},
+				{
+					label: 'TALESOFTHEOLDWEST.dialog.cancel',
+					action: 'cancel',
+				},
+			],
+		});
+		if (!response || response === 'cancel') return 'cancelled';
+		if (!response.manCrit.match(/^[1-6]?[1-6]$/gm)) {
+			ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.dialog.RollManCharCrit'));
+			return;
 		}
-		switch (actor.type) {
-			case 'pc':
-				// case 'npc':
-				myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html');
-
-				break;
-			default:
-				break;
-		}
+		await actor.rollCrit(actor, type, dataset, response.manCrit);
 	}
 
 	async diceRoll(actor, event, target) {
+		let config = CONFIG.TALESOFTHEOLDWEST;
+
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
 		const rollData = this.getRollData();
 		const dataset = target.dataset;
+		dataset.conditional = '';
+		dataset.talent = '';
+
 		// const targetActor = actor.getRollData();
 		if (actor.type === 'pc') {
 			dataset.faithpoints = actor.system.general.faithpoints.value;
@@ -472,8 +448,23 @@ export class totowActor extends Actor {
 			if (dataset.rollType === 'attribute' || dataset.rollType === 'ability') {
 				switch (dataset.rollType) {
 					case 'attribute':
+						result = await processConditionals('Attributes', dataset, rollData);
+						break;
 					case 'ability':
-						result = await rollAttrib(dataset, rollData, actor);
+						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long')) {
+							if (actor.system.horse.name) {
+								const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/riding-my-horse.hbs', actor, event, target);
+								const response = await foundry.applications.api.DialogV2.confirm({
+									window: { title: 'Proceed' },
+									content,
+									modal: true,
+								});
+								if (response === true) {
+									dataset.mod = Number(dataset.mod) + Number(actor.system.horse.general.ridingmodifier.value);
+								}
+							}
+						}
+						result = await processConditionals('Abilities', dataset, rollData);
 						break;
 					default:
 						break;
@@ -481,84 +472,112 @@ export class totowActor extends Actor {
 			} else {
 				const itemId = target.dataset.itemId;
 				const item = actor.items.get(itemId);
-
 				switch (dataset.rollType) {
 					case 'item':
 						// case 'talent':
 						return item.roll(dataset);
 					case 'weapon':
 						result = await item.roll(dataset, item);
-
 					default:
 						break;
 				}
 			}
 			if (result === 'cancelled') {
 				return;
+			} else {
+				sendToChat(actor, event, target, result);
 			}
-			const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', result[1]);
-			let chatData = {
-				user: game.user.id,
-				speaker: ChatMessage.getSpeaker({
-					alias: actor.name,
-					actor: actor.id,
-				}),
-				rolls: [result[0]],
-				rollMode: game.settings.get('core', 'rollMode'),
-				content: html,
-				sound: CONFIG.sounds.dice,
-			};
-			if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
-				chatData.whisper = ChatMessage.getWhisperRecipients('GM');
-			} else if (chatData.rollMode === 'selfroll') {
-				chatData.whisper = [game.user];
-			}
-			const msg = await ChatMessage.create(chatData);
-			result[1].messageNo = msg.id;
-			await msg.setFlag('talesoftheoldwest', 'results', result);
 
-			return result;
+			async function processConditionals(rollType, dataset, rollData) {
+				await argpUtils.prepModOutput(rollType, rollData, dataset);
+				if (dataset.conditional) {
+					const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/conditional-modifiers.html', {
+						config,
+						dataset,
+					});
+					const data = await foundry.applications.api.DialogV2.wait({
+						window: { title: 'TALESOFTHEOLDWEST.General.roll-modifiers' },
+						position: { width: 350 },
+						// classes: ["my-special-class"],
+						content,
+						rejectClose: false,
+						buttons: [
+							{
+								label: 'TALESOFTHEOLDWEST.dialog.roll',
+								callback: (event, button) => new FormDataExtended(button.form).object,
+							},
+							{
+								label: 'TALESOFTHEOLDWEST.dialog.cancel',
+								action: 'cancel',
+							},
+						],
+					});
+
+					if (!data || data === 'cancel') return 'cancelled';
+
+					Object.keys(data).forEach((key) => {
+						if (key.startsWith('floop')) {
+							data.modifier = parseInt(data.modifier || 0) + parseInt(data[key] || 0);
+						}
+					});
+
+					dataset.mod = parseInt(dataset.mod || 0) + Number(data.modifier);
+				}
+
+				result = await rollAttrib(dataset, rollData, actor);
+				return result;
+			}
+
+			async function sendToChat(actor, event, target, result) {
+				{
+					const html = await renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', result[1]);
+					let chatData = {
+						user: game.user.id,
+						speaker: ChatMessage.getSpeaker({
+							alias: actor.name,
+							actor: actor.id,
+						}),
+						rolls: [result[0]],
+						rollMode: game.settings.get('core', 'rollMode'),
+						content: html,
+						sound: CONFIG.sounds.dice,
+					};
+					if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
+						chatData.whisper = ChatMessage.getWhisperRecipients('GM');
+					} else if (chatData.rollMode === 'selfroll') {
+						chatData.whisper = [game.user];
+					}
+					const msg = await ChatMessage.create(chatData);
+					result[1].messageNo = msg.id;
+					await msg.setFlag('talesoftheoldwest', 'results', result);
+
+					return result;
+				}
+			}
 		}
+		this.render();
 	}
 
 	async modRoll(actor, event, target) {
-		function myRenderTemplate(template) {
-			let confirmed = false;
-			renderTemplate(template).then((dlg) => {
-				new Dialog({
-					title: game.i18n.localize('TALESOFTHEOLDWEST.Item.General.roll-modifiers').toUpperCase(),
-					content: dlg,
-					buttons: {
-						one: {
-							icon: '<i class="fas fa-check"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll'),
-							callback: () => (confirmed = true),
-						},
-						four: {
-							icon: '<i class="fas fa-times"></i>',
-							label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.cancel'),
-							callback: () => (confirmed = false),
-						},
-					},
-					default: 'one',
-					close: ([html]) => {
-						if (confirmed) {
-							let manCrit = Number(html.querySelector('[name=manCrit]')?.value);
-
-							if (manCrit == 'undefined') {
-								manCrit = '1';
-							}
-							target.dataset.mod = Number(target.dataset.mod) + Number(manCrit);
-							actor.diceRoll(actor, event, target);
-
-							// actor.rollCrit(actor, type, dataset, manCrit);
-						}
-					},
-				}).render(true);
-			});
-		}
-
-		myRenderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html');
+		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html', actor, event, target);
+		const response = await foundry.applications.api.DialogV2.wait({
+			window: { title: 'Proceed' },
+			content,
+			rejectClose: false,
+			buttons: [
+				{
+					label: 'TALESOFTHEOLDWEST.dialog.roll',
+					callback: (event, button) => new FormDataExtended(button.form).object,
+				},
+				{
+					label: 'TALESOFTHEOLDWEST.dialog.cancel',
+					action: 'cancel',
+				},
+			],
+		});
+		if (!response || response === 'cancel') return 'cancelled';
+		target.dataset.mod = Number(target.dataset.mod) + Number(response.manMod);
+		await actor.diceRoll(actor, event, target);
 	}
 
 	async createChatMessage(message, actorID) {

@@ -59,12 +59,12 @@ export class totowItem extends Item {
 				}
 				switch (dataset.subtype) {
 					case 'shootin':
-						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus + qualityMod;
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
 						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - shootin', dataset, dataset.mod);
 						return await shootin(dataset, rollData, item);
 					case 'fightin':
-						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus + qualityMod;
+						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
 						dataset.stunts = dataset.subtype;
 						console.log('Weapon Roll - Fightin', dataset, dataset.mod);
 						return await fightin(dataset, rollData, item);
@@ -115,7 +115,7 @@ export class totowItem extends Item {
 			dataset.talent = '';
 			let successMod = 0;
 			let troubleMod = 0;
-			await argpUtils.prepModOutput(rollData, dataset);
+			await argpUtils.prepModOutput('Items', rollData, dataset);
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
 				config,
 				dataset,
@@ -139,6 +139,13 @@ export class totowItem extends Item {
 			});
 
 			if (!data || data === 'cancel') return 'cancelled';
+
+			Object.keys(data).forEach((key) => {
+				if (key.startsWith('floop')) {
+					data.modifier = Number(data.modifier) + Number(data[key]);
+				}
+			});
+
 			dataset.successMod = Number(successMod);
 			dataset.troubleMod = Number(troubleMod);
 			dataset.fightProneMod = Number(data.prone || 0);
@@ -169,7 +176,7 @@ export class totowItem extends Item {
 				return 'cancelled';
 			} else {
 				// Get and proess Weapon Modifier data
-				await argpUtils.prepModOutput(rollData, dataset);
+				await argpUtils.prepModOutput('Items', rollData, dataset);
 			}
 			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
 				config,
@@ -194,6 +201,11 @@ export class totowItem extends Item {
 			});
 
 			if (!data || data === 'cancel') return 'cancelled';
+			Object.keys(data).forEach((key) => {
+				if (key.startsWith('floop')) {
+					data.modifier = parseInt(data.modifier || 0) + parseInt(data[key] || 0);
+				}
+			});
 			dataset.successMod = Number(successMod);
 			dataset.troubleMod = Number(troubleMod);
 			dataset.shootrangeMod = Number(data.rangeChoice);

@@ -12,47 +12,46 @@ export async function totowDiceButtons(html) {
 		if (results) {
 			if (results[1].faithpoints >= 1) {
 				if ((results[1].trouble > 0 && results[1].buyoff) || (results[1].trouble > 0 && results[1].canPush !== 'pushed')) {
-					let span = document.createElement('span');
-					span.classList.add('dice-formula', 'dice-roll', 'buy-off');
-					span.setAttribute('data-message-id', messageId);
-					span.setAttribute('data-roll-type', results[1].rollType);
-					span.setAttribute('data-roll-button', 'buy-off');
-					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.dialog.Buy-OffTrouble');
-					buttonArea.appendChild(span);
+					let button = document.createElement('button');
+					button.classList.add('dice-formula', 'dice-roll', 'chat-buttons', 'buy-off');
+					button.setAttribute('data-message-id', messageId);
+					button.setAttribute('data-roll-type', results[1].rollType);
+					button.setAttribute('data-roll-button', 'buy-off');
+					button.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.dialog.Buy-OffTrouble');
+					buttonArea.appendChild(button);
 				}
 				if (results[1].trouble > 0 && results[1].totalTrouble !== 'rolledTrouble') {
-					let span = document.createElement('span');
-					span.classList.add('dice-formula', 'dice-roll', 'roll-trouble');
-					span.setAttribute('data-message-id', messageId);
-					span.setAttribute('data-roll-type', results[1].rollType);
-					span.setAttribute('data-roll-button', 'roll-trouble');
-					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.rollTrouble');
-					buttonArea.appendChild(span);
+					let button = document.createElement('button');
+					button.classList.add('dice-formula', 'dice-roll', 'chat-buttons', 'roll-trouble');
+					button.setAttribute('data-message-id', messageId);
+					button.setAttribute('data-roll-type', results[1].rollType);
+					button.setAttribute('data-roll-button', 'roll-trouble');
+					button.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.rollTrouble');
+					buttonArea.appendChild(button);
 				}
 				if (results[1].canPush === 'push' && results[1].totalTrouble !== 'rolledTrouble') {
-					let span = document.createElement('span');
-					span.classList.add('dice-formula', 'dice-roll', 'dice-push');
-					span.setAttribute('data-message-id', messageId);
-					span.setAttribute('data-roll-type', results[1].rollType);
-					span.setAttribute('data-roll-button', 'push');
-					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.push');
-					buttonArea.appendChild(span);
+					let button = document.createElement('button');
+					button.classList.add('dice-formula', 'dice-roll', 'chat-buttons', 'dice-push');
+					button.setAttribute('data-message-id', messageId);
+					button.setAttribute('data-roll-type', results[1].rollType);
+					button.setAttribute('data-roll-button', 'push');
+					button.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.push');
+					buttonArea.appendChild(button);
 				}
 
 				if (results[1].canPush === 'pushed' && results[1].totalTrouble !== 'rolledTrouble') {
 					let span = document.createElement('span');
-					span.classList.add('dice-formula', 'dice-roll');
+					span.classList.add('dice-formula', 'dice-roll', 'pushed-button');
 					span.setAttribute('data-message-id', messageId);
 					span.setAttribute('data-roll-type', results[1].rollType);
 					span.setAttribute('data-roll-button', 'pushed');
 					span.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.pushed');
 					buttonArea.appendChild(span);
 				}
-
+			} else {
 				if (results[1].faithpoints === 0) {
-					let buttonArea = message.querySelector('#buttonlist');
 					let span = document.createElement('span');
-					span.classList.add('dice-formula', 'dice-roll');
+					span.classList.add('dice-formula', 'dice-roll', 'pushed-button');
 					span.setAttribute('data-message-id', messageId);
 					span.setAttribute('data-roll-type', results[1].rollType);
 					span.setAttribute('data-roll-button', 'no-faith');
@@ -64,6 +63,7 @@ export async function totowDiceButtons(html) {
 	}
 }
 export async function totowDiceListeners(html) {
+	// let listenArea = document.getElementById('chat-notifications'); // V13 ?
 	let listenArea = document.getElementById('chat-log');
 	if (!listenArea) return;
 

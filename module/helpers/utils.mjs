@@ -5,54 +5,77 @@ export const getID = function () {
 	return '_' + Math.random().toString(36).substr(2, 9);
 };
 
-export async function prepModOutput(rollData, dataset) {
-	for (const fkey in rollData.featureModifiers) {
-		for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
-			switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
-				case 'Conditional':
-					dataset.conditional +=
-						'<strong style="color:black">' +
-						rollData.featureModifiers[fkey].name +
-						'</strong> - ' +
-						rollData.featureModifiers[fkey].itemModifiers[ikey].name +
-						' - ' +
-						rollData.featureModifiers[fkey].itemModifiers[ikey].value +
-						' - ' +
-						rollData.featureModifiers[fkey].description +
-						'<br /><br />';
+export async function prepModOutput(rollType, rollData, dataset) {
+	let floop = 1;
+	let iloop = 1;
+	if (rollType === 'Items') {
+		for (const fkey in rollData.featureModifiers) {
+			for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
+				switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
+					case 'Conditional':
+						dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					name="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
+					/><p style="color: black">${rollData.featureModifiers[fkey].description}</p></div>`;
+						floop++;
 
+						break;
+
+					case 'Chat':
+						dataset.talent +=
+							'<strong style="color:black">' +
+							rollData.featureModifiers[fkey].name +
+							'</strong> - ' +
+							rollData.featureModifiers[fkey].description +
+							'<br /><br />';
+						break;
+				}
+			}
+		}
+
+		for (const ikey in rollData.itemModifiers) {
+			switch (rollData.itemModifiers[ikey].state) {
+				case 'Conditional':
+					dataset.conditional += `<div class="form-group">
+					<input type="checkbox" 
+					id="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					name="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
+					/><p style="color: black">${rollData.featureModifiers[fkey].description}</p></div>`;
+					iloop++;
 					break;
 
 				case 'Chat':
-					dataset.talent +=
-						'<strong style="color:black">' +
-						rollData.featureModifiers[fkey].name +
-						'</strong> - ' +
-						rollData.featureModifiers[fkey].description +
-						'<br /><br />';
+					dataset.talent += `<strong style="color:black">${rollData.itemModifiers[ikey].name}</strong> - ${rollData.itemModifiers[ikey].description}<br /><br />`;
 					break;
 			}
 		}
-	}
+	} else {
+		// let spanner = [];
+		for (const akey in rollData.itemMods) {
+			if (akey === dataset.key) {
+				let spanner = rollData.itemMods[akey].reduce((acc, akey) => {
+					if (akey.state != 'Active') {
+						switch (akey.state) {
+							case 'Conditional': {
+								dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="floop${floop}-${akey.name}" 
+					name="floop${floop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black">${akey.description} ${akey.basicAction} ${akey.advAction}</p></div>`;
+								floop++;
+							}
 
-	for (const ikey in rollData.itemModifiers) {
-		switch (rollData.itemModifiers[ikey].state) {
-			case 'Conditional':
-				dataset.conditional +=
-					'<strong style="color:black">' +
-					rollData.itemModifiers[ikey].name +
-					'</strong> - ' +
-					rollData.itemModifiers[ikey].value +
-					' - ' +
-					rollData.itemModifiers[ikey].description +
-					'<br /><br />';
-
-				break;
-
-			case 'Chat':
-				dataset.talent +=
-					'<strong style="color:black">' + rollData.itemModifiers[ikey].name + '</strong> - ' + rollData.itemModifiers[ikey].description + '<br /><br />';
-				break;
+							case 'Chat': {
+								dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
+							}
+						}
+					} else return acc;
+				}, []);
+			}
 		}
 	}
 	return dataset;

@@ -14,6 +14,7 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
 				data-mod="{{system.attributes.grit.mod}}"
+								data-key="{{localize "TALESOFTHEOLDWEST.Attributes.grit.listName"}}"
 				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
 			>
@@ -33,7 +34,8 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
 				data-mod="{{system.attributes.quick.mod}}"
-				data-speaker='{{actor.id}}'
+									data-key="{{localize "TALESOFTHEOLDWEST.Attributes.quick.listName"}}"
+			data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
 			>
 		</div>
@@ -52,7 +54,8 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
 				data-mod="{{system.attributes.cunning.mod}}"
-				data-speaker='{{actor.id}}'
+											data-key="{{localize "TALESOFTHEOLDWEST.Attributes.cunning.listName"}}"
+	data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
 			>
 		</div>
@@ -71,7 +74,8 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
 				data-mod="{{system.attributes.docity.mod}}"
-				data-speaker='{{actor.id}}'
+										data-key="{{localize "TALESOFTHEOLDWEST.Attributes.docity.listName"}}"
+		data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label
 			>
 		</div>
@@ -163,6 +167,7 @@
 				data-label="{{ability.label}}"
 				data-stunts="{{ability.label}}"
 				data-mod="{{ability.mod}}"
+				data-key="{{key}}"
 				data-attr="{{ability.attr}}"
 				data-speaker='{{actor.id}}'
 				>{{ability.upper}}</label

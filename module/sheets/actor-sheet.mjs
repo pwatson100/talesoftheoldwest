@@ -49,49 +49,64 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	static PARTS = {
 		header: {
 			template: 'systems/talesoftheoldwest/templates/actor/header.hbs',
+			scrollable: [''],
 		},
 		tabs: {
 			// Foundry-provided generic template
 			template: 'templates/generic/tab-navigation.hbs',
+			scrollable: [''],
 		},
 		skills: {
 			template: 'systems/talesoftheoldwest/templates/actor/skills.hbs',
+			scrollable: [''],
 		},
 		gear: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
+			scrollable: [''],
 		},
 		effects: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
+			scrollable: [''],
 		},
 		description: {
 			template: 'systems/talesoftheoldwest/templates/actor/biography.hbs',
+			scrollable: [''],
 		},
 		weapons: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs',
+			scrollable: [''],
 		},
 		talents: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs',
+			scrollable: [''],
 		},
 		itemsinline: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs',
+			scrollable: [''],
 		},
 		qualityoptions: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs',
+			scrollable: [''],
 		},
 		compadres: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-compadres.hbs',
+			scrollable: [''],
 		},
 		compadresweapon: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs',
+			scrollable: [''],
 		},
 		remuda: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-remuda.hbs',
+			scrollable: [''],
 		},
 		horse: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs',
+			scrollable: [''],
 		},
 		horsequalityoptions: {
 			template: 'systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs',
+			scrollable: [''],
 		},
 	};
 
@@ -147,11 +162,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			this._prepareCompadres(context);
 			this._prepareRemuda(context);
 		}
-		// let enrichedFields = ['system.biography'];
-		// await this._enrichTextFields(context, enrichedFields);
-		// }
-
-		// context.rollData = context.actor.getRollData();
 
 		logger.debug('Actor Sheet derived data:', context);
 		return context;
@@ -334,7 +344,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		context.system.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-		context.itemMods = Object.groupBy(itemMods, ({ name }) => name);
+		context.system.itemMods = Object.groupBy(itemMods, ({ name }) => name);
 
 		async function _findmods(i, itemMods) {
 			if (i.system.itemModifiers) {
@@ -390,7 +400,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const aData = context.system;
 		const aType = context.actor.type;
 		const itemData = context.allGear;
-		const itemMods = context.itemMods;
+		const itemMods = context.system.itemMods;
 		let attribData = {};
 
 		let anyMods = 0;
@@ -571,14 +581,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (aType === 'pc') {
 			for (let [a, abl] of Object.entries(aData.horse.attributes)) {
 				let prefix = 'h' + a;
-				let target = `system.horse.attributes.${a}.mod`;
+				let target = `system.horse.attributes.${prefix}.mod`;
 				let upData = Number(abl.value) + Number(attrMod[prefix]);
 				attribData[target] = upData;
 			}
 			for (let [s, skl] of Object.entries(aData.horse.abilities)) {
 				let prefix = 'h' + s;
 				const conSkl = skl.attr;
-				let target = `system.horse.abilities.${s}.mod`;
+				let target = `system.horse.abilities.${prefix}.mod`;
 				let abData = Number(skl.value) + Number(aData.horse.attributes[conSkl].mod) + Number(sklMod[prefix]);
 				attribData[target] = abData;
 			}
@@ -826,6 +836,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
+		// const rollData = this.actor.getRollData();
 		if (target.dataset.rollType === 'attribute' || target.dataset.rollType === 'ability') {
 			if (event.button === 0) {
 				this.actor.diceRoll(this.actor, event, target);
