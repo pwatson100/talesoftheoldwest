@@ -219,7 +219,9 @@
 			"attacks": "Attacks",
 			"saddlebag": "Saddle Bag",
 			"rightToStore": "Right click to Store, left click to Retrieve",
-			"remove": "Remove"
+			"remove": "Remove",
+			"ErrorTroubleTable": "Error: Trouble Table not found",
+			"TroubleOutcome": "Trouble Outcome"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

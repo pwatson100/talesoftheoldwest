@@ -60,10 +60,11 @@ export class TOTWBuyOffDialog extends FormApplication {
 }
 
 export class TOTWWhichTroubleDialog extends FormApplication {
-	constructor(results, messageId) {
+	constructor(results, messageId, message) {
 		super();
 		this.origRollData = results;
 		this.messageId = messageId;
+		this.message = message;
 	}
 
 	static get defaultOptions() {
@@ -88,7 +89,7 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 	activateListeners(html) {}
 
 	async _updateObject(event, formData, messageId) {
-		return rollTrouble(this.origRollData, event, this.messageId);
+		return rollTrouble(this.origRollData, event, this.messageId, this.message);
 	}
 }
 

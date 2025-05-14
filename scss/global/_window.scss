@@ -120,8 +120,8 @@
 .talesoftheoldwest.application {
 	font-family: $font-primary;
 	color: black;
-	width: 600;
-	height: 896;
+	/* width: 600px; */
+	/* height: 896px; */
 	background: transparent;
 	box-shadow: none;
 	border: none;
@@ -211,4 +211,9 @@
 	margin-bottom: 10px;
 	filter: drop-shadow(8px 11px 7px black);
 	text-shadow: 2px 2px 2px white;
+}
+
+.sheet.journal-entry .journal-entry-content {
+	background-image: $app-background;
+	background-size: cover;
 }

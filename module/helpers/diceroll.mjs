@@ -98,42 +98,95 @@ export async function totowDiceListeners(html) {
 					let messageId = ev.target.getAttribute('data-message-id');
 					let message = game.messages.get(messageId);
 					let results = message.getFlag('talesoftheoldwest', 'results');
-					new TOTWWhichTroubleDialog(results, ev, messageId).render(true);
+					new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
 				}
 				break;
 		}
 	});
 }
 
-export async function rollTrouble(results, ev, messageId) {
-	let tTable = '';
+export async function rollTrouble(results, ev, messageId, message) {
 	let table = '';
 	let roll = '';
+	let rollAgainst = '';
 	const troubleTable = Number(ev.submitter.value);
 
 	let trouble = Number(results[1].trouble);
-
 	switch (troubleTable) {
 		case 1:
-			tTable = `TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(` + trouble + `)`;
-			table = game.tables.getName(`${tTable}`);
-			roll = await new Roll('1d6').evaluate();
-			await table.draw({ roll: roll });
+			table = await checkTables('CONFLICT / PHYSICAL', trouble);
+			rollAgainst = 'CONFLICT / PHYSICAL';
 			break;
 		case 2:
-			tTable = `TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (` + trouble + `)`;
-			table = game.tables.getName(`${tTable}`);
-			roll = await new Roll('1d6').evaluate();
-			await table.draw({ roll: roll });
+			table = await checkTables('MENTAL / SOCIAL', trouble);
+			rollAgainst = 'MENTAL / SOCIAL';
 			break;
 	}
+
+	roll = await new Roll('1d6').evaluate();
+	const TroubleTableResult = await table.draw({ roll: roll, displayChat: false });
+
+	// Prepare the data for the chat message
+	//
+	const actorName = game.messages.get(message).speaker.alias;
+	const actorId = game.messages.get(message).speaker.actor;
+	const htmlData = {
+		actorname: actorName,
+		actorId: actorId,
+		img: TroubleTableResult.results[0].img,
+		rollAgainst: rollAgainst,
+		textMessage: TroubleTableResult.results[0].text,
+	};
+
+	// Now push the correct chat message
+
+	const html = await renderTemplate(`systems/talesoftheoldwest/templates/chat/trouble-roll.hbs`, htmlData);
+
+	let chatData = {
+		user: game.user.id,
+		speaker: {
+			actor: actorId,
+		},
+		content: html,
+		other: game.users.contents.filter((u) => u.isGM).map((u) => u.id),
+		sound: CONFIG.sounds.dice,
+	};
+
+	// Apply the Active Effect
+
+	// switch (type) {
+	// 	case 'pc':
+	// 		// case 'npc':
+	// 		await this.addCondition('criticalinj');
+	// 		break;
+	// 	// case 'creature':criticalinj
+	// 	// 	console.log("it's a Creature Crit");
+	// 	// 	break;
+
+	// 	default:
+	// 		break;
+	// }
+
 	// remove the Roll Trouble Button
 	results[1].totalTrouble = 'rolledTrouble';
 
-	let message = game.messages.get(results[1].messageNo);
-	message.setFlag('talesoftheoldwest', 'results', results);
+	let aMessage = game.messages.get(results[1].messageNo);
+	aMessage.setFlag('talesoftheoldwest', 'results', results);
 	messageId.target.remove();
-	return;
+	ChatMessage.applyRollMode(chatData, game.settings.get('core', 'rollMode'));
+	return ChatMessage.create(chatData);
+	// return;
+
+	async function checkTables(type, trouble) {
+		let tTable = `TROUBLE OUTCOME TABLE - ${type} (${trouble})`;
+		let table = game.tables.getName(`${tTable}`);
+		if (table) {
+			return table;
+		} else {
+			ui.notifications.error(game.i18n.localize('TALESOFTHEOLDWEST.General.ErrorTroubleTable'));
+			return;
+		}
+	}
 }
 
 export async function pushRoll(chatMessage, origRollData, origRoll) {

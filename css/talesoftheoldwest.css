@@ -166,8 +166,8 @@
 .talesoftheoldwest.application {
   font-family: 'Esteban", serif';
   color: black;
-  width: 600;
-  height: 896;
+  /* width: 600px; */
+  /* height: 896px; */
   background: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -274,6 +274,11 @@
   -webkit-filter: drop-shadow(8px 11px 7px black);
           filter: drop-shadow(8px 11px 7px black);
   text-shadow: 2px 2px 2px white;
+}
+
+.sheet.journal-entry .journal-entry-content {
+  background-image: url("../assets/background/sheet-background.webp");
+  background-size: cover;
 }
 
 .grid,

@@ -127,7 +127,7 @@ export class totowActor extends Actor {
 
 		switch (type) {
 			case 'pc':
-			case 'npc':
+				// case 'npc':
 				atable = game.tables.getName(game.i18n.localize('ALIENRPG.CriticalInjuries')) || game.tables.getName('Critical Injuries');
 				if (atable === null || atable === undefined) {
 					ui.notifications.warn(game.i18n.localize('ALIENRPG.NoCharCrit'));
