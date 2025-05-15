@@ -1,5 +1,6 @@
 {
-  "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(3)",
+  "name": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL (3)",
+  "_id": "zqtm7HB37JwEXqLM",
   "img": "icons/svg/d20-grey.svg",
   "description": "",
   "results": [
@@ -13,9 +14,10 @@
       "drawn": false,
       "_id": "2s8xEblRzMlHKWl7",
       "text": "You catch yourself on  your stirrup, on a sharp  object, or bash into  something hard. You  suffer a 4 dice attack,  dam 1, crit 2.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.2s8xEblRzMlHKWl7"
     },
     {
       "type": "text",
@@ -27,9 +29,10 @@
       "drawn": false,
       "_id": "glc7R39ZOQyuoDcn",
       "text": "Hang fire. Your gun  doesn’t go off but then  discharges next Round.  Or, your blow is slow  and cumbersome: you  lose your next Round  recovering.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.glc7R39ZOQyuoDcn"
     },
     {
       "type": "text",
@@ -41,9 +44,10 @@
       "drawn": false,
       "_id": "M8yU2nMoXb2qAxVT",
       "text": "You’re shaken and  shocked. For the rest of  the scene you suffer -2  to all rolls that use the  ability that suffered the  Trouble.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.M8yU2nMoXb2qAxVT"
     },
     {
       "type": "text",
@@ -55,9 +59,10 @@
       "drawn": false,
       "_id": "pRmG78BdFY38Na1u",
       "text": "Your attack or action  affects a random  bystander or unintended  target. Either apply the  effect of the attack to  that target, or they suffer  a 6 dice attack, dam 1  crit 1.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.pRmG78BdFY38Na1u"
     },
     {
       "type": "text",
@@ -69,9 +74,10 @@
       "drawn": false,
       "_id": "jYRLedq17XL8MyS0",
       "text": "Your gun explodes, your  weapon breaks and slices  into you or your blow  catches something sharp.  You suffer a 6 dice attack,  either with Damage  and Crit rating of your  weapon or dam 1, crit 1.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.jYRLedq17XL8MyS0"
     },
     {
       "type": "text",
@@ -83,9 +89,10 @@
       "drawn": false,
       "_id": "zJxhC33OxMq38bwp",
       "text": "Your Troubles are  mounting—reroll on the  next column.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/hand-bandage.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.zJxhC33OxMq38bwp"
     },
     {
       "type": "document",
@@ -96,16 +103,22 @@
       ],
       "drawn": false,
       "_id": "Hhx96VSeqVGQQvOy",
-      "text": "TROUBLE OUTCOME TABLE - CONFLICT / PHYSICAL(4)",
-      "img": "icons/svg/d20-grey.svg",
-      "documentId": "kTzYLdUXnRnZKIQq",
+      "text": "",
+      "img": null,
+      "documentId": null,
       "flags": {},
-      "documentCollection": "RollTable"
+      "documentCollection": "RollTable",
+      "_key": "!tables.results!zqtm7HB37JwEXqLM.Hhx96VSeqVGQQvOy"
     }
   ],
   "replacement": true,
   "displayRoll": false,
-  "folder": null,
+  "folder": "tT6UbdNHfvJ0bsJ3",
+  "sort": 125000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
   "flags": {
     "exportSource": {
       "world": "tales-of-the-old-west",
@@ -115,12 +128,15 @@
     }
   },
   "_stats": {
-    "coreVersion": "12.331",
+    "compendiumSource": "RollTable.zqtm7HB37JwEXqLM",
+    "duplicateSource": null,
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1728375653772,
-    "modifiedTime": 1728493231383,
-    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+    "createdTime": 1747305306856,
+    "modifiedTime": 1747305306856,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
-  "formula": "1d6"
+  "formula": "1d6",
+  "_key": "!tables!zqtm7HB37JwEXqLM"
 }

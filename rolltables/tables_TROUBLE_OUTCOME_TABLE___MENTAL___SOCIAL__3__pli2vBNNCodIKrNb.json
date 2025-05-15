@@ -1,5 +1,6 @@
 {
   "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (3)",
+  "_id": "pli2vBNNCodIKrNb",
   "img": "icons/svg/d20-grey.svg",
   "description": "",
   "results": [
@@ -13,9 +14,10 @@
       "drawn": false,
       "_id": "pr8E42zC2hlUchEn",
       "text": "You get so frustrated that  you suffer 1 point of both  Vexes and Doubts.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.pr8E42zC2hlUchEn"
     },
     {
       "type": "text",
@@ -27,9 +29,10 @@
       "drawn": false,
       "_id": "j7Is6FHy7JQqyBBn",
       "text": "You struggle to cope with  the situation. Lose your  next Round to compose  yourself.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.j7Is6FHy7JQqyBBn"
     },
     {
       "type": "text",
@@ -41,9 +44,10 @@
       "drawn": false,
       "_id": "Ziv6uK5eVFMWYpEu",
       "text": "Your actions seem  so disrespectful or  disgraceful that a nearby  non-player character  (NPC) attacks you with  a slap or a punch to put  you in your place.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.Ziv6uK5eVFMWYpEu"
     },
     {
       "type": "text",
@@ -55,9 +59,10 @@
       "drawn": false,
       "_id": "cR5Qf2hTQqqewi8R",
       "text": "Things are going badly  wrong, and you can’t  cope. You need a Turn to  pull yourself together.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.cR5Qf2hTQqqewi8R"
     },
     {
       "type": "text",
@@ -69,9 +74,10 @@
       "drawn": false,
       "_id": "IUUecy5EqwewRuKY",
       "text": "The shameful experience  scars you, and you suffer  a 6 dice attack, dam 1,  against your Docity and  Cunning.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.IUUecy5EqwewRuKY"
     },
     {
       "type": "text",
@@ -83,9 +89,10 @@
       "drawn": false,
       "_id": "8Q9k63PX4R6nemMA",
       "text": "Your Troubles are  mounting—reroll on the  next column.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!pli2vBNNCodIKrNb.8Q9k63PX4R6nemMA"
     },
     {
       "type": "document",
@@ -98,14 +105,20 @@
       "_id": "AMS0nitF3OnstMSl",
       "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
       "img": "icons/svg/d20-grey.svg",
-      "documentId": "HFc4NoTiBzTeiduz",
+      "documentId": "mWGec7BwhJWV2jN2",
       "flags": {},
-      "documentCollection": "RollTable"
+      "documentCollection": "RollTable",
+      "_key": "!tables.results!pli2vBNNCodIKrNb.AMS0nitF3OnstMSl"
     }
   ],
   "replacement": true,
   "displayRoll": false,
-  "folder": null,
+  "folder": "tT6UbdNHfvJ0bsJ3",
+  "sort": 101563,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
   "flags": {
     "exportSource": {
       "world": "tales-of-the-old-west",
@@ -115,12 +128,15 @@
     }
   },
   "_stats": {
-    "coreVersion": "12.331",
+    "compendiumSource": "RollTable.pli2vBNNCodIKrNb",
+    "duplicateSource": null,
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1728376382004,
-    "modifiedTime": 1728376856842,
-    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+    "createdTime": 1747305306856,
+    "modifiedTime": 1747305306856,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
-  "formula": "1d6"
+  "formula": "1d6",
+  "_key": "!tables!pli2vBNNCodIKrNb"
 }

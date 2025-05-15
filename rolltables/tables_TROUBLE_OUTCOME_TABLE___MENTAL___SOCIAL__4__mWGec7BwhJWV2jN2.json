@@ -1,5 +1,6 @@
 {
   "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (4)",
+  "_id": "mWGec7BwhJWV2jN2",
   "img": "icons/svg/d20-grey.svg",
   "description": "",
   "results": [
@@ -13,9 +14,10 @@
       "drawn": false,
       "_id": "pr8E42zC2hlUchEn",
       "text": "You’re so shaken or  shocked by events that,  for the next Shift, you  suffer Trouble on a roll of  1 or 2. You may recover  by taking a slow action  to draw breath, and  spending 2 Faith Points.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.pr8E42zC2hlUchEn"
     },
     {
       "type": "text",
@@ -27,9 +29,10 @@
       "drawn": false,
       "_id": "j7Is6FHy7JQqyBBn",
       "text": "You have mortally  offended someone with  your words or actions.  They will hold a grudge  forever.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.j7Is6FHy7JQqyBBn"
     },
     {
       "type": "text",
@@ -41,9 +44,10 @@
       "drawn": false,
       "_id": "Ziv6uK5eVFMWYpEu",
       "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.Ziv6uK5eVFMWYpEu"
     },
     {
       "type": "text",
@@ -55,9 +59,10 @@
       "drawn": false,
       "_id": "cR5Qf2hTQqqewi8R",
       "text": "News of your abject  behavior gets around  town in a flash. For the  rest of the scenario, all  your ability rolls relating  to social encounters  suffer a −2 penalty.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.cR5Qf2hTQqqewi8R"
     },
     {
       "type": "text",
@@ -69,9 +74,10 @@
       "drawn": false,
       "_id": "IUUecy5EqwewRuKY",
       "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Cunning. This makes  you upset, angry or  distraught. Roleplay the  outcome.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.IUUecy5EqwewRuKY"
     },
     {
       "type": "text",
@@ -83,14 +89,20 @@
       "drawn": false,
       "_id": "8Q9k63PX4R6nemMA",
       "text": "Your efforts have gone so  disastrously wrong you  are immediately Broken  on Docity. This makes  you doubtful, confused,  or distraught. Roleplay  the outcome.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!mWGec7BwhJWV2jN2.8Q9k63PX4R6nemMA"
     }
   ],
   "replacement": true,
   "displayRoll": false,
-  "folder": null,
+  "folder": "tT6UbdNHfvJ0bsJ3",
+  "sort": 100782,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
   "flags": {
     "exportSource": {
       "world": "tales-of-the-old-west",
@@ -100,12 +112,15 @@
     }
   },
   "_stats": {
-    "coreVersion": "12.331",
+    "compendiumSource": "RollTable.mWGec7BwhJWV2jN2",
+    "duplicateSource": null,
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1728376417135,
-    "modifiedTime": 1728376878128,
-    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+    "createdTime": 1747305306856,
+    "modifiedTime": 1747305306856,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
-  "formula": "1d6"
+  "formula": "1d6",
+  "_key": "!tables!mWGec7BwhJWV2jN2"
 }

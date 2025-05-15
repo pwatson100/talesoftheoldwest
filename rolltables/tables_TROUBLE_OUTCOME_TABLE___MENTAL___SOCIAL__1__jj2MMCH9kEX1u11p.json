@@ -1,5 +1,6 @@
 {
   "name": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (1)",
+  "_id": "jj2MMCH9kEX1u11p",
   "img": "icons/svg/d20-grey.svg",
   "description": "",
   "results": [
@@ -13,9 +14,10 @@
       "drawn": false,
       "_id": "pr8E42zC2hlUchEn",
       "text": "You have upset someone  with your words or  actions: they react badly  towards you, laugh at you,  or show you no respect.  Suffer a −1 penalty to  your next roll when  dealing with this person.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.pr8E42zC2hlUchEn"
     },
     {
       "type": "text",
@@ -27,9 +29,10 @@
       "drawn": false,
       "_id": "j7Is6FHy7JQqyBBn",
       "text": "You get tongue-tied or  lose your thread. Lose  your next slow action.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.j7Is6FHy7JQqyBBn"
     },
     {
       "type": "text",
@@ -41,9 +44,10 @@
       "drawn": false,
       "_id": "Ziv6uK5eVFMWYpEu",
       "text": "You’re confused, your  mind goes blank, or  you lose your train of  thought. You suffer −1 to  rolls relating to this issue  for the rest of the scene.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.Ziv6uK5eVFMWYpEu"
     },
     {
       "type": "text",
@@ -55,9 +59,10 @@
       "drawn": false,
       "_id": "cR5Qf2hTQqqewi8R",
       "text": "They know you’re faking  it, and you know they  know you’re faking it.  Lose one 6 from your  pool of successes.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.cR5Qf2hTQqqewi8R"
     },
     {
       "type": "text",
@@ -69,9 +74,10 @@
       "drawn": false,
       "_id": "IUUecy5EqwewRuKY",
       "text": "Your words or actions  have gone down very  badly, and you bluster  to cover it up. Lose your  next Round.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.IUUecy5EqwewRuKY"
     },
     {
       "type": "text",
@@ -83,9 +89,10 @@
       "drawn": false,
       "_id": "8Q9k63PX4R6nemMA",
       "text": "Your Troubles are  mounting—reroll on the  next column.",
-      "img": "icons/svg/d20-black.svg",
+      "img": "systems/talesoftheoldwest/assets/icons/brain.webp",
       "documentId": null,
-      "flags": {}
+      "flags": {},
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.8Q9k63PX4R6nemMA"
     },
     {
       "type": "document",
@@ -98,14 +105,20 @@
       "_id": "AMS0nitF3OnstMSl",
       "text": "TROUBLE OUTCOME TABLE - MENTAL / SOCIAL (2)",
       "img": "icons/svg/d20-grey.svg",
-      "documentId": "hSf8k6g2vL7234BW",
+      "documentId": "xePnbOGMrCLPZf0S",
       "flags": {},
-      "documentCollection": "RollTable"
+      "documentCollection": "RollTable",
+      "_key": "!tables.results!jj2MMCH9kEX1u11p.AMS0nitF3OnstMSl"
     }
   ],
   "replacement": true,
   "displayRoll": false,
-  "folder": null,
+  "folder": "tT6UbdNHfvJ0bsJ3",
+  "sort": 106250,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
   "flags": {
     "exportSource": {
       "world": "tales-of-the-old-west",
@@ -115,12 +128,15 @@
     }
   },
   "_stats": {
-    "coreVersion": "12.331",
+    "compendiumSource": "RollTable.jj2MMCH9kEX1u11p",
+    "duplicateSource": null,
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1728376198152,
-    "modifiedTime": 1728376800621,
-    "lastModifiedBy": "wpEEYQwNHSOfbGdt"
+    "createdTime": 1747305306856,
+    "modifiedTime": 1747305306856,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
-  "formula": "1d6"
+  "formula": "1d6",
+  "_key": "!tables!jj2MMCH9kEX1u11p"
 }
