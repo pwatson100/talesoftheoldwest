@@ -7,6 +7,13 @@
 			"name": "Paul Watson"
 		}
 	],
+	"version": "0.1.0",
+	"compatibility": {
+		"minimum": "12",
+		"verified": "12"
+	},
+	"esmodules": ["module/talesoftheoldwest.mjs"],
+	"styles": ["css/talesoftheoldwest-min.css"],
 	"documentTypes": {
 		"Actor": {
 			"pc": { "htmlFields": ["biography", "horseNotes"] },
@@ -22,7 +29,6 @@
 			"weaponquality": { "htmlFields": ["description", "impact"] }
 		}
 	},
-
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "html", "mjs", "js", "hbs", "json"],
@@ -41,13 +47,7 @@
 			"thumbnail": "systems/talesoftheoldwest/assets/icons/totow.webp"
 		}
 	],
-	"version": "0.0.1",
-	"compatibility": {
-		"minimum": "12",
-		"verified": "12"
-	},
-	"esmodules": ["module/talesoftheoldwest.mjs"],
-	"styles": ["css/talesoftheoldwest-min.css"],
+
 	"languages": [
 		{
 			"lang": "en",
