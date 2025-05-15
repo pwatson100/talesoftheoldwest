@@ -10,7 +10,8 @@
     "basicisActive": false,
     "advisActive": false,
     "weight": 0,
-    "cost": 0
+    "cost": "0",
+    "stored": false
   },
   "_id": "mfvqT43mGojcuWGd",
   "img": "icons/svg/item-bag.svg",
@@ -25,11 +26,11 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392079514,
-    "modifiedTime": 1744392079514,
+    "createdTime": 1747305221968,
+    "modifiedTime": 1747305221968,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!mfvqT43mGojcuWGd"

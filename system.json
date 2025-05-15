@@ -26,7 +26,7 @@
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "html", "mjs", "js", "hbs", "json"],
-			"paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
+			"paths": ["./css/talesoftheoldwest-min.css", "css", "lang", "templates"]
 		}
 	},
 	"url": "Replace this with a link to your public repository",
@@ -47,7 +47,7 @@
 		"verified": "12"
 	},
 	"esmodules": ["module/talesoftheoldwest.mjs"],
-	"styles": ["css/talesoftheoldwest.css"],
+	"styles": ["css/talesoftheoldwest-min.css"],
 	"languages": [
 		{
 			"lang": "en",

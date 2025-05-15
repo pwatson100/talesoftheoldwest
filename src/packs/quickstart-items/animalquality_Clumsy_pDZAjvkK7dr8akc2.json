@@ -3,15 +3,28 @@
   "type": "animalquality",
   "system": {
     "description": "This horse is less agile than most and has −1 to its Quick.",
-    "itemModifiers": null,
+    "itemModifiers": {
+      "0": {
+        "name": "quick",
+        "value": -1,
+        "state": "Active",
+        "modtype": "na",
+        "id": "pDZAjvkK7dr8akc2",
+        "description": "This horse is less agile than most and has −1 to its Quick."
+      }
+    },
+    "general": {
+      "subtype": "flaw"
+    },
     "weight": 0,
-    "cost": 0
+    "cost": "0",
+    "stored": false
   },
   "_id": "pDZAjvkK7dr8akc2",
   "img": "icons/svg/item-bag.svg",
   "effects": [],
-  "folder": "q8E9alfSeM1DCNfJ",
-  "sort": 300000,
+  "folder": "TpSBl6F3ZnERM56p",
+  "sort": 50000,
   "ownership": {
     "default": 0,
     "oo2KG31LDGhYx0MC": 3
@@ -20,11 +33,11 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392074027,
-    "modifiedTime": 1744392074027,
+    "createdTime": 1747305218759,
+    "modifiedTime": 1747305218759,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!pDZAjvkK7dr8akc2"

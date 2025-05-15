@@ -9,7 +9,7 @@
       "0": {
         "name": "grit",
         "value": 1,
-        "state": "Active",
+        "state": "Conditional",
         "modtype": "na",
         "id": "mp7LeXfNlVP2Mq6T",
         "description": "Always handy"
@@ -18,7 +18,8 @@
     "quantity": 1,
     "weight": 0,
     "reference": "",
-    "cost": 0
+    "cost": "0",
+    "stored": false
   },
   "effects": [],
   "folder": "DFBrwLylXIJKjhil",
@@ -31,11 +32,11 @@
   "_stats": {
     "compendiumSource": "Item.DsUvLVi52qKwlgjX",
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392076998,
-    "modifiedTime": 1744392076998,
+    "createdTime": 1747305220389,
+    "modifiedTime": 1747305220389,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!mp7LeXfNlVP2Mq6T"

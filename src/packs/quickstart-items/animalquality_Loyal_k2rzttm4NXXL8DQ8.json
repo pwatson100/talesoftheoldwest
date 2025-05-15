@@ -5,13 +5,17 @@
     "description": "This horse has given itself to one rider, and one rider only. Anyone other than the owner suffers a −3 penalty to ANIMAL HANDLIN’ tests relating to the horse, and if an ANIMAL HANDLIN’ test is failed the horse is immediately spooked.",
     "itemModifiers": null,
     "weight": 0,
-    "cost": 0
+    "cost": "0",
+    "stored": false,
+    "general": {
+      "subtype": "quality"
+    }
   },
   "_id": "k2rzttm4NXXL8DQ8",
   "img": "icons/svg/item-bag.svg",
   "effects": [],
-  "folder": "q8E9alfSeM1DCNfJ",
-  "sort": 600391,
+  "folder": "1aNjIlxk8TPb7woj",
+  "sort": 1000000,
   "ownership": {
     "default": 0,
     "oo2KG31LDGhYx0MC": 3
@@ -20,11 +24,11 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392074027,
-    "modifiedTime": 1744392074027,
+    "createdTime": 1747305218759,
+    "modifiedTime": 1747305218759,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!k2rzttm4NXXL8DQ8"

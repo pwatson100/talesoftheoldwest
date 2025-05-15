@@ -5,12 +5,16 @@
     "description": "The horse is beautiful and full of grace, and is worth double the normal price.",
     "itemModifiers": null,
     "weight": 0,
-    "cost": 0
+    "cost": "0",
+    "stored": false,
+    "general": {
+      "subtype": "quality"
+    }
   },
   "_id": "tpbIzpvmtJGun1ZJ",
   "img": "icons/svg/item-bag.svg",
   "effects": [],
-  "folder": "q8E9alfSeM1DCNfJ",
+  "folder": "1aNjIlxk8TPb7woj",
   "sort": 600000,
   "ownership": {
     "default": 0,
@@ -20,11 +24,11 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392074027,
-    "modifiedTime": 1744392074027,
+    "createdTime": 1747305218759,
+    "modifiedTime": 1747305218759,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!tpbIzpvmtJGun1ZJ"

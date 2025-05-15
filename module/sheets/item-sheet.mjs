@@ -2,7 +2,8 @@ import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
 import { logger } from '../helpers/logger.mjs';
 
 const { api, sheets } = foundry.applications;
-
+// V13
+// const DragDrop = foundry.applications.ux.DragDrop;
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheetV2}
@@ -10,6 +11,8 @@ const { api, sheets } = foundry.applications;
 export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSheetV2) {
 	constructor(options = {}) {
 		super(options);
+		// TODO V13 not needed
+		// 	// this.#dragDrop = this.#createDragDropHandlers();
 		this.#dragDrop = this.#createDragDropHandlers();
 	}
 
@@ -33,6 +36,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			submitOnChange: true,
 		},
 		// Custom property that's merged into `this.options`
+		// TODO V13
+		// dragDrop: [{ dragSelector: '.draggable', dropSelector: null }],
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
 	};
 
@@ -263,8 +268,27 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 * @param {RenderOptions} options                 Provided render options
 	 * @protected
 	 */
-	_onRender(context, options) {
+	async _onRender(context, options) {
+		// TODO V13 Not needed
+
 		this.#dragDrop.forEach((d) => d.bind(this.element));
+
+		// TODO V13
+		// 	await super._onRender(context, options);
+		// new DragDrop.implementation({
+		// 	dragSelector: '.draggable',
+		// 	dropSelector: null,
+		// 	permissions: {
+		// 		dragstart: this._canDragStart.bind(this),
+		// 		drop: this._canDragDrop.bind(this),
+		// 	},
+		// 	callbacks: {
+		// 		dragstart: this._onDragStart.bind(this),
+		// 		dragover: this._onDragOver.bind(this),
+		// 		drop: this._onDrop.bind(this),
+		// 	},
+		// }).bind(this.element);
+
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
@@ -959,12 +983,15 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 * Returns an array of DragDrop instances
 	 * @type {DragDrop[]}
 	 */
+	// TODO V13 Not needed
 	get dragDrop() {
 		return this.#dragDrop;
 	}
 
 	// This is marked as private because there's no real need
 	// for subclasses or external hooks to mess with it directly
+	// TODO V13 Not needed
+
 	#dragDrop;
 
 	/**
@@ -972,6 +999,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 	 * @returns {DragDrop[]}     An array of DragDrop handlers
 	 * @private
 	 */
+	// TODO V13 Not needed
+
 	#createDragDropHandlers() {
 		return this.options.dragDrop.map((d) => {
 			d.permissions = {

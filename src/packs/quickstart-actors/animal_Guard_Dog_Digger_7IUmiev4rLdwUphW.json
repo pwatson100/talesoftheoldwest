@@ -1,0 +1,184 @@
+{
+  "name": "Guard Dog Digger",
+  "type": "animal",
+  "img": "systems/talesoftheoldwest/assets/avatars/dog.webp",
+  "system": {
+    "biography": "",
+    "attributes": {
+      "grit": {
+        "value": 4,
+        "mod": 4,
+        "max": 4,
+        "label": ""
+      },
+      "quick": {
+        "value": 3,
+        "mod": 3,
+        "max": 3,
+        "label": ""
+      },
+      "cunning": {
+        "value": 2,
+        "mod": 2,
+        "max": 2,
+        "label": ""
+      }
+    },
+    "abilities": {
+      "resilience": {
+        "value": 0,
+        "mod": 4,
+        "max": 0,
+        "label": "",
+        "total": 0,
+        "upper": "",
+        "attr": ""
+      },
+      "fightin": {
+        "value": 3,
+        "mod": 7,
+        "max": 0,
+        "label": "",
+        "total": 0,
+        "upper": "",
+        "attr": ""
+      },
+      "move": {
+        "value": 2,
+        "mod": 5,
+        "max": 0,
+        "label": "",
+        "total": 0,
+        "upper": "",
+        "attr": ""
+      },
+      "hawkeye": {
+        "value": 3,
+        "mod": 5,
+        "max": 0,
+        "label": "",
+        "total": 0,
+        "upper": "",
+        "attr": ""
+      }
+    },
+    "general": {
+      "breed": "americanquarter",
+      "cost": "0",
+      "attacks": "<p><strong>Bite: Damage 2, Crit 2 (+1 to FIGHTIN’ when Grappling)</strong></p>",
+      "subtype": "dog",
+      "ridingmodifier": {
+        "value": 0
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Guard Dog Digger",
+    "displayName": 20,
+    "actorLink": true,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/talesoftheoldwest/assets/avatars/dog.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "header.health"
+    },
+    "bar2": {
+      "attribute": "None"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": true,
+      "range": 12,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305133394,
+    "modifiedTime": 1747305133431,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_id": "7IUmiev4rLdwUphW",
+  "sort": 200000,
+  "_key": "!actors!7IUmiev4rLdwUphW"
+}

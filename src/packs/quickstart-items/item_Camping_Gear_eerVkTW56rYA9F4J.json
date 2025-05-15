@@ -17,8 +17,9 @@
     },
     "quantity": 1,
     "weight": 0,
-    "cost": 5,
-    "reference": ""
+    "cost": "$5.00",
+    "reference": "",
+    "stored": false
   },
   "effects": [],
   "folder": "DFBrwLylXIJKjhil",
@@ -31,11 +32,11 @@
   "_stats": {
     "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392076998,
-    "modifiedTime": 1744392076998,
+    "createdTime": 1747305220389,
+    "modifiedTime": 1747305220389,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!eerVkTW56rYA9F4J"

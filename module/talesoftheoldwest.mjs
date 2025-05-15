@@ -16,6 +16,11 @@ import { logger } from './helpers/logger.mjs';
 import registerSettings from './helpers/settings.mjs';
 import { totowDiceListeners, totowDiceButtons } from './helpers/diceroll.mjs';
 
+const collections = foundry.documents.collections;
+
+// TODO V13
+// const sheets = foundry.appv1.sheets;
+
 const SUB_MODULES = {
 	COMMON,
 	logger,
@@ -89,27 +94,29 @@ Hooks.once('init', function () {
 	CONFIG.ActiveEffect.legacyTransferral = false;
 
 	// Register sheet application classes
-	// foundry.documents.collections.Actors.unregisterSheet('core', foundry.appv1.sheets.ActorSheet);
-	// foundry.documents.collections.Actors.registerSheet('totow', totowActorSheet, {
-	// 	makeDefault: true,
-	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
-	// });
-	// foundry.documents.collections.Items.unregisterSheet('core', foundry.appv1.sheets.ItemSheet);
-	// foundry.documents.collections.Items.registerSheet('totow', totowItemSheet, {
-	// 	makeDefault: true,
-	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
-	// });
 
 	Actors.unregisterSheet('core', ActorSheet);
 	Actors.registerSheet('totow', totowActorSheet, {
 		makeDefault: true,
 		label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
 	});
+
+	// collections.Actors.unregisterSheet('core', sheets.ActorSheet);
+	// collections.Actors.registerSheet('totow', totowActorSheet, {
+	// 	makeDefault: true,
+	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
+	// });
+
 	Items.unregisterSheet('core', ItemSheet);
 	Items.registerSheet('totow', totowItemSheet, {
 		makeDefault: true,
 		label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
 	});
+	// collections.Items.unregisterSheet('core', sheets.ItemSheet);
+	// collections.Items.registerSheet('totow', totowItemSheet, {
+	// 	makeDefault: true,
+	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
+	// });
 
 	registerSettings();
 	// // Preload Handlebars templates.

@@ -17,7 +17,8 @@
     "reference": "",
     "featureModifiers": [],
     "weight": 0,
-    "cost": 0,
+    "cost": "0",
+    "stored": false,
     "conditionNames": ""
   },
   "effects": [],
@@ -32,11 +33,11 @@
   "_stats": {
     "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
-    "createdTime": 1744392084777,
-    "modifiedTime": 1744392084777,
+    "createdTime": 1747305225532,
+    "modifiedTime": 1747305225532,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!items!p9USgu1jPMkAYdHh"

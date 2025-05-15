@@ -1,0 +1,22 @@
+{
+  "name": "TOTOW System",
+  "sorting": "a",
+  "folder": null,
+  "type": "RollTable",
+  "_id": "tT6UbdNHfvJ0bsJ3",
+  "description": "",
+  "sort": 100000,
+  "color": "#992929",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305306841,
+    "modifiedTime": 1747305306902,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!tT6UbdNHfvJ0bsJ3"
+}

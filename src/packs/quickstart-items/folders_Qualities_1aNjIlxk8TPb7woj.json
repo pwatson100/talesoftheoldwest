@@ -1,0 +1,22 @@
+{
+  "name": "Qualities",
+  "sorting": "a",
+  "folder": "q8E9alfSeM1DCNfJ",
+  "type": "Item",
+  "_id": "1aNjIlxk8TPb7woj",
+  "description": "",
+  "sort": 0,
+  "color": "#69b139",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305218744,
+    "modifiedTime": 1747305218744,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!1aNjIlxk8TPb7woj"
+}

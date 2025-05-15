@@ -30,6 +30,7 @@ export class totowActor extends Actor {
 	 */
 	prepareDerivedData() {
 		const actorData = this;
+		const systemData = actorData.system;
 		const flags = actorData.flags.talesoftheoldwest || {};
 	}
 
@@ -496,7 +497,7 @@ export class totowActor extends Actor {
 						dataset,
 					});
 					const data = await foundry.applications.api.DialogV2.wait({
-						window: { title: 'TALESOFTHEOLDWEST.General.roll-modifiers' },
+						window: { title: 'Roll Modifiers' },
 						position: { width: 350 },
 						// classes: ["my-special-class"],
 						content,
@@ -561,7 +562,7 @@ export class totowActor extends Actor {
 	async modRoll(actor, event, target) {
 		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html', actor, event, target);
 		const response = await foundry.applications.api.DialogV2.wait({
-			window: { title: 'Proceed' },
+			window: { title: 'Roll Modifiers' },
 			content,
 			rejectClose: false,
 			buttons: [

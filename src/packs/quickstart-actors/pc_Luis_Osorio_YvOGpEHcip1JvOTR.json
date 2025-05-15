@@ -343,12 +343,13 @@
       "_stats": {
         "compendiumSource": "Item.xWkJzivqOlaiwCbw",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.HGD9T47itJ6GSmhI"
     },
@@ -378,12 +379,13 @@
       "_stats": {
         "compendiumSource": "Item.z11zOk32BBGOl93G",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.hw1bMbKk7fjQDzqL"
     },
@@ -413,12 +415,13 @@
       "_stats": {
         "compendiumSource": "Item.5q0tKk4Ijla0Nvcl",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.I7QzShfTdvBL8kyI"
     },
@@ -455,12 +458,13 @@
       "_stats": {
         "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.bbCWQDLDZpbeg7nP",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.ajeItMiGylS1TFTg"
     },
@@ -487,12 +491,13 @@
       "_stats": {
         "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.BhJ9oOtOnxrKlo7G",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.apYtnjcxdffliHuE"
     },
@@ -519,12 +524,13 @@
       "_stats": {
         "compendiumSource": "Item.DsUvLVi52qKwlgjX",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.D5uOtWSe6YmbgIw6"
     },
@@ -567,12 +573,13 @@
       "_stats": {
         "compendiumSource": "Item.rlycyeJVoRDXYZ4g",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.gjmVguNuReAWbP6S"
     },
@@ -628,12 +635,13 @@
       "_stats": {
         "compendiumSource": "Actor.yHmO2ZEpdHYRsZxS.Item.AZxLZcafofWPI3vS",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.hx32f1n7DbDF55dW"
     },
@@ -689,12 +697,13 @@
       "_stats": {
         "compendiumSource": "Item.ov7s0i2Udoc0yftJ",
         "duplicateSource": null,
-        "coreVersion": "12.331",
+        "coreVersion": "13.341",
         "systemId": "talesoftheoldwest",
         "systemVersion": "0.0.1",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null
+        "lastModifiedBy": null,
+        "exportSource": null
       },
       "_key": "!actors.items!YvOGpEHcip1JvOTR.aImQt5Mte5fLO6Mx"
     }
@@ -709,14 +718,14 @@
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1744391986123,
-    "modifiedTime": 1744391986123,
+    "modifiedTime": 1747305133431,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_id": "YvOGpEHcip1JvOTR",
-  "sort": 0,
+  "sort": 100000,
   "_key": "!actors!YvOGpEHcip1JvOTR"
 }

@@ -9,6 +9,7 @@ const { api, sheets } = foundry.applications;
  * @extends {ActorSheetV2}
  */
 export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorSheetV2) {
+	// TODO V13 Not needed
 	constructor(options = {}) {
 		super(options);
 		this.#dragDrop = this.#createDragDropHandlers();
@@ -39,6 +40,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			storeItem: { handler: this._storeItem, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
+		// TODO V13 Not needed
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
 		form: {
 			submitOnChange: true,
@@ -637,8 +639,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @protected
 	 * @override
 	 */
-	_onRender(context, options) {
+	async _onRender(context, options) {
+		// TODO V13 Not needed
 		this.#dragDrop.forEach((d) => d.bind(this.element));
+		// TODO V13
+		// await super._onRender(context, options);
 		this.#disableOverrides();
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
@@ -1010,6 +1015,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @returns {boolean}             Can the current user drag this selector?
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	_canDragStart(selector) {
 		// game.user fetches the current user
 		return this.isEditable;
@@ -1021,6 +1027,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @returns {boolean}             Can the current user drop on this selector?
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	_canDragDrop(selector) {
 		// game.user fetches the current user
 		return this.isEditable;
@@ -1031,6 +1038,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @param {DragEvent} event       The originating DragEvent
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	_onDragStart(event) {
 		const docRow = event.currentTarget.closest('li');
 		if ('link' in event.target.dataset) return;
@@ -1049,6 +1057,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @param {DragEvent} event       The originating DragEvent
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	_onDragOver(event) {}
 
 	/**
@@ -1056,6 +1065,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @param {DragEvent} event       The originating DragEvent
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	async _onDrop(event) {
 		const data = TextEditor.getDragEventData(event);
 		const actor = this.actor;
@@ -1177,6 +1187,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @returns {Promise<Item[]|boolean>}  The created or updated Item instances, or false if the drop was not permitted.
 	 * @protected
 	 */
+	// TODO V13 Not needed
 	async _onDropItem(event, data) {
 		if (!this.actor.isOwner) return false;
 		const item = await Item.implementation.fromDropData(data);
@@ -1254,6 +1265,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @param {Item} item
 	 * @private
 	 */
+	// TODO V13 Not needed
 	_onSortItem(event, item) {
 		// Get the drag source and drop target
 		const items = this.actor.items;
@@ -1292,12 +1304,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * Returns an array of DragDrop instances
 	 * @type {DragDrop[]}
 	 */
+	// TODO V13 Not needed
 	get dragDrop() {
 		return this.#dragDrop;
 	}
 
 	// This is marked as private because there's no real need
 	// for subclasses or external hooks to mess with it directly
+	// TODO V13 Not needed
 	#dragDrop;
 
 	/**
@@ -1305,6 +1319,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 * @returns {DragDrop[]}     An array of DragDrop handlers
 	 * @private
 	 */
+	// TODO V13 Not needed
 	#createDragDropHandlers() {
 		return this.options.dragDrop.map((d) => {
 			d.permissions = {
