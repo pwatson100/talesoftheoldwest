@@ -6,8 +6,6 @@
 			<select id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
-			{{!-- <label for='system.weight' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label> --}}
-			{{!-- <input class='statnum' type='text' name='system.weight' value='{{system.weight}}' data-dtype='Number' /> --}}
 
 			{{#if (eq system.subtype 'shootin')}}
 				<label for='system.action' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
@@ -112,7 +110,7 @@
 								data-origin='{{item.id}}'
 								data-actor='{{@root.item.actor.id}}'
 								data-isEmbedded='{{item.isEmbedded}}'
-								title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'
+								data-tooltip='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'
 							><i class='fas fa-plus'></i></a>
 						</div>
 					</li>
@@ -140,7 +138,7 @@
 										data-origin='{{@root.item.id}}'
 										data-isEmbedded='{{@root.item.isEmbedded}}'
 										data-actor='{{@root.item.actor.id}}'
-										title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
+										data-tooltip='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
 										data-modifier-id='{{@key}}'
 									>
 										<i class='fas fa-trash'></i>

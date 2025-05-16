@@ -4,15 +4,17 @@
 			<div class='remuda' data-compId='{{id}}' style='margin-bottom: 10px;'>
 				<div class='sheet-compadres-header'>
 					<div class='schA1'>{{actor.name}}</div>
-					<a class='button remuda-edit schB1' title='{{localize "DOCUMENT.Update" type='Horse'}}' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
-					<a class='button remuda-remove schA2' title='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
+					<a class='button remuda-edit schB1' data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+					<a class='button remuda-remove schA2' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i
+							class='fas fa-trash'
+						></i></a>
 				</div>
 				<div class='sheet-animal-attributes animal-stats'>
 					<div class='aA1'>
 						<label
 							for='actor.system.attributes.grit'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -30,7 +32,7 @@
 						<label
 							for='actor.system.attributes.quick'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -47,7 +49,7 @@
 						<label
 							for='actor.system.attributes.cunning'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
@@ -72,7 +74,7 @@
 						<label
 							class='resource-label rollable'
 							for='actor.system.abilities.resilience.value'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='ability'
 							data-action='roll'
 							data-value='{{actor.system.abilities.resilience.value}}'
@@ -96,7 +98,7 @@
 						<label
 							class='resource-label rollable'
 							for='actor.system.abilities.move.value'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='ability'
 							data-action='roll'
 							data-value='{{actor.system.abilities.move.value}}'
@@ -114,7 +116,7 @@
 						<label
 							class='resource-label rollable'
 							for='actor.system.abilities.fightin.value'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='ability'
 							data-action='roll'
 							data-value='{{actor.system.abilities.fightin.value}}'

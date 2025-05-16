@@ -27,7 +27,7 @@
 			<input name='system.general.lifestyle' class='resource-label L5C2' style='width: 300px' value='{{system.general.lifestyle}}' data-dtype='String' />
 
 			<label for='system.general.xp.value' class='resource-label L6C1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
-			<div class='newdots click-damage-level L6C2' title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeXp'>
+			<div class='newdots click-damage-level L6C2' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeXp'>
 				{{#times system.general.xp.value}}
 					<i class='far fa-dot-circle'></i>
 				{{/times}}

@@ -9,7 +9,7 @@
 			<label
 				for="system.attributes.grit"
 				class="resource-label rollable align-left"
-				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -29,7 +29,7 @@
 			<label
 				for="system.attributes.quick"
 				class="resource-label rollable align-left"
-				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -49,7 +49,7 @@
 			<label
 				for="system.attributes.cunning"
 				class="resource-label rollable align-left"
-				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
@@ -69,7 +69,7 @@
 			<label
 				for="system.attributes.docity"
 				class="resource-label rollable align-left"
-				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="attribute"
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
@@ -96,7 +96,7 @@
 			style="font-size: large; padding: 10px"
 			data-action="changeDamage"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+			data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
 		>
 			{{#times system.damage.hurts.value}}
 			<a class="far fa-dot-circle"></a>
@@ -114,7 +114,7 @@
 			style="font-size: large"
 			data-action="changeDamage"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+			data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
 		>
 			{{#times system.damage.shakes.value}}
 			<a class="far fa-dot-circle"></a>
@@ -130,7 +130,7 @@
 			style="font-size: large"
 			data-action="changeDamage"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+			data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
 		>
 			{{#times system.damage.vexes.value}}
 			<a class="far fa-dot-circle"></a>
@@ -147,7 +147,7 @@
 			style="font-size: large"
 			data-action="changeDamage"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
-			title="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
+			data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}"
 		>
 			{{#times system.damage.doubts.value}}
 			<a class="far fa-dot-circle"></a>
@@ -160,7 +160,7 @@
 			<label
 				class="resource-label rollable"
 				for="system.abilities.{{key}}.value"
-				title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 				data-roll-type="ability"
 				data-action="roll"
 				data-value="{{ability.value}}"
@@ -189,7 +189,7 @@
 				</div>
 				<div>
 					<label class="resource-label" style="font-size: 20px" data-action="rollCrit">{{ localize 'TYPES.Item.crit'}}</label>
-					<a class="resource-label-header" title="{{localize 'TALESOFTHEOLDWEST.General.leftclicktoroll'}}" data-action="rollCrit"
+					<a class="resource-label-header" data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftclicktoroll'}}" data-action="rollCrit"
 						><i class="fas fa-heartbeat"></i
 					></a>
 				</div>
@@ -206,7 +206,7 @@
 								</p>
 							</div>
 							<div class="item-controls crit4">
-								<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" title='{{localize "DOCUMENT.Update" type="Item"}}'>
+								<a class="item-control item-edit" data-action="viewDoc" data-actor="{{actor.id}}" data-tooltip='{{localize "DOCUMENT.Update" type="Item"}}'>
 									<i class="fas fa-edit"></i>
 								</a>
 								<a
@@ -214,7 +214,7 @@
 									data-action="deleteDoc"
 									data-type="criticalinj"
 									data-actor="{{actor.id}}"
-									title='{{localize "DOCUMENT.Delete" type="Item"}}'
+									data-tooltip='{{localize "DOCUMENT.Delete" type="Item"}}'
 								>
 									<i class="fas fa-trash"></i>
 								</a>
@@ -224,7 +224,7 @@
 					</ol>
 				</div>
 				<div class="heading">
-					<label class="dots resource-label" style="padding-right: 15px" data-key="starving" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="starving" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="starving">
 							{{#if (eq system.conditions.starving true)}}
@@ -234,7 +234,7 @@
 							{{/if}}
 						</a>
 					</label>
-					<label class="dots resource-label" style="padding-right: 15px" data-key="dehydrated" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="dehydrated" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="dehydrated">
 							{{#if (eq system.conditions.dehydrated true)}}
@@ -244,7 +244,7 @@
 							{{/if}}
 						</a>
 					</label>
-					<label class="dots resource-label" style="padding-right: 15px" data-key="exhausted" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="exhausted" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="exhausted">
 							{{#if (eq system.conditions.exhausted true)}}
@@ -254,7 +254,7 @@
 							{{/if}}
 						</a>
 					</label>
-					<label class="dots resource-label" style="padding-right: 15px" data-key="freezing" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+					<label class="dots resource-label" style="padding-right: 15px" data-key="freezing" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="freezing">
 							{{#if (eq system.conditions.freezing true)}}
@@ -264,7 +264,7 @@
 							{{/if}}
 						</a>
 					</label>
-					<label class="dots resource-label" data-key="heatstroke" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+					<label class="dots resource-label" data-key="heatstroke" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 						{{ localize 'TALESOFTHEOLDWEST.Conditions.Heatstroke'}}
 						<a class="overwatch-toggle" data-action="toggleCondition" data-key="heatstroke">
 							{{#if (eq system.conditions.heatstroke true)}}
@@ -289,7 +289,7 @@
 		<div class="TSplit1 heading" style="padding-left: 10px; margin-bottom: 10px">
 			<div class="heading" style="width: 264px">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}</div>
 			<div class="conditions-split">
-				<label class="dots resource-label CSplit11" data-key="starving" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit11" data-key="starving" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
 				</label>
 				<a class="overwatch-toggle CSplit12" data-action="toggleCondition" data-key="starving">
@@ -299,7 +299,7 @@
 					<i class="far fa-circle"></i>
 					{{/if}}
 				</a>
-				<label class="dots resource-label CSplit21" data-key="dehydrated" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit21" data-key="dehydrated" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
 				</label>
 				<a class="overwatch-toggle CSplit22" data-action="toggleCondition" data-key="dehydrated">
@@ -309,7 +309,7 @@
 					<i class="far fa-circle"></i>
 					{{/if}}
 				</a>
-				<label class="dots resource-label CSplit31" data-key="exhausted" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit31" data-key="exhausted" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
 				</label>
 				<a class="overwatch-toggle CSplit32" data-action="toggleCondition" data-key="exhausted">
@@ -319,7 +319,7 @@
 					<i class="far fa-circle"></i>
 					{{/if}}
 				</a>
-				<label class="dots resource-label CSplit41" data-key="freezing" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit41" data-key="freezing" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
 				</label>
 				<a class="overwatch-toggle CSplit42" data-action="toggleCondition" data-key="freezing">
@@ -329,7 +329,7 @@
 					<i class="far fa-circle"></i>
 					{{/if}}
 				</a>
-				<label class="dots resource-label CSplit51" data-key="heatstroke" title="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit51" data-key="heatstroke" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Heatstroke'}}
 				</label>
 				<a class="overwatch-toggle CSplit52" data-action="toggleCondition" data-key="heatstroke">
@@ -354,7 +354,7 @@
 						<label
 							for="system.attributes.grit"
 							class="resource-label rollable align-left"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="attribute"
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -373,7 +373,7 @@
 						<label
 							for="system.attributes.quick"
 							class="resource-label rollable align-left"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="attribute"
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -391,7 +391,7 @@
 						<label
 							for="system.attributes.cunning"
 							class="resource-label rollable align-left"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="attribute"
 							data-action="roll"
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
@@ -412,7 +412,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.resilience.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.resilience.value}}"
@@ -431,7 +431,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.move.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.move.value}}"
@@ -450,7 +450,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.fightin.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.fightin.value}}"
@@ -479,7 +479,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.fightin.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.fightin.value}}"
@@ -498,7 +498,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.move.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.move.value}}"
@@ -517,7 +517,7 @@
 						<label
 							class="resource-label rollable"
 							for="system.abilities.hawkeye.value"
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type="ability"
 							data-action="roll"
 							data-value="{{system.abilities.hawkeye.value}}"

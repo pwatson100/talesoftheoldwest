@@ -1,5 +1,5 @@
 <div class='overwatch_header'>
-	<label class='dots resource-label Ow1' data-key='overwatch' title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'>
+	<label class='dots resource-label Ow1' data-key='overwatch' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'>
 		{{localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
 		<a class='overwatch-toggle' data-action='toggleCondition' data-key='overwatch'>
 			{{#if (eq system.conditions.overwatch true)}}
@@ -25,7 +25,7 @@
 			<div class='item-controls lCol11'>
 				<a
 					class='item-control item-create'
-					title='{{localize "DOCUMENT.Create" type='Weapon'}}'
+					data-tooltip='{{localize "DOCUMENT.Create" type='Weapon'}}'
 					data-action='createDoc'
 					data-document-class='Item'
 					data-origin='{{@root.weapon.uuid}}'
@@ -45,7 +45,7 @@
 
 					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
 						<div class='item-image lColB1'>
-							<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+							<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 						</div>
 						<div
 							class='lColB2 rollable'
@@ -83,12 +83,12 @@
 								class='item-control storeItem'
 								data-action='storeItem'
 								data-item-id='{{item._id}}'
-								title='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
+								data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
 							><i class='fa-solid fa-sack-dollar'></i> </a>
-							<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Weapon'}}'>
+							<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Weapon'}}'>
 								<i class='fas fa-edit'></i>
 							</a>
-							<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Weapon'}}'>
+							<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon'}}'>
 								<i class='fas fa-trash'></i>
 							</a>
 						</div>

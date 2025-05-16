@@ -35,7 +35,7 @@
 		<label
 			for="system.horse.attributes.grit"
 			class="resource-label rollable align-left"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="attribute"
 			data-action="roll"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -54,7 +54,7 @@
 		<label
 			for="system.horse.attributes.quick"
 			class="resource-label rollable align-left"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="attribute"
 			data-action="roll"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -72,7 +72,7 @@
 		<label
 			for="system.horse.attributes.cunning"
 			class="resource-label rollable align-left"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="attribute"
 			data-action="roll"
 			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
@@ -92,7 +92,7 @@
 		<label
 			class="resource-label rollable"
 			for="system.horse.abilities.resilience.value"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="ability"
 			data-action="roll"
 			data-value="{{system.horse.abilities.resilience.value}}"
@@ -111,7 +111,7 @@
 		<label
 			class="resource-label rollable"
 			for="system.horse.abilities.move.value"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="ability"
 			data-action="roll"
 			data-value="{{system.horse.abilities.move.value}}"
@@ -130,7 +130,7 @@
 		<label
 			class="resource-label rollable"
 			for="system.horse.abilities.fightin.value"
-			title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 			data-roll-type="ability"
 			data-action="roll"
 			data-value="{{system.horse.abilities.fightin.value}}"
@@ -165,15 +165,15 @@
 				<li class="item grid-talent-items" data-item-id="{{item._id}}" data-drag="true" data-document-class="Item">
 					<div class='item-image TCol11' data-item='{{item.system.stored}}'>
 						<a >
-							<img src="{{item.img}}"  title='{{item.name}}' width="24" height="24" />
+							<img src="{{item.img}}"  data-tooltip='{{item.name}}' width="24" height="24" />
 						</a>
 					</div>
-					<div class="item-name TCol12">{{item.name}}</div>
+					<div class="item-name TCol12"  data-tooltip='{{item.system.description}}'>{{item.name}}</div>
 					<div class="item-controls TCol14">
-						<a class='item-control storeItem' data-action='storeItem' data-item-id="{{item._id}}" title='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'><i class="fa-solid fa-sack-dollar"></i>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
+						<a class='item-control storeItem' data-action='storeItem' data-item-id="{{item._id}}" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'><i class="fa-solid fa-sack-dollar"></i>
+						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Item'}}'>
 						<i class="fas fa-edit"></i>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
+						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Item'}}'>
 						<i class="fas fa-trash"></i>
 					</div>
 				</li>

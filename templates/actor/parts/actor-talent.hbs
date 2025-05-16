@@ -5,7 +5,7 @@
 			<div class='item-controls TCol4'>
 				<a
 					class='item-control item-create'
-					title='{{localize "DOCUMENT.Create" type='Talent'}}'
+					data-tooltip='{{localize "DOCUMENT.Create" type='Talent'}}'
 					data-action='createDoc'
 					data-document-class='Item'
 					data-origin='{{@root.talent.uuid}}'
@@ -26,21 +26,19 @@
 			<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Talent'>
 				<div class='item-image TCol11'>
 					<a data-roll-type='talent'>
-						<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+						<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
 					</a>
 				</div>
-<div
-				class='item-name TCol12'
-					title='{{removeMarkup item.system.description}} 
+<div class='item-name TCol12'data-tooltip='{{removeMarkup item.system.description}}' 
 Basic -  {{#if item.system.basicisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.basicAction}} 
 Advanced - {{#if item.system.advisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.advAction}}'
 				>{{item.name}}</div>
 
 				<div class='item-controls TCol14'>
-					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Talent'}}'>
+					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Talent'}}'>
 						<i class='fas fa-edit'></i>
 					</a>
-					<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Talent'}}'>
+					<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Talent'}}'>
 						<i class='fas fa-trash'></i>
 					</a>
 				</div>

@@ -4,15 +4,15 @@
 			<div class='compardre' data-compId='{{id}}' style='margin-bottom: 10px;'>
 				<div class='sheet-compadres-header'  >
 					<div class='schA1'>{{actor.name}}</div>
-					<a class='button compadre-edit schB1' title='{{localize "DOCUMENT.Update" type='NPC'}}'  data-action='viewDoc' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
-					<a class='button compadre-remove schA2' title='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
+					<a class='button compadre-edit schB1' data-tooltip='{{localize "DOCUMENT.Update" type='NPC'}}'  data-action='viewDoc' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+					<a class='button compadre-remove schA2' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
 				</div>
 				<div class='sheet-compadres-attributes'>
 					<div class='scaA1'>
 						<label
 							for='actor.system.attributes.grit'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
@@ -29,7 +29,7 @@
 						<label
 							for='actor.system.attributes.quick'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
@@ -46,7 +46,7 @@
 						<label
 							for='actor.system.attributes.cunning'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
@@ -63,7 +63,7 @@
 						<label
 							for='actor.system.attributes.docity'
 							class='resource-label rollable align-left'
-							title='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
 							data-roll-type='attribute'
 							data-action='roll'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
@@ -85,7 +85,7 @@
 						style='font-size: large; padding: 10px'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-						title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
 					>
 						{{#times actor.system.damage.hurts.value}}
 							<a class='far fa-dot-circle'></a>
@@ -101,7 +101,7 @@
 						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-						title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
 					>
 						{{#times actor.system.damage.shakes.value}}
 							<a class='far fa-dot-circle'></a>
@@ -117,7 +117,7 @@
 						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-						title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
 					>
 						{{#times actor.system.damage.vexes.value}}
 							<a class='far fa-dot-circle'></a>
@@ -133,7 +133,7 @@
 						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
-						title='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
 					>
 						{{#times actor.system.damage.doubts.value}}
 							<a class='far fa-dot-circle'></a>

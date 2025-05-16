@@ -58,19 +58,45 @@ export async function prepModOutput(rollType, rollData, dataset) {
 			if (akey === dataset.key) {
 				let spanner = rollData.itemMods[akey].reduce((acc, akey) => {
 					if (akey.state != 'Active') {
-						switch (akey.state) {
-							case 'Conditional': {
-								dataset.conditional += `<div class="form-group" >
+						if (akey.basicisActive) {
+							switch (akey.state) {
+								case 'Conditional':
+									{
+										dataset.conditional += `<div class="form-group" >
 					<input type="checkbox" 
 					id="floop${floop}-${akey.name}" 
 					name="floop${floop}-${akey.name}" 
 					value="${akey.value}" 
-					/><p style="color: black">${akey.description} ${akey.basicAction} ${akey.advAction}</p></div>`;
-								floop++;
-							}
+					/><p style="color: black">${akey.description} ${akey.basicAction} </p></div>`;
+										floop++;
+									}
+									break;
 
-							case 'Chat': {
-								dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
+								case 'Chat':
+									{
+										dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
+									}
+									break;
+							}
+						} else if (akey.advisActive) {
+							switch (akey.state) {
+								case 'Conditional':
+									{
+										dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="floop${floop}-${akey.name}" 
+					name="floop${floop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black">${akey.description} ${akey.advAction}</p></div>`;
+										floop++;
+									}
+									break;
+
+								case 'Chat':
+									{
+										dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
+									}
+									break;
 							}
 						}
 					} else return acc;

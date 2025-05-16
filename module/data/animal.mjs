@@ -8,19 +8,19 @@ export default class totowANIMAL extends totowActorBase {
 
 		schema.attributes = new fields.SchemaField({
 			grit: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
 			quick: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
 			cunning: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				label: new fields.StringField({ required: true, blank: true }),

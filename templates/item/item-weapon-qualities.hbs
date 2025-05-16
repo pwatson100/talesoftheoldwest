@@ -12,9 +12,9 @@
 						{{#if (eq item.feature 'quality')}}
 							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
-									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+									<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 								</div>
-								<div class='item-name TCol12' title='{{striptags item.description}}'>{{item.name}}</div>
+								<div class='item-name TCol12' data-tooltip='{{striptags item.description}}'>{{item.name}}</div>
 								<div class='item-controls TCol14'>
 									<a
 										class='item-control item-edit quality'
@@ -22,7 +22,7 @@
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
 										data-featureid='{{item.featureId}}'
-										title='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-edit'></i>
 									</a>
@@ -31,7 +31,7 @@
 										data-action='removeFeature'
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
-										title='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-trash'></i>
 									</a>
@@ -52,9 +52,9 @@
 						{{#if (eq item.feature 'condition')}}
 							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
-									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+									<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 								</div>
-								<div class='item-name TCol12' title='{{striptags item.description}}'>{{item.name}}</div>
+								<div class='item-name TCol12' data-tooltip='{{striptags item.description}}'>{{item.name}}</div>
 								<div class='item-controls TCol14'>
 									<a
 										class='item-control item-edit quality'
@@ -62,7 +62,7 @@
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
 										data-featureid='{{item.featureId}}'
-										title='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-edit'></i>
 									</a>
@@ -71,7 +71,7 @@
 										data-action='removeFeature'
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
-										title='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-trash'></i>
 									</a>
@@ -99,9 +99,9 @@
 						{{#if (eq item.feature 'quality')}}
 							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
-									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+									<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 								</div>
-								<div class='item-name TCol12' title='{{striptags item.description}}'>{{item.name}}</div>
+								<div class='item-name TCol12' data-tooltip='{{striptags item.description}}'>{{item.name}}</div>
 								<div class='item-controls TCol14'>
 									<a
 										class='item-control item-edit quality'
@@ -109,7 +109,7 @@
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
 										data-featureid='{{item.featureId}}'
-										title='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-edit'></i>
 									</a>
@@ -118,7 +118,7 @@
 										data-action='removeFeature'
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
-										title='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-trash'></i>
 									</a>
@@ -140,9 +140,9 @@
 						{{#if (eq item.feature 'condition')}}
 							<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='false' data-document-class='Weapon Quality'>
 								<div class='item-image TCol11'>
-									<a><img src='{{item.img}}' title='{{item.name}}' width='24' height='24' /></a>
+									<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 								</div>
-								<div class='item-name TCol12' title='{{striptags item.description}}'>{{item.name}}</div>
+								<div class='item-name TCol12' data-tooltip='{{striptags item.description}}'>{{item.name}}</div>
 								<div class='item-controls TCol14'>
 									<a
 										class='item-control item-edit quality'
@@ -150,7 +150,7 @@
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
 										data-featureid='{{item.featureId}}'
-										title='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Update" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-edit'></i>
 									</a>
@@ -159,7 +159,7 @@
 										data-action='removeFeature'
 										data-actor='{{actor.id}}'
 										data-item-id='{{item.id}}'
-										title='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
+										data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon Quality'}}'
 									>
 										<i class='fas fa-trash'></i>
 									</a>

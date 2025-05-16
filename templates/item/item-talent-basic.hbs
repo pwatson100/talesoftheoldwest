@@ -4,7 +4,7 @@
 		<input class='' name='system.basicisActive' type='checkbox' {{checked system.basicisActive}} />
 	</div>
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	<div class="div-border">
+	<div class='div-border'>
 		{{#if editable}}
 			<prose-mirror name='system.basicAction' data-document-u-u-i-d='{{item.uuid}}' value='{{system.basicAction}}' toggled='true'>
 				{{{enrichedBasic}}}
@@ -30,7 +30,7 @@
 							data-actor='{{@root.item.actor.id}}'
 							data-isEmbedded='{{item.isEmbedded}}'
 							data-modType='basic'
-							title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'
+							data-tooltip='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.addModifiers")}}'
 						><i class='fas fa-plus'></i></a>
 					</div>
 				</li>
@@ -58,7 +58,7 @@
 									data-origin='{{@root.item.id}}'
 									data-isEmbedded='{{@root.item.isEmbedded}}'
 									data-actor='{{@root.item.actor.id}}'
-									title='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
+									data-tooltip='{{toUpperCase (localize "TALESOFTHEOLDWEST.Item.General.deleteModifier")}}'
 									data-modifier-id='{{@key}}'
 								>
 									<i class='fas fa-trash'></i>

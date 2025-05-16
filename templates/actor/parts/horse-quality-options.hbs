@@ -12,15 +12,15 @@
 						<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
 							<div class='item-image QCol11'>
 								<a>
-									<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+									<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
 								</a>
 							</div>
-							<div class='item-name QCol12'>{{item.name}}</div>
+							<div class='item-name QCol12' data-tooltip='{{item.system.description}}'>{{item.name}}</div>
 							<div class='item-controls QCol13'>
-								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Item'}}'>
 									<i class='fas fa-edit'></i>
 								</a>
-								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Item'}}'>
 									<i class='fas fa-trash'></i>
 								</a>
 							</div>
@@ -44,15 +44,15 @@
 						<li class='item grid-talent-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
 							<div class='item-image QCol11'>
 								<a>
-									<img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+									<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
 								</a>
 							</div>
-							<div class='item-name QCol12'>{{item.name}}</div>
+							<div class='item-name QCol12' data-tooltip='{{item.system.description}}'>{{item.name}}</div>
 							<div class='item-controls QCol13'>
-								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Update" type='Item'}}'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Item'}}'>
 									<i class='fas fa-edit'></i>
 								</a>
-								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' title='{{localize "DOCUMENT.Delete" type='Item'}}'>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Item'}}'>
 									<i class='fas fa-trash'></i>
 								</a>
 							</div>

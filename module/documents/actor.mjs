@@ -399,7 +399,7 @@ export class totowActor extends Actor {
 	async rollCritMan(actor, type, dataset) {
 		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html', actor, type, dataset);
 		const response = await foundry.applications.api.DialogV2.wait({
-			window: { title: 'Proceed' },
+			window: { title: 'TALESOFTHEOLDWEST.dialog.RollManCrit' },
 			content,
 			rejectClose: false,
 			buttons: [
@@ -456,7 +456,7 @@ export class totowActor extends Actor {
 							if (actor.system.horse.name) {
 								const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/riding-my-horse.hbs', actor, event, target);
 								const response = await foundry.applications.api.DialogV2.confirm({
-									window: { title: 'Proceed' },
+									window: { title: 'TALESOFTHEOLDWEST.dialog.Ride-My-Horse-Dialog' },
 									content,
 									modal: true,
 								});
@@ -497,7 +497,7 @@ export class totowActor extends Actor {
 						dataset,
 					});
 					const data = await foundry.applications.api.DialogV2.wait({
-						window: { title: 'Roll Modifiers' },
+						window: { title: 'TALESOFTHEOLDWEST.General.Roll Modifiers' },
 						position: { width: 350 },
 						// classes: ["my-special-class"],
 						content,
@@ -562,7 +562,7 @@ export class totowActor extends Actor {
 	async modRoll(actor, event, target) {
 		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html', actor, event, target);
 		const response = await foundry.applications.api.DialogV2.wait({
-			window: { title: 'Roll Modifiers' },
+			window: { title: 'TALESOFTHEOLDWEST.General.Roll Modifiers' },
 			content,
 			rejectClose: false,
 			buttons: [
