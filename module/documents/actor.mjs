@@ -385,7 +385,6 @@ export class totowActor extends Actor {
 				await this.addCondition('criticalinj');
 				break;
 			// case 'creature':criticalinj
-			// 	console.log("it's a Creature Crit");
 			// 	break;
 
 			default:

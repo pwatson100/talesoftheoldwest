@@ -70,6 +70,7 @@ export default class totowANIMAL extends totowActorBase {
 			cost: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
 			attacks: new fields.HTMLField(),
 			subtype: new fields.StringField({ required: false, blank: true, initial: 'horse' }),
+			mounted: new fields.BooleanField({ initial: false }),
 
 			ridingmodifier: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),

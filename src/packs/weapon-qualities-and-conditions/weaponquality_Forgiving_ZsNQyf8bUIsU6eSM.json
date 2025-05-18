@@ -1,0 +1,44 @@
+{
+  "type": "weaponquality",
+  "name": "Forgiving",
+  "system": {
+    "weapontype": "fightin",
+    "feature": "quality",
+    "onweapon": "any",
+    "description": "<p>The weapon is reliable and easy to use. You can ignore one die of Trouble on your first roll when using this weapon as if you had spent a point of Faith (but not after a pushed roll).</p>",
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
+    "weight": 0,
+    "reference": "",
+    "cost": "0",
+    "stored": false
+  },
+  "_id": "ZsNQyf8bUIsU6eSM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eTaKdCpdH87MZE57",
+  "sort": 200000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305461449,
+    "modifiedTime": 1747305461449,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!ZsNQyf8bUIsU6eSM"
+}

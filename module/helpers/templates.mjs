@@ -8,7 +8,7 @@ export const preloadHandlebarsTemplates = async function () {
 		// Actor partials.
 		'systems/talesoftheoldwest/templates/actor/parts/actor-weapon.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-talent.hbs',
-		'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
+		'systems/talesoftheoldwest/templates/actor/parts/actor-gear.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/actor-effects.hbs',
 		'systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs',

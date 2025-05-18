@@ -42,7 +42,7 @@
           "bigdream": "To live my last days in a mountain cabin with views across the plains.",
           "yourpardner": "Bridget Lovelace",
           "faithpoints": {
-            "value": 5,
+            "value": 6,
             "max": 4
           },
           "xp": {
@@ -53,7 +53,7 @@
           "archetype": "RanchHand",
           "groupconcept": "LawmenBountyHunters",
           "lifestyle": "",
-          "cash": "$10.00",
+          "cash": "$15.00",
           "fame": {
             "value": 0
           },
@@ -144,7 +144,7 @@
           },
           "nature": {
             "value": 2,
-            "mod": 6,
+            "mod": 5,
             "total": 0,
             "label": "",
             "attr": "",
@@ -682,7 +682,7 @@
             "damage": 2,
             "crit": 1,
             "range": "medium",
-            "ammo": 8956,
+            "ammo": 8954,
             "reference": "",
             "weight": 0.5,
             "featureModifiers": [
@@ -724,8 +724,8 @@
             "systemId": "talesoftheoldwest",
             "systemVersion": "0.0.1",
             "createdTime": 1742903217924,
-            "modifiedTime": 1747220305482,
-            "lastModifiedBy": "Koj2rXUxLTWUMudH"
+            "modifiedTime": 1747305564663,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
           }
         },
         {
@@ -803,10 +803,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
+        "systemVersion": "0.1.0",
         "createdTime": 1740225439367,
-        "modifiedTime": 1747220031235,
-        "lastModifiedBy": "Koj2rXUxLTWUMudH"
+        "modifiedTime": 1747563812596,
+        "lastModifiedBy": "oo2KG31LDGhYx0MC"
       },
       "_id": "WsStsGwsDPKQSTBC",
       "sort": 0
@@ -883,7 +883,8 @@
           "subtype": "dog",
           "ridingmodifier": {
             "value": 0
-          }
+          },
+          "mounted": false
         }
       },
       "prototypeToken": {
@@ -1061,12 +1062,13 @@
         },
         "general": {
           "breed": "americansaddlebred",
-          "cost": "100",
+          "cost": "$250.00",
           "attacks": "",
           "subtype": "horse",
           "ridingmodifier": {
             "value": 0
-          }
+          },
+          "mounted": true
         }
       },
       "prototypeToken": {
@@ -1320,6 +1322,48 @@
             "modifiedTime": 1747303809235,
             "lastModifiedBy": "oo2KG31LDGhYx0MC"
           }
+        },
+        {
+          "name": "Rope",
+          "type": "item",
+          "_id": "f9TxaMwWNSGEA52H",
+          "img": "icons/svg/item-bag.svg",
+          "system": {
+            "description": "<p>Always handy</p>",
+            "itemModifiers": {
+              "0": {
+                "name": "grit",
+                "value": 1,
+                "state": "Conditional",
+                "modtype": "na",
+                "id": "mp7LeXfNlVP2Mq6T",
+                "description": "Always handy"
+              }
+            },
+            "quantity": 1,
+            "weight": 0,
+            "reference": "",
+            "cost": "0",
+            "stored": false
+          },
+          "effects": [],
+          "folder": "DFBrwLylXIJKjhil",
+          "sort": 150000,
+          "ownership": {
+            "default": 0,
+            "oo2KG31LDGhYx0MC": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": "Item.DsUvLVi52qKwlgjX",
+            "duplicateSource": null,
+            "coreVersion": "12.343",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "0.1.0",
+            "createdTime": 1747355032838,
+            "modifiedTime": 1747355032838,
+            "lastModifiedBy": "oo2KG31LDGhYx0MC"
+          }
         }
       ],
       "effects": [],
@@ -1335,9 +1379,9 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
+        "systemVersion": "0.1.0",
         "createdTime": 1744978294260,
-        "modifiedTime": 1747303741164,
+        "modifiedTime": 1747564314847,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -1413,7 +1457,8 @@
           "subtype": "wolf",
           "ridingmodifier": {
             "value": 0
-          }
+          },
+          "mounted": false
         }
       },
       "prototypeToken": {
@@ -3757,55 +3802,6 @@
         "systemVersion": "0.0.1",
         "createdTime": 1737561524244,
         "modifiedTime": 1743076717623,
-        "lastModifiedBy": "oo2KG31LDGhYx0MC"
-      }
-    },
-    {
-      "name": "Born In The Saddle",
-      "type": "talent",
-      "system": {
-        "description": "Riding comes as naturally to you as breathing does to everyone else.",
-        "basicAction": "You gain a +1 bonus to all ANIMAL HANDLIN’ rolls that relate to horses.",
-        "advAction": "There is no one better in the saddle than you. When you Drive Hard in a chase on horseback you gain a +3 bonus to ANIMAL HANDLIN’ instead of +2, and your horse gains +3 to its RESILIENCE rolls during the chase.",
-        "reference": "borninthesaddle",
-        "itemModifiers": {
-          "0": {
-            "name": "animalhandlin",
-            "value": 1,
-            "state": "Conditional",
-            "talenttype": "basic"
-          },
-          "1": {
-            "name": "animalhandlin",
-            "value": 3,
-            "state": "Conditional",
-            "talenttype": "advanced"
-          }
-        },
-        "basicisActive": false,
-        "advisActive": false,
-        "weight": 0,
-        "cost": "0",
-        "stored": false
-      },
-      "_id": "thYXFjB8kt5Z2RSM",
-      "img": "icons/svg/item-bag.svg",
-      "effects": [],
-      "folder": "pykFFBAf8w9dTua8",
-      "sort": 5500000,
-      "ownership": {
-        "default": 0,
-        "oo2KG31LDGhYx0MC": 3
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "talesoftheoldwest",
-        "systemVersion": "0.0.1",
-        "createdTime": 1737561524244,
-        "modifiedTime": 1743076854384,
         "lastModifiedBy": "oo2KG31LDGhYx0MC"
       }
     },
@@ -6741,6 +6737,218 @@
           "elevation": 0,
           "locked": false,
           "_regions": []
+        },
+        {
+          "name": "Ringo",
+          "displayName": 20,
+          "actorLink": true,
+          "appendNumber": false,
+          "prependAdjective": false,
+          "width": 1,
+          "height": 1,
+          "texture": {
+            "src": "icons/svg/mystery-man.svg",
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fit": "contain",
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0,
+            "tint": "#ffffff",
+            "alphaThreshold": 0.75
+          },
+          "hexagonalShape": 0,
+          "lockRotation": false,
+          "rotation": 0,
+          "alpha": 1,
+          "disposition": 1,
+          "displayBars": 20,
+          "bar1": {
+            "attribute": null
+          },
+          "bar2": {
+            "attribute": null
+          },
+          "light": {
+            "negative": false,
+            "priority": 0,
+            "alpha": 0.5,
+            "angle": 360,
+            "bright": 0,
+            "color": null,
+            "coloration": 1,
+            "dim": 0,
+            "attenuation": 0.5,
+            "luminosity": 0.5,
+            "saturation": 0,
+            "contrast": 0,
+            "shadows": 0,
+            "animation": {
+              "type": null,
+              "speed": 5,
+              "intensity": 5,
+              "reverse": false
+            },
+            "darkness": {
+              "min": 0,
+              "max": 1
+            }
+          },
+          "sight": {
+            "enabled": true,
+            "range": 12,
+            "angle": 360,
+            "visionMode": "basic",
+            "color": null,
+            "attenuation": 0.1,
+            "brightness": 0,
+            "saturation": 0,
+            "contrast": 0
+          },
+          "detectionModes": [],
+          "occludable": {
+            "radius": 0
+          },
+          "ring": {
+            "enabled": false,
+            "colors": {
+              "ring": null,
+              "background": null
+            },
+            "effects": 0,
+            "subject": {
+              "scale": 1,
+              "texture": null
+            }
+          },
+          "flags": {},
+          "actorId": "QP8EKG5ArZDxLKrh",
+          "hidden": false,
+          "sort": 13,
+          "_id": "k3aK1vKTckkbmcAX",
+          "delta": {
+            "_id": "ITCmHEpKPCBl8jGN",
+            "system": {},
+            "items": [],
+            "effects": [],
+            "flags": {},
+            "name": null,
+            "type": null,
+            "img": null
+          },
+          "x": 942,
+          "y": 788,
+          "elevation": 0,
+          "locked": false,
+          "_regions": []
+        },
+        {
+          "name": "Mac Dawson (Copy)",
+          "displayName": 20,
+          "actorLink": true,
+          "appendNumber": false,
+          "prependAdjective": false,
+          "width": 1,
+          "height": 1,
+          "texture": {
+            "src": "icons/svg/mystery-man.svg",
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fit": "contain",
+            "scaleX": 1,
+            "scaleY": 1,
+            "rotation": 0,
+            "tint": "#ffffff",
+            "alphaThreshold": 0.75
+          },
+          "hexagonalShape": 0,
+          "lockRotation": false,
+          "rotation": 0,
+          "alpha": 1,
+          "disposition": 1,
+          "displayBars": 20,
+          "bar1": {
+            "attribute": "header.health"
+          },
+          "bar2": {
+            "attribute": "header.stress"
+          },
+          "light": {
+            "negative": false,
+            "priority": 0,
+            "alpha": 0.5,
+            "angle": 360,
+            "bright": 0,
+            "color": null,
+            "coloration": 1,
+            "dim": 0,
+            "attenuation": 0.5,
+            "luminosity": 0.5,
+            "saturation": 0,
+            "contrast": 0,
+            "shadows": 0,
+            "animation": {
+              "type": null,
+              "speed": 5,
+              "intensity": 5,
+              "reverse": false
+            },
+            "darkness": {
+              "min": 0,
+              "max": 1
+            }
+          },
+          "sight": {
+            "enabled": true,
+            "range": 12,
+            "angle": 360,
+            "visionMode": "basic",
+            "color": null,
+            "attenuation": 0.1,
+            "brightness": 0,
+            "saturation": 0,
+            "contrast": 0
+          },
+          "detectionModes": [],
+          "occludable": {
+            "radius": 0
+          },
+          "ring": {
+            "enabled": false,
+            "colors": {
+              "ring": null,
+              "background": null
+            },
+            "effects": 0,
+            "subject": {
+              "scale": 1,
+              "texture": null
+            }
+          },
+          "flags": {},
+          "actorId": "CpFjUGuKNejY3SEI",
+          "hidden": false,
+          "sort": 14,
+          "_id": "5Slu8F6DFcXeFWKb",
+          "delta": {
+            "_id": "tUqYjtuH6JgPwMg4",
+            "system": {},
+            "items": [],
+            "effects": [],
+            "flags": {},
+            "name": null,
+            "type": null,
+            "img": null
+          },
+          "x": 890,
+          "y": 1116,
+          "elevation": 0,
+          "locked": false,
+          "_regions": []
         }
       ],
       "lights": [],
@@ -8513,7 +8721,7 @@
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
-    "modifiedTime": 1747305522408,
+    "modifiedTime": 1747565154566,
     "lastModifiedBy": "oo2KG31LDGhYx0MC"
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"

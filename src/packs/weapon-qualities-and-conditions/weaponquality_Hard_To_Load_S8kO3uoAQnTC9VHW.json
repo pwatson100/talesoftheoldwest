@@ -1,0 +1,44 @@
+{
+  "type": "weaponquality",
+  "name": "Hard To Load",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "condition",
+    "onweapon": "any",
+    "description": "Loading takes an extra action per bullet.",
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
+    "weight": 0,
+    "reference": "",
+    "cost": "0",
+    "stored": false
+  },
+  "_id": "S8kO3uoAQnTC9VHW",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "60vssO8JqQDRTt4a",
+  "sort": 150000,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305461449,
+    "modifiedTime": 1747305461449,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!S8kO3uoAQnTC9VHW"
+}

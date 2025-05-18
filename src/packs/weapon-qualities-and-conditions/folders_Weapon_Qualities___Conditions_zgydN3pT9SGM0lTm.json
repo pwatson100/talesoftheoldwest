@@ -1,0 +1,22 @@
+{
+  "name": "Weapon Qualities & Conditions",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "zgydN3pT9SGM0lTm",
+  "description": "",
+  "sort": 100000,
+  "color": "#1056c6",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305461431,
+    "modifiedTime": 1747305461431,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!zgydN3pT9SGM0lTm"
+}

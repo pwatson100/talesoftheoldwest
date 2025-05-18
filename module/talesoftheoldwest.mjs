@@ -162,7 +162,6 @@ Handlebars.registerHelper('ifSetting', function (v1, options) {
 	else return options.inverse(this);
 });
 Handlebars.registerHelper('striptags', function (txt) {
-	// console.log(txt);
 	// exit now if text is undefined
 	if (typeof txt == 'undefined') return;
 	// the regular expresion
@@ -242,7 +241,6 @@ Hooks.on('renderChatMessage', (app, [html], msg) => {
 // }
 
 Hooks.on('renderPause', (_app, html, options) => {
-	// console.log(document);
 	document.getElementById(
 		'pause'
 	).innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;

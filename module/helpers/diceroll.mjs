@@ -439,7 +439,7 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 		stunts: stunts,
 		buyoff: trouble > 0 ? true : false,
 	};
-	console.log('evalResult', evalResult);
+	// console.log('evalResult', evalResult);
 	return evalResult;
 }
 

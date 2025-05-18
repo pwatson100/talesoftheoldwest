@@ -1,0 +1,22 @@
+{
+  "name": "Melee Qualities",
+  "sorting": "a",
+  "folder": "zgydN3pT9SGM0lTm",
+  "type": "Item",
+  "_id": "eTaKdCpdH87MZE57",
+  "description": "",
+  "sort": 200000,
+  "color": "#6086d2",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305461431,
+    "modifiedTime": 1747305461431,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!folders!eTaKdCpdH87MZE57"
+}

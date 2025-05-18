@@ -1,22 +1,23 @@
-<section class='tab remuda {{tab.cssClass}}' id='remudaList' data-group='primary' data-tab='remuda'>
+<section>
 	<div>
 		{{#if (gt @root.remuda.length 0)}}
 			{{#each @root.remuda}}
-				{{#if (not actor.system.general.mounted)}}
+				{{#if actor.system.general.mounted}}
 					<div class='remuda' data-compId='{{id}}' style='margin-bottom: 10px;'>
 						<div class='sheet-compadres-header'>
-							<div class='schA1'>{{actor.name}}
-								<a
+							<div class='schA1'>{{actor.name}}<a
 									class='item-control remudaMount'
 									data-action='remudaMount'
 									data-item-id='{{item._id}}'
 									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
 								><i class='fa-solid fa-sack-dollar'></i></a></div>
-
+							<a class='button remuda-mount schB1' data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}' data-compId='{{id}}'>
+								<i class='fas fa-edit'></i>
+							</a>
 							<a
 								class='button schB1'
 								data-action='remudaView'
-								data-actor='{{actor.id}}'
+								data-item-id='{{item._id}}'
 								data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}'
 								data-compId='{{id}}'
 							>
@@ -25,7 +26,7 @@
 							<a
 								class='button schA2'
 								data-action='remudaRemove'
-								data-actor='{{actor.id}}'
+								data-item-id='{{item._id}}'
 								data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}'
 								data-compId='{{id}}'
 							><i class='fas fa-trash'></i></a>

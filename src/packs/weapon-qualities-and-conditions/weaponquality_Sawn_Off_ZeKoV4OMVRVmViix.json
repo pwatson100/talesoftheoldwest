@@ -1,0 +1,52 @@
+{
+  "type": "weaponquality",
+  "name": "Sawn-Off",
+  "system": {
+    "weapontype": "shootin",
+    "feature": "quality",
+    "onweapon": "shotgun",
+    "description": "A short-barreled shotgun is deadly in close quarters, but terrible further away. Grants a +1 bonus to SHOOTIN’ but the maximum range is Short.",
+    "itemModifiers": {
+      "0": {
+        "description": "",
+        "attribute": "shootin",
+        "value": 1,
+        "state": "Active",
+        "name": "shootin"
+      },
+      "1": {
+        "description": "",
+        "attribute": "pushdescription",
+        "value": 0,
+        "state": "Chat",
+        "name": "pushdescription"
+      }
+    },
+    "weight": 0,
+    "reference": "",
+    "cost": "0",
+    "stored": false
+  },
+  "_id": "ZeKoV4OMVRVmViix",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "folder": "eGISG0VrE4fzswvk",
+  "sort": 100013,
+  "ownership": {
+    "default": 0,
+    "oo2KG31LDGhYx0MC": 3,
+    "Koj2rXUxLTWUMudH": 1
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "talesoftheoldwest",
+    "systemVersion": "0.0.1",
+    "createdTime": 1747305461449,
+    "modifiedTime": 1747305461449,
+    "lastModifiedBy": "oo2KG31LDGhYx0MC"
+  },
+  "_key": "!items!ZeKoV4OMVRVmViix"
+}

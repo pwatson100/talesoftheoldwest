@@ -38,6 +38,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			changeXp: { handler: this._changeXp, buttons: [0, 2] },
 			changeDamage: { handler: this._changeDamage, buttons: [0, 2] },
 			storeItem: { handler: this._storeItem, buttons: [0, 2] },
+			remudaMount: { handler: this._onRemudaMount, buttons: [0, 2] },
+			remudaView: { handler: this._onRemudaView, buttons: [0, 2] },
+			remudaRemove: { handler: this._onRemudaRemove, buttons: [0, 2] },
+			compadresView: { handler: this._onCompadresView, buttons: [0, 2] },
+			compadresRemove: { handler: this._onCompadresRemove, buttons: [0, 2] },
 		},
 		// Custom property that's merged into `this.options`
 		// TODO V13 Not needed
@@ -63,7 +68,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			scrollable: [''],
 		},
 		gear: {
-			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-items.hbs',
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-gear.hbs',
 			scrollable: [''],
 		},
 		effects: {
@@ -743,6 +748,12 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// You may want to add other special handling here
 		// Foundry comes with a large number of utility classes, e.g. SearchFilter
 		// That you may want to implement yourself.
+		const currency = this.element.querySelectorAll('.currency');
+		for (const s of currency) {
+			s.addEventListener('change', (event) => {
+				this._currencyField(event);
+			});
+		}
 
 		const ammo = document.getElementById('actorWeaponList');
 		if (!ammo) return;
@@ -751,46 +762,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				this._inlineedit(event);
 			}
 		});
-
-		const CompEdit = document.getElementById('compadresList');
-		if (!CompEdit) return;
-		CompEdit.addEventListener('click', (event) => {
-			if (event.target.classList.contains('compadre-edit')) {
-				this._onCompadresView(event);
-			}
-		});
-
-		const CompRemove = document.getElementById('compadresList');
-		if (!CompRemove) return;
-		CompRemove.addEventListener('click', (event) => {
-			if (event.target.classList.contains('compadre-remove')) {
-				this._onCompadresRemove(event);
-			}
-		});
-
-		const RemudaEdit = document.getElementById('remudaList');
-		if (!RemudaEdit) return;
-		RemudaEdit.addEventListener('click', (event) => {
-			if (event.target.classList.contains('remuda-edit')) {
-				this._onRemudaView(event);
-			}
-		});
-
-		const RemudaRemove = document.getElementById('remudaList');
-		if (!RemudaRemove) return;
-		RemudaRemove.addEventListener('click', (event) => {
-			if (event.target.classList.contains('remuda-remove')) {
-				this._onRemudaRemove(event);
-			}
-		});
-
-		const currency = this.element.querySelectorAll('.currency');
-		for (const s of currency) {
-			s.addEventListener('change', (event) => {
-				console.log(event);
-				this._currencyField(event);
-			});
-		}
 	}
 
 	/**************
@@ -798,6 +769,63 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	 *   ACTIONS
 	 *
 	 **************/
+
+	static async _onRemudaView(event) {
+		event.preventDefault();
+		const compId = event.target.closest('.remuda').dataset.compid;
+		const actor = game.actors.get(compId);
+		return actor.sheet.render(true);
+	}
+
+	static async _onRemudaRemove(event) {
+		event.preventDefault();
+		const actorData = this.actor;
+		const compId = event.target.closest('.remuda').dataset.compid;
+		const details = await this.actor.removeRemuda(compId);
+		let remudaNumber = actorData.system.remuda.remudaQty || 0;
+		remudaNumber--;
+		await actorData.update({ 'system.remuda.remudaQty': remudaNumber });
+		return await actorData.update({ 'system.remuda.details': details });
+	}
+
+	static async _onRemudaMount(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		// const dataset = target.dataset;
+		const compId = event.target.closest('.remuda').dataset.compid;
+		// let horse = game.actors.get(compId);
+		let horse = this.actor.getRemuda(compId);
+
+		if (event.button === 2) {
+			// right click
+			// return
+			await horse.actor.update({ 'system.general.mounted': true });
+		} else {
+			// left click
+			// return
+			await horse.actor.update({ 'system.general.mounted': false });
+		}
+		this.render();
+	}
+
+	static async _onCompadresView(event) {
+		event.preventDefault();
+		const compId = event.target.closest('.compardre').dataset.compid;
+		const actor = game.actors.get(compId);
+		return actor.sheet.render(true);
+	}
+
+	static async _onCompadresRemove(event) {
+		event.preventDefault();
+		const actorData = this.actor;
+		const compId = event.target.closest('.compardre').dataset.compid;
+		const details = await this.actor.removeCompadres(compId);
+		let compadresNumber = actorData.system.compadres.compadresQty || 0;
+		compadresNumber--;
+		await actorData.update({ 'system.compadres.compadresQty': compadresNumber });
+		return await actorData.update({ 'system.compadres.details': details });
+	}
 
 	/**
 	 * Handle changing a Document's image.
@@ -1497,24 +1525,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			return await actorData.addCompadres(actorId);
 		}
 	}
-	async _onCompadresView(event) {
-		event.preventDefault();
-		const compId = event.target.closest('.compardre').dataset.compid;
-		const actor = game.actors.get(compId);
-		return actor.sheet.render(true);
-	}
-
-	async _onCompadresRemove(event) {
-		event.preventDefault();
-		const actorData = this.actor;
-		const compId = event.target.closest('.compardre').dataset.compid;
-		const details = await this.actor.removeCompadres(compId);
-		let compadresNumber = actorData.system.compadres.compadresQty || 0;
-		compadresNumber--;
-		await actorData.update({ 'system.compadres.compadresQty': compadresNumber });
-		return await actorData.update({ 'system.compadres.details': details });
-	}
-
+	/**
+	 * Adds a horse to the remuda
+	 * @param {string} actorId
+	 */
 	async _dropRemuda(actorId) {
 		const crew = game.actors.get(actorId);
 		const actorData = this.actor;
@@ -1527,22 +1541,5 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			}
 			return await actorData.addRemuda(actorId);
 		}
-	}
-	async _onRemudaView(event) {
-		event.preventDefault();
-		const compId = event.target.closest('.remuda').dataset.compid;
-		const actor = game.actors.get(compId);
-		return actor.sheet.render(true);
-	}
-
-	async _onRemudaRemove(event) {
-		event.preventDefault();
-		const actorData = this.actor;
-		const compId = event.target.closest('.remuda').dataset.compid;
-		const details = await this.actor.removeRemuda(compId);
-		let remudaNumber = actorData.system.remuda.remudaQty || 0;
-		remudaNumber--;
-		await actorData.update({ 'system.remuda.remudaQty': remudaNumber });
-		return await actorData.update({ 'system.remuda.details': details });
 	}
 }
