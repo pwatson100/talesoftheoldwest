@@ -6,15 +6,12 @@
 					<div class='remuda' data-compId='{{id}}' style='margin-bottom: 10px;'>
 						<div class='sheet-compadres-header'>
 							<div class='schA1'>{{actor.name}}
-								<a
-									class='item-control remudaMount'
-									data-action='remudaMount'
-									data-item-id='{{item._id}}'
-									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
-								><i class='fa-solid fa-sack-dollar'></i></a></div>
-
+							</div>
+							<a class='schB1' data-action='remudaMount' data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToMount"}}'><i
+									class='saddle-bag'
+								></i></a>
 							<a
-								class='button schB1'
+								class='button schA2'
 								data-action='remudaView'
 								data-actor='{{actor.id}}'
 								data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}'
@@ -23,12 +20,13 @@
 								<i class='fas fa-edit'></i>
 							</a>
 							<a
-								class='button schA2'
+								class='button schA3'
 								data-action='remudaRemove'
 								data-actor='{{actor.id}}'
 								data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}'
 								data-compId='{{id}}'
 							><i class='fas fa-trash'></i></a>
+
 						</div>
 						<div class='sheet-animal-attributes animal-stats'>
 							<div class='aA1'>

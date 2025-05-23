@@ -293,6 +293,7 @@ TALESOFTHEOLDWEST.animal_quality_modifier_state = {
 	onAnimal: { label: 'TALESOFTHEOLDWEST.General.onAnimal' },
 	Conditional: { label: 'TALESOFTHEOLDWEST.General.conditional' },
 	onPC: { label: 'TALESOFTHEOLDWEST.General.onPC' },
+	Chat: { label: 'TALESOFTHEOLDWEST.General.chat' },
 };
 
 TALESOFTHEOLDWEST.conditionEffects = [

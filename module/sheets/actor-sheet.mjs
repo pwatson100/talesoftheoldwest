@@ -115,6 +115,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			template: 'systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs',
 			scrollable: [''],
 		},
+		horsesaddlebag: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-horse-saddlebag.hbs',
+			scrollable: [''],
+		},
+		actorhorsequality: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-horse-quality-options.hbs',
+			scrollable: [''],
+		},
 	};
 
 	/** @override */
@@ -162,13 +170,13 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// // Offloading context prep to a helper function
 
 		// Prepare character data and items.
-		this._prepareItems(context);
-		this._prepareCharacterData(context);
 
 		if (context.actor.type === 'pc') {
 			this._prepareCompadres(context);
 			this._prepareRemuda(context);
 		}
+		this._prepareItems(context);
+		this._prepareCharacterData(context);
 
 		logger.debug('Actor Sheet derived data:', context);
 		return context;
@@ -200,14 +208,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				break;
 			case 'gear':
 				context.tab = context.tabs[partId];
-				context.enrichedHorseNotes = await TextEditor.enrichHTML(this.actor.system.horse.horseNotes, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.actor.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.actor,
-				});
+				// context.enrichedHorseNotes = await TextEditor.enrichHTML(this.actor.system.horse.horseNotes, {
+				// 	// Whether to show secret blocks in the finished html
+				// 	secrets: this.document.isOwner,
+				// 	// Data to fill in for inline rolls
+				// 	rollData: this.actor.getRollData(),
+				// 	// Relative UUID resolution
+				// 	relativeTo: this.actor,
+				// });
 				break;
 
 			case 'description':
@@ -310,7 +318,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const animalquality = [];
 		const critInj = [];
 		const itemMods = [];
-
+		const remudaMods = [];
 		// Iterate through items, allocating to containers
 		for (let i of this.document.items) {
 			switch (i.type) {
@@ -337,13 +345,21 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				default:
 					break;
 			}
-			// // and now animal options
-			// else if (i.type === 'animalquality') {
-			// 	animalquality.push(i);
-			// }
+
 			allGear.push(i);
 		}
-
+		if (context.actor.type === 'pc') {
+			if (context.system.remuda.remudaMounted !== 'false') {
+				// const horse = this.actor.getRemuda(remuda.remudaMounted);
+				for (let [key, modItems] of Object.entries(context.system.remuda.details)) {
+					if (modItems.actor.system.general.mounted === true) {
+						for (let i of modItems.actor.items) {
+							_findmods(i, itemMods);
+						}
+					}
+				}
+			}
+		}
 		// Sort then assign
 		context.allGear = allGear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.gear = gear.sort((a, b) => (a.sort || 0) - (b.sort || 0));
@@ -365,7 +381,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 									itemtype: i.type,
 									modtype: mods.modtype,
 									state: mods.state,
-									description: mods.description,
+									itemDescription: mods.description,
 									value: mods.value,
 									stored: i.system.stored,
 									basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
@@ -383,7 +399,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 									itemtype: i.type,
 									modtype: mods.modtype,
 									state: mods.state,
-									description: mods.description,
+									itemDescription: mods.description,
 									value: mods.value,
 									stored: i.system.stored,
 									advisActive: i.system.advisActive ? i.system.advisActive : false,
@@ -400,7 +416,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							itemtype: i.type,
 							modtype: mods.modtype,
 							state: mods.state,
-							description: mods.description,
+							itemDescription: mods.description,
 							value: mods.value,
 							stored: i.system.stored,
 							basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
@@ -420,7 +436,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 								feature: feature.feature ? feature.feature : false,
 								modtype: mods.name,
 								state: mods.state,
-								description: feature.description,
+								itemDescription: feature.description,
 								value: mods.value,
 								stored: i.system.stored,
 								basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
@@ -455,9 +471,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			quick: 0,
 			cunning: 0,
 			docity: 0,
-			hgrit: 0,
-			hquick: 0,
-			hcunning: 0,
 		};
 		var sklMod = {
 			labor: 0,
@@ -476,10 +489,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			makin: 0,
 			doctorin: 0,
 			booklearnin: 0,
-			hresilience: 0,
-			hfightin: 0,
-			hmove: 0,
-			hhawkeye: 0,
 		};
 		if (itemData.length) {
 			switch (aType) {
@@ -595,26 +604,22 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 													}
 													break;
 											}
-										}
-									}
-
-									break;
-								case 'onAnimal':
-									{
-										let prefix = 'h' + attrib;
-										switch (attrib) {
-											case 'quick':
-											case 'cunning':
-											case 'grit':
-												attrMod[prefix] = attrMod[prefix] += Number(subAttar.value);
-												anyMods++;
-												break;
-											default:
-												if (!subAttar.feature) {
-													sklMod[prefix] = sklMod[prefix] += Number(subAttar.value);
+										} else if (subAttar.itemtype === 'item') {
+											switch (attrib) {
+												case 'docity':
+												case 'quick':
+												case 'cunning':
+												case 'grit':
+													attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
 													anyMods++;
-												}
-												break;
+													break;
+												default:
+													if (!subAttar.feature) {
+														sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
+														anyMods++;
+													}
+													break;
+											}
 										}
 									}
 									break;
@@ -623,50 +628,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							}
 						}
 					}
-
-					// if (
-					// 	(subAttar.state === 'Active' || subAttar.state === 'onPC') &&
-					// 	subAttar.itemtype != 'talent' &&
-					// 	subAttar.itemtype != 'weapon' &&
-					// 	!subAttar.stored
-					// ) {
-					// 	switch (attrib) {
-					// 		case 'docity':
-					// 		case 'quick':
-					// 		case 'cunning':
-					// 		case 'grit':
-					// 			attrMod[attrib] = attrMod[attrib] += Number(subAttar.value);
-					// 			anyMods++;
-					// 			break;
-					// 		default:
-					// 			if (!subAttar.feature) {
-					// 				sklMod[attrib] = sklMod[attrib] += Number(subAttar.value);
-					// 				anyMods++;
-					// 			}
-					// 			break;
-					// 	}
-					// } else if (
-					// }								// ((subAttar.modtype === 'basic' && subAttar.basicisActive) || (subAttar.modtype === 'advanced' && subAttar.advisActive))
-					// ||	subAttar.state === 'Active'
-					// }							// } else if (subAttar.state === 'onAnimal') {
-					// 	let prefix = 'h' + attrib;
-					// 	switch (attrib) {
-					// 		case 'quick':
-					// 		case 'cunning':
-					// 		case 'grit':
-					// 			attrMod[prefix] = attrMod[prefix] += Number(subAttar.value);
-					// 			anyMods++;
-					// 			break;
-					// 		default:
-					// 			if (!subAttar.feature) {
-					// 				sklMod[prefix] = sklMod[prefix] += Number(subAttar.value);
-					// 				anyMods++;
-					// 			}
-					// 			break;
-					// 	}
 					break;
 			}
 		}
+
 		for (let [a, abl] of Object.entries(aData.attributes)) {
 			let target = `system.attributes.${a}.mod`;
 			let upData = Number(abl.value) + Number(attrMod[a]);
@@ -678,22 +643,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			let target = `system.abilities.${s}.mod`;
 			let abData = Number(skl.value) + Number(aData.attributes[conSkl].mod) + Number(sklMod[s]);
 			attribData[target] = abData;
-		}
-
-		if (aType === 'pc') {
-			for (let [a, abl] of Object.entries(aData.horse.attributes)) {
-				let prefix = 'h' + a;
-				let target = `system.horse.attributes.${prefix}.mod`;
-				let upData = Number(abl.value) + Number(attrMod[prefix]);
-				attribData[target] = upData;
-			}
-			for (let [s, skl] of Object.entries(aData.horse.abilities)) {
-				let prefix = 'h' + s;
-				const conSkl = skl.attr;
-				let target = `system.horse.abilities.${prefix}.mod`;
-				let abData = Number(skl.value) + Number(aData.horse.attributes[conSkl].mod) + Number(sklMod[prefix]);
-				attribData[target] = abData;
-			}
 		}
 		await this.actor.update(attribData);
 	}
@@ -774,7 +723,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault();
 		const compId = event.target.closest('.remuda').dataset.compid;
 		const actor = game.actors.get(compId);
-		return actor.sheet.render(true);
+		await actor.sheet.render(true);
+		return this.render();
 	}
 
 	static async _onRemudaRemove(event) {
@@ -792,19 +742,23 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
-		// const dataset = target.dataset;
+
 		const compId = event.target.closest('.remuda').dataset.compid;
-		// let horse = game.actors.get(compId);
-		let horse = this.actor.getRemuda(compId);
+		let horse = await this.actor.getRemuda(compId);
 
 		if (event.button === 2) {
 			// right click
-			// return
+			if (this.actor.system.remuda.remudaMounted !== 'false') {
+				ui.notifications.error(game.i18n.localize('TALESOFTHEOLDWEST.General.ErrorRemudaAlreadyMounted'));
+				return;
+			} // return
 			await horse.actor.update({ 'system.general.mounted': true });
+			await this.actor.update({ 'system.remuda.remudaMounted': compId });
 		} else {
 			// left click
 			// return
 			await horse.actor.update({ 'system.general.mounted': false });
+			await this.actor.update({ 'system.remuda.remudaMounted': false });
 		}
 		this.render();
 	}
@@ -1074,26 +1028,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		}
 	}
 
-	// static async _store(event, target) {
-	// 	event.preventDefault(); // Don't open context menu
-	// 	event.stopPropagation(); // Don't trigger other events
-	// 	if (event.detail > 1) return; // Ignore repeated clicks
-	// 	const dataset = target.dataset;
-	// 	let itemId = dataset.parentElement.dataset.itemId;
-	// 	let item = this.actor.items.get(itemId);
-	// 	await item.update({ 'system.header.stored': true });
-	// }
-
-	// static async _unstore(event, target) {
-	// 	event.preventDefault(); // Don't open context menu
-	// 	event.stopPropagation(); // Don't trigger other events
-	// 	if (event.detail > 1) return; // Ignore repeated clicks
-	// 	const dataset = target.dataset;
-	// 	let itemId = dataset.parentElement.dataset.itemId;
-	// 	let item = this.actor.items.get(itemId);
-	// 	await item.update({ 'system.header.stored': false });
-	// }
-
 	/** Helper Functions */
 
 	/**
@@ -1126,6 +1060,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
 		return await item.update({ [temp]: event.target.value }, {});
 	}
+
 	/***************
 	 *
 	 * Drag and Drop
@@ -1536,7 +1471,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (crew.type === 'pc') return ui.notifications.info('PC inceptions are not allowed!');
 		if (crew.type !== 'animal') return;
 		if (actorData.type === 'pc') {
-			if (actorData.system.remuda.remudaQty >= 3) {
+			if (actorData.system.remuda.remudaQty >= 4) {
 				return ui.notifications.warn(game.i18n.localize('ALIENRPG.fullCrew'));
 			}
 			return await actorData.addRemuda(actorId);

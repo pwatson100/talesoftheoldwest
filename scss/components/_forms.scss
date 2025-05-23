@@ -41,23 +41,10 @@
 	}
 }
 
-.sheet-tabs {
-	flex: 0;
-	font-size: large;
-}
-
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {
 	height: 100%;
-}
-
-.tab.description {
-	flex: 1;
-
-	.editor {
-		height: 100%;
-	}
 }
 
 .tox {
@@ -92,6 +79,7 @@
 .textarea-format {
 	padding: 7px;
 	background-color: $c-white;
+	font-family: $font-primary;
 }
 
 .currency,
@@ -108,6 +96,11 @@
 .heading {
 	font-weight: bold;
 	font-size: large;
+	text-align: center;
+}
+.conditionHeading {
+	font-weight: bold;
+	font-size: larger;
 	text-align: center;
 }
 

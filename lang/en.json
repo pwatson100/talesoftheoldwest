@@ -176,7 +176,7 @@
 			"groupConcept": "group concept",
 			"criticalInjury": "Critical Injury",
 			"criticalInjurys": "Critical Injurys",
-			"isActive": "Active",
+			"isActive": "Activate",
 			"active": "Active",
 			"conditional": "Conditional",
 			"and": "and",
@@ -218,10 +218,12 @@
 			"onPC": "On PC",
 			"attacks": "Attacks",
 			"saddlebag": "Saddle Bag",
-			"rightToStore": "Right click to Store, left click to Retrieve",
+			"rightToStore": "Right click to Store, Left click to Retrieve",
+			"rightToMount": "Right click to Mount, Left click to Dismount",
 			"remove": "Remove",
 			"ErrorTroubleTable": "Error: Trouble Table not found",
-			"TroubleOutcome": "Trouble Outcome"
+			"TroubleOutcome": "Trouble Outcome",
+			"ErrorRemudaAlreadyMounted": "Error: Remuda already mounted"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

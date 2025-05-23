@@ -13,7 +13,7 @@
 		"verified": "12"
 	},
 	"esmodules": ["module/talesoftheoldwest.mjs"],
-	"styles": ["css/talesoftheoldwest-min.css"],
+	"styles": ["css/talesoftheoldwest.css"],
 	"documentTypes": {
 		"Actor": {
 			"pc": { "htmlFields": ["biography", "horseNotes"] },

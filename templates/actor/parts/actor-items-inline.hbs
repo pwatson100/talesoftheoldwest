@@ -23,10 +23,8 @@
 <div class='small-box' style='max-height: 150px;'>
 	<ol class='items-list'>
 		{{#each gear as |item id|}}
-			{{#if (eq item.system.stored false)}}
-
+			{{#if (not item.system.stored)}}
 				<li class='item grid-talent-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
-
 					<div class='item-image TCol11' data-item='{{item.system.stored}}'>
 						<a>
 							<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />

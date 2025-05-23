@@ -10,6 +10,7 @@
 		cursor: pointer;
 	}
 }
+
 .talesoftheoldwest.dice-tooltip .roll > img {
 	width: 24px;
 }
@@ -32,12 +33,16 @@ body {
 		filter: drop-shadow(8px 12px 8px #353232);
 	}
 	.window-content {
-		font-family: $font-primary;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
+		display: block;
+		overflow: auto;
+		scrollbar-color: #d36913 transparent;
+		scrollbar-width: thin;
+		background-image: $app-background;
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 100% 100%;
+		border: transparent;
+		filter: drop-shadow(8px 12px 8px #353232);
 	}
 	.dialog-form.standard-form .form-footer,
 	.dialog-buttons {
@@ -51,6 +56,7 @@ body {
 	.application input[type='text'],
 	.application input[type='number'],
 	.application select {
+		font-family: $font-primary;
 		background: white;
 		color: black;
 		--input-background-color: rgba(0, 0, 0, 0.1);
@@ -76,18 +82,18 @@ body {
 	background: transparent url(../ui/DsN/trouble-face.webp) no-repeat center / contain;
 }
 
-.talesoftheoldwest.application .window-content {
-	display: block;
-	overflow: auto;
-	scrollbar-color: #d36913 transparent;
-	scrollbar-width: thin;
-	background-image: $app-background;
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: 100% 100%;
-	border: transparent;
-	filter: drop-shadow(8px 12px 8px #353232);
-}
+// .talesoftheoldwest.application .window-content {
+// 	display: block;
+// 	overflow: auto;
+// 	scrollbar-color: #d36913 transparent;
+// 	scrollbar-width: thin;
+// 	background-image: $app-background;
+// 	background-position: center; /* Center the image */
+// 	background-repeat: no-repeat; /* Do not repeat the image */
+// 	background-size: 100% 100%;
+// 	border: transparent;
+// 	filter: drop-shadow(8px 12px 8px #353232);
+// }
 
 .talesoftheoldwest .div-border {
 	border: 3px solid black;
@@ -98,11 +104,23 @@ body {
 	margin: 5px;
 }
 
-.talesoftheoldwest.application nav.tabs {
+.talesoftheoldwest .sheet-tabs {
+	flex: 0;
+	font-size: large;
+	font-family: $font-primary;
+	font-weight: bold;
 	background-image: url(../assets/background/header-plank.webp);
 	width: 97%;
 	// margin-left: 10px;
 	justify-self: anchor-center;
+}
+
+.talesoftheoldwest .tab.description {
+	flex: 1;
+
+	.editor {
+		height: 100%;
+	}
 }
 
 .talesoftheoldwest .chat-buttons {
@@ -120,6 +138,7 @@ body {
 	text-shadow: 2px 2px 2px white;
 	margin-bottom: 10px;
 }
+
 .talesoftheoldwest .pushed-button {
 	font-size: 25px;
 	font-weight: bolder;
@@ -138,6 +157,14 @@ body {
 }
 
 .sheet.journal-entry .journal-entry-content {
-	background-image: $app-background;
+	background-image: url('../assets/background/sheet-background.webp');
 	background-size: cover;
+}
+
+.theme-dark input[type='checkbox'],
+.theme-light input[type='checkbox'] {
+	--checkbox-font-weight: unset;
+	--checkbox-background-color: var(--color-dark-6);
+	--checkbox-checked-color: var(--color-warm-1);
+	--checkbox-checkmark-color: var(--color-dark-1);
 }

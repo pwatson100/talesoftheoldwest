@@ -1,0 +1,42 @@
+<div class='quality-split'>
+	<div class='heading QualSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</div>
+	<div style=' overflow:auto'>
+		<ol class='items-list'>
+			<li class='item grid-short-quality items-header'>
+				<div class='item-name SQol1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			</li>
+			{{#each actor.items as |item id|}}
+				{{#if (eq item.system.general.subtype 'quality')}}
+					<li class='item grid-short-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+						<div class='item-image SQol11'>
+							<a>
+								<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
+							</a>
+						</div>
+						<div class='item-name SQol12' data-tooltip='{{item.system.description}}'>{{item.name}}</div>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ol>
+	</div>
+
+	<div class='heading QualSplit12'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</div>
+	<div style=' overflow:auto'>
+		<ol class='items-list'>
+			<li class='item grid-short-quality items-header'>
+				<div class='item-name SQol1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
+			</li>
+			{{#each actor.items as |item id|}}
+				{{#if (eq item.system.general.subtype 'flaw')}}
+					<li class='item grid-short-quality' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+						<div class='item-image SQol11'>
+							<a>
+								<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
+							</a>
+						</div>
+						<div class='item-name SQol12' data-tooltip='{{item.system.description}}'>{{item.name}}</div>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ol>
+	</div></div>

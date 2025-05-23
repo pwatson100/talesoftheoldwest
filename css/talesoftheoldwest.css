@@ -28,7 +28,7 @@
 
 .talesoftheoldwest .chat.roll {
   color: var(--black);
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   font-size: 12px;
   line-height: 16px;
   padding: 5px;
@@ -53,7 +53,7 @@
 }
 
 .talesoftheoldwest .chat.roll h3 {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   font-size: 14px;
   font-weight: bold;
   color: var(--talesoftheoldwest-c-beige);
@@ -63,7 +63,7 @@
 }
 
 .talesoftheoldwest .chat.roll h4 {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0 10px 0;
@@ -139,7 +139,7 @@
 }
 
 .chat-message {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   color: black;
   background-image: url("../assets/background/sheet-background.webp");
   background-position: center; /* Center the image */
@@ -150,7 +150,7 @@
 
 /* Global styles */
 .talesoftheoldwest.window-app {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
 }
 
 .talesoftheoldwest .rollable:hover, .talesoftheoldwest .rollable:focus {
@@ -164,7 +164,7 @@
 }
 
 body .talesoftheoldwest.application {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   color: black;
   background: transparent;
   -webkit-box-shadow: none;
@@ -182,22 +182,17 @@ body .application.dialog {
           filter: drop-shadow(8px 12px 8px #353232);
 }
 body .window-content {
-  font-family: 'Esteban", serif';
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: block;
+  overflow: auto;
+  scrollbar-color: #d36913 transparent;
+  scrollbar-width: thin;
+  background-image: url("../assets/background/sheet-background.webp");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%;
+  border: transparent;
+  -webkit-filter: drop-shadow(8px 12px 8px #353232);
+          filter: drop-shadow(8px 12px 8px #353232);
 }
 body .dialog-form.standard-form .form-footer,
 body .dialog-buttons {
@@ -218,6 +213,7 @@ body .dialog-buttons button {
 body .application input[type=text],
 body .application input[type=number],
 body .application select {
+  font-family: "Esteban", serif;
   background: white;
   color: black;
   --input-background-color: rgba(0, 0, 0, 0.1);
@@ -241,20 +237,6 @@ body .application select {
   background: transparent url(../ui/DsN/trouble-face.webp) no-repeat center/contain;
 }
 
-.talesoftheoldwest.application .window-content {
-  display: block;
-  overflow: auto;
-  scrollbar-color: #d36913 transparent;
-  scrollbar-width: thin;
-  background-image: url("../assets/background/sheet-background.webp");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: 100% 100%;
-  border: transparent;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232);
-          filter: drop-shadow(8px 12px 8px #353232);
-}
-
 .talesoftheoldwest .div-border {
   border: 3px solid black;
 }
@@ -265,10 +247,25 @@ body .application select {
   margin: 5px;
 }
 
-.talesoftheoldwest.application nav.tabs {
+.talesoftheoldwest .sheet-tabs {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  font-size: large;
+  font-family: "Esteban", serif;
+  font-weight: bold;
   background-image: url(../assets/background/header-plank.webp);
   width: 97%;
   justify-self: anchor-center;
+}
+
+.talesoftheoldwest .tab.description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.talesoftheoldwest .tab.description .editor {
+  height: 100%;
 }
 
 .talesoftheoldwest .chat-buttons {
@@ -315,6 +312,14 @@ body .application select {
 .sheet.journal-entry .journal-entry-content {
   background-image: url("../assets/background/sheet-background.webp");
   background-size: cover;
+}
+
+.theme-dark input[type=checkbox],
+.theme-light input[type=checkbox] {
+  --checkbox-font-weight: unset;
+  --checkbox-background-color: var(--color-dark-6);
+  --checkbox-checked-color: var(--color-warm-1);
+  --checkbox-checkmark-color: var(--color-dark-1);
 }
 
 .grid,
@@ -735,6 +740,7 @@ body .application select {
 
 .grid-header {
   display: grid;
+  font-family: "Esteban", serif;
   grid-template-areas: "HedCol1 HedCol1 HedCol7 HedCol10 HedCol2" "HedCol3 HedCol4 HedCol8 HedCol11 HedCol2" "HedCol5 HedCol6 HedCol9 HedCol12 HedCol2";
   grid-template-columns: 162px 206px 94px 266px 184px;
 }
@@ -809,6 +815,56 @@ body .application select {
 
 .HedCol12 {
   grid-area: HedCol12;
+  align-self: center;
+}
+
+.item-sub-header {
+  display: grid;
+  font-family: "Esteban", serif;
+  row-gap: 2px;
+  grid-template-areas: "ISHCol1 ISHCol2 " "ISHCol3 ISHCol4 " "ISHCol5 ISHCol6 ";
+  grid-template-columns: 162px 150px;
+}
+
+.ISHCol1 {
+  grid-area: ISHCol1;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.ISHCol2 {
+  grid-area: ISHCol2;
+  text-align: center;
+  align-self: center;
+}
+
+.ISHCol3 {
+  grid-area: ISHCol3;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.ISHCol4 {
+  grid-area: ISHCol4;
+  text-align: center;
+  align-self: center;
+}
+
+.ISHCol5 {
+  grid-area: ISHCol5;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.ISHCol6 {
+  grid-area: ISHCol6;
+  text-align: center;
   align-self: center;
 }
 
@@ -1225,8 +1281,9 @@ body .application select {
 .grid-weapon-feature-list {
   display: grid;
   row-gap: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  -webkit-column-gap: 4px;
+     -moz-column-gap: 4px;
+          column-gap: 4px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1243,12 +1300,14 @@ body .application select {
 .grid-wfl2 {
   grid-area: grid-wfl2;
   text-align: center;
+  align-self: end;
 }
 
 .grid-wfl3 {
   grid-area: grid-wfl3;
   text-align: center;
   font-size: x-large;
+  align-self: end;
 }
 
 .grid-wfl4 {
@@ -1356,6 +1415,7 @@ body .application select {
 
 .L4C2 {
   grid-area: L4C2;
+  font-size: large;
 }
 
 .L5C1 {
@@ -1434,62 +1494,6 @@ body .application select {
   grid-area: CSplit52;
 }
 
-.grid-ship-crew {
-  display: grid;
-  grid-template-areas: "gSC1 gSC2 gSC3 gSC4 gSC5" " gSC6 gSC7 gSC8 gSC9 gSC10";
-  grid-template-columns: 43% 25% 20% 6%;
-}
-
-.gSC1 {
-  justify-self: center;
-  grid-area: gSC1;
-}
-
-.gSC2 {
-  justify-self: center;
-  grid-area: gSC2;
-}
-
-.gSC3 {
-  justify-self: center;
-  grid-area: gSC3;
-}
-
-.gSC4 {
-  justify-self: right;
-  grid-area: gSC4;
-}
-
-.gSC5 {
-  justify-self: right;
-  grid-area: gSC5;
-}
-
-.gSC6 {
-  justify-self: left;
-  grid-area: gSC6;
-}
-
-.gSC7 {
-  justify-self: center;
-  grid-area: gSC7;
-}
-
-.gSC8 {
-  justify-self: right;
-  grid-area: gSC8;
-}
-
-.gSC9 {
-  justify-self: center;
-  grid-area: gSC9;
-}
-
-.gSC10 {
-  justify-self: right;
-  grid-area: gSC10;
-}
-
 .sheet-compadres-header {
   display: grid;
   -webkit-box-align: center;
@@ -1497,8 +1501,8 @@ body .application select {
           align-items: center;
   width: 720px;
   justify-self: center;
-  grid-template-areas: "schA1 schB1 schA2";
-  grid-template-columns: 620px 40px 40px;
+  grid-template-areas: "schA1 schB1 schA2 schA3";
+  grid-template-columns: 580px 40px 40px 40px;
 }
 
 .schA1 {
@@ -1514,6 +1518,11 @@ body .application select {
 
 .schA2 {
   grid-area: schA2;
+  margin: 5px;
+}
+
+.schA3 {
+  grid-area: schA3;
   margin: 5px;
 }
 
@@ -1801,6 +1810,101 @@ body .application select {
 .gearSplit2 {
   grid-area: gearSplit2;
   justify-self: center;
+}
+
+.riding-bonus {
+  display: grid;
+  grid-template-areas: "rideSplit1 rideSplit2";
+  grid-template-columns: 215px 50px;
+  background: rgba(139, 106, 44, 0.21);
+}
+
+.rideSplit1 {
+  grid-area: rideSplit1;
+  font-size: x-large;
+  text-align: center;
+}
+
+.rideSplit2 {
+  grid-area: rideSplit2;
+  text-align: center;
+}
+
+.quality-split {
+  display: grid;
+  justify-self: center;
+  grid-template-areas: "QualSplit11 QualSplit12" "QualSplit21 QualSplit22";
+  grid-template-columns: 210px 210px;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.QualSplit11 {
+  grid-area: QualSplit11;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.QualSplit12 {
+  grid-area: QualSplit12;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.QualSplit21 {
+  grid-area: QualSplit21;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.QualSplit22 {
+  grid-area: QualSplit22;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.grid-short-quality {
+  display: grid;
+  grid-template-areas: "SQol1 SQol1" "SQol11 SQol12";
+  padding-bottom: 2px;
+  grid-template-columns: 30px 170px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.SQol1 {
+  grid-area: SQol1;
+  text-align: center;
+}
+
+.SQol2 {
+  grid-area: SQol2;
+  text-align: center;
+}
+
+.SQol11 {
+  grid-area: SQol11;
+  text-align: center;
+}
+
+.SQol12 {
+  grid-area: SQol12;
+  text-align: left;
+  font-weight: bold;
 }
 
 .flex-group-center,
@@ -2139,7 +2243,7 @@ body .application select {
 
 /* Styles limited to talesoftheoldwest sheets */
 .talesoftheoldwest .item-form {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
 }
 .talesoftheoldwest .sheet-header {
   -webkit-box-flex: 0;
@@ -2192,23 +2296,9 @@ body .application select {
   height: 100%;
   margin: 0;
 }
-.talesoftheoldwest .sheet-tabs {
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
-  font-size: large;
-}
 .talesoftheoldwest .sheet-body,
 .talesoftheoldwest .sheet-body .tab,
 .talesoftheoldwest .sheet-body .tab .editor {
-  height: 100%;
-}
-.talesoftheoldwest .tab.description {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.talesoftheoldwest .tab.description .editor {
   height: 100%;
 }
 .talesoftheoldwest .tox .tox-editor-container {
@@ -2236,6 +2326,7 @@ body .application select {
 .talesoftheoldwest .textarea-format {
   padding: 7px;
   background-color: var(--talesoftheoldwest-c-white);
+  font-family: "Esteban", serif;
 }
 .talesoftheoldwest .currency,
 .talesoftheoldwest .currency2 {
@@ -2250,6 +2341,11 @@ body .application select {
 .talesoftheoldwest .heading {
   font-weight: bold;
   font-size: large;
+  text-align: center;
+}
+.talesoftheoldwest .conditionHeading {
+  font-weight: bold;
+  font-size: larger;
   text-align: center;
 }
 .talesoftheoldwest .healboxsize {
@@ -2303,14 +2399,27 @@ body .application select {
   overflow-x: auto;
   border: black solid 1px;
 }
+.talesoftheoldwest .saddle-bag {
+  display: inline-block;
+  background-image: url("../assets/icons/saddle.webp");
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-size: 24px;
+  border: 0;
+}
+.talesoftheoldwest .saddle-bag:hover, .talesoftheoldwest:focus {
+  background-color: var(--color-warm-2);
+  cursor: pointer;
+}
 .talesoftheoldwest .items-header {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   background: var(--black);
   border: 2px groove var(--talesoftheoldwest-c-groove);
   font-weight: bold;
 }
 .talesoftheoldwest .items-list {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2324,7 +2433,7 @@ body .application select {
   padding: 0;
 }
 .talesoftheoldwest .items-list .item-name {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   overflow: hidden;
   font-size: 13px;
   font-weight: bolder;
@@ -2371,7 +2480,7 @@ body .application select {
   margin-right: 5px;
 }
 .talesoftheoldwest .items-list .items-header {
-  font-family: 'Esteban", serif';
+  font-family: "Esteban", serif;
   height: auto;
   margin: 2px 0 var(--black);
   -webkit-box-align: center;

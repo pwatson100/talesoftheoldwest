@@ -430,7 +430,7 @@ export class totowActor extends Actor {
 		const dataset = target.dataset;
 		dataset.conditional = '';
 		dataset.talent = '';
-
+		dataset.myHorse = 'false';
 		// const targetActor = actor.getRollData();
 		if (actor.type === 'pc') {
 			dataset.faithpoints = actor.system.general.faithpoints.value;
@@ -452,15 +452,17 @@ export class totowActor extends Actor {
 						break;
 					case 'ability':
 						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long')) {
-							if (actor.system.horse.name) {
-								const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/riding-my-horse.hbs', actor, event, target);
+							if (actor.system.remuda.remudaMounted !== 'false') {
+								let horse = await this.getRemuda(actor.system.remuda.remudaMounted);
+								const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/riding-my-horse.hbs', horse);
 								const response = await foundry.applications.api.DialogV2.confirm({
 									window: { title: 'TALESOFTHEOLDWEST.dialog.Ride-My-Horse-Dialog' },
 									content,
 									modal: true,
 								});
 								if (response === true) {
-									dataset.mod = Number(dataset.mod) + Number(actor.system.horse.general.ridingmodifier.value);
+									dataset.myHorse = 'true';
+									dataset.mod = Number(dataset.mod) + Number(horse.actor.system.general.ridingmodifier.value);
 								}
 							}
 						}
@@ -496,7 +498,7 @@ export class totowActor extends Actor {
 						dataset,
 					});
 					const data = await foundry.applications.api.DialogV2.wait({
-						window: { title: 'TALESOFTHEOLDWEST.General.Roll Modifiers' },
+						window: { title: 'TALESOFTHEOLDWEST.Item.General.roll-modifiers' },
 						position: { width: 350 },
 						// classes: ["my-special-class"],
 						content,
@@ -516,12 +518,12 @@ export class totowActor extends Actor {
 					if (!data || data === 'cancel') return 'cancelled';
 
 					Object.keys(data).forEach((key) => {
-						if (key.startsWith('floop')) {
+						if (key.startsWith('floop') || key.startsWith('iloop')) {
 							data.modifier = parseInt(data.modifier || 0) + parseInt(data[key] || 0);
 						}
 					});
 
-					dataset.mod = parseInt(dataset.mod || 0) + Number(data.modifier);
+					dataset.mod = parseInt(dataset.mod || 0) + parseInt(data.modifier || 0);
 				}
 
 				result = await rollAttrib(dataset, rollData, actor);
@@ -561,7 +563,7 @@ export class totowActor extends Actor {
 	async modRoll(actor, event, target) {
 		const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-modifier.html', actor, event, target);
 		const response = await foundry.applications.api.DialogV2.wait({
-			window: { title: 'TALESOFTHEOLDWEST.General.Roll Modifiers' },
+			window: { title: 'TALESOFTHEOLDWEST.Item.General.roll-modifiers' },
 			content,
 			rejectClose: false,
 			buttons: [
@@ -687,7 +689,7 @@ export class totowActor extends Actor {
 	 * @param {string} compId The id of the occupant to find
 	 * @returns {VehicleOccupant|undefined}
 	 */
-	getRemuda(compId) {
+	async getRemuda(compId) {
 		if (this.type !== 'pc') return;
 		return this.system.remuda.details.find((o) => o.id === compId);
 	}

@@ -20,7 +20,6 @@ export async function prepModOutput(rollType, rollData, dataset) {
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
 					/><p style="color: black">${rollData.featureModifiers[fkey].description}</p></div>`;
 						floop++;
-
 						break;
 
 					case 'Chat':
@@ -43,67 +42,148 @@ export async function prepModOutput(rollType, rollData, dataset) {
 					id="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					name="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
-					/><p style="color: black">${rollData.featureModifiers[fkey].description}</p></div>`;
+					/><p style="color: black">${rollData.featureModifiers[fkey].itemDescription}</p></div>`;
 					iloop++;
 					break;
 
 				case 'Chat':
-					dataset.talent += `<strong style="color:black">${rollData.itemModifiers[ikey].name}</strong> - ${rollData.itemModifiers[ikey].description}<br /><br />`;
+					dataset.talent += `<strong style="color:black">${rollData.itemModifiers[ikey].name}</strong> - ${rollData.itemModifiers[ikey].itemDescription}<br /><br />`;
 					break;
 			}
 		}
+		switch (dataset.subtype) {
+			case 'shootin':
+				for (const akey in rollData.actor.itemMods) {
+					switch (akey) {
+						case 'shootin':
+							console.log('shootin', rollData.actor.itemMods[akey]);
+							await this.modifiers(rollData.actor.itemMods, dataset, akey);
+
+							break;
+						case 'quick':
+							console.log('quick', rollData.actor.itemMods[akey]);
+							await this.modifiers(rollData.actor.itemMods, dataset, akey);
+
+							break;
+
+						default:
+							break;
+					}
+				}
+				break;
+			case 'fightin':
+				for (const akey in rollData.actor.itemMods) {
+					switch (akey) {
+						case 'fightin':
+							console.log('fightin', rollData.actor.itemMods[akey]);
+							await this.modifiers(rollData.actor.itemMods, dataset, akey);
+
+							break;
+						case 'grit':
+							console.log('grit', rollData.actor.itemMods[akey]);
+							await this.modifiers(rollData.actor.itemMods, dataset, akey);
+
+							break;
+
+						default:
+							break;
+					}
+				}
+				break;
+		}
 	} else {
+		// it's an Attribute or Ability
 		// let spanner = [];
 		for (const akey in rollData.itemMods) {
 			if (akey === dataset.key) {
-				let spanner = rollData.itemMods[akey].reduce((acc, akey) => {
-					if (akey.state != 'Active') {
-						if (akey.basicisActive) {
-							switch (akey.state) {
-								case 'Conditional':
-									{
-										dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
-					id="floop${floop}-${akey.name}" 
-					name="floop${floop}-${akey.name}" 
-					value="${akey.value}" 
-					/><p style="color: black">${akey.description} ${akey.basicAction} </p></div>`;
-										floop++;
-									}
-									break;
-
-								case 'Chat':
-									{
-										dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
-									}
-									break;
-							}
-						} else if (akey.advisActive) {
-							switch (akey.state) {
-								case 'Conditional':
-									{
-										dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
-					id="floop${floop}-${akey.name}" 
-					name="floop${floop}-${akey.name}" 
-					value="${akey.value}" 
-					/><p style="color: black">${akey.description} ${akey.advAction}</p></div>`;
-										floop++;
-									}
-									break;
-
-								case 'Chat':
-									{
-										dataset.talent += `<strong style="color:black">${akey.name}</strong> - ${akey.description}<br /><br />`;
-									}
-									break;
-							}
-						}
-					} else return acc;
-				}, []);
+				await this.modifiers(rollData.itemMods, dataset, akey);
 			}
 		}
 	}
+	return dataset;
+}
+
+export async function modifiers(itemModspath, dataset, akey) {
+	let floop = 1;
+	let iloop = 1;
+	let spanner = itemModspath[akey].reduce((acc, akey) => {
+		if (akey.state !== 'Active') {
+			if (akey.basicisActive) {
+				switch (akey.state) {
+					case 'Conditional':
+						{
+							dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="floop${floop}-${akey.name}" 
+					name="floop${floop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.basicAction}</p></div>`;
+							floop++;
+						}
+						break;
+
+					case 'Chat':
+						{
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+						}
+						break;
+				}
+			} else if (akey.advisActive) {
+				switch (akey.state) {
+					case 'Conditional':
+						{
+							dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="floop${floop}-${akey.name}" 
+					name="floop${floop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.advAction}</p></div>`;
+							floop++;
+						}
+						break;
+
+					case 'Chat':
+						{
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+						}
+						break;
+				}
+			} else if ((akey.itemtype === 'item' || akey.itemtype === 'animalquality') && !akey.stored) {
+				switch (akey.state) {
+					case 'Conditional':
+						{
+							dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="iloop${iloop}-${akey.name}" 
+					name="iloop${iloop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.itemDescription}</p></div>`;
+							iloop++;
+						}
+						break;
+					case 'onPC':
+						{
+							if (dataset.myHorse === 'true') {
+								dataset.conditional += `<div class="form-group" >
+					<input type="checkbox" 
+					id="iloop${iloop}-${akey.name}" 
+					name="iloop${iloop}-${akey.name}" 
+					value="${akey.value}" 
+					/><p style="color: black"><strong>${akey.itemname}</strong> -  ${akey.itemDescription}</p></div>`;
+								iloop++;
+							}
+						}
+						break;
+
+					case 'Chat':
+						{
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+						}
+						break;
+				}
+			}
+		} else return acc;
+	}, []);
 	return dataset;
 }
 

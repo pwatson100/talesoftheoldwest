@@ -1,195 +1,197 @@
-<div class="horse-header">
-	<div class="document-name HorseCol1">
-		<input
-			style="font-size: 35px; max-width: 445px; height: auto"
-			type="text"
-			name="system.horse.name"
-			value="{{system.horse.name}}"
-			placeholder="Name"
-			data-dtype="text"
-		/>
-	</div>
-	<label for="system.general.breed" class="resource-label HorseCol2">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
-	<select class="HorseCol3" id="system.horse.general.breed" name="system.horse.general.breed">
-		{{selectOptions config.animal_breed_list selected=system.horse.general.breed labelAttr='label' localize=true}}
-	</select>
+<section>
+	<div >
+		{{#if (gt @root.remuda.length 0)}}
+			{{#each @root.remuda}}
+				{{#if actor.system.general.mounted}}
+					<div class='remuda ' data-compId='{{id}}' style='margin-top: 30px;'>
+						<div class='sheet-compadres-header'>
+							<div class='schA1'>{{actor.name}}
+								</div>
 
-	<label class="resource-label HorseCol4" for="system.horse.general.ridingmodifier.value"
-		>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.riding-bonus') }}</label
-	>
-	<input
-		class="experience HorseCol5"
-		name="system.horse.general.ridingmodifier.value"
-		value="{{system.horse.general.ridingmodifier.value}}"
-		data-dtype="Number"
-	/>
+								<a
+								class='schB1'
+									data-action='remudaMount'
+									data-item-id='{{item._id}}'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToMount"}}'
+								><i class='saddle-bag'></i></a>
+							<a
+									class='button schA2 '
+								data-action='remudaView'
+								data-item-id='{{item._id}}'
+								data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}'
+								data-compId='{{id}}'
+							>
+								<i class='fas fa-edit'></i>
+							</a>
+						</div>
+						<div class='sheet-animal-attributes animal-stats'>
+						<div class='aA1'>
+								<label
+									for='actor.system.attributes.grit'
+									class='resource-label rollable align-left'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='attribute'
+									data-action='roll'
+									data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
+									data-mod='{{actor.system.attributes.grit.mod}}'
+									data-speaker='{{actor.id}}'
+								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
+							</div>
+							<div class='aB1'>
+								<input class='statnum' name='actor.system.attributes.grit.value' value='{{actor.system.attributes.grit.value}}' data-dtype='Number' disabled />
+								<span style='font-weight: bolder; font-size: x-large'>/</span>
+								<input class='statnum' name='actor.system.attributes.grit.max' value='{{actor.system.attributes.grit.max}}' data-dtype='Number'  disabled />
+							</div>
 
-	<label class="resource-label HorseCol6" style="text-align: center; align-self: center; font-size: larger" for="system.horse.general.cost"
-		>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost') }}</label
-	>
-	<input class="currency HorseCol7" name="system.horse.general.cost" value="{{system.horse.general.cost}}" data-dtype="String" />
-</div>
+							<div class='aA2'>
+								<label
+									for='actor.system.attributes.quick'
+									class='resource-label rollable align-left'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='attribute'
+									data-action='roll'
+									data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
+									data-mod='{{actor.system.attributes.quick.mod}}'
+									data-speaker='{{actor.id}}'
+								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
+							</div>
+							<div class='aB2'>
+								<input
+									class='statnum'
+									name='actor.system.attributes.quick.value'
+									value='{{actor.system.attributes.quick.value}}'
+									data-dtype='Number'
+									disabled
+								/>
+								<span style='font-weight: bolder; font-size: x-large'>/</span>
+								<input class='statnum' name='actor.system.attributes.quick.max' value='{{actor.system.attributes.quick.max}}' data-dtype='Number' disabled />
+							</div>
+							<div class='aA3'>
+								<label
+									for='actor.system.attributes.cunning'
+									class='resource-label rollable align-left'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='attribute'
+									data-action='roll'
+									data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
+									data-mod='{{actor.system.attributes.cunning.mod}}'
+									data-speaker='{{actor.id}}'
+								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
+							</div>
+							<div class='aB3'>
+								<input
+									class='statnum'
+									name='actor.system.attributes.cunning.value'
+									value='{{actor.system.attributes.cunning.value}}'
+									data-dtype='Number'
+									disabled
+								/>
+								<span style='font-weight: bolder; font-size: x-large'>/</span>
+								<input
+									class='statnum'
+									name='actor.system.attributes.cunning.max'
+									value='{{actor.system.attributes.cunning.max}}'
+									data-dtype='Number'
+									disabled
+								/>
+							</div>
+						</div>
+						<div class='riding-bonus' style="padding-top: 10px;justify-self: center;">
+							<div class="rideSplit1">
+								<label
+									for='actor.system.general.general.ridingmodifier.value'
+									class='resource-label align-left'
+								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.riding-bonus')}}</label>
+							</div>
+							<div class="rideSplit2">
+								<input
+									class='statnum'
+									name='actor.system.general.ridingmodifier.value'
+									value='{{actor.system.general.ridingmodifier.value}}'
+									data-dtype='Number'
+									disabled
+								/>
+							</div>
+						</div>
+						<div class='sheet-animal-abilities animal-stats'>
+							<div class='aresilience' style='font-size: large; text-align: right'>
+								<label
+									class='resource-label rollable'
+									for='actor.system.abilities.resilience.value'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='ability'
+									data-action='roll'
+									data-value='{{actor.system.abilities.resilience.value}}'
+									data-label='{{actor.system.abilities.resilience.label}}'
+									data-stunts='{{system.abilities.resilience.label}}'
+									data-mod='{{actor.system.abilities.resilience.mod}}'
+									data-attr='{{actor.system.abilities.resilience.attr}}'
+									data-speaker='{{actor.id}}'
+								>{{actor.system.abilities.resilience.upper}}</label>
+							</div>
+							<div class='aresilience2' style='text-align: center'>
+								<input
+									class='statnum'
+									name='actor.system.abilities.resilience.value'
+									value='{{actor.system.abilities.resilience.value}}'
+									data-dtype='Number'
+									disabled
+								/>
+							</div>
+							<div class='amove' style='font-size: large; text-align: right'>
+								<label
+									class='resource-label rollable'
+									for='actor.system.abilities.move.value'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='ability'
+									data-action='roll'
+									data-value='{{actor.system.abilities.move.value}}'
+									data-label='{{actor.system.abilities.move.label}}'
+									data-stunts='{{actor.system.abilities.move.label}}'
+									data-mod='{{actor.system.abilities.move.mod}}'
+									data-attr='{{actor.system.abilities.move.attr}}'
+									data-speaker='{{actor.id}}'
+								>{{actor.system.abilities.move.upper}}</label>
+							</div>
+							<div class='amove2' style='text-align: center'>
+								<input class='statnum' name='actor.system.abilities.move.value' value='{{actor.system.abilities.move.value}}' data-dtype='Number' disabled />
+							</div>
+							<div class='afightin' style='font-size: large; text-align: right'>
+								<label
+									class='resource-label rollable'
+									for='actor.system.abilities.fightin.value'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
+									data-roll-type='ability'
+									data-action='roll'
+									data-value='{{actor.system.abilities.fightin.value}}'
+									data-label='{{actor.system.abilities.fightin.label}}'
+									data-stunts='{{actor.system.abilities.fightin.label}}'
+									data-mod='{{actor.system.abilities.fightin.mod}}'
+									data-attr='{{actor.system.abilities.fightin.attr}}'
+									data-speaker='{{actor.id}}'
+								>{{actor.system.abilities.fightin.upper}}</label>
+							</div>
+							<div class='afightin2' style='text-align: center'>
+								<input
+									class='statnum'
+									name='actor.system.abilities.fightin.value'
+									value='{{actor.system.abilities.fightin.value}}'
+									data-dtype='Number'
+									disabled
+								/>
+							</div>
+						</div>
 
-<div class="sheet-animal-attributes animal-stats">
-	<div class="aA1">
-		<label
-			for="system.horse.attributes.grit"
-			class="resource-label rollable align-left"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="attribute"
-			data-action="roll"
-			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
-			data-mod="{{system.horse.attributes.grit.mod}}"
-			data-speaker="{{actor.id}}"
-			>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label
-		>
-	</div>
-	<div class="aB1">
-		<input class="statnum" name="system.horse.attributes.grit.value" value="{{system.horse.attributes.grit.value}}" data-dtype="Number" />
-		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.grit.max" value="{{system.horse.attributes.grit.max}}" data-dtype="Number" />
-	</div>
-
-	<div class="aA2">
-		<label
-			for="system.horse.attributes.quick"
-			class="resource-label rollable align-left"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="attribute"
-			data-action="roll"
-			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
-			data-mod="{{system.horse.attributes.quick.mod}}"
-			data-speaker="{{actor.id}}"
-			>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label
-		>
-	</div>
-	<div class="aB2">
-		<input class="statnum" name="system.horse.attributes.quick.value" value="{{system.horse.attributes.quick.value}}" data-dtype="Number" />
-		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.quick.max" value="{{system.horse.attributes.quick.max}}" data-dtype="Number" />
-	</div>
-	<div class="aA3">
-		<label
-			for="system.horse.attributes.cunning"
-			class="resource-label rollable align-left"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="attribute"
-			data-action="roll"
-			data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
-			data-mod="{{system.horse.attributes.cunning.mod}}"
-			data-speaker="{{actor.id}}"
-			>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label
-		>
-	</div>
-	<div class="aB3">
-		<input class="statnum" name="system.horse.attributes.cunning.value" value="{{system.horse.attributes.cunning.value}}" data-dtype="Number" />
-		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.cunning.max" value="{{system.horse.attributes.cunning.max}}" data-dtype="Number" />
-	</div>
-</div>
-<div class="sheet-animal-abilities animal-stats">
-	<div class="aresilience" style="font-size: large; text-align: right">
-		<label
-			class="resource-label rollable"
-			for="system.horse.abilities.resilience.value"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="ability"
-			data-action="roll"
-			data-value="{{system.horse.abilities.resilience.value}}"
-			data-label="{{system.horse.abilities.resilience.label}}"
-			data-stunts="{{system.abilities.resilience.label}}"
-			data-mod="{{system.horse.abilities.resilience.mod}}"
-			data-attr="{{system.horse.abilities.resilience.attr}}"
-			data-speaker="{{actor.id}}"
-			>{{system.horse.abilities.resilience.upper}}</label
-		>
-	</div>
-	<div class="aresilience2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.resilience.value" value="{{system.horse.abilities.resilience.value}}" data-dtype="Number" />
-	</div>
-	<div class="amove" style="font-size: large; text-align: right">
-		<label
-			class="resource-label rollable"
-			for="system.horse.abilities.move.value"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="ability"
-			data-action="roll"
-			data-value="{{system.horse.abilities.move.value}}"
-			data-label="{{system.horse.abilities.move.label}}"
-			data-stunts="{{system.horse.abilities.move.label}}"
-			data-mod="{{system.horse.abilities.move.mod}}"
-			data-attr="{{system.horse.abilities.move.attr}}"
-			data-speaker="{{actor.id}}"
-			>{{system.horse.abilities.move.upper}}</label
-		>
-	</div>
-	<div class="amove2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.move.value" value="{{system.horse.abilities.move.value}}" data-dtype="Number" />
-	</div>
-	<div class="afightin" style="font-size: large; text-align: right">
-		<label
-			class="resource-label rollable"
-			for="system.horse.abilities.fightin.value"
-			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-			data-roll-type="ability"
-			data-action="roll"
-			data-value="{{system.horse.abilities.fightin.value}}"
-			data-label="{{system.horse.abilities.fightin.label}}"
-			data-stunts="{{system.horse.abilities.fightin.label}}"
-			data-mod="{{system.horse.abilities.fightin.mod}}"
-			data-attr="{{system.horse.abilities.fightin.attr}}"
-			data-speaker="{{actor.id}}"
-			>{{system.horse.abilities.fightin.upper}}</label
-		>
-	</div>
-	<div class="afightin2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.fightin.value" value="{{system.horse.abilities.fightin.value}}" data-dtype="Number" />
-	</div>
-</div>
-<div style="height: 150px">{{>"systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs"}}</div>
-
-<div class="gear-split" style="height: 130px">
-	<div class="gearSplit2">
-		<div class="heading" style="max-height: 100px">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
-		<div>
-			<ol class="items-list">
-				<li class="item grid-talent-items items-header">
-					<div class="item-name TCol2">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
-				</li>
-			</ol>
-		</div>
-		<div class="small-box" style="max-height: 100px">
-			<ol class="items-list">
-				{{#each allGear as |item id|}}
-				{{#if (eq item.system.stored true) }}
-				<li class="item grid-talent-items" data-item-id="{{item._id}}" data-drag="true" data-document-class="Item">
-					<div class='item-image TCol11' data-item='{{item.system.stored}}'>
-						<a >
-							<img src="{{item.img}}"  data-tooltip='{{item.name}}' width="24" height="24" />
-						</a>
-					</div>
-					<div class="item-name TCol12"  data-tooltip='{{item.system.description}}'>{{item.name}}</div>
-					<div class="item-controls TCol14">
-						<a class='item-control storeItem' data-action='storeItem' data-item-id="{{item._id}}" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'><i class="fa-solid fa-sack-dollar"></i>
-						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Item'}}'>
-						<i class="fas fa-edit"></i>
-						<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Item'}}'>
-						<i class="fas fa-trash"></i>
-					</div>
-				</li>
+				<div class="compadre-split" style="margin-top: 20px;">
+					<div class="CompSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse-quality-options.hbs"}}</div>
+					<div class="CompSplit12">
+						<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
+						{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse-saddlebag.hbs"}}</div>
+						</div>
 				{{/if}}
-				{{/each}}
-			</ol>
-		</div>
+			{{/each}}
+		{{else}}
+			<div class='crew-empty resource-label'>{{localize 'TALESOFTHEOLDWEST.General.gmDragRemuda'}}</div>
+		{{/if}}
 	</div>
-	<div class="heading gearSplit1">
-		{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.description')}}
-		<div class="div-border" style="width: 390px; justify-self: anchor-center">
-			{{#if editable}}
-			<prose-mirror name="system.horse.horseNotes" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.horse.horseNotes}}" toggled="true" class="small-box">
-				{{{enrichedHorseNotes}}}
-			</prose-mirror>
-			{{else}} {{{enrichedHorseNotes}}} {{/if}}
-		</div>
-	</div>
-</div>
+</section>

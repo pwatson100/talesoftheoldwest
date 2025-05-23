@@ -1,15 +1,15 @@
 {{! Description Tab }}
 <section class='tab description {{tab.cssClass}}' data-group='primary' data-tab='description'>
 	{{#if (eq item.type 'weapon')}}
-		<div class='grid grid-2col'>
-			<label for='system.subtype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
-			<select id='system.subtype' name='system.subtype'>
+		<div class='item-sub-header' style='margin-bottom: 5px;'>
+			<label for='system.subtype' class='resource-label ISHCol1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+			<select class='ISHCol2' id='system.subtype' name='system.subtype'>
 				{{selectOptions config.subtype_list selected=system.subtype labelAttr='label' localize=true}}
 			</select>
 
 			{{#if (eq system.subtype 'shootin')}}
-				<label for='system.action' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
-				<select id='system.action' name='system.action'>
+				<label for='system.action' class='resource-label ISHCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</label>
+				<select class='ISHCol4' id='system.action' name='system.action'>
 					{{selectOptions config.action_list selected=system.action labelAttr='label' localize=true}}
 				</select>
 			{{/if}}
@@ -24,11 +24,39 @@
 		</div>
 		<div class='resource grid grid-4col'>
 			{{#if (eq system.subtype 'shootin')}}
-				<input class='statnum' type='text' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
+				<input
+					class='statnum'
+					style='	width: 44px;	font-size: 16px;	text-align: center;'
+					type='text'
+					name='system.bonusdraw'
+					value='{{system.bonusdraw}}'
+					data-dtype='Number'
+				/>
 			{{/if}}
-			<input class='statnum' type='text' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
-			<input class='statnum' type='text' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
-			<input class='statnum' type='text' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
+			<input
+				class='statnum'
+				style='	width: 44px;	font-size: 16px;	text-align: center;'
+				type='text'
+				name='system.attackbonus'
+				value='{{system.attackbonus}}'
+				data-dtype='Number'
+			/>
+			<input
+				class='statnum'
+				style='	width: 44px;	font-size: 16px;	text-align: center;'
+				type='text'
+				name='system.damage'
+				value='{{system.damage}}'
+				data-dtype='Number'
+			/>
+			<input
+				class='statnum'
+				style='	width: 44px;	font-size: 16px;	text-align: center;'
+				type='text'
+				name='system.crit'
+				value='{{system.crit}}'
+				data-dtype='Number'
+			/>
 		</div>
 		{{#if (eq system.subtype 'shootin')}}
 			<div class='resource grid grid-4col'>
@@ -39,7 +67,14 @@
 				<select id='system.range' name='system.range'>
 					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
 				</select>
-				<input class='statnum' type='text' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
+				<input
+					class='statnum'
+					style='	width: 44px;	font-size: 16px;	text-align: center;'
+					type='text'
+					name='system.ammo'
+					value='{{system.ammo}}'
+					data-dtype='Number'
+				/>
 			</div>
 		{{/if}}
 		<hr />
@@ -79,22 +114,22 @@
 	{{#if (eq item.type 'weaponquality')}}
 		{{#if isGM}}
 
-			<div class='grid grid-2col'>
-				<label for='system.weapontype' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
-				<select id='system.weapontype' name='system.weapontype'>
-					{{selectOptions config.subtype_list selected=system.weapontype labelAttr='label' localize=true}}
-				</select>
-				<label for='system.feature' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
-				<select id='system.feature' name='system.feature'>
-					{{selectOptions config.weapon_feature_list selected=system.feature labelAttr='label' localize=true}}
-				</select>
+			<div class='item-sub-header' style='margin-bottom: 5px;'>
 				{{#if (ne system.feature 'condition')}}
-					<label for='system.onweapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
-					<select id='system.onweapon' name='system.onweapon'>
+					<label for='system.onweapon' class='resource-label ISHCol1'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
+					<select class='ISHCol2' id='system.onweapon' name='system.onweapon'>
 						{{selectOptions config.onweapon_list selected=system.onweapon labelAttr='label' localize=true}}
 					</select>
 
 				{{/if}}
+				<label for='system.weapontype' class='resource-label ISHCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+				<select class='ISHCol4' id='system.weapontype' name='system.weapontype'>
+					{{selectOptions config.subtype_list selected=system.weapontype labelAttr='label' localize=true}}
+				</select>
+				<label for='system.feature' class='resource-label ISHCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
+				<select class='ISHCol6' id='system.feature' name='system.feature'>
+					{{selectOptions config.weapon_feature_list selected=system.feature labelAttr='label' localize=true}}
+				</select>
 			</div>
 			<div class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.roll-modifiers')}}</div>
 			<div style=' overflow-x: auto; '>
@@ -153,33 +188,31 @@
 			</div>
 		{{else}}
 			{{! You are a player so read only }}
-			<div class='grid grid-2col'>
-				<label for='system.weapontype' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
-				<label for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.General.' system.weapontype)}}</label>
-
-				<label for='system.feature' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
-				<label for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.feature)}}</label>
-
+			<div class='item-sub-header'>
 				{{#if (ne system.feature 'condition')}}
-					<label for='system.onweapon' class='resource-label'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
-					<label for='system.onweapon' class='resource-label'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.onweapon)}}</label>
+					<label for='system.onweapon' class='resource-label ISHCol1'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.weapon')}}</label>
+					<label class='ISHCol2' for='system.onweapon'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.onweapon)}}</label>
 				{{/if}}
+				<label for='system.weapontype' class='resource-label ISHCol3'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>
+				<label class='ISHCol4' for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.General.' system.weapontype)}}</label>
+
+				<label for='system.feature' class='resource-label ISHCol5'>{{capitalise (localize 'TALESOFTHEOLDWEST.Item.General.feature')}}</label>
+				<label class='ISHCol6' for='system.weapontype'>{{localize (concat 'TALESOFTHEOLDWEST.Item.General.' system.feature)}}</label>
 			</div>
 		{{/if}}
-
-		<hr />
 	{{/if}}
-
-	<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
-	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	<div class='div-border'>
-		{{#if editable}}
-			<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
+	<div style='margin-top: 10px;'>
+		<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
+		{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+		<div class='div-border'>
+			{{#if editable}}
+				<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
+					{{{enrichedDescription}}}
+				</prose-mirror>
+			{{else}}
 				{{{enrichedDescription}}}
-			</prose-mirror>
-		{{else}}
-			{{{enrichedDescription}}}
-		{{/if}}
+			{{/if}}
+		</div>
 	</div>
 
 </section>

@@ -362,7 +362,7 @@
 
 .grid-header {
 	display: grid;
-	// margin: 0px;
+	font-family: $font-primary;
 	// padding-top: 0px;
 	grid-template-areas:
 		'HedCol1 HedCol1 HedCol7 HedCol10 HedCol2'
@@ -435,6 +435,56 @@
 }
 .HedCol12 {
 	grid-area: HedCol12;
+	align-self: center;
+}
+
+.item-sub-header {
+	display: grid;
+	font-family: $font-primary;
+	row-gap: 2px;
+	grid-template-areas:
+		'ISHCol1 ISHCol2 '
+		'ISHCol3 ISHCol4 '
+		'ISHCol5 ISHCol6 ';
+	//                      l1   l2  l3
+	grid-template-columns: 162px 150px;
+	// align-items: center;
+}
+
+.ISHCol1 {
+	grid-area: ISHCol1;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+	align-self: center;
+}
+.ISHCol2 {
+	grid-area: ISHCol2;
+	text-align: center;
+	align-self: center;
+}
+.ISHCol3 {
+	grid-area: ISHCol3;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+	align-self: center;
+}
+.ISHCol4 {
+	grid-area: ISHCol4;
+	text-align: center;
+	align-self: center;
+}
+.ISHCol5 {
+	grid-area: ISHCol5;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+	align-self: center;
+}
+.ISHCol6 {
+	grid-area: ISHCol6;
+	text-align: center;
 	align-self: center;
 }
 
@@ -805,11 +855,8 @@
 
 .grid-weapon-feature-list {
 	display: grid;
-	// padding: 3px;
 	row-gap: 5px;
-
-	margin-top: 10px;
-	margin-bottom: 10px;
+	column-gap: 4px;
 	align-items: center;
 	grid-template-areas: 'grid-wfl1 grid-wfl2 grid-wfl3 grid-wfl4';
 	grid-template-columns: 150px 50px 150px 50px;
@@ -822,11 +869,13 @@
 .grid-wfl2 {
 	grid-area: grid-wfl2;
 	text-align: center;
+	align-self: end;
 }
 .grid-wfl3 {
 	grid-area: grid-wfl3;
 	text-align: center;
 	font-size: x-large;
+	align-self: end;
 }
 .grid-wfl4 {
 	grid-area: grid-wfl4;
@@ -933,7 +982,7 @@
 }
 .L4C2 {
 	grid-area: L4C2;
-	// text-align: right;
+	font-size: large;
 }
 .L5C1 {
 	grid-area: L5C1;
@@ -1004,61 +1053,13 @@
 	grid-area: CSplit52;
 }
 
-.grid-ship-crew {
-	display: grid;
-	grid-template-areas:
-		'gSC1 gSC2 gSC3 gSC4 gSC5'
-		' gSC6 gSC7 gSC8 gSC9 gSC10';
-	grid-template-columns: 43% 25% 20% 6%;
-}
-.gSC1 {
-	justify-self: center;
-	grid-area: gSC1;
-}
-.gSC2 {
-	justify-self: center;
-	grid-area: gSC2;
-}
-.gSC3 {
-	justify-self: center;
-	grid-area: gSC3;
-}
-.gSC4 {
-	justify-self: right;
-	grid-area: gSC4;
-}
-.gSC5 {
-	justify-self: right;
-	grid-area: gSC5;
-}
-.gSC6 {
-	justify-self: left;
-	grid-area: gSC6;
-}
-.gSC7 {
-	justify-self: center;
-	grid-area: gSC7;
-}
-.gSC8 {
-	justify-self: right;
-	grid-area: gSC8;
-}
-.gSC9 {
-	justify-self: center;
-	grid-area: gSC9;
-}
-.gSC10 {
-	justify-self: right;
-	grid-area: gSC10;
-}
-
 .sheet-compadres-header {
 	display: grid;
 	align-items: center;
 	width: 720px;
 	justify-self: center;
-	grid-template-areas: 'schA1 schB1 schA2';
-	grid-template-columns: 620px 40px 40px;
+	grid-template-areas: 'schA1 schB1 schA2 schA3';
+	grid-template-columns: 580px 40px 40px 40px;
 	// background: rgb(139 106 44 / 21%);
 }
 .schA1 {
@@ -1072,6 +1073,10 @@
 }
 .schA2 {
 	grid-area: schA2;
+	margin: 5px;
+}
+.schA3 {
+	grid-area: schA3;
 	margin: 5px;
 }
 
@@ -1321,4 +1326,92 @@
 .gearSplit2 {
 	grid-area: gearSplit2;
 	justify-self: center;
+}
+.riding-bonus {
+	display: grid;
+	// padding-left: 10px;
+	grid-template-areas: 'rideSplit1 rideSplit2';
+	grid-template-columns: 215px 50px;
+	background: rgb(139 106 44 / 21%);
+}
+.rideSplit1 {
+	grid-area: rideSplit1;
+	font-size: x-large;
+	text-align: center;
+}
+.rideSplit2 {
+	grid-area: rideSplit2;
+	// font-size: large;
+	text-align: center;
+}
+
+.quality-split {
+	display: grid;
+	// width: 800px;
+	justify-self: center;
+	grid-template-areas:
+		'QualSplit11 QualSplit12'
+		'QualSplit21 QualSplit22';
+	grid-template-columns: 210px 210px;
+	column-gap: 5px;
+}
+.QualSplit11 {
+	grid-area: QualSplit11;
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+.QualSplit12 {
+	grid-area: QualSplit12;
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+.QualSplit21 {
+	grid-area: QualSplit21;
+	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+.QualSplit22 {
+	grid-area: QualSplit22;
+	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+
+.grid-short-quality {
+	display: grid;
+	grid-template-areas:
+		'SQol1 SQol1'
+		'SQol11 SQol12';
+	padding-bottom: 2px;
+	//                      l1   l2
+	grid-template-columns: 30px 170px;
+	align-items: center;
+}
+.SQol1 {
+	grid-area: SQol1;
+	text-align: center;
+}
+.SQol2 {
+	grid-area: SQol2;
+	text-align: center;
+}
+.SQol11 {
+	grid-area: SQol11;
+	text-align: center;
+}
+.SQol12 {
+	grid-area: SQol12;
+	text-align: left;
+	font-weight: bold;
 }

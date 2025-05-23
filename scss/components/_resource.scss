@@ -18,3 +18,17 @@
 	overflow-x: auto;
 	border: black solid 1px;
 }
+.saddle-bag {
+	display: inline-block;
+	background-image: url('../assets/icons/saddle.webp');
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background-size: 24px;
+	border: 0;
+}
+.saddle-bag:hover,
+&:focus {
+	background-color: var(--color-warm-2);
+	cursor: pointer;
+}
