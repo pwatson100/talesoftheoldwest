@@ -43,6 +43,8 @@ body {
 		background-size: 100% 100%;
 		border: transparent;
 		filter: drop-shadow(8px 12px 8px #353232);
+		font-family: 'Esteban';
+		color: hsl(0, 0%, 0%);
 	}
 	.dialog-form.standard-form .form-footer,
 	.dialog-buttons {
@@ -81,19 +83,6 @@ body {
 	cursor: nwse-resize;
 	background: transparent url(../ui/DsN/trouble-face.webp) no-repeat center / contain;
 }
-
-// .talesoftheoldwest.application .window-content {
-// 	display: block;
-// 	overflow: auto;
-// 	scrollbar-color: #d36913 transparent;
-// 	scrollbar-width: thin;
-// 	background-image: $app-background;
-// 	background-position: center; /* Center the image */
-// 	background-repeat: no-repeat; /* Do not repeat the image */
-// 	background-size: 100% 100%;
-// 	border: transparent;
-// 	filter: drop-shadow(8px 12px 8px #353232);
-// }
 
 .talesoftheoldwest .div-border {
 	border: 3px solid black;
@@ -168,3 +157,8 @@ body {
 	--checkbox-checked-color: var(--color-warm-1);
 	--checkbox-checkmark-color: var(--color-dark-1);
 }
+
+// #pause {
+// 	scale: 0.5;
+// 	background: none;
+// }

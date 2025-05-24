@@ -578,7 +578,8 @@ export class totowActor extends Actor {
 			],
 		});
 		if (!response || response === 'cancel') return 'cancelled';
-		target.dataset.mod = Number(target.dataset.mod) + Number(response.manMod);
+		target.dataset.mod = parseInt(target.dataset.mod || 0) + parseInt(response.manMod || 0);
+
 		await actor.diceRoll(actor, event, target);
 	}
 

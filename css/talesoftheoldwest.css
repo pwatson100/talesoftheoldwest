@@ -193,6 +193,8 @@ body .window-content {
   border: transparent;
   -webkit-filter: drop-shadow(8px 12px 8px #353232);
           filter: drop-shadow(8px 12px 8px #353232);
+  font-family: "Esteban";
+  color: hsl(0, 0%, 0%);
 }
 body .dialog-form.standard-form .form-footer,
 body .dialog-buttons {
@@ -1989,14 +1991,14 @@ body .application select {
 .talesoftheoldwest .content-link-I {
   color: hsl(39, 77%, 83%);
   background: transparent;
-  font-size: 15pt;
+  font-size: 1.15em;
   border: 0;
 }
 
 .talesoftheoldwest a.inline-link {
   background-color: transparent;
   color: hsl(6, 56%, 30%);
-  font-size: 15pt;
+  font-size: 1.15em;
   border: 0;
   font-family: "Esteban";
 }
@@ -2004,12 +2006,12 @@ body .application select {
 .talesoftheoldwest .inline-link2 .content-link {
   background-color: transparent;
   color: hsl(6, 56%, 30%);
-  font-size: 16pt;
+  font-size: 1.333em;
   border: 0;
   font-family: "Esteban";
 }
 
-.talesoftheoldwest .arpgtable {
+.talesoftheoldwest .totowtable {
   height: 36px;
   width: 80%;
   margin-left: auto;
@@ -2017,7 +2019,7 @@ body .application select {
   border: 0;
 }
 
-.talesoftheoldwest .arpgtable tr:nth-child(even) {
+.talesoftheoldwest .totowtable tr:nth-child(even) {
   background-color: transparent;
 }
 
@@ -2157,7 +2159,7 @@ body .application select {
 
 .talesoftheoldwest p {
   font-family: "Esteban";
-  font-size: 15px;
+  font-size: 1.15em;
 }
 
 .talesoftheoldwest h1 {
@@ -2168,6 +2170,7 @@ body .application select {
 .talesoftheoldwest h2 {
   font-family: "Esteban";
   font-weight: bold;
+  text-align: center;
 }
 
 .talesoftheoldwest h3 {
@@ -2183,11 +2186,6 @@ body .application select {
   text-align: center;
   text-align: center;
   border-bottom: 2px solid black;
-}
-
-.talesoftheoldwest h4 {
-  font-family: "Esteban";
-  font-weight: bold;
 }
 
 .talesoftheoldwest h5 {
@@ -2223,22 +2221,42 @@ body .application select {
   margin-bottom: 0;
   margin-left: 10px;
   font-family: "Esteban";
-  font-size: 20pt;
+  font-size: 1.667em;
 }
 
-.talesoftheoldwest .arpgtablesmall {
+.talesoftheoldwest .totowtablesmall {
   height: 36px;
   width: 34%;
   margin-left: auto;
   margin-right: auto;
   border: 0;
   text-align: center;
-  font-family: "Esteban";
-  font-size: 18px;
+  /* font-family: "Esteban"; */
+  /* font-size: 18pt; */
 }
 
-.talesoftheoldwest .arpgtablesmall tr:nth-child(even) {
+.talesoftheoldwest .totowtablesmall tr:nth-child(even) {
   background-color: transparent;
+}
+
+.talesoftheoldwest ul li,
+.talesoftheoldwest ol li {
+  font-family: "Esteban";
+  font-weight: normal;
+  list-style: none;
+  padding-bottom: 2px;
+  font-size: 1.15em;
+}
+
+.chapterHeading {
+  font-family: "Esteban";
+  font-weight: bold;
+  font-size: 2em;
+  color: hsl(0, 0%, 100%);
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: none;
 }
 
 /* Styles limited to talesoftheoldwest sheets */
@@ -2379,6 +2397,11 @@ body .application select {
   min-height: 100px;
   max-height: 120px;
   overflow-x: auto;
+}
+.talesoftheoldwest .qualities-box {
+  width: 257px;
+  justify-self: center;
+  min-height: 93px;
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;

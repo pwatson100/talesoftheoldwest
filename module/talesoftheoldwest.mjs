@@ -10,7 +10,7 @@ import { TALESOFTHEOLDWEST } from './helpers/config.mjs';
 import * as models from './data/_module.mjs';
 import { totowTroubleDie } from './helpers/totowTroubleDice.js';
 import { totowNormalDie } from './helpers/totowTroubleDice.js';
-
+import { ModuleImport, TOTOWSystemImportFormWrapper } from './apps/init.js';
 import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
 import registerSettings from './helpers/settings.mjs';
@@ -38,6 +38,8 @@ globalThis.talesoftheoldwest = {
 	applications: {
 		totowActorSheet,
 		totowItemSheet,
+		ModuleImport,
+		TOTOWSystemImportFormWrapper,
 	},
 	utils: {
 		rollItemMacro,
@@ -92,6 +94,7 @@ Hooks.once('init', function () {
 	// if the transfer property on the Active Effect is true.
 	// Necessary until foundry makes this default behavior in v13
 	CONFIG.ActiveEffect.legacyTransferral = false;
+	CONFIG.TOTOWSystemImportFormWrapper = TOTOWSystemImportFormWrapper;
 
 	// Register sheet application classes
 

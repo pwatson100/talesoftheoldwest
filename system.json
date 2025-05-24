@@ -7,7 +7,7 @@
 			"name": "Paul Watson"
 		}
 	],
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"compatibility": {
 		"minimum": "12",
 		"verified": "12"
@@ -57,69 +57,9 @@
 	],
 	"packs": [
 		{
-			"name": "quickstart-actors",
-			"label": "Quickstart Actors",
-			"path": "packs/quickstart-actors",
-			"type": "Actor",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		},
-		{
-			"name": "quickstart-scenes",
-			"label": "Quickstart Scenes",
-			"path": "packs/quickstart-scenes",
-			"type": "Scene",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		},
-		{
-			"name": "quickstart-items",
-			"label": "Quickstart Items",
-			"path": "packs/quickstart-items",
-			"type": "Item",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		},
-		{
-			"name": "weapon-qualities-and-conditions",
-			"label": "Weapon Qualities And Conditions",
-			"path": "packs/weapon-qualities-and-conditions",
-			"type": "Item",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		},
-		{
-			"name": "quickstart-rolltables",
-			"label": "Quickstart Rolltables",
-			"path": "packs/quickstart-rolltables",
-			"type": "RollTable",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		},
-		{
-			"name": "quickstart-adventure",
-			"label": "Quickstart Adventure",
-			"path": "packs/quickstart-adventure",
+			"name": "totow-system-assets",
+			"label": "System Assets",
+			"path": "packs/totow-system-assets",
 			"type": "Adventure",
 			"ownership": {
 				"PLAYER": "OBSERVER",

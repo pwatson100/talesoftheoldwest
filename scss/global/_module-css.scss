@@ -14,13 +14,13 @@
 .talesoftheoldwest .content-link-I {
 	color: hsl(39, 77%, 83%);
 	background: transparent;
-	font-size: 15pt;
+	font-size: 1.15em;
 	border: 0;
 }
 .talesoftheoldwest a.inline-link {
 	background-color: transparent;
 	color: hsl(6, 56%, 30%);
-	font-size: 15pt;
+	font-size: 1.15em;
 	border: 0;
 	font-family: 'Esteban';
 }
@@ -28,18 +28,18 @@
 .talesoftheoldwest .inline-link2 .content-link {
 	background-color: transparent;
 	color: hsl(6, 56%, 30%);
-	font-size: 16pt;
+	font-size: 1.333em;
 	border: 0;
 	font-family: 'Esteban';
 }
-.talesoftheoldwest .arpgtable {
+.talesoftheoldwest .totowtable {
 	height: 36px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	border: 0;
 }
-.talesoftheoldwest .arpgtable tr:nth-child(even) {
+.talesoftheoldwest .totowtable tr:nth-child(even) {
 	background-color: transparent;
 }
 
@@ -158,7 +158,7 @@
 }
 .talesoftheoldwest p {
 	font-family: 'Esteban';
-	font-size: 15px;
+	font-size: 1.15em;
 }
 
 .talesoftheoldwest h1 {
@@ -169,6 +169,7 @@
 .talesoftheoldwest h2 {
 	font-family: 'Esteban';
 	font-weight: bold;
+	text-align: center;
 }
 
 .talesoftheoldwest h3 {
@@ -185,10 +186,10 @@
 	border-bottom: 2px solid black;
 }
 
-.talesoftheoldwest h4 {
-	font-family: 'Esteban';
-	font-weight: bold;
-}
+// .talesoftheoldwest h4 {
+// 	font-family: 'Esteban';
+// 	font-weight: bold;
+// }
 
 .talesoftheoldwest h5 {
 	font-weight: bold;
@@ -222,20 +223,40 @@
 	margin-bottom: 0;
 	margin-left: 10px;
 	font-family: 'Esteban';
-	font-size: 20pt;
+	font-size: 1.667em;
 }
 
-.talesoftheoldwest .arpgtablesmall {
+.talesoftheoldwest .totowtablesmall {
 	height: 36px;
 	width: 34%;
 	margin-left: auto;
 	margin-right: auto;
 	border: 0;
 	text-align: center;
-	font-family: 'Esteban';
-	font-size: 18px;
+	/* font-family: "Esteban"; */
+	/* font-size: 18pt; */
 }
 
-.talesoftheoldwest .arpgtablesmall tr:nth-child(even) {
+.talesoftheoldwest .totowtablesmall tr:nth-child(even) {
 	background-color: transparent;
+}
+
+.talesoftheoldwest ul li,
+.talesoftheoldwest ol li {
+	font-family: 'Esteban';
+	font-weight: normal;
+	list-style: none;
+	padding-bottom: 2px;
+	font-size: 1.15em;
+}
+
+.chapterHeading {
+	font-family: 'Esteban';
+	font-weight: bold;
+	font-size: 2em;
+	color: hsl(0, 0%, 100%);
+	margin: 0 0 0.5em 0;
+	padding: 0;
+	text-align: center;
+	border-bottom: none;
 }
