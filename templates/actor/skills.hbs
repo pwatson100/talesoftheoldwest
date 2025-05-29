@@ -5,7 +5,7 @@
 		'TALESOFTHEOLDWEST.General.abilities')}}
 	</div>
 	<div class="sheet-main-attributes">
-		<div class="A1">
+		<div class="A1 main-attributes">
 			<label
 				for="system.attributes.grit"
 				class="resource-label rollable align-left"
@@ -25,7 +25,7 @@
 			<input class="statnum" type='number'  name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
 		</div>
 
-		<div class="A2">
+		<div class="A2 main-attributes">
 			<label
 				for="system.attributes.quick"
 				class="resource-label rollable align-left"
@@ -45,7 +45,7 @@
 			<input class="statnum" type='number'  name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
 		</div>
 
-		<div class="A3">
+		<div class="A3 main-attributes">
 			<label
 				for="system.attributes.cunning"
 				class="resource-label rollable align-left"
@@ -65,7 +65,7 @@
 			<input class="statnum"  type='number' name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
 		</div>
 
-		<div class="A4">
+		<div class="A4 main-attributes">
 			<label
 				for="system.attributes.docity"
 				class="resource-label rollable align-left"
@@ -74,8 +74,8 @@
 				data-action="roll"
 				data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
 				data-mod="{{system.attributes.docity.mod}}"
-										data-key="{{localize "TALESOFTHEOLDWEST.Attributes.docity.listName"}}"
-		data-speaker='{{actor.id}}'
+				data-key="{{localize "TALESOFTHEOLDWEST.Attributes.docity.listName"}}"
+				data-speaker='{{actor.id}}'
 				>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label
 			>
 		</div>
@@ -85,7 +85,7 @@
 			<input class="statnum"  type='number' name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
 		</div>
 
-		<div class="H1">
+		<div class="H1 heading">
 			<label for="system.attributes.grit.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
 				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label
 			>
@@ -103,7 +103,7 @@
 			{{/times}} {{#times system.damage.hurts.max}}<a class="far fa-circle"></a>{{/times}}
 		</div>
 
-		<div class="S1">
+		<div class="S1 heading">
 			<label for="system.attributes.quick.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
 				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.quick.type')}}</em></label
 			>
@@ -120,7 +120,7 @@
 			<a class="far fa-dot-circle"></a>
 			{{/times}} {{#times system.damage.shakes.max}}<a class="far fa-circle"></a>{{/times}}
 		</div>
-		<div class="V1">
+		<div class="V1 	heading">
 			<label for="system.attributes.cunning.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
 				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.cunning.type')}}</em></label
 			>
@@ -137,7 +137,7 @@
 			{{/times}} {{#times system.damage.vexes.max}}<a class="far fa-circle"></a>{{/times}}
 		</div>
 
-		<div class="D1">
+		<div class="D1 heading">
 			<label for="system.attributes.docity.type" class="resource-label" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
 				><em>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.docity.type')}}</em></label
 			>
@@ -156,7 +156,7 @@
 	</div>
 	<div class="sheet-main-abilities">
 		{{#each system.abilities as |ability key|}}
-		<div class="{{key}}" style="font-size: large; text-align: right">
+		<div class="abilities-name {{key}}" >
 			<label
 				class="resource-label rollable"
 				for="system.abilities.{{key}}.value"
@@ -188,7 +188,7 @@
 					{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.criticalInjurys')}} / {{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}
 				</div>
 				<div>
-					<label class="resource-label" style="font-size: 20px" data-action="rollCrit">{{ localize 'TYPES.Item.crit'}}</label>
+					<label class="resource-label" style="font-size: 1.5em" data-action="rollCrit">{{ localize 'TYPES.Item.crit'}}</label>
 					<a class="resource-label-header" data-tooltip="{{localize 'TALESOFTHEOLDWEST.General.leftclicktoroll'}}" data-action="rollCrit"
 						><i class="fas fa-heartbeat"></i
 					></a>

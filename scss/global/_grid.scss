@@ -484,14 +484,13 @@
 	grid-template-areas:
 		'A1 B1 A2 B2 A3 B3 A4 B4 '
 		'H1 H2 S1 S2 V1 V2  D1 D2 ';
-	grid-template-columns: 112px 110px 112px 110px 113px 110px 134px 110px;
+	grid-template-columns: 107px 110px 102px 110px 136px 110px 112px 110px;
 	// grid-template-columns: 112.5px;
 	background: rgb(139 106 44 / 21%);
 }
 .A1 {
 	grid-area: A1;
 	text-align: center;
-	font-size: x-large;
 }
 .B1 {
 	grid-area: B1;
@@ -500,7 +499,6 @@
 .A2 {
 	grid-area: A2;
 	text-align: center;
-	font-size: x-large;
 }
 .B2 {
 	grid-area: B2;
@@ -509,7 +507,6 @@
 .A3 {
 	grid-area: A3;
 	text-align: center;
-	font-size: x-large;
 }
 .B3 {
 	grid-area: B3;
@@ -518,7 +515,6 @@
 .A4 {
 	grid-area: A4;
 	text-align: center;
-	font-size: x-large;
 }
 .B4 {
 	grid-area: B4;
@@ -527,42 +523,34 @@
 .H1 {
 	grid-area: H1;
 	text-align: center;
-	font-size: large;
 }
 .H2 {
 	grid-area: H2;
 	text-align: center;
-	font-size: large;
 }
 .S1 {
 	grid-area: S1;
 	text-align: center;
-	font-size: large;
 }
 .S2 {
 	grid-area: S2;
 	text-align: center;
-	font-size: large;
 }
 .V1 {
 	grid-area: V1;
 	text-align: center;
-	font-size: large;
 }
 .V2 {
 	grid-area: V2;
 	text-align: center;
-	font-size: large;
 }
 .D1 {
 	grid-area: D1;
 	text-align: center;
-	font-size: large;
 }
 .D2 {
 	grid-area: D2;
 	text-align: center;
-	font-size: large;
 }
 
 .sheet-main-abilities {
@@ -959,18 +947,18 @@
 .sheet-compadres-attributes {
 	display: grid;
 	align-items: center;
-	width: 800px;
+	width: 859px;
 	justify-self: center;
 	grid-template-areas:
 		'scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 '
 		'scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ';
-	grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+	grid-template-columns: 100px 106px 100px 107px 122px 105px 100px 106px;
 	background: rgb(139 106 44 / 21%);
 }
 .scaA1 {
 	grid-area: scaA1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaB1 {
 	grid-area: scaB1;
@@ -979,7 +967,7 @@
 .scaA2 {
 	grid-area: scaA2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaB2 {
 	grid-area: scaB2;
@@ -988,7 +976,7 @@
 .scaA3 {
 	grid-area: scaA3;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaB3 {
 	grid-area: scaB3;
@@ -997,7 +985,7 @@
 .scaA4 {
 	grid-area: scaA4;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaB4 {
 	grid-area: scaB4;
@@ -1006,42 +994,42 @@
 .scaH1 {
 	grid-area: scaH1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaH2 {
 	grid-area: scaH2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaS1 {
 	grid-area: scaS1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaS2 {
 	grid-area: scaS2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaV1 {
 	grid-area: scaV1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaV2 {
 	grid-area: scaV2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaD1 {
 	grid-area: scaD1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .scaD2 {
 	grid-area: scaD2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 
 .compadre-split {
@@ -1055,18 +1043,14 @@
 }
 .CompSplit11 {
 	grid-area: CompSplit11;
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
-	justify-items: center;
+	/* text-align: center; */
+	// /* justify-items: center; */
 	align-self: normal;
 	padding: 3px;
 }
 .CompSplit12 {
 	grid-area: CompSplit12;
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
+	// text-align: center;
 	justify-items: center;
 	align-self: normal;
 	padding: 3px;
@@ -1092,13 +1076,13 @@
 	grid-template-areas:
 		'aA1 aB1 aA2 aB2 aA3 aB3 '
 		'aH1 aH2 aS1 aS2 aV1 aV2 ';
-	grid-template-columns: 112px 110px 112px 110px 113px 110px;
+	grid-template-columns: 112px 110px 112px 110px 137px 110px;
 	background: rgb(139 106 44 / 21%);
 }
 .aA1 {
 	grid-area: aA1;
 	text-align: center;
-	font-size: x-large;
+	// font-size: x-large;
 }
 .aB1 {
 	grid-area: aB1;
@@ -1107,7 +1091,7 @@
 .aA2 {
 	grid-area: aA2;
 	text-align: center;
-	font-size: x-large;
+	// font-size: x-large;
 }
 .aB2 {
 	grid-area: aB2;
@@ -1116,7 +1100,7 @@
 .aA3 {
 	grid-area: aA3;
 	text-align: center;
-	font-size: x-large;
+	// font-size: x-large;
 }
 .aB3 {
 	grid-area: aB3;
@@ -1126,32 +1110,32 @@
 .aH1 {
 	grid-area: aH1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .aH2 {
 	grid-area: aH2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .aS1 {
 	grid-area: aS1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .aS2 {
 	grid-area: aS2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .aV1 {
 	grid-area: aV1;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 .aV2 {
 	grid-area: aV2;
 	text-align: center;
-	font-size: large;
+	// font-size: large;
 }
 
 .sheet-animal-abilities {
@@ -1161,7 +1145,7 @@
 	grid-template-areas:
 		'aResilience aResilience2 aMove aMove2 aFightin aFightin2'
 		'aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2';
-	grid-template-columns: 162px 55px 162px 55px 179px 55px;
+	grid-template-columns: 162px 55px 162px 55px 178px 55px;
 	border-bottom: solid black;
 	margin: 5px;
 }
@@ -1234,8 +1218,6 @@
 .QualSplit11 {
 	grid-area: QualSplit11;
 	text-align: center;
-	font-size: large;
-	font-weight: bold;
 	justify-items: center;
 	align-self: normal;
 	padding: 3px;
@@ -1243,8 +1225,6 @@
 .QualSplit12 {
 	grid-area: QualSplit12;
 	text-align: center;
-	font-size: large;
-	font-weight: bold;
 	justify-items: center;
 	align-self: normal;
 	padding: 3px;

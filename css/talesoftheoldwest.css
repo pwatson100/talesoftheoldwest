@@ -218,7 +218,7 @@ body .dialog-buttons button {
 body .application input[type=text],
 body .application select {
   font-family: "Esteban", serif;
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
   background: white;
   color: black;
   --input-background-color: rgba(0, 0, 0, 0.1);
@@ -885,14 +885,13 @@ body .application select {
       -ms-flex-align: center;
           align-items: center;
   grid-template-areas: "A1 B1 A2 B2 A3 B3 A4 B4 " "H1 H2 S1 S2 V1 V2  D1 D2 ";
-  grid-template-columns: 112px 110px 112px 110px 113px 110px 134px 110px;
+  grid-template-columns: 107px 110px 102px 110px 136px 110px 112px 110px;
   background: rgba(139, 106, 44, 0.21);
 }
 
 .A1 {
   grid-area: A1;
   text-align: center;
-  font-size: x-large;
 }
 
 .B1 {
@@ -903,7 +902,6 @@ body .application select {
 .A2 {
   grid-area: A2;
   text-align: center;
-  font-size: x-large;
 }
 
 .B2 {
@@ -914,7 +912,6 @@ body .application select {
 .A3 {
   grid-area: A3;
   text-align: center;
-  font-size: x-large;
 }
 
 .B3 {
@@ -925,7 +922,6 @@ body .application select {
 .A4 {
   grid-area: A4;
   text-align: center;
-  font-size: x-large;
 }
 
 .B4 {
@@ -936,49 +932,41 @@ body .application select {
 .H1 {
   grid-area: H1;
   text-align: center;
-  font-size: large;
 }
 
 .H2 {
   grid-area: H2;
   text-align: center;
-  font-size: large;
 }
 
 .S1 {
   grid-area: S1;
   text-align: center;
-  font-size: large;
 }
 
 .S2 {
   grid-area: S2;
   text-align: center;
-  font-size: large;
 }
 
 .V1 {
   grid-area: V1;
   text-align: center;
-  font-size: large;
 }
 
 .V2 {
   grid-area: V2;
   text-align: center;
-  font-size: large;
 }
 
 .D1 {
   grid-area: D1;
   text-align: center;
-  font-size: large;
 }
 
 .D2 {
   grid-area: D2;
   text-align: center;
-  font-size: large;
 }
 
 .sheet-main-abilities {
@@ -1432,17 +1420,16 @@ body .application select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 800px;
+  width: 859px;
   justify-self: center;
   grid-template-areas: "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 " "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
-  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 106px 100px 107px 122px 105px 100px 106px;
   background: rgba(139, 106, 44, 0.21);
 }
 
 .scaA1 {
   grid-area: scaA1;
   text-align: center;
-  font-size: large;
 }
 
 .scaB1 {
@@ -1453,7 +1440,6 @@ body .application select {
 .scaA2 {
   grid-area: scaA2;
   text-align: center;
-  font-size: large;
 }
 
 .scaB2 {
@@ -1464,7 +1450,6 @@ body .application select {
 .scaA3 {
   grid-area: scaA3;
   text-align: center;
-  font-size: large;
 }
 
 .scaB3 {
@@ -1475,7 +1460,6 @@ body .application select {
 .scaA4 {
   grid-area: scaA4;
   text-align: center;
-  font-size: large;
 }
 
 .scaB4 {
@@ -1486,49 +1470,41 @@ body .application select {
 .scaH1 {
   grid-area: scaH1;
   text-align: center;
-  font-size: large;
 }
 
 .scaH2 {
   grid-area: scaH2;
   text-align: center;
-  font-size: large;
 }
 
 .scaS1 {
   grid-area: scaS1;
   text-align: center;
-  font-size: large;
 }
 
 .scaS2 {
   grid-area: scaS2;
   text-align: center;
-  font-size: large;
 }
 
 .scaV1 {
   grid-area: scaV1;
   text-align: center;
-  font-size: large;
 }
 
 .scaV2 {
   grid-area: scaV2;
   text-align: center;
-  font-size: large;
 }
 
 .scaD1 {
   grid-area: scaD1;
   text-align: center;
-  font-size: large;
 }
 
 .scaD2 {
   grid-area: scaD2;
   text-align: center;
-  font-size: large;
 }
 
 .compadre-split {
@@ -1541,19 +1517,13 @@ body .application select {
 
 .CompSplit11 {
   grid-area: CompSplit11;
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
-  justify-items: center;
+  /* text-align: center; */
   align-self: normal;
   padding: 3px;
 }
 
 .CompSplit12 {
   grid-area: CompSplit12;
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
   justify-items: center;
   align-self: normal;
   padding: 3px;
@@ -1581,14 +1551,13 @@ body .application select {
       -ms-flex-align: center;
           align-items: center;
   grid-template-areas: "aA1 aB1 aA2 aB2 aA3 aB3 " "aH1 aH2 aS1 aS2 aV1 aV2 ";
-  grid-template-columns: 112px 110px 112px 110px 113px 110px;
+  grid-template-columns: 112px 110px 112px 110px 137px 110px;
   background: rgba(139, 106, 44, 0.21);
 }
 
 .aA1 {
   grid-area: aA1;
   text-align: center;
-  font-size: x-large;
 }
 
 .aB1 {
@@ -1599,7 +1568,6 @@ body .application select {
 .aA2 {
   grid-area: aA2;
   text-align: center;
-  font-size: x-large;
 }
 
 .aB2 {
@@ -1610,7 +1578,6 @@ body .application select {
 .aA3 {
   grid-area: aA3;
   text-align: center;
-  font-size: x-large;
 }
 
 .aB3 {
@@ -1621,37 +1588,31 @@ body .application select {
 .aH1 {
   grid-area: aH1;
   text-align: center;
-  font-size: large;
 }
 
 .aH2 {
   grid-area: aH2;
   text-align: center;
-  font-size: large;
 }
 
 .aS1 {
   grid-area: aS1;
   text-align: center;
-  font-size: large;
 }
 
 .aS2 {
   grid-area: aS2;
   text-align: center;
-  font-size: large;
 }
 
 .aV1 {
   grid-area: aV1;
   text-align: center;
-  font-size: large;
 }
 
 .aV2 {
   grid-area: aV2;
   text-align: center;
-  font-size: large;
 }
 
 .sheet-animal-abilities {
@@ -1661,7 +1622,7 @@ body .application select {
       -ms-flex-align: center;
           align-items: center;
   grid-template-areas: "aResilience aResilience2 aMove aMove2 aFightin aFightin2" "aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2";
-  grid-template-columns: 162px 55px 162px 55px 179px 55px;
+  grid-template-columns: 162px 55px 162px 55px 178px 55px;
   border-bottom: solid black;
   margin: 5px;
 }
@@ -1744,8 +1705,6 @@ body .application select {
 .QualSplit11 {
   grid-area: QualSplit11;
   text-align: center;
-  font-size: large;
-  font-weight: bold;
   justify-items: center;
   align-self: normal;
   padding: 3px;
@@ -1754,8 +1713,6 @@ body .application select {
 .QualSplit12 {
   grid-area: QualSplit12;
   text-align: center;
-  font-size: large;
-  font-weight: bold;
   justify-items: center;
   align-self: normal;
   padding: 3px;
@@ -2152,7 +2109,7 @@ body .application select {
   font-weight: normal;
   list-style: none;
   padding-bottom: 2px;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 .chapterHeading {
@@ -2265,9 +2222,14 @@ body .application select {
   text-align: center;
   font-size: larger;
 }
+.talesoftheoldwest .main-attributes {
+  font-weight: bold;
+  font-size: 1.7em;
+  text-align: center;
+}
 .talesoftheoldwest .heading {
   font-weight: bold;
-  font-size: large;
+  font-size: 1.5em;
   text-align: center;
 }
 .talesoftheoldwest .conditionHeading {
@@ -2336,6 +2298,10 @@ body .application select {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 44px;
           flex: 0 0 44px;
+}
+.talesoftheoldwest .abilities-name {
+  font-size: 1.3em;
+  text-align: right;
 }
 .talesoftheoldwest .grid-crit {
   margin-bottom: 16px;

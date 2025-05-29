@@ -124,6 +124,40 @@ Hooks.once('init', function () {
 	registerSettings();
 	// // Preload Handlebars templates.
 	// return preloadHandlebarsTemplates();
+	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+		Hooks.on('renderChatMessageHTML', (app, html, msg) => {
+			totowDiceButtons(html);
+
+			// Do not display "Blind" chat cards to non-gm
+			if (html.querySelector('blind') && !game.user.isGM) {
+				// since the header has timestamp content we'll remove the content instead.
+				// this avoids an NPE when foundry tries to update the timestamps.
+				html.querySelector('.message-content').remove();
+			}
+			// remove push option from non-authors
+			if (!game.user.isGM && msg.message.author !== game.user.id) {
+				html.querySelector('.dice-push').remove();
+				html.querySelector('.buy-off').remove();
+				html.querySelector('.roll-trouble').remove();
+			}
+		});
+	} else {
+		Hooks.on('renderChatMessage', (app, [html], msg) => {
+			totowDiceButtons(html);
+			// Do not display "Blind" chat cards to non-gm
+			if (html.querySelector('blind') && !game.user.isGM) {
+				// since the header has timestamp content we'll remove the content instead.
+				// this avoids an NPE when foundry tries to update the timestamps.
+				html.querySelector('.message-content').remove();
+			}
+			// remove push option from non-authors
+			if (!game.user.isGM && msg.message.author !== game.user.id) {
+				html.querySelector('.dice-push').remove();
+				html.querySelector('.buy-off').remove();
+				html.querySelector('.roll-trouble').remove();
+			}
+		});
+	}
 });
 
 /* -------------------------------------------- */
@@ -149,40 +183,40 @@ Hooks.on('renderChatLog', (log, html, data) => {
 });
 
 // This does not work.
-if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
-	Hooks.on('renderChatMessageHTML', (app, html, msg) => {
-		totowDiceButtons(html);
+// if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+// 	Hooks.on('renderChatMessageHTML', (app, html, msg) => {
+// 		totowDiceButtons(html);
 
-		// Do not display "Blind" chat cards to non-gm
-		if (html.querySelector('blind') && !game.user.isGM) {
-			// since the header has timestamp content we'll remove the content instead.
-			// this avoids an NPE when foundry tries to update the timestamps.
-			html.querySelector('.message-content').remove();
-		}
-		// remove push option from non-authors
-		if (!game.user.isGM && msg.message.author !== game.user.id) {
-			html.querySelector('.dice-push').remove();
-			html.querySelector('.buy-off').remove();
-			html.querySelector('.roll-trouble').remove();
-		}
-	});
-} else {
-	Hooks.on('renderChatMessage', (app, [html], msg) => {
-		totowDiceButtons(html);
-		// Do not display "Blind" chat cards to non-gm
-		if (html.querySelector('blind') && !game.user.isGM) {
-			// since the header has timestamp content we'll remove the content instead.
-			// this avoids an NPE when foundry tries to update the timestamps.
-			html.querySelector('.message-content').remove();
-		}
-		// remove push option from non-authors
-		if (!game.user.isGM && msg.message.author !== game.user.id) {
-			html.querySelector('.dice-push').remove();
-			html.querySelector('.buy-off').remove();
-			html.querySelector('.roll-trouble').remove();
-		}
-	});
-}
+// 		// Do not display "Blind" chat cards to non-gm
+// 		if (html.querySelector('blind') && !game.user.isGM) {
+// 			// since the header has timestamp content we'll remove the content instead.
+// 			// this avoids an NPE when foundry tries to update the timestamps.
+// 			html.querySelector('.message-content').remove();
+// 		}
+// 		// remove push option from non-authors
+// 		if (!game.user.isGM && msg.message.author !== game.user.id) {
+// 			html.querySelector('.dice-push').remove();
+// 			html.querySelector('.buy-off').remove();
+// 			html.querySelector('.roll-trouble').remove();
+// 		}
+// 	});
+// } else {
+// 	Hooks.on('renderChatMessage', (app, [html], msg) => {
+// 		totowDiceButtons(html);
+// 		// Do not display "Blind" chat cards to non-gm
+// 		if (html.querySelector('blind') && !game.user.isGM) {
+// 			// since the header has timestamp content we'll remove the content instead.
+// 			// this avoids an NPE when foundry tries to update the timestamps.
+// 			html.querySelector('.message-content').remove();
+// 		}
+// 		// remove push option from non-authors
+// 		if (!game.user.isGM && msg.message.author !== game.user.id) {
+// 			html.querySelector('.dice-push').remove();
+// 			html.querySelector('.buy-off').remove();
+// 			html.querySelector('.roll-trouble').remove();
+// 		}
+// 	});
+// }
 
 Hooks.on('renderPause', (_app, html, options) => {
 	document.getElementById(

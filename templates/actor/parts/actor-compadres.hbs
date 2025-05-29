@@ -10,7 +10,7 @@
 									data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
 				</div>
 				<div class='sheet-compadres-attributes'>
-					<div class='scaA1'>
+					<div class='scaA1 main-attributes'>
 						<label
 							for='actor.system.attributes.grit'
 							class='resource-label rollable align-left'
@@ -27,7 +27,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.grit.max' value='{{actor.system.attributes.grit.max}}' data-dtype='Number'  disabled/>
 					</div>
-					<div class='scaA2'>
+					<div class='scaA2 main-attributes'>
 						<label
 							for='actor.system.attributes.quick'
 							class='resource-label rollable align-left'
@@ -44,7 +44,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.quick.max' value='{{actor.system.attributes.quick.max}}' data-dtype='Number'  disabled/>
 					</div>
-					<div class='scaA3'>
+					<div class='scaA3 main-attributes'>
 						<label
 							for='actor.system.attributes.cunning'
 							class='resource-label rollable align-left'
@@ -61,7 +61,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.cunning.max' value='{{actor.system.attributes.cunning.max}}' data-dtype='Number'  disabled/>
 					</div>
-					<div class='scaA4'>
+					<div class='scaA4 main-attributes'>
 						<label
 							for='actor.system.attributes.docity'
 							class='resource-label rollable align-left'
@@ -78,7 +78,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.docity.max' value='{{actor.system.attributes.docity.max}}' data-dtype='Number'  disabled/>
 					</div>
-					<div class='scaH1'>
+					<div class='scaH1	heading'>
 						<label for='actor.system.attributes.grit.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label>
 					</div>
@@ -94,7 +94,7 @@
 						{{/times}}
 						{{#times actor.system.damage.hurts.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
-					<div class='scaS1'>
+					<div class='scaS1 heading'>
 						<label for='actor.system.attributes.quick.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.quick.type')}}</em></label>
 					</div>
@@ -110,7 +110,7 @@
 						{{/times}}
 						{{#times actor.system.damage.shakes.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
-					<div class='scaV1'>
+					<div class='scaV1	 heading'>
 						<label for='actor.system.attributes.cunning.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.cunning.type')}}</em></label>
 					</div>
@@ -126,7 +126,7 @@
 						{{/times}}
 						{{#times actor.system.damage.vexes.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
-					<div class='scaD1'>
+					<div class='scaD1 heading'>
 						<label for='actor.system.attributes.docity.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.docity.type')}}</em></label>
 					</div>
