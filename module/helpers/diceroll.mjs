@@ -63,46 +63,90 @@ export async function totowDiceButtons(html) {
 	}
 }
 export async function totowDiceListeners(html) {
-	// let listenArea = document.getElementById('chat-notifications'); // V13 ?
-	let listenArea = document.getElementById('chat-log');
-	if (!listenArea) return;
+	let listenArea = '';
+	// Check the Foundry version to determine how to get the chat log
+	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+		listenArea = document.querySelectorAll('.chat-log');
+		if (!listenArea) return;
+		for (const addButton of listenArea) {
+			addButton.addEventListener('click', async (ev) => {
+				switch (ev.target.getAttribute('data-roll-button')) {
+					case 'push': {
+						ev.preventDefault();
+						ev.stopPropagation();
+						let message = game.messages.get(ev.target.getAttribute('data-message-id'));
+						let results = message.getFlag('talesoftheoldwest', 'results');
+						if (!results[1].canPush) {
+							let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
+							return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
+						} else {
+							return pushRoll(message, results);
+						}
+					}
+					case 'buy-off':
+						{
+							ev.preventDefault();
+							ev.stopPropagation();
+							let message = game.messages.get(ev.target.getAttribute('data-message-id'));
+							let results = message.getFlag('talesoftheoldwest', 'results');
+							new TOTWBuyOffDialog(message, results).render(true);
+						}
+						break;
 
-	listenArea.addEventListener('click', (ev) => {
-		switch (ev.target.getAttribute('data-roll-button')) {
-			case 'push': {
-				ev.preventDefault();
-				ev.stopPropagation();
-				let message = game.messages.get(ev.target.getAttribute('data-message-id'));
-				let results = message.getFlag('talesoftheoldwest', 'results');
-				if (!results[1].canPush) {
-					let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
-					return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
-				} else {
-					return pushRoll(message, results);
+					case 'roll-trouble':
+						{
+							ev.preventDefault();
+							ev.stopPropagation();
+							let messageId = ev.target.getAttribute('data-message-id');
+							let message = game.messages.get(messageId);
+							let results = message.getFlag('talesoftheoldwest', 'results');
+							new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+						}
+						break;
 				}
-			}
-			case 'buy-off':
-				{
+			});
+		}
+	} else {
+		//  For Foundry versions before 11, use the old method to get the chat log
+		listenArea = document.getElementById('chat-log');
+		if (!listenArea) return;
+
+		listenArea.addEventListener('click', async (ev) => {
+			switch (ev.target.getAttribute('data-roll-button')) {
+				case 'push': {
 					ev.preventDefault();
 					ev.stopPropagation();
 					let message = game.messages.get(ev.target.getAttribute('data-message-id'));
 					let results = message.getFlag('talesoftheoldwest', 'results');
-					new TOTWBuyOffDialog(message, results).render(true);
+					if (!results[1].canPush) {
+						let errorObj = { error: 'totow.ErrorsAlreadyPushed' };
+						return ui.notifications.warn(new Error(game.i18n.localize(errorObj.error)));
+					} else {
+						return pushRoll(message, results);
+					}
 				}
-				break;
-
-			case 'roll-trouble':
-				{
-					ev.preventDefault();
-					ev.stopPropagation();
-					let messageId = ev.target.getAttribute('data-message-id');
-					let message = game.messages.get(messageId);
-					let results = message.getFlag('talesoftheoldwest', 'results');
-					new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
-				}
-				break;
-		}
-	});
+				case 'buy-off':
+					{
+						ev.preventDefault();
+						ev.stopPropagation();
+						let message = game.messages.get(ev.target.getAttribute('data-message-id'));
+						let results = message.getFlag('talesoftheoldwest', 'results');
+						new TOTWBuyOffDialog(message, results).render(true);
+					}
+					break;
+				case 'roll-trouble':
+					{
+						ev.preventDefault();
+						ev.stopPropagation();
+						let messageId = ev.target.getAttribute('data-message-id');
+						let message = game.messages.get(messageId);
+						let results = message.getFlag('talesoftheoldwest', 'results');
+						new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+					}
+					break;
+			}
+		});
+	}
 }
 
 export async function rollTrouble(results, ev, messageId, message) {
@@ -135,13 +179,17 @@ export async function rollTrouble(results, ev, messageId, message) {
 		actorId: actorId,
 		img: TroubleTableResult.results[0].img,
 		rollAgainst: rollAgainst,
-		textMessage: TroubleTableResult.results[0].text,
+		textMessage: TroubleTableResult.results[0].description,
 	};
 
 	// Now push the correct chat message
-
-	const html = await renderTemplate(`systems/talesoftheoldwest/templates/chat/trouble-roll.hbs`, htmlData);
-
+	let html = '';
+	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+		html = await foundry.applications.handlebars.renderTemplate(`systems/talesoftheoldwest/templates/chat/trouble-roll.hbs`, htmlData);
+	} else {
+		// For Foundry versions before 11, use the old renderTemplate method
+		html = await renderTemplate(`systems/talesoftheoldwest/templates/chat/trouble-roll.hbs`, htmlData);
+	}
 	let chatData = {
 		user: game.user.id,
 		speaker: {
@@ -444,15 +492,31 @@ export async function evaluateTOTWRoll(dataset, roll, formula, itemData) {
 }
 
 async function updateChatMessage(chatMessage, result, newRoleData) {
-	return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
-		chatMessage['content'] = html;
-		return chatMessage
-			.update({
-				content: html,
-				['flags.data']: { results: newRoleData.results },
-			})
-			.then((newMsg) => {
-				ui.chat.updateMessage(newMsg);
-			});
-	});
+	let html = '';
+	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+		return foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
+			chatMessage['content'] = html;
+			return chatMessage
+				.update({
+					content: html,
+					['flags.data']: { results: newRoleData.results },
+				})
+				.then((newMsg) => {
+					ui.chat.updateMessage(newMsg);
+				});
+		});
+	} else {
+		// For Foundry versions before 11, use the old renderTemplate method
+		return renderTemplate('systems/talesoftheoldwest/templates/chat/roll.hbs', newRoleData[1]).then((html) => {
+			chatMessage['content'] = html;
+			return chatMessage
+				.update({
+					content: html,
+					['flags.data']: { results: newRoleData.results },
+				})
+				.then((newMsg) => {
+					ui.chat.updateMessage(newMsg);
+				});
+		});
+	}
 }

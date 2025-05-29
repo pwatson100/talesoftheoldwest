@@ -19,10 +19,11 @@
 }
 .talesoftheoldwest a.inline-link {
 	background-color: transparent;
-	color: hsl(6, 56%, 30%);
+	color: hsl(6deg 91.59% 29.26%);
 	font-size: 1.15em;
 	border: 0;
 	font-family: 'Esteban';
+	font-style: italic;
 }
 
 .talesoftheoldwest .inline-link2 .content-link {
@@ -170,6 +171,7 @@
 	font-family: 'Esteban';
 	font-weight: bold;
 	text-align: center;
+	font-size: 2.5em;
 }
 
 .talesoftheoldwest h3 {
@@ -179,29 +181,30 @@
 	margin: 0;
 	margin-top: 5px;
 	border-bottom: none;
+	font-size: 2em;
 }
 .talesoftheoldwest .h3center {
-	text-align: center;
 	text-align: center;
 	border-bottom: 2px solid black;
 }
 
-// .talesoftheoldwest h4 {
-// 	font-family: 'Esteban';
-// 	font-weight: bold;
-// }
+.talesoftheoldwest h4 {
+	font-family: 'Esteban';
+	font-weight: bold;
+	font-size: 1.5em;
+}
 
 .talesoftheoldwest h5 {
-	font-weight: bold;
 	font-family: 'Esteban';
+	font-weight: bold;
 	color: hsl(19, 70%, 37%);
 	margin: 0px 20px 0px 10px;
 	border-bottom: none;
 }
 
 .talesoftheoldwest h6 {
-	font-weight: bold;
 	font-family: 'Esteban';
+	font-weight: bold;
 	color: hsl(0, 0%, 100%);
 	margin: 0;
 }

@@ -32,9 +32,11 @@ body {
 		border: transparent;
 		filter: drop-shadow(8px 12px 8px #353232);
 	}
-	.window-content {
+	.application.sheet.actor .window-content,
+	.application.sheet.item .window-content {
 		display: block;
 		overflow: auto;
+		backdrop-filter: blur(4px);
 		scrollbar-color: #d36913 transparent;
 		scrollbar-width: thin;
 		background-image: $app-background;
@@ -56,9 +58,9 @@ body {
 		}
 	}
 	.application input[type='text'],
-	.application input[type='number'],
 	.application select {
 		font-family: $font-primary;
+		font-size: 1.25em;
 		background: white;
 		color: black;
 		--input-background-color: rgba(0, 0, 0, 0.1);
@@ -67,6 +69,19 @@ body {
 		--input-placeholder-color: var(--color-dark-3);
 		--input-focus-outline-color: var(--color-warm-2);
 	}
+}
+
+.application input[type='number'] {
+	width: 44px;
+	font-family: $font-primary;
+	font-size: 1.25em;
+	background: white;
+	color: black;
+	--input-background-color: rgba(0, 0, 0, 0.1);
+	--input-border-color: var(--color-dark-6);
+	--input-text-color: var(--color-dark-2);
+	--input-placeholder-color: var(--color-dark-3);
+	--input-focus-outline-color: var(--color-warm-2);
 }
 
 .talesoftheoldwest.application .window-header,
@@ -98,7 +113,7 @@ body {
 	font-size: large;
 	font-family: $font-primary;
 	font-weight: bold;
-	background-image: url(../assets/background/header-plank.webp);
+	background-image: url('../assets/background/header-plank.webp');
 	width: 97%;
 	// margin-left: 10px;
 	justify-self: anchor-center;
@@ -145,9 +160,24 @@ body {
 	text-shadow: 2px 2px 2px white;
 }
 
-.sheet.journal-entry .journal-entry-content {
+// V12 code
+.app.window-app.sheet.journal-sheet.journal-entry .journal-entry-content {
 	background-image: url('../assets/background/sheet-background.webp');
 	background-size: cover;
+}
+
+.app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
+	font-family: $font-primary;
+}
+
+// V13 code
+.application.sheet.journal-sheet.journal-entry .journal-entry-content {
+	background-image: url('../assets/background/sheet-background.webp');
+	background-size: cover;
+}
+.application.sheet.journal-sheet .window-header {
+	background-image: url('../assets/background/header-plank.webp');
+	// background: blue;
 }
 
 .theme-dark input[type='checkbox'],
@@ -158,7 +188,14 @@ body {
 	--checkbox-checkmark-color: var(--color-dark-1);
 }
 
-// #pause {
-// 	scale: 0.5;
-// 	background: none;
-// }
+#pause {
+	scale: 0.75;
+	background: none;
+	top: calc(83vh - 100px);
+}
+#pause figcaption {
+	font-size: 5em;
+	font-weight: bold;
+	color: hsl(32deg 89.24% 41.19%);
+	text-shadow: 5px 3px 5px hsl(32deg 93.38% 13.51%);
+}

@@ -20,9 +20,9 @@
 			>
 		</div>
 		<div class="B1">
-			<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
+			<input class="statnum" type='number' name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
 			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
+			<input class="statnum" type='number'  name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
 		</div>
 
 		<div class="A2">
@@ -40,9 +40,9 @@
 			>
 		</div>
 		<div class="B2">
-			<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
+			<input class="statnum" type='number'  name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
 			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
+			<input class="statnum" type='number'  name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
 		</div>
 
 		<div class="A3">
@@ -60,9 +60,9 @@
 			>
 		</div>
 		<div class="B3">
-			<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
+			<input class="statnum" type='number'  name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
 			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
+			<input class="statnum"  type='number' name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
 		</div>
 
 		<div class="A4">
@@ -80,9 +80,9 @@
 			>
 		</div>
 		<div class="B4">
-			<input class="statnum" name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" />
+			<input class="statnum"  type='number' name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype="Number" />
 			<span style="font-weight: bolder; font-size: x-large">/</span>
-			<input class="statnum" name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
+			<input class="statnum"  type='number' name="system.attributes.docity.max" value="{{system.attributes.docity.max}}" data-dtype="Number" />
 		</div>
 
 		<div class="H1">
@@ -174,7 +174,7 @@
 			>
 		</div>
 		<div class="{{key}}2" style="text-align: center">
-			<input class="statnum" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
+			<input class="statnum" type='number'  name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
 		</div>
 		{{/each}}
 	</div>
@@ -363,9 +363,9 @@
 						>
 					</div>
 					<div class="aB1">
-						<input class="statnum" name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype="Number" />
 						<span style="font-weight: bolder; font-size: x-large">/</span>
-						<input class="statnum" name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.grit.max" value="{{system.attributes.grit.max}}" data-dtype="Number" />
 					</div>
 
 					<div class="aA2">
@@ -382,9 +382,9 @@
 						>
 					</div>
 					<div class="aB2">
-						<input class="statnum" name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype="Number" />
 						<span style="font-weight: bolder; font-size: x-large">/</span>
-						<input class="statnum" name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.quick.max" value="{{system.attributes.quick.max}}" data-dtype="Number" />
 					</div>
 					<div class="aA3">
 						<label
@@ -400,9 +400,9 @@
 						>
 					</div>
 					<div class="aB3">
-						<input class="statnum" name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype="Number" />
 						<span style="font-weight: bolder; font-size: x-large">/</span>
-						<input class="statnum" name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.attributes.cunning.max" value="{{system.attributes.cunning.max}}" data-dtype="Number" />
 					</div>
 				</div>
 		{{#if (eq actor.system.general.subtype 'horse')}}
@@ -424,7 +424,7 @@
 						>
 					</div>
 					<div class="aresilience2" style="text-align: center">
-						<input class="statnum" name="system.abilities.resilience.value" value="{{system.abilities.resilience.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.resilience.value" value="{{system.abilities.resilience.value}}" data-dtype="Number" />
 					</div>
 					<div class="amove" style="font-size: large; text-align: right">
 						<label
@@ -443,7 +443,7 @@
 						>
 					</div>
 					<div class="amove2" style="text-align: center">
-						<input class="statnum" name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
 					</div>
 					<div class="afightin" style="font-size: large; text-align: right">
 						<label
@@ -462,7 +462,7 @@
 						>
 					</div>
 					<div class="afightin2" style="text-align: center">
-						<input class="statnum" name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
 					</div>
 				</div>
 				<div class="compadre-split" style="height: 360px;">
@@ -491,7 +491,7 @@
 						>
 					</div>
 					<div class="aresilience2" style="text-align: center">
-						<input class="statnum" name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
 					</div>	
 					<div class="amove" style="font-size: large; text-align: right">
 						<label
@@ -510,7 +510,7 @@
 						>
 					</div>
 					<div class="amove2" style="text-align: center">
-						<input class="statnum" name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
 					</div>
 					<div class="afightin" style="font-size: large; text-align: right">
 						<label
@@ -529,7 +529,7 @@
 						>
 					</div>
 					<div class="afightin2" style="text-align: center">
-						<input class="statnum" name="system.abilities.hawkeye.value" value="{{system.abilities.hawkeye.value}}" data-dtype="Number" />
+						<input class="statnum" type='number'  name="system.abilities.hawkeye.value" value="{{system.abilities.hawkeye.value}}" data-dtype="Number" />
 					</div>
 				</div>
 											<div style="justify-self: anchor-center">

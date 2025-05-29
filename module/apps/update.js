@@ -1,4 +1,4 @@
-import { moduleKey, adventurePackName, adventurePack, moduleTitle, ReImport } from './init.js';
+import { moduleKey, adventurePackName, adventurePack, moduleTitle } from './init.js';
 
 export default async function updateModule() {
 	/**
@@ -14,40 +14,37 @@ export default async function updateModule() {
 	 * { assetType: 'actors', assetName: 'Hannah Singleton', action: 'delete' },
 	 * { assetType: 'actors', assetName: 'Hannah Singleton', action: 'add' },
 	 * { assetType: 'actors', assetName: 'Holroyd', action: 'update' },
-	 * { assetType: 'items', assetName: '20mm Gatling Gun', action: 'update' },
-	 * { assetType: 'journal', assetName: 'ALIEN RPG GM RULES INDEX', action: 'update' },
+	 * { assetType: 'items', assetName: 'Alien - Roll on selected Creature table V10: 'update' },
+	 * { assetType: 'journal', assetName: 'Alien - Roll on selected Mother table V10', action: 'update' },
 	 * { assetType: 'scenes', assetName: 'Station Layout', action: 'update' },
 	 *
 	 */
 
 	const updateAssets = [
-		{ assetType: 'actors', assetName: 'Village Warrior', action: 'update' },
-		{ assetType: 'actors', assetName: 'Argasto', action: 'update' },
-		{ assetType: 'actors', assetName: 'Ansel, theurg', action: 'update' },
-		{ assetType: 'actors', assetName: 'Kvarek, barbarian mercenary', action: 'update' },
-		{ assetType: 'actors', assetName: 'Dragoul', action: 'update' },
+		{ assetType: 'macros', assetName: 'Alien - Roll on selected Creature table V10', action: 'update' },
+		{ assetType: 'macros', assetName: 'Alien - Roll on selected Mother table V10', action: 'update' },
 	];
 
 	const updateNotes = `<ul>
-  <li>corrected shield defence on the following actors.</li>
-  <li>Village Warrior</li>
-  <li>Argasto</li>
-  <li>Kvarek, barbarian mercenary</li>
-  <li>Ansel, theurg</li>
-  <li>Dragoul</li>
-  </ul>`;
+    <li>Corrected error in the macros:</li>
+    <li>Alien - Roll on selected Creature table V10</li>
+    <li>Alien - Roll on selected Mother table V10</li>
+    </ul>`;
 
 	// If there are no actual asset updates quit.
 	if (!updateAssets.length) {
-		await allDone(moduleTitle, updateNotes);
+		logger.info('No asset updates required');
+
+		await game.settings.set(moduleKey, 'migrationVersion', game.system.version);
 		return;
 	}
+
 	const pack = game.packs.get(adventurePack);
 	const adventureId = pack.index.find((a) => a.name === adventurePackName)?._id;
 	const tPack = await pack.getDocument(adventureId);
 	const aPack = tPack.toObject();
+
 	await getUpdateIDs(aPack, updateAssets);
-	// debugger;
 	await ModuleUpdate(aPack, updateAssets);
 
 	await allDone(moduleTitle, updateNotes);
@@ -150,7 +147,7 @@ async function ModuleUpdate(aPack, updateAssets) {
 }
 
 async function allDone(moduleTitle, updateNotes) {
-	await game.settings.set(moduleKey, 'migrationVersion', game.modules.get(moduleKey).version);
+	await game.settings.set(moduleKey, 'migrationVersion', game.system.version);
 	Dialog.prompt({
 		title: `${moduleTitle} Update`,
 		content: `<p>The update has completed and the following have been updated:</p> <br> ${updateNotes}`,
@@ -160,10 +157,10 @@ async function allDone(moduleTitle, updateNotes) {
 		},
 	});
 	logger.info(
-		'Imorted ',
+		'Imported ',
 		game.settings.get(moduleKey, 'imported'),
 		'Version ',
-		game.modules.get(moduleKey).version,
+		game.system.version,
 		'Migration ',
 		game.settings.get(moduleKey, 'migrationVersion')
 	);

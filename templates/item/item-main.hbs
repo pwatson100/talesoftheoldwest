@@ -21,42 +21,20 @@
 			<label for='system.attackbonus' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attackBonus')}}</label>
 			<label for='system.damage' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</label>
 			<label for='system.crit' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</label>
+			{{#if (eq system.subtype 'fightin')}}
+				<label for='system.range' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
+				<select id='system.range' name='system.range'>
+					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
+				</select>
+			{{/if}}
 		</div>
 		<div class='resource grid grid-4col'>
 			{{#if (eq system.subtype 'shootin')}}
-				<input
-					class='statnum'
-					style='	width: 44px;	font-size: 16pt;	text-align: center;'
-					type='text'
-					name='system.bonusdraw'
-					value='{{system.bonusdraw}}'
-					data-dtype='Number'
-				/>
+				<input class='statnum' type='number' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
 			{{/if}}
-			<input
-				class='statnum'
-				style='	width: 44px;	font-size: 16pt;	text-align: center;'
-				type='text'
-				name='system.attackbonus'
-				value='{{system.attackbonus}}'
-				data-dtype='Number'
-			/>
-			<input
-				class='statnum'
-				style='	width: 44px;	font-size: 16pt;	text-align: center;'
-				type='text'
-				name='system.damage'
-				value='{{system.damage}}'
-				data-dtype='Number'
-			/>
-			<input
-				class='statnum'
-				style='	width: 44px;	font-size: 16pt;	text-align: center;'
-				type='text'
-				name='system.crit'
-				value='{{system.crit}}'
-				data-dtype='Number'
-			/>
+			<input class='statnum' type='number' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
+			<input class='statnum' type='number' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
+			<input class='statnum' type='number' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
 		</div>
 		{{#if (eq system.subtype 'shootin')}}
 			<div class='resource grid grid-4col'>
@@ -67,16 +45,10 @@
 				<select id='system.range' name='system.range'>
 					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
 				</select>
-				<input
-					class='statnum'
-					style='	width: 44px;	font-size: 16pt;	text-align: center;'
-					type='text'
-					name='system.ammo'
-					value='{{system.ammo}}'
-					data-dtype='Number'
-				/>
+				<input class='statnum' type='number' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
 			</div>
 		{{/if}}
+
 		<hr />
 	{{/if}}
 	{{#if (eq item.type 'crit')}}

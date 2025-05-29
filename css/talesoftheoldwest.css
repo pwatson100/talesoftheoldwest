@@ -181,9 +181,12 @@ body .application.dialog {
   -webkit-filter: drop-shadow(8px 12px 8px #353232);
           filter: drop-shadow(8px 12px 8px #353232);
 }
-body .window-content {
+body .application.sheet.actor .window-content,
+body .application.sheet.item .window-content {
   display: block;
   overflow: auto;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   scrollbar-color: #d36913 transparent;
   scrollbar-width: thin;
   background-image: url("../assets/background/sheet-background.webp");
@@ -213,9 +216,22 @@ body .dialog-buttons button {
   width: fit-content;
 }
 body .application input[type=text],
-body .application input[type=number],
 body .application select {
   font-family: "Esteban", serif;
+  font-size: 1.25em;
+  background: white;
+  color: black;
+  --input-background-color: rgba(0, 0, 0, 0.1);
+  --input-border-color: var(--color-dark-6);
+  --input-text-color: var(--color-dark-2);
+  --input-placeholder-color: var(--color-dark-3);
+  --input-focus-outline-color: var(--color-warm-2);
+}
+
+.application input[type=number] {
+  width: 44px;
+  font-family: "Esteban", serif;
+  font-size: 1.25em;
   background: white;
   color: black;
   --input-background-color: rgba(0, 0, 0, 0.1);
@@ -256,7 +272,7 @@ body .application select {
   font-size: large;
   font-family: "Esteban", serif;
   font-weight: bold;
-  background-image: url(../assets/background/header-plank.webp);
+  background-image: url("../assets/background/header-plank.webp");
   width: 97%;
   justify-self: anchor-center;
 }
@@ -311,9 +327,22 @@ body .application select {
   text-shadow: 2px 2px 2px white;
 }
 
-.sheet.journal-entry .journal-entry-content {
+.app.window-app.sheet.journal-sheet.journal-entry .journal-entry-content {
   background-image: url("../assets/background/sheet-background.webp");
   background-size: cover;
+}
+
+.app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
+  font-family: "Esteban", serif;
+}
+
+.application.sheet.journal-sheet.journal-entry .journal-entry-content {
+  background-image: url("../assets/background/sheet-background.webp");
+  background-size: cover;
+}
+
+.application.sheet.journal-sheet .window-header {
+  background-image: url("../assets/background/header-plank.webp");
 }
 
 .theme-dark input[type=checkbox],
@@ -324,152 +353,22 @@ body .application select {
   --checkbox-checkmark-color: var(--color-dark-1);
 }
 
-.grid,
-.grid-2col {
-  display: grid;
-  grid-column: span 2/span 2;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin: 10px 0;
-  padding: 0;
+#pause {
+  scale: 0.75;
+  background: none;
+  top: calc(83vh - 100px);
 }
 
-.grid-3col {
-  grid-column: span 3/span 3;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+#pause figcaption {
+  font-size: 5em;
+  font-weight: bold;
+  color: hsl(32, 89.24%, 41.19%);
+  text-shadow: 5px 3px 5px hsl(32, 93.38%, 13.51%);
 }
 
 .grid-4col {
   grid-column: span 4/span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-5col {
-  grid-column: span 5/span 5;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-6col {
-  grid-column: span 6/span 6;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.grid-7col {
-  grid-column: span 7/span 7;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.grid-8col {
-  grid-column: span 8/span 8;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-}
-
-.grid-9col {
-  grid-column: span 9/span 9;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
-}
-
-.grid-10col {
-  grid-column: span 10/span 10;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
-}
-
-.grid-11col {
-  grid-column: span 11/span 11;
-  grid-template-columns: repeat(11, minmax(0, 1fr));
-}
-
-.grid-12col {
-  grid-column: span 12/span 12;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.grid-start-2 {
-  grid-column-start: 2;
-}
-
-.grid-start-3 {
-  grid-column-start: 3;
-}
-
-.grid-start-4 {
-  grid-column-start: 4;
-}
-
-.grid-start-5 {
-  grid-column-start: 5;
-}
-
-.grid-start-6 {
-  grid-column-start: 6;
-}
-
-.grid-start-7 {
-  grid-column-start: 7;
-}
-
-.grid-start-8 {
-  grid-column-start: 8;
-}
-
-.grid-start-9 {
-  grid-column-start: 9;
-}
-
-.grid-start-10 {
-  grid-column-start: 10;
-}
-
-.grid-start-11 {
-  grid-column-start: 11;
-}
-
-.grid-start-12 {
-  grid-column-start: 12;
-}
-
-.grid-span-2 {
-  grid-column-end: span 2;
-}
-
-.grid-span-3 {
-  grid-column-end: span 3;
-}
-
-.grid-span-4 {
-  grid-column-end: span 4;
-}
-
-.grid-span-5 {
-  grid-column-end: span 5;
-}
-
-.grid-span-6 {
-  grid-column-end: span 6;
-}
-
-.grid-span-7 {
-  grid-column-end: span 7;
-}
-
-.grid-span-8 {
-  grid-column-end: span 8;
-}
-
-.grid-span-9 {
-  grid-column-end: span 9;
-}
-
-.grid-span-10 {
-  grid-column-end: span 10;
-}
-
-.grid-span-11 {
-  grid-column-end: span 11;
-}
-
-.grid-span-12 {
-  grid-column-end: span 12;
 }
 
 .body-container {
@@ -1997,10 +1896,11 @@ body .application select {
 
 .talesoftheoldwest a.inline-link {
   background-color: transparent;
-  color: hsl(6, 56%, 30%);
+  color: hsl(6, 91.59%, 29.26%);
   font-size: 1.15em;
   border: 0;
   font-family: "Esteban";
+  font-style: italic;
 }
 
 .talesoftheoldwest .inline-link2 .content-link {
@@ -2171,6 +2071,7 @@ body .application select {
   font-family: "Esteban";
   font-weight: bold;
   text-align: center;
+  font-size: 2.5em;
 }
 
 .talesoftheoldwest h3 {
@@ -2180,25 +2081,31 @@ body .application select {
   margin: 0;
   margin-top: 5px;
   border-bottom: none;
+  font-size: 2em;
 }
 
 .talesoftheoldwest .h3center {
   text-align: center;
-  text-align: center;
   border-bottom: 2px solid black;
 }
 
-.talesoftheoldwest h5 {
-  font-weight: bold;
+.talesoftheoldwest h4 {
   font-family: "Esteban";
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.talesoftheoldwest h5 {
+  font-family: "Esteban";
+  font-weight: bold;
   color: hsl(19, 70%, 37%);
   margin: 0px 20px 0px 10px;
   border-bottom: none;
 }
 
 .talesoftheoldwest h6 {
-  font-weight: bold;
   font-family: "Esteban";
+  font-weight: bold;
   color: hsl(0, 0%, 100%);
   margin: 0;
 }
@@ -2329,9 +2236,10 @@ body .application select {
   width: 88px;
 }
 .talesoftheoldwest .statnum {
-  width: 35px;
+  width: 44px;
   text-align: center;
-  font-size: larger;
+  font-size: 1.25em;
+  font-family: "Esteban", serif;
 }
 .talesoftheoldwest .dicenum {
   width: 60px;
@@ -2349,7 +2257,8 @@ body .application select {
 .talesoftheoldwest .currency,
 .talesoftheoldwest .currency2 {
   width: 80px;
-  font-size: larger;
+  font-size: 1.25em;
+  font-family: "Esteban", serif;
 }
 .talesoftheoldwest .experience {
   width: 64px;
@@ -2403,6 +2312,18 @@ body .application select {
   justify-self: center;
   min-height: 93px;
 }
+.talesoftheoldwest .item-weight {
+  width: 44px;
+  font-size: 1.4em;
+  text-align: center;
+  font-family: "Esteban", serif;
+}
+.talesoftheoldwest .aLink {
+  color: hsl(25.44, 100%, 20.15%);
+  font-weight: bold;
+  font-size: 1.2em;
+  font-style: italic;
+}
 .talesoftheoldwest .resource-label {
   font-weight: bold;
   color: var(--talesoftheoldwest-c-black);
@@ -2425,6 +2346,7 @@ body .application select {
 .talesoftheoldwest .saddle-bag {
   display: inline-block;
   background-image: url("../assets/icons/saddle.webp");
+  background-size: contain;
   width: 24px;
   height: 24px;
   vertical-align: middle;

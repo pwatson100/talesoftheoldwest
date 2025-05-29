@@ -4,6 +4,7 @@ import { totowItem } from './documents/item.mjs';
 // Import sheet classes.
 import { totowActorSheet } from './sheets/actor-sheet.mjs';
 import { totowItemSheet } from './sheets/item-sheet.mjs';
+
 // Import helper/utility classes and constants.
 import { TALESOFTHEOLDWEST } from './helpers/config.mjs';
 // Import DataModel classes
@@ -15,11 +16,9 @@ import { COMMON } from './helpers/common.mjs';
 import { logger } from './helpers/logger.mjs';
 import registerSettings from './helpers/settings.mjs';
 import { totowDiceListeners, totowDiceButtons } from './helpers/diceroll.mjs';
+import { initializeHandlebars } from './helpers/handlebars.js';
 
 const collections = foundry.documents.collections;
-
-// TODO V13
-// const sheets = foundry.appv1.sheets;
 
 const SUB_MODULES = {
 	COMMON,
@@ -95,96 +94,38 @@ Hooks.once('init', function () {
 	// Necessary until foundry makes this default behavior in v13
 	CONFIG.ActiveEffect.legacyTransferral = false;
 	CONFIG.TOTOWSystemImportFormWrapper = TOTOWSystemImportFormWrapper;
-
 	// Register sheet application classes
 
-	Actors.unregisterSheet('core', ActorSheet);
-	Actors.registerSheet('totow', totowActorSheet, {
-		makeDefault: true,
-		label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
-	});
-
-	// collections.Actors.unregisterSheet('core', sheets.ActorSheet);
-	// collections.Actors.registerSheet('totow', totowActorSheet, {
-	// 	makeDefault: true,
-	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
-	// });
-
-	Items.unregisterSheet('core', ItemSheet);
-	Items.registerSheet('totow', totowItemSheet, {
-		makeDefault: true,
-		label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
-	});
-	// collections.Items.unregisterSheet('core', sheets.ItemSheet);
-	// collections.Items.registerSheet('totow', totowItemSheet, {
-	// 	makeDefault: true,
-	// 	label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
-	// });
+	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+		collections.Actors.unregisterSheet('core', foundry.appv1.sheets.ActorSheet);
+		collections.Actors.registerSheet('totow', totowActorSheet, {
+			makeDefault: true,
+			label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
+		});
+		collections.Items.unregisterSheet('core', foundry.appv1.sheets.ItemSheet);
+		collections.Items.registerSheet('totow', totowItemSheet, {
+			makeDefault: true,
+			label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
+		});
+	} else {
+		Actors.unregisterSheet('core', ActorSheet);
+		Actors.registerSheet('totow', totowActorSheet, {
+			makeDefault: true,
+			label: 'TALESOFTHEOLDWEST.SheetLabels.Actor',
+		});
+		Items.unregisterSheet('core', ItemSheet);
+		Items.registerSheet('totow', totowItemSheet, {
+			makeDefault: true,
+			label: 'TALESOFTHEOLDWEST.SheetLabels.Item',
+		});
+	}
+	initializeHandlebars();
 
 	registerSettings();
 	// // Preload Handlebars templates.
 	// return preloadHandlebarsTemplates();
 });
 
-/* -------------------------------------------- */
-/*  Handlebars Helpers                          */
-/* -------------------------------------------- */
-
-// If you need to add Handlebars helpers, here is a useful example:
-Handlebars.registerHelper('toLowerCase', function (str) {
-	return str.toLowerCase();
-});
-
-Handlebars.registerHelper('toUpperCase', function (str) {
-	return str.toUpperCase();
-});
-
-Handlebars.registerHelper('capitalise', function (str) {
-	return str.charAt(0).toUpperCase() + str.slice(1);
-});
-
-/*
- * Repeat given markup with n times
- */
-Handlebars.registerHelper('times', function (n, block) {
-	var result = '';
-	for (let i = 0; i < n; ++i) {
-		result += block.fn(i);
-	}
-	return result;
-});
-Handlebars.registerHelper('keepMarkup', function (text) {
-	return new Handlebars.SafeString(text);
-});
-Handlebars.registerHelper('removeMarkup', function (text) {
-	const markup = /<(.*?)>/gi;
-	return new Handlebars.SafeString(text.replace(markup, ''));
-});
-Handlebars.registerHelper('ifSetting', function (v1, options) {
-	if (game.settings.get('talesoftheoldwest', v1)) return options.fn(this);
-	else return options.inverse(this);
-});
-Handlebars.registerHelper('striptags', function (txt) {
-	// exit now if text is undefined
-	if (typeof txt == 'undefined') return;
-	// the regular expresion
-	var regexp = /<[\/\w]+>/g;
-	// replacing the text
-	return txt.replace(regexp, '');
-});
-Handlebars.registerHelper('addstats', function (v1, v2) {
-	return v1 + v2;
-});
-
-Handlebars.registerHelper('totowConcat', function () {
-	var outStr = '';
-	for (var arg in arguments) {
-		if (typeof arguments[arg] != 'object') {
-			outStr += arguments[arg];
-		}
-	}
-	return outStr;
-});
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
@@ -207,41 +148,41 @@ Hooks.on('renderChatLog', (log, html, data) => {
 	totowDiceListeners();
 });
 
-// if (game.version < '13') {
-Hooks.on('renderChatMessage', (app, [html], msg) => {
-	totowDiceButtons(html);
-	// Do not display "Blind" chat cards to non-gm
-	if (html.querySelector('blind') && !game.user.isGM) {
-		// since the header has timestamp content we'll remove the content instead.
-		// this avoids an NPE when foundry tries to update the timestamps.
-		html.querySelector('.message-content').remove();
-	}
-	// remove push option from non-authors
-	if (!game.user.isGM && msg.message.author !== game.user.id) {
-		html.querySelector('.dice-push').remove();
-		html.querySelector('.buy-off').remove();
-		html.querySelector('.roll-trouble').remove();
-	}
-});
-// }
-// else {
-// Hooks.on('renderChatMessageHTML', (app, html, msg) => {
-// 	// Do not display "Blind" chat cards to non-gm
-// 	totowDiceButtons(html);
+// This does not work.
+if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+	Hooks.on('renderChatMessageHTML', (app, html, msg) => {
+		totowDiceButtons(html);
 
-// 	if (html.querySelector('blind') && !game.user.isGM) {
-// 		// since the header has timestamp content we'll remove the content instead.
-// 		// this avoids an NPE when foundry tries to update the timestamps.
-// 		html.querySelector('.message-content').remove();
-// 	}
-// 	// remove push option from non-authors
-// 	if (!game.user.isGM && msg.message.author !== game.user.id) {
-// 		html.querySelector('.dice-push').remove();
-// 		html.querySelector('.buy-off').remove();
-// 		html.querySelector('.roll-trouble').remove();
-// 	}
-// });
-// }
+		// Do not display "Blind" chat cards to non-gm
+		if (html.querySelector('blind') && !game.user.isGM) {
+			// since the header has timestamp content we'll remove the content instead.
+			// this avoids an NPE when foundry tries to update the timestamps.
+			html.querySelector('.message-content').remove();
+		}
+		// remove push option from non-authors
+		if (!game.user.isGM && msg.message.author !== game.user.id) {
+			html.querySelector('.dice-push').remove();
+			html.querySelector('.buy-off').remove();
+			html.querySelector('.roll-trouble').remove();
+		}
+	});
+} else {
+	Hooks.on('renderChatMessage', (app, [html], msg) => {
+		totowDiceButtons(html);
+		// Do not display "Blind" chat cards to non-gm
+		if (html.querySelector('blind') && !game.user.isGM) {
+			// since the header has timestamp content we'll remove the content instead.
+			// this avoids an NPE when foundry tries to update the timestamps.
+			html.querySelector('.message-content').remove();
+		}
+		// remove push option from non-authors
+		if (!game.user.isGM && msg.message.author !== game.user.id) {
+			html.querySelector('.dice-push').remove();
+			html.querySelector('.buy-off').remove();
+			html.querySelector('.roll-trouble').remove();
+		}
+	});
+}
 
 Hooks.on('renderPause', (_app, html, options) => {
 	document.getElementById(

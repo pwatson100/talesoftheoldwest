@@ -148,43 +148,75 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.item.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.item,
-				});
+				if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+					context.enrichedDescription = await foundry.applications.ux.TextEditor.enrichHTML(this.item.system.description, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				} else {
+					context.enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				}
 				break;
 			case 'basic':
 				// case 'body':
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedBasic = await TextEditor.enrichHTML(this.item.system.basicAction, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.item.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.item,
-				});
-
+				if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+					context.enrichedBasic = await foundry.applications.ux.TextEditor.enrichHTML(this.item.system.basicAction, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				} else {
+					context.enrichedBasic = await TextEditor.enrichHTML(this.item.system.basicAction, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				}
 				break;
 			case 'advanced':
 				// case 'body':
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedAdvanced = await TextEditor.enrichHTML(this.item.system.advAction, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.item.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.item,
-				});
+				if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+					context.enrichedAdvanced = await foundry.applications.ux.TextEditor.enrichHTML(this.item.system.advAction, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				} else {
+					context.enrichedAdvanced = await TextEditor.enrichHTML(this.item.system.advAction, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.item.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.item,
+					});
+				}
 				break;
 			case 'modifiers':
 				context.tab = context.tabs[partId];

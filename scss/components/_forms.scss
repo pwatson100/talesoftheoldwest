@@ -62,9 +62,10 @@
 }
 
 .statnum {
-	width: 35px;
+	width: 44px;
 	text-align: center;
-	font-size: larger;
+	font-size: 1.25em;
+	font-family: $font-primary;
 }
 .dicenum {
 	width: 60px;
@@ -85,7 +86,8 @@
 .currency,
 .currency2 {
 	width: 80px;
-	font-size: larger;
+	font-size: 1.25em;
+	font-family: $font-primary;
 }
 .experience {
 	width: 64px;
@@ -137,4 +139,18 @@
 	width: 257px;
 	justify-self: center;
 	min-height: 93px;
+}
+
+.item-weight {
+	width: 44px;
+	font-size: 1.4em;
+	text-align: center;
+	font-family: $font-primary;
+}
+
+.aLink {
+	color: hsl(25.44deg 100% 20.15%);
+	font-weight: bold;
+	font-size: 1.2em;
+	font-style: italic;
 }

@@ -110,51 +110,80 @@ export class totowItem extends Item {
 
 		async function fightin(dataset, rollData, item) {
 			let config = CONFIG.TALESOFTHEOLDWEST;
+			let response = '';
 			const actor = game.actors.get(dataset.myActor);
 			dataset.conditional = '';
 			dataset.talent = '';
 			let successMod = 0;
 			let troubleMod = 0;
 			await argpUtils.prepModOutput('Items', rollData, dataset);
-			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
-				config,
-				dataset,
-			});
-			const data = await foundry.applications.api.DialogV2.wait({
-				window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
-				position: { width: 350 },
-				// classes: ["my-special-class"],
-				content,
-				rejectClose: false,
-				buttons: [
-					{
-						label: 'TALESOFTHEOLDWEST.dialog.roll',
-						callback: (event, button) => new FormDataExtended(button.form).object,
-					},
-					{
-						label: 'TALESOFTHEOLDWEST.dialog.cancel',
-						action: 'cancel',
-					},
-				],
-			});
+			let content = '';
+			if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+				content = await foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
+					config,
+					dataset,
+				});
+				response = await foundry.applications.api.DialogV2.wait({
+					window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
+					position: { width: 350 },
+					// classes: ["my-special-class"],
+					content,
+					rejectClose: false,
+					buttons: [
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.roll',
+							callback: (event, button) => new FormDataExtended(button.form).object,
+						},
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.cancel',
+							action: 'cancel',
+						},
+					],
+				});
+			} else {
+				// For Foundry versions before 11, use the old renderTemplate method
 
-			if (!data || data === 'cancel') return 'cancelled';
+				content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/fightin-weapon-modifiers.html', {
+					config,
+					dataset,
+				});
+				response = await foundry.applications.api.DialogV2.wait({
+					window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
+					position: { width: 350 },
+					// classes: ["my-special-class"],
+					content,
+					rejectClose: false,
+					buttons: [
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.roll',
+							callback: (event, button) => new FormDataExtended(button.form).object,
+						},
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.cancel',
+							action: 'cancel',
+						},
+					],
+				});
+			}
 
-			Object.keys(data).forEach((key) => {
+			if (!response || response === 'cancel') return 'cancelled';
+
+			Object.keys(response).forEach((key) => {
 				if (key.startsWith('floop')) {
-					data.modifier = Number(data.modifier) + Number(data[key]);
+					response.modifier = Number(response.modifier) + Number(response[key]);
 				}
 			});
 
 			dataset.successMod = Number(successMod);
 			dataset.troubleMod = Number(troubleMod);
-			dataset.fightProneMod = Number(data.prone || 0);
-			dataset.fightAlloutattackMod = Number(data.alloutattack || 0);
-			dataset.fightCalledstrikeMod = Number(data.calledstrike || 0);
-			dataset.fightmodifierMod = Number(data.modifier);
+			dataset.fightProneMod = Number(response.prone || 0);
+			dataset.fightAlloutattackMod = Number(response.alloutattack || 0);
+			dataset.fightCalledstrikeMod = Number(response.calledstrike || 0);
+			dataset.fightmodifierMod = Number(response.modifier);
 			dataset.baseMod = Number(dataset.mod);
 
-			dataset.mod = Number(dataset.mod) + Number(data.prone || 0) + Number(data.alloutattack || 0) + Number(data.calledstrike || 0) + Number(data.modifier);
+			dataset.mod =
+				Number(dataset.mod) + Number(response.prone || 0) + Number(response.alloutattack || 0) + Number(response.calledstrike || 0) + Number(response.modifier);
 			const result = await rollAttrib(dataset, rollData, actor);
 			return result;
 		}
@@ -164,6 +193,8 @@ export class totowItem extends Item {
 			const actor = game.actors.get(dataset.myActor);
 			let successMod = 0;
 			let troubleMod = 0;
+			let content = '';
+			let response = '';
 			dataset.conditional = '';
 			dataset.talent = '';
 			if (dataset.itemAmmo <= 0) {
@@ -178,52 +209,78 @@ export class totowItem extends Item {
 				// Get and proess Weapon Modifier data
 				await argpUtils.prepModOutput('Items', rollData, dataset);
 			}
-			const content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
-				config,
-				dataset,
-			});
-			const data = await foundry.applications.api.DialogV2.wait({
-				window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
-				position: { width: 440 },
-				content,
-				// classes: ["my-special-class"],
-				rejectClose: false,
-				buttons: [
-					{
-						label: 'TALESOFTHEOLDWEST.dialog.roll',
-						callback: (event, button) => new FormDataExtended(button.form).object,
-					},
-					{
-						label: 'TALESOFTHEOLDWEST.dialog.cancel',
-						action: 'cancel',
-					},
-				],
-			});
 
-			if (!data || data === 'cancel') return 'cancelled';
-			Object.keys(data).forEach((key) => {
+			if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+				content = await foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
+					config,
+					dataset,
+				});
+				response = await foundry.applications.api.DialogV2.wait({
+					window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
+					position: { width: 440 },
+					content,
+					// classes: ["my-special-class"],
+					rejectClose: false,
+					buttons: [
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.roll',
+							callback: (event, button) => new foundry.applications.ux.FormDataExtended(button.form).object,
+						},
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.cancel',
+							action: 'cancel',
+						},
+					],
+				});
+			} else {
+				// For Foundry versions before 11, use the old renderTemplate method
+				content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
+					config,
+					dataset,
+				});
+				response = await foundry.applications.api.DialogV2.wait({
+					window: { title: 'TALESOFTHEOLDWEST.shootinmodifiers' },
+					position: { width: 440 },
+					content,
+					// classes: ["my-special-class"],
+					rejectClose: false,
+					buttons: [
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.roll',
+							callback: (event, button) => new FormDataExtended(button.form).object,
+						},
+						{
+							label: 'TALESOFTHEOLDWEST.dialog.cancel',
+							action: 'cancel',
+						},
+					],
+				});
+			}
+
+			if (!response || response === 'cancel') return 'cancelled';
+			Object.keys(response).forEach((key) => {
 				if (key.startsWith('floop')) {
-					data.modifier = parseInt(data.modifier || 0) + parseInt(data[key] || 0);
+					response.modifier = parseInt(response.modifier || 0) + parseInt(response[key] || 0);
 				}
 			});
 			dataset.successMod = Number(successMod);
 			dataset.troubleMod = Number(troubleMod);
-			dataset.shootrangeMod = Number(data.rangeChoice);
-			dataset.shootcalledShotsMod = Number(data.calledShots);
-			dataset.shootcoverMod = Number(data.coverChoice);
-			dataset.shootsizeMod = Number(data.sizeChoice);
-			dataset.shootvisibilityMod = Number(data.visibilityChoice);
-			dataset.shootmodifierMod = Number(data.modifier);
+			dataset.shootrangeMod = Number(response.rangeChoice);
+			dataset.shootcalledShotsMod = Number(response.calledShots);
+			dataset.shootcoverMod = Number(response.coverChoice);
+			dataset.shootsizeMod = Number(response.sizeChoice);
+			dataset.shootvisibilityMod = Number(response.visibilityChoice);
+			dataset.shootmodifierMod = Number(response.modifier);
 			dataset.baseMod = Number(dataset.mod);
 
 			dataset.mod =
 				Number(dataset.mod) +
-				Number(data.rangeChoice) +
-				Number(data.calledShots) +
-				Number(data.coverChoice) +
-				Number(data.sizeChoice) +
-				Number(data.visibilityChoice) +
-				Number(data.modifier);
+				Number(response.rangeChoice) +
+				Number(response.calledShots) +
+				Number(response.coverChoice) +
+				Number(response.sizeChoice) +
+				Number(response.visibilityChoice) +
+				Number(response.modifier);
 			const result = await rollAttrib(dataset, rollData, actor);
 			await item.update({ 'system.ammo': item.system.ammo - 1 });
 			return result;

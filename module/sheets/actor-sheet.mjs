@@ -189,22 +189,41 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			case 'compadres':
 			case 'remuda':
 				context.tab = context.tabs[partId];
-				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.actor.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.actor,
-				});
-				context.enrichedAttacks = await TextEditor.enrichHTML(this.actor.system.general.attacks, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.actor.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.actor,
-				});
+				if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+					context.enrichedBiography = await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.biography, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+					context.enrichedAttacks = await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.general.attacks, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+				} else {
+					context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+					context.enrichedAttacks = await TextEditor.enrichHTML(this.actor.system.general.attacks, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+				}
 				break;
 			case 'gear':
 				context.tab = context.tabs[partId];
@@ -222,14 +241,25 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				context.tab = context.tabs[partId];
 				// Enrich biography info for display
 				// Enrichment turns text like `[[/r 1d20]]` into buttons
-				context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
-					// Whether to show secret blocks in the finished html
-					secrets: this.document.isOwner,
-					// Data to fill in for inline rolls
-					rollData: this.actor.getRollData(),
-					// Relative UUID resolution
-					relativeTo: this.actor,
-				});
+				if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
+					context.enrichedBiography = await foundry.applications.ux.TextEditor.enrichHTML(this.actor.system.biography, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+				} else {
+					context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {
+						// Whether to show secret blocks in the finished html
+						secrets: this.document.isOwner,
+						// Data to fill in for inline rolls
+						rollData: this.actor.getRollData(),
+						// Relative UUID resolution
+						relativeTo: this.actor,
+					});
+				}
 				break;
 			case 'effects':
 				context.tab = context.tabs[partId];

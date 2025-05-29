@@ -20,12 +20,19 @@
 				<label class='resource-label HedCol5' for='system.general.ridingmodifier.value'>{{toUpperCase
 						(localize 'TALESOFTHEOLDWEST.General.riding-bonus')
 					}}</label>
-				<input class='experience HedCol6' name='system.general.ridingmodifier.value' value='{{system.general.ridingmodifier.value}}' data-dtype='Number' />
+				<input
+					class='experience HedCol6'
+					style='width: 44px;'
+					type='number'
+					name='system.general.ridingmodifier.value'
+					value='{{system.general.ridingmodifier.value}}'
+					data-dtype='Number'
+				/>
 
 				<label class='resource-label HedCol9' style='text-align: center; align-self: center;font-size: larger;' for='system.general.cost'>{{toUpperCase
 						(localize 'TALESOFTHEOLDWEST.General.cost')
 					}}</label>
-				<input class='currency HedCol12' name='system.general.cost' value='{{system.general.cost}}' data-dtype='String' />
+				<input class='currency HedCol12' name='system.general.cost' value='{{system.general.cost}}' data-dtype='Number' />
 
 			{{/if}}
 		{{/if}}
@@ -43,7 +50,7 @@
 			<input class='HedCol10' type='text' name='system.general.yourpardner' value='{{system.general.yourpardner}}' data-dtype='text' />
 
 			<label for='system.general.faith' class='resource-label HedCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
-			<textarea class='textarea-format HedCol11' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
+			<textarea class='textarea-format HedCol11' type='text' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
 
 			<div
 				class='newdots click-damage-level HedCol12'
