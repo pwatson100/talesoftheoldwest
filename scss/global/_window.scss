@@ -45,7 +45,7 @@ body {
 		background-size: 100% 100%;
 		border: transparent;
 		filter: drop-shadow(8px 12px 8px #353232);
-		font-family: 'Esteban';
+		font-family: $font-primary;
 		color: hsl(0, 0%, 0%);
 	}
 	.dialog-form.standard-form .form-footer,
@@ -162,7 +162,7 @@ body {
 
 // V12 code
 .app.window-app.sheet.journal-sheet.journal-entry .journal-entry-content {
-	background-image: url('../assets/background/sheet-background.webp');
+	background-image: url('../assets/background/journal-background.webp');
 	background-size: cover;
 }
 
@@ -172,7 +172,7 @@ body {
 
 // V13 code
 .application.sheet.journal-sheet.journal-entry .journal-entry-content {
-	background-image: url('../assets/background/sheet-background.webp');
+	background-image: url('../assets/background/journal-background.webp');
 	background-size: cover;
 }
 .application.sheet.journal-sheet .window-header {

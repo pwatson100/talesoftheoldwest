@@ -169,7 +169,7 @@
 							</div>
 						</div>
 						<div class='compadre-split div-border'>
-							<label class='CompSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</label>
+							<label class='CompSplit11 sub-heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</label>
 							<div class='CompSplit21'>
 								{{#each actor.items}}
 									{{#if (eq system.general.subtype 'quality')}}
@@ -178,7 +178,9 @@
 								{{/each}}
 							</div>
 
-							<label class='CompSplit12' style='border-left: solid 2px black;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</label>
+							<label class='CompSplit12 sub-heading' style='border-left: solid 2px black;'>{{toUpperCase
+									(localize 'TALESOFTHEOLDWEST.Item.General.flaws')
+								}}</label>
 							<div class='CompSplit22' style='border-left: solid 2px black;'>
 								{{#each actor.items}}
 									{{#if (eq system.general.subtype 'flaw')}}

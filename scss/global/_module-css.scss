@@ -1,3 +1,75 @@
+/* Import settings */
+.talesoftheoldwest .container {
+	width: 100%;
+}
+
+.talesoftheoldwest .listHeading {
+	text-align: center;
+	vertical-align: middle;
+	padding: 10px 0px;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.talesoftheoldwest .twogridcol {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 50%));
+}
+
+.talesoftheoldwest .twogridcol input[type='checkbox'] {
+	vertical-align: middle;
+}
+
+.talesoftheoldwest .actors.content {
+	background: lightgray;
+}
+.talesoftheoldwest .actors.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .items.content {
+	background: lightgray;
+}
+.talesoftheoldwest .items.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .journal.content {
+	background: lightgray;
+}
+.talesoftheoldwest .journal.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .scenes.content {
+	background: lightgray;
+}
+.talesoftheoldwest .scenes.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .tables.content {
+	background: lightgray;
+}
+.talesoftheoldwest .tables.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .macros.content {
+	background: lightgray;
+}
+.talesoftheoldwest .macros.content.toggle-display {
+	display: none;
+}
+.talesoftheoldwest .title {
+	cursor: pointer;
+}
+/* Footer */
+
+.talesoftheoldwest .footer {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	width: inherit;
+	height: auto;
+	background-color: #d0daee;
+}
+
 .talesoftheoldwest .imagecontainer {
 	position: relative;
 	text-align: center;
@@ -22,7 +94,7 @@
 	color: hsl(6deg 91.59% 29.26%);
 	font-size: 1.15em;
 	border: 0;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-style: italic;
 }
 
@@ -31,7 +103,7 @@
 	color: hsl(6, 56%, 30%);
 	font-size: 1.333em;
 	border: 0;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 .talesoftheoldwest .totowtable {
 	height: 36px;
@@ -84,7 +156,7 @@
 	border: 5px double hsl(0, 0%, 0%);
 	border-radius: 25px;
 	box-shadow: 3px 3px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 .talesoftheoldwest .blockquoteleft {
 	background-color: rgba(0, 0, 0, 0.05);
@@ -100,7 +172,7 @@
 	border: 5px double hsl(0, 0%, 0%);
 	border-radius: 25px;
 	box-shadow: 3px 3px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 
 .talesoftheoldwest .blockquotecenter {
@@ -115,7 +187,13 @@
 	font-style: normal;
 	float: center;
 	border: 2px solid hsl(0, 0%, 0%);
-	font-family: 'Esteban';
+	font-family: $font-primary;
+}
+.talesoftheoldwest .blockquoteststtable {
+	background-color: rgba(0, 0, 0, 0.05);
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
 }
 
 .talesoftheoldwest .blockquoteplainleft {
@@ -125,7 +203,7 @@
 	border: none;
 	padding: 0;
 	margin: 10px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 .talesoftheoldwest .blockquoteplainright {
 	max-width: 50%;
@@ -134,16 +212,12 @@
 	border: none;
 	padding: 0;
 	margin: 10px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 .talesoftheoldwest .blockquoteplaincenter {
-	// max-width: 50%;
 	break-inside: avoid;
-	float: center;
 	border: none;
-	padding: 0;
-	margin: 10px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 }
 
 .talesoftheoldwest .textover figcaption {
@@ -154,28 +228,28 @@
 	width: auto;
 	margin: 0;
 	padding: 0px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: normal;
 }
 .talesoftheoldwest p {
-	font-family: 'Esteban';
-	font-size: 1.15em;
+	font-family: $font-primary;
+	font-size: 1.3em;
 }
 
 .talesoftheoldwest h1 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 }
 
 .talesoftheoldwest h2 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 	text-align: center;
 	font-size: 2.5em;
 }
 
 .talesoftheoldwest h3 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
@@ -189,13 +263,13 @@
 }
 
 .talesoftheoldwest h4 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
 .talesoftheoldwest h5 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 	color: hsl(19, 70%, 37%);
 	margin: 0px 20px 0px 10px;
@@ -203,7 +277,7 @@
 }
 
 .talesoftheoldwest h6 {
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-weight: bold;
 	color: hsl(0, 0%, 100%);
 	margin: 0;
@@ -225,7 +299,7 @@
 	border: 0;
 	margin-bottom: 0;
 	margin-left: 10px;
-	font-family: 'Esteban';
+	font-family: $font-primary;
 	font-size: 1.667em;
 }
 
@@ -246,15 +320,36 @@
 
 .talesoftheoldwest ul li,
 .talesoftheoldwest ol li {
-	font-family: 'Esteban';
+	font-family: $font-primary;
+	font-weight: normal;
+	// list-style: none;
+	padding-bottom: 9px;
+	font-size: 1.3em;
+}
+
+.talesoftheoldwest :is(dir, menu, ol, ul) ul {
+	list-style-type: inherit;
+	font-size: 0.77em;
+}
+
+.talesoftheoldwest .nostyle li {
+	font-family: $font-primary;
 	font-weight: normal;
 	list-style: none;
 	padding-bottom: 2px;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
-.chapterHeading {
-	font-family: 'Esteban';
+// .talesoftheoldwest .arrowstyle li {
+// 	font-family: $font-primary;
+// 	font-weight: normal;
+// 	list-style-type: '→';
+// 	padding-bottom: 2px;
+// 	font-size: 1.3em;
+// }
+
+.talesoftheoldwest .chapterHeading {
+	font-family: $font-primary;
 	font-weight: bold;
 	font-size: 2em;
 	color: hsl(0, 0%, 100%);
@@ -262,4 +357,27 @@
 	padding: 0;
 	text-align: center;
 	border-bottom: none;
+}
+
+.talesoftheoldwest .fancytext {
+	color: hsl(19, 70%, 37%);
+	font-size: 1.5em;
+}
+
+.talesoftheoldwest .pctable th,
+.talesoftheoldwest .pctable td {
+	border: 2px solid black;
+}
+.talesoftheoldwest .pctable td p {
+	font-size: 1.2em;
+	padding-right: 5px;
+	margin: 0px;
+}
+.talesoftheoldwest .stattable {
+	font-style: italic;
+	font-weight: 900;
+	font-size: 1.5em;
+	padding-right: 5px;
+	margin: 0px;
+	border-bottom: double 5px;
 }

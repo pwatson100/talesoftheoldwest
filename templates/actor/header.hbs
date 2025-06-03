@@ -52,12 +52,7 @@
 			<label for='system.general.faith' class='resource-label HedCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
 			<textarea class='textarea-format HedCol11' type='text' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
 
-			<div
-				class='newdots click-damage-level HedCol12'
-				style='font-size: x-large;'
-				data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
-				data-action='changeFaith'
-			>
+			<div class='newdots-plus click-damage-level HedCol12' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeFaith'>
 				{{#times system.general.faithpoints.value}}
 					<i class='far fa-dot-circle'></i>
 				{{/times}}

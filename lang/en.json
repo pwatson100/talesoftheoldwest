@@ -454,7 +454,8 @@
 			"horse": "Horse",
 			"wolf": "Wolf",
 			"dog": "Dog",
-			"critters": "Critters"
+			"critters": "Critters",
+			"other": "Other"
 		},
 		"HorseBreed": {
 			"americanquarter": "American Quarter",
@@ -574,7 +575,8 @@
 			"sixfour": "A Decent Sort, Regualr Volunteer",
 			"sixfive": "Honourable, Courageous",
 			"sixsix": "Pillar of the Community"
-		}
+		},
+		"OPTIONAL_CONFIG_MENULABEL": "Configure Tales of the Old West Settings"
 	},
 	"TYPES": {
 		"Actor": {

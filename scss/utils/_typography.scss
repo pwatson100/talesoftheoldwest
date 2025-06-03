@@ -1,9 +1,26 @@
-// $font-primary: 'Roboto', sans-serif;
-$font-primary: 'Esteban', serif;
-$font-secondary: 'Roboto', sans-serif;
+$font-primary: 'fraunces-normal-400';
+$font-secondary: 'esteban-regular', serif;
 
 .esteban-regular {
 	font-family: 'Esteban', serif;
 	font-weight: 400;
 	font-style: normal;
+}
+
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.fraunces-normal-400 {
+	font-family: 'Fraunces', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: 'SOFT' 0, 'WONK' 0;
+}
+.fraunces-italics-400 {
+	font-family: 'Fraunces', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: italic;
+	font-variation-settings: 'SOFT' 0, 'WONK' 0;
 }

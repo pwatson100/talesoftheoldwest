@@ -105,6 +105,16 @@
 	font-size: 1.5em;
 	text-align: center;
 }
+.sub-heading {
+	font-weight: bold;
+	font-size: 1em;
+	text-align: center;
+}
+.gear-heading {
+	font-weight: bold;
+	font-size: 1em;
+	text-align: right;
+}
 
 .conditionHeading {
 	font-weight: bold;
@@ -128,6 +138,16 @@
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	font-size: 1.285em;
+	padding: 10px;
+}
+.newdots-plus {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-size: 1.74em;
+	padding: 10px;
 }
 
 .animal-stats {

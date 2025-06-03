@@ -84,7 +84,6 @@
 					</div>
 					<div
 						class='scaH2 newdots HedCol12'
-						style='font-size: large; padding: 10px'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
 						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
@@ -100,7 +99,6 @@
 					</div>
 					<div
 						class='scaS2 newdots HedCol12'
-						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
 						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
@@ -116,7 +114,6 @@
 					</div>
 					<div
 						class='scaV2 newdots HedCol12'
-						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
 						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
@@ -132,7 +129,6 @@
 					</div>
 					<div
 						class='scaD2 newdots HedCol12'
-						style='font-size: large'
 						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
 						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
@@ -144,7 +140,7 @@
 					</div>
 				</div>
 				<div class='compadre-split  div-border'>
-					<label class='CompSplit11'>Talents</label>
+					<label class='CompSplit11 sub-heading'>Talents</label>
 					<div class='CompSplit21'>
 						{{#each actor.items}}
 							{{#if (eq type 'talent')}}
@@ -153,7 +149,7 @@
 						{{/each}}
 					</div>
 
-					<label class='CompSplit12' style="border-left: solid 2px black;">Abilities</label>
+					<label class='CompSplit12 sub-heading' style="border-left: solid 2px black;">Abilities</label>
 					<div class='CompSplit22' style="border-left: solid 2px black;">
 						{{#each actor.system.abilities}}
 							{{#if (gt value 0)}}

@@ -728,7 +728,7 @@
 .grid-wfl1 {
 	grid-area: grid-wfl1;
 	text-align: center;
-	font-size: x-large;
+	// font-size: x-large;
 }
 .grid-wfl2 {
 	grid-area: grid-wfl2;
@@ -738,7 +738,7 @@
 .grid-wfl3 {
 	grid-area: grid-wfl3;
 	text-align: center;
-	font-size: x-large;
+	// font-size: x-large;
 	align-self: end;
 }
 .grid-wfl4 {
@@ -777,12 +777,12 @@
 		'L5C1 L5C2 L5C2 L5C2'
 		'L6C1 L6C2 L6C2 L6C2';
 
-	grid-template-columns: 150px 50px 150px 50px;
+	grid-template-columns: 150px 50px 150px 60px;
 	// margin: 10px 0px 10px 0px;
 }
 .L1C1 {
 	grid-area: L1C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L1C2 {
@@ -791,7 +791,7 @@
 }
 .L1C3 {
 	grid-area: L1C3;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L1C4 {
@@ -801,7 +801,7 @@
 }
 .L2C1 {
 	grid-area: L2C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L12C2 {
@@ -811,7 +811,7 @@
 }
 .L2C3 {
 	grid-area: L2C3;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L2C4 {
@@ -821,7 +821,7 @@
 }
 .L3C1 {
 	grid-area: L3C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L3C2 {
@@ -831,7 +831,7 @@
 }
 .L3C3 {
 	grid-area: L3C3;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L3C4 {
@@ -841,31 +841,30 @@
 }
 .L4C1 {
 	grid-area: L4C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L4C2 {
 	grid-area: L4C2;
-	font-size: large;
+	// font-size: large;
 }
 .L5C1 {
 	grid-area: L5C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L5C2 {
 	grid-area: L5C2;
-	font-size: large;
+	// font-size: large;
 	text-align: center;
 }
 .L6C1 {
 	grid-area: L6C1;
-	font-size: large;
+	// font-size: large;
 	text-align: right;
 }
 .L6C2 {
 	grid-area: L6C2;
-	font-size: X-large;
 	// text-align: center;
 }
 

@@ -1,27 +1,44 @@
-<form autocomplete="off" class="symbaroum-mod">
-  <div class="tab-active">
-    <div class="form-group">
-      <div class="container">
-        {{#each updateAssets as |asset key|}}
-          <div>
-            <h2 class="{{asset.section}} title" style="text-align: center;text-transform:capitalize;" data-tooltip="Click to Collapse/Expand">{{asset.section}}</h2>
-          </div>
-          <div class="listHeading">
-            <label class="selectAlloption" for="chkboxAll-{{asset.section}}"><input type="checkbox" id="chkboxAll-{{asset.section}}" style="vertical-align: middle;" data-tooltip="Click to Select/De-Select all in this section">Select All</label>
-          </div>
-          <div class="twogridcol content {{asset.section}}">
-            {{#each sectionData as |asset key|}}
-              <label for="{{asset._id}}"><input class="select-{{../section}} mycheckbox" type="checkbox" id="{{asset._id}}" assettype="{{../section}}" name="{{asset.name}}">{{asset.name}}</label>
-            {{/each}}
-          </div>
-        {{/each}}
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="form-group buttons-save">
-      <button type="submit" name="submit"><b>Submit</b></button>
-      <button type="button" name="cancel"><b>Cancel</b></button>
-    </div>
-  </div>
+<form autocomplete="off" class="talesoftheoldwest">
+	<div class="tab-active">
+		<div class="form-group">
+			<div class="container">
+				{{#each updateAssets as |asset key|}}
+				<div>
+					<h2 class="{{asset.section}} title" style="text-align: center; text-transform: capitalize" data-tooltip="Click to Collapse/Expand">
+						{{asset.section}}
+					</h2>
+				</div>
+				<div class="listHeading">
+					<label class="selectAlloption" for="chkboxAll-{{asset.section}}"
+						><input
+							type="checkbox"
+							id="chkboxAll-{{asset.section}}"
+							style="vertical-align: middle"
+							data-tooltip="Click to Select/De-Select all in this section"
+						/>Select All</label
+					>
+				</div>
+				<div class="twogridcol content {{asset.section}}">
+					{{#each sectionData as |asset key|}}
+					<label for="{{asset._id}}"
+						><input
+							class="select-{{../section}} mycheckbox"
+							type="checkbox"
+							id="{{asset._id}}"
+							assettype="{{../section}}"
+							name="{{asset.name}}"
+						/>{{asset.name}}</label
+					>
+					{{/each}}
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="form-group buttons-save">
+			<button type="submit" name="submit"><b>Submit</b></button>
+			<button type="button" name="cancel"><b>Cancel</b></button>
+		</div>
+	</div>
 </form>

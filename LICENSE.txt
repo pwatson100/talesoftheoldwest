@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Asacolips Projects / Foundry Mods
+Copyright (c) 2020 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-IMAGE LICENSES
+FONT LICENSES
 
-anvil-impact.png by Lorc under CC BY 3.0 from game-icons.net
+Copyright 2005 The Playfair Project Authors (https://github.com/googlefonts/Playfair)
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . 
+This license available with a FAQ at: https://openfontlicense.org
+
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+Copyright 2018 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is available with a FAQ at: https://openfontlicense.org
+
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007

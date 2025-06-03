@@ -10,7 +10,7 @@
 	"version": "0.1.2",
 	"compatibility": {
 		"minimum": "12",
-		"verified": "12"
+		"verified": "13"
 	},
 	"esmodules": ["module/talesoftheoldwest.mjs"],
 	"styles": ["css/talesoftheoldwest.css"],
@@ -43,8 +43,8 @@
 	"media": [
 		{
 			"type": "setup",
-			"url": "systems/talesoftheoldwest/assets/icons/totow.webp",
-			"thumbnail": "systems/talesoftheoldwest/assets/icons/totow.webp"
+			"url": "systems/talesoftheoldwest/assets/pictures/totow.webp",
+			"thumbnail": "systems/talesoftheoldwest/assets/pictures/totow.webp"
 		}
 	],
 
