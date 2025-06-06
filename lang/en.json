@@ -484,7 +484,10 @@
 			"RollManCrit": "Roll Manual Critical Injury",
 			"RollManCharCrit": "Enter D66 number",
 			"Ride-My-Horse-Dialog": "Animal Handling Modifier",
-			"Riding-Your-Own-Horse-Question": "Are you riding "
+			"Riding-Your-Own-Horse-Question": "Are you riding ",
+			"Rollontable": "Roll on table {tablename}",
+			"Modifier": "Modifier",
+			"Tooltip-Rollontable": "ctrl+click to add modifier"
 		},
 		"CritLocation": {
 			"lowerleg": "Lower Leg",

@@ -17,6 +17,7 @@ import { logger } from './helpers/logger.mjs';
 import registerSettings from './helpers/settings.mjs';
 import { totowDiceListeners, totowDiceButtons } from './helpers/diceroll.mjs';
 import { initializeHandlebars } from './helpers/handlebars.js';
+import { enrichTextEditors } from './helpers/enricher.js';
 
 const collections = foundry.documents.collections;
 
@@ -122,6 +123,8 @@ Hooks.once('init', function () {
 	initializeHandlebars();
 
 	registerSettings();
+	enrichTextEditors();
+
 	// // Preload Handlebars templates.
 	// return preloadHandlebarsTemplates();
 	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {

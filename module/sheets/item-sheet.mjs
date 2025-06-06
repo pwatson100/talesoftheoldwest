@@ -126,6 +126,64 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			systemFields: this.document.system.schema.fields,
 			systemSource: this.item.system._source,
 		};
+		// debugger;
+		switch (this.document.type) {
+			case 'talent':
+				{
+					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+						// TODO: find Sutable Talent icon.
+
+						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/brain.webp' });
+					}
+				}
+				break;
+			case 'item':
+				{
+					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+						// TODO: find Sutable default Item icon.
+
+						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/saddle.webp' });
+					}
+				}
+				break;
+
+			case 'weapon':
+				{
+					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+						// TODO: find Sutable default weapon icon.
+
+						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/manhattannavy.webp' });
+					}
+				}
+				break;
+
+			case 'crit':
+				{
+					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+						// TODO: find Sutable Critical Injury icon.
+						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/snake.webp' });
+					}
+				}
+				break;
+
+			case 'animalquality':
+				// 				{if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+				// TODO: find Sutable default animalquality icon.
+
+				// 	this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/biceps.webp' });
+				// }}
+				break;
+
+			case 'weaponquality':
+				// 				{if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+				// TODO: find Sutable default weaponquality icon.
+				// 	this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/biceps.webp' });
+				// }}
+				break;
+
+			default:
+				break;
+		}
 
 		logger.debug('Item Sheet derived data:', context);
 
@@ -143,6 +201,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				// Necessary for preserving active tab on re-render
 				context.tab = context.tabs[partId];
 				break;
+
 			case 'description':
 				// case 'body':
 				context.tab = context.tabs[partId];

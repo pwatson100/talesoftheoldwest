@@ -2014,6 +2014,8 @@ body .application select {
   -webkit-box-shadow: 3px 3px;
           box-shadow: 3px 3px;
   font-family: "fraunces-normal-400";
+  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquoteleft {
@@ -2034,6 +2036,8 @@ body .application select {
   -webkit-box-shadow: 3px 3px;
           box-shadow: 3px 3px;
   font-family: "fraunces-normal-400";
+  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquotecenter {
@@ -2051,6 +2055,8 @@ body .application select {
   float: center;
   border: 2px solid hsl(0, 0%, 0%);
   font-family: "fraunces-normal-400";
+  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquoteststtable {
@@ -2136,6 +2142,12 @@ body .application select {
   border-bottom: 2px solid black;
 }
 
+.talesoftheoldwest .h3center-smallcaps {
+  text-align: center;
+  border-bottom: 2px solid black;
+  font-variant-caps: all-small-caps;
+}
+
 .talesoftheoldwest h4 {
   font-family: "fraunces-normal-400";
   font-weight: bold;
@@ -2197,20 +2209,24 @@ body .application select {
 .talesoftheoldwest ol li {
   font-family: "fraunces-normal-400";
   font-weight: normal;
+  list-style-type: square;
   padding-bottom: 9px;
   font-size: 1.3em;
 }
 
-.talesoftheoldwest :is(dir, menu, ol, ul) ul {
-  list-style-type: inherit;
-  font-size: 0.77em;
+::marker {
+  font-size: 1.5em;
+}
+
+.ulindent {
+  margin-left: 40px;
 }
 
 .talesoftheoldwest .nostyle li {
   font-family: "fraunces-normal-400";
   font-weight: normal;
   list-style: none;
-  padding-bottom: 2px;
+  padding-bottom: 9px;
   font-size: 1.3em;
 }
 
@@ -2248,6 +2264,44 @@ body .application select {
   padding-right: 5px;
   margin: 0px;
   border-bottom: double 5px;
+}
+
+.talesoftheoldwest .actiontable {
+  width: 30%;
+  background-color: rgba(211, 211, 211, 0.459);
+}
+
+.talesoftheoldwest .ntable {
+  width: 99%;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.talesoftheoldwest .ntable tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.talesoftheoldwest .trhead {
+  text-align: center;
+  width: 45%;
+  font-weight: bold;
+}
+
+.talesoftheoldwest .tcol1 {
+  width: 2.5%;
+}
+
+.talesoftheoldwest .tcol2 {
+  width: 45%;
+  text-align: justify;
+  vertical-align: top;
+}
+
+.talesoftheoldwest .tcol3 {
+  width: 5%;
 }
 
 /* Styles limited to talesoftheoldwest sheets */
@@ -2435,7 +2489,7 @@ body .application select {
 .talesoftheoldwest .aLink {
   color: hsl(25.44, 100%, 20.15%);
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
   font-style: italic;
 }
 .talesoftheoldwest .resource-label {

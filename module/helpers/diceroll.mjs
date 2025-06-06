@@ -1,4 +1,4 @@
-import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.js';
+import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.mjs';
 import { prepModOutput } from './utils.mjs';
 
 export async function totowDiceButtons(html) {

@@ -1,3 +1,4 @@
+import { TOTWBuyOffDialog } from '../helpers/chatmodifier.mjs';
 import { rollAttrib } from '../helpers/diceroll.mjs';
 import * as argpUtils from '../helpers/utils.mjs';
 
@@ -58,6 +59,7 @@ export class totowItem extends Item {
 					}
 				}
 				switch (dataset.subtype) {
+					// TODO: if item knife or tomahawk check if it's being thrown or used in melee.
 					case 'shootin':
 						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
 						dataset.stunts = dataset.subtype;
