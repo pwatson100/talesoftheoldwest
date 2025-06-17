@@ -186,7 +186,7 @@
 	margin-bottom: 20px;
 	margin-left: 10px;
 	break-inside: avoid;
-	font-style: normal;
+	font-style: italic;
 	float: center;
 	border: 2px solid hsl(0, 0%, 0%);
 	font-family: $font-primary;
@@ -334,9 +334,9 @@
 	padding-bottom: 9px;
 	font-size: 1.3em;
 }
-::marker {
-	font-size: 1.5em;
-}
+// ::marker {
+// 	font-size: 1.5em;
+// }
 
 .ulindent {
 	margin-left: 40px;

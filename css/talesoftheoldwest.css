@@ -2051,7 +2051,7 @@ body .application select {
   -webkit-column-break-inside: avoid;
      -moz-column-break-inside: avoid;
           break-inside: avoid;
-  font-style: normal;
+  font-style: italic;
   float: center;
   border: 2px solid hsl(0, 0%, 0%);
   font-family: "fraunces-normal-400";
@@ -2212,10 +2212,6 @@ body .application select {
   list-style-type: square;
   padding-bottom: 9px;
   font-size: 1.3em;
-}
-
-::marker {
-  font-size: 1.5em;
 }
 
 .ulindent {
