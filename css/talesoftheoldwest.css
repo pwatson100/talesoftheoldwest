@@ -2300,6 +2300,12 @@ body .application select {
   width: 5%;
 }
 
+.upright-text {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
 /* Styles limited to talesoftheoldwest sheets */
 .talesoftheoldwest .item-form {
   font-family: "fraunces-normal-400";
