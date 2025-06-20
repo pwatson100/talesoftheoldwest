@@ -2113,6 +2113,7 @@ body .application select {
 .talesoftheoldwest p {
   font-family: "fraunces-normal-400";
   font-size: 1.3em;
+  padding-left: 10px;
 }
 
 .talesoftheoldwest h1 {
