@@ -18,7 +18,7 @@
 			<div class='item-name lCol4'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.action')}}</div>
 			<div class='item-name lCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.draw')}}</div>
 			<div class='item-name lCol6'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attack')}}</div>
-			<div class='item-name lCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</div>
+			<div class='item-name lCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.dam')}}</div>
 			<div class='item-name lCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</div>
 			<div class='item-name lCol9'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</div>
 			<div class='item-name lCol10'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</div>
@@ -80,12 +80,16 @@
 							/>
 						{{/if}}
 						<div class='item-controls lColB11'>
-							<a
-								class='item-control storeItem'
-								data-action='storeItem'
-								data-item-id='{{item._id}}'
-								data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
-							><i class='fa-solid fa-sack-dollar'></i> </a>
+							{{#if (eq actor.type 'pc')}}
+								{{#if (ne actor.system.remuda.remudaMounted 'false')}}
+									<a
+										class='item-control storeItem'
+										data-action='storeItem'
+										data-item-id='{{item._id}}'
+										data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
+									><i class='fa-solid fa-sack-dollar'></i> </a>
+								{{/if}}
+							{{/if}}
 							<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Weapon'}}'>
 								<i class='fas fa-edit'></i>
 							</a>

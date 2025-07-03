@@ -58,8 +58,11 @@ export class totowItem extends Item {
 						}
 					}
 				}
+				// TODO: if item knife or tomahawk check if it's being thrown or used in melee.
+				//  tested an it can be spoofed by:
+				// set dataset.subtype to 'fightin' and dataset.itemammo to 1
+
 				switch (dataset.subtype) {
-					// TODO: if item knife or tomahawk check if it's being thrown or used in melee.
 					case 'shootin':
 						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
 						dataset.stunts = dataset.subtype;

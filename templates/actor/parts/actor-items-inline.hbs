@@ -33,12 +33,17 @@
 					<div class='item-name TCol12' data-tooltip='{{item.system.description}}'>{{item.name}}</div>
 
 					<div class='item-controls TCol14'>
-						<a
-							class='item-control storeItem'
-							data-action='storeItem'
-							data-item-id='{{item._id}}'
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
-						><i class='fa-solid fa-sack-dollar'></i></a>
+						{{#if (eq actor.type 'pc')}}
+							{{#if (ne actor.system.remuda.remudaMounted 'false')}}
+								<a
+									class='item-control storeItem'
+									data-action='storeItem'
+									data-item-id='{{item._id}}'
+									data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'
+								><i class='fa-solid fa-sack-dollar'></i></a>
+							{{/if}}
+						{{/if}}
+
 						<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Item'}}'>
 							<i class='fas fa-edit'></i>
 						</a>

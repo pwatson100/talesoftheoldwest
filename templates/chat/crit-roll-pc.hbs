@@ -1,5 +1,5 @@
 <div class='chatBG'>
-	<h2 style='font-weight: bold'>
+	<h4 style='font-size: large; font-weight: bold'>
 		{{#if manCrit}}
 			{{localize 'TALESOFTHEOLDWEST.Criticals.manual'}}
 		{{else}}
@@ -8,37 +8,30 @@
 		{{localize 'TALESOFTHEOLDWEST.Criticals.criticalInjuryfor'}}:
 		<br />
 		{{actorname}}
-	</h2>
+	</h4>
 	{{! <h2 style='font-weight: bold'></h2> }}
 </div>
 <div class='chatBG critchat flexrow'>
 	<img src='{{img}}' style='flex: 0 0 32px; width: 32px; height: 32px; margin-right: 8px; object-fit: cover' />
 	<div style='margin: 0; padding: 0; line-height: 16px'>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.location'}}:</strong>
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup name}}</span>
-		</h4>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.injury'}}:</strong>
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup injury}}</span>
-		</h4>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.fatal'}}:</strong>
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup fatal}}</span>
-		</h4>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.healTime'}}:</strong>
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup healingtime}}</span>
-		</h4>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}:</strong>
-			<br />
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup imediateeffect}}</span>
-		</h4>
-		<h4>
-			<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}}:</strong>
-			<br />
-			<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{{keepMarkup longtermeffect}}}</span>
-		</h4>
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.location'}}:</strong>
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup name}}</span>
+		<br /><br />
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.injury'}}:</strong>
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup injury}}</span>
+		<br /><br />
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.fatal'}}:</strong>
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup fatal}}</span>
+		<br /><br />
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.healTime'}}:</strong>
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup healingtime}}</span>
+		<br /><br />
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}:</strong>
+		<br />
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{keepMarkup imediateeffect}}</span>
+		<br /><br />
+		<strong style='text-transform: uppercase'>{{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}}:</strong>
+		<br />
+		<span style='color: #0400ff; font-size: unset; font-weight: normal'>{{{keepMarkup longtermeffect}}}</span>
 	</div>
 </div>

@@ -65,10 +65,13 @@ Hooks.on('ready', () => {
 
 export async function FirstTimeSetup() {
 	const pack = game.packs.get(adventurePack);
+	const adventureId = pack.index.find((a) => a.name === adventurePackName)?._id;
+	const adventure = await pack.getDocument(adventureId);
 	await pack.getDocuments();
 	await pack.getName(adventurePackName).sheet._updateObject({}, new FormData());
 	await game.settings.set(moduleKey, 'imported', true);
 	await game.settings.set(moduleKey, 'migrationVersion', game.system.version);
+	await createThumbs(adventure);
 	ui.notifications.notify('Import Complete');
 	game.journal.getName(welcomeJournalEntry).show();
 }

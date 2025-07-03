@@ -383,10 +383,11 @@
 .talesoftheoldwest .pctable th,
 .talesoftheoldwest .pctable td {
 	border: 2px solid black;
+	padding: 0px;
 }
 .talesoftheoldwest .pctable td p {
 	font-size: 1.2em;
-	padding-right: 5px;
+	padding-right: 4px;
 	margin: 0px;
 }
 .talesoftheoldwest .stattable {
@@ -432,6 +433,10 @@
 	width: 5%;
 }
 
-.upright-text {
+.talesoftheoldwest .upright-text {
 	writing-mode: vertical-rl;
+}
+
+.talesoftheoldwest img {
+	box-shadow: none;
 }

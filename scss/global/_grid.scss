@@ -661,7 +661,7 @@
 	grid-template-areas: 'crit1 crit2 crit3 crit4';
 	// grid-template-rows: 3fr;
 	// padding: 3px;
-	grid-template-columns: 29px 200px 320px 26px;
+	grid-template-columns: 31px 161px 323px 45px;
 	align-items: center;
 }
 
@@ -675,13 +675,14 @@
 	text-align: left;
 	font-weight: bold;
 	padding-right: 8px;
+	font-size: 1em;
 }
 .crit3 {
 	grid-area: crit3;
 	text-align: left;
 	font-weight: bold;
 	padding-right: 8px;
-	align-items: left;
+	font-size: 0.7em;
 }
 .crit4 {
 	grid-area: crit4;
