@@ -567,7 +567,7 @@ body .application select {
   display: grid;
   grid-template-areas: "TCol1 TCol2 TCol3 TCol4 " "TCol11 TCol12 TCol13 TCol14 ";
   padding-bottom: 2px;
-  grid-template-columns: 28px 148px 25px 50px;
+  grid-template-columns: 28px 148px 5px 104px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -618,7 +618,7 @@ body .application select {
   display: grid;
   grid-template-areas: "QCol1 QCol2 QCol3 " "QCol11 QCol12 QCol13 ";
   padding-bottom: 2px;
-  grid-template-columns: 30px 260px 50px;
+  grid-template-columns: 30px 170px 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1546,6 +1546,41 @@ body .application select {
   padding: 3px;
 }
 
+.horse-quality-split {
+  display: grid;
+  grid-template-areas: "HQSplit11 HQSplit12";
+  grid-template-columns: 560px 320px;
+}
+
+.HQSplit11 {
+  grid-area: HQSplit11;
+  align-self: normal;
+  padding: 3px;
+}
+
+.HQSplit12 {
+  grid-area: HQSplit12;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.HQSplit21 {
+  grid-area: HQSplit21;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
+.HQSplit22 {
+  grid-area: HQSplit22;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
+}
+
 .sheet-animal-attributes {
   display: grid;
   -webkit-box-align: center;
@@ -1695,9 +1730,8 @@ body .application select {
 
 .quality-split {
   display: grid;
-  justify-self: center;
   grid-template-areas: "QualSplit11 QualSplit12" "QualSplit21 QualSplit22";
-  grid-template-columns: 210px 210px;
+  grid-template-columns: 280px 280px;
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
@@ -1708,7 +1742,7 @@ body .application select {
   text-align: center;
   justify-items: center;
   align-self: normal;
-  padding: 3px;
+  padding: 3px 3px 0px 3px;
 }
 
 .QualSplit12 {
@@ -1716,7 +1750,7 @@ body .application select {
   text-align: center;
   justify-items: center;
   align-self: normal;
-  padding: 3px;
+  padding: 3px 3px 0px 3px;
 }
 
 .QualSplit21 {
@@ -1724,7 +1758,7 @@ body .application select {
   text-align: center;
   justify-items: center;
   align-self: normal;
-  padding: 3px;
+  padding: 0px 3px 3px 3px;
 }
 
 .QualSplit22 {
@@ -1732,7 +1766,7 @@ body .application select {
   text-align: center;
   justify-items: center;
   align-self: normal;
-  padding: 3px;
+  padding: 0px 3px 3px 3px;
 }
 
 .grid-short-quality {

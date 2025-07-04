@@ -1,11 +1,12 @@
-<div class='compadre-split'>
-	<div class='heading CompSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}
+<div class='quality-split'>
+	<div class='heading QualSplit11'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.quality')}}</div>
+	<div class='QualSplit21'>
 		<ol class='items-list'>
 			<li class='item grid-talent-quality items-header'>
 				<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
 			</li>
 		</ol>
-		<div class='small-box' style='max-height: 100px;'>
+		<div class='small-box' style='max-height: 150px;'>
 			<ol class='items-list'>
 				{{#each animalquality as |item id|}}
 					{{#if (eq item.system.general.subtype 'quality')}}
@@ -30,14 +31,15 @@
 			</ol>
 		</div>
 	</div>
-	<div class='heading CompSplit12'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}
+	<div class='heading QualSplit12'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</div>
+	<div class='QualSplit22'>
 		<ol class='items-list'>
 			<li class='item grid-talent-quality items-header'>
 				<div class='item-name QCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
 
 			</li>
 		</ol>
-		<div class='small-box' style='max-height: 100px;'>
+		<div class='small-box' style='max-height: 150px;'>
 			<ol class='items-list'>
 				{{#each animalquality as |item id|}}
 					{{#if (eq item.system.general.subtype 'flaw')}}

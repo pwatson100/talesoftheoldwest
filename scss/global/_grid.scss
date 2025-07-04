@@ -163,7 +163,7 @@
 		'TCol11 TCol12 TCol13 TCol14 ';
 	padding-bottom: 2px;
 	//                      l1   l2  l3    l4
-	grid-template-columns: 28px 148px 25px 50px;
+	grid-template-columns: 28px 148px 5px 104px;
 	align-items: center;
 }
 .TCol1 {
@@ -207,7 +207,7 @@
 		'QCol11 QCol12 QCol13 ';
 	padding-bottom: 2px;
 	//                      l1   l2     l4
-	grid-template-columns: 30px 260px 50px;
+	grid-template-columns: 30px 170px 50px;
 	align-items: center;
 }
 .QCol1 {
@@ -1069,6 +1069,39 @@
 	align-self: normal;
 	padding: 3px;
 }
+.horse-quality-split {
+	display: grid;
+	// width: 800px;
+	// justify-self: center;
+	grid-template-areas: 'HQSplit11 HQSplit12';
+	// 'HQSplit21 HQSplit22';
+	grid-template-columns: 560px 320px;
+}
+.HQSplit11 {
+	grid-area: HQSplit11;
+	align-self: normal;
+	padding: 3px;
+}
+.HQSplit12 {
+	grid-area: HQSplit12;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+.HQSplit21 {
+	grid-area: HQSplit21;
+	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
+.HQSplit22 {
+	grid-area: HQSplit22;
+	text-align: center;
+	justify-items: center;
+	align-self: normal;
+	padding: 3px;
+}
 
 .sheet-animal-attributes {
 	display: grid;
@@ -1208,11 +1241,11 @@
 .quality-split {
 	display: grid;
 	// width: 800px;
-	justify-self: center;
+	// justify-self: center;
 	grid-template-areas:
 		'QualSplit11 QualSplit12'
 		'QualSplit21 QualSplit22';
-	grid-template-columns: 210px 210px;
+	grid-template-columns: 280px 280px;
 	column-gap: 5px;
 }
 .QualSplit11 {
@@ -1220,28 +1253,28 @@
 	text-align: center;
 	justify-items: center;
 	align-self: normal;
-	padding: 3px;
+	padding: 3px 3px 0px 3px;
 }
 .QualSplit12 {
 	grid-area: QualSplit12;
 	text-align: center;
 	justify-items: center;
 	align-self: normal;
-	padding: 3px;
+	padding: 3px 3px 0px 3px;
 }
 .QualSplit21 {
 	grid-area: QualSplit21;
 	text-align: center;
 	justify-items: center;
 	align-self: normal;
-	padding: 3px;
+	padding: 0px 3px 3px 3px;
 }
 .QualSplit22 {
 	grid-area: QualSplit22;
 	text-align: center;
 	justify-items: center;
 	align-self: normal;
-	padding: 3px;
+	padding: 0px 3px 3px 3px;
 }
 
 .grid-short-quality {

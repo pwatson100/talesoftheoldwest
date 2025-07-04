@@ -8,21 +8,21 @@ export default class totowANIMAL extends totowActorBase {
 
 		schema.attributes = new fields.SchemaField({
 			grit: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
 			quick: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
 			cunning: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 6 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
 				label: new fields.StringField({ required: true, blank: true }),
 			}),
 		});
@@ -30,7 +30,7 @@ export default class totowANIMAL extends totowActorBase {
 			resilience: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				label: new fields.StringField({ required: true, blank: true }),
 				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				upper: new fields.StringField({ required: true, blank: true }),
@@ -39,7 +39,7 @@ export default class totowANIMAL extends totowActorBase {
 			fightin: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				label: new fields.StringField({ required: true, blank: true }),
 				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				upper: new fields.StringField({ required: true, blank: true }),
@@ -48,7 +48,7 @@ export default class totowANIMAL extends totowActorBase {
 			move: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				label: new fields.StringField({ required: true, blank: true }),
 				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				upper: new fields.StringField({ required: true, blank: true }),
@@ -57,7 +57,7 @@ export default class totowANIMAL extends totowActorBase {
 			hawkeye: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
 				label: new fields.StringField({ required: true, blank: true }),
 				total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
 				upper: new fields.StringField({ required: true, blank: true }),

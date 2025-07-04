@@ -422,25 +422,6 @@
 					<div class="aresilience2" style="text-align: center">
 						<input class="statnum" type='number'  name="system.abilities.resilience.value" value="{{system.abilities.resilience.value}}" data-dtype="Number" />
 					</div>
-					<div class="amove heading">
-						<label
-							class="resource-label rollable"
-							for="system.abilities.move.value"
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-							data-roll-type="ability"
-							data-action="roll"
-							data-value="{{system.abilities.move.value}}"
-							data-label="{{system.abilities.move.label}}"
-							data-stunts="{{system.abilities.move.label}}"
-							data-mod="{{system.abilities.move.mod}}"
-							data-attr="{{system.abilities.move.attr}}"
-							data-speaker='{{actor.id}}'
-							>{{system.abilities.move.upper}}</label
-						>
-					</div>
-					<div class="amove2" style="text-align: center">
-						<input class="statnum" type='number'  name="system.abilities.move.value" value="{{system.abilities.move.value}}" data-dtype="Number" />
-					</div>
 					<div class="afightin heading" >
 						<label
 							class="resource-label rollable"
@@ -461,10 +442,10 @@
 						<input class="statnum" type='number'  name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype="Number" />
 					</div>
 				</div>
-				<div class="compadre-split" style="height: 360px;">
-					<div class="CompSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/quality-options.hbs"}}</div>
-					<div class="CompSplit12">
-						<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
+				<div class="horse-quality-split" style="height: 243px;">
+					<div class="HQSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs"}}</div>
+					<div class="HQSplit12">
+						<div class='heading' style="padding-top: 3px;">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
 						{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}</div>
 						</div>
 
@@ -528,12 +509,12 @@
 						<input class="statnum" type='number'  name="system.abilities.hawkeye.value" value="{{system.abilities.hawkeye.value}}" data-dtype="Number" />
 					</div>
 				</div>
-											<div style="justify-self: anchor-center">
+				<div style="justify-self: anchor-center">
 					<label for="system.general.attacks" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attacks')}}</label>
 				</div>
 				<div class="div-border" style="height: 200px; width: 850px; justify-self: anchor-center; margin-bottom:50px">
 					{{#if editable}}
-					<prose-mirror name="system.general.attacks" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.general.attacks}}" toggled="true">
+					<prose-mirror name="system.general.attacks" style="height: -webkit-fill-available;" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.general.attacks}}" toggled="true">
 						{{{enrichedAttacks}}}
 					</prose-mirror>
 					{{else}} 
@@ -544,9 +525,9 @@
 							<div style="justify-self: anchor-center">
 					<label for="system.biography" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.description')}}</label>
 				</div>
-							<div class="div-border" style="height: 130px; width: 850px; justify-self: anchor-center">
+							<div class="div-border" style="height: 277px; width: 850px; justify-self: anchor-center">
 					{{#if editable}}
-					<prose-mirror name="system.biography" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
+					<prose-mirror name="system.biography" style="height: -webkit-fill-available;"  data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" toggled="true">
 						{{{enrichedBiography}}}
 					</prose-mirror>
 					{{else}} 
