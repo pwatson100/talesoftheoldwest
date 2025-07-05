@@ -161,7 +161,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				{
 					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
 						// TODO: find Sutable Critical Injury icon.
-						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/snake.webp' });
+						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/rattler.webp' });
 					}
 				}
 				break;

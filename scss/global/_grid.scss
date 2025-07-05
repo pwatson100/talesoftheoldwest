@@ -163,7 +163,7 @@
 		'TCol11 TCol12 TCol13 TCol14 ';
 	padding-bottom: 2px;
 	//                      l1   l2  l3    l4
-	grid-template-columns: 28px 148px 5px 104px;
+	grid-template-columns: 28px 167px 5px 88px;
 	align-items: center;
 }
 .TCol1 {
@@ -1071,10 +1071,7 @@
 }
 .horse-quality-split {
 	display: grid;
-	// width: 800px;
-	// justify-self: center;
 	grid-template-areas: 'HQSplit11 HQSplit12';
-	// 'HQSplit21 HQSplit22';
 	grid-template-columns: 560px 320px;
 }
 .HQSplit11 {
@@ -1303,4 +1300,54 @@
 	grid-area: SQol12;
 	text-align: left;
 	font-weight: bold;
+}
+// 448
+.sheet-weapon-stats {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-template-areas:
+		'sws11 sws12 sws13 sws14 '
+		'sws21 sws22 sws23 sws24 ';
+	grid-template-columns: 133px 129px 95px 63px;
+	row-gap: 3px;
+}
+.sws11 {
+	grid-area: sws11;
+}
+
+.sws12 {
+	grid-area: sws12;
+}
+.sws13 {
+	grid-area: sws13;
+}
+.sws14 {
+	grid-area: sws14;
+}
+.sws15 {
+	grid-area: sws15;
+}
+.sws16 {
+	grid-area: sws16;
+}
+
+.sws21 {
+	grid-area: sws21;
+}
+.sws22 {
+	grid-area: sws22;
+	justify-self: center;
+}
+.sws23 {
+	grid-area: sws23;
+}
+.sws24 {
+	grid-area: sws24;
+}
+.sws25 {
+	grid-area: sws25;
+}
+.sws26 {
+	grid-area: sws26;
 }

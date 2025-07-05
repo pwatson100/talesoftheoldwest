@@ -14,43 +14,42 @@
 				</select>
 			{{/if}}
 		</div>
-		<div class='resource grid grid-4col'>
+		<div class='sheet-weapon-stats'>
 			{{#if (eq system.subtype 'shootin')}}
-				<label for='system.bonusdraw' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.bonusDraw')}}</label>
+				<label for='system.bonusdraw' class='sws11 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.bonusDraw')}}</label>
+				<input class='sws21 statnum' type='number' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
 			{{/if}}
-			<label for='system.attackbonus' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attackBonus')}}</label>
-			<label for='system.damage' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</label>
-			<label for='system.crit' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</label>
-			{{#if (eq system.subtype 'fightin')}}
-				<label for='system.range' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
-				<select id='system.range' name='system.range'>
-					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
-				</select>
-			{{/if}}
-		</div>
-		<div class='resource grid grid-4col'>
-			{{#if (eq system.subtype 'shootin')}}
-				<input class='statnum' type='number' name='system.bonusdraw' value='{{system.bonusdraw}}' data-dtype='Number' />
-			{{/if}}
-			<input class='statnum' type='number' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
-			<input class='statnum' type='number' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
-			<input class='statnum' type='number' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
-		</div>
-		{{#if (eq system.subtype 'shootin')}}
-			<div class='resource grid grid-4col'>
-				<label for='system.range' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
-				<label for='system.ammo' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</label>
-			</div>
-			<div class='resource grid grid-4col'>
-				<select id='system.range' name='system.range'>
-					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
-				</select>
-				<input class='statnum' type='number' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
-			</div>
-		{{/if}}
 
-		<hr />
+			{{#if (eq system.subtype 'fightin')}}
+				<label for='system.range' class='sws11 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
+				<select class='sws21' id='system.range' name='system.range'>
+					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
+				</select>
+			{{/if}}
+
+			<label for='system.attackbonus' class='sws12 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.attackBonus')}}</label>
+			<input class='sws22 statnum' type='number' name='system.attackbonus' value='{{system.attackbonus}}' data-dtype='Number' />
+
+			<label for='system.damage' class='sws13 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.damage')}}</label>
+			<input class='sws23 statnum' type='number' name='system.damage' value='{{system.damage}}' data-dtype='Number' />
+
+			<label for='system.crit' class='sws14 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}}</label>
+			<input class='sws24 statnum' type='number' name='system.crit' value='{{system.crit}}' data-dtype='Number' />
+		</div>
+
+		<div class='sheet-weapon-stats' style='margin-top:10px;'>
+			{{#if (eq system.subtype 'shootin')}}
+				<label for='system.range' class='sws12 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</label>
+				<select class='sws22' id='system.range' name='system.range'>
+					{{selectOptions config.range_list selected=system.range labelAttr='label' localize=true}}
+				</select>
+
+				<label for='system.ammo' class='sws13 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</label>
+				<input class='sws23 statnum' type='number' name='system.ammo' value='{{system.ammo}}' data-dtype='Number' />
+			{{/if}}
+		</div>
 	{{/if}}
+
 	{{#if (eq item.type 'crit')}}
 		<div class='resources grid-weapon'>
 			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.location'}}</div>
@@ -80,7 +79,6 @@
 				<input type='text' class='' name='system.longtermeffect' value='{{removeMarkup system.longtermeffect}} ' data-dtype='String' />
 			</span>
 		</div>
-		<hr />
 
 	{{/if}}
 	{{#if (eq item.type 'weaponquality')}}
@@ -176,7 +174,7 @@
 	<div style='margin-top: 10px;'>
 		<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
 		{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-		<div class='div-border'>
+		<div class='div-border' style='height:235px'>
 			{{#if editable}}
 				<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
 					{{{enrichedDescription}}}
