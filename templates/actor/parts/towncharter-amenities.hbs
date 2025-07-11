@@ -1,0 +1,186 @@
+<section class='tab amenities {{tab.cssClass}}' data-group='primary' data-tab='amenities'>
+	<div class='grid-6col' style='margin-top: 20px;'>
+		<div class='a6Col11'>
+
+			<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.farming')}}</div>
+			<ol class='items-list' style='width: 100%;'>
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Farming')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol>
+		</div>
+		<div class='a6Col12'>
+			<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.mercantile')}}</div>
+
+			<ol class='items-list' style='width: 100%;'>
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Mercantile')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls TCol14'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol></div>
+		<div class='a6Col13'>
+			<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.natural')}}</div>
+
+			<ol class='items-list' style='width: 100%;'>
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Natural')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls TCol14'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol></div>
+		<div class='a6Col21'>
+			<ol class='items-list' style='width: 100%;'>
+				<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.law')}}</div>
+
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Law')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls TCol14'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol></div>
+		<div class='a6Col22'>
+			<ol class='items-list' style='width: 100%;'>
+				<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.civic')}}</div>
+
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Civic')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls TCol14'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol></div>
+		<div class='a6Col23'>
+			<ol class='items-list' style='width: 100%;'>
+				<div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.welfare')}}</div>
+
+				{{#each amenities as |item id|}}
+					{{#if (eq item.system.subtype 'Welfare')}}
+						<li class='item' id='rcorners' data-item-id='{{item.id}}' data-drag='true' data-document-class='Amenities'>
+							<span class='' style='font-weight: bolder'>{{item.name}}:</span>
+							<span class='resource-label' style='font-weight: bolder'>
+								{{localize 'TALESOFTHEOLDWEST.General.completed'}}
+								<input class='AHCol13' style='vertical-align: middle' name='item.system.completed' type='checkbox' disabled='true' {{checked item.system.completed}} />
+							</span>
+							<br />
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}
+								<input type='number' class='' style='width: 70px;' value='{{item.system.year}}' data-dtype='Number' disabled /></span>
+							<span class='resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</span>
+							<input type='string' class='' style='width: 60px;font-size:larger' value='{{item.system.season}}' data-dtype='String' disabled />
+
+							<div class='item-controls TCol14'>
+								<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Amenities'}}'>
+									<i class='fas fa-edit'></i>
+								</a>
+								<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Amenities'}}'>
+									<i class='fas fa-trash'></i>
+								</a>
+							</div>
+						</li>
+					{{/if}}
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+</section>

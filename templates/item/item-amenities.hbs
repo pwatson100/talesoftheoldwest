@@ -1,0 +1,59 @@
+<section class='tab amenities {{tab.cssClass}}' data-group='primary' data-tab='amenities'>
+	<div class='resources grid-weapon'>
+		<h3 class='wItem1 resource-label'>{{localize 'TALESOFTHEOLDWEST.Type'}}</h3>
+		<div class='wItem2'>
+			<select class='select-css' name='system.rank' data-dtype='{{system.rank}}'>
+				{{selectOptions amenity_rank_list selected=system.rank labelAttr='label' localize=true}}
+			</select>
+		</div>
+		<h3 class='wItem3 resource-label'>{{localize 'TALESOFTHEOLDWEST.completed'}}</h3>
+		<div class='wItem4'>
+			<input name='system.completed' type='checkbox' {{checked system.completed}} />
+		</div>
+	</div>
+
+	<div class='tab general' data-group='primary' data-tab='general'>
+		<h2 class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Tabs.Modifiers'}}</h2>
+		<div class='grid-2col'>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.farming' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.farming'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.farming' value='{{system.modifiers.farming}}' data-dtype='Number' />
+			</div>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.mercantile' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.mercantile'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.mercantile' value='{{system.modifiers.mercantile}}' data-dtype='Number' />
+			</div>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.natural' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.natural'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.natural' value='{{system.modifiers.natural}}' data-dtype='Number' />
+			</div>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.law' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.law'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.law' value='{{system.modifiers.law}}' data-dtype='Number' />
+			</div>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.civic' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.civic'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.civic' value='{{system.modifiers.civic}}' data-dtype='Number' />
+			</div>
+			<div class='flexrow flex-group-center'>
+				<label for='system.modifiers.welfare' class='resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.welfare'}}</label>
+				<input type='text' class='maxboxsize' name='system.modifiers.welfare' value='{{system.modifiers.welfare}}' data-dtype='Number' />
+			</div>
+		</div>
+	</div>
+
+	{{! Notes Tab }}
+	<div style='margin-top: 10px;'>
+		<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
+		{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+		<div class='div-border' style='height:235px'>
+			{{#if editable}}
+				<prose-mirror name='system.description' data-document-u-u-i-d='{{item.uuid}}' value='{{system.description}}' toggled='true'>
+					{{{enrichedDescription}}}
+				</prose-mirror>
+			{{else}}
+				{{{enrichedDescription}}}
+			{{/if}}
+		</div>
+	</div>
+</section>

@@ -58,7 +58,7 @@ export class totowItem extends Item {
 						}
 					}
 				}
-				// TODO: if item knife or tomahawk check if it's being thrown or used in melee.
+				// TODO  if item knife or tomahawk check if it's being thrown or used in melee.
 				//  tested an it can be spoofed by:
 				// set dataset.subtype to 'fightin' and dataset.itemammo to 1
 
@@ -187,8 +187,7 @@ export class totowItem extends Item {
 			dataset.fightmodifierMod = Number(response.modifier);
 			dataset.baseMod = Number(dataset.mod);
 
-			dataset.mod =
-				Number(dataset.mod) + Number(response.prone || 0) + Number(response.alloutattack || 0) + Number(response.calledstrike || 0) + Number(response.modifier);
+			dataset.mod = Number(dataset.mod) + Number(response.prone || 0) + Number(response.alloutattack || 0) + Number(response.calledstrike || 0) + Number(response.modifier);
 			const result = await rollAttrib(dataset, rollData, actor);
 			return result;
 		}

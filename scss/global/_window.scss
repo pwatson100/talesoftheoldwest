@@ -199,3 +199,9 @@ body {
 	color: hsl(32deg 89.24% 41.19%);
 	text-shadow: 5px 3px 5px hsl(32deg 93.38% 13.51%);
 }
+
+#overlay {
+	height: 100%;
+	background-color: hsl(120deg 64% 43% / 30%); /* Black background with opacity */
+	z-index: 2;
+}

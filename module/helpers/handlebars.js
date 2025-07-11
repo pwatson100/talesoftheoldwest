@@ -30,17 +30,21 @@ function registerHandlebarsHelpers() {
 		}
 		return result;
 	});
+
 	Handlebars.registerHelper('keepMarkup', function (text) {
 		return new Handlebars.SafeString(text);
 	});
+
 	Handlebars.registerHelper('removeMarkup', function (text) {
 		const markup = /<(.*?)>/gi;
 		return new Handlebars.SafeString(text.replace(markup, ''));
 	});
+
 	Handlebars.registerHelper('ifSetting', function (v1, options) {
 		if (game.settings.get('talesoftheoldwest', v1)) return options.fn(this);
 		else return options.inverse(this);
 	});
+
 	Handlebars.registerHelper('striptags', function (txt) {
 		// exit now if text is undefined
 		if (typeof txt == 'undefined') return;
@@ -49,6 +53,7 @@ function registerHandlebarsHelpers() {
 		// replacing the text
 		return txt.replace(regexp, '');
 	});
+
 	Handlebars.registerHelper('addstats', function (v1, v2) {
 		return v1 + v2;
 	});

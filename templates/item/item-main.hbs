@@ -171,6 +171,51 @@
 			</div>
 		{{/if}}
 	{{/if}}
+	{{#if (eq item.type 'amenities')}}
+		<div class='grid-amenities-header'>
+
+			<label class='AHCol11 resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.rank'}}</label>
+			<div class='AHCol12'>
+				<select class='select-css' name='system.rank' data-dtype='{{system.rank}}'>
+					{{selectOptions config.amenity_rank_list selected=system.rank labelAttr='label' localize=true}}
+				</select>
+			</div>
+			<label class='AHCol13 resource-label'>{{localize 'TALESOFTHEOLDWEST.General.completed'}}</label>
+			<div class='AHCol14'>
+				<input name='system.completed' type='checkbox' {{checked system.completed}} />
+			</div>
+			<label class='AHCol21 resource-label'>{{localize 'TALESOFTHEOLDWEST.General.year'}}</label>
+			<input type='number' class='AHCol22' style='width: 60px;' name='system.year' value='{{system.year}}' data-dtype='Number' />
+
+			<label class='AHCol23 resource-label'>{{localize 'TALESOFTHEOLDWEST.General.season'}}</label>
+			<select class='AHCol24 select-css' name='system.season' data-dtype='{{system.season}}'>
+				{{selectOptions config.season_list selected=system.season labelAttr='label' localize=true}}
+			</select>
+
+			<label class='AHCol31 resource-label' style='text-align:center;font-size:larger'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.Tabs.Modifiers')}}</label>
+		</div>
+
+		<div class='grid-amenities-modifiers' style='margin-left:20px'>
+			<label for='system.modifiers.farming' class='AMCol11 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.farming')}}</label>
+			<input type='number' class='AMCol12 statnum' name='system.modifiers.farming' value='{{system.modifiers.farming}}' data-dtype='Number' />
+
+			<label for='system.modifiers.mercantile' class='AMCol13 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.mercantile')}}</label>
+			<input type='number' class='AMCol14 statnum' name='system.modifiers.mercantile' value='{{system.modifiers.mercantile}}' data-dtype='Number' />
+
+			<label for='system.modifiers.natural' class='AMCol21 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.natural')}}</label>
+			<input type='number' class='AMCol22 statnum' name='system.modifiers.natural' value='{{system.modifiers.natural}}' data-dtype='Number' />
+
+			<label for='system.modifiers.law' class='AMCol23 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.law')}}</label>
+			<input type='number' class='AMCol24 statnum' name='system.modifiers.law' value='{{system.modifiers.law}}' data-dtype='Number' />
+
+			<label for='system.modifiers.civic' class='AMCol31 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.civic')}}</label>
+			<input type='number' class='AMCol32 statnum' name='system.modifiers.civic' value='{{system.modifiers.civic}}' data-dtype='Number' />
+
+			<label for='system.modifiers.welfare' class='AMCol33 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.welfare')}}</label>
+			<input type='number' class='AMCol34 statnum' name='system.modifiers.welfare' value='{{system.modifiers.welfare}}' data-dtype='Number' />
+		</div>
+
+	{{/if}}
 	<div style='margin-top: 10px;'>
 		<label for='system.weapon' class='resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.impact')}}</label>
 		{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}

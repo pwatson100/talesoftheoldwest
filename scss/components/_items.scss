@@ -96,3 +96,13 @@
 	flex: 0 0 200px;
 	padding: 0 8px;
 }
+
+#rcorners {
+	border-radius: 15px;
+	background-color: #c7d9c4;
+	background-position: left top;
+	padding: 6px;
+	box-shadow: -10px 9px 9px #666666;
+	border: 3px black;
+	border-style: double;
+}

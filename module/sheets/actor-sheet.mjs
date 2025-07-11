@@ -19,8 +19,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	static DEFAULT_OPTIONS = {
 		classes: ['actor', 'talesoftheoldwest'],
 		position: {
-			width: 950,
-			height: 886,
+			width: 1015,
+			height: 890,
 		},
 		window: {
 			resizable: true,
@@ -37,6 +37,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			changeFaith: { handler: this._changeFaith, buttons: [0, 2] },
 			changeXp: { handler: this._changeXp, buttons: [0, 2] },
 			changeDamage: { handler: this._changeDamage, buttons: [0, 2] },
+			changeAspect: { handler: this._changeaspect, buttons: [0, 2] },
+			changeSP: { handler: this._changeSP, buttons: [0, 2] },
 			storeItem: { handler: this._storeItem, buttons: [0, 2] },
 			remudaMount: { handler: this._onRemudaMount, buttons: [0, 2] },
 			remudaView: { handler: this._onRemudaView, buttons: [0, 2] },
@@ -58,9 +60,17 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			template: 'systems/talesoftheoldwest/templates/actor/header.hbs',
 			scrollable: [''],
 		},
+		tcheader: {
+			template: 'systems/talesoftheoldwest/templates/actor/tcheader.hbs',
+			scrollable: [''],
+		},
 		tabs: {
 			// Foundry-provided generic template
 			template: 'templates/generic/tab-navigation.hbs',
+			scrollable: [''],
+		},
+		towncharter: {
+			template: 'systems/talesoftheoldwest/templates/actor/towncharter.hbs',
 			scrollable: [''],
 		},
 		skills: {
@@ -123,6 +133,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			template: 'systems/talesoftheoldwest/templates/actor/parts/actor-horse-quality-options.hbs',
 			scrollable: [''],
 		},
+		amenities: {
+			template: 'systems/talesoftheoldwest/templates/actor/parts/towncharter-amenities.hbs',
+			scrollable: [''],
+		},
 	};
 
 	/** @override */
@@ -142,6 +156,9 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				break;
 			case 'animal':
 				options.parts.push('skills');
+				break;
+			case 'towncharter':
+				options.parts = ['tcheader', 'tabs', 'towncharter', 'amenities'];
 				break;
 		}
 	}
@@ -170,14 +187,20 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// // Offloading context prep to a helper function
 
 		// Prepare character data and items.
-
-		if (context.actor.type === 'pc') {
-			this._prepareCompadres(context);
-			this._prepareRemuda(context);
+		if (context.actor.type === 'towncharter') {
+			if (this.document.img == 'icons/svg/mystery-man.svg' && this.document.img != this.img) {
+				this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/tied-scroll.webp' });
+			}
+			this._prepareAmenities(context);
+			this._prepareItems(context);
+		} else {
+			if (context.actor.type === 'pc') {
+				this._prepareCompadres(context);
+				this._prepareRemuda(context);
+			}
+			this._prepareItems(context);
+			this._prepareCharacterData(context);
 		}
-		this._prepareItems(context);
-		this._prepareCharacterData(context);
-
 		logger.debug('Actor Sheet derived data:', context);
 		return context;
 	}
@@ -226,6 +249,18 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				}
 				break;
 			case 'gear':
+			case 'towncharter':
+				context.tab = context.tabs[partId];
+				// context.enrichedHorseNotes = await TextEditor.enrichHTML(this.actor.system.horse.horseNotes, {
+				// 	// Whether to show secret blocks in the finished html
+				// 	secrets: this.document.isOwner,
+				// 	// Data to fill in for inline rolls
+				// 	rollData: this.actor.getRollData(),
+				// 	// Relative UUID resolution
+				// 	relativeTo: this.actor,
+				// });
+				break;
+			case 'amenities':
 				context.tab = context.tabs[partId];
 				// context.enrichedHorseNotes = await TextEditor.enrichHTML(this.actor.system.horse.horseNotes, {
 				// 	// Whether to show secret blocks in the finished html
@@ -284,7 +319,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// If you have sub-tabs this is necessary to change
 		const tabGroup = 'primary';
 		// Default tab for first time it's rendered this session
-		if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'skills';
+		if (this.actor.type === 'towncharter') {
+			if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'towncharter';
+		} else {
+			if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'skills';
+		}
 		return parts.reduce((tabs, partId) => {
 			const tab = {
 				cssClass: '',
@@ -298,11 +337,20 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			};
 			switch (partId) {
 				case 'header':
+				case 'tcheader':
 				case 'tabs':
 					return tabs;
 				case 'skills':
 					tab.id = 'skills';
 					tab.label += 'Skills';
+					break;
+				case 'towncharter':
+					tab.id = 'towncharter';
+					tab.label += 'TownCharter';
+					break;
+				case 'amenities':
+					tab.id = 'amenities';
+					tab.label += 'Amenities';
 					break;
 				case 'gear':
 					tab.id = 'gear';
@@ -348,7 +396,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		const animalquality = [];
 		const critInj = [];
 		const itemMods = [];
-		const remudaMods = [];
+		const amenities = [];
 		// Iterate through items, allocating to containers
 		for (let i of this.document.items) {
 			switch (i.type) {
@@ -370,6 +418,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				case 'animalquality':
 					animalquality.push(i);
 					_findmods(i, itemMods);
+					break;
+				case 'amenities':
+					amenities.push(i);
+					// _findmods(i, itemMods);
 					break;
 
 				default:
@@ -397,6 +449,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		context.system.critInj = critInj.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.talent = talent.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.animalquality = animalquality.sort((a, b) => (a.sort || 0) - (b.sort || 0));
+		context.amenities = amenities.sort((a, b) => (a.sort || 0) - (b.sort || 0));
 		context.system.itemMods = Object.groupBy(itemMods, ({ name }) => name);
 
 		async function _findmods(i, itemMods) {
@@ -710,6 +763,58 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		return sheetData;
 	}
 
+	async _prepareAmenities(sheetData) {
+		const aData = this.actor.system;
+		var attrMod = {
+			farming: 0,
+			mercantile: 0,
+			natural: 0,
+			law: 0,
+			civic: 0,
+			welfare: 0,
+		};
+
+		for (let [skey, Attrib] of Object.entries(this.actor.items.contents)) {
+			if (Attrib.type === 'amenities' && Attrib.system.completed) {
+				let base = Attrib.system.modifiers;
+				for (let [bkey, aAttrib] of Object.entries(base)) {
+					switch (bkey) {
+						case 'farming':
+							attrMod.farming = attrMod.farming += Number(aAttrib);
+							break;
+						case 'mercantile':
+							attrMod.mercantile = attrMod.mercantile += Number(aAttrib);
+							break;
+						case 'natural':
+							attrMod.natural = attrMod.natural += Number(aAttrib);
+							break;
+						case 'law':
+							attrMod.law = attrMod.law += Number(aAttrib);
+							break;
+						case 'civic':
+							attrMod.civic = attrMod.civic += Number(aAttrib);
+							break;
+						case 'welfare':
+							attrMod.welfare = attrMod.welfare += Number(aAttrib);
+							break;
+
+						default:
+							break;
+					}
+				}
+			}
+		}
+
+		await this.actor.update({
+			'system.aspects.farming.mod': (aData.aspects.farming.mod = parseInt(attrMod.farming || 0)),
+			'system.aspects.mercantile.mod': (aData.aspects.mercantile.mod = parseInt(attrMod.mercantile || 0)),
+			'system.aspects.natural.mod': (aData.aspects.natural.mod = parseInt(attrMod.natural || 0)),
+			'system.aspects.law.mod': (aData.aspects.law.mod = parseInt(attrMod.law || 0)),
+			'system.aspects.civic.mod': (aData.aspects.civic.mod = parseInt(attrMod.civic || 0)),
+			'system.aspects.welfare.mod': (aData.aspects.welfare.mod = parseInt(attrMod.welfare || 0)),
+		});
+	}
+
 	/**
 	 * Actions performed after any render of the Application.
 	 * Post-render steps are not awaited by the render process.
@@ -1015,6 +1120,28 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			return await this.actor.update({ ['system.general.xp.value']: xp.value + 1 });
 		}
 	}
+	static async _changeSP(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		let sp = this.actor.system.general.settlementponts;
+		if (event.button === 2) {
+			// left click
+			if (sp.value > 0) {
+				if (sp.value === 0) {
+					return;
+				}
+				return await this.actor.update({ ['system.general.settlementponts.value']: sp.value - 1 });
+			}
+		} else {
+			// right click
+			if (sp.value >= 10) {
+				return;
+			}
+			return await this.actor.update({ ['system.general.settlementponts.value']: sp.value + 1 });
+		}
+	}
+
 	static async _changeDamage(event, target) {
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
@@ -1035,6 +1162,29 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			if (damage.max) {
 				return await this.actor.update({ [field]: damage.value + 1 });
 			}
+		}
+	}
+
+	static async _changeaspect(event, target) {
+		event.preventDefault(); // Don't open context menu
+		event.stopPropagation(); // Don't trigger other events
+		if (event.detail > 1) return; // Ignore repeated clicks
+		let targetAspect = target.dataset.aspect;
+		let aspect = this.actor.system.aspects[targetAspect];
+		if (event.button === 2) {
+			// left click
+			if (aspect.value > 0) {
+				if (aspect.value === 0) {
+					return;
+				}
+				return await this.actor.update({ [`system.aspects.${targetAspect}.value`]: aspect.value - 1 });
+			}
+		} else {
+			// right click
+			if (aspect.value >= 30) {
+				return;
+			}
+			return await this.actor.update({ [`system.aspects.${targetAspect}.value`]: aspect.value + 1 });
 		}
 	}
 
@@ -1072,7 +1222,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			docRow.dataset.documentClass === 'Item' ||
 			docRow.dataset.documentClass === 'Talent' ||
 			docRow.dataset.documentClass === 'Weapon' ||
-			docRow.dataset.documentClass === 'Critical Injury'
+			docRow.dataset.documentClass === 'Critical Injury' ||
+			docRow.dataset.documentClass === 'Amenities'
 		) {
 			return this.actor.items.get(docRow.dataset.itemId);
 		} else if (docRow.dataset.documentClass === 'ActiveEffect') {
@@ -1323,6 +1474,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			pc: ['item', 'weapon', 'talent', 'critical-injury', 'npc', 'animalquality'],
 			npc: ['item', 'weapon', 'talent', 'critical-injury'],
 			animal: ['item', 'weapon', 'animalquality'],
+			towncharter: ['amenities'],
 			// vehicles: ['item', 'weapon', 'armor'],
 			// territory: ['planet-system'],
 		};
@@ -1468,12 +1620,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		}
 		function onBlur(e) {
 			let value = localStringToNumber(e.target.value);
-			if (game.settings.get('talesoftheoldwest', 'dollar'))
-				e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
-			else
-				e.target.value = value
-					? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
-					: '0.00';
+			if (game.settings.get('talesoftheoldwest', 'dollar')) e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
+			else e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value) : '0.00';
 		}
 	}
 

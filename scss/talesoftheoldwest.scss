@@ -13,10 +13,10 @@
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
-@import 'global/_module-css.scss';
+@import 'global/module-css';
 
-/* Styles limited to talesoftheoldwest sheets */
 .talesoftheoldwest {
+	/* Styles limited to talesoftheoldwest sheets */
 	@import 'components/forms';
 	@import 'components/resource';
 	@import 'components/items';

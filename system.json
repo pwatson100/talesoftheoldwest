@@ -7,7 +7,7 @@
 			"name": "Paul Watson"
 		}
 	],
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"compatibility": {
 		"minimum": "12",
 		"verified": "13"
@@ -18,7 +18,8 @@
 		"Actor": {
 			"pc": { "htmlFields": ["biography", "horseNotes"] },
 			"npc": { "htmlFields": ["biography"] },
-			"animal": { "htmlFields": ["biography", "attacks"] }
+			"animal": { "htmlFields": ["biography", "attacks"] },
+			"towncharter": { "htmlFields": ["biography"] }
 		},
 		"Item": {
 			"item": { "htmlFields": ["description"] },
@@ -26,13 +27,14 @@
 			"talent": { "htmlFields": ["description", "basic", "advanced"] },
 			"crit": { "htmlFields": ["description"] },
 			"animalquality": { "htmlFields": ["description"] },
-			"weaponquality": { "htmlFields": ["description", "impact"] }
+			"weaponquality": { "htmlFields": ["description", "impact"] },
+			"amenities": { "htmlFields": ["description"] }
 		}
 	},
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "html", "mjs", "js", "hbs", "json"],
-			"paths": ["./css/talesoftheoldwest-min.css", "css", "lang", "templates"]
+			"paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
 		}
 	},
 	"url": "Replace this with a link to your public repository",

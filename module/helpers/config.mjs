@@ -295,6 +295,28 @@ TALESOFTHEOLDWEST.animal_quality_modifier_state = {
 	onPC: { label: 'TALESOFTHEOLDWEST.General.onPC' },
 	Chat: { label: 'TALESOFTHEOLDWEST.General.chat' },
 };
+TALESOFTHEOLDWEST.amenity_types_list = {
+	Farming: { id: 'Farming', label: 'TALESOFTHEOLDWEST.Amenities.Farming' },
+	Mercantile: { id: 'Mercantile', label: 'TALESOFTHEOLDWEST.Amenities.Mercantile' },
+	Natural: { id: 'Natural', label: 'TALESOFTHEOLDWEST.Amenities.Natural' },
+	Law: { id: 'Law', label: 'TALESOFTHEOLDWEST.Amenities.Law' },
+	Civic: { id: 'Civic', label: 'TALESOFTHEOLDWEST.Amenities.Civic' },
+	Welfare: { id: 'Welfare', label: 'TALESOFTHEOLDWEST.Amenities.Welfare' },
+};
+TALESOFTHEOLDWEST.amenity_rank_list = {
+	Rank1: { id: 'Rank1', label: 'TALESOFTHEOLDWEST.Amenities.rank1' },
+	Rank2: { id: 'Rank2', label: 'TALESOFTHEOLDWEST.Amenities.rank2' },
+	Rank3: { id: 'Rank3', label: 'TALESOFTHEOLDWEST.Amenities.rank3' },
+	Rank4: { id: 'Rank4', label: 'TALESOFTHEOLDWEST.Amenities.rank4' },
+	Ramk5: { id: 'Ramk5', label: 'TALESOFTHEOLDWEST.Amenities.rank5' },
+};
+TALESOFTHEOLDWEST.season_list = {
+	Blank: { id: 'Blank', label: '' },
+	Spring: { id: 'Spring', label: 'TALESOFTHEOLDWEST.General.spring' },
+	Summer: { id: 'Summer', label: 'TALESOFTHEOLDWEST.General.summer' },
+	Fall: { id: 'Fall', label: 'TALESOFTHEOLDWEST.General.fall' },
+	Winter: { id: 'Winter', label: 'TALESOFTHEOLDWEST.General.winter' },
+};
 
 TALESOFTHEOLDWEST.conditionEffects = [
 	{

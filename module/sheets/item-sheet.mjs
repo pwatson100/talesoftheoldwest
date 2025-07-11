@@ -74,8 +74,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			template: 'systems/talesoftheoldwest/templates/item/item-weapon-qualities.hbs',
 			scrollable: [''],
 		},
-		// effects: {
-		// 	template: 'systems/talesoftheoldwest/templates/item/effects.hbs',
+		// amenities: {
+		// 	template: 'systems/talesoftheoldwest/templates/item/item-amenities.hbs',
 		// },
 	};
 
@@ -98,6 +98,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				break;
 			case 'weapon':
 				options.parts.push('header', 'tabs', 'description', 'qualities');
+				break;
+			case 'amenities':
+				options.parts = ['header', 'tabs', 'description'];
 				break;
 		}
 	}
@@ -131,7 +134,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			case 'talent':
 				{
 					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-						// TODO: find Sutable Talent icon.
+						// TODO  find Sutable Talent icon.
 
 						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/brain.webp' });
 					}
@@ -140,7 +143,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			case 'item':
 				{
 					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-						// TODO: find Sutable default Item icon.
+						// TODO  find Sutable default Item icon.
 
 						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/saddle.webp' });
 					}
@@ -150,7 +153,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			case 'weapon':
 				{
 					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-						// TODO: find Sutable default weapon icon.
+						// TODO  find Sutable default weapon icon.
 
 						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/manhattannavy.webp' });
 					}
@@ -160,25 +163,94 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			case 'crit':
 				{
 					if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-						// TODO: find Sutable Critical Injury icon.
+						// TODO  find Sutable Critical Injury icon.
 						this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/rattler.webp' });
 					}
 				}
 				break;
 
 			case 'animalquality':
-				// 				{if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-				// TODO: find Sutable default animalquality icon.
-
-				// 	this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/biceps.webp' });
-				// }}
+				switch (this.document.system.general.subtype) {
+					case 'quality':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/horse-head.webp' });
+							}
+						}
+						break;
+					case 'flaw':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/donkey.webp' });
+							}
+						}
+						break;
+				}
 				break;
 
 			case 'weaponquality':
-				// 				{if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
-				// TODO: find Sutable default weaponquality icon.
-				// 	this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/biceps.webp' });
-				// }}
+				switch (this.document.system.feature) {
+					case 'quality':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/supersonic-bullet.webp' });
+							}
+						}
+						break;
+					case 'condition':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/broken-arrow.webp' });
+							}
+						}
+						break;
+				}
+				break;
+			case 'amenities':
+				switch (this.document.system.subtype) {
+					case 'Farming':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/plow.webp' });
+							}
+						}
+						break;
+					case 'Mercantile':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/merchantile.webp' });
+							}
+						}
+						break;
+					case 'Natural':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/mining.webp' });
+							}
+						}
+						break;
+					case 'Law':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/book-law.webp' });
+							}
+						}
+						break;
+					case 'Civic':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/civic.webp' });
+							}
+						}
+						break;
+					case 'Welfare':
+						{
+							if (this.document.img == 'icons/svg/item-bag.svg' && this.document.img != this.img) {
+								this.document.update({ img: 'systems/talesoftheoldwest/assets/icons/welfare.webp' });
+							}
+						}
+						break;
+				}
 				break;
 
 			default:
@@ -203,6 +275,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				break;
 
 			case 'description':
+				// case 'amenities':
 				// case 'body':
 				context.tab = context.tabs[partId];
 				// Enrich description info for display
@@ -341,9 +414,9 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 					tab.id = 'qualities';
 					tab.label += 'Qualities';
 					break;
-				// case 'effects':
-				// 	tab.id = 'effects';
-				// 	tab.label += 'Effects';
+				// case 'amenities':
+				// 	tab.id = 'amenities';
+				// 	tab.label += 'Amenities';
 				// 	break;
 			}
 			if (this.tabGroups[tabGroup] === tab.id) tab.cssClass = 'active';
@@ -883,13 +956,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		}
 		if (system.featureModifiers.some((o) => o.id === dropItem.id)) {
 			let errormessage =
-				game.i18n.localize('TALESOFTHEOLDWEST.General.onlyadd') +
-				' ' +
-				dropItem.name +
-				' ' +
-				dropItem.system.feature +
-				' ' +
-				game.i18n.localize('TALESOFTHEOLDWEST.General.once');
+				game.i18n.localize('TALESOFTHEOLDWEST.General.onlyadd') + ' ' + dropItem.name + ' ' + dropItem.system.feature + ' ' + game.i18n.localize('TALESOFTHEOLDWEST.General.once');
 
 			return ui.notifications.error(game.i18n.localize(game.i18n.localize(errormessage)));
 		}
@@ -1118,12 +1185,8 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		}
 		function onBlur(e) {
 			let value = localStringToNumber(e.target.value);
-			if (game.settings.get('talesoftheoldwest', 'dollar'))
-				e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
-			else
-				e.target.value = value
-					? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
-					: '0.00';
+			if (game.settings.get('talesoftheoldwest', 'dollar')) e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'currency', currency: 'USD' }).format(value) : '$0.00';
+			else e.target.value = value ? Intl.NumberFormat('en-EN', { style: 'decimal', useGrouping: false, minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value) : '0.00';
 		}
 	}
 }

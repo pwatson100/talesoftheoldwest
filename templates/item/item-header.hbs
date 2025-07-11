@@ -47,6 +47,12 @@
 				{{selectOptions config.animal_quality_types_list selected=system.general.subtype labelAttr='label' localize=true}}
 			</select>
 		{{/if}}
+		{{#if (eq item.type 'amenities')}}
+			<label for='system.subtype' class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Actor.Tabs.Amenities')}}</label>
+			<select class='ItemHedCol4' id='system.subtype' name='system.subtype'>
+				{{selectOptions config.amenity_types_list selected=system.subtype labelAttr='label' localize=true}}
+			</select>
+		{{/if}}
 
 		<img class='item-img grid-item-header ItemHedCol2' src='{{item.img}}' data-edit='img' data-action='onEditImage' data-tooltip='{{item.name}}' />
 

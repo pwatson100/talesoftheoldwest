@@ -2,7 +2,8 @@
 	"TALESOFTHEOLDWEST": {
 		"SheetLabels": {
 			"Actor": "totow Actor Sheet",
-			"Item": "totow Item Sheet"
+			"Item": "totow Item Sheet",
+			"TownCharter": "totow Town Charter Sheet"
 		},
 		"Actor": {
 			"Tabs": {
@@ -11,7 +12,9 @@
 				"Description": "Description",
 				"Effects": "Effects",
 				"Compadres": "Compadres",
-				"Remuda": "Remuda"
+				"Remuda": "Remuda",
+				"TownCharter": "Town Charter",
+				"Amenities": "Amenities"
 			}
 		},
 		"Ability": {
@@ -223,7 +226,14 @@
 			"remove": "Remove",
 			"ErrorTroubleTable": "Error: Trouble Table not found",
 			"TroubleOutcome": "Trouble Outcome",
-			"ErrorRemudaAlreadyMounted": "Error: Remuda already mounted"
+			"ErrorRemudaAlreadyMounted": "Error: Remuda already mounted",
+			"completed": "Completed",
+			"spring": "Spring",
+			"summer": "Summer",
+			"fall": "Fall",
+			"winter": "Winter",
+			"year": "Year",
+			"season": "Season"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
@@ -579,13 +589,73 @@
 			"sixfive": "Honourable, Courageous",
 			"sixsix": "Pillar of the Community"
 		},
+		"TownCharter": {
+			"farming": "Farming",
+			"mercantile": "Mercantile",
+			"natural": "Natural Riches",
+			"law": "Law",
+			"civic": "Civic",
+			"welfare": "Welfare",
+			"mayor": "Mayor",
+			"judge": "Judge",
+			"sheriff": "Sheriff",
+			"deputy": "Deputy",
+			"ons1": "1",
+			"ons2": "2",
+			"ons3": "3",
+			"ons4": "4",
+			"settlementponts": "Settlement Points",
+			"bonussp": "Bonus SP Per Season",
+			"businessrollmods": "Business and Congregation",
+			"personalfortunemods": "Personal Fortune Modifiers",
+			"townfortunemods": "Town Fortune Modifiers",
+			"prosperitytotal": "Prosperity Total",
+			"prosperity": "Prosperity",
+			"soo": "Settlement Officials & Officers",
+			"onc": "Other Notable Citizens",
+			"rank": "Rank",
+			"aspect": "Aspect",
+			"aspects": "Aspects",
+			"minusonefromten": "-1 from Tens Dice",
+			"minustwofromten": "-2 from Tens Dice",
+			"minusthreefromunits": "-3 from Units Dice",
+			"addonetoten": "+1 to Tens Dice",
+			"addtwototen": "+2 to Tens Dice",
+			"addthreetounits": "+3 to Tens Dice",
+			"nomod": "No Modifier",
+			"6to10": "6 to 10",
+			"11to14": "11 to 14",
+			"15to18": "15 to 18",
+			"19to23": "19 to 23",
+			"24to27": "24 to 27",
+			"28to31": "28 to 31",
+			"32to36": "32 to 36",
+			"year": "Year",
+			"season": "Season",
+			"amenities": "Amenities"
+		},
+		"Amenities": {
+			"Farming": "Farming",
+			"Mercantile": "Mercantile",
+			"Natural": "Natural Riches",
+			"Law": "Law",
+			"Civic": "Civic",
+			"Welfare": "Welfare",
+			"notes": "Notes",
+			"rank1": "Rank 1",
+			"rank2": "Rank 2",
+			"rank3": "Rank 3",
+			"rank4": "Rank 4",
+			"rank5": "Rank 5"
+		},
 		"OPTIONAL_CONFIG_MENULABEL": "Configure Tales of the Old West Settings"
 	},
 	"TYPES": {
 		"Actor": {
 			"npc": "NPC",
 			"pc": "PC",
-			"animal": "Animal"
+			"animal": "Animal",
+			"towncharter": "Town Charter"
 		},
 		"Item": {
 			"item": "Item",
@@ -593,7 +663,8 @@
 			"weapon": "Weapon",
 			"crit": "Critical Injury",
 			"animalquality": "Animal Temperament",
-			"weaponquality": "Weapon Quality"
+			"weaponquality": "Weapon Quality",
+			"amenities": "Amenities"
 		}
 	}
 }

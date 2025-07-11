@@ -21,15 +21,17 @@ export default async function updateModule() {
 	 */
 
 	const updateAssets = [
-		{ assetType: 'macros', assetName: 'Alien - Roll on selected Creature table V10', action: 'update' },
-		{ assetType: 'macros', assetName: 'Alien - Roll on selected Mother table V10', action: 'update' },
+		// { assetType: 'macros', assetName: 'Alien - Roll on selected Creature table V10', action: 'update' },
+		// { assetType: 'macros', assetName: 'Alien - Roll on selected Mother table V10', action: 'update' },
 	];
 
-	const updateNotes = `<ul>
-    <li>Corrected error in the macros:</li>
-    <li>Alien - Roll on selected Creature table V10</li>
-    <li>Alien - Roll on selected Mother table V10</li>
-    </ul>`;
+	const updateNotes = `
+	// <ul>
+  //   <li>Corrected error in the macros:</li>
+  //   <li>Alien - Roll on selected Creature table V10</li>
+  //   <li>Alien - Roll on selected Mother table V10</li>
+  //   </ul>
+		`;
 
 	// If there are no actual asset updates quit.
 	if (!updateAssets.length) {
@@ -156,12 +158,5 @@ async function allDone(moduleTitle, updateNotes) {
 			console.log('All Done');
 		},
 	});
-	logger.info(
-		'Imported ',
-		game.settings.get(moduleKey, 'imported'),
-		'Version ',
-		game.system.version,
-		'Migration ',
-		game.settings.get(moduleKey, 'migrationVersion')
-	);
+	logger.info('Imported ', game.settings.get(moduleKey, 'imported'), 'Version ', game.system.version, 'Migration ', game.settings.get(moduleKey, 'migrationVersion'));
 }

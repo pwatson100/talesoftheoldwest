@@ -206,18 +206,6 @@ export default class totowPC extends totowActorBase {
 			this.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.abilities[key].name).toUpperCase() ?? key;
 		}
 
-		// for (const akey in this.horse.attributes) {
-		// 	this.horse.attributes[akey].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.attributes[akey].name) ?? akey;
-		// }
-
-		// for (const key in this.horse.abilities) {
-		// 	this.horse.abilities[key].attr = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].atob) ?? key;
-
-		// 	// Handle ability label localization.
-		// 	this.horse.abilities[key].label = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name) ?? key;
-		// 	this.horse.abilities[key].upper = game.i18n.localize(CONFIG.TALESOFTHEOLDWEST.animalabilities[key].name).toUpperCase() ?? key;
-		// }
-
 		this.general.faithpoints.max = 10 - this.general.faithpoints.value;
 		this.general.xp.max = 10 - this.general.xp.value;
 

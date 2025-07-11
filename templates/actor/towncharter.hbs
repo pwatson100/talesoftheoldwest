@@ -1,0 +1,264 @@
+<section class='tab towncharter {{tab.cssClass}}' data-group='primary' data-tab='towncharter'>
+
+	<div class='grid-town-charter' style='margin-top: 30px;'>
+		<label for='system.general.mayor' class='TCColh1 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.soo')}}</label>
+		<label for='system.general.mayor' class='TCColh2 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.onc')}}</label>
+		<label for='system.general.mayor' class='TCCol1 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.mayor')}}</label>
+		<input class='TCCol2' type='text' name='system.general.mayor' value='{{system.general.mayor}}' data-dtype='text' />
+		<label for='system.general.judge' class='TCCol5 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.judge')}}</label>
+		<input class='TCCol6' type='text' name='system.general.judge' value='{{system.general.judge}}' data-dtype='text' />
+		<label for='system.general.sheriff' class='TCCol9 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.sheriff')}}</label>
+		<input class='TCCol10' type='text' name='system.general.sheriff' value='{{system.general.sheriff}}' data-dtype='text' />
+		<label for='system.general.deputy' class='TCCol13 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.deputy')}}</label>
+		<input class='TCCol14' type='text' name='system.general.deputy' value='{{system.general.deputy}}' data-dtype='text' />
+
+		<label for='system.general.on1' class='TCCol3 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons1')}}</label>
+		<input class='TCCol4' type='text' name='system.general.on1' value='{{system.general.on1}}' data-dtype='text' />
+		<label for='system.general.on2' class='TCCol7 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons2')}}</label>
+		<input class='TCCol8' type='text' name='system.general.on2' value='{{system.general.on2}}' data-dtype='text' />
+		<label for='system.general.on3' class='TCCol11 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons3')}}</label>
+		<input class='TCCol12' type='text' name='system.general.on3' value='{{system.general.on3}}' data-dtype='text' />
+		<label for='system.general.on4' class='TCCol15 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons4')}}</label>
+		<input class='TCCol16' type='text' name='system.general.on4' value='{{system.general.on4}}' data-dtype='text' />
+		<label for='system.general.settlementponts.value' class='TCCol17 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.settlementponts')}}</label>
+
+		<div
+			class='TCCol18 newdots-town-charter'
+			style='padding:0px; justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeSP'
+		>
+			{{#times system.general.settlementponts.value}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.general.settlementponts.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+
+		<label for='system.general.bonussp.value' class='TCCol19 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.bonussp')}}</label>
+		<input class='TCCol20 statnum' type='Number' name='system.general.bonussp.value' value='{{system.general.bonussp.value}}' data-dtype='Number' />
+	</div>
+	<div class='grid-aspect-footer' style='margin-top:30px'>
+		<label class='GAF11 resource-label' style='font-size: 1em'>Rank 1</label>
+		<label class='GAF12 resource-label' style='font-size: 1em'>Rank 2</label>
+		<label class='GAF13 resource-label' style='font-size: 1em'>Rank 3</label>
+		<label class='GAF14 resource-label' style='font-size: 1em'>Rank 4</label>
+		<label class='GAF15 resource-label' style='font-size: 1em'>Rank 5</label>
+		<label class='GAF16 resource-label' style='font-size: 1em'>Rank 6</label>
+	</div>
+	<div class='grid-aspect' style='border-bottom: solid 2px black;'>
+		<label class='GA1label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.aspects')}}</label>
+		<label class='GA11 resource-label' style='text-align: center;'>1</label>
+		<label class='GA12 resource-label'>2</label>
+		<label class='GA13 resource-label'>3</label>
+		<label class='GA14 resource-label'>4</label>
+		<label class='GA15 resource-label'>5</label>
+		<label class='GA16 resource-label'>6</label>
+		<label class='GA17 resource-label'>7</label>
+		<label class='GA18 resource-label'>8</label>
+		<label class='GA19 resource-label'>9</label>
+		<label class='GA110 resource-label'>10</label>
+		<label class='GA111 resource-label'>11</label>
+		<label class='GA112 resource-label'>12</label>
+		<label class='GA113 resource-label'>13</label>
+		<label class='GA114 resource-label'>14</label>
+		<label class='GA115 resource-label'>15</label>
+		<label class='GA116 resource-label'>16</label>
+		<label class='GA117 resource-label'>17</label>
+		<label class='GA118 resource-label'>18</label>
+		<label class='GA119 resource-label'>19</label>
+		<label class='GA120 resource-label'>20</label>
+		<label class='GA121 resource-label'>21</label>
+		<label class='GA122 resource-label'>22</label>
+		<label class='GA123 resource-label'>23</label>
+		<label class='GA124 resource-label'>24</label>
+		<label class='GA125 resource-label'>25</label>
+		<label class='GA126 resource-label'>26</label>
+		<label class='GA127 resource-label'>27</label>
+		<label class='GA128 resource-label'>28</label>
+		<label class='GA129 resource-label'>29</label>
+		<label class='GA130 resource-label'>30</label>
+		<label class='GA1Rank resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.aspect')}}
+			{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.rank')}}</label>
+		{{! </div>
+	<div class='grid-aspect'> }}
+		<label for='system.aspects.farming.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.farming')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px; justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='farming'
+		>
+			{{#times system.aspects.farming.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.farming.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.farmingrank.value' value='{{system.aspects.farmingrank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect'>
+		<label for='system.aspects.mercantile.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.mercantile')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px;    justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='mercantile'
+		>
+			{{#times system.aspects.mercantile.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.mercantile.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.mercantilerank.value' value='{{system.aspects.mercantilerank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect'>
+		<label for='system.aspects.natural.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.natural')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px;    justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='natural'
+		>
+			{{#times system.aspects.natural.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.natural.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.naturalrank.value' value='{{system.aspects.naturalrank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect'>
+		<label for='system.aspects.law.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.law')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px;    justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='law'
+		>
+			{{#times system.aspects.law.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.law.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.lawrank.value' value='{{system.aspects.lawrank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect'>
+		<label for='system.aspects.civic.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.civic')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px;    justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='civic'
+		>
+			{{#times system.aspects.civic.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.civic.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.civicrank.value' value='{{system.aspects.civicrank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect'>
+		<label for='system.aspects.welfare.score' class='GA2label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.welfare')}}</label>
+		<div
+			class='GA21 newdots-town-charter'
+			style='padding:0px;    justify-content: space-between'
+			data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+			data-action='changeAspect'
+			data-aspect='welfare'
+		>
+			{{#times system.aspects.welfare.score}}
+				<i class='far fa-dot-circle'></i>
+			{{/times}}
+			{{#times system.aspects.welfare.max}}<i class='far fa-circle'></i>{{/times}}
+		</div>
+		<div class='GA2Rank'>
+			<input class='statnum' name='system.aspects.welfarerank.value' value='{{system.aspects.welfarerank.value}}' data-dtype='Number' disabled />
+		</div>
+	</div>
+	<div class='grid-aspect-footer'>
+		<label class='GAF1label resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.businessrollmods'}}
+			{{localize 'TALESOFTHEOLDWEST.Item.General.roll-modifiers'}}</label>
+		<label class='GAF11 resource-label'>-2</label>
+		<label class='GAF12 resource-label'>-1</label>
+		<label class='GAF13 resource-label'>0</label>
+		<label class='GAF14 resource-label'>+1</label>
+		<label class='GAF15 resource-label'>+2</label>
+		<label class='GAF16 resource-label'>+3</label>
+		<label class='GAF1Rank resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.prosperity'}}
+			<input
+				class='statnum'
+				style='font-size: x-large;'
+				name='system.general.prosperitytotal.value'
+				value='{{system.general.prosperitytotal.value}}'
+				data-dtype='Number'
+				disabled
+			/></label>
+	</div>
+	<div class='grid-aspect-footer'>
+		<label class='GAF1label resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.personalfortunemods'}}</label>
+		<label class='GAF11 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.minusonefromten'}}</label>
+		<label class='GAF12 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.minustwofromten'}}</label>
+		<label class='GAF13 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.nomod'}}</label>
+		<label class='GAF14 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.nomod'}}</label>
+		<label class='GAF15 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.addonetoten'}}</label>
+		<label class='GAF16 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.addtwototen'}}</label>
+		<label class='GAF1Rank resource-label'></label>
+	</div>
+	<div class='grid-prosperity-totals'>
+		<label class='PTS1label resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.prosperitytotal')}}</label>
+		<label class='PTS11 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.6to10'}}</label>
+		<label class='PTS12 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.11to14'}}</label>
+		<label class='PTS13 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.15to18'}}</label>
+		<label class='PTS14 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.19to23'}}</label>
+		<label class='PTS15 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.24to27'}}</label>
+		<label class='PTS16 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.28to31'}}</label>
+		<label class='PTS17 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.32to36'}}</label>
+		<label class='PTS1Rank resource-label'></label>
+
+		{{#if (gte system.general.prosperitytotal.value 36)}}
+			<span class='PTS17' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 28)}}
+			<span class='PTS16' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 24)}}
+			<span class='PTS15' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 19)}}
+			<span class='PTS14' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 15)}}
+			<span class='PTS13' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 11)}}
+			<span class='PTS12' id='overlay'>&nbsp;</span>
+		{{/if}}
+		{{#if (gte system.general.prosperitytotal.value 6)}}
+			<span class='PTS11' id='overlay'>&nbsp;</span>
+		{{/if}}
+	</div>
+	<div class='grid-prosperity-totals'>
+		<label class='PTS1label resource-label'>{{localize 'TALESOFTHEOLDWEST.TownCharter.townfortunemods'}}</label>
+		<label class='PTS11 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.minustwofromten'}}</label>
+		<label class='PTS12 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.minusonefromten'}}</label>
+		<label class='PTS13 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.minusthreefromunits'}}</label>
+		<label class='PTS14 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.nomod'}}</label>
+		<label class='PTS15 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.addthreetounits'}}</label>
+		<label class='PTS16 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.addonetoten'}}</label>
+		<label class='PTS17 resource-label' style='font-size: smaller;text-align:center;'>{{localize 'TALESOFTHEOLDWEST.TownCharter.addtwototen'}}</label>
+		<label class='PTS1Rank resource-label'></label>
+	</div>
+</section>

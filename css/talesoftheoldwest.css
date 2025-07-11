@@ -131,17 +131,13 @@
 }
 
 .talesoftheoldwest .dice-push {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 22px;
-          flex: 0 0 22px;
+  flex: 0 0 22px;
   font-size: 12px;
   text-align: center;
 }
 
 .talesoftheoldwest .dice-background {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  flex: 0 0 100%;
   position: relative;
   margin: 0;
   line-height: 24px;
@@ -149,8 +145,7 @@
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-border-light-2);
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px #fff inset;
-          box-shadow: 0 0 2px #fff inset;
+  box-shadow: 0 0 2px #fff inset;
   word-break: break-all;
 }
 
@@ -183,8 +178,7 @@ body .talesoftheoldwest.application {
   font-family: "fraunces-normal-400";
   color: black;
   background: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: none;
 }
 body .application.dialog {
@@ -194,8 +188,7 @@ body .application.dialog {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
   border: transparent;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232);
-          filter: drop-shadow(8px 12px 8px #353232);
+  filter: drop-shadow(8px 12px 8px #353232);
 }
 body .application.sheet.actor .window-content,
 body .application.sheet.item .window-content {
@@ -210,24 +203,19 @@ body .application.sheet.item .window-content {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
   border: transparent;
-  -webkit-filter: drop-shadow(8px 12px 8px #353232);
-          filter: drop-shadow(8px 12px 8px #353232);
+  filter: drop-shadow(8px 12px 8px #353232);
   font-family: "fraunces-normal-400";
   color: hsl(0, 0%, 0%);
 }
 body .dialog-form.standard-form .form-footer,
 body .dialog-buttons {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 body .dialog-form.standard-form .form-footer button,
 body .dialog-buttons button {
-  max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
   min-width: unset;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -276,15 +264,12 @@ body .application select {
 }
 
 .talesoftheoldwest.application .hr-style {
-  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #000000), to(transparent));
   background-image: linear-gradient(90deg, transparent 0%, #000000 50%, transparent 100%);
   margin: 5px;
 }
 
 .talesoftheoldwest .sheet-tabs {
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
+  flex: 0;
   font-size: large;
   font-family: "fraunces-normal-400";
   font-weight: bold;
@@ -294,9 +279,7 @@ body .application select {
 }
 
 .talesoftheoldwest .tab.description {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .talesoftheoldwest .tab.description .editor {
   height: 100%;
@@ -310,14 +293,10 @@ body .application select {
   width: 241px;
   height: 41px;
   padding: 0px 13px 0px 15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   justify-self: center;
-  -webkit-filter: drop-shadow(8px 11px 7px black);
-          filter: drop-shadow(8px 11px 7px black);
+  filter: drop-shadow(8px 11px 7px black);
   text-shadow: 2px 2px 2px white;
   margin-bottom: 10px;
 }
@@ -331,15 +310,11 @@ body .application select {
   width: 241px;
   height: 41px;
   padding: 0px 13px 0px 15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   justify-self: center;
   margin-bottom: 10px;
-  -webkit-filter: drop-shadow(8px 11px 7px black);
-          filter: drop-shadow(8px 11px 7px black);
+  filter: drop-shadow(8px 11px 7px black);
   text-shadow: 2px 2px 2px white;
 }
 
@@ -382,9 +357,101 @@ body .application select {
   text-shadow: 5px 3px 5px hsl(32, 93.38%, 13.51%);
 }
 
+#overlay {
+  height: 100%;
+  background-color: hsla(120, 64%, 43%, 0.3); /* Black background with opacity */
+  z-index: 2;
+}
+
 .grid-4col {
   grid-column: span 4/span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-6col {
+  display: grid;
+  gap: 1px;
+  grid-template-areas: "a6Col11 a6Col12 a6Col13" "a6Col21 a6Col22 a6Col23";
+  grid-template-columns: 320px 320px 320px;
+  height: 700px;
+  grid-template-rows: 350px;
+}
+
+.a6Col11 {
+  grid-area: a6Col11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.a6Col12 {
+  grid-area: a6Col12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.a6Col13 {
+  grid-area: a6Col13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.a6Col21 {
+  grid-area: a6Col21;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.a6Col22 {
+  grid-area: a6Col22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.a6Col23 {
+  grid-area: a6Col23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 
 .body-container {
@@ -446,9 +513,7 @@ body .application select {
   padding-bottom: 2px;
   row-gap: 2px;
   grid-template-columns: 40px 140px 128px 70px 70px 70px 70px 70px 70px 70px 75px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-size: medium;
 }
 
@@ -568,9 +633,7 @@ body .application select {
   grid-template-areas: "TCol1 TCol2 TCol3 TCol4 " "TCol11 TCol12 TCol13 TCol14 ";
   padding-bottom: 2px;
   grid-template-columns: 28px 167px 5px 88px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .TCol1 {
@@ -619,9 +682,7 @@ body .application select {
   grid-template-areas: "QCol1 QCol2 QCol3 " "QCol11 QCol12 QCol13 ";
   padding-bottom: 2px;
   grid-template-columns: 30px 170px 50px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .QCol1 {
@@ -897,9 +958,7 @@ body .application select {
   /* row-gap: 5px; */
   /* margin-top: 3px; */
   /* margin-bottom: -2px; */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-areas: "A1 B1 A2 B2 A3 B3 A4 B4 " "H1 H2 S1 S2 V1 V2  D1 D2 ";
   grid-template-columns: 107px 110px 102px 110px 136px 110px 112px 110px;
   background: rgba(139, 106, 44, 0.21);
@@ -988,9 +1047,7 @@ body .application select {
 .sheet-main-abilities {
   display: grid;
   row-gap: 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-areas: "Fightin Fightin2 Lightfingered Lightfingered2 Animalhandlin Animalhandlin2 Booklearnin Booklearnin2" "Labor Labor2 Move Move2 Hawkeye Hawkeye2 Doctorin Doctorin2" "Presence Presence2 Operate Operate2 Insight Insight2 Makin Makin2" "Resilience Resilience2 Shootin Shootin2 Nature Nature2 Performin Performin2";
   grid-template-columns: 162px 55px 162px 55px 179px 55px 162px 55px;
 }
@@ -1119,9 +1176,7 @@ body .application select {
   display: grid;
   grid-template-areas: "crit1 crit2 crit3 crit4";
   grid-template-columns: 31px 161px 323px 45px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .crit1 {
@@ -1156,9 +1211,7 @@ body .application select {
   row-gap: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-areas: "cash1 cash2 cash3 cash4";
   grid-template-columns: 154px 302px 148px 303px;
 }
@@ -1185,12 +1238,9 @@ body .application select {
 .grid-weapon-feature-list {
   display: grid;
   row-gap: 5px;
-  -webkit-column-gap: 4px;
-     -moz-column-gap: 4px;
-          column-gap: 4px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  align-items: center;
   grid-template-areas: "grid-wfl1 grid-wfl2 grid-wfl3 grid-wfl4";
   grid-template-columns: 150px 50px 150px 50px;
 }
@@ -1239,12 +1289,9 @@ body .application select {
 .sheet-gear-cash {
   display: grid;
   row-gap: 5px;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  align-items: center;
   grid-template-areas: "L1C1 L1C2 L1C3 L1C4" "L2C1 L2C2 L2C3 L2C4" "L3C1 L3C2 L3C3 L3C4" "L4C1 L4C2 L4C2 L4C2" "L5C1 L5C2 L5C2 L5C2" "L6C1 L6C2 L6C2 L6C2";
   grid-template-columns: 150px 50px 150px 60px;
 }
@@ -1386,9 +1433,7 @@ body .application select {
 
 .sheet-compadres-header {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 720px;
   justify-self: center;
   grid-template-areas: "schA1 schB1 schA2 schA3";
@@ -1418,9 +1463,7 @@ body .application select {
 
 .sheet-compadres-attributes {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 859px;
   justify-self: center;
   grid-template-areas: "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 " "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
@@ -1583,9 +1626,7 @@ body .application select {
 
 .sheet-animal-attributes {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-areas: "aA1 aB1 aA2 aB2 aA3 aB3 " "aH1 aH2 aS1 aS2 aV1 aV2 ";
   grid-template-columns: 112px 110px 112px 110px 137px 110px;
   background: rgba(139, 106, 44, 0.21);
@@ -1654,9 +1695,7 @@ body .application select {
 .sheet-animal-abilities {
   display: grid;
   row-gap: 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   grid-template-areas: "aResilience aResilience2 aMove aMove2 aFightin aFightin2" "aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2";
   grid-template-columns: 162px 55px 162px 55px 178px 55px;
   border-bottom: solid black;
@@ -1732,9 +1771,8 @@ body .application select {
   display: grid;
   grid-template-areas: "QualSplit11 QualSplit12" "QualSplit21 QualSplit22";
   grid-template-columns: 280px 280px;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 
 .QualSplit11 {
@@ -1774,9 +1812,7 @@ body .application select {
   grid-template-areas: "SQol1 SQol1" "SQol11 SQol12";
   padding-bottom: 2px;
   grid-template-columns: 30px 170px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .SQol1 {
@@ -1802,9 +1838,7 @@ body .application select {
 
 .sheet-weapon-stats {
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   justify-items: center;
   grid-template-areas: "sws11 sws12 sws13 sws14 " "sws21 sws22 sws23 sws24 ";
   grid-template-columns: 133px 129px 95px 63px;
@@ -1860,68 +1894,1008 @@ body .application select {
   grid-area: sws26;
 }
 
+.grid-town-charter {
+  display: grid;
+  font-family: "fraunces-normal-400";
+  grid-template-areas: "TCColh1 TCColh1 TCColh2 TCColh2 TCCol21" "TCCol1 TCCol2 TCCol3 TCCol4 TCCol17" "TCCol5 TCCol6 TCCol7 TCCol8 TCCol18" "TCCol9 TCCol10 TCCol11 TCCol12 TCCol19" "TCCol13 TCCol14 TCCol15 TCCol16 TCCol20";
+  grid-template-columns: 120px 280px 55px 280px 209px;
+}
+
+.TCCol1 {
+  grid-area: TCCol1;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol2 {
+  grid-area: TCCol2;
+}
+
+.TCCol3 {
+  grid-area: TCCol3;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol4 {
+  grid-area: TCCol4;
+}
+
+.TCCol5 {
+  grid-area: TCCol5;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol6 {
+  grid-area: TCCol6;
+}
+
+.TCCol7 {
+  grid-area: TCCol7;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol8 {
+  grid-area: TCCol8;
+}
+
+.TCCol9 {
+  grid-area: TCCol9;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol10 {
+  grid-area: TCCol10;
+}
+
+.TCCol11 {
+  grid-area: TCCol11;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol12 {
+  grid-area: TCCol12;
+}
+
+.TCCol13 {
+  grid-area: TCCol13;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol14 {
+  grid-area: TCCol14;
+}
+
+.TCCol15 {
+  grid-area: TCCol15;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol16 {
+  grid-area: TCCol16;
+}
+
+.TCCol17 {
+  grid-area: TCCol17;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol18 {
+  grid-area: TCCol18;
+  justify-self: center;
+}
+
+.TCCol19 {
+  grid-area: TCCol19;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.TCCol20 {
+  grid-area: TCCol20;
+  justify-self: center;
+}
+
+.TCCol21 {
+  grid-area: TCCol21;
+  align-self: center;
+}
+
+.TCColh1 {
+  grid-area: TCColh1;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.TCColh2 {
+  grid-area: TCColh2;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: right;
+}
+
+.grid-aspect {
+  display: grid;
+  font-family: "fraunces-normal-400";
+  border: solid 1px black;
+  grid-template-areas: "GA1label GA11 GA12 GA13 GA14 GA15 GA16 GA17 GA18 GA19 GA110 GA111 GA112 GA113 GA114 GA115 GA116 GA117 GA118 GA119 GA120 GA121 GA122 GA123 GA124 GA125 GA126 GA127 GA128 GA129 GA130 GA1Rank" "GA2label GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA2Rank";
+  grid-template-columns: 156px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 66px;
+  row-gap: 10px;
+  padding-bottom: 5px;
+}
+
+.GA1label {
+  grid-area: GA1label;
+  font-weight: bolder;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.GA11 {
+  grid-area: GA11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA12 {
+  grid-area: GA12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA13 {
+  grid-area: GA13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
+}
+
+.GA14 {
+  grid-area: GA14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
+}
+
+.GA15 {
+  grid-area: GA15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
+}
+
+.GA16 {
+  grid-area: GA16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA17 {
+  grid-area: GA17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA18 {
+  grid-area: GA18;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA19 {
+  grid-area: GA19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA110 {
+  grid-area: GA110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA111 {
+  grid-area: GA111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA112 {
+  grid-area: GA112;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA113 {
+  grid-area: GA113;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA114 {
+  grid-area: GA114;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA115 {
+  grid-area: GA115;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA116 {
+  grid-area: GA116;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA117 {
+  grid-area: GA117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA118 {
+  grid-area: GA118;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA119 {
+  grid-area: GA119;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA120 {
+  grid-area: GA120;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA121 {
+  grid-area: GA121;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA122 {
+  grid-area: GA122;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA123 {
+  grid-area: GA123;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA124 {
+  grid-area: GA124;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA125 {
+  grid-area: GA125;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA126 {
+  grid-area: GA126;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA127 {
+  grid-area: GA127;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA128 {
+  grid-area: GA128;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA129 {
+  grid-area: GA129;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA130 {
+  grid-area: GA130;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GA1Rank {
+  grid-area: GA1Rank;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.GA2label {
+  grid-area: GA2label;
+  font-weight: bolder;
+  font-size: 1.2em;
+  align-self: center;
+  justify-self: left;
+}
+
+.GA21 {
+  grid-area: GA21;
+  align-self: center;
+}
+
+.GA22 {
+  grid-area: GA22;
+  justify-self: center;
+}
+
+.GA23 {
+  grid-area: GA23;
+  justify-self: center;
+}
+
+.GA24 {
+  grid-area: GA24;
+  justify-self: center;
+}
+
+.GA25 {
+  grid-area: GA25;
+  justify-self: center;
+}
+
+.GA26 {
+  grid-area: GA26;
+  justify-self: center;
+}
+
+.GA27 {
+  grid-area: GA27;
+  justify-self: center;
+}
+
+.GA28 {
+  grid-area: GA28;
+  justify-self: center;
+}
+
+.GA29 {
+  grid-area: GA29;
+  justify-self: center;
+}
+
+.GA210 {
+  grid-area: GA210;
+  justify-self: center;
+}
+
+.GA211 {
+  grid-area: GA211;
+  justify-self: center;
+}
+
+.GA212 {
+  grid-area: GA212;
+  justify-self: center;
+}
+
+.GA213 {
+  grid-area: GA213;
+  justify-self: center;
+}
+
+.GA214 {
+  grid-area: GA214;
+  justify-self: center;
+}
+
+.GA215 {
+  grid-area: GA215;
+  justify-self: center;
+}
+
+.GA216 {
+  grid-area: GA216;
+  justify-self: center;
+}
+
+.GA217 {
+  grid-area: GA217;
+  justify-self: center;
+}
+
+.GA218 {
+  grid-area: GA218;
+  justify-self: center;
+}
+
+.GA219 {
+  grid-area: GA219;
+  justify-self: center;
+}
+
+.GA220 {
+  grid-area: GA220;
+  justify-self: center;
+}
+
+.GA221 {
+  grid-area: GA221;
+  justify-self: center;
+}
+
+.GA222 {
+  grid-area: GA222;
+  justify-self: center;
+}
+
+.GA223 {
+  grid-area: GA223;
+  justify-self: center;
+}
+
+.GA224 {
+  grid-area: GA224;
+  justify-self: center;
+}
+
+.GA225 {
+  grid-area: GA225;
+  justify-self: center;
+}
+
+.GA226 {
+  grid-area: GA226;
+  justify-self: center;
+}
+
+.GA227 {
+  grid-area: GA227;
+  justify-self: center;
+}
+
+.GA228 {
+  grid-area: GA228;
+  justify-self: center;
+}
+
+.GA229 {
+  grid-area: GA229;
+  justify-self: center;
+}
+
+.GA230 {
+  grid-area: GA230;
+  justify-self: center;
+}
+
+.GA2Rank {
+  grid-area: GA2Rank;
+  align-self: center;
+  justify-self: center;
+}
+
+.grid-aspect-footer {
+  display: grid;
+  font-family: "fraunces-normal-400";
+  border: solid 1px black;
+  grid-template-areas: "GAF1label GAF11 GAF12 GAF13 GAF14 GAF15 GAF16 GAF1Rank";
+  grid-template-columns: 156px 50px 100px 150px 150px 200px 100px 66px;
+}
+
+.GAF1label {
+  grid-area: GAF1label;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.GAF11 {
+  grid-area: GAF11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF12 {
+  grid-area: GAF12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF13 {
+  grid-area: GAF13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF14 {
+  grid-area: GAF14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF15 {
+  grid-area: GAF15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF16 {
+  grid-area: GAF16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.GAF1Rank {
+  grid-area: GAF1Rank;
+  height: -moz-max-content;
+  height: max-content;
+  justify-self: top;
+  text-align: center;
+  font-size: smaller;
+}
+
+.grid-prosperity-totals {
+  display: grid;
+  font-family: "fraunces-normal-400";
+  border: solid 1px black;
+  grid-template-areas: "PTS1label PTS11 PTS12 PTS13 PTS14 PTS15 PTS16 PTS17 PTS1Rank";
+  grid-template-columns: 206px 100px 100px 100px 100px 100px 100px 100px 66px;
+}
+
+.PTS1label {
+  grid-area: PTS1label;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-weight: bolder;
+}
+
+.PTS11 {
+  grid-area: PTS11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS12 {
+  grid-area: PTS12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS13 {
+  grid-area: PTS13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS14 {
+  grid-area: PTS14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS15 {
+  grid-area: PTS15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS16 {
+  grid-area: PTS16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS17 {
+  grid-area: PTS17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
+}
+
+.PTS1Rank {
+  grid-area: PTS1Rank;
+  height: -moz-max-content;
+  height: max-content;
+  justify-self: top;
+  text-align: center;
+  font-size: smaller;
+}
+
+.grid-amenities-modifiers {
+  display: grid;
+  grid-template-areas: "AMCol11 AMCol12 AMCol13 AMCol14 " "AMCol21 AMCol22 AMCol23 AMCol24 " "AMCol31 AMCol32 AMCol33 AMCol34 ";
+  grid-template-columns: 151px 60px 150px 60px;
+  row-gap: 5px;
+}
+
+.AMCol11 {
+  grid-area: AMCol11;
+  align-self: center;
+}
+
+.AMCol12 {
+  grid-area: AMCol12;
+  align-self: center;
+}
+
+.AMCol13 {
+  grid-area: AMCol13;
+  align-self: center;
+}
+
+.AMCol14 {
+  grid-area: AMCol14;
+  align-self: center;
+}
+
+.AMCol21 {
+  grid-area: AMCol21;
+  align-self: center;
+}
+
+.AMCol22 {
+  grid-area: AMCol22;
+  align-self: center;
+}
+
+.AMCol23 {
+  grid-area: AMCol23;
+  align-self: center;
+}
+
+.AMCol24 {
+  grid-area: AMCol24;
+  align-self: center;
+}
+
+.AMCol31 {
+  grid-area: AMCol31;
+  align-self: center;
+}
+
+.AMCol32 {
+  grid-area: AMCol32;
+  align-self: center;
+}
+
+.AMCol33 {
+  grid-area: AMCol33;
+  align-self: center;
+}
+
+.AMCol34 {
+  grid-area: AMCol34;
+  align-self: center;
+}
+
+.grid-amenities-header {
+  display: grid;
+  grid-template-areas: "AHCol11 AHCol12 AHCol13 AHCol14 " "AHCol21 AHCol22 AHCol23 AHCol24 " "AHCol31 AHCol31 AHCol31 AHCol31 ";
+  grid-template-columns: 84px 96px 100px 100px;
+  row-gap: 5px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+.AHCol11 {
+  grid-area: AHCol11;
+  align-self: center;
+  text-align: right;
+}
+
+.AHCol12 {
+  grid-area: AHCol12;
+  align-self: center;
+}
+
+.AHCol13 {
+  grid-area: AHCol13;
+  align-self: center;
+  text-align: right;
+}
+
+.AHCol14 {
+  grid-area: AHCol14;
+  align-self: center;
+}
+
+.AHCol21 {
+  grid-area: AHCol21;
+  align-self: center;
+  text-align: right;
+}
+
+.AHCol22 {
+  grid-area: AHCol22;
+  align-self: center;
+}
+
+.AHCol23 {
+  grid-area: AHCol23;
+  align-self: center;
+  text-align: right;
+}
+
+.AHCol24 {
+  grid-area: AHCol24;
+  align-self: center;
+}
+
+.AHCol31 {
+  grid-area: AHCol31;
+  align-self: center;
+}
+
 .flex-group-center,
 .flex-group-left,
 .flex-group-right {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 .flex-group-left {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   text-align: left;
 }
 
 .flex-group-right {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   text-align: right;
 }
 
 .flexshrink {
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
+  flex: 0;
 }
 
 .flex-between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flexlarge {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  flex: 2;
 }
 
 .align-left {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   text-align: left;
 }
 
 .align-right {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   text-align: right;
 }
 
 .align-center {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -2097,18 +3071,15 @@ body .application select {
   margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 15px;
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   font-style: normal;
   float: right;
   border: 5px double hsl(0, 0%, 0%);
   border-radius: 25px;
-  -webkit-box-shadow: 3px 3px;
-          box-shadow: 3px 3px;
+  box-shadow: 3px 3px;
   font-family: "fraunces-normal-400";
-  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
-          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+  box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquoteleft {
@@ -2119,18 +3090,15 @@ body .application select {
   margin-right: 15px;
   margin-bottom: 10px;
   margin-left: 10px;
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   font-style: normal;
   float: left;
   border: 5px double hsl(0, 0%, 0%);
   border-radius: 25px;
-  -webkit-box-shadow: 3px 3px;
-          box-shadow: 3px 3px;
+  box-shadow: 3px 3px;
   font-family: "fraunces-normal-400";
-  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
-          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+  box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquotecenter {
@@ -2141,15 +3109,13 @@ body .application select {
   margin-right: 15px;
   margin-bottom: 20px;
   margin-left: 10px;
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   font-style: italic;
   float: center;
   border: 2px solid hsl(0, 0%, 0%);
   font-family: "fraunces-normal-400";
-  -webkit-box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
-          box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
+  box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
 .talesoftheoldwest .blockquoteststtable {
@@ -2161,9 +3127,8 @@ body .application select {
 
 .talesoftheoldwest .blockquoteplainleft {
   max-width: 50%;
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   float: left;
   border: none;
   padding: 0;
@@ -2173,9 +3138,8 @@ body .application select {
 
 .talesoftheoldwest .blockquoteplainright {
   max-width: 50%;
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   float: right;
   border: none;
   padding: 0;
@@ -2184,9 +3148,8 @@ body .application select {
 }
 
 .talesoftheoldwest .blockquoteplaincenter {
-  -webkit-column-break-inside: avoid;
-     -moz-column-break-inside: avoid;
-          break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   border: none;
   font-family: "fraunces-normal-400";
 }
@@ -2396,59 +3359,42 @@ body .application select {
 }
 
 .talesoftheoldwest .upright-text {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 }
 
 .talesoftheoldwest img {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
-/* Styles limited to talesoftheoldwest sheets */
+.talesoftheoldwest {
+  /* Styles limited to talesoftheoldwest sheets */
+}
 .talesoftheoldwest .item-form {
   font-family: "fraunces-normal-400";
 }
 .talesoftheoldwest .sheet-header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 auto;
-          flex: 0 auto;
+  flex: 0 auto;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   margin-bottom: 1px;
 }
 .talesoftheoldwest .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
+  flex: 0 0 100px;
   height: 140px;
   width: auto;
   margin-left: 5px;
 }
 .talesoftheoldwest .sheet-header .item-img {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
+  flex: 0 0 100px;
   height: 100px;
   width: auto;
   margin-left: 5px;
 }
 .talesoftheoldwest .sheet-header .header-fields {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .talesoftheoldwest .sheet-header h1.charname {
   height: 50px;
@@ -2542,32 +3488,28 @@ body .application select {
 }
 .talesoftheoldwest .newdots {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   font-size: 1.285em;
   padding: 10px;
 }
 .talesoftheoldwest .newdots-plus {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   font-size: 1.74em;
   padding: 10px;
 }
+.talesoftheoldwest .newdots-town-charter {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.3em;
+}
 .talesoftheoldwest .animal-stats {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   justify-self: anchor-center;
@@ -2603,9 +3545,7 @@ body .application select {
 }
 .talesoftheoldwest .ability-score,
 .talesoftheoldwest .ability-mod {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 44px;
-          flex: 0 0 44px;
+  flex: 0 0 44px;
 }
 .talesoftheoldwest .abilities-name {
   font-size: 1.3em;
@@ -2664,15 +3604,9 @@ body .application select {
   font-weight: bold;
 }
 .talesoftheoldwest .items-list .item-controls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex: 0 0 100px;
+  justify-content: flex-end;
 }
 .talesoftheoldwest .items-list .item-controls a {
   font-size: 12px;
@@ -2690,9 +3624,7 @@ body .application select {
   color: var(--talesoftheoldwest-c-dark);
 }
 .talesoftheoldwest .items-list .item .item-name .item-image {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30px;
-          flex: 0 0 30px;
+  flex: 0 0 30px;
   height: 30px;
   background-size: 30px;
   border: none;
@@ -2702,26 +3634,29 @@ body .application select {
   font-family: "fraunces-normal-400";
   height: auto;
   margin: 2px 0 var(--black);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: rgba(139, 106, 44, 0.44);
   border: 2px groove var(--talesoftheoldwest-c-groove);
   font-weight: bold;
 }
 .talesoftheoldwest .item-formula {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 200px;
-          flex: 0 0 200px;
+  flex: 0 0 200px;
   padding: 0 8px;
+}
+.talesoftheoldwest #rcorners {
+  border-radius: 15px;
+  background-color: #c7d9c4;
+  background-position: left top;
+  padding: 6px;
+  box-shadow: -10px 9px 9px #666666;
+  border: 3px black;
+  border-style: double;
 }
 .talesoftheoldwest .effects-header {
   height: 28px;
   margin: 2px 0;
   padding: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.05);
   border: 2px groove var(--talesoftheoldwest-c-groove);
   font-weight: bold;
@@ -2734,8 +3669,6 @@ body .application select {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .talesoftheoldwest .effects-list {
@@ -2752,18 +3685,12 @@ body .application select {
   padding: 0;
 }
 .talesoftheoldwest .effects-list .effect-name {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  flex: 2;
   margin: 0;
   overflow: hidden;
   font-size: 13px;
   text-align: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
 }
 .talesoftheoldwest .effects-list .effect-name h3, .talesoftheoldwest .effects-list .effect-name h4 {
@@ -2772,15 +3699,9 @@ body .application select {
   overflow-x: hidden;
 }
 .talesoftheoldwest .effects-list .effect-controls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex: 0 0 100px;
+  justify-content: flex-end;
 }
 .talesoftheoldwest .effects-list .effect-controls a {
   font-size: 12px;
@@ -2788,9 +3709,7 @@ body .application select {
   margin: 0 6px;
 }
 .talesoftheoldwest .effects-list .effect {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid var(--talesoftheoldwest-c-faint);
 }
@@ -2801,9 +3720,7 @@ body .application select {
   color: var(--talesoftheoldwest-c-dark);
 }
 .talesoftheoldwest .effects-list .effect .effect-name .effect-image {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30px;
-          flex: 0 0 30px;
+  flex: 0 0 30px;
   height: 30px;
   background-size: 30px;
   border: none;
@@ -2819,9 +3736,7 @@ body .application select {
   height: 28px;
   margin: 2px 0;
   padding: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.05);
   border: 2px groove var(--talesoftheoldwest-c-groove);
   font-weight: bold;
@@ -2835,9 +3750,7 @@ body .application select {
   text-align: left;
 }
 .talesoftheoldwest .effect-formula {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 200px;
-          flex: 0 0 200px;
+  flex: 0 0 200px;
   padding: 0 8px;
 }
 .talesoftheoldwest .effects .item .effect-source,
