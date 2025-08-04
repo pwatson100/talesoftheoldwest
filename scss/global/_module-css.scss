@@ -83,28 +83,39 @@
 	bottom: 30px;
 }
 
-.talesoftheoldwest .content-link-I {
-	color: hsl(39, 77%, 83%);
-	background: transparent;
-	font-size: 1.15em;
-	border: 0;
-}
-.talesoftheoldwest a.inline-link {
+// .talesoftheoldwest .content-link-I,
+// a.content-link {
+// 	color: hsl(39, 77%, 83%);
+// 	background: transparent;
+// 	font-size: 1.3em;
+// 	border: 0;
+// }
+// .talesoftheoldwest a.inline-link,
+// a.content-link {
+// 	background-color: transparent;
+// 	color: hsl(6deg 91.59% 29.26%);
+// 	font-size: 1.3em;
+// 	border: 0;
+// 	font-family: $font-primary;
+// 	font-style: italic;
+// }
+
+.talesoftheoldwest .inline-link2 .content-link,
+a.content-link {
 	background-color: transparent;
-	color: hsl(6deg 91.59% 29.26%);
-	font-size: 1.15em;
+	color: hsl(6, 56%, 30%);
+	/* font-size: 1.3em; */
 	border: 0;
 	font-family: $font-primary;
 	font-style: italic;
+	text-transform: capitalize;
 }
 
-.talesoftheoldwest .inline-link2 .content-link {
-	background-color: transparent;
-	color: hsl(6, 56%, 30%);
-	font-size: 1.333em;
-	border: 0;
-	font-family: $font-primary;
+.talesoftheoldwest a.content-link i,
+.talesoftheoldwest .fa-file-lines:before {
+	content: unset;
 }
+
 .talesoftheoldwest .totowtable {
 	height: 36px;
 	width: 80%;

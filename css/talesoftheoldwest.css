@@ -2997,28 +2997,20 @@ body .application select {
   bottom: 30px;
 }
 
-.talesoftheoldwest .content-link-I {
-  color: hsl(39, 77%, 83%);
-  background: transparent;
-  font-size: 1.15em;
-  border: 0;
-}
-
-.talesoftheoldwest a.inline-link {
+.talesoftheoldwest .inline-link2 .content-link,
+a.content-link {
   background-color: transparent;
-  color: hsl(6, 91.59%, 29.26%);
-  font-size: 1.15em;
+  color: hsl(6, 56%, 30%);
+  /* font-size: 1.3em; */
   border: 0;
   font-family: "fraunces-normal-400";
   font-style: italic;
+  text-transform: capitalize;
 }
 
-.talesoftheoldwest .inline-link2 .content-link {
-  background-color: transparent;
-  color: hsl(6, 56%, 30%);
-  font-size: 1.333em;
-  border: 0;
-  font-family: "fraunces-normal-400";
+.talesoftheoldwest a.content-link i,
+.talesoftheoldwest .fa-file-lines:before {
+  content: unset;
 }
 
 .talesoftheoldwest .totowtable {
