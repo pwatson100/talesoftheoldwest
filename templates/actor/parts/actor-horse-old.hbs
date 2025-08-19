@@ -6,7 +6,7 @@
 			name="system.horse.name"
 			value="{{system.horse.name}}"
 			placeholder="Name"
-			data-dtype='text'
+			data-dtype='String' type='text'
 		/>
 	</div>
 	<label for="system.general.breed" class="resource-label HorseCol2">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.breed')}}</label>
@@ -21,13 +21,13 @@
 		class="experience HorseCol5"
 		name="system.horse.general.ridingmodifier.value"
 		value="{{system.horse.general.ridingmodifier.value}}"
-		data-dtype="Number"
+		data-dtype='Number' type='number'
 	/>
 
 	<label class="resource-label HorseCol6" style="text-align: center; align-self: center; font-size: larger" for="system.horse.general.cost"
 		>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost') }}</label
 	>
-	<input class="currency HorseCol7" name="system.horse.general.cost" value="{{system.horse.general.cost}}" data-dtype="String" />
+	<input class="currency HorseCol7" name="system.horse.general.cost" value="{{system.horse.general.cost}}" data-dtype='String' type='text' />
 </div>
 
 <div class="sheet-animal-attributes animal-stats">
@@ -45,9 +45,9 @@
 		>
 	</div>
 	<div class="aB1">
-		<input class="statnum" name="system.horse.attributes.grit.value" value="{{system.horse.attributes.grit.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.grit.value" value="{{system.horse.attributes.grit.value}}" data-dtype='Number' type='number' />
 		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.grit.max" value="{{system.horse.attributes.grit.max}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.grit.max" value="{{system.horse.attributes.grit.max}}" data-dtype='Number' type='number' />
 	</div>
 
 	<div class="aA2">
@@ -64,9 +64,9 @@
 		>
 	</div>
 	<div class="aB2">
-		<input class="statnum" name="system.horse.attributes.quick.value" value="{{system.horse.attributes.quick.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.quick.value" value="{{system.horse.attributes.quick.value}}" data-dtype='Number' type='number' />
 		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.quick.max" value="{{system.horse.attributes.quick.max}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.quick.max" value="{{system.horse.attributes.quick.max}}" data-dtype='Number' type='number' />
 	</div>
 	<div class="aA3">
 		<label
@@ -82,9 +82,9 @@
 		>
 	</div>
 	<div class="aB3">
-		<input class="statnum" name="system.horse.attributes.cunning.value" value="{{system.horse.attributes.cunning.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.cunning.value" value="{{system.horse.attributes.cunning.value}}" data-dtype='Number' type='number' />
 		<span style="font-weight: bolder; font-size: x-large">/</span>
-		<input class="statnum" name="system.horse.attributes.cunning.max" value="{{system.horse.attributes.cunning.max}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.attributes.cunning.max" value="{{system.horse.attributes.cunning.max}}" data-dtype='Number' type='number' />
 	</div>
 </div>
 <div class="sheet-animal-abilities animal-stats">
@@ -105,7 +105,7 @@
 		>
 	</div>
 	<div class="aresilience2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.resilience.value" value="{{system.horse.abilities.resilience.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.abilities.resilience.value" value="{{system.horse.abilities.resilience.value}}" data-dtype='Number' type='number' />
 	</div>
 	<div class="amove" style="font-size: large; text-align: right">
 		<label
@@ -124,7 +124,7 @@
 		>
 	</div>
 	<div class="amove2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.move.value" value="{{system.horse.abilities.move.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.abilities.move.value" value="{{system.horse.abilities.move.value}}" data-dtype='Number' type='number' />
 	</div>
 	<div class="afightin" style="font-size: large; text-align: right">
 		<label
@@ -143,7 +143,7 @@
 		>
 	</div>
 	<div class="afightin2" style="text-align: center">
-		<input class="statnum" name="system.horse.abilities.fightin.value" value="{{system.horse.abilities.fightin.value}}" data-dtype="Number" />
+		<input class="statnum" name="system.horse.abilities.fightin.value" value="{{system.horse.abilities.fightin.value}}" data-dtype='Number' type='number' />
 	</div>
 </div>
 <div style="height: 150px">{{>"systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs"}}</div>

@@ -17,9 +17,7 @@
 					{{selectOptions config.animal_breed_list selected=system.general.breed labelAttr='label' localize=true}}
 				</select>
 
-				<label class='resource-label HedCol5' for='system.general.ridingmodifier.value'>{{toUpperCase
-						(localize 'TALESOFTHEOLDWEST.General.riding-bonus')
-					}}</label>
+				<label class='resource-label HedCol5' for='system.general.ridingmodifier.value'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.riding-bonus')}}</label>
 				<input
 					class='experience HedCol6'
 					style='width: 44px;'
@@ -32,7 +30,7 @@
 				<label class='resource-label HedCol9' style='text-align: center; align-self: center;font-size: larger;' for='system.general.cost'>{{toUpperCase
 						(localize 'TALESOFTHEOLDWEST.General.cost')
 					}}</label>
-				<input class='currency HedCol12' name='system.general.cost' value='{{system.general.cost}}' data-dtype='Number' />
+				<input class='currency HedCol12' name='system.general.cost' value='{{system.general.cost}}' data-dtype='Number' type='number' />
 
 			{{/if}}
 		{{/if}}
@@ -47,10 +45,10 @@
 			</select>
 
 			<label for='system.general.yourpardner' class='resource-label HedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.your-pardner')}}</label>
-			<input class='HedCol10' type='text' name='system.general.yourpardner' value='{{system.general.yourpardner}}' data-dtype='text' />
+			<input class='HedCol10' type='text' name='system.general.yourpardner' value='{{system.general.yourpardner}}' data-dtype='String' type='text' />
 
 			<label for='system.general.faith' class='resource-label HedCol8'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faith')}}</label>
-			<textarea class='textarea-format HedCol11' type='text' name='system.general.faith' data-dtype='String' rows='2'>{{system.general.faith}}</textarea>
+			<textarea class='textarea-format HedCol11' type='text' name='system.general.faith' data-dtype='String' type='text' rows='2'>{{system.general.faith}}</textarea>
 
 			<div class='newdots-plus HedCol12' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeFaith'>
 				{{#times system.general.faithpoints.value}}

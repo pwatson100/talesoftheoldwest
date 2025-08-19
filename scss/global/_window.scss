@@ -1,7 +1,21 @@
-.talesoftheoldwest.window-app {
-	font-family: $font-primary;
+.theme-dark .application.sheet.actor.talesoftheoldwest,
+.theme-light .application.sheet.actor.talesoftheoldwest,
+.theme-dark .application.sheet.item.talesoftheoldwest,
+.theme-light .application.sheet.item.talesoftheoldwest {
+	background: transparent;
 }
 
+body.theme-dark input[type='number'],
+body.theme-light input[type='number'] {
+	background-color: white;
+	color: black;
+	// width: initial;
+}
+body.theme-dark input[type='text'],
+body.theme-light input[type='text'] {
+	background-color: white;
+	color: black;
+}
 .talesoftheoldwest .rollable {
 	&:hover,
 	&:focus {
@@ -11,19 +25,25 @@
 	}
 }
 
+.theme-dark input[type='checkbox'],
+.theme-light input[type='checkbox'] {
+	--checkbox-font-weight: unset;
+	--checkbox-background-color: var(--color-dark-6);
+	--checkbox-checked-color: var(--color-warm-1);
+	--checkbox-checkmark-color: var(--color-dark-1);
+}
+
+.theme-dark input[type='checkbox']::before,
+.theme-light input[type='checkbox']::before {
+	color: white;
+}
+
 .talesoftheoldwest.dice-tooltip .roll > img {
 	width: 24px;
 }
 
 body {
-	.talesoftheoldwest.application {
-		font-family: $font-primary;
-		color: black;
-		background: transparent;
-		box-shadow: none;
-		border: none;
-	}
-	& .application.dialog {
+	.application.dialog {
 		width: 300px;
 		background-image: $app-background;
 		background-position: center; /* Center the image */
@@ -32,8 +52,17 @@ body {
 		border: transparent;
 		filter: drop-shadow(8px 12px 8px #353232);
 	}
-	.application.sheet.actor .window-content,
-	.application.sheet.item .window-content {
+	.dialog-form.standard-form .form-footer,
+	.dialog-buttons {
+		justify-content: center;
+		button {
+			max-width: max-content;
+			min-width: unset;
+			width: fit-content;
+		}
+	}
+	.application.sheet.actor.talesoftheoldwest .window-content,
+	.application.sheet.item.talesoftheoldwest .window-content {
 		display: block;
 		overflow: auto;
 		backdrop-filter: blur(4px);
@@ -48,15 +77,7 @@ body {
 		font-family: $font-primary;
 		color: hsl(0, 0%, 0%);
 	}
-	.dialog-form.standard-form .form-footer,
-	.dialog-buttons {
-		justify-content: center;
-		button {
-			max-width: max-content;
-			min-width: unset;
-			width: fit-content;
-		}
-	}
+
 	.application input[type='text'],
 	.application select {
 		font-family: $font-primary;
@@ -69,25 +90,29 @@ body {
 		--input-placeholder-color: var(--color-dark-3);
 		--input-focus-outline-color: var(--color-warm-2);
 	}
+	.application input[type='number'] {
+		width: 44px;
+		font-family: $font-primary;
+		font-size: 1.25em;
+		background: white;
+		color: black;
+		--input-background-color: rgba(0, 0, 0, 0.1);
+		--input-border-color: var(--color-dark-6);
+		--input-text-color: var(--color-dark-2);
+		--input-placeholder-color: var(--color-dark-3);
+		--input-focus-outline-color: var(--color-warm-2);
+	}
 }
 
-.application input[type='number'] {
-	width: 44px;
-	font-family: $font-primary;
-	font-size: 1.25em;
-	background: white;
+.dialog-content.standard-form .form-group > label,
+.dialog-content.standard-form .form-group > span.label,
+.dialog-form.standard-form {
 	color: black;
-	--input-background-color: rgba(0, 0, 0, 0.1);
-	--input-border-color: var(--color-dark-6);
-	--input-text-color: var(--color-dark-2);
-	--input-placeholder-color: var(--color-dark-3);
-	--input-focus-outline-color: var(--color-warm-2);
 }
 
 .talesoftheoldwest.application .window-header,
 .window-app .window-header {
 	background-image: url('../assets/background/header-plank.webp');
-	// background: blue;
 }
 
 .talesoftheoldwest.application .window-resize-handle {
@@ -121,7 +146,6 @@ body {
 
 .talesoftheoldwest .tab.description {
 	flex: 1;
-
 	.editor {
 		height: 100%;
 	}
@@ -164,6 +188,7 @@ body {
 .app.window-app.sheet.journal-sheet.journal-entry .journal-entry-content {
 	background-image: url('../assets/background/journal-background.webp');
 	background-size: cover;
+	color: #000;
 }
 
 .app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
@@ -174,18 +199,10 @@ body {
 .application.sheet.journal-sheet.journal-entry .journal-entry-content {
 	background-image: url('../assets/background/journal-background.webp');
 	background-size: cover;
+	color: #000;
 }
 .application.sheet.journal-sheet .window-header {
 	background-image: url('../assets/background/header-plank.webp');
-	// background: blue;
-}
-
-.theme-dark input[type='checkbox'],
-.theme-light input[type='checkbox'] {
-	--checkbox-font-weight: unset;
-	--checkbox-background-color: var(--color-dark-6);
-	--checkbox-checked-color: var(--color-warm-1);
-	--checkbox-checkmark-color: var(--color-dark-1);
 }
 
 #pause {

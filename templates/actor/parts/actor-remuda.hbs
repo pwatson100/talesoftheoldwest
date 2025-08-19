@@ -10,22 +10,12 @@
 							<a class='schB1' data-action='remudaMount' data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToMount"}}'><i
 									class='saddle-bag'
 								></i></a>
-							<a
-								class='button schA2'
-								data-action='remudaView'
-								data-actor='{{actor.id}}'
-								data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}'
-								data-compId='{{id}}'
-							>
+							<a class='button schA2' data-action='remudaView' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Horse'}}' data-compId='{{id}}'>
 								<i class='fas fa-edit'></i>
 							</a>
-							<a
-								class='button schA3'
-								data-action='remudaRemove'
-								data-actor='{{actor.id}}'
-								data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}'
-								data-compId='{{id}}'
-							><i class='fas fa-trash'></i></a>
+							<a class='button schA3' data-action='remudaRemove' data-actor='{{actor.id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i
+									class='fas fa-trash'
+								></i></a>
 
 						</div>
 						<div class='sheet-animal-attributes animal-stats'>
@@ -42,9 +32,9 @@
 								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
 							</div>
 							<div class='aB1'>
-								<input class='statnum' name='actor.system.attributes.grit.value' value='{{actor.system.attributes.grit.value}}' data-dtype='Number' disabled />
+								<input class='statnum' name='actor.system.attributes.grit.value' value='{{actor.system.attributes.grit.value}}' data-dtype='Number' type='number' disabled />
 								<span style='font-weight: bolder; font-size: x-large'>/</span>
-								<input class='statnum' name='actor.system.attributes.grit.max' value='{{actor.system.attributes.grit.max}}' data-dtype='Number' disabled />
+								<input class='statnum' name='actor.system.attributes.grit.max' value='{{actor.system.attributes.grit.max}}' data-dtype='Number' type='number' disabled />
 							</div>
 
 							<div class='aA2 main-attributes'>
@@ -60,15 +50,9 @@
 								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
 							</div>
 							<div class='aB2'>
-								<input
-									class='statnum'
-									name='actor.system.attributes.quick.value'
-									value='{{actor.system.attributes.quick.value}}'
-									data-dtype='Number'
-									disabled
-								/>
+								<input class='statnum' name='actor.system.attributes.quick.value' value='{{actor.system.attributes.quick.value}}' data-dtype='Number' type='number' disabled />
 								<span style='font-weight: bolder; font-size: x-large'>/</span>
-								<input class='statnum' name='actor.system.attributes.quick.max' value='{{actor.system.attributes.quick.max}}' data-dtype='Number' disabled />
+								<input class='statnum' name='actor.system.attributes.quick.max' value='{{actor.system.attributes.quick.max}}' data-dtype='Number' type='number' disabled />
 							</div>
 							<div class='aA3 main-attributes'>
 								<label
@@ -83,21 +67,9 @@
 								>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
 							</div>
 							<div class='aB3'>
-								<input
-									class='statnum'
-									name='actor.system.attributes.cunning.value'
-									value='{{actor.system.attributes.cunning.value}}'
-									data-dtype='Number'
-									disabled
-								/>
+								<input class='statnum' name='actor.system.attributes.cunning.value' value='{{actor.system.attributes.cunning.value}}' data-dtype='Number' type='number' disabled />
 								<span style='font-weight: bolder; font-size: x-large'>/</span>
-								<input
-									class='statnum'
-									name='actor.system.attributes.cunning.max'
-									value='{{actor.system.attributes.cunning.max}}'
-									data-dtype='Number'
-									disabled
-								/>
+								<input class='statnum' name='actor.system.attributes.cunning.max' value='{{actor.system.attributes.cunning.max}}' data-dtype='Number' type='number' disabled />
 							</div>
 						</div>
 						<div class='sheet-animal-abilities animal-stats'>
@@ -122,6 +94,7 @@
 									name='actor.system.abilities.resilience.value'
 									value='{{actor.system.abilities.resilience.value}}'
 									data-dtype='Number'
+									type='number'
 									disabled
 								/>
 							</div>
@@ -141,7 +114,7 @@
 								>{{actor.system.abilities.move.upper}}</label>
 							</div>
 							<div class='amove2' style='text-align: center'>
-								<input class='statnum' name='actor.system.abilities.move.value' value='{{actor.system.abilities.move.value}}' data-dtype='Number' disabled />
+								<input class='statnum' name='actor.system.abilities.move.value' value='{{actor.system.abilities.move.value}}' data-dtype='Number' type='number' disabled />
 							</div>
 							<div class='afightin heading'>
 								<label
@@ -159,13 +132,7 @@
 								>{{actor.system.abilities.fightin.upper}}</label>
 							</div>
 							<div class='afightin2' style='text-align: center'>
-								<input
-									class='statnum'
-									name='actor.system.abilities.fightin.value'
-									value='{{actor.system.abilities.fightin.value}}'
-									data-dtype='Number'
-									disabled
-								/>
+								<input class='statnum' name='actor.system.abilities.fightin.value' value='{{actor.system.abilities.fightin.value}}' data-dtype='Number' type='number' disabled />
 							</div>
 						</div>
 						<div class='compadre-split div-border'>
@@ -178,9 +145,7 @@
 								{{/each}}
 							</div>
 
-							<label class='CompSplit12 sub-heading' style='border-left: solid 2px black;'>{{toUpperCase
-									(localize 'TALESOFTHEOLDWEST.Item.General.flaws')
-								}}</label>
+							<label class='CompSplit12 sub-heading' style='border-left: solid 2px black;'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.flaws')}}</label>
 							<div class='CompSplit22' style='border-left: solid 2px black;'>
 								{{#each actor.items}}
 									{{#if (eq system.general.subtype 'flaw')}}

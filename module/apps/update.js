@@ -26,11 +26,6 @@ export default async function updateModule() {
 	];
 
 	const updateNotes = `
-	// <ul>
-  //   <li>Corrected error in the macros:</li>
-  //   <li>Alien - Roll on selected Creature table V10</li>
-  //   <li>Alien - Roll on selected Mother table V10</li>
-  //   </ul>
 		`;
 
 	// If there are no actual asset updates quit.

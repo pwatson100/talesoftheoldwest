@@ -63,6 +63,7 @@ export default class totowNPC extends totowActorBase {
 			freezing: new fields.BooleanField({ initial: false }),
 			encumbered: new fields.BooleanField({ initial: false }),
 			overwatch: new fields.BooleanField({ initial: false }),
+			heatstroke: new fields.BooleanField({ initial: false }),
 		});
 		return schema;
 	}

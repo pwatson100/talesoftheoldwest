@@ -353,7 +353,7 @@ TALESOFTHEOLDWEST.conditionEffects = [
 		id: 'heatstroke',
 		name: 'TALESOFTHEOLDWEST.Conditions.Heatstroke',
 		label: 'TALESOFTHEOLDWEST.Conditions.Heatstroke',
-		icon: 'systems/talesoftheoldwest/assets/icons/overwatch.webp',
+		icon: 'systems/talesoftheoldwest/assets/icons/heatstroke.webp',
 	},
 	{
 		id: 'criticalinj',

@@ -4,22 +4,22 @@
 		<label for='system.general.mayor' class='TCColh1 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.soo')}}</label>
 		<label for='system.general.mayor' class='TCColh2 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.onc')}}</label>
 		<label for='system.general.mayor' class='TCCol1 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.mayor')}}</label>
-		<input class='TCCol2' type='text' name='system.general.mayor' value='{{system.general.mayor}}' data-dtype='text' />
+		<input class='TCCol2' type='text' name='system.general.mayor' value='{{system.general.mayor}}' data-dtype='String' type='text' />
 		<label for='system.general.judge' class='TCCol5 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.judge')}}</label>
-		<input class='TCCol6' type='text' name='system.general.judge' value='{{system.general.judge}}' data-dtype='text' />
+		<input class='TCCol6' type='text' name='system.general.judge' value='{{system.general.judge}}' data-dtype='String' type='text' />
 		<label for='system.general.sheriff' class='TCCol9 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.sheriff')}}</label>
-		<input class='TCCol10' type='text' name='system.general.sheriff' value='{{system.general.sheriff}}' data-dtype='text' />
+		<input class='TCCol10' type='text' name='system.general.sheriff' value='{{system.general.sheriff}}' data-dtype='String' type='text' />
 		<label for='system.general.deputy' class='TCCol13 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.deputy')}}</label>
-		<input class='TCCol14' type='text' name='system.general.deputy' value='{{system.general.deputy}}' data-dtype='text' />
+		<input class='TCCol14' type='text' name='system.general.deputy' value='{{system.general.deputy}}' data-dtype='String' type='text' />
 
 		<label for='system.general.ons1' class='TCCol3 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons1')}}</label>
-		<input class='TCCol4' type='text' name='system.general.ons1' value='{{system.general.ons1}}' data-dtype='text' />
+		<input class='TCCol4' type='text' name='system.general.ons1' value='{{system.general.ons1}}' data-dtype='String' type='text' />
 		<label for='system.general.ons2' class='TCCol7 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons2')}}</label>
-		<input class='TCCol8' type='text' name='system.general.ons2' value='{{system.general.ons2}}' data-dtype='text' />
+		<input class='TCCol8' type='text' name='system.general.ons2' value='{{system.general.ons2}}' data-dtype='String' type='text' />
 		<label for='system.general.ons3' class='TCCol11 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons3')}}</label>
-		<input class='TCCol12' type='text' name='system.general.ons3' value='{{system.general.ons3}}' data-dtype='text' />
+		<input class='TCCol12' type='text' name='system.general.ons3' value='{{system.general.ons3}}' data-dtype='String' type='text' />
 		<label for='system.general.ons4' class='TCCol15 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.ons4')}}</label>
-		<input class='TCCol16' type='text' name='system.general.ons4' value='{{system.general.ons4}}' data-dtype='text' />
+		<input class='TCCol16' type='text' name='system.general.ons4' value='{{system.general.ons4}}' data-dtype='String' type='text' />
 		<label for='system.general.settlementponts.value' class='TCCol17 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.settlementponts')}}</label>
 
 		<div
@@ -35,7 +35,7 @@
 		</div>
 
 		<label for='system.general.bonussp.value' class='TCCol19 resource-label'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.TownCharter.bonussp')}}</label>
-		<input class='TCCol20 statnum' type='Number' name='system.general.bonussp.value' value='{{system.general.bonussp.value}}' data-dtype='Number' />
+		<input class='TCCol20 statnum' name='system.general.bonussp.value' value='{{system.general.bonussp.value}}' data-dtype='Number' type='number' />
 	</div>
 	<div class='grid-aspect-footer' style='margin-top:30px'>
 		<label class='GAF11 resource-label' style='font-size: 1em'>Rank 1</label>
@@ -95,7 +95,7 @@
 			{{#times system.aspects.farming.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.farmingrank.value' value='{{system.aspects.farmingrank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.farmingrank.value' value='{{system.aspects.farmingrank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect'>
@@ -113,7 +113,7 @@
 			{{#times system.aspects.mercantile.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.mercantilerank.value' value='{{system.aspects.mercantilerank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.mercantilerank.value' value='{{system.aspects.mercantilerank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect'>
@@ -131,7 +131,7 @@
 			{{#times system.aspects.natural.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.naturalrank.value' value='{{system.aspects.naturalrank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.naturalrank.value' value='{{system.aspects.naturalrank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect'>
@@ -149,7 +149,7 @@
 			{{#times system.aspects.law.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.lawrank.value' value='{{system.aspects.lawrank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.lawrank.value' value='{{system.aspects.lawrank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect'>
@@ -167,7 +167,7 @@
 			{{#times system.aspects.civic.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.civicrank.value' value='{{system.aspects.civicrank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.civicrank.value' value='{{system.aspects.civicrank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect'>
@@ -185,7 +185,7 @@
 			{{#times system.aspects.welfare.max}}<i class='far fa-circle'></i>{{/times}}
 		</div>
 		<div class='GA2Rank'>
-			<input class='statnum' name='system.aspects.welfarerank.value' value='{{system.aspects.welfarerank.value}}' data-dtype='Number' disabled />
+			<input class='statnum' name='system.aspects.welfarerank.value' value='{{system.aspects.welfarerank.value}}' data-dtype='Number' type='number' disabled />
 		</div>
 	</div>
 	<div class='grid-aspect-footer'>
@@ -204,6 +204,7 @@
 				name='system.general.prosperitytotal.value'
 				value='{{system.general.prosperitytotal.value}}'
 				data-dtype='Number'
+				type='number'
 				disabled
 			/></label>
 	</div>

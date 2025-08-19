@@ -160,8 +160,23 @@
 }
 
 /* Global styles */
-.talesoftheoldwest.window-app {
-  font-family: "fraunces-normal-400";
+.theme-dark .application.sheet.actor.talesoftheoldwest,
+.theme-light .application.sheet.actor.talesoftheoldwest,
+.theme-dark .application.sheet.item.talesoftheoldwest,
+.theme-light .application.sheet.item.talesoftheoldwest {
+  background: transparent;
+}
+
+body.theme-dark input[type=number],
+body.theme-light input[type=number] {
+  background-color: white;
+  color: black;
+}
+
+body.theme-dark input[type=text],
+body.theme-light input[type=text] {
+  background-color: white;
+  color: black;
 }
 
 .talesoftheoldwest .rollable:hover, .talesoftheoldwest .rollable:focus {
@@ -170,17 +185,23 @@
   cursor: pointer;
 }
 
+.theme-dark input[type=checkbox],
+.theme-light input[type=checkbox] {
+  --checkbox-font-weight: unset;
+  --checkbox-background-color: var(--color-dark-6);
+  --checkbox-checked-color: var(--color-warm-1);
+  --checkbox-checkmark-color: var(--color-dark-1);
+}
+
+.theme-dark input[type=checkbox]::before,
+.theme-light input[type=checkbox]::before {
+  color: white;
+}
+
 .talesoftheoldwest.dice-tooltip .roll > img {
   width: 24px;
 }
 
-body .talesoftheoldwest.application {
-  font-family: "fraunces-normal-400";
-  color: black;
-  background: transparent;
-  box-shadow: none;
-  border: none;
-}
 body .application.dialog {
   width: 300px;
   background-image: url("../assets/background/sheet-background.webp");
@@ -190,8 +211,20 @@ body .application.dialog {
   border: transparent;
   filter: drop-shadow(8px 12px 8px #353232);
 }
-body .application.sheet.actor .window-content,
-body .application.sheet.item .window-content {
+body .dialog-form.standard-form .form-footer,
+body .dialog-buttons {
+  justify-content: center;
+}
+body .dialog-form.standard-form .form-footer button,
+body .dialog-buttons button {
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .application.sheet.actor.talesoftheoldwest .window-content,
+body .application.sheet.item.talesoftheoldwest .window-content {
   display: block;
   overflow: auto;
   -webkit-backdrop-filter: blur(4px);
@@ -207,18 +240,6 @@ body .application.sheet.item .window-content {
   font-family: "fraunces-normal-400";
   color: hsl(0, 0%, 0%);
 }
-body .dialog-form.standard-form .form-footer,
-body .dialog-buttons {
-  justify-content: center;
-}
-body .dialog-form.standard-form .form-footer button,
-body .dialog-buttons button {
-  max-width: -moz-max-content;
-  max-width: max-content;
-  min-width: unset;
-  width: -moz-fit-content;
-  width: fit-content;
-}
 body .application input[type=text],
 body .application select {
   font-family: "fraunces-normal-400";
@@ -231,8 +252,7 @@ body .application select {
   --input-placeholder-color: var(--color-dark-3);
   --input-focus-outline-color: var(--color-warm-2);
 }
-
-.application input[type=number] {
+body .application input[type=number] {
   width: 44px;
   font-family: "fraunces-normal-400";
   font-size: 1.25em;
@@ -243,6 +263,12 @@ body .application select {
   --input-text-color: var(--color-dark-2);
   --input-placeholder-color: var(--color-dark-3);
   --input-focus-outline-color: var(--color-warm-2);
+}
+
+.dialog-content.standard-form .form-group > label,
+.dialog-content.standard-form .form-group > span.label,
+.dialog-form.standard-form {
+  color: black;
 }
 
 .talesoftheoldwest.application .window-header,
@@ -321,6 +347,7 @@ body .application select {
 .app.window-app.sheet.journal-sheet.journal-entry .journal-entry-content {
   background-image: url("../assets/background/journal-background.webp");
   background-size: cover;
+  color: #000;
 }
 
 .app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
@@ -330,18 +357,11 @@ body .application select {
 .application.sheet.journal-sheet.journal-entry .journal-entry-content {
   background-image: url("../assets/background/journal-background.webp");
   background-size: cover;
+  color: #000;
 }
 
 .application.sheet.journal-sheet .window-header {
   background-image: url("../assets/background/header-plank.webp");
-}
-
-.theme-dark input[type=checkbox],
-.theme-light input[type=checkbox] {
-  --checkbox-font-weight: unset;
-  --checkbox-background-color: var(--color-dark-6);
-  --checkbox-checked-color: var(--color-warm-1);
-  --checkbox-checkmark-color: var(--color-dark-1);
 }
 
 #pause {
@@ -2953,6 +2973,10 @@ body .application select {
   display: none;
 }
 
+.talesoftheoldwest table {
+  background: none;
+}
+
 .talesoftheoldwest .tables.content {
   background: lightgray;
 }
@@ -3001,11 +3025,12 @@ body .application select {
 a.content-link {
   background-color: transparent;
   color: hsl(6, 56%, 30%);
-  /* font-size: 1.3em; */
   border: 0;
   font-family: "fraunces-normal-400";
   font-style: italic;
   text-transform: capitalize;
+  text-wrap-mode: wrap;
+  word-break: keep-all;
 }
 
 .talesoftheoldwest a.content-link i,
@@ -3167,10 +3192,12 @@ a.content-link {
 .talesoftheoldwest h1 {
   font-family: "fraunces-normal-400";
   font-weight: bold;
+  color: black;
 }
 
 .talesoftheoldwest h2 {
   font-family: "fraunces-normal-400";
+  color: black;
   font-weight: bold;
   text-align: center;
   font-size: 2.5em;
@@ -3178,6 +3205,7 @@ a.content-link {
 
 .talesoftheoldwest h3 {
   font-family: "fraunces-normal-400";
+  color: black;
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -3199,6 +3227,7 @@ a.content-link {
 
 .talesoftheoldwest h4 {
   font-family: "fraunces-normal-400";
+  color: black;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -3260,7 +3289,7 @@ a.content-link {
   font-weight: normal;
   list-style-type: square;
   padding-bottom: 9px;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .ulindent {
@@ -3512,7 +3541,7 @@ a.content-link {
   overflow-x: auto;
 }
 .talesoftheoldwest .qualities-box {
-  width: 257px;
+  width: 312px;
   justify-self: center;
   min-height: 93px;
 }

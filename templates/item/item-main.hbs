@@ -57,26 +57,26 @@
 				{{selectOptions config.crit_location_list selected=system.location labelAttr='label' localize=true}}
 			</select>
 			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.injury'}}</div>
-			<input type='text' class='' name='system.injury' value='{{keepMarkup system.injury}} ' data-dtype='String' />
+			<input type='text' class='' name='system.injury' value='{{keepMarkup system.injury}} ' data-dtype='String' type='text' />
 
 			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.healTime'}}</div>
 			<span>
-				<input type='text' class='healboxsize' name='system.healingtime' value='{{system.healingtime}} ' data-dtype='String' />
+				<input type='text' class='healboxsize' name='system.healingtime' value='{{system.healingtime}} ' data-dtype='String' type='text' />
 			</span>
 			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.fatal'}}
 				<input class='' name='system.fatal' type='checkbox' {{checked system.fatal}} />
 
 				{{#if system.fatal}}
-					<input type='text' name='system.fatalmessage' value='{{removeMarkup system.fatalmessage}}' data-dtype='String' />
+					<input type='text' name='system.fatalmessage' value='{{removeMarkup system.fatalmessage}}' data-dtype='String' type='text' />
 				{{/if}}
 			</div>
 			<div class='resource-label wItem3'>{{localize 'TALESOFTHEOLDWEST.Criticals.imediateeffect'}}</div>
 			<span>
-				<input type='text' class='' name='system.imediateeffect' value='{{removeMarkup system.imediateeffect}} ' data-dtype='String' />
+				<input type='text' class='' name='system.imediateeffect' value='{{removeMarkup system.imediateeffect}} ' data-dtype='String' type='text' />
 			</span>
 			<div class='resource-label'>{{localize 'TALESOFTHEOLDWEST.Criticals.longtermeffect'}}</div>
 			<span>
-				<input type='text' class='' name='system.longtermeffect' value='{{removeMarkup system.longtermeffect}} ' data-dtype='String' />
+				<input type='text' class='' name='system.longtermeffect' value='{{removeMarkup system.longtermeffect}} ' data-dtype='String' type='text' />
 			</span>
 		</div>
 

@@ -14,6 +14,7 @@
 				name='system.quantity'
 				value='{{system.quantity}}'
 				data-dtype='Number'
+				type='number'
 			/>
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.weight')}}</label>
 			<input
@@ -23,9 +24,10 @@
 				name='system.weight'
 				value='{{system.weight}}'
 				data-dtype='Number'
+				type='number'
 			/>
 			<label class='resource-label ItemHedCol7'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
-			<input class='ItemHedCol8 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' />
+			<input class='ItemHedCol8 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' type='text' />
 		{{/if}}
 
 		{{#if (eq item.type 'weapon')}}
@@ -37,9 +39,10 @@
 				name='system.weight'
 				value='{{system.weight}}'
 				data-dtype='Number'
+				type='number'
 			/>
 			<label class='resource-label ItemHedCol5'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cost')}}</label>
-			<input class='ItemHedCol6 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' />
+			<input class='ItemHedCol6 currency' name='system.cost' value='{{system.cost}}' data-dtype='String' type='text' />
 		{{/if}}
 		{{#if (eq item.type 'animalquality')}}
 			<label for='system.general.subtype' class='resource-label ItemHedCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.type')}}</label>

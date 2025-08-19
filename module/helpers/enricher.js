@@ -4,6 +4,7 @@ export function enrichTextEditors() {
 	// optionally add a roll for the draw at the end
 	// e.g., @DRAW[Compendium.cy-borg-core.random-tables.vX47Buopuq9t0x9r]{Names}{1d4}
 	const DRAW_FROM_TABLE_PATTERN = /@DRAW\[([^\]]+)\]{([^}]*)}(?:{([^}]*)})?/gm;
+	const TEXT_DRAW_FROM_TABLE_PATTERN = /@TEXTDRAW\[([^\]]+)\]{([^}]*)}(?:{([^}]*)})?/gm;
 	const drawFromTableEnricher = (match, _options) => {
 		const uuid = match[1];
 		const tableName = match[2];
@@ -16,6 +17,21 @@ export function enrichTextEditors() {
 			elem.setAttribute('data-roll', roll);
 		}
 		elem.innerHTML = `<i class="fas fa-dice-d20">&nbsp;</i>`;
+		return elem;
+	};
+
+	const textDrawFromTableEnricher = (match, _options) => {
+		const uuid = match[1];
+		const tableName = match[2];
+		const roll = match[3];
+		const elem = document.createElement('span');
+		elem.className = 'draw-from-table';
+		elem.setAttribute('data-tooltip', `Draw from ${tableName}. <br> ${game.i18n.localize('TALESOFTHEOLDWEST.dialog.Tooltip-Rollontable')}`);
+		elem.setAttribute('data-uuid', uuid);
+		if (roll) {
+			elem.setAttribute('data-roll', roll);
+		}
+		elem.innerHTML = `<a class='content-link' >${tableName}</a>`;
 		return elem;
 	};
 
@@ -36,6 +52,34 @@ export function enrichTextEditors() {
 			{
 				pattern: DRAW_FROM_TABLE_PATTERN,
 				enricher: drawFromTableEnricher,
+			},
+			{
+				pattern: /@fas\[(.+?)\]/gm,
+				enricher: async (match, options) => {
+					const doc = document.createElement('span');
+					doc.innerHTML = `<i class="fas ${match[1]}"></i>`;
+					return doc;
+				},
+			},
+		]
+	);
+	CONFIG.TextEditor.enrichers.push(
+		...[
+			{
+				pattern: /@RAW\[(.+?)\]/gm,
+				enricher: async (match, options) => {
+					const myData = await $.ajax({
+						url: match[1],
+						type: 'GET',
+					});
+					const doc = document.createElement('span');
+					doc.innerHTML = myData;
+					return doc;
+				},
+			},
+			{
+				pattern: TEXT_DRAW_FROM_TABLE_PATTERN,
+				enricher: textDrawFromTableEnricher,
 			},
 			{
 				pattern: /@fas\[(.+?)\]/gm,
