@@ -31,9 +31,9 @@
 						<img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' />
 					</a>
 				</div>
-<div class='item-name TCol12'data-tooltip='{{removeMarkup item.system.description}}' 
-Basic -  {{#if item.system.basicisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.basicAction}} 
-Advanced - {{#if item.system.advisActive}} "Active" {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.advAction}}'
+<div class='item-name TCol12'data-tooltip='{{removeMarkup item.system.description}} <br>
+<p><strong>Basic</strong> -  {{#if item.system.basicisActive}} <span style="color:rgb(56, 180, 56)">"Active"</span> {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.basicAction}} </p>
+<p><strong>Advanced</strong> - {{#if item.system.advisActive}}<span style="color:rgb(56, 180, 56)">"Active"</span> {{else}} "Inactive" {{/if}} - {{removeMarkup item.system.advAction}}</p>'
 				>{{item.name}}</div>
 
 				<div class='item-controls TCol14'>

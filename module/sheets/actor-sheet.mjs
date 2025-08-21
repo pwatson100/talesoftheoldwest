@@ -1150,17 +1150,19 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		// const damageType = dataset.label;
 
 		let damage = this.actor.system.damage[target.dataset.label];
+		let attribute = this.actor.system.attributes[target.dataset.attribute];
 		let field = `system.damage.${target.dataset.label}.value`;
+		let aField = `system.attributes.${target.dataset.attribute}.value`;
 
 		if (event.button === 2) {
 			// right click
 			if (damage.value) {
-				return await this.actor.update({ [field]: damage.value - 1 });
+				return await this.actor.update({ [field]: damage.value - 1, [aField]: attribute.value + 1 });
 			}
 		} else {
 			// left click
 			if (damage.max) {
-				return await this.actor.update({ [field]: damage.value + 1 });
+				return await this.actor.update({ [field]: damage.value + 1, [aField]: attribute.value - 1 });
 			}
 		}
 	}

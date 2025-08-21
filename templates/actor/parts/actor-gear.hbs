@@ -27,12 +27,7 @@
 			<input name='system.general.lifestyle' class=' L5C2' type='text' style='width: 300px' value='{{system.general.lifestyle}}' data-dtype='String' type='text' />
 
 			<label for='system.general.xp.value' class='resource-label L6C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
-			<div class='newdots-plus  L6C2' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}' data-action='changeXp'>
-				{{#times system.general.xp.value}}
-					<i class='far fa-dot-circle'></i>
-				{{/times}}
-				{{#times system.general.xp.max}}<i class='far fa-circle'></i>{{/times}}
-			</div>
+			<input class='statnum L6C2' name='system.general.xp.value' value='{{system.general.xp.value}}' data-dtype='Number' type='number' />
 		</div>
 		<div class="gearSplit2" style="overflow-x: auto"> <div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.gear')}}</div>
 
