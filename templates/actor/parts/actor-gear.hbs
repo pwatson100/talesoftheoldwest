@@ -26,14 +26,17 @@
 			<label for='system.general.lifestyle' class='resource-label L5C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.lifestyle')}}</label>
 			<input name='system.general.lifestyle' class=' L5C2' type='text' style='width: 300px' value='{{system.general.lifestyle}}' data-dtype='String' type='text' />
 
-			<label for='system.general.xp.value' class='resource-label L6C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
-			<input class='statnum L6C2' name='system.general.xp.value' value='{{system.general.xp.value}}' data-dtype='Number' type='number' />
+			<label for='system.general.bigdream' class='resource-label L6C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.bigDream')}}</label>
+			<input name='system.general.bigdream' class=' L6C2' type='text' style='width: 300px' value='{{system.general.bigdream}}' data-dtype='String' type='text' />
+
+			<label for='system.general.xp.value' class='resource-label L7C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
+			<input class='statnum L7C2' name='system.general.xp.value' value='{{system.general.xp.value}}' data-dtype='Number' type='number' />
 		</div>
 		<div class="gearSplit2" style="overflow-x: auto"> <div class='heading'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.gear')}}</div>
 
 	{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}} 
 	</div> 
 	</div>
-	<div style="margin-left: 15px; margin-top:10px">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs"}}</div>
+	<div style="margin-left: 15px; margin-top:5px;border-top: black solid;">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs"}}</div>
 
 </section>

@@ -1312,7 +1312,7 @@ body .application input[type=number] {
   -moz-column-gap: 5px;
        column-gap: 5px;
   align-items: center;
-  grid-template-areas: "L1C1 L1C2 L1C3 L1C4" "L2C1 L2C2 L2C3 L2C4" "L3C1 L3C2 L3C3 L3C4" "L4C1 L4C2 L4C2 L4C2" "L5C1 L5C2 L5C2 L5C2" "L6C1 L6C2 L6C2 L6C2";
+  grid-template-areas: "L1C1 L1C2 L1C3 L1C4" "L2C1 L2C2 L2C3 L2C4" "L3C1 L3C2 L3C3 L3C4" "L4C1 L4C2 L4C2 L4C2" "L5C1 L5C2 L5C2 L5C2" "L6C1 L6C2 L6C2 L6C2" "L7C1 L7C2 L7C2 L7C2";
   grid-template-columns: 150px 50px 150px 60px;
 }
 
@@ -1396,6 +1396,15 @@ body .application input[type=number] {
 
 .L6C2 {
   grid-area: L6C2;
+}
+
+.L7C1 {
+  grid-area: L7C1;
+  text-align: right;
+}
+
+.L7C2 {
+  grid-area: L7C2;
 }
 
 .conditions-split {
@@ -3460,6 +3469,7 @@ a.content-link {
   padding: 7px;
   background-color: var(--talesoftheoldwest-c-white);
   font-family: "fraunces-normal-400";
+  color: var(--talesoftheoldwest-c-black);
 }
 .talesoftheoldwest .currency,
 .talesoftheoldwest .currency2 {

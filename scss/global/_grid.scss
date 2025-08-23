@@ -857,7 +857,8 @@
 		'L3C1 L3C2 L3C3 L3C4'
 		'L4C1 L4C2 L4C2 L4C2'
 		'L5C1 L5C2 L5C2 L5C2'
-		'L6C1 L6C2 L6C2 L6C2';
+		'L6C1 L6C2 L6C2 L6C2'
+		'L7C1 L7C2 L7C2 L7C2';
 
 	grid-template-columns: 150px 50px 150px 60px;
 	// margin: 10px 0px 10px 0px;
@@ -947,6 +948,15 @@
 }
 .L6C2 {
 	grid-area: L6C2;
+	// text-align: center;
+}
+.L7C1 {
+	grid-area: L7C1;
+	// font-size: large;
+	text-align: right;
+}
+.L7C2 {
+	grid-area: L7C2;
 	// text-align: center;
 }
 
