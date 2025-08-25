@@ -487,7 +487,7 @@ export class totowActor extends Actor {
 						result = await processConditionals('Attributes', dataset, rollData);
 						break;
 					case 'ability':
-						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long')) {
+						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long') && actor.type =='pc') {
 							if (actor.system.remuda.remudaMounted !== 'false') {
 								let horse = await this.getRemuda(actor.system.remuda.remudaMounted);
 								let content = '';
@@ -621,6 +621,7 @@ export class totowActor extends Actor {
 						rollMode: game.settings.get('core', 'rollMode'),
 						content: html,
 						sound: CONFIG.sounds.dice,
+						// flags: {talesoftheoldwest:	[{'isType': actor.type}]}
 					};
 					if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
 						chatData.whisper = ChatMessage.getWhisperRecipients('GM');
@@ -630,6 +631,7 @@ export class totowActor extends Actor {
 					const msg = await ChatMessage.create(chatData);
 					result[1].messageNo = msg.id;
 					await msg.setFlag('talesoftheoldwest', 'results', result);
+					await msg.setFlag('talesoftheoldwest', 'isType', actor.type);
 
 					return result;
 				}

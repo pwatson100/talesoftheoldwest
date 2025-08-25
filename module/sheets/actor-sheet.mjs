@@ -174,6 +174,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			owner: this.document.isOwner,
 			limited: this.document.limited,
 			isGM: game.user.isGM,
+			isType: this.actor.type,
 			// Add the actor document.
 			actor: this.actor,
 			// Add the actor's data to context.data for easier access, as well as flags.

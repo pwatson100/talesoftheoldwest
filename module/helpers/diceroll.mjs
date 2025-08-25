@@ -6,8 +6,9 @@ export async function totowDiceButtons(html) {
 	let message = game.messages.get(messageId);
 
 	let buttonArea = html.querySelector('#buttonlist');
-
-	if (message) {
+	let pcType = message.getFlag('talesoftheoldwest', 'isType');
+	
+	if (message && pcType =='pc') {
 		let results = message.getFlag('talesoftheoldwest', 'results');
 		if (results) {
 			if (results[1].faithpoints >= 1) {
@@ -151,11 +152,17 @@ export async function totowDiceListeners(html) {
 
 export async function rollTrouble(results, ev, messageId, message) {
 	let table = '';
-	let roll = '';
+	let displayText = '';
 	let rollAgainst = '';
 	const troubleTable = Number(ev.submitter.value);
-
-	let trouble = Number(results[1].trouble);
+	let trouble = 0;
+	
+	if (Number(results[1].trouble)>4){
+trouble = 4
+	} else {
+	trouble = Number(results[1].trouble)
+	}
+	
 	switch (troubleTable) {
 		case 1:
 			table = await checkTables('CONFLICT / PHYSICAL', trouble);
@@ -167,11 +174,20 @@ export async function rollTrouble(results, ev, messageId, message) {
 			break;
 	}
 
-	roll = await new Roll('1d6').evaluate();
-	const TroubleTableResult = await table.draw({ roll: roll, displayChat: false });
-
+	// roll = await new Roll('1d6').evaluate();
+	// console.log('Trouble Roll =>',roll);
+	const TroubleTableResult = await table.draw({ roll: '1d6', recursive: true, displayChat: false });
+console.log('TroubleTableResult =>',TroubleTableResult)
 	// Prepare the data for the chat message
 	//
+
+if (TroubleTableResult.results.length == 2) {
+	displayText = TroubleTableResult.results[0].text + '<br />' + '<br />' + TroubleTableResult.results[1].text;
+} else {
+		displayText = TroubleTableResult.results[0].text 
+
+}
+
 	const actorName = game.messages.get(message).speaker.alias;
 	const actorId = game.messages.get(message).speaker.actor;
 	const htmlData = {
@@ -179,9 +195,10 @@ export async function rollTrouble(results, ev, messageId, message) {
 		actorId: actorId,
 		img: TroubleTableResult.results[0].img,
 		rollAgainst: rollAgainst,
-		textMessage: TroubleTableResult.results[0].description,
+		// textMessage: TroubleTableResult.results[0].description,
+		textMessage: displayText,
 	};
-
+console.log('htmlData =>',htmlData)
 	// Now push the correct chat message
 	let html = '';
 	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
@@ -226,7 +243,7 @@ export async function rollTrouble(results, ev, messageId, message) {
 	// return;
 
 	async function checkTables(type, trouble) {
-		let tTable = `TROUBLE OUTCOME TABLE - ${type} (${trouble})`;
+		let tTable = `(${trouble}) TROUBLE OUTCOME TABLE - ${type}`;
 		let table = game.tables.getName(`${tTable}`);
 		if (table) {
 			return table;
