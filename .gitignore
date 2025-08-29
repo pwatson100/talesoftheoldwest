@@ -2,7 +2,5 @@
 node_modules
 foundry.js
 .eslintrc.js
-package-lock.json
-package.json
 /packs
 talesoftheoldwest.lock
