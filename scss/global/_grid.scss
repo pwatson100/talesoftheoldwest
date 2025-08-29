@@ -1,3 +1,5 @@
+@use "../utils/typography";
+
 // Grid.
 .grid-4col {
 	grid-column: span 4 / span 4;
@@ -319,7 +321,7 @@
 
 .grid-header {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	// padding-top: 0px;
 	grid-template-areas:
 		'HedCol1 HedCol1 HedCol7 HedCol10 HedCol2'
@@ -397,7 +399,7 @@
 
 .item-sub-header {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	row-gap: 2px;
 	grid-template-areas:
 		'ISHCol1 ISHCol2 '
@@ -1445,7 +1447,7 @@
 
 .grid-town-charter {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	// padding-top: 0px;
 	grid-template-areas:
 		'TCColh1 TCColh1 TCColh2 TCColh2 TCCol21'
@@ -1580,7 +1582,7 @@
 
 .grid-aspect {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	border: solid 1px black;
 	grid-template-areas:
 		'GA1label GA11 GA12 GA13 GA14 GA15 GA16 GA17 GA18 GA19 GA110 GA111 GA112 GA113 GA114 GA115 GA116 GA117 GA118 GA119 GA120 GA121 GA122 GA123 GA124 GA125 GA126 GA127 GA128 GA129 GA130 GA1Rank'
@@ -2046,7 +2048,7 @@
 
 .grid-aspect-footer {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	border: solid 1px black;
 	grid-template-areas: 'GAF1label GAF11 GAF12 GAF13 GAF14 GAF15 GAF16 GAF1Rank';
 	grid-template-columns: 156px 50px 100px 150px 150px 200px 100px 66px;
@@ -2126,7 +2128,7 @@
 
 .grid-prosperity-totals {
 	display: grid;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	border: solid 1px black;
 	grid-template-areas: 'PTS1label PTS11 PTS12 PTS13 PTS14 PTS15 PTS16 PTS17 PTS1Rank';
 	grid-template-columns: 206px 100px 100px 100px 100px 100px 100px 100px 66px;

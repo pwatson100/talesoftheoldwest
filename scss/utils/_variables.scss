@@ -1,8 +1,10 @@
+@use "colors";
+
 $padding-sm: 5px;
 $padding-md: 10px;
 $padding-lg: 20px;
 
-$border-groove: 2px groove $c-groove;
+$border-groove: 2px groove colors.$c-groove;
 
 $app-background: url('../assets/background/sheet-background.webp');
 $journal-background: url('../assets/background/journal-background.webp');

@@ -1,3 +1,6 @@
+@use "../utils/typography";
+@use "../utils/variables";
+
 .theme-dark .application.sheet.actor.talesoftheoldwest,
 .theme-light .application.sheet.actor.talesoftheoldwest,
 .theme-dark .application.sheet.item.talesoftheoldwest,
@@ -45,7 +48,7 @@ body.theme-light input[type='text'] {
 body {
 	.application.dialog {
 		width: 300px;
-		background-image: $app-background;
+		background-image: variables.$app-background;
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
 		background-size: 100% 100%;
@@ -68,19 +71,19 @@ body {
 		backdrop-filter: blur(4px);
 		scrollbar-color: #d36913 transparent;
 		scrollbar-width: thin;
-		background-image: $app-background;
+		background-image: variables.$app-background;
 		background-position: center; /* Center the image */
 		background-repeat: no-repeat; /* Do not repeat the image */
 		background-size: 100% 100%;
 		border: transparent;
 		filter: drop-shadow(8px 12px 8px #353232);
-		font-family: $font-primary;
+		font-family: typography.$font-primary;
 		color: hsl(0, 0%, 0%);
 	}
 
 	.application input[type='text'],
 	.application select {
-		font-family: $font-primary;
+		font-family: typography.$font-primary;
 		/* font-size: 1.25em; */
 		background: white;
 		color: black;
@@ -92,7 +95,7 @@ body {
 	}
 	.application input[type='number'] {
 		width: 44px;
-		font-family: $font-primary;
+		font-family: typography.$font-primary;
 		font-size: 1.25em;
 		background: white;
 		color: black;
@@ -136,7 +139,7 @@ body {
 .talesoftheoldwest .sheet-tabs {
 	flex: 0;
 	font-size: large;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: bold;
 	background-image: url('../assets/background/header-plank.webp');
 	width: 97%;
@@ -192,7 +195,7 @@ body {
 }
 
 .app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 
 // V13 code

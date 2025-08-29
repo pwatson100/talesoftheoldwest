@@ -33,8 +33,9 @@
 	background-size: 24px;
 	border: 0;
 }
-.saddle-bag:hover,
-&:focus {
-	background-color: var(--color-warm-2);
-	cursor: pointer;
+.saddle-bag:hover {
+	&:focus {
+		background-color: var(--color-warm-2);
+		cursor: pointer;
+	}
 }

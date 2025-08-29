@@ -1,5 +1,8 @@
+@use "../utils/colors";
+@use "../utils/typography";
+
 .item-form {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 
 .sheet-header {
@@ -49,7 +52,7 @@
 
 .tox {
 	.tox-editor-container {
-		background: $c-white;
+		background: colors.$c-white;
 	}
 
 	.tox-edit-area {
@@ -65,7 +68,7 @@
 	width: 44px;
 	text-align: center;
 	font-size: 1.25em;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 .dicenum {
 	width: 60px;
@@ -79,16 +82,16 @@
 
 .textarea-format {
 	padding: 7px;
-	background-color: $c-white;
-	font-family: $font-primary;
-	color: $c-black;
+	background-color: colors.$c-white;
+	font-family: typography.$font-primary;
+	color: colors.$c-black;
 }
 
 .currency,
 .currency2 {
 	width: 80px;
 	font-size: 1.25em;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 .experience {
 	width: 64px;
@@ -126,7 +129,7 @@
 .healboxsize {
 	max-width: 80px;
 	color: inherit;
-	background-color: $c-black;
+	background-color: colors.$c-black;
 	height: 20px;
 	padding: 0;
 	margin: 1px;
@@ -179,7 +182,7 @@
 	width: 44px;
 	font-size: 1.4em;
 	text-align: center;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 
 .aLink {

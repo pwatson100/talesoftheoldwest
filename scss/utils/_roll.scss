@@ -1,6 +1,9 @@
+@use "colors";
+@use "typography";
+
 .talesoftheoldwest .chat.roll {
 	color: var(--black);
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-size: 12px;
 	line-height: 16px;
 	padding: 5px;
@@ -19,22 +22,22 @@
 .talesoftheoldwest .chat.roll strong {
 	text-transform: uppercase;
 	font-weight: bold;
-	color: $c-beige;
+	color: colors.$c-beige;
 	font-size: 14px;
 }
 
 .talesoftheoldwest .chat.roll h3 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-size: 14px;
 	font-weight: bold;
-	color: $c-beige;
+	color: colors.$c-beige;
 	margin: 0 0 8px;
 	text-align: center;
 	border-bottom: 1px solid var(--color-border);
 }
 
 .talesoftheoldwest .chat.roll h4 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-size: 16px;
 	font-weight: bold;
 	margin: 10px 0 10px 0;
@@ -105,7 +108,7 @@
 	word-break: break-all;
 }
 .chat-message {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	color: black;
 	// background: blue;
 	background-image: url('../assets/background/sheet-background.webp');

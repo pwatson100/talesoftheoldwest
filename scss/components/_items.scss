@@ -1,8 +1,12 @@
+@use "../utils/colors";
+@use "../utils/typography";
+@use "../utils/variables";
+
 // Section Header
 .items-header {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	background: var(--black);
-	border: $border-groove;
+	border: variables.$border-groove;
 	font-weight: bold;
 }
 
@@ -11,7 +15,7 @@
 // -----------------------------------------
 
 .items-list {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -27,7 +31,7 @@
 
 	// Item Name
 	.item-name {
-		font-family: $font-primary;
+		font-family: typography.$font-primary;
 		overflow: hidden;
 		/* font-size: 13px; */
 		/* font-weight: bolder; */
@@ -55,12 +59,12 @@
 	// Individual Item
 	.item {
 		padding: 0 2px; // to align with the header border
-		border-bottom: 1px solid $c-faint;
+		border-bottom: 1px solid colors.$c-faint;
 		&:last-child {
 			border-bottom: none;
 		}
 		.item-name {
-			color: $c-dark;
+			color: colors.$c-dark;
 			.item-image {
 				flex: 0 0 30px;
 				height: 30px;
@@ -80,13 +84,13 @@
 
 	// Section Header
 	.items-header {
-		font-family: $font-primary;
+		font-family: typography.$font-primary;
 		height: auto;
 		margin: 2px 0 var(--black);
 		// padding: 0;
 		align-items: center;
 		background: rgb(139 106 44 / 44%);
-		border: $border-groove;
+		border: variables.$border-groove;
 		font-weight: bold;
 	}
 }

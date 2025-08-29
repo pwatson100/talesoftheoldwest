@@ -1,3 +1,5 @@
+@use "../utils/typography";
+
 /* Import settings */
 .talesoftheoldwest .container {
 	width: 100%;
@@ -109,7 +111,7 @@ a.content-link {
 	background-color: transparent;
 	color: hsl(6, 56%, 30%);
 	border: 0;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-style: italic;
 	text-transform: capitalize;
 	text-wrap-mode: wrap;
@@ -172,7 +174,7 @@ a.content-link {
 	border: 5px double hsl(0, 0%, 0%);
 	border-radius: 25px;
 	box-shadow: 3px 3px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	box-shadow: -4px 6px 17px 0px hsl(0deg 1% 28%);
 }
 .talesoftheoldwest .blockquoteleft {
@@ -189,7 +191,7 @@ a.content-link {
 	border: 5px double hsl(0, 0%, 0%);
 	border-radius: 25px;
 	box-shadow: 3px 3px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	box-shadow: -4px 6px 17px 0px hsl(0deg 1% 28%);
 }
 
@@ -205,7 +207,7 @@ a.content-link {
 	font-style: italic;
 	float: center;
 	border: 2px solid hsl(0, 0%, 0%);
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	box-shadow: -4px 6px 17px 0px hsl(0deg 1% 28%);
 }
 .talesoftheoldwest .blockquoteststtable {
@@ -222,7 +224,7 @@ a.content-link {
 	border: none;
 	padding: 0;
 	margin: 10px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 .talesoftheoldwest .blockquoteplainright {
 	max-width: 50%;
@@ -231,12 +233,12 @@ a.content-link {
 	border: none;
 	padding: 0;
 	margin: 10px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 .talesoftheoldwest .blockquoteplaincenter {
 	break-inside: avoid;
 	border: none;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 }
 
 .talesoftheoldwest .textover figcaption {
@@ -247,23 +249,23 @@ a.content-link {
 	width: auto;
 	margin: 0;
 	padding: 0px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: normal;
 }
 .talesoftheoldwest p {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-size: 1.3em;
 	padding-left: 10px;
 }
 
 .talesoftheoldwest h1 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: bold;
 	color: black;
 }
 
 .talesoftheoldwest h2 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	color: black;
 	font-weight: bold;
 	text-align: center;
@@ -271,7 +273,7 @@ a.content-link {
 }
 
 .talesoftheoldwest h3 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	color: black;
 	font-weight: bold;
 	padding: 0;
@@ -291,14 +293,14 @@ a.content-link {
 }
 
 .talesoftheoldwest h4 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	color: black;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
 .talesoftheoldwest h5 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: bold;
 	color: hsl(19, 70%, 37%);
 	margin: 0px 20px 0px 10px;
@@ -306,7 +308,7 @@ a.content-link {
 }
 
 .talesoftheoldwest h6 {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: bold;
 	color: hsl(0, 0%, 100%);
 	margin: 0;
@@ -328,7 +330,7 @@ a.content-link {
 	border: 0;
 	margin-bottom: 0;
 	margin-left: 10px;
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-size: 1.667em;
 }
 
@@ -349,7 +351,7 @@ a.content-link {
 
 .talesoftheoldwest ul li,
 .talesoftheoldwest ol li {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: normal;
 	list-style-type: square;
 	padding-bottom: 9px;
@@ -369,7 +371,7 @@ a.content-link {
 // }
 
 .talesoftheoldwest .nostyle li {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: normal;
 	list-style: none;
 	padding-bottom: 9px;
@@ -385,7 +387,7 @@ a.content-link {
 // }
 
 .talesoftheoldwest .chapterHeading {
-	font-family: $font-primary;
+	font-family: typography.$font-primary;
 	font-weight: bold;
 	font-size: 2em;
 	color: hsl(0, 0%, 100%);

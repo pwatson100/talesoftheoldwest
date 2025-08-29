@@ -1,24 +1,26 @@
-// Add custom fonts by visiting and search https://fonts.google.com
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Esteban&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
 // Import utilities.
-@import 'utils/typography';
-@import 'utils/colors';
-@import 'utils/mixins';
-@import 'utils/variables';
-@import 'utils/roll';
+@use 'sass:meta';
+@use 'utils/typography';
+@use 'utils/colors';
+@use 'utils/mixins';
+@use 'utils/variables';
+@use 'utils/roll';
 
 /* Global styles */
-@import 'global/window';
-@import 'global/grid';
-@import 'global/flex';
-@import 'global/module-css';
+@use 'global/window';
+@use 'global/grid';
+@use 'global/flex';
+@use 'global/module-css';
 
 .talesoftheoldwest {
 	/* Styles limited to talesoftheoldwest sheets */
-	@import 'components/forms';
-	@import 'components/resource';
-	@import 'components/items';
-	@import 'components/effects';
+	@include meta.load-css('components/forms');
+	@include meta.load-css('components/resource');
+	@include meta.load-css('components/items');
+	@include meta.load-css('components/effects');
 }
+
+// Add custom fonts by visiting and search https://fonts.google.com
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Esteban&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');

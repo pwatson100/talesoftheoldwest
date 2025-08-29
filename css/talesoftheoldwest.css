@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Esteban&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 .esteban-regular {
@@ -3399,6 +3400,43 @@ a.content-link {
 .talesoftheoldwest {
   /* Styles limited to talesoftheoldwest sheets */
 }
+.talesoftheoldwest :root {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+.talesoftheoldwest .theme-dark {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+.talesoftheoldwest .esteban-regular {
+  font-family: "Esteban", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.talesoftheoldwest .fraunces-normal-400 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+.talesoftheoldwest .fraunces-italics-400 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
 .talesoftheoldwest .item-form {
   font-family: "fraunces-normal-400";
 }
@@ -3598,9 +3636,46 @@ a.content-link {
   background-size: 24px;
   border: 0;
 }
-.talesoftheoldwest .saddle-bag:hover, .talesoftheoldwest:focus {
+.talesoftheoldwest .saddle-bag:hover:focus {
   background-color: var(--color-warm-2);
   cursor: pointer;
+}
+.talesoftheoldwest :root {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+.talesoftheoldwest .theme-dark {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+.talesoftheoldwest .esteban-regular {
+  font-family: "Esteban", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.talesoftheoldwest .fraunces-normal-400 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+.talesoftheoldwest .fraunces-italics-400 {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
 }
 .talesoftheoldwest .items-header {
   font-family: "fraunces-normal-400";
@@ -3682,6 +3757,24 @@ a.content-link {
   box-shadow: -10px 9px 9px #666666;
   border: 3px black;
   border-style: double;
+}
+.talesoftheoldwest :root {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
+}
+.talesoftheoldwest .theme-dark {
+  --talesoftheoldwest-c-dark: #191813;
+  --talesoftheoldwest-c-faint: #c9c7b8;
+  --talesoftheoldwest-c-beige: #b5b3a4;
+  --talesoftheoldwest-c-tan: #444444;
+  --talesoftheoldwest-c-white: #ffffff;
+  --talesoftheoldwest-c-black: #000000;
+  --talesoftheoldwest-c-groove: #eeede0;
 }
 .talesoftheoldwest .effects-header {
   height: 28px;

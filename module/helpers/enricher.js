@@ -126,7 +126,7 @@ export function enrichTextEditors() {
 					Ok: {
 						label: game.i18n.localize('TALESOFTHEOLDWEST.dialog.ok'),
 						callback: async (html) => {
-							let modifier = parseInt(html.find("input[name='modifier'")[0].value);
+							let modifier = parseInt(html[0].querySelector("input[name='modifier'").value);
 							if (isNaN(modifier)) {
 								modifier = 0;
 							}
