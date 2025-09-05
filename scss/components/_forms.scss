@@ -1,5 +1,5 @@
-@use "../utils/colors";
-@use "../utils/typography";
+@use '../utils/colors';
+@use '../utils/typography';
 
 .item-form {
 	font-family: typography.$font-primary;
@@ -122,7 +122,7 @@
 
 .conditionHeading {
 	font-weight: bold;
-	font-size: larger;
+	font-size: 1.1em;
 	text-align: center;
 }
 

@@ -1,5 +1,5 @@
-@use "../utils/typography";
-@use "../utils/variables";
+@use '../utils/typography';
+@use '../utils/variables';
 
 .theme-dark .application.sheet.actor.talesoftheoldwest,
 .theme-light .application.sheet.actor.talesoftheoldwest,
@@ -84,7 +84,7 @@ body {
 	.application input[type='text'],
 	.application select {
 		font-family: typography.$font-primary;
-		/* font-size: 1.25em; */
+		font-size: 1.25em;
 		background: white;
 		color: black;
 		--input-background-color: rgba(0, 0, 0, 0.1);
@@ -96,7 +96,7 @@ body {
 	.application input[type='number'] {
 		width: 44px;
 		font-family: typography.$font-primary;
-		font-size: 1.25em;
+		font-size: 1.2em;
 		background: white;
 		color: black;
 		--input-background-color: rgba(0, 0, 0, 0.1);

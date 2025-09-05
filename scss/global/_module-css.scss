@@ -1,4 +1,4 @@
-@use "../utils/typography";
+@use '../utils/typography';
 
 /* Import settings */
 .talesoftheoldwest .container {
@@ -349,13 +349,21 @@ a.content-link {
 	background-color: transparent;
 }
 
+// .talesoftheoldwest .items-list.item ul li,
+// .talesoftheoldwest .items-list.item ol li {
+// 	font-family: typography.$font-primary;
+// 	font-weight: normal;
+// 	list-style-type: square;
+// 	padding-bottom: 9px;
+// 	font-size: 1em;
+// }
 .talesoftheoldwest ul li,
 .talesoftheoldwest ol li {
 	font-family: typography.$font-primary;
 	font-weight: normal;
 	list-style-type: square;
 	padding-bottom: 9px;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 // ::marker {
 // 	font-size: 1.5em;

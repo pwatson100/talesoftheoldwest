@@ -7,22 +7,6 @@
   font-style: normal;
 }
 
-.fraunces-normal-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
-
-.fraunces-italics-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
-
 :root {
   --talesoftheoldwest-c-dark: #191813;
   --talesoftheoldwest-c-faint: #c9c7b8;
@@ -45,7 +29,7 @@
 
 .talesoftheoldwest .chat.roll {
   color: var(--black);
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-size: 12px;
   line-height: 16px;
   padding: 5px;
@@ -70,7 +54,7 @@
 }
 
 .talesoftheoldwest .chat.roll h3 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-size: 14px;
   font-weight: bold;
   color: var(--talesoftheoldwest-c-beige);
@@ -80,7 +64,7 @@
 }
 
 .talesoftheoldwest .chat.roll h4 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0 10px 0;
@@ -151,7 +135,7 @@
 }
 
 .chat-message {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: black;
   background-image: url("../assets/background/sheet-background.webp");
   background-position: center; /* Center the image */
@@ -238,13 +222,13 @@ body .application.sheet.item.talesoftheoldwest .window-content {
   background-size: 100% 100%;
   border: transparent;
   filter: drop-shadow(8px 12px 8px #353232);
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: hsl(0, 0%, 0%);
 }
 body .application input[type=text],
 body .application select {
-  font-family: "fraunces-normal-400";
-  /* font-size: 1.25em; */
+  font-family: "Fraunces", serif;
+  font-size: 1.25em;
   background: white;
   color: black;
   --input-background-color: rgba(0, 0, 0, 0.1);
@@ -255,8 +239,8 @@ body .application select {
 }
 body .application input[type=number] {
   width: 44px;
-  font-family: "fraunces-normal-400";
-  font-size: 1.25em;
+  font-family: "Fraunces", serif;
+  font-size: 1.2em;
   background: white;
   color: black;
   --input-background-color: rgba(0, 0, 0, 0.1);
@@ -298,7 +282,7 @@ body .application input[type=number] {
 .talesoftheoldwest .sheet-tabs {
   flex: 0;
   font-size: large;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: bold;
   background-image: url("../assets/background/header-plank.webp");
   width: 97%;
@@ -352,7 +336,7 @@ body .application input[type=number] {
 }
 
 .app.window-app.sheet.journal-sheet.journal-entry .journal-header .title {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 
 .application.sheet.journal-sheet.journal-entry .journal-entry-content {
@@ -739,7 +723,7 @@ body .application input[type=number] {
 
 .grid-header {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   grid-template-areas: "HedCol1 HedCol1 HedCol7 HedCol10 HedCol2" "HedCol3 HedCol4 HedCol8 HedCol11 HedCol2" "HedCol5 HedCol6 HedCol9 HedCol12 HedCol2";
   grid-template-columns: 162px 206px 94px 266px 184px;
 }
@@ -819,7 +803,7 @@ body .application input[type=number] {
 
 .item-sub-header {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   row-gap: 2px;
   grid-template-areas: "ISHCol1 ISHCol2 " "ISHCol3 ISHCol4 " "ISHCol5 ISHCol6 ";
   grid-template-columns: 162px 150px;
@@ -1297,7 +1281,7 @@ body .application input[type=number] {
 
 .Ow1 {
   grid-area: Ow1;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
 .Ow2 {
@@ -1926,7 +1910,7 @@ body .application input[type=number] {
 
 .grid-town-charter {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   grid-template-areas: "TCColh1 TCColh1 TCColh2 TCColh2 TCCol21" "TCCol1 TCCol2 TCCol3 TCCol4 TCCol17" "TCCol5 TCCol6 TCCol7 TCCol8 TCCol18" "TCCol9 TCCol10 TCCol11 TCCol12 TCCol19" "TCCol13 TCCol14 TCCol15 TCCol16 TCCol20";
   grid-template-columns: 120px 280px 55px 280px 209px;
 }
@@ -2074,7 +2058,7 @@ body .application input[type=number] {
 
 .grid-aspect {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   border: solid 1px black;
   grid-template-areas: "GA1label GA11 GA12 GA13 GA14 GA15 GA16 GA17 GA18 GA19 GA110 GA111 GA112 GA113 GA114 GA115 GA116 GA117 GA118 GA119 GA120 GA121 GA122 GA123 GA124 GA125 GA126 GA127 GA128 GA129 GA130 GA1Rank" "GA2label GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA2Rank";
   grid-template-columns: 156px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 66px;
@@ -2576,7 +2560,7 @@ body .application input[type=number] {
 
 .grid-aspect-footer {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   border: solid 1px black;
   grid-template-areas: "GAF1label GAF11 GAF12 GAF13 GAF14 GAF15 GAF16 GAF1Rank";
   grid-template-columns: 156px 50px 100px 150px 150px 200px 100px 66px;
@@ -2664,7 +2648,7 @@ body .application input[type=number] {
 
 .grid-prosperity-totals {
   display: grid;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   border: solid 1px black;
   grid-template-areas: "PTS1label PTS11 PTS12 PTS13 PTS14 PTS15 PTS16 PTS17 PTS1Rank";
   grid-template-columns: 206px 100px 100px 100px 100px 100px 100px 100px 66px;
@@ -3036,7 +3020,7 @@ a.content-link {
   background-color: transparent;
   color: hsl(6, 56%, 30%);
   border: 0;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-style: italic;
   text-transform: capitalize;
   text-wrap-mode: wrap;
@@ -3105,7 +3089,7 @@ a.content-link {
   border: 5px double hsl(0, 0%, 0%);
   border-radius: 25px;
   box-shadow: 3px 3px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
@@ -3124,7 +3108,7 @@ a.content-link {
   border: 5px double hsl(0, 0%, 0%);
   border-radius: 25px;
   box-shadow: 3px 3px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
@@ -3141,7 +3125,7 @@ a.content-link {
   font-style: italic;
   float: center;
   border: 2px solid hsl(0, 0%, 0%);
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   box-shadow: -4px 6px 17px 0px hsl(0, 1%, 28%);
 }
 
@@ -3160,7 +3144,7 @@ a.content-link {
   border: none;
   padding: 0;
   margin: 10px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 
 .talesoftheoldwest .blockquoteplainright {
@@ -3171,14 +3155,14 @@ a.content-link {
   border: none;
   padding: 0;
   margin: 10px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 
 .talesoftheoldwest .blockquoteplaincenter {
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   border: none;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 
 .talesoftheoldwest .textover figcaption {
@@ -3189,24 +3173,24 @@ a.content-link {
   width: auto;
   margin: 0;
   padding: 0px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: normal;
 }
 
 .talesoftheoldwest p {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-size: 1.3em;
   padding-left: 10px;
 }
 
 .talesoftheoldwest h1 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: bold;
   color: black;
 }
 
 .talesoftheoldwest h2 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: black;
   font-weight: bold;
   text-align: center;
@@ -3214,7 +3198,7 @@ a.content-link {
 }
 
 .talesoftheoldwest h3 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: black;
   font-weight: bold;
   padding: 0;
@@ -3236,14 +3220,14 @@ a.content-link {
 }
 
 .talesoftheoldwest h4 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: black;
   font-weight: bold;
   font-size: 1.5em;
 }
 
 .talesoftheoldwest h5 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: bold;
   color: hsl(19, 70%, 37%);
   margin: 0px 20px 0px 10px;
@@ -3251,7 +3235,7 @@ a.content-link {
 }
 
 .talesoftheoldwest h6 {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: bold;
   color: hsl(0, 0%, 100%);
   margin: 0;
@@ -3274,7 +3258,7 @@ a.content-link {
   border: 0;
   margin-bottom: 0;
   margin-left: 10px;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-size: 1.667em;
 }
 
@@ -3295,11 +3279,11 @@ a.content-link {
 
 .talesoftheoldwest ul li,
 .talesoftheoldwest ol li {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: normal;
   list-style-type: square;
   padding-bottom: 9px;
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .ulindent {
@@ -3307,7 +3291,7 @@ a.content-link {
 }
 
 .talesoftheoldwest .nostyle li {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: normal;
   list-style: none;
   padding-bottom: 9px;
@@ -3315,7 +3299,7 @@ a.content-link {
 }
 
 .talesoftheoldwest .chapterHeading {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   font-weight: bold;
   font-size: 2em;
   color: hsl(0, 0%, 100%);
@@ -3423,22 +3407,8 @@ a.content-link {
   font-weight: 400;
   font-style: normal;
 }
-.talesoftheoldwest .fraunces-normal-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
-.talesoftheoldwest .fraunces-italics-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
 .talesoftheoldwest .item-form {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 .talesoftheoldwest .sheet-header {
   flex: 0 auto;
@@ -3493,7 +3463,7 @@ a.content-link {
   width: 44px;
   text-align: center;
   font-size: 1.25em;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 .talesoftheoldwest .dicenum {
   width: 60px;
@@ -3506,14 +3476,14 @@ a.content-link {
 .talesoftheoldwest .textarea-format {
   padding: 7px;
   background-color: var(--talesoftheoldwest-c-white);
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   color: var(--talesoftheoldwest-c-black);
 }
 .talesoftheoldwest .currency,
 .talesoftheoldwest .currency2 {
   width: 80px;
   font-size: 1.25em;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 .talesoftheoldwest .experience {
   width: 64px;
@@ -3542,7 +3512,7 @@ a.content-link {
 }
 .talesoftheoldwest .conditionHeading {
   font-weight: bold;
-  font-size: larger;
+  font-size: 1.1em;
   text-align: center;
 }
 .talesoftheoldwest .healboxsize {
@@ -3597,7 +3567,7 @@ a.content-link {
   width: 44px;
   font-size: 1.4em;
   text-align: center;
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
 }
 .talesoftheoldwest .aLink {
   color: hsl(25.44, 100%, 20.15%);
@@ -3663,42 +3633,30 @@ a.content-link {
   font-weight: 400;
   font-style: normal;
 }
-.talesoftheoldwest .fraunces-normal-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
-.talesoftheoldwest .fraunces-italics-400 {
-  font-family: "Fraunces", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-  font-variation-settings: "SOFT" 0, "WONK" 0;
-}
 .talesoftheoldwest .items-header {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   background: var(--black);
   border: 2px groove var(--talesoftheoldwest-c-groove);
   font-weight: bold;
 }
 .talesoftheoldwest .items-list {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   list-style: none;
   margin: 0;
   padding: 0;
   overflow-y: auto;
   scrollbar-width: thin;
   padding-top: 2px;
+  font-size: 1em;
 }
 .talesoftheoldwest .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 1em;
 }
 .talesoftheoldwest .items-list .item-name {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   overflow: hidden;
   /* font-size: 13px; */
   /* font-weight: bolder; */
@@ -3720,6 +3678,7 @@ a.content-link {
   margin: 0 6px;
 }
 .talesoftheoldwest .items-list .item {
+  font-size: 1em;
   padding: 0 2px;
   border-bottom: 1px solid var(--talesoftheoldwest-c-faint);
 }
@@ -3737,7 +3696,7 @@ a.content-link {
   margin-right: 5px;
 }
 .talesoftheoldwest .items-list .items-header {
-  font-family: "fraunces-normal-400";
+  font-family: "Fraunces", serif;
   height: auto;
   margin: 2px 0 var(--black);
   align-items: center;
