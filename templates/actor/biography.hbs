@@ -1,9 +1,9 @@
 {{! Biography Tab }}
-<section class='tab description {{tab.cssClass}}' style="width: 850px; justify-self: anchor-center;" data-group='primary' data-tab='description'>
+<section class='tab description {{tab.cssClass}}' style='width: 850px; justify-self: anchor-center;' data-group='primary' data-tab='description'>
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	<div class="div-border" style="height: 600px;"> 
+	<div class='div-border' style='height: 600px;'>
 		{{#if editable}}
-			<prose-mirror name='system.biography' data-document-u-u-i-d='{{actor.uuid}}' value='{{system.biography}}' toggled='true'>
+			<prose-mirror name='system.biography' data-document-u-u-i-d='{{actor.uuid}}' value='{{system.biography}}' collaborate='true' toggled='true'>
 				{{{enrichedBiography}}}
 			</prose-mirror>
 		{{else}}

@@ -847,6 +847,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				this._inlineedit(event);
 			}
 		});
+		logger.debug('Actor Sheet derived data:', context);
 	}
 
 	/**************

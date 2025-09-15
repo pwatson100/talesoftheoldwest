@@ -6,7 +6,7 @@ export const moduleKey = 'talesoftheoldwest'; // Module name. Important that thi
 export const adventurePack = 'talesoftheoldwest.totow-system-assets';
 export const adventurePackName = 'Tales Of The Old West - System Assets';
 export const moduleTitle = 'Tales Of The Old West RPG Core System'; // Module Title, is not referenced beyond giving a title to HTML dialog, so can be anything
-export const welcomeJournalEntry = 'How to Use this Systeme'; // The name of a journal entry you want to display after import.
+export const welcomeJournalEntry = 'How To Use This System'; // The name of a journal entry you want to display after import.
 export const sceneToActivate = 'Tales Of The Old West Core Rules Cover'; // The name of the scene you want to display after import. Not needed if the Adventure was saved with the scene active.
 
 export class TOTOWSystemImportFormWrapper extends FormApplication {
@@ -53,14 +53,7 @@ Hooks.on('ready', () => {
 	} else if (game.settings.get(moduleKey, 'imported') && game.user.isGM && game.settings.get(moduleKey, 'migrationVersion') < game.system.version) {
 		updateModule();
 	}
-	logger.info(
-		'Imported ',
-		game.settings.get(moduleKey, 'imported'),
-		'Version ',
-		game.system.version,
-		'Migration ',
-		game.settings.get(moduleKey, 'migrationVersion')
-	);
+	logger.info('Imported ', game.settings.get(moduleKey, 'imported'), 'Version ', game.system.version, 'Migration ', game.settings.get(moduleKey, 'migrationVersion'));
 });
 
 export async function FirstTimeSetup() {

@@ -3,16 +3,77 @@
   "img": "systems/talesoftheoldwest/assets/pictures/totow.webp",
   "caption": "",
   "sort": 0,
-  "description": "",
+  "description": "<p><strong>Initialize Tales of the Old West RPG Core Rules</strong><br />This will import key Tables into your world and organise them into folders.<br />These tables are included with the express permission of Effekt Publishing Ltd and remains their IP.</p><p>Tales of the Old West Core rules published by: <strong>Effekt Publishing Ltd.</strong> <a href=\"https://www.effektpublishing.com/home/\">Effekt Publishing </a><br />Foundry Visualisation by <strong>Paul Watson</strong><br />Thanks for their help, support to:<br />Frank Graeff, Peter Coutts, Douglas Painter, Jed McClure, Bruce Laing. <br /></p><img src=\"modules/totow-corerules/images/icons/effekt-logo.webp\" width=\"85\" height=\"111\" />",
   "actors": [],
   "combats": [],
   "items": [],
-  "journal": [],
+  "journal": [
+    {
+      "name": "How To Use This System",
+      "_id": "h7xzq5tA2A1RNNjD",
+      "pages": [
+        {
+          "sort": 100000,
+          "name": "TOTOW System Guide",
+          "type": "text",
+          "_id": "9yG7DQEOK6ZGntZP",
+          "system": {},
+          "title": {
+            "show": false,
+            "level": 1
+          },
+          "image": {},
+          "text": {
+            "format": 1,
+            "content": "<div class=\"talesoftheoldwest\">\n\t<div>\n\t\t<h2 class=\"h2NoUnder\">Tales of The Old West</h2>\n\t\t<p>Tales of the Old West is a game about making your way in the West in the 1870s</p>\n\t\t<p>\n\t\t\tOfficial system for playing Tales of the Old West on Foundry VTT.\n\t\t\t<br /><br />\n\t\t\tThe RollTables in the system have been included with the express permission of Effekt Publishing Ltd and remains their IP.\n\t\t\t<br /><br />\n\t\t\tDeveloped for Foundry FTT by Paul Watson\n\t\t\t<br /><br />\n\t\t\tIf you like my system please consider buying me a coffee: <a href=\"https://ko-fi.com/paulwatson\">https://ko-fi.com/paulwatson</a> <br />\n\t\t\t<br />\n\t\t</p>\n\t\t<p>\n\t\t\tShould you wish to populate the system with game content for your own use please purchase the rule book from\n\t\t\t<a href=\"https://www.effektpublishing.com/home/\">Effekt Publishing </a> or the Foundry Core Rules module.\n\t\t</p>\n\t\t<h3 class=\"h2NoUnder\">Top Tips</h3>\n\t\t<p>\n\t\t\tRight Click is used quite a bit in the system. If in doubt, try it out. <br />\n\t\t\tExamples are: <br />\n\t\t</p>\n\t\t<ul>\n\t\t\t<li>Right click an edit button to choose delete / edit</li>\n\t\t\t<li>Right click to clear radio buttons</li>\n\t\t\t<li>Right click a “roll” to enter modifiers before a roll</li>\n\t\t</ul>\n\t</div>\n\t<div>\n\t\t<h1 class=\"h2NoUnder\">Actors</h1>\n\t\t<p>There are four main types of Actors available in the system:</p>\n\t\t<ul>\n\t\t\t<li>PC</li>\n\t\t\t<li>NPC</li>\n\t\t\t<li>Animal</li>\n\t\t\t<li>Town Charter</li>\n\t\t</ul>\n\t\t<p>In this section I will go over the common areas of the these sheets.<br /><br /></p>\n\t</div>\n\n\t<div>\n\t\t<h1 class=\"h2NoUnder\">Items/Item Types</h1>\n\t\t<p>There are a number of Item types that can be created for use within the system:</p>\n\t\t<ul>\n\t\t\t<li>Item - General equipment</li>\n\t\t\t<li>Weapon - Personal and Vehicle weapons</li>\n\t\t\t<li>Critical Injury - Create Critical injuries with modifiers</li>\n\t\t\t<li>Animal Temperament - Animal Qualities &amp; Flaws</li>\n\t\t\t<li>Talent - Talents for use within the system</li>\n\t\t\t<li>Amenities - Details town projects</li>\n\t\t\t<li>Weapon Quality - Weapon Qualities &amp; Conditions (Special Items)</li>\n\t\t</ul>\n\t\t<p><br /><br /></p>\n\t\t<h3>Item</h3>\n\t\t<p>\n\t\t\tThe item sheet is for generic items for use within the game.\n\t\t\t<br />\n\t\t\tThe modifiers tab allows you to add any +/- effects using the item may have on the PCs attributes or skills.\n\t\t\t<br />\n\t\t\t <span class=\"modifiers-img\"> </span> \n\t\t\t<br />\n\t\t\tModifiers have an in-system effect once the item is \"Active\" (Not in your horses saddlebag).\n\t\t\t<br /><br />\n\t\t</p>\n\t\t<h3>Weapon</h3>\n\t\t<p>\n\t\t\tSelect the type on the sheet (Ranged or Melee) and the sheet will dynamically change to the relevant stats for that weapon type. The Class field is a text field which allow\n\t\t\tyou to classify the weapon. This is not a required field and can be left blank.\n\t\t\t<br />\n\t\t\t <span class=\"melee-img\"> </span> \n\t\t\t<br />\n\t\t\t <span class=\"ranged-img\"> </span> \n\t\t\t<br />\n\t\t\tFor a Melee weapon the range will be set to Engaged, for Ranged weapons select the appropriate range from the dropdown list. The Cost field will convert the input to a\n\t\t\tcurrency so all you need to enter is the number e.g., 15000 and it will reformat as US$15,000.00.\n\t\t\t<br /><br />\n\t\t\tThe stats on the sheet will be used in rolls when the weapon is \"Active\".\n\t\t\t<br /><br />\n\t\t</p>\n\t\t<h3>Talent</h3>\n\t\t<p>\n\t\t\tThis item type enables you to create talents for your game either homebrew or from the rulebook by adding descriptions to the rich test field. When dragged on to a PCs sheet,\n\t\t\tthese will appear on the Skills tab and can be viewed by the player by clicking on the name.\n\t\t\t<br /><br />\n\t\t\t<b> NOTE:</b><br />\n\t\t\tWith the exception of the \"Nerves of Steel\" talent, which will automatically add -2 to Stress rolls and the \"Pack Mule\" talent which increases total Encumbrance, Talents do\n\t\t\tnot currently have an effect in the system so any impact deriving from a Talent needs to be applied manually during the game.\n\t\t\t<br /><br />\n\t\t\tFor instance, the Compassion (Medic Talent) allows the PC to push their roll multiple times but the system will by default only allow a roll to be pushed once. In this\n\t\t\tsituation the player should use the check box in the chat window \"Allow multi-push\". <br />\n\t\t\tWhen the situation complies with the Talent criteria the player checks the box, <b>before pushing the roll</b>, they then PUSH as normal and a Stress point is added to their\n\t\t\tsheet.\n\t\t</p>\n\n\t\t<h3>Critical Injury</h3>\n\t\t<p>\n\t\t\tCritical Injury items can be dragged on to PC sheets to record permanent injuries as well as apply the appropriate roll modifiers as defined on the Modifiers tab.\n\t\t\t<br /><br />\n\t\t</p>\n\t</div>\n\t<div>\n\t\t<h1 class=\"h2NoUnder\">Recommended Add-on Modules</h1>\n\t\t<p>While not necessary to use the Tales of the old West system, I would recommend installing the following Add-on modules as they make the GM's job a lot easier: <br /></p>\n\t\t<ul>\n\t\t\t<li style=\"padding-bottom:2%\">\n\t\t\t\t<strong>Dice So Nice:</strong> <br />Alien RPG supports 2 dice face types. The new version also allows the GM to add animated effects to dice rolls.\n\t\t\t</li>\n\t\t\t<li style=\"padding-bottom:2%\">\n\t\t\t\t<strong>Quick Insert - Search Widget:</strong> <br />Allows you to quickly search for assets and drag them directly on to the scene, sheets or rich text fields.\n\t\t\t</li>\n\t\t</ul>\n\t</div>\n</div>"
+          },
+          "video": {
+            "controls": true,
+            "volume": 0.5
+          },
+          "src": null,
+          "ownership": {
+            "default": -1,
+            "oEWZCgJE008y7URa": 3
+          },
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.343",
+            "systemId": "talesoftheoldwest",
+            "systemVersion": "1.0.0",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          }
+        }
+      ],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "JournalEntry.h7xzq5tA2A1RNNjD",
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018868,
+        "modifiedTime": 1757941018868,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+      }
+    }
+  ],
   "scenes": [
     {
       "name": "Tales of the Old West",
       "_id": "bGHDNv9MMyQppyzl",
-      "active": false,
+      "active": true,
       "navigation": false,
       "navOrder": 0,
       "navName": "",
@@ -31,7 +92,7 @@
       },
       "foreground": null,
       "foregroundElevation": 20,
-      "thumb": "worlds/totow-v12/assets/scenes/bGHDNv9MMyQppyzl-thumb.webp",
+      "thumb": "worlds/atest/assets/scenes/bGHDNv9MMyQppyzl-thumb.webp",
       "width": 1842,
       "height": 1884,
       "padding": 0,
@@ -113,7 +174,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {},
       "_stats": {
@@ -121,10 +183,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1748608147692,
-        "modifiedTime": 1756136399556,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018887,
+        "modifiedTime": 1757941031181,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       }
     }
   ],
@@ -647,7 +709,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {},
       "_stats": {
@@ -655,10 +718,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1749116211258,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "10*1d6+1d6"
     },
@@ -776,7 +839,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -791,10 +855,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756130153728,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -911,7 +975,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -926,10 +991,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756130170902,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1046,7 +1111,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1061,10 +1127,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756130190394,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1166,7 +1232,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1181,10 +1248,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756130129316,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1301,7 +1368,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1316,10 +1384,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756131380579,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1436,7 +1504,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1451,10 +1520,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756131363724,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1571,7 +1640,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1586,10 +1656,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756131345920,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     },
@@ -1691,7 +1761,8 @@
       "ownership": {
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
-        "oEWZCgJE008y7URa": 3
+        "oEWZCgJE008y7URa": 3,
+        "KQ9DIMScZIDu36hy": 3
       },
       "flags": {
         "exportSource": {
@@ -1706,10 +1777,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211258,
-        "modifiedTime": 1756131329465,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018905,
+        "modifiedTime": 1757941018905,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       },
       "formula": "1d6"
     }
@@ -1733,10 +1804,10 @@
         "duplicateSource": null,
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
-        "systemVersion": "0.1.2",
-        "createdTime": 1749116211313,
-        "modifiedTime": 1749116211313,
-        "lastModifiedBy": "oEWZCgJE008y7URa"
+        "systemVersion": "1.0.0",
+        "createdTime": 1757941018976,
+        "modifiedTime": 1757941018976,
+        "lastModifiedBy": "KQ9DIMScZIDu36hy"
       }
     }
   ],
@@ -1750,8 +1821,8 @@
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
-    "modifiedTime": 1756641009088,
-    "lastModifiedBy": "oEWZCgJE008y7URa"
+    "modifiedTime": 1757941048382,
+    "lastModifiedBy": "KQ9DIMScZIDu36hy"
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"
 }

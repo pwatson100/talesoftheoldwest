@@ -113,83 +113,8 @@ export default class totowPC extends totowActorBase {
 			remudaQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
 			remudaMounted: new fields.StringField({ required: true, blank: false, initial: 'false' }),
 
-			// remudaMounted: new fields.BooleanField({ initial: false }),
 		});
 
-		// schema.horse = new fields.SchemaField({
-		// 	name: new fields.StringField({ required: true, blank: true }),
-
-		// 	attributes: new fields.SchemaField({
-		// 		grit: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 		quick: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 		cunning: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 10 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 	}),
-		// 	abilities: new fields.SchemaField({
-		// 		resilience: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 			total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			upper: new fields.StringField({ required: true, blank: true }),
-		// 			attr: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 		fightin: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 			total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			upper: new fields.StringField({ required: true, blank: true }),
-		// 			attr: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 		move: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 			total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			upper: new fields.StringField({ required: true, blank: true }),
-		// 			attr: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 		hawkeye: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
-		// 			mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			label: new fields.StringField({ required: true, blank: true }),
-		// 			total: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-		// 			upper: new fields.StringField({ required: true, blank: true }),
-		// 			attr: new fields.StringField({ required: true, blank: true }),
-		// 		}),
-		// 	}),
-
-		// 	general: new fields.SchemaField({
-		// 		breed: new fields.StringField({ required: true, blank: true }),
-		// 		cost: new fields.StringField({ initial: '0', min: 0, required: false, blank: true }),
-		// 		attacks: new fields.HTMLField(),
-		// 		subtype: new fields.StringField({ required: false, blank: true, initial: 'horse' }),
-
-		// 		ridingmodifier: new fields.SchemaField({
-		// 			value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
-		// 		}),
-		// 	}),
-		// 	horseNotes: new fields.HTMLField(),
-		// });
 		return schema;
 	}
 
