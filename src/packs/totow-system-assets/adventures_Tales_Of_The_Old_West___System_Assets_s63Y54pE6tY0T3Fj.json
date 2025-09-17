@@ -54,7 +54,8 @@
       "ownership": {
         "default": 0,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {},
       "_stats": {
@@ -63,9 +64,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018868,
-        "modifiedTime": 1757941018868,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586778,
+        "modifiedTime": 1757966586778,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       }
     }
   ],
@@ -92,7 +93,7 @@
       },
       "foreground": null,
       "foregroundElevation": 20,
-      "thumb": "worlds/atest/assets/scenes/bGHDNv9MMyQppyzl-thumb.webp",
+      "thumb": "worlds/totow-core/assets/scenes/bGHDNv9MMyQppyzl-thumb.webp",
       "width": 1842,
       "height": 1884,
       "padding": 0,
@@ -175,7 +176,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {},
       "_stats": {
@@ -184,9 +186,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018887,
-        "modifiedTime": 1757941031181,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586818,
+        "modifiedTime": 1758102451555,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       }
     }
   ],
@@ -710,7 +712,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {},
       "_stats": {
@@ -719,9 +722,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "10*1d6+1d6"
     },
@@ -840,7 +843,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -856,9 +860,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -976,7 +980,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -992,9 +997,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1112,7 +1117,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1128,9 +1134,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1233,7 +1239,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1249,9 +1256,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1369,7 +1376,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1385,9 +1393,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1505,7 +1513,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1521,9 +1530,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1641,7 +1650,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1657,9 +1667,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     },
@@ -1762,7 +1772,8 @@
         "default": 0,
         "oo2KG31LDGhYx0MC": 3,
         "oEWZCgJE008y7URa": 3,
-        "KQ9DIMScZIDu36hy": 3
+        "KQ9DIMScZIDu36hy": 3,
+        "SaW8sFv7IfBhAq2t": 3
       },
       "flags": {
         "exportSource": {
@@ -1778,14 +1789,41 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018905,
-        "modifiedTime": 1757941018905,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966586923,
+        "modifiedTime": 1757966586923,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       },
       "formula": "1d6"
     }
   ],
-  "macros": [],
+  "macros": [
+    {
+      "name": "Roll on Tables",
+      "type": "script",
+      "command": "game.talesoftheoldwest.TOTOWMacros.rollOnAllTables();",
+      "img": "icons/svg/card-hand.svg",
+      "_id": "IntZAoTsXMlg1eEX",
+      "author": "SaW8sFv7IfBhAq2t",
+      "scope": "global",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "SaW8sFv7IfBhAq2t": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Macro.IntZAoTsXMlg1eEX",
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "talesoftheoldwest",
+        "systemVersion": "1.0.0",
+        "createdTime": 1758040559783,
+        "modifiedTime": 1758057515341,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
+      }
+    }
+  ],
   "cards": [],
   "playlists": [],
   "folders": [
@@ -1805,9 +1843,9 @@
         "coreVersion": "12.343",
         "systemId": "talesoftheoldwest",
         "systemVersion": "1.0.0",
-        "createdTime": 1757941018976,
-        "modifiedTime": 1757941018976,
-        "lastModifiedBy": "KQ9DIMScZIDu36hy"
+        "createdTime": 1757966587126,
+        "modifiedTime": 1757966587126,
+        "lastModifiedBy": "SaW8sFv7IfBhAq2t"
       }
     }
   ],
@@ -1821,8 +1859,8 @@
     "systemId": "talesoftheoldwest",
     "systemVersion": "0.0.1",
     "createdTime": 1730829882663,
-    "modifiedTime": 1757941048382,
-    "lastModifiedBy": "KQ9DIMScZIDu36hy"
+    "modifiedTime": 1758102460253,
+    "lastModifiedBy": "SaW8sFv7IfBhAq2t"
   },
   "_key": "!adventures!s63Y54pE6tY0T3Fj"
 }

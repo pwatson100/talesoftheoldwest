@@ -64,7 +64,6 @@ export class totowActor extends Actor {
 			'prototypeToken.sight.enabled': 'true',
 			'prototypeToken.sight.range': '12',
 		};
-		// if (game.settings.get('alienrpg', 'defaultTokenSettings')) {
 		switch (data.type) {
 			case 'pc':
 				tokenProto['prototypeToken.bar2'] = { attribute: 'header.stress' };
@@ -129,9 +128,9 @@ export class totowActor extends Actor {
 		switch (type) {
 			case 'pc':
 				// case 'npc':
-				atable = game.tables.getName(game.i18n.localize('ALIENRPG.CriticalInjuries')) || game.tables.getName('Critical Injuries');
+				atable = game.tables.getName(game.i18n.localize('TALESOFTHEOLDWEST.CriticalInjuries')) || game.tables.getName('Critical Injuries');
 				if (atable === null || atable === undefined) {
-					ui.notifications.warn(game.i18n.localize('ALIENRPG.NoCharCrit'));
+					ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.NoCharCrit'));
 					return;
 				}
 
@@ -169,8 +168,7 @@ export class totowActor extends Actor {
 					if (fatal[0] != game.i18n.localize('TALESOFTHEOLDWEST.General.no')) {
 						if (fatal[1] === game.i18n.localize('TALESOFTHEOLDWEST.Criticals.instant')) {
 							cFatal = true;
-							fatal[0] =
-								'<strong style="color: red;">' + fatal[0].toUpperCase() + '</strong><br>' + game.i18n.localize('TALESOFTHEOLDWEST.Criticals.endOfTheTrail');
+							fatal[0] = '<strong style="color: red;">' + fatal[0].toUpperCase() + '</strong><br>' + game.i18n.localize('TALESOFTHEOLDWEST.Criticals.endOfTheTrail');
 							testArray[11] = '<strong style="color: red;">' + testArray[11] + '</strong>';
 						} else {
 							rollFatal = fatal[1].match(/^\[\[([0-9]d[0-9]+)]/)[1];
@@ -408,12 +406,7 @@ export class totowActor extends Actor {
 		let content = '';
 		let response = '';
 		if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
-			content = await foundry.applications.handlebars.renderTemplate(
-				'systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html',
-				actor,
-				type,
-				dataset
-			);
+			content = await foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/dialog/roll-char-manual-crit-dialog.html', actor, type, dataset);
 			response = await foundry.applications.api.DialogV2.wait({
 				window: { title: 'TALESOFTHEOLDWEST.dialog.RollManCrit' },
 				content,
@@ -487,7 +480,7 @@ export class totowActor extends Actor {
 						result = await processConditionals('Attributes', dataset, rollData);
 						break;
 					case 'ability':
-						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long') && actor.type =='pc') {
+						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long') && actor.type == 'pc') {
 							if (actor.system.remuda.remudaMounted !== 'false') {
 								let horse = await this.getRemuda(actor.system.remuda.remudaMounted);
 								let content = '';
@@ -545,7 +538,7 @@ export class totowActor extends Actor {
 						});
 						response = await foundry.applications.api.DialogV2.wait({
 							window: { title: 'TALESOFTHEOLDWEST.Item.General.roll-modifiers' },
-							position: { width: 350 },
+							// position: { width: 'auto' },
 							// classes: ["my-special-class"],
 							content,
 							rejectClose: false,
@@ -569,7 +562,7 @@ export class totowActor extends Actor {
 						});
 						response = await foundry.applications.api.DialogV2.wait({
 							window: { title: 'TALESOFTHEOLDWEST.Item.General.roll-modifiers' },
-							position: { width: 350 },
+							// position: { width: 'auto' },
 							// classes: ["my-special-class"],
 							content,
 							rejectClose: false,

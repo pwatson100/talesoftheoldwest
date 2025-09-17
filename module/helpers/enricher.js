@@ -107,7 +107,8 @@ export function enrichTextEditors() {
 				await table.draw({ roll });
 			}
 		};
-		if (event.ctrlKey) {
+		// TODO This needs to be something other than CTRL as it conflicts with RMB on macs.
+		if (event.shiftKey) {
 			let dialog_content = `<p>${game.i18n.format('TALESOFTHEOLDWEST.dialog.Rollontable', {
 				tablename: table.name,
 			})}</p>

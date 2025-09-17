@@ -13,22 +13,17 @@ export async function prepModOutput(rollType, rollData, dataset) {
 			for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
 				switch (rollData.featureModifiers[fkey].itemModifiers[ikey].state) {
 					case 'Conditional':
-						dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
+						dataset.conditional += `<div class="grid-conGrid" >
+					<input class="con1" type="checkbox" 
 					id="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					name="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
-					/><p style="color: black">${rollData.featureModifiers[fkey].description}</p></div>`;
+					/><span  class="con3" style="color: black">${rollData.featureModifiers[fkey].description}</span></div>`;
 						floop++;
 						break;
 
 					case 'Chat':
-						dataset.talent +=
-							'<strong style="color:black">' +
-							rollData.featureModifiers[fkey].name +
-							'</strong> - ' +
-							rollData.featureModifiers[fkey].description +
-							'<br /><br />';
+						dataset.talent += '<strong style="color:black">' + rollData.featureModifiers[fkey].name + '</strong> - ' + rollData.featureModifiers[fkey].description + '<br /><br />';
 						break;
 				}
 			}
@@ -37,12 +32,12 @@ export async function prepModOutput(rollType, rollData, dataset) {
 		for (const ikey in rollData.itemModifiers) {
 			switch (rollData.itemModifiers[ikey].state) {
 				case 'Conditional':
-					dataset.conditional += `<div class="form-group">
-					<input type="checkbox" 
+					dataset.conditional += `<div class="grid-conGrid">
+					<input class="con1" type="checkbox" 
 					id="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					name="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
-					/><p style="color: black">${rollData.featureModifiers[fkey].itemDescription}</p></div>`;
+					/><span class="con3" style="color: black">${rollData.featureModifiers[fkey].itemDescription}</span></div>`;
 					iloop++;
 					break;
 
@@ -56,7 +51,8 @@ export async function prepModOutput(rollType, rollData, dataset) {
 				for (const akey in rollData.actor.itemMods) {
 					switch (akey) {
 						case 'shootin':
-							console.log('shootin', rollData.actor.itemMods[akey]);
+							rollData.expertFanning = rollData.actor.itemMods[akey].find((a) => a.itemname === 'Expert Fanning')?.basicisActive;
+							console.log('shootin', rollData.actor.itemMods[akey], rollData.actor.itemMods[akey][0].itemname);
 							await this.modifiers(rollData.actor.itemMods, dataset, akey);
 
 							break;
@@ -112,12 +108,12 @@ export async function modifiers(itemModspath, dataset, akey) {
 				switch (akey.state) {
 					case 'Conditional':
 						{
-							dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
+							dataset.conditional += `<div class="grid-conGrid" >
+					<input class="con1"  type="checkbox" 
 					id="floop${floop}-${akey.name}" 
 					name="floop${floop}-${akey.name}" 
 					value="${akey.value}" 
-					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.basicAction}</p></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" >${akey.basicAction}</span></div>`;
 							floop++;
 						}
 						break;
@@ -132,12 +128,12 @@ export async function modifiers(itemModspath, dataset, akey) {
 				switch (akey.state) {
 					case 'Conditional':
 						{
-							dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
+							dataset.conditional += `<div class="grid-conGrid" >
+					<input class="con1" type="checkbox" 
 					id="floop${floop}-${akey.name}" 
 					name="floop${floop}-${akey.name}" 
 					value="${akey.value}" 
-					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.advAction}</p></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" >${akey.advAction}</span></div>`;
 							floop++;
 						}
 						break;
@@ -152,24 +148,24 @@ export async function modifiers(itemModspath, dataset, akey) {
 				switch (akey.state) {
 					case 'Conditional':
 						{
-							dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
+							dataset.conditional += `<div class="grid-conGrid" >
+					<input class="con1" type="checkbox" 
 					id="iloop${iloop}-${akey.name}" 
 					name="iloop${iloop}-${akey.name}" 
 					value="${akey.value}" 
-					/><p style="color: black"><strong>${akey.itemname}</strong> - ${akey.itemDescription}</p></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" > ${akey.itemDescription}</span></div>`;
 							iloop++;
 						}
 						break;
 					case 'onPC':
 						{
 							if (dataset.myHorse === 'true') {
-								dataset.conditional += `<div class="form-group" >
-					<input type="checkbox" 
+								dataset.conditional += `<div class="grid-conGrid" >
+					<input class="con1" type="checkbox" 
 					id="iloop${iloop}-${akey.name}" 
 					name="iloop${iloop}-${akey.name}" 
 					value="${akey.value}" 
-					/><p style="color: black"><strong>${akey.itemname}</strong> -  ${akey.itemDescription}</p></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" > ${akey.itemDescription}</span></div>`;
 								iloop++;
 							}
 						}

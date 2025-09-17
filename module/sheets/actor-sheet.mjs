@@ -1241,7 +1241,6 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		let itemId = event.target.parentElement.dataset.itemId;
 		let item = this.actor.items.get(itemId);
 		let temp = event.target.dataset.mod;
-		console.log('TOTOWActorSheet -> _inlineedit -> event', event, event.target.dataset.mod);
 
 		return await item.update({ [temp]: event.target.value }, {});
 	}
@@ -1637,7 +1636,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (crew.type !== 'npc') return;
 		if (actorData.type === 'pc') {
 			if (actorData.system.compadres.compadresQty >= 3) {
-				return ui.notifications.warn(game.i18n.localize('ALIENRPG.fullCrew'));
+				return ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.fullCrew'));
 			}
 			return await actorData.addCompadres(actorId);
 		}
@@ -1654,7 +1653,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (crew.type !== 'animal') return;
 		if (actorData.type === 'pc') {
 			if (actorData.system.remuda.remudaQty >= 4) {
-				return ui.notifications.warn(game.i18n.localize('ALIENRPG.fullCrew'));
+				return ui.notifications.warn(game.i18n.localize('TALESOFTHEOLDWEST.fullCrew'));
 			}
 			return await actorData.addRemuda(actorId);
 		}

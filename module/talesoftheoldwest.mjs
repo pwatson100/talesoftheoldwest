@@ -18,6 +18,7 @@ import registerSettings from './helpers/settings.mjs';
 import { totowDiceListeners, totowDiceButtons } from './helpers/diceroll.mjs';
 import { initializeHandlebars } from './helpers/handlebars.js';
 import { enrichTextEditors } from './helpers/enricher.js';
+import { TOTOWMacros } from './helpers/macro.js';
 
 const collections = foundry.documents.collections;
 
@@ -174,6 +175,8 @@ Hooks.once('ready', function () {
 	Hooks.on('hotbarDrop', (bar, data, slot) => createDocMacro(data, slot));
 	// clear the minimum resolution message faster
 
+	game.talesoftheoldwest = { TOTOWMacros };
+
 	setTimeout(() => {
 		$('.notification.error').each((index, item) => {
 			if ($(item).text().includes('requires a minimum screen resolution')) {
@@ -231,9 +234,9 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
 	});
 });
 
-/* -------------------------------------------- */
-/*  Hotbar Macros                               */
-/* -------------------------------------------- */
+// /* -------------------------------------------- */
+// /*  Hotbar Macros                               */
+// /* -------------------------------------------- */
 
 /**
  * Create a Macro from an Item drop.

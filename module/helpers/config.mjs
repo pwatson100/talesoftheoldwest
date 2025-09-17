@@ -139,6 +139,7 @@ TALESOFTHEOLDWEST.range_modifiers = {
 	distant: { id: 'Distant', label: 'TALESOFTHEOLDWEST.ModRanges.distant', value: '-3' },
 };
 TALESOFTHEOLDWEST.called_shots = {
+	normalshot: { id: 'normalshot', label: 'TALESOFTHEOLDWEST.Called.normalshot', value: '0' },
 	aimedshot: { id: 'aimedshot', label: 'TALESOFTHEOLDWEST.Called.aimedshot', value: '2' },
 	quickshot: { id: 'quickshot', label: 'TALESOFTHEOLDWEST.Called.quickshot', value: '-2' },
 	calledshot: { id: 'calledshot', label: 'TALESOFTHEOLDWEST.Called.calledshot', value: '-3' },

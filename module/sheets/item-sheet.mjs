@@ -459,7 +459,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 		const currency = this.element.querySelectorAll('.currency');
 		for (const s of currency) {
 			s.addEventListener('change', (event) => {
-				console.log(event);
 				this._currencyField(event);
 			});
 		}
@@ -488,7 +487,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			// console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
@@ -516,7 +514,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			// console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
@@ -568,7 +565,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}
@@ -601,7 +597,6 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			actor = game.actors.get(target.dataset.actor);
 			item = actor.getEmbeddedDocument('items', target.dataset.origin);
 			let myId = target.dataset.origin;
-			console.log('1 its Embedded', actor);
 		} else {
 			item = game.items.get(target.dataset.origin);
 		}

@@ -71,9 +71,9 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 		return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ['form'],
 			popOut: true,
-			template: 'systems/talesoftheoldwest/templates/dialog/which-trouble-dialog.html',
+			template: 'systems/talesoftheoldwest/templates/dialog/which-trouble-dialog.hbs',
 			id: 'TOTWWhichTroubleDialog',
-			title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.roll-modifiers'),
+			title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.WhichTroubleTable'),
 			height: 'auto',
 			width: 'auto',
 			minimizable: false,
@@ -92,6 +92,40 @@ export class TOTWWhichTroubleDialog extends FormApplication {
 		return rollTrouble(this.origRollData, event, this.messageId, this.message);
 	}
 }
+export class TOTWManualTroubleDialog extends FormApplication {
+	constructor(results, messageId, message) {
+		super();
+		this.origRollData = results;
+		this.messageId = messageId;
+		this.message = message;
+	}
+
+	static get defaultOptions() {
+		return foundry.utils.mergeObject(super.defaultOptions, {
+			classes: ['form'],
+			popOut: true,
+			template: 'systems/talesoftheoldwest/templates/dialog/manual-trouble-dialog.hbs',
+			id: 'TOTWWhichTroubleDialog',
+			title: game.i18n.localize('TALESOFTHEOLDWEST.dialog.WhichTroubleTable'),
+			height: 'auto',
+			width: 'auto',
+			minimizable: false,
+			resizable: true,
+			closeOnSubmit: true,
+			submitOnClose: false,
+			submitOnChange: false,
+		});
+	}
+
+	getData() {}
+
+	activateListeners(html) {}
+
+	async _updateObject(event, formData, messageId) {
+		return rollTrouble(this.origRollData, event, this.messageId, this.message, formData);
+	}
+}
 
 window.TOTWBuyOffDialog = TOTWBuyOffDialog;
 window.TOTWWhichTroubleDialog = TOTWWhichTroubleDialog;
+window.TOTWManualTroubleDialog = TOTWManualTroubleDialog;

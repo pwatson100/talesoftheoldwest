@@ -1,4 +1,4 @@
-import { TOTWWhichTroubleDialog, TOTWBuyOffDialog } from './chatmodifier.mjs';
+import { TOTWWhichTroubleDialog, TOTWBuyOffDialog, TOTWManualTroubleDialog } from './chatmodifier.mjs';
 import { prepModOutput } from './utils.mjs';
 
 export async function totowDiceButtons(html) {
@@ -7,8 +7,8 @@ export async function totowDiceButtons(html) {
 
 	let buttonArea = html.querySelector('#buttonlist');
 	let pcType = message.getFlag('talesoftheoldwest', 'isType');
-	
-	if (message && pcType =='pc') {
+
+	if (message && pcType == 'pc') {
 		let results = message.getFlag('talesoftheoldwest', 'results');
 		if (results) {
 			if (results[1].faithpoints >= 1) {
@@ -27,6 +27,7 @@ export async function totowDiceButtons(html) {
 					button.setAttribute('data-message-id', messageId);
 					button.setAttribute('data-roll-type', results[1].rollType);
 					button.setAttribute('data-roll-button', 'roll-trouble');
+					button.setAttribute('data-tooltip', game.i18n.localize('TALESOFTHEOLDWEST.dialog.Tooltip-ManualRoll'));
 					button.innerHTML = game.i18n.localize('TALESOFTHEOLDWEST.General.rollTrouble');
 					buttonArea.appendChild(button);
 				}
@@ -101,7 +102,11 @@ export async function totowDiceListeners(html) {
 							let messageId = ev.target.getAttribute('data-message-id');
 							let message = game.messages.get(messageId);
 							let results = message.getFlag('talesoftheoldwest', 'results');
-							new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+							if (ev.shiftKey) {
+								new TOTWManualTroubleDialog(results, ev, messageId, message).render(true);
+							} else {
+								new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+							}
 						}
 						break;
 				}
@@ -142,7 +147,11 @@ export async function totowDiceListeners(html) {
 						let messageId = ev.target.getAttribute('data-message-id');
 						let message = game.messages.get(messageId);
 						let results = message.getFlag('talesoftheoldwest', 'results');
-						new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+						if (ev.shiftKey) {
+							new TOTWManualTroubleDialog(results, ev, messageId, message).render(true);
+						} else {
+							new TOTWWhichTroubleDialog(results, ev, messageId, message).render(true);
+						}
 					}
 					break;
 			}
@@ -150,19 +159,23 @@ export async function totowDiceListeners(html) {
 	}
 }
 
-export async function rollTrouble(results, ev, messageId, message) {
+export async function rollTrouble(results, ev, messageId, message, formData) {
 	let table = '';
 	let displayText = '';
 	let rollAgainst = '';
 	const troubleTable = Number(ev.submitter.value);
 	let trouble = 0;
-	
-	if (Number(results[1].trouble)>4){
-trouble = 4
+	if (Number(results[1].trouble) > 4) {
+		trouble = 4;
 	} else {
-	trouble = Number(results[1].trouble)
+		trouble = Number(results[1].trouble);
 	}
-	
+
+	if (formData) {
+		trouble = Number(formData.manMod) || 1;
+		console.log('trouble', manMod);
+	}
+
 	switch (troubleTable) {
 		case 1:
 			table = await checkTables('CONFLICT / PHYSICAL', trouble);
@@ -174,19 +187,29 @@ trouble = 4
 			break;
 	}
 
-	// roll = await new Roll('1d6').evaluate();
 	// console.log('Trouble Roll =>',roll);
-	const TroubleTableResult = await table.draw({ roll: '1d6', recursive: true, displayChat: false });
-console.log('TroubleTableResult =>',TroubleTableResult)
+	const TroubleTableResult = await table.draw({ displayChat: false, recursive: true });
+	console.log('TroubleTableResult =>', TroubleTableResult);
 	// Prepare the data for the chat message
 	//
 
-if (TroubleTableResult.results.length == 2) {
-	displayText = TroubleTableResult.results[0].text + '<br />' + '<br />' + TroubleTableResult.results[1].text;
-} else {
-		displayText = TroubleTableResult.results[0].text 
+	switch (TroubleTableResult.results.length) {
+		case 1:
+			displayText = TroubleTableResult.results[0].text;
+			break;
+		case 2:
+			displayText = TroubleTableResult.results[0].text + '<br />' + '<br />' + TroubleTableResult.results[1].text;
+			break;
+		case 3:
+			displayText = TroubleTableResult.results[0].text + '<br />' + '<br />' + TroubleTableResult.results[2].text;
+			break;
+		case 4:
+			displayText = TroubleTableResult.results[0].text + '<br />' + '<br />' + TroubleTableResult.results[3].text;
+			break;
 
-}
+		default:
+			break;
+	}
 
 	const actorName = game.messages.get(message).speaker.alias;
 	const actorId = game.messages.get(message).speaker.actor;
@@ -198,7 +221,6 @@ if (TroubleTableResult.results.length == 2) {
 		// textMessage: TroubleTableResult.results[0].description,
 		textMessage: displayText,
 	};
-console.log('htmlData =>',htmlData)
 	// Now push the correct chat message
 	let html = '';
 	if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
@@ -216,21 +238,6 @@ console.log('htmlData =>',htmlData)
 		other: game.users.contents.filter((u) => u.isGM).map((u) => u.id),
 		sound: CONFIG.sounds.dice,
 	};
-
-	// Apply the Active Effect
-
-	// switch (type) {
-	// 	case 'pc':
-	// 		// case 'npc':
-	// 		await this.addCondition('criticalinj');
-	// 		break;
-	// 	// case 'creature':criticalinj
-	// 	// 	console.log("it's a Creature Crit");
-	// 	// 	break;
-
-	// 	default:
-	// 		break;
-	// }
 
 	// remove the Roll Trouble Button
 	results[1].totalTrouble = 'rolledTrouble';

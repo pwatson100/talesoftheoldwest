@@ -41,12 +41,10 @@ export class totowItem extends Item {
 		const rollData = this.getRollData();
 		let qualityMod = 0;
 		switch (dataset.rollType) {
-			case 'item':
-				return console.log('Item Roll', dataset);
+			// case 'item':
 
-			case 'talent':
-				console.log('Talent Roll', dataset);
-				return;
+			// case 'talent':
+			// 	return;
 
 			case 'weapon':
 				if (item.system.featureModifiers.length > 0) {
@@ -66,6 +64,10 @@ export class totowItem extends Item {
 					case 'shootin':
 						dataset.mod = rollData.actor.abilities[`${dataset.subtype}`].mod + rollData.attackbonus;
 						dataset.stunts = dataset.subtype;
+
+						if (rollData.action === 'single' && rollData.ammo >= 4) {
+							dataset.canFan = true;
+						}
 						console.log('Weapon Roll - shootin', dataset, dataset.mod);
 						return await shootin(dataset, rollData, item);
 					case 'fightin':
@@ -197,6 +199,7 @@ export class totowItem extends Item {
 			const actor = game.actors.get(dataset.myActor);
 			let successMod = 0;
 			let troubleMod = 0;
+			let fanningMod = 0;
 			let content = '';
 			let response = '';
 			dataset.conditional = '';
@@ -215,7 +218,7 @@ export class totowItem extends Item {
 			}
 
 			if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
-				content = await foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
+				content = await foundry.applications.handlebars.renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.hbs', {
 					config,
 					dataset,
 				});
@@ -238,7 +241,7 @@ export class totowItem extends Item {
 				});
 			} else {
 				// For Foundry versions before 11, use the old renderTemplate method
-				content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.html', {
+				content = await renderTemplate('systems/talesoftheoldwest/templates/dialog/ranged-weapon-modifiers.hbs', {
 					config,
 					dataset,
 				});
@@ -276,7 +279,12 @@ export class totowItem extends Item {
 			dataset.shootvisibilityMod = Number(response.visibilityChoice);
 			dataset.shootmodifierMod = Number(response.modifier);
 			dataset.baseMod = Number(dataset.mod);
+			dataset.isFanning = response.isFanning;
+			dataset.numberOfTargets = Number(response.numberOfTargets);
 
+			if (response.isFanning) {
+				fanningMod = -Math.abs(response.numberOfTargets) - 1;
+			}
 			dataset.mod =
 				Number(dataset.mod) +
 				Number(response.rangeChoice) +
@@ -284,9 +292,19 @@ export class totowItem extends Item {
 				Number(response.coverChoice) +
 				Number(response.sizeChoice) +
 				Number(response.visibilityChoice) +
+				Number(fanningMod) +
 				Number(response.modifier);
 			const result = await rollAttrib(dataset, rollData, actor);
-			await item.update({ 'system.ammo': item.system.ammo - 1 });
+
+			if (response.isFanning) {
+				if (rollData.expertFanning) {
+					await item.update({ 'system.ammo': 1 });
+				} else {
+					await item.update({ 'system.ammo': 0 });
+				}
+			} else {
+				await item.update({ 'system.ammo': item.system.ammo - 1 });
+			}
 			return result;
 		}
 	}

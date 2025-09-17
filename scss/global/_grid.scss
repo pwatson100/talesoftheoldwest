@@ -1040,12 +1040,12 @@
 .sheet-compadres-attributes {
 	display: grid;
 	align-items: center;
-	width: 859px;
+	width: 894px;
 	justify-self: center;
 	grid-template-areas:
 		'scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 '
 		'scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ';
-	grid-template-columns: 100px 106px 100px 107px 122px 105px 100px 106px;
+	grid-template-columns: 101px 108px 105px 108px 130px 108px 111px 108px;
 	background: rgb(139 106 44 / 21%);
 }
 .scaA1 {
@@ -2324,4 +2324,21 @@
 .AHCol31 {
 	grid-area: AHCol31;
 	align-self: center;
+}
+
+.grid-conGrid {
+	display: grid;
+	grid-template-areas: 'con1 con2 con3';
+	//                      l1   l2
+	grid-template-columns: 29px 101px 267px;
+}
+
+.con1 {
+	grid-area: con1;
+}
+.con2 {
+	grid-area: con2;
+}
+.con3 {
+	grid-area: con3;
 }

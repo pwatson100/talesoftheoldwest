@@ -188,7 +188,7 @@
 			"talents": "Talents",
 			"weapons": "Weapons",
 			"noAmmo": "You Need To Reload Pardner!",
-			"calledShots": "called shots",
+			"calledShots": "type of shot",
 			"targetCover": "target cover",
 			"targetSize": "target size",
 			"TargetVisibility": "target visibility",
@@ -289,7 +289,9 @@
 				"weapon": "Weapon",
 				"ranged": "Ranged",
 				"melee": "Melee",
-				"value": "Value"
+				"value": "Value",
+				"isFanning": "Fanning?",
+				"NoTargets": "No. Targets?"
 			}
 		},
 		"ItemModifierSelect": {
@@ -439,6 +441,7 @@
 			"short": "Short (0)"
 		},
 		"Called": {
+			"normalshot": "Normal Shot (0)",
 			"aimedshot": "Aimed Shot (+2)",
 			"calledshot": "Called Shot (-3)",
 			"aimingcalledshot": "Aiming on a Called Shot (+1)",
@@ -497,7 +500,9 @@
 			"Riding-Your-Own-Horse-Question": "Are you riding ",
 			"Rollontable": "Roll on table {tablename}",
 			"Modifier": "Modifier",
-			"Tooltip-Rollontable": "ctrl+click to add modifier"
+			"Tooltip-Rollontable": "shift+click to add modifier",
+			"howManyDice": "How Many Trouble dice?",
+			"Tooltip-ManualRoll": "shift+click for Manual Roll"
 		},
 		"CritLocation": {
 			"lowerleg": "Lower Leg",
