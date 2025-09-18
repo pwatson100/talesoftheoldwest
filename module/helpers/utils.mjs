@@ -8,6 +8,7 @@ export const getID = function () {
 export async function prepModOutput(rollType, rollData, dataset) {
 	let floop = 1;
 	let iloop = 1;
+	const feature = game.i18n.localize('TALESOFTHEOLDWEST.Item.General.feature');
 	if (rollType === 'Items') {
 		for (const fkey in rollData.featureModifiers) {
 			for (const ikey in rollData.featureModifiers[fkey].itemModifiers) {
@@ -15,15 +16,15 @@ export async function prepModOutput(rollType, rollData, dataset) {
 					case 'Conditional':
 						dataset.conditional += `<div class="grid-conGrid" >
 					<input class="con1" type="checkbox" 
-					id="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
-					name="floop${floop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					id="floop${floop} - ${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					name="floop${floop} - ${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
-					/><span  class="con3" style="color: black">${rollData.featureModifiers[fkey].description}</span></div>`;
+					/><span  class="con3" style="color: black"><span style="color:rgba(5, 40, 116, 1);font-weight:bold">${feature}</span> - ${rollData.featureModifiers[fkey].description}</span></div>`;
 						floop++;
 						break;
 
 					case 'Chat':
-						dataset.talent += '<strong style="color:black">' + rollData.featureModifiers[fkey].name + '</strong> - ' + rollData.featureModifiers[fkey].description + '<br /><br />';
+						dataset.talent += `<strong style="color:black">${rollData.featureModifiers[fkey].name}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${feature}</span> - ${rollData.featureModifiers[fkey].description}<br /><br />`;
 						break;
 				}
 			}
@@ -34,8 +35,8 @@ export async function prepModOutput(rollType, rollData, dataset) {
 				case 'Conditional':
 					dataset.conditional += `<div class="grid-conGrid">
 					<input class="con1" type="checkbox" 
-					id="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
-					name="iloop${iloop}-${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					id="iloop${iloop} - ${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
+					name="iloop${iloop} - ${rollData.featureModifiers[fkey].itemModifiers[ikey].name}" 
 					value="${rollData.featureModifiers[fkey].itemModifiers[ikey].value}" 
 					/><span class="con3" style="color: black">${rollData.featureModifiers[fkey].itemDescription}</span></div>`;
 					iloop++;
@@ -110,17 +111,21 @@ export async function modifiers(itemModspath, dataset, akey) {
 						{
 							dataset.conditional += `<div class="grid-conGrid" >
 					<input class="con1"  type="checkbox" 
-					id="floop${floop}-${akey.name}" 
-					name="floop${floop}-${akey.name}" 
+					id="floop${floop} - ${akey.name}" 
+					name="floop${floop} - ${akey.name}" 
 					value="${akey.value}" 
-					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" >${akey.basicAction}</span></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" ><span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.basicAction}</span></div>`;
 							floop++;
 						}
 						break;
 
 					case 'Chat':
 						{
-							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.itemDescription}<br /><br />`;
 						}
 						break;
 				}
@@ -130,17 +135,21 @@ export async function modifiers(itemModspath, dataset, akey) {
 						{
 							dataset.conditional += `<div class="grid-conGrid" >
 					<input class="con1" type="checkbox" 
-					id="floop${floop}-${akey.name}" 
-					name="floop${floop}-${akey.name}" 
+					id="floop${floop} - ${akey.name}" 
+					name="floop${floop} - ${akey.name}" 
 					value="${akey.value}" 
-					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" >${akey.advAction}</span></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" ><span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.advAction}</span></div>`;
 							floop++;
 						}
 						break;
 
 					case 'Chat':
 						{
-							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.itemDescription}<br /><br />`;
 						}
 						break;
 				}
@@ -150,10 +159,12 @@ export async function modifiers(itemModspath, dataset, akey) {
 						{
 							dataset.conditional += `<div class="grid-conGrid" >
 					<input class="con1" type="checkbox" 
-					id="iloop${iloop}-${akey.name}" 
-					name="iloop${iloop}-${akey.name}" 
+					id="iloop${iloop} - ${akey.name}" 
+					name="iloop${iloop} - ${akey.name}" 
 					value="${akey.value}" 
-					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" > ${akey.itemDescription}</span></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" ><span style="color:rgba(5, 40, 116, 1);font-weight:bold"> ${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.itemDescription}</span></div>`;
 							iloop++;
 						}
 						break;
@@ -162,10 +173,12 @@ export async function modifiers(itemModspath, dataset, akey) {
 							if (dataset.myHorse === 'true') {
 								dataset.conditional += `<div class="grid-conGrid" >
 					<input class="con1" type="checkbox" 
-					id="iloop${iloop}-${akey.name}" 
-					name="iloop${iloop}-${akey.name}" 
+					id="iloop${iloop} - ${akey.name}" 
+					name="iloop${iloop} - ${akey.name}" 
 					value="${akey.value}" 
-					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" > ${akey.itemDescription}</span></div>`;
+					/><span class="con2" style="color: black"><strong>${akey.itemname}</strong></span><span class="con3" ><span style="color:rgba(5, 40, 116, 1);font-weight:bold"> ${
+									akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+								}</span> - ${akey.itemDescription}</span></div>`;
 								iloop++;
 							}
 						}
@@ -173,7 +186,9 @@ export async function modifiers(itemModspath, dataset, akey) {
 
 					case 'Chat':
 						{
-							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - ${akey.itemDescription}<br /><br />`;
+							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
+								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
+							}</span> - ${akey.itemDescription}<br /><br />`;
 						}
 						break;
 				}

@@ -469,7 +469,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 									value: mods.value,
 									stored: i.system.stored,
 									basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
-									basicAction: i.system.basicAction ? i.system.basicAction : '',
+									basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
 								});
 							}
 						}
@@ -487,7 +487,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 									value: mods.value,
 									stored: i.system.stored,
 									advisActive: i.system.advisActive ? i.system.advisActive : false,
-									advAction: i.system.advAction ? i.system.advAction : '',
+									advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
 								});
 							}
 						}
@@ -505,8 +505,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							stored: i.system.stored,
 							basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
 							advisActive: i.system.advisActive ? i.system.advisActive : false,
-							basicAction: i.system.basicAction ? i.system.basicAction : '',
-							advAction: i.system.advAction ? i.system.advAction : '',
+							basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
+							advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
 						});
 					}
 				}
@@ -525,8 +525,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 								stored: i.system.stored,
 								basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
 								advisActive: i.system.advisActive ? i.system.advisActive : false,
-								basicAction: i.system.basicAction ? i.system.basicAction : '',
-								advAction: i.system.advAction ? i.system.advAction : '',
+								basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
+								advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
 							});
 						}
 					}
