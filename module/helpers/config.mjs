@@ -244,7 +244,6 @@ TALESOFTHEOLDWEST.item_modifier_list = {
 	ridingBonus: { id: 'riding-bonus', label: 'TALESOFTHEOLDWEST.General.riding-bonus', group: 'TALESOFTHEOLDWEST.General.other' },
 	trouble: { id: 'roll-trouble', label: 'TALESOFTHEOLDWEST.General.trouble', group: 'TALESOFTHEOLDWEST.General.other' },
 	success: { id: 'roll-success', label: 'TALESOFTHEOLDWEST.General.success', group: 'TALESOFTHEOLDWEST.General.other' },
-	pushdescription: { id: 'roll-pushdescription', label: 'TALESOFTHEOLDWEST.General.pushdescription', group: 'TALESOFTHEOLDWEST.General.other' },
 };
 TALESOFTHEOLDWEST.weapon_modifier_list = {
 	grit: { id: 'attribute-grit', label: 'TALESOFTHEOLDWEST.Attributes.grit.name', group: 'TALESOFTHEOLDWEST.General.capAttributes' },
@@ -273,7 +272,6 @@ TALESOFTHEOLDWEST.weapon_modifier_list = {
 	drawbonus: { id: 'weapon-drawbonus', label: 'TALESOFTHEOLDWEST.Item.General.bonusDraw', group: 'TALESOFTHEOLDWEST.General.weaponStats' },
 	trouble: { id: 'roll-trouble', label: 'TALESOFTHEOLDWEST.General.trouble', group: 'TALESOFTHEOLDWEST.General.other' },
 	success: { id: 'roll-success', label: 'TALESOFTHEOLDWEST.General.success', group: 'TALESOFTHEOLDWEST.General.other' },
-	pushdescription: { id: 'roll-pushdescription', label: 'TALESOFTHEOLDWEST.General.pushdescription', group: 'TALESOFTHEOLDWEST.General.other' },
 };
 
 TALESOFTHEOLDWEST.crit_location_list = {

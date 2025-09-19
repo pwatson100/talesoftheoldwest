@@ -205,7 +205,6 @@
 			"weaponStats": "WEAPON STATS",
 			"other": "OTHER",
 			"chat": "Chat",
-			"pushdescription": "Push Description",
 			"NotifWrongItemType": "\"{type}\" items cannot be added to a {actor}!",
 			"morals": "Morals",
 			"publicspirit": "Public Spirit",
