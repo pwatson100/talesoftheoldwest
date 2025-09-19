@@ -1149,22 +1149,28 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
 		const dataset = target.dataset;
-		// const damageType = dataset.label;
-
-		let damage = this.actor.system.damage[target.dataset.label];
-		let attribute = this.actor.system.attributes[target.dataset.attribute];
-		let field = `system.damage.${target.dataset.label}.value`;
-		let aField = `system.attributes.${target.dataset.attribute}.value`;
+		const damage = this.actor.system.damage[target.dataset.label];
+		const attribute = this.actor.system.attributes[target.dataset.attribute];
+		const field = `system.damage.${target.dataset.label}.value`;
+		const aField = `system.attributes.${target.dataset.attribute}.value`;
 
 		if (event.button === 2) {
 			// right click
 			if (damage.value) {
-				return await this.actor.update({ [field]: damage.value - 1, [aField]: attribute.value + 1 });
+				await this.actor.update({ [field]: damage.value - 1, [aField]: attribute.value + 1 });
+				if (damage.max != this.actor.system.attributes[target.dataset.attribute].max && !this.actor.system.conditions.broken) {
+					await this.actor.removeCondition('broken');
+				}
+				return;
 			}
 		} else {
 			// left click
 			if (damage.max) {
-				return await this.actor.update({ [field]: damage.value + 1, [aField]: attribute.value - 1 });
+				await this.actor.update({ [field]: damage.value + 1, [aField]: attribute.value - 1 });
+				if (this.actor.system.attributes[target.dataset.attribute].value === 0 && this.actor.system.conditions.broken) {
+					await this.actor.addCondition('broken');
+				}
+				return;
 			}
 		}
 	}

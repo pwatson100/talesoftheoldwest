@@ -362,6 +362,12 @@ TALESOFTHEOLDWEST.conditionEffects = [
 		label: 'TALESOFTHEOLDWEST.General.criticalInjury',
 		icon: 'icons/skills/wounds/injury-pain-body-orange.webp',
 	},
+	{
+		id: 'broken',
+		name: 'TALESOFTHEOLDWEST.General.broken',
+		label: 'TALESOFTHEOLDWEST.General.broken',
+		icon: 'icons/svg/falling.svg',
+	},
 ];
 
 TALESOFTHEOLDWEST.physicalItems = [];

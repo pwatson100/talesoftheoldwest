@@ -462,6 +462,7 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				this._currencyField(event);
 			});
 		}
+
 		logger.debug('Actor Sheet derived data:', context);
 	}
 

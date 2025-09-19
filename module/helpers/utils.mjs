@@ -125,7 +125,7 @@ export async function modifiers(itemModspath, dataset, akey) {
 						{
 							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
 								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
-							}</span> - ${akey.itemDescription}<br /><br />`;
+							}</span> - ${akey.basicAction}<br /><br />`;
 						}
 						break;
 				}
@@ -134,7 +134,7 @@ export async function modifiers(itemModspath, dataset, akey) {
 					case 'Conditional':
 						{
 							dataset.conditional += `<div class="grid-conGrid" >
-					<input class="con1" type="checkbox" 
+					<input class="con1" type="checkbox" ;
 					id="floop${floop} - ${akey.name}" 
 					name="floop${floop} - ${akey.name}" 
 					value="${akey.value}" 
@@ -149,7 +149,7 @@ export async function modifiers(itemModspath, dataset, akey) {
 						{
 							dataset.talent += `<strong style="color:black">${akey.itemname}</strong> - <span style="color:rgba(5, 40, 116, 1);font-weight:bold">${
 								akey.modtype.charAt(0).toUpperCase() + akey.modtype.slice(1)
-							}</span> - ${akey.itemDescription}<br /><br />`;
+							}</span> - ${akey.advAction}<br /><br />`;
 						}
 						break;
 				}

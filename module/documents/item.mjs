@@ -282,9 +282,17 @@ export class totowItem extends Item {
 			dataset.isFanning = response.isFanning;
 			dataset.numberOfTargets = Number(response.numberOfTargets);
 
+			// const fanning = this.element.querySelectorAll('.fanning');
+			// for (const s of fanning) {
+			// 	s.addEventListener('change', (event) => {
+			// 		console.warn('you are fanning', event);
+			// 		// this._currencyField(event);
+			// 	});
+			// }
 			if (response.isFanning) {
 				fanningMod = -Math.abs(response.numberOfTargets) - 1;
 			}
+
 			dataset.mod =
 				Number(dataset.mod) +
 				Number(response.rangeChoice) +

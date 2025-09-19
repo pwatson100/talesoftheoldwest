@@ -11,9 +11,9 @@ export default class totowPC extends totowActorBase {
 		schema.attributes = new fields.SchemaField(
 			Object.keys(CONFIG.TALESOFTHEOLDWEST.attributes).reduce((obj, attribute) => {
 				obj[attribute] = new fields.SchemaField({
-					value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 5 }),
+					value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 0, max: 5 }),
 					mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-					max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+					max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 0 }),
 					label: new fields.StringField({ required: true, blank: true }),
 				});
 				return obj;
@@ -75,6 +75,7 @@ export default class totowPC extends totowActorBase {
 			encumbered: new fields.BooleanField({ initial: false }),
 			overwatch: new fields.BooleanField({ initial: false }),
 			heatstroke: new fields.BooleanField({ initial: false }),
+			broken: new fields.BooleanField({ initial: false }),
 		});
 
 		schema.damage = new fields.SchemaField({
@@ -112,7 +113,6 @@ export default class totowPC extends totowActorBase {
 			),
 			remudaQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
 			remudaMounted: new fields.StringField({ required: true, blank: false, initial: 'false' }),
-
 		});
 
 		return schema;
@@ -138,7 +138,11 @@ export default class totowPC extends totowActorBase {
 		this.damage.shakes.max = this.attributes.quick.max - this.damage.shakes.value;
 		this.damage.vexes.max = this.attributes.cunning.max - this.damage.vexes.value;
 		this.damage.doubts.max = this.attributes.docity.max - this.damage.doubts.value;
-
+		if (!this.damage.hurts.max || !this.damage.shakes.max || !this.damage.vexes.max || !this.damage.doubts.max) {
+			this.conditions.broken = true;
+		} else {
+			this.conditions.broken = false;
+		}
 		// Rem the Try/Catch back in when the table data is included in the Core Rules Module and we have a registered setting.
 		// try {
 		// 	if (game.settings.get('talesoftheoldwest.corerules', 'imported')) {

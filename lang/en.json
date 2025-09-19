@@ -233,7 +233,8 @@
 			"fall": "Fall",
 			"winter": "Winter",
 			"year": "Year",
-			"season": "Season"
+			"season": "Season",
+			"broken": "Broken"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",
