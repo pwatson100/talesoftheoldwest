@@ -1,7 +1,7 @@
 const file_ref = {
 	'totow-system-guide': '9yG7DQEOK6ZGntZP',
 };
-const folderRef = 'systems/talesoftheoldwest\user-guide';
+const folderRef = 'systems/talesoftheoldwest/user-guide/';
 const fileList = await FilePicker.browse('data', folderRef);
 console.log('fileList', fileList);
 const htmlFiles = fileList.files.filter((f) => f.includes('.html'));
