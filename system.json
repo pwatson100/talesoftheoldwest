@@ -10,7 +10,7 @@
 	"version": "1.0.0",
 	"compatibility": {
 		"minimum": "12",
-		"verified": "13"
+		"verified": "14"
 	},
 	"esmodules": ["module/talesoftheoldwest.mjs"],
 	"styles": ["css/talesoftheoldwest.css"],
