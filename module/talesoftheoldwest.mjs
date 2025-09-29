@@ -164,6 +164,16 @@ Hooks.once('init', function () {
 			}
 		});
 	}
+	if (foundry.utils.isNewerVersion(game.version, '12.343')) {
+		// V13 spinner
+		Hooks.on('renderGamePause', (_app, html, options) => {
+			document.getElementById('pause').innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
+		});
+	} else {
+		Hooks.on('renderPause', (_app, html, options) => {
+			document.getElementById('pause').innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
+		});
+	}
 });
 
 /* -------------------------------------------- */
@@ -184,26 +194,18 @@ Hooks.once('ready', function () {
 			}
 		});
 	}, 250);
+
+	if (foundry.utils.isNewerVersion(game.version, '12.343')) {
+		// Set turnmarker to the Snake symbol
+		if (game.settings.get('core', 'combatTrackerConfig').turnMarker.src.length === 0) {
+			game.settings.set('core', 'combatTrackerConfig', { turnMarker: { src: 'systems/talesoftheoldwest/assets/icons/snake.webp' } });
+		}
+	}
 });
 
 Hooks.on('renderChatLog', (log, html, data) => {
 	totowDiceListeners();
 });
-
-if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
-	// Set turnmarker to the Snake symbol
-	if (game.settings.get('core', 'combatTrackerConfig').turnMarker.src.length === 0) {
-		game.settings.set('core', 'combatTrackerConfig', { turnMarker: { src: 'systems/talesoftheoldwest/assets/icons/snake.webp' } });
-	}
-	// V13 spinner
-	Hooks.on('renderGamePause', (_app, html, options) => {
-		document.getElementById('pause').innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
-	});
-} else {
-	Hooks.on('renderPause', (_app, html, options) => {
-		document.getElementById('pause').innerHTML = `<img src=\"systems/talesoftheoldwest/assets/icons/snake.webp\" class=\"fa-spin\"><figcaption>"SIT A SPELL"</figcaption>`;
-	});
-}
 
 // ***************************
 // DsN V3 Hooks
