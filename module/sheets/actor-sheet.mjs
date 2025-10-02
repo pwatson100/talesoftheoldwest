@@ -503,10 +503,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 							itemDescription: mods.description,
 							value: mods.value,
 							stored: i.system.stored,
-							basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
-							advisActive: i.system.advisActive ? i.system.advisActive : false,
-							basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
-							advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
+							// basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+							// advisActive: i.system.advisActive ? i.system.advisActive : false,
+							// basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
+							// advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
 						});
 					}
 				}
@@ -523,10 +523,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 								itemDescription: feature.description,
 								value: mods.value,
 								stored: i.system.stored,
-								basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
-								advisActive: i.system.advisActive ? i.system.advisActive : false,
-								basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
-								advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
+								// basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+								// advisActive: i.system.advisActive ? i.system.advisActive : false,
+								// basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, '') ? i.system.basicAction.replace(/<[^>]*>?/gm, '') : '',
+								// advAction: i.system.advAction.replace(/<[^>]*>?/gm, '') ? i.system.advAction.replace(/<[^>]*>?/gm, '') : '',
 							});
 						}
 					}
@@ -904,6 +904,8 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault();
 		const compId = event.target.closest('.compardre').dataset.compid;
 		const actor = game.actors.get(compId);
+		// return actor.sheet.render(true);
+		this.actor.sheet.render(true);
 		return actor.sheet.render(true);
 	}
 
@@ -1413,15 +1415,14 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (!this.actor.isOwner) return false;
 		let fred = await fromUuid(data.uuid);
 		const actor = game.actors.get(fred.id);
-
+		if (!actor) {
+			ui.notifications.error(game.i18n.localize('TALESOFTHEOLDWEST.General.NeedToImportActor'));
+			return;
+		}
 		if (actor.type === 'npc') {
-			// When dropping an actor on a vehicle sheet.
-			// let crew = await fromUuid(data.uuid);
 			if (data.type === 'Actor') await this._dropCompadres(actor.id);
 		}
 		if (actor.type === 'animal' && actor.system.general.subtype === 'horse') {
-			// When dropping an actor on a vehicle sheet.
-			// let crew = await fromUuid(data.uuid);
 			if (data.type === 'Actor') await this._dropRemuda(actor.id);
 		}
 	}

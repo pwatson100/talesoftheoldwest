@@ -1167,7 +1167,11 @@ export class totowItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 				dragover: this._onDragOver.bind(this),
 				drop: this._onDrop.bind(this),
 			};
-			return new DragDrop(d);
+			if (foundry.utils.isNewerVersion(game.version, '12.343')) {
+				return new foundry.applications.ux.DragDrop(d);
+			} else {
+				return new DragDrop(d);
+			}
 		});
 	}
 

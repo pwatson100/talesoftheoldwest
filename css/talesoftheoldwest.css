@@ -1480,7 +1480,7 @@ body .application input[type=number] {
   width: 894px;
   justify-self: center;
   grid-template-areas: "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 " "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
-  grid-template-columns: 101px 108px 105px 108px 130px 108px 111px 108px;
+  grid-template-columns: 101px 111px 105px 111px 130px 111px 111px 111px;
   background: rgba(139, 106, 44, 0.21);
 }
 

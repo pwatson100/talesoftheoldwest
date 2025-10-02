@@ -41,55 +41,55 @@ export default class totowTownCharter extends totowActorBase {
 
 		schema.aspects = new fields.SchemaField({
 			farming: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			farmingrank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 			mercantile: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			mercantilerank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 			natural: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			naturalrank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 			law: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			lawrank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 			civic: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			civicrank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
 			}),
 			welfare: new fields.SchemaField({
-				value: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 				score: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
-				max: new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 30 }),
+				max: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 30 }),
 			}),
 			welfarerank: new fields.SchemaField({
 				value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
