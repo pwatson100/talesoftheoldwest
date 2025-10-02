@@ -233,7 +233,8 @@
 			"winter": "Winter",
 			"year": "Year",
 			"season": "Season",
-			"broken": "Broken"
+			"broken": "Broken",
+			"NeedToImportActor": "You need to import the actor before you can add it to the PC"
 		},
 		"debug": {
 			"hint": "Prints extended debug information to the console.",

@@ -1,7 +1,7 @@
 <div class='overwatch_header'>
 	<label class='Ow2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</label></div>
 <div>
-	<ol class='items-list'>
+	<ol class='items-list' id='actorWeaponList'>
 		<li class='item grid-weapon-items items-header' style='width: 880px'>
 			<div class='item-name lCol2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.name')}}</div>
 			<div class='item-name lCol3'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.qualityConditions')}}</div>
@@ -18,7 +18,7 @@
 			{{#each actor.items as |item id|}}
 				{{#if (eq type 'weapon')}}
 
-					<li class='item grid-weapon-items' id='actorWeaponList' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
+					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
 						<div class='item-image lColB1'>
 							<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
 						</div>
@@ -29,9 +29,11 @@
 							data-subtype='{{item.system.subtype}}'
 							data-drag='true'
 							data-document-class='Weapon'
-							{{! data-action='roll' }}
+							data-action='roll'
 							data-item-id='{{item._id}}'
 							data-item-ammo='{{item.system.ammo}}'
+							data-speaker='{{actor.name}}'
+							data-speaker-id='{{actor.id}}'
 						>
 							{{item.name}}
 						</div>
@@ -44,7 +46,16 @@
 						{{#if (ne item.system.subtype 'fightin')}}
 							<div class='lColB5'>{{item.system.bonusdraw}}</div>
 							<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
-							<input type='text' class='lColB10 statnum' data-mod='system.ammo' name='item.system.ammo' value='{{item.system.ammo}}' data-dtype='String' type='text' />
+							<input
+								style=' text-align: center; justify-self: center;'
+								type='number'
+								class='inline-edit lColB10 statnum'
+								data-mod='system.ammo'
+								name='item.system.ammo'
+								value='{{item.system.ammo}}'
+								data-dtype='Number'
+								type='number'
+							/>
 						{{/if}}
 					</li>
 				{{/if}}

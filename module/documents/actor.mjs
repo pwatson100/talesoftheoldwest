@@ -451,12 +451,12 @@ export class totowActor extends Actor {
 
 	async diceRoll(actor, event, target) {
 		let config = CONFIG.TALESOFTHEOLDWEST;
-
 		event.preventDefault(); // Don't open context menu
 		event.stopPropagation(); // Don't trigger other events
 		if (event.detail > 1) return; // Ignore repeated clicks
 		const rollData = this.getRollData();
 		const dataset = target.dataset;
+		let item = '';
 		dataset.conditional = '';
 		dataset.talent = '';
 		dataset.myHorse = 'false';
@@ -509,7 +509,13 @@ export class totowActor extends Actor {
 				}
 			} else {
 				const itemId = target.dataset.itemId;
-				const item = actor.items.get(itemId);
+
+				if (!dataset.speakerId) {
+					item = actor.items.get(itemId);
+				} else {
+					const compadres = game.actors.get(dataset.speakerId);
+					item = compadres.items.get(itemId);
+				}
 				switch (dataset.rollType) {
 					case 'item':
 						// case 'talent':
@@ -523,7 +529,7 @@ export class totowActor extends Actor {
 			if (result === 'cancelled') {
 				return;
 			} else {
-				sendToChat(actor, event, target, result);
+				sendToChat(actor, event, target, result, dataset.speaker, dataset.speakerId);
 			}
 
 			async function processConditionals(rollType, dataset, rollData) {
@@ -594,7 +600,7 @@ export class totowActor extends Actor {
 				return result;
 			}
 
-			async function sendToChat(actor, event, target, result) {
+			async function sendToChat(actor, event, target, result, speaker, speakerId) {
 				let html = '';
 				{
 					if (game.version && foundry.utils.isNewerVersion(game.version, '12.343')) {
@@ -607,8 +613,8 @@ export class totowActor extends Actor {
 					let chatData = {
 						user: game.user.id,
 						speaker: ChatMessage.getSpeaker({
-							alias: actor.name,
-							actor: actor.id,
+							alias: speaker,
+							actor: speakerId,
 						}),
 						rolls: [result[0]],
 						rollMode: game.settings.get('core', 'rollMode'),
