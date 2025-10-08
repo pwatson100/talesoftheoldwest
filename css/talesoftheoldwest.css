@@ -153,7 +153,8 @@
 }
 
 body.theme-dark input[type=number],
-body.theme-light input[type=number] {
+body.theme-light input[type=number],
+input:disabled {
   background-color: white;
   color: black;
 }
@@ -193,7 +194,6 @@ body .application.dialog {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
   border: transparent;
-  filter: drop-shadow(8px 12px 8px #353232);
 }
 body .dialog-form.standard-form .form-footer,
 body .dialog-buttons {
@@ -286,6 +286,10 @@ body .application input[type=number] {
   background-image: url("../assets/background/header-plank.webp");
   width: 97%;
   justify-self: anchor-center;
+}
+
+.talesoftheoldwest nav.tabs [data-tab] {
+  color: #000;
 }
 
 .talesoftheoldwest .tab.description {

@@ -132,7 +132,7 @@ export class totowItem extends Item {
 				});
 				response = await foundry.applications.api.DialogV2.wait({
 					window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
-					position: { width: 350 },
+					position: { width: 440 },
 					// classes: ["my-special-class"],
 					content,
 					rejectClose: false,
@@ -156,7 +156,7 @@ export class totowItem extends Item {
 				});
 				response = await foundry.applications.api.DialogV2.wait({
 					window: { title: 'TALESOFTHEOLDWEST.fightinmodifiers' },
-					position: { width: 350 },
+					position: { width: 440 },
 					// classes: ["my-special-class"],
 					content,
 					rejectClose: false,

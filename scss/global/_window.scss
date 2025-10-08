@@ -9,7 +9,8 @@
 }
 
 body.theme-dark input[type='number'],
-body.theme-light input[type='number'] {
+body.theme-light input[type='number'],
+input:disabled {
 	background-color: white;
 	color: black;
 	// width: initial;
@@ -53,7 +54,7 @@ body {
 		background-repeat: no-repeat; /* Do not repeat the image */
 		background-size: 100% 100%;
 		border: transparent;
-		filter: drop-shadow(8px 12px 8px #353232);
+		// filter: drop-shadow(8px 12px 8px #353232);
 	}
 	.dialog-form.standard-form .form-footer,
 	.dialog-buttons {
@@ -147,6 +148,9 @@ body {
 	justify-self: anchor-center;
 }
 
+.talesoftheoldwest nav.tabs [data-tab] {
+	color: #000;
+}
 .talesoftheoldwest .tab.description {
 	flex: 1;
 	.editor {
