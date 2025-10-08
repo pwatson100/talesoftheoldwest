@@ -460,12 +460,15 @@ export class totowActor extends Actor {
 		dataset.conditional = '';
 		dataset.talent = '';
 		dataset.myHorse = 'false';
+		// dataset.speaker = actor.name;
 		// const targetActor = actor.getRollData();
-		if (actor.type === 'pc') {
+		if (actor.type === 'pc' && target.dataset.speakerType != 'horse') {
 			dataset.faithpoints = actor.system.general.faithpoints.value;
 			dataset.canPush = actor.system.general.canPush;
+			dataset.speaker = actor.name;
+			dataset.speakerId = actor.id;
 		} else {
-			dataset.faithpoints = 0;
+			dataset.faithpoints = -1;
 			dataset.canPush = false;
 		}
 
@@ -480,7 +483,7 @@ export class totowActor extends Actor {
 						result = await processConditionals('Attributes', dataset, rollData);
 						break;
 					case 'ability':
-						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long') && actor.type == 'pc') {
+						if (dataset.label === game.i18n.localize('TALESOFTHEOLDWEST.Ability.Animalhandlin.long') && actor.type === 'pc') {
 							if (actor.system.remuda.remudaMounted !== 'false') {
 								let horse = await this.getRemuda(actor.system.remuda.remudaMounted);
 								let content = '';
@@ -629,6 +632,7 @@ export class totowActor extends Actor {
 					}
 					const msg = await ChatMessage.create(chatData);
 					result[1].messageNo = msg.id;
+
 					await msg.setFlag('talesoftheoldwest', 'results', result);
 					await msg.setFlag('talesoftheoldwest', 'isType', actor.type);
 

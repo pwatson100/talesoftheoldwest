@@ -415,6 +415,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 					break;
 				case 'crit':
 					critInj.push(i);
+					_findmods(i, itemMods);
 					break;
 				case 'animalquality':
 					animalquality.push(i);
@@ -639,6 +640,20 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 													break;
 												default:
 													sklMod[subAttar.modtype] = sklMod[subAttar.modtype] += Number(subAttar.value);
+													anyMods++;
+													break;
+											}
+										} else if (subAttar.itemtype === 'crit' && !subAttar.stored) {
+											switch (subAttar.name) {
+												case 'docity':
+												case 'quick':
+												case 'cunning':
+												case 'grit':
+													attrMod[subAttar.name] = attrMod[subAttar.name] += Number(subAttar.value);
+													anyMods++;
+													break;
+												default:
+													sklMod[subAttar.name] = sklMod[subAttar.name] += Number(subAttar.value);
 													anyMods++;
 													break;
 											}

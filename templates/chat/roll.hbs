@@ -106,11 +106,12 @@
 				{{/if}}
 			{{/if}}
 			{{#if (eq itemData.actorType 'pc')}}
-
-				<hr />
-				<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
-				<hr />
-				<div id='buttonlist'></div>
+				{{#if (gte faithpoints 0)}}
+					<hr />
+					<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
+					<hr />
+					<div id='buttonlist'></div>
+				{{/if}}
 			{{/if}}
 		</div>
 	{{else}}
