@@ -1,3 +1,14 @@
-Version 1.0.0
+Version 1.0.2
+Squashed the fiollowing bugs:
+FireFox- in Dark mode firefox does not display the dialog boxes
+Firefox - Horse description box is the wrong size
+Active Effects on criticals not working
+Actor rolls not showing actor name
+NPC's rolling from the PC sheet should not have push etc. in the chat window
 
+Version 1.0.1
+Corrected issue with Pause and Target marker in V13.
+
+Version 1.0.0
 * Initial Release
+
