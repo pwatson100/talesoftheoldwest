@@ -1,5 +1,5 @@
 Version 1.0.2
-Squashed the fiollowing bugs:
+Squashed the following bugs:
 FireFox- in Dark mode firefox does not display the dialog boxes
 Firefox - Horse description box is the wrong size
 Active Effects on criticals not working
