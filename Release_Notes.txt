@@ -1,4 +1,4 @@
-Version 1.0.2
+Version 1.0.3
 Corrected issue on the Town Charter Actor calculating the Natural Resources
 
 Version 1.0.2
