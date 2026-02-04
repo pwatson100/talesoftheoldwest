@@ -1,4 +1,7 @@
 Version 1.0.2
+Corrected issue on the Town Charter Actor calculating the Natural Resources
+
+Version 1.0.2
 Squashed the following bugs:
 FireFox- in Dark mode firefox does not display the dialog boxes
 Firefox - Horse description box is the wrong size
