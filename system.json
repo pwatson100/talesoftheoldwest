@@ -1,87 +1,87 @@
 {
-	"id": "talesoftheoldwest",
-	"title": "Tales of The Old West",
-	"description": "The Tales of The Old West system for FoundryVTT!",
-	"authors": [
-		{
-			"name": "Paul Watson"
-		}
-	],
-	"version": "1.0.0",
-	"compatibility": {
-		"minimum": "12",
-		"verified": "13"
-	},
-	"esmodules": ["module/talesoftheoldwest.mjs"],
-	"styles": ["css/talesoftheoldwest.css"],
-	"documentTypes": {
-		"Actor": {
-			"pc": { "htmlFields": ["biography", "horseNotes"] },
-			"npc": { "htmlFields": ["biography"] },
-			"animal": { "htmlFields": ["biography", "attacks"] },
-			"towncharter": { "htmlFields": ["biography"] }
-		},
-		"Item": {
-			"item": { "htmlFields": ["description"] },
-			"weapon": { "htmlFields": ["description"] },
-			"talent": { "htmlFields": ["description", "basic", "advanced"] },
-			"crit": { "htmlFields": ["description"] },
-			"animalquality": { "htmlFields": ["description"] },
-			"weaponquality": { "htmlFields": ["description", "impact"] },
-			"amenities": { "htmlFields": ["description"] }
-		}
-	},
-	"flags": {
-		"hotReload": {
-			"extensions": ["css", "html", "mjs", "js", "hbs", "json"],
-			"paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
-		}
-	},
-	"url": "Replace this with a link to your public repository",
-	"license": "LICENSE.txt",
-	"readme": "README.md",
-	"bugs": "https://github.com/pwatson100/talesoftheoldwest/issues",
-	"changelog": "CHANGELOG.md",
-	"media": [
-		{
-			"type": "setup",
-			"url": "systems/talesoftheoldwest/assets/pictures/totow.webp",
-			"thumbnail": "systems/talesoftheoldwest/assets/pictures/totow.webp"
-		}
-	],
+  "id": "talesoftheoldwest",
+  "title": "Tales of The Old West",
+  "description": "The Tales of The Old West system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Paul Watson"
+    }
+  ],
+  "version": "1.0.3",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
+  "esmodules": ["module/talesoftheoldwest.mjs"],
+  "styles": ["css/talesoftheoldwest.css"],
+  "documentTypes": {
+    "Actor": {
+      "pc": { "htmlFields": ["biography", "horseNotes"] },
+      "npc": { "htmlFields": ["biography"] },
+      "animal": { "htmlFields": ["biography", "attacks"] },
+      "towncharter": { "htmlFields": ["biography"] }
+    },
+    "Item": {
+      "item": { "htmlFields": ["description"] },
+      "weapon": { "htmlFields": ["description"] },
+      "talent": { "htmlFields": ["description", "basic", "advanced"] },
+      "crit": { "htmlFields": ["description"] },
+      "animalquality": { "htmlFields": ["description"] },
+      "weaponquality": { "htmlFields": ["description", "impact"] },
+      "amenities": { "htmlFields": ["description"] }
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "mjs", "js", "hbs", "json"],
+      "paths": ["./css/talesoftheoldwest.css", "css", "lang", "templates"]
+    }
+  },
+  "url": "Replace this with a link to your public repository",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "https://github.com/pwatson100/talesoftheoldwest/issues",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/talesoftheoldwest/assets/pictures/totow.webp",
+      "thumbnail": "systems/talesoftheoldwest/assets/pictures/totow.webp"
+    }
+  ],
 
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		}
-	],
-	"packs": [
-		{
-			"name": "totow-system-assets",
-			"label": "System Assets",
-			"path": "packs/totow-system-assets",
-			"type": "Adventure",
-			"ownership": {
-				"PLAYER": "OBSERVER",
-				"ASSISTANT": "OWNER"
-			},
-			"system": "talesoftheoldwest",
-			"flags": {}
-		}
-	],
-	"packFolders": [],
-	"socket": false,
-	"manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-	"download": "This must link to a .zip file of the current version",
-	"background": "systems/talesoftheoldwest/assets/pictures/totow.webp",
-	"grid": {
-		"type": 1,
-		"distance": 5,
-		"units": "ft",
-		"diagonals": 0
-	},
-	"primaryTokenAttribute": "faith",
-	"secondaryTokenAttribute": "power"
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "totow-system-assets",
+      "label": "System Assets",
+      "path": "packs/totow-system-assets",
+      "type": "Adventure",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "talesoftheoldwest",
+      "flags": {}
+    }
+  ],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/talesoftheoldwest/assets/pictures/totow.webp",
+  "grid": {
+    "type": 1,
+    "distance": 5,
+    "units": "ft",
+    "diagonals": 0
+  },
+  "primaryTokenAttribute": "faith",
+  "secondaryTokenAttribute": "power"
 }
