@@ -1,2 +1,2 @@
-cd C:\FVTT-Versions\foundryvtt-13
-node main.js --dataPath=C:\Users\paulw\AppData\Local\FoundryVTT13-Clean
+cd D:\FVTT-Versions\foundryvtt-13
+node main.js --dataPath=D:\FVTTDevWorlds\FoundryVTT13-Clean
