@@ -211,8 +211,7 @@ body .application.sheet.actor.talesoftheoldwest .window-content,
 body .application.sheet.item.talesoftheoldwest .window-content {
   display: block;
   overflow: auto;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   scrollbar-color: #d36913 transparent;
   scrollbar-width: thin;
   background-image: url("../assets/background/sheet-background.webp");
@@ -1275,7 +1274,7 @@ body .application input[type=number] {
   display: grid;
   margin-top: 5px;
   grid-template-areas: "Ow1 Ow2";
-  grid-template-columns: 116px 687px;
+  grid-template-columns: 122px 684px;
 }
 
 .Ow1 {
@@ -3555,7 +3554,7 @@ a.content-link {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 1.74em;
+  font-size: 19px;
   padding: 10px;
 }
 .talesoftheoldwest .newdots-town-charter {

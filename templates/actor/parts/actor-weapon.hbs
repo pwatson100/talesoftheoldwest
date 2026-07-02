@@ -1,15 +1,21 @@
 <div class='overwatch_header'>
-	<label class='dots resource-label Ow1' data-key='overwatch' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'>
+	<label class='dots resource-label Ow1' data-status-id="overwatch" data-key='overwatch' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'>
 		{{localize 'TALESOFTHEOLDWEST.Conditions.Overwatch'}}
-		<a class='overwatch-toggle' data-action='toggleCondition' data-key='overwatch'>
-			{{#if (eq system.conditions.overwatch true)}}
-				<i class='far fa-dot-circle'></i>
+		<a class='overwatch-toggle' data-action='toggleCondition' data-status-id="overwatch" data-key='overwatch'>
+			{{#each statuses as |status id|}}
+			{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Overwatch')}}
+			{{#if status.active}}
+			<i class='far fa-dot-circle'></i>
 			{{else}}
-				<i class='far fa-circle'></i>
+			<i class='far fa-circle'></i>
 			{{/if}}
+			{{/if}}
+			{{/each}}
 		</a>
+
 	</label>
-	<label class='Ow2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</label></div>
+	<label class='Ow2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.weapons')}}</label>
+</div>
 <div>
 	<ol class='items-list' id='actorWeaponList'>
 		<li class='item grid-weapon-items items-header' style='width: 880px'>
@@ -23,16 +29,7 @@
 			<div class='item-name lCol9'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.range')}}</div>
 			<div class='item-name lCol10'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Item.General.ammo')}}</div>
 			<div class='item-controls lCol11'>
-				<a
-					class='item-control item-create'
-					data-tooltip='{{localize "DOCUMENT.Create" type='Weapon'}}'
-					data-action='createDoc'
-					data-document-class='Item'
-					data-origin='{{@root.weapon.uuid}}'
-					data-actor='{{actor.id}}'
-					data-img='icons/svg/aura.svg'
-					data-type='weapon'
-				>
+				<a class='item-control item-create' data-tooltip='{{localize "DOCUMENT.Create" type=' Weapon'}}' data-action='createDoc' data-document-class='Item' data-origin='{{@root.weapon.uuid}}' data-actor='{{actor.id}}' data-img='icons/svg/aura.svg' data-type='weapon'>
 					<i class='fas fa-plus'></i>
 					{{localize 'DOCUMENT.New' type='weapon'}}
 				</a>
@@ -41,63 +38,42 @@
 
 		<div style='margin-top: 3px; height: 150px; overflow-x: auto'>
 			{{#each weapon as |item id|}}
-				{{#if (eq item.system.stored false)}}
+			{{#if (eq item.system.stored false)}}
 
-					<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
-						<div class='item-image lColB1'>
-							<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
-						</div>
-						<div
-							class='lColB2 rollable'
-							data-roll-type='weapon'
-							data-label='{{item.name}} '
-							data-subtype='{{item.system.subtype}}'
-							data-drag='true'
-							data-document-class='Weapon'
-							data-action='roll'
-							data-item-id='{{item._id}}'
-							data-item-ammo='{{item.system.ammo}}'
-						>
-							{{item.name}}
-						</div>
-						<div class='lColB3'>{{item.system.conditionNames}}</div>
-						<div class='lColB6'>{{item.system.attackbonus}}</div>
-						<div class='lColB7'>{{item.system.damage}}</div>
-						<div class='lColB8'>{{item.system.crit}}</div>
-						<div class='lColB9'>{{localize (totowConcat (totowConcat 'TALESOFTHEOLDWEST.Ranges.' item.system.range) '.long')}}</div>
+			<li class='item grid-weapon-items' data-item-id='{{item._id}}' data-drag='true' data-document-class='Weapon'>
+				<div class='item-image lColB1'>
+					<a><img src='{{item.img}}' data-tooltip='{{item.name}}' width='24' height='24' /></a>
+				</div>
+				<div class='lColB2 rollable' data-roll-type='weapon' data-label='{{item.name}} ' data-subtype='{{item.system.subtype}}' data-drag='true' data-document-class='Weapon' data-action='roll' data-item-id='{{item._id}}' data-item-ammo='{{item.system.ammo}}'>
+					{{item.name}}
+				</div>
+				<div class='lColB3'>{{item.system.conditionNames}}</div>
+				<div class='lColB6'>{{item.system.attackbonus}}</div>
+				<div class='lColB7'>{{item.system.damage}}</div>
+				<div class='lColB8'>{{item.system.crit}}</div>
+				<div class='lColB9'>{{localize (totowConcat (totowConcat 'TALESOFTHEOLDWEST.Ranges.' item.system.range) '.long')}}</div>
 
-						{{#if (ne item.system.subtype 'fightin')}}
-							<div class='lColB5'>{{item.system.bonusdraw}}</div>
-							<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
-							<input
-								style=' text-align: center; justify-self: center;'
-								type='number'
-								class='inline-edit lColB10 statnum'
-								data-mod='system.ammo'
-								name='item.system.ammo'
-								value='{{item.system.ammo}}'
-								data-dtype='Number'
-								type='number'
-							/>
-						{{/if}}
-						<div class='item-controls lColB11'>
-							{{#if (eq actor.type 'pc')}}
-								{{#if (ne actor.system.remuda.remudaMounted 'false')}}
-									<a class='item-control storeItem' data-action='storeItem' data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'><i
-											class='fa-solid fa-sack-dollar'
-										></i>
-									</a>
-								{{/if}}
-							{{/if}}
-							<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type='Weapon'}}'>
-								<i class='fas fa-edit'></i>
-							</a>
-							<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type='Weapon'}}'>
-								<i class='fas fa-trash'></i>
-							</a>
-						</div>
-					</li>
+				{{#if (ne item.system.subtype 'fightin')}}
+				<div class='lColB5'>{{item.system.bonusdraw}}</div>
+				<div class='lColB4'>{{localize (totowConcat 'TALESOFTHEOLDWEST.Actions.' item.system.action)}}</div>
+				<input style=' text-align: center; justify-self: center;' type='number' class='inline-edit lColB10 statnum' data-mod='system.ammo' name='item.system.ammo' value='{{item.system.ammo}}' data-dtype='Number' type='number' />
 				{{/if}}
+				<div class='item-controls lColB11'>
+					{{#if (eq actor.type 'pc')}}
+					{{#if (ne actor.system.remuda.remudaMounted 'false')}}
+					<a class='item-control storeItem' data-action='storeItem' data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightToStore"}}'><i class='fa-solid fa-sack-dollar'></i>
+					</a>
+					{{/if}}
+					{{/if}}
+					<a class='item-control item-edit' data-action='viewDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Update" type=' Weapon'}}'>
+						<i class='fas fa-edit'></i>
+					</a>
+					<a class='item-control item-delete' data-action='deleteDoc' data-actor='{{actor.id}}' data-tooltip='{{localize "DOCUMENT.Delete" type=' Weapon'}}'>
+						<i class='fas fa-trash'></i>
+					</a>
+				</div>
+			</li>
+			{{/if}}
 			{{/each}}
 		</div>
 	</ol>

@@ -1,2344 +1,2344 @@
-@use '../utils/typography';
+@use "../utils/typography";
 
 // Grid.
 .grid-4col {
-	grid-column: span 4 / span 4;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .grid-6col {
-	display: grid;
-	gap: 1px;
-	grid-template-areas:
-		'a6Col11 a6Col12 a6Col13'
-		'a6Col21 a6Col22 a6Col23';
-	grid-template-columns: 320px 320px 320px;
-	height: 700px;
-	grid-template-rows: 350px;
+  display: grid;
+  gap: 1px;
+  grid-template-areas:
+    "a6Col11 a6Col12 a6Col13"
+    "a6Col21 a6Col22 a6Col23";
+  grid-template-columns: 320px 320px 320px;
+  height: 700px;
+  grid-template-rows: 350px;
 }
 .a6Col11 {
-	grid-area: a6Col11;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 .a6Col12 {
-	grid-area: a6Col12;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 .a6Col13 {
-	grid-area: a6Col13;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 .a6Col21 {
-	grid-area: a6Col21;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-left: 2px solid black;
-	border-bottom: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col21;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 .a6Col22 {
-	grid-area: a6Col22;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-left: 2px solid black;
-	border-bottom: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 .a6Col23 {
-	grid-area: a6Col23;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
-	overflow-y: auto;
+  grid-area: a6Col23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
+  overflow-y: auto;
 }
 
 .body-container {
-	display: grid;
-	padding-left: 10px;
-	grid-template-areas: 'Col1 Col2';
-	grid-template-columns: 234px 304px;
+  display: grid;
+  padding-left: 10px;
+  grid-template-areas: "Col1 Col2";
+  grid-template-columns: 234px 304px;
 }
 .Col1 {
-	grid-area: Col1;
+  grid-area: Col1;
 }
 .Col2 {
-	grid-area: Col2;
+  grid-area: Col2;
 }
 
 .body-split {
-	display: grid;
-	padding-left: 10px;
-	grid-template-areas: 'Split1 Split2';
-	grid-template-columns: 591px 317px;
-	margin-top: 6px;
-	border-top: solid black;
+  display: grid;
+  padding-left: 10px;
+  grid-template-areas: "Split1 Split2";
+  grid-template-columns: 591px 317px;
+  margin-top: 6px;
+  border-top: solid black;
 }
 .Split1 {
-	grid-area: Split1;
+  grid-area: Split1;
 }
 .Split2 {
-	grid-area: Split2;
+  grid-area: Split2;
 }
 
 .three-body-split {
-	display: grid;
-	padding-left: 10px;
-	grid-template-areas: 'TSplit1 TSplit2 TSplit3';
-	grid-template-columns: 250px 317px 317px;
-	margin-top: 6px;
-	border-top: solid black;
+  display: grid;
+  padding-left: 10px;
+  grid-template-areas: "TSplit1 TSplit2 TSplit3";
+  grid-template-columns: 250px 317px 317px;
+  margin-top: 6px;
+  border-top: solid black;
 }
 .TSplit1 {
-	grid-area: TSplit1;
+  grid-area: TSplit1;
 }
 .TSplit2 {
-	grid-area: TSplit2;
+  grid-area: TSplit2;
 }
 .TSplit2 {
-	grid-area: TSplit2;
+  grid-area: TSplit2;
 }
 
 .grid-weapon-items {
-	display: grid;
-	grid-template-areas:
-		'lCol1  lCol2  lCol3  lCol4  lCol5  lCol6  lCol7  lCol8  lCol9  lCol10  lCol11 '
-		'lColB1 lColB2 lColB3 lColB4 lColB5 lColB6 lColB7 lColB8 lColB9 lColB10 lColB11';
-	padding-bottom: 2px;
-	row-gap: 2px;
+  display: grid;
+  grid-template-areas:
+    "lCol1  lCol2  lCol3  lCol4  lCol5  lCol6  lCol7  lCol8  lCol9  lCol10  lCol11 "
+    "lColB1 lColB2 lColB3 lColB4 lColB5 lColB6 lColB7 lColB8 lColB9 lColB10 lColB11";
+  padding-bottom: 2px;
+  row-gap: 2px;
 
-	//                      l1   l2    l3   l4   l5   l6   l7   l8  l9    l10  l11
-	grid-template-columns: 40px 140px 128px 70px 70px 70px 70px 70px 70px 70px 75px;
-	align-items: center;
-	font-size: medium;
+  //                      l1   l2    l3   l4   l5   l6   l7   l8  l9    l10  l11
+  grid-template-columns: 40px 140px 128px 70px 70px 70px 70px 70px 70px 70px 75px;
+  align-items: center;
+  font-size: medium;
 }
 .lCol1 {
-	grid-area: lCol1;
-	text-align: left;
+  grid-area: lCol1;
+  text-align: left;
 }
 .lCol2 {
-	grid-area: lCol2;
-	text-align: center;
+  grid-area: lCol2;
+  text-align: center;
 }
 .lCol3 {
-	grid-area: lCol3;
-	text-align: center;
+  grid-area: lCol3;
+  text-align: center;
 }
 .lCol4 {
-	grid-area: lCol4;
-	text-align: center;
+  grid-area: lCol4;
+  text-align: center;
 }
 .lCol5 {
-	grid-area: lCol5;
-	text-align: center;
+  grid-area: lCol5;
+  text-align: center;
 }
 .lCol6 {
-	grid-area: lCol6;
-	text-align: center;
+  grid-area: lCol6;
+  text-align: center;
 }
 .lCol7 {
-	grid-area: lCol7;
-	text-align: center;
+  grid-area: lCol7;
+  text-align: center;
 }
 .lCol8 {
-	grid-area: lCol8;
-	text-align: center;
+  grid-area: lCol8;
+  text-align: center;
 }
 .lCol9 {
-	grid-area: lCol9;
-	text-align: center;
+  grid-area: lCol9;
+  text-align: center;
 }
 .lCol10 {
-	grid-area: lCol10;
-	text-align: center;
+  grid-area: lCol10;
+  text-align: center;
 }
 
 .lCol11 {
-	grid-area: lCol11;
-	text-align: center;
+  grid-area: lCol11;
+  text-align: center;
 }
 .lColB1 {
-	grid-area: lColB1;
-	text-align: left;
+  grid-area: lColB1;
+  text-align: left;
 }
 .lColB2 {
-	grid-area: lColB2;
-	text-align: left;
-	font-weight: bold;
+  grid-area: lColB2;
+  text-align: left;
+  font-weight: bold;
 }
 .lColB3 {
-	grid-area: lColB3;
-	text-align: center;
+  grid-area: lColB3;
+  text-align: center;
 }
 .lColB4 {
-	grid-area: lColB4;
-	text-align: center;
+  grid-area: lColB4;
+  text-align: center;
 }
 .lColB5 {
-	grid-area: lColB5;
-	text-align: center;
+  grid-area: lColB5;
+  text-align: center;
 }
 .lColB6 {
-	grid-area: lColB6;
-	text-align: center;
+  grid-area: lColB6;
+  text-align: center;
 }
 .lColB7 {
-	grid-area: lColB7;
-	text-align: center;
+  grid-area: lColB7;
+  text-align: center;
 }
 .lColB8 {
-	grid-area: lColB8;
-	text-align: center;
+  grid-area: lColB8;
+  text-align: center;
 }
 .lColB9 {
-	grid-area: lColB9;
-	// 	text-align: center;
+  grid-area: lColB9;
+  // 	text-align: center;
 
-	text-align: center;
+  text-align: center;
 }
 .lColB10 {
-	grid-area: lColB10;
-	text-align: center;
+  grid-area: lColB10;
+  text-align: center;
 }
 .lColB11 {
-	grid-area: lColB11;
-	text-align: center;
+  grid-area: lColB11;
+  text-align: center;
 }
 
 .grid-talent-items {
-	display: grid;
-	grid-template-areas:
-		'TCol1 TCol2 TCol3 TCol4 '
-		'TCol11 TCol12 TCol13 TCol14 ';
-	padding-bottom: 2px;
-	//                      l1   l2  l3    l4
-	grid-template-columns: 28px 167px 5px 88px;
-	align-items: center;
+  display: grid;
+  grid-template-areas:
+    "TCol1 TCol2 TCol3 TCol4 "
+    "TCol11 TCol12 TCol13 TCol14 ";
+  padding-bottom: 2px;
+  //                      l1   l2  l3    l4
+  grid-template-columns: 28px 167px 5px 88px;
+  align-items: center;
 }
 .TCol1 {
-	grid-area: TCol1;
-	text-align: left;
+  grid-area: TCol1;
+  text-align: left;
 }
 .TCol2 {
-	grid-area: TCol2;
-	text-align: center;
+  grid-area: TCol2;
+  text-align: center;
 }
 .TCol3 {
-	grid-area: TCol3;
-	text-align: center;
+  grid-area: TCol3;
+  text-align: center;
 }
 .TCol4 {
-	grid-area: TCol4;
-	text-align: center;
+  grid-area: TCol4;
+  text-align: center;
 }
 .TCol11 {
-	grid-area: TCol11;
-	text-align: center;
+  grid-area: TCol11;
+  text-align: center;
 }
 .TCol12 {
-	grid-area: TCol12;
-	text-align: left;
-	font-weight: bold;
+  grid-area: TCol12;
+  text-align: left;
+  font-weight: bold;
 }
 .TCol13 {
-	grid-area: TCol13;
-	text-align: center;
+  grid-area: TCol13;
+  text-align: center;
 }
 .TCol14 {
-	grid-area: TCol14;
-	text-align: center;
+  grid-area: TCol14;
+  text-align: center;
 }
 
 .grid-talent-quality {
-	display: grid;
-	grid-template-areas:
-		'QCol1 QCol2 QCol3 '
-		'QCol11 QCol12 QCol13 ';
-	padding-bottom: 2px;
-	//                      l1   l2     l4
-	grid-template-columns: 30px 170px 50px;
-	align-items: center;
+  display: grid;
+  grid-template-areas:
+    "QCol1 QCol2 QCol3 "
+    "QCol11 QCol12 QCol13 ";
+  padding-bottom: 2px;
+  //                      l1   l2     l4
+  grid-template-columns: 30px 170px 50px;
+  align-items: center;
 }
 .QCol1 {
-	grid-area: QCol1;
-	text-align: left;
+  grid-area: QCol1;
+  text-align: left;
 }
 .QCol2 {
-	grid-area: QCol2;
-	text-align: center;
+  grid-area: QCol2;
+  text-align: center;
 }
 .QCol3 {
-	grid-area: QCol3;
-	text-align: center;
+  grid-area: QCol3;
+  text-align: center;
 }
 .QCol11 {
-	grid-area: QCol11;
-	text-align: center;
+  grid-area: QCol11;
+  text-align: center;
 }
 .QCol12 {
-	grid-area: QCol12;
-	text-align: left;
-	font-weight: bold;
+  grid-area: QCol12;
+  text-align: left;
+  font-weight: bold;
 }
 .QCol13 {
-	grid-area: QCol13;
-	text-align: center;
+  grid-area: QCol13;
+  text-align: center;
 }
 
 .grid-header {
-	display: grid;
-	font-family: typography.$font-primary;
-	// padding-top: 0px;
-	grid-template-areas:
-		'HedCol1 HedCol1 HedCol7 HedCol10 HedCol2'
-		'HedCol3 HedCol4 HedCol8 HedCol11 HedCol2'
-		'HedCol5 HedCol6 HedCol9 HedCol12 HedCol2';
-	// padding-bottom: 2px;
-	//                      l1   l2  l3
-	grid-template-columns: 162px 206px 94px 266px 184px;
-	// align-items: center;
+  display: grid;
+  font-family: typography.$font-primary;
+  // padding-top: 0px;
+  grid-template-areas:
+    "HedCol1 HedCol1 HedCol7 HedCol10 HedCol2"
+    "HedCol3 HedCol4 HedCol8 HedCol11 HedCol2"
+    "HedCol5 HedCol6 HedCol9 HedCol12 HedCol2";
+  // padding-bottom: 2px;
+  //                      l1   l2  l3
+  grid-template-columns: 162px 206px 94px 266px 184px;
+  // align-items: center;
 }
 
 .HedCol1 {
-	grid-area: HedCol1;
-	// justify-self: left;
+  grid-area: HedCol1;
+  // justify-self: left;
 }
 .HedCol2 {
-	grid-area: HedCol2;
-	// height: 140px;
+  grid-area: HedCol2;
+  // height: 140px;
 }
 .HedCol3 {
-	grid-area: HedCol3;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol3;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HedCol4 {
-	grid-area: HedCol4;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol4;
+  text-align: center;
+  align-self: center;
 }
 .HedCol5 {
-	grid-area: HedCol5;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol5;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HedCol6 {
-	grid-area: HedCol6;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol6;
+  text-align: center;
+  align-self: center;
 }
 .HedCol7 {
-	grid-area: HedCol7;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol7;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HedCol8 {
-	grid-area: HedCol8;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol8;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HedCol9 {
-	grid-area: HedCol9;
-	text-align: center;
+  grid-area: HedCol9;
+  text-align: center;
 }
 .HedCol10 {
-	grid-area: HedCol10;
-	text-align: center;
-	align-self: center;
+  grid-area: HedCol10;
+  text-align: center;
+  align-self: center;
 }
 .HedCol11 {
-	grid-area: HedCol11;
-	text-align: center;
+  grid-area: HedCol11;
+  text-align: center;
 }
 .HedCol12 {
-	grid-area: HedCol12;
-	align-self: center;
+  grid-area: HedCol12;
+  align-self: center;
 }
 
 .item-sub-header {
-	display: grid;
-	font-family: typography.$font-primary;
-	row-gap: 2px;
-	grid-template-areas:
-		'ISHCol1 ISHCol2 '
-		'ISHCol3 ISHCol4 '
-		'ISHCol5 ISHCol6 ';
-	//                      l1   l2  l3
-	grid-template-columns: 162px 150px;
-	// align-items: center;
+  display: grid;
+  font-family: typography.$font-primary;
+  row-gap: 2px;
+  grid-template-areas:
+    "ISHCol1 ISHCol2 "
+    "ISHCol3 ISHCol4 "
+    "ISHCol5 ISHCol6 ";
+  //                      l1   l2  l3
+  grid-template-columns: 162px 150px;
+  // align-items: center;
 }
 
 .ISHCol1 {
-	grid-area: ISHCol1;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol1;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .ISHCol2 {
-	grid-area: ISHCol2;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol2;
+  text-align: center;
+  align-self: center;
 }
 .ISHCol3 {
-	grid-area: ISHCol3;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol3;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .ISHCol4 {
-	grid-area: ISHCol4;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol4;
+  text-align: center;
+  align-self: center;
 }
 .ISHCol5 {
-	grid-area: ISHCol5;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol5;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .ISHCol6 {
-	grid-area: ISHCol6;
-	text-align: center;
-	align-self: center;
+  grid-area: ISHCol6;
+  text-align: center;
+  align-self: center;
 }
 
 .horse-header {
-	display: grid;
-	justify-self: center;
-	margin-bottom: 5px;
-	grid-template-areas:
-		'HorseCol1 HorseCol1 HorseCol2 HorseCol3'
-		'HorseCol4 HorseCol5 HorseCol6 HorseCol7 ';
-	padding-bottom: 2px;
-	//                      l1   l2  l3
-	grid-template-columns: 167px 206px 94px 266px;
+  display: grid;
+  justify-self: center;
+  margin-bottom: 5px;
+  grid-template-areas:
+    "HorseCol1 HorseCol1 HorseCol2 HorseCol3"
+    "HorseCol4 HorseCol5 HorseCol6 HorseCol7 ";
+  padding-bottom: 2px;
+  //                      l1   l2  l3
+  grid-template-columns: 167px 206px 94px 266px;
 }
 
 .HorseCol1 {
-	grid-area: HorseCol1;
+  grid-area: HorseCol1;
 }
 .HorseCol2 {
-	grid-area: HorseCol2;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HorseCol2;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HorseCol3 {
-	grid-area: HorseCol3;
-	text-align: center;
-	align-self: center;
+  grid-area: HorseCol3;
+  text-align: center;
+  align-self: center;
 }
 .HorseCol4 {
-	grid-area: HorseCol4;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HorseCol4;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HorseCol5 {
-	grid-area: HorseCol5;
-	text-align: center;
-	align-self: center;
+  grid-area: HorseCol5;
+  text-align: center;
+  align-self: center;
 }
 
 .HorseCol6 {
-	grid-area: HorseCol6;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: HorseCol6;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .HorseCol7 {
-	grid-area: HorseCol7;
-	text-align: center;
+  grid-area: HorseCol7;
+  text-align: center;
 }
 
 .grid-item-header {
-	display: grid;
-	// margin: 0px;
-	// padding-top: 0px;
-	grid-template-areas:
-		'ItemHedCol1 ItemHedCol1 ItemHedCol2'
-		'ItemHedCol3 ItemHedCol4 ItemHedCol2 '
-		'ItemHedCol5 ItemHedCol6 ItemHedCol2 '
-		'ItemHedCol7 ItemHedCol8 ItemHedCol2 ';
-	// padding-bottom: 2px;
-	//                      l1   l2  l3
-	grid-template-columns: 140px 140px 160px;
-	// align-items: center;
+  display: grid;
+  // margin: 0px;
+  // padding-top: 0px;
+  grid-template-areas:
+    "ItemHedCol1 ItemHedCol1 ItemHedCol2"
+    "ItemHedCol3 ItemHedCol4 ItemHedCol2 "
+    "ItemHedCol5 ItemHedCol6 ItemHedCol2 "
+    "ItemHedCol7 ItemHedCol8 ItemHedCol2 ";
+  // padding-bottom: 2px;
+  //                      l1   l2  l3
+  grid-template-columns: 140px 140px 160px;
+  // align-items: center;
 }
 
 .ItemHedCol1 {
-	grid-area: ItemHedCol1;
-	// justify-self: left;
+  grid-area: ItemHedCol1;
+  // justify-self: left;
 }
 .ItemHedCol2 {
-	grid-area: ItemHedCol2;
-	// height: 140px;
+  grid-area: ItemHedCol2;
+  // height: 140px;
 }
 .ItemHedCol3 {
-	grid-area: ItemHedCol3;
-	align-self: center;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
+  grid-area: ItemHedCol3;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
 }
 .ItemHedCol4 {
-	grid-area: ItemHedCol4;
-	align-self: center;
+  grid-area: ItemHedCol4;
+  align-self: center;
 }
 .ItemHedCol5 {
-	grid-area: ItemHedCol5;
-	align-self: center;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
+  grid-area: ItemHedCol5;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
 }
 .ItemHedCol6 {
-	grid-area: ItemHedCol6;
-	align-self: center;
+  grid-area: ItemHedCol6;
+  align-self: center;
 }
 .ItemHedCol7 {
-	grid-area: ItemHedCol7;
-	align-self: center;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
+  grid-area: ItemHedCol7;
+  align-self: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
 }
 .ItemHedCol8 {
-	grid-area: ItemHedCol8;
-	align-self: center;
+  grid-area: ItemHedCol8;
+  align-self: center;
 }
 
 .sheet-main-attributes {
-	display: grid;
-	// padding: 3px;
-	/* row-gap: 5px; */
+  display: grid;
+  // padding: 3px;
+  /* row-gap: 5px; */
 
-	/* margin-top: 3px; */
-	/* margin-bottom: -2px; */
-	align-items: center;
-	grid-template-areas:
-		'A1 B1 A2 B2 A3 B3 A4 B4 '
-		'H1 H2 S1 S2 V1 V2  D1 D2 ';
-	grid-template-columns: 107px 110px 102px 110px 136px 110px 112px 110px;
-	// grid-template-columns: 112.5px;
-	background: rgb(139 106 44 / 21%);
+  /* margin-top: 3px; */
+  /* margin-bottom: -2px; */
+  align-items: center;
+  grid-template-areas:
+    "A1 B1 A2 B2 A3 B3 A4 B4 "
+    "H1 H2 S1 S2 V1 V2  D1 D2 ";
+  grid-template-columns: 107px 110px 102px 110px 136px 110px 112px 110px;
+  // grid-template-columns: 112.5px;
+  background: rgb(139 106 44 / 21%);
 }
 .A1 {
-	grid-area: A1;
-	text-align: center;
+  grid-area: A1;
+  text-align: center;
 }
 .B1 {
-	grid-area: B1;
-	text-align: center;
+  grid-area: B1;
+  text-align: center;
 }
 .A2 {
-	grid-area: A2;
-	text-align: center;
+  grid-area: A2;
+  text-align: center;
 }
 .B2 {
-	grid-area: B2;
-	text-align: center;
+  grid-area: B2;
+  text-align: center;
 }
 .A3 {
-	grid-area: A3;
-	text-align: center;
+  grid-area: A3;
+  text-align: center;
 }
 .B3 {
-	grid-area: B3;
-	text-align: center;
+  grid-area: B3;
+  text-align: center;
 }
 .A4 {
-	grid-area: A4;
-	text-align: center;
+  grid-area: A4;
+  text-align: center;
 }
 .B4 {
-	grid-area: B4;
-	text-align: center;
+  grid-area: B4;
+  text-align: center;
 }
 .H1 {
-	grid-area: H1;
-	text-align: center;
+  grid-area: H1;
+  text-align: center;
 }
 .H2 {
-	grid-area: H2;
-	text-align: center;
+  grid-area: H2;
+  text-align: center;
 }
 .S1 {
-	grid-area: S1;
-	text-align: center;
+  grid-area: S1;
+  text-align: center;
 }
 .S2 {
-	grid-area: S2;
-	text-align: center;
+  grid-area: S2;
+  text-align: center;
 }
 .V1 {
-	grid-area: V1;
-	text-align: center;
+  grid-area: V1;
+  text-align: center;
 }
 .V2 {
-	grid-area: V2;
-	text-align: center;
+  grid-area: V2;
+  text-align: center;
 }
 .D1 {
-	grid-area: D1;
-	text-align: center;
+  grid-area: D1;
+  text-align: center;
 }
 .D2 {
-	grid-area: D2;
-	text-align: center;
+  grid-area: D2;
+  text-align: center;
 }
 
 .sheet-main-abilities {
-	display: grid;
-	row-gap: 5px;
-	align-items: center;
-	grid-template-areas:
-		'Fightin Fightin2 Lightfingered Lightfingered2 Animalhandlin Animalhandlin2 Booklearnin Booklearnin2'
-		'Labor Labor2 Move Move2 Hawkeye Hawkeye2 Doctorin Doctorin2'
-		'Presence Presence2 Operate Operate2 Insight Insight2 Makin Makin2'
-		'Resilience Resilience2 Shootin Shootin2 Nature Nature2 Performin Performin2';
-	grid-template-columns: 162px 55px 162px 55px 179px 55px 162px 55px;
-	// grid-template-columns: 112.5px;
+  display: grid;
+  row-gap: 5px;
+  align-items: center;
+  grid-template-areas:
+    "Fightin Fightin2 Lightfingered Lightfingered2 Animalhandlin Animalhandlin2 Booklearnin Booklearnin2"
+    "Labor Labor2 Move Move2 Hawkeye Hawkeye2 Doctorin Doctorin2"
+    "Presence Presence2 Operate Operate2 Insight Insight2 Makin Makin2"
+    "Resilience Resilience2 Shootin Shootin2 Nature Nature2 Performin Performin2";
+  grid-template-columns: 162px 55px 162px 55px 179px 55px 162px 55px;
+  // grid-template-columns: 112.5px;
 }
 .Labor {
-	grid-area: Labor;
+  grid-area: Labor;
 }
 .Labor2 {
-	grid-area: Labor2;
+  grid-area: Labor2;
 }
 .Presence {
-	grid-area: Presence;
+  grid-area: Presence;
 }
 .Presence2 {
-	grid-area: Presence2;
+  grid-area: Presence2;
 }
 .Fightin {
-	grid-area: Fightin;
+  grid-area: Fightin;
 }
 .Fightin2 {
-	grid-area: Fightin2;
+  grid-area: Fightin2;
 }
 .Move {
-	grid-area: Move;
+  grid-area: Move;
 }
 .Move2 {
-	grid-area: Move2;
+  grid-area: Move2;
 }
 .Operate {
-	grid-area: Operate;
+  grid-area: Operate;
 }
 .Operate2 {
-	grid-area: Operate2;
+  grid-area: Operate2;
 }
 .Shootin {
-	grid-area: Shootin;
+  grid-area: Shootin;
 }
 .Shootin2 {
-	grid-area: Shootin2;
+  grid-area: Shootin2;
 }
 .Lightfingered {
-	grid-area: Lightfingered;
+  grid-area: Lightfingered;
 }
 .Lightfingered2 {
-	grid-area: Lightfingered2;
+  grid-area: Lightfingered2;
 }
 .Hawkeye {
-	grid-area: Hawkeye;
+  grid-area: Hawkeye;
 }
 .Hawkeye2 {
-	grid-area: Hawkeye2;
+  grid-area: Hawkeye2;
 }
 .Nature {
-	grid-area: Nature;
+  grid-area: Nature;
 }
 .Nature2 {
-	grid-area: Nature2;
+  grid-area: Nature2;
 }
 .Insight {
-	grid-area: Insight;
+  grid-area: Insight;
 }
 .Insight2 {
-	grid-area: Insight2;
+  grid-area: Insight2;
 }
 .Animalhandlin {
-	grid-area: Animalhandlin;
+  grid-area: Animalhandlin;
 }
 .Animalhandlin2 {
-	grid-area: Animalhandlin2;
+  grid-area: Animalhandlin2;
 }
 .Performin {
-	grid-area: Performin;
+  grid-area: Performin;
 }
 .Performin2 {
-	grid-area: Performin2;
+  grid-area: Performin2;
 }
 .Makin {
-	grid-area: Makin;
+  grid-area: Makin;
 }
 .Makin2 {
-	grid-area: Makin2;
+  grid-area: Makin2;
 }
 .Doctorin {
-	grid-area: Doctorin;
+  grid-area: Doctorin;
 }
 .Doctorin2 {
-	grid-area: Doctorin2;
+  grid-area: Doctorin2;
 }
 .Booklearnin {
-	grid-area: Booklearnin;
+  grid-area: Booklearnin;
 }
 .Booklearnin2 {
-	grid-area: Booklearnin2;
+  grid-area: Booklearnin2;
 }
 
 .critical-inj {
-	display: grid;
-	grid-template-areas: 'crit1 crit2 crit3 crit4';
-	// grid-template-rows: 3fr;
-	// padding: 3px;
-	grid-template-columns: 31px 161px 323px 45px;
-	align-items: center;
+  display: grid;
+  grid-template-areas: "crit1 crit2 crit3 crit4";
+  // grid-template-rows: 3fr;
+  // padding: 3px;
+  grid-template-columns: 31px 161px 323px 45px;
+  align-items: center;
 }
 
 .crit1 {
-	grid-area: crit1;
-	text-align: left;
-	padding-right: 4px;
+  grid-area: crit1;
+  text-align: left;
+  padding-right: 4px;
 }
 .crit2 {
-	grid-area: crit2;
-	text-align: left;
-	font-weight: bold;
-	padding-right: 8px;
-	font-size: 1em;
+  grid-area: crit2;
+  text-align: left;
+  font-weight: bold;
+  padding-right: 8px;
+  font-size: 1em;
 }
 .crit3 {
-	grid-area: crit3;
-	text-align: left;
-	font-weight: bold;
-	padding-right: 8px;
-	font-size: 0.7em;
+  grid-area: crit3;
+  text-align: left;
+  font-weight: bold;
+  padding-right: 8px;
+  font-size: 0.7em;
 }
 .crit4 {
-	grid-area: crit4;
-	text-align: right;
+  grid-area: crit4;
+  text-align: right;
 }
 
 .sheet-cash {
-	display: grid;
-	// padding: 3px;
-	row-gap: 5px;
+  display: grid;
+  // padding: 3px;
+  row-gap: 5px;
 
-	margin-top: 10px;
-	margin-bottom: 10px;
-	align-items: center;
-	grid-template-areas: 'cash1 cash2 cash3 cash4';
-	grid-template-columns: 154px 302px 148px 303px;
-	// grid-template-columns: 112.5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  grid-template-areas: "cash1 cash2 cash3 cash4";
+  grid-template-columns: 154px 302px 148px 303px;
+  // grid-template-columns: 112.5px;
 }
 .cash1 {
-	grid-area: cash1;
-	text-align: center;
+  grid-area: cash1;
+  text-align: center;
 }
 .cash2 {
-	grid-area: cash2;
-	text-align: center;
+  grid-area: cash2;
+  text-align: center;
 }
 .cash3 {
-	grid-area: cash3;
-	text-align: center;
+  grid-area: cash3;
+  text-align: center;
 }
 .cash4 {
-	grid-area: cash4;
-	// text-align: center;
+  grid-area: cash4;
+  // text-align: center;
 }
 
 .grid-weapon-feature-list {
-	display: grid;
-	row-gap: 5px;
-	column-gap: 4px;
-	align-items: center;
-	grid-template-areas: 'grid-wfl1 grid-wfl2 grid-wfl3 grid-wfl4';
-	grid-template-columns: 150px 50px 150px 50px;
+  display: grid;
+  row-gap: 5px;
+  column-gap: 4px;
+  align-items: center;
+  grid-template-areas: "grid-wfl1 grid-wfl2 grid-wfl3 grid-wfl4";
+  grid-template-columns: 150px 50px 150px 50px;
 }
 .grid-wfl1 {
-	grid-area: grid-wfl1;
-	text-align: center;
-	// font-size: x-large;
+  grid-area: grid-wfl1;
+  text-align: center;
+  // font-size: x-large;
 }
 .grid-wfl2 {
-	grid-area: grid-wfl2;
-	text-align: center;
-	align-self: end;
+  grid-area: grid-wfl2;
+  text-align: center;
+  align-self: end;
 }
 .grid-wfl3 {
-	grid-area: grid-wfl3;
-	text-align: center;
-	// font-size: x-large;
-	align-self: end;
+  grid-area: grid-wfl3;
+  text-align: center;
+  // font-size: x-large;
+  align-self: end;
 }
 .grid-wfl4 {
-	grid-area: grid-wfl4;
-	text-align: center;
+  grid-area: grid-wfl4;
+  text-align: center;
 }
 
 .overwatch_header {
-	display: grid;
-	margin-top: 5px;
-	// padding-left: 10px;
-	grid-template-areas: 'Ow1 Ow2';
-	grid-template-columns: 116px 687px;
+  display: grid;
+  margin-top: 5px;
+  // padding-left: 10px;
+  grid-template-areas: "Ow1 Ow2";
+  grid-template-columns: 122px 684px;
 }
 .Ow1 {
-	grid-area: Ow1;
-	font-size: 1.2em;
+  grid-area: Ow1;
+  font-size: 1.2em;
 }
 .Ow2 {
-	grid-area: Ow2;
-	font-weight: bold;
-	font-size: large;
-	text-align: center;
+  grid-area: Ow2;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
 }
 
 .sheet-gear-cash {
-	display: grid;
-	row-gap: 5px;
-	column-gap: 5px;
-	align-items: center;
-	grid-template-areas:
-		'L1C1 L1C2 L1C3 L1C4'
-		'L2C1 L2C2 L2C3 L2C4'
-		'L3C1 L3C2 L3C3 L3C4'
-		'L4C1 L4C2 L4C2 L4C2'
-		'L5C1 L5C2 L5C2 L5C2'
-		'L6C1 L6C2 L6C2 L6C2'
-		'L7C1 L7C2 L7C2 L7C2';
+  display: grid;
+  row-gap: 5px;
+  column-gap: 5px;
+  align-items: center;
+  grid-template-areas:
+    "L1C1 L1C2 L1C3 L1C4"
+    "L2C1 L2C2 L2C3 L2C4"
+    "L3C1 L3C2 L3C3 L3C4"
+    "L4C1 L4C2 L4C2 L4C2"
+    "L5C1 L5C2 L5C2 L5C2"
+    "L6C1 L6C2 L6C2 L6C2"
+    "L7C1 L7C2 L7C2 L7C2";
 
-	grid-template-columns: 150px 50px 150px 60px;
-	// margin: 10px 0px 10px 0px;
+  grid-template-columns: 150px 50px 150px 60px;
+  // margin: 10px 0px 10px 0px;
 }
 .L1C1 {
-	grid-area: L1C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L1C1;
+  // font-size: large;
+  text-align: right;
 }
 .L1C2 {
-	grid-area: L1C2;
-	// text-align: center;
+  grid-area: L1C2;
+  // text-align: center;
 }
 .L1C3 {
-	grid-area: L1C3;
-	// font-size: large;
-	text-align: right;
+  grid-area: L1C3;
+  // font-size: large;
+  text-align: right;
 }
 .L1C4 {
-	grid-area: L1C4;
-	// font-size: large;
-	// text-align: right;
+  grid-area: L1C4;
+  // font-size: large;
+  // text-align: right;
 }
 .L2C1 {
-	grid-area: L2C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L2C1;
+  // font-size: large;
+  text-align: right;
 }
 .L12C2 {
-	grid-area: L2C2;
-	// font-size: large;
-	// text-align: right;
+  grid-area: L2C2;
+  // font-size: large;
+  // text-align: right;
 }
 .L2C3 {
-	grid-area: L2C3;
-	// font-size: large;
-	text-align: right;
+  grid-area: L2C3;
+  // font-size: large;
+  text-align: right;
 }
 .L2C4 {
-	grid-area: L2C4;
-	// font-size: large;
-	// text-align: right;
+  grid-area: L2C4;
+  // font-size: large;
+  // text-align: right;
 }
 .L3C1 {
-	grid-area: L3C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L3C1;
+  // font-size: large;
+  text-align: right;
 }
 .L3C2 {
-	grid-area: L3C2;
-	// font-size: large;
-	// text-align: right;
+  grid-area: L3C2;
+  // font-size: large;
+  // text-align: right;
 }
 .L3C3 {
-	grid-area: L3C3;
-	// font-size: large;
-	text-align: right;
+  grid-area: L3C3;
+  // font-size: large;
+  text-align: right;
 }
 .L3C4 {
-	grid-area: L3C4;
-	// font-size: large;
-	// text-align: right;
+  grid-area: L3C4;
+  // font-size: large;
+  // text-align: right;
 }
 .L4C1 {
-	grid-area: L4C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L4C1;
+  // font-size: large;
+  text-align: right;
 }
 .L4C2 {
-	grid-area: L4C2;
-	// font-size: large;
+  grid-area: L4C2;
+  // font-size: large;
 }
 .L5C1 {
-	grid-area: L5C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L5C1;
+  // font-size: large;
+  text-align: right;
 }
 .L5C2 {
-	grid-area: L5C2;
-	// font-size: large;
-	text-align: center;
+  grid-area: L5C2;
+  // font-size: large;
+  text-align: center;
 }
 .L6C1 {
-	grid-area: L6C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L6C1;
+  // font-size: large;
+  text-align: right;
 }
 .L6C2 {
-	grid-area: L6C2;
-	// text-align: center;
+  grid-area: L6C2;
+  // text-align: center;
 }
 .L7C1 {
-	grid-area: L7C1;
-	// font-size: large;
-	text-align: right;
+  grid-area: L7C1;
+  // font-size: large;
+  text-align: right;
 }
 .L7C2 {
-	grid-area: L7C2;
-	// text-align: center;
+  grid-area: L7C2;
+  // text-align: center;
 }
 
 .conditions-split {
-	display: grid;
-	grid-template-areas:
-		'CSplit11 CSplit12'
-		'CSplit21 CSplit22'
-		'CSplit31 CSplit32'
-		'CSplit41 CSplit42'
-		'CSplit51 CSplit52';
-	grid-template-columns: 150px 50px;
-	margin-top: 6px;
-	row-gap: 2px;
+  display: grid;
+  grid-template-areas:
+    "CSplit11 CSplit12"
+    "CSplit21 CSplit22"
+    "CSplit31 CSplit32"
+    "CSplit41 CSplit42"
+    "CSplit51 CSplit52";
+  grid-template-columns: 150px 50px;
+  margin-top: 6px;
+  row-gap: 2px;
 }
 .CSplit11 {
-	grid-area: CSplit11;
-	text-align: right;
+  grid-area: CSplit11;
+  text-align: right;
 }
 .CSplit12 {
-	grid-area: CSplit12;
+  grid-area: CSplit12;
 }
 .CSplit21 {
-	grid-area: CSplit21;
-	text-align: right;
+  grid-area: CSplit21;
+  text-align: right;
 }
 .CSplit22 {
-	grid-area: CSplit22;
+  grid-area: CSplit22;
 }
 .CSplit31 {
-	grid-area: CSplit31;
-	text-align: right;
+  grid-area: CSplit31;
+  text-align: right;
 }
 .CSplit32 {
-	grid-area: CSplit32;
+  grid-area: CSplit32;
 }
 .CSplit41 {
-	grid-area: CSplit41;
-	text-align: right;
+  grid-area: CSplit41;
+  text-align: right;
 }
 .CSplit42 {
-	grid-area: CSplit42;
+  grid-area: CSplit42;
 }
 .CSplit51 {
-	grid-area: CSplit51;
-	text-align: right;
+  grid-area: CSplit51;
+  text-align: right;
 }
 .CSplit52 {
-	grid-area: CSplit52;
+  grid-area: CSplit52;
 }
 
 .sheet-compadres-header {
-	display: grid;
-	align-items: center;
-	width: 720px;
-	justify-self: center;
-	grid-template-areas: 'schA1 schB1 schA2 schA3';
-	grid-template-columns: 580px 40px 40px 40px;
-	// background: rgb(139 106 44 / 21%);
+  display: grid;
+  align-items: center;
+  width: 720px;
+  justify-self: center;
+  grid-template-areas: "schA1 schB1 schA2 schA3";
+  grid-template-columns: 580px 40px 40px 40px;
+  // background: rgb(139 106 44 / 21%);
 }
 .schA1 {
-	grid-area: schA1;
-	font-size: x-large;
-	font-weight: bold;
+  grid-area: schA1;
+  font-size: x-large;
+  font-weight: bold;
 }
 .schB1 {
-	grid-area: schB1;
-	margin: 5px;
+  grid-area: schB1;
+  margin: 5px;
 }
 .schA2 {
-	grid-area: schA2;
-	margin: 5px;
+  grid-area: schA2;
+  margin: 5px;
 }
 .schA3 {
-	grid-area: schA3;
-	margin: 5px;
+  grid-area: schA3;
+  margin: 5px;
 }
 
 .sheet-compadres-attributes {
-	display: grid;
-	align-items: center;
-	width: 894px;
-	justify-self: center;
-	grid-template-areas:
-		'scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 '
-		'scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ';
-	grid-template-columns: 101px 108px 105px 108px 130px 108px 111px 108px;
-	background: rgb(139 106 44 / 21%);
+  display: grid;
+  align-items: center;
+  width: 894px;
+  justify-self: center;
+  grid-template-areas:
+    "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 "
+    "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
+  grid-template-columns: 101px 108px 105px 108px 130px 108px 111px 108px;
+  background: rgb(139 106 44 / 21%);
 }
 .scaA1 {
-	grid-area: scaA1;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaA1;
+  text-align: center;
+  // font-size: large;
 }
 .scaB1 {
-	grid-area: scaB1;
-	text-align: center;
+  grid-area: scaB1;
+  text-align: center;
 }
 .scaA2 {
-	grid-area: scaA2;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaA2;
+  text-align: center;
+  // font-size: large;
 }
 .scaB2 {
-	grid-area: scaB2;
-	text-align: center;
+  grid-area: scaB2;
+  text-align: center;
 }
 .scaA3 {
-	grid-area: scaA3;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaA3;
+  text-align: center;
+  // font-size: large;
 }
 .scaB3 {
-	grid-area: scaB3;
-	text-align: center;
+  grid-area: scaB3;
+  text-align: center;
 }
 .scaA4 {
-	grid-area: scaA4;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaA4;
+  text-align: center;
+  // font-size: large;
 }
 .scaB4 {
-	grid-area: scaB4;
-	text-align: center;
+  grid-area: scaB4;
+  text-align: center;
 }
 .scaH1 {
-	grid-area: scaH1;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaH1;
+  text-align: center;
+  // font-size: large;
 }
 .scaH2 {
-	grid-area: scaH2;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaH2;
+  text-align: center;
+  // font-size: large;
 }
 .scaS1 {
-	grid-area: scaS1;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaS1;
+  text-align: center;
+  // font-size: large;
 }
 .scaS2 {
-	grid-area: scaS2;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaS2;
+  text-align: center;
+  // font-size: large;
 }
 .scaV1 {
-	grid-area: scaV1;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaV1;
+  text-align: center;
+  // font-size: large;
 }
 .scaV2 {
-	grid-area: scaV2;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaV2;
+  text-align: center;
+  // font-size: large;
 }
 .scaD1 {
-	grid-area: scaD1;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaD1;
+  text-align: center;
+  // font-size: large;
 }
 .scaD2 {
-	grid-area: scaD2;
-	text-align: center;
-	// font-size: large;
+  grid-area: scaD2;
+  text-align: center;
+  // font-size: large;
 }
 
 .compadre-split {
-	display: grid;
-	width: 800px;
-	justify-self: center;
-	grid-template-areas:
-		'CompSplit11 CompSplit12'
-		'CompSplit21 CompSplit22';
-	grid-template-columns: 400px 400px;
+  display: grid;
+  width: 800px;
+  justify-self: center;
+  grid-template-areas:
+    "CompSplit11 CompSplit12"
+    "CompSplit21 CompSplit22";
+  grid-template-columns: 400px 400px;
 }
 .CompSplit11 {
-	grid-area: CompSplit11;
-	/* text-align: center; */
-	// /* justify-items: center; */
-	align-self: normal;
-	padding: 3px;
+  grid-area: CompSplit11;
+  /* text-align: center; */
+  // /* justify-items: center; */
+  align-self: normal;
+  padding: 3px;
 }
 .CompSplit12 {
-	grid-area: CompSplit12;
-	// text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: CompSplit12;
+  // text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 .CompSplit21 {
-	grid-area: CompSplit21;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: CompSplit21;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 .CompSplit22 {
-	grid-area: CompSplit22;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: CompSplit22;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 .horse-quality-split {
-	display: grid;
-	grid-template-areas: 'HQSplit11 HQSplit12';
-	grid-template-columns: 560px 320px;
+  display: grid;
+  grid-template-areas: "HQSplit11 HQSplit12";
+  grid-template-columns: 560px 320px;
 }
 .HQSplit11 {
-	grid-area: HQSplit11;
-	align-self: normal;
-	padding: 3px;
+  grid-area: HQSplit11;
+  align-self: normal;
+  padding: 3px;
 }
 .HQSplit12 {
-	grid-area: HQSplit12;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: HQSplit12;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 .HQSplit21 {
-	grid-area: HQSplit21;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: HQSplit21;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 .HQSplit22 {
-	grid-area: HQSplit22;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px;
+  grid-area: HQSplit22;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px;
 }
 
 .sheet-animal-attributes {
-	display: grid;
-	align-items: center;
-	grid-template-areas:
-		'aA1 aB1 aA2 aB2 aA3 aB3 '
-		'aH1 aH2 aS1 aS2 aV1 aV2 ';
-	grid-template-columns: 112px 110px 112px 110px 137px 110px;
-	background: rgb(139 106 44 / 21%);
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    "aA1 aB1 aA2 aB2 aA3 aB3 "
+    "aH1 aH2 aS1 aS2 aV1 aV2 ";
+  grid-template-columns: 112px 110px 112px 110px 137px 110px;
+  background: rgb(139 106 44 / 21%);
 }
 .aA1 {
-	grid-area: aA1;
-	text-align: center;
-	// font-size: x-large;
+  grid-area: aA1;
+  text-align: center;
+  // font-size: x-large;
 }
 .aB1 {
-	grid-area: aB1;
-	text-align: center;
+  grid-area: aB1;
+  text-align: center;
 }
 .aA2 {
-	grid-area: aA2;
-	text-align: center;
-	// font-size: x-large;
+  grid-area: aA2;
+  text-align: center;
+  // font-size: x-large;
 }
 .aB2 {
-	grid-area: aB2;
-	text-align: center;
+  grid-area: aB2;
+  text-align: center;
 }
 .aA3 {
-	grid-area: aA3;
-	text-align: center;
-	// font-size: x-large;
+  grid-area: aA3;
+  text-align: center;
+  // font-size: x-large;
 }
 .aB3 {
-	grid-area: aB3;
-	text-align: center;
+  grid-area: aB3;
+  text-align: center;
 }
 
 .aH1 {
-	grid-area: aH1;
-	text-align: center;
-	// font-size: large;
+  grid-area: aH1;
+  text-align: center;
+  // font-size: large;
 }
 .aH2 {
-	grid-area: aH2;
-	text-align: center;
-	// font-size: large;
+  grid-area: aH2;
+  text-align: center;
+  // font-size: large;
 }
 .aS1 {
-	grid-area: aS1;
-	text-align: center;
-	// font-size: large;
+  grid-area: aS1;
+  text-align: center;
+  // font-size: large;
 }
 .aS2 {
-	grid-area: aS2;
-	text-align: center;
-	// font-size: large;
+  grid-area: aS2;
+  text-align: center;
+  // font-size: large;
 }
 .aV1 {
-	grid-area: aV1;
-	text-align: center;
-	// font-size: large;
+  grid-area: aV1;
+  text-align: center;
+  // font-size: large;
 }
 .aV2 {
-	grid-area: aV2;
-	text-align: center;
-	// font-size: large;
+  grid-area: aV2;
+  text-align: center;
+  // font-size: large;
 }
 
 .sheet-animal-abilities {
-	display: grid;
-	row-gap: 5px;
-	align-items: center;
-	grid-template-areas:
-		'aResilience aResilience2 aMove aMove2 aFightin aFightin2'
-		'aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2';
-	grid-template-columns: 162px 55px 162px 55px 178px 55px;
-	border-bottom: solid black;
-	margin: 5px;
+  display: grid;
+  row-gap: 5px;
+  align-items: center;
+  grid-template-areas:
+    "aResilience aResilience2 aMove aMove2 aFightin aFightin2"
+    "aHawkeyee aHawkeye2 aMove aMove2 aFightin aFightin2";
+  grid-template-columns: 162px 55px 162px 55px 178px 55px;
+  border-bottom: solid black;
+  margin: 5px;
 }
 .aFightin {
-	grid-area: aFightin;
+  grid-area: aFightin;
 }
 .aFightin2 {
-	grid-area: aFightin2;
+  grid-area: aFightin2;
 }
 .aMove {
-	grid-area: aMove;
+  grid-area: aMove;
 }
 .aMove2 {
-	grid-area: aMove2;
+  grid-area: aMove2;
 }
 .aResilience {
-	grid-area: aResilience;
+  grid-area: aResilience;
 }
 .aResilience2 {
-	grid-area: aResilience2;
+  grid-area: aResilience2;
 }
 .aHawkeye {
-	grid-area: aHawkeye;
+  grid-area: aHawkeye;
 }
 .aHawkeye2 {
-	grid-area: aHawkeye2;
+  grid-area: aHawkeye2;
 }
 
 .gear-split {
-	display: grid;
-	// padding-left: 10px;
-	grid-template-areas: 'gearSplit1 gearSplit2';
-	grid-template-columns: 531px 352px;
+  display: grid;
+  // padding-left: 10px;
+  grid-template-areas: "gearSplit1 gearSplit2";
+  grid-template-columns: 531px 352px;
 }
 .gearSplit1 {
-	grid-area: gearSplit1;
+  grid-area: gearSplit1;
 }
 .gearSplit2 {
-	grid-area: gearSplit2;
-	justify-self: center;
+  grid-area: gearSplit2;
+  justify-self: center;
 }
 .riding-bonus {
-	display: grid;
-	// padding-left: 10px;
-	grid-template-areas: 'rideSplit1 rideSplit2';
-	grid-template-columns: 215px 50px;
-	background: rgb(139 106 44 / 21%);
+  display: grid;
+  // padding-left: 10px;
+  grid-template-areas: "rideSplit1 rideSplit2";
+  grid-template-columns: 215px 50px;
+  background: rgb(139 106 44 / 21%);
 }
 .rideSplit1 {
-	grid-area: rideSplit1;
-	font-size: x-large;
-	text-align: center;
+  grid-area: rideSplit1;
+  font-size: x-large;
+  text-align: center;
 }
 .rideSplit2 {
-	grid-area: rideSplit2;
-	// font-size: large;
-	text-align: center;
+  grid-area: rideSplit2;
+  // font-size: large;
+  text-align: center;
 }
 
 .quality-split {
-	display: grid;
-	// width: 800px;
-	// justify-self: center;
-	grid-template-areas:
-		'QualSplit11 QualSplit12'
-		'QualSplit21 QualSplit22';
-	grid-template-columns: 280px 280px;
-	column-gap: 5px;
+  display: grid;
+  // width: 800px;
+  // justify-self: center;
+  grid-template-areas:
+    "QualSplit11 QualSplit12"
+    "QualSplit21 QualSplit22";
+  grid-template-columns: 280px 280px;
+  column-gap: 5px;
 }
 .QualSplit11 {
-	grid-area: QualSplit11;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px 3px 0px 3px;
+  grid-area: QualSplit11;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px 3px 0px 3px;
 }
 .QualSplit12 {
-	grid-area: QualSplit12;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 3px 3px 0px 3px;
+  grid-area: QualSplit12;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 3px 3px 0px 3px;
 }
 .QualSplit21 {
-	grid-area: QualSplit21;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 0px 3px 3px 3px;
+  grid-area: QualSplit21;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 0px 3px 3px 3px;
 }
 .QualSplit22 {
-	grid-area: QualSplit22;
-	text-align: center;
-	justify-items: center;
-	align-self: normal;
-	padding: 0px 3px 3px 3px;
+  grid-area: QualSplit22;
+  text-align: center;
+  justify-items: center;
+  align-self: normal;
+  padding: 0px 3px 3px 3px;
 }
 
 .grid-short-quality {
-	display: grid;
-	grid-template-areas:
-		'SQol1 SQol1'
-		'SQol11 SQol12';
-	padding-bottom: 2px;
-	//                      l1   l2
-	grid-template-columns: 30px 170px;
-	align-items: center;
+  display: grid;
+  grid-template-areas:
+    "SQol1 SQol1"
+    "SQol11 SQol12";
+  padding-bottom: 2px;
+  //                      l1   l2
+  grid-template-columns: 30px 170px;
+  align-items: center;
 }
 .SQol1 {
-	grid-area: SQol1;
-	text-align: center;
+  grid-area: SQol1;
+  text-align: center;
 }
 .SQol2 {
-	grid-area: SQol2;
-	text-align: center;
+  grid-area: SQol2;
+  text-align: center;
 }
 .SQol11 {
-	grid-area: SQol11;
-	text-align: center;
+  grid-area: SQol11;
+  text-align: center;
 }
 .SQol12 {
-	grid-area: SQol12;
-	text-align: left;
-	font-weight: bold;
+  grid-area: SQol12;
+  text-align: left;
+  font-weight: bold;
 }
 // 448
 .sheet-weapon-stats {
-	display: grid;
-	align-items: center;
-	justify-items: center;
-	grid-template-areas:
-		'sws11 sws12 sws13 sws14 '
-		'sws21 sws22 sws23 sws24 ';
-	grid-template-columns: 133px 129px 95px 63px;
-	row-gap: 3px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "sws11 sws12 sws13 sws14 "
+    "sws21 sws22 sws23 sws24 ";
+  grid-template-columns: 133px 129px 95px 63px;
+  row-gap: 3px;
 }
 .sws11 {
-	grid-area: sws11;
+  grid-area: sws11;
 }
 
 .sws12 {
-	grid-area: sws12;
+  grid-area: sws12;
 }
 .sws13 {
-	grid-area: sws13;
+  grid-area: sws13;
 }
 .sws14 {
-	grid-area: sws14;
+  grid-area: sws14;
 }
 .sws15 {
-	grid-area: sws15;
+  grid-area: sws15;
 }
 .sws16 {
-	grid-area: sws16;
+  grid-area: sws16;
 }
 
 .sws21 {
-	grid-area: sws21;
+  grid-area: sws21;
 }
 .sws22 {
-	grid-area: sws22;
-	justify-self: center;
+  grid-area: sws22;
+  justify-self: center;
 }
 .sws23 {
-	grid-area: sws23;
+  grid-area: sws23;
 }
 .sws24 {
-	grid-area: sws24;
+  grid-area: sws24;
 }
 .sws25 {
-	grid-area: sws25;
+  grid-area: sws25;
 }
 .sws26 {
-	grid-area: sws26;
+  grid-area: sws26;
 }
 
 .grid-town-charter {
-	display: grid;
-	font-family: typography.$font-primary;
-	// padding-top: 0px;
-	grid-template-areas:
-		'TCColh1 TCColh1 TCColh2 TCColh2 TCCol21'
-		'TCCol1 TCCol2 TCCol3 TCCol4 TCCol17'
-		'TCCol5 TCCol6 TCCol7 TCCol8 TCCol18'
-		'TCCol9 TCCol10 TCCol11 TCCol12 TCCol19'
-		'TCCol13 TCCol14 TCCol15 TCCol16 TCCol20';
-	// padding-bottom: 2px;
-	//                      l1   l2  l3
-	grid-template-columns: 120px 280px 55px 280px 209px;
-	// align-items: center;
+  display: grid;
+  font-family: typography.$font-primary;
+  // padding-top: 0px;
+  grid-template-areas:
+    "TCColh1 TCColh1 TCColh2 TCColh2 TCCol21"
+    "TCCol1 TCCol2 TCCol3 TCCol4 TCCol17"
+    "TCCol5 TCCol6 TCCol7 TCCol8 TCCol18"
+    "TCCol9 TCCol10 TCCol11 TCCol12 TCCol19"
+    "TCCol13 TCCol14 TCCol15 TCCol16 TCCol20";
+  // padding-bottom: 2px;
+  //                      l1   l2  l3
+  grid-template-columns: 120px 280px 55px 280px 209px;
+  // align-items: center;
 }
 
 .TCCol1 {
-	grid-area: TCCol1;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol1;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol2 {
-	grid-area: TCCol2;
+  grid-area: TCCol2;
 }
 .TCCol3 {
-	grid-area: TCCol3;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol3;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol4 {
-	grid-area: TCCol4;
+  grid-area: TCCol4;
 }
 .TCCol5 {
-	grid-area: TCCol5;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol5;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol6 {
-	grid-area: TCCol6;
+  grid-area: TCCol6;
 }
 .TCCol7 {
-	grid-area: TCCol7;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol7;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol8 {
-	grid-area: TCCol8;
+  grid-area: TCCol8;
 }
 .TCCol9 {
-	grid-area: TCCol9;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol9;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol10 {
-	grid-area: TCCol10;
+  grid-area: TCCol10;
 }
 .TCCol11 {
-	grid-area: TCCol11;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol11;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol12 {
-	grid-area: TCCol12;
+  grid-area: TCCol12;
 }
 .TCCol13 {
-	grid-area: TCCol13;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol13;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol14 {
-	grid-area: TCCol14;
+  grid-area: TCCol14;
 }
 .TCCol15 {
-	grid-area: TCCol15;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol15;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol16 {
-	grid-area: TCCol16;
+  grid-area: TCCol16;
 }
 .TCCol17 {
-	grid-area: TCCol17;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol17;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol18 {
-	grid-area: TCCol18;
-	justify-self: center;
+  grid-area: TCCol18;
+  justify-self: center;
 }
 .TCCol19 {
-	grid-area: TCCol19;
-	font-weight: bold;
-	font-size: larger;
-	text-align: center;
-	align-self: center;
+  grid-area: TCCol19;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
 }
 .TCCol20 {
-	grid-area: TCCol20;
-	justify-self: center;
+  grid-area: TCCol20;
+  justify-self: center;
 }
 .TCCol21 {
-	grid-area: TCCol21;
-	align-self: center;
+  grid-area: TCCol21;
+  align-self: center;
 }
 .TCColh1 {
-	grid-area: TCColh1;
-	font-weight: bold;
-	font-size: 1.4em;
-	text-align: center;
+  grid-area: TCColh1;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
 }
 .TCColh2 {
-	grid-area: TCColh2;
-	font-weight: bold;
-	font-size: 1.4em;
-	text-align: right;
+  grid-area: TCColh2;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: right;
 }
 
 .grid-aspect {
-	display: grid;
-	font-family: typography.$font-primary;
-	border: solid 1px black;
-	grid-template-areas:
-		'GA1label GA11 GA12 GA13 GA14 GA15 GA16 GA17 GA18 GA19 GA110 GA111 GA112 GA113 GA114 GA115 GA116 GA117 GA118 GA119 GA120 GA121 GA122 GA123 GA124 GA125 GA126 GA127 GA128 GA129 GA130 GA1Rank'
-		'GA2label GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA2Rank';
-	grid-template-columns: 156px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 66px;
-	row-gap: 10px;
-	padding-bottom: 5px;
+  display: grid;
+  font-family: typography.$font-primary;
+  border: solid 1px black;
+  grid-template-areas:
+    "GA1label GA11 GA12 GA13 GA14 GA15 GA16 GA17 GA18 GA19 GA110 GA111 GA112 GA113 GA114 GA115 GA116 GA117 GA118 GA119 GA120 GA121 GA122 GA123 GA124 GA125 GA126 GA127 GA128 GA129 GA130 GA1Rank"
+    "GA2label GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA21 GA2Rank";
+  grid-template-columns: 156px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 66px;
+  row-gap: 10px;
+  padding-bottom: 5px;
 }
 .GA1label {
-	grid-area: GA1label;
-	font-weight: bolder;
-	font-size: 1.2em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA1label;
+  font-weight: bolder;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 }
 .GA11 {
-	grid-area: GA11;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GA11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
 }
 .GA12 {
-	grid-area: GA12;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GA12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: 1.3em;
 }
 .GA13 {
-	grid-area: GA13;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.3em;
-	border-bottom: 2px solid black;
+  grid-area: GA13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
 }
 .GA14 {
-	grid-area: GA14;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.3em;
-	border-bottom: 2px solid black;
+  grid-area: GA14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
 }
 .GA15 {
-	grid-area: GA15;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.3em;
-	border-bottom: 2px solid black;
+  grid-area: GA15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-bottom: 2px solid black;
 }
 .GA16 {
-	grid-area: GA16;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA17 {
-	grid-area: GA17;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA18 {
-	grid-area: GA18;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA18;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA19 {
-	grid-area: GA19;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA19;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA110 {
-	grid-area: GA110;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA111 {
-	grid-area: GA111;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA112 {
-	grid-area: GA112;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA112;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA113 {
-	grid-area: GA113;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA113;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA114 {
-	grid-area: GA114;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA114;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA115 {
-	grid-area: GA115;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA115;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA116 {
-	grid-area: GA116;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA116;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA117 {
-	grid-area: GA117;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA118 {
-	grid-area: GA118;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA118;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA119 {
-	grid-area: GA119;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA119;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA120 {
-	grid-area: GA120;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA120;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA121 {
-	grid-area: GA121;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA121;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA122 {
-	grid-area: GA122;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA122;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA123 {
-	grid-area: GA123;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA123;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA124 {
-	grid-area: GA124;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA124;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA125 {
-	grid-area: GA125;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA125;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA126 {
-	grid-area: GA126;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA126;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA127 {
-	grid-area: GA127;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA127;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA128 {
-	grid-area: GA128;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA128;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA129 {
-	grid-area: GA129;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid black;
+  grid-area: GA129;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA130 {
-	grid-area: GA130;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+  grid-area: GA130;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 
-	font-size: 1.3em;
+  font-size: 1.3em;
 }
 .GA1Rank {
-	grid-area: GA1Rank;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	border-bottom: 2px solid black;
+  grid-area: GA1Rank;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid black;
 }
 
 .GA2label {
-	grid-area: GA2label;
-	font-weight: bolder;
-	font-size: 1.2em;
-	align-self: center;
-	justify-self: left;
+  grid-area: GA2label;
+  font-weight: bolder;
+  font-size: 1.2em;
+  align-self: center;
+  justify-self: left;
 }
 .GA21 {
-	grid-area: GA21;
-	align-self: center;
+  grid-area: GA21;
+  align-self: center;
 }
 .GA22 {
-	grid-area: GA22;
-	justify-self: center;
+  grid-area: GA22;
+  justify-self: center;
 }
 .GA23 {
-	grid-area: GA23;
-	justify-self: center;
+  grid-area: GA23;
+  justify-self: center;
 }
 .GA24 {
-	grid-area: GA24;
-	justify-self: center;
+  grid-area: GA24;
+  justify-self: center;
 }
 .GA25 {
-	grid-area: GA25;
-	justify-self: center;
+  grid-area: GA25;
+  justify-self: center;
 }
 .GA26 {
-	grid-area: GA26;
-	justify-self: center;
+  grid-area: GA26;
+  justify-self: center;
 }
 .GA27 {
-	grid-area: GA27;
-	justify-self: center;
+  grid-area: GA27;
+  justify-self: center;
 }
 .GA28 {
-	grid-area: GA28;
-	justify-self: center;
+  grid-area: GA28;
+  justify-self: center;
 }
 .GA29 {
-	grid-area: GA29;
-	justify-self: center;
+  grid-area: GA29;
+  justify-self: center;
 }
 .GA210 {
-	grid-area: GA210;
-	justify-self: center;
+  grid-area: GA210;
+  justify-self: center;
 }
 .GA211 {
-	grid-area: GA211;
-	justify-self: center;
+  grid-area: GA211;
+  justify-self: center;
 }
 .GA212 {
-	grid-area: GA212;
-	justify-self: center;
+  grid-area: GA212;
+  justify-self: center;
 }
 .GA213 {
-	grid-area: GA213;
-	justify-self: center;
+  grid-area: GA213;
+  justify-self: center;
 }
 .GA214 {
-	grid-area: GA214;
-	justify-self: center;
+  grid-area: GA214;
+  justify-self: center;
 }
 .GA215 {
-	grid-area: GA215;
-	justify-self: center;
+  grid-area: GA215;
+  justify-self: center;
 }
 .GA216 {
-	grid-area: GA216;
-	justify-self: center;
+  grid-area: GA216;
+  justify-self: center;
 }
 .GA217 {
-	grid-area: GA217;
-	justify-self: center;
+  grid-area: GA217;
+  justify-self: center;
 }
 .GA218 {
-	grid-area: GA218;
-	justify-self: center;
+  grid-area: GA218;
+  justify-self: center;
 }
 .GA219 {
-	grid-area: GA219;
-	justify-self: center;
+  grid-area: GA219;
+  justify-self: center;
 }
 .GA220 {
-	grid-area: GA220;
-	justify-self: center;
+  grid-area: GA220;
+  justify-self: center;
 }
 .GA221 {
-	grid-area: GA221;
-	justify-self: center;
+  grid-area: GA221;
+  justify-self: center;
 }
 .GA222 {
-	grid-area: GA222;
-	justify-self: center;
+  grid-area: GA222;
+  justify-self: center;
 }
 .GA223 {
-	grid-area: GA223;
-	justify-self: center;
+  grid-area: GA223;
+  justify-self: center;
 }
 .GA224 {
-	grid-area: GA224;
-	justify-self: center;
+  grid-area: GA224;
+  justify-self: center;
 }
 .GA225 {
-	grid-area: GA225;
-	justify-self: center;
+  grid-area: GA225;
+  justify-self: center;
 }
 .GA226 {
-	grid-area: GA226;
-	justify-self: center;
+  grid-area: GA226;
+  justify-self: center;
 }
 .GA227 {
-	grid-area: GA227;
-	justify-self: center;
+  grid-area: GA227;
+  justify-self: center;
 }
 .GA228 {
-	grid-area: GA228;
-	justify-self: center;
+  grid-area: GA228;
+  justify-self: center;
 }
 .GA229 {
-	grid-area: GA229;
-	justify-self: center;
+  grid-area: GA229;
+  justify-self: center;
 }
 .GA230 {
-	grid-area: GA230;
-	justify-self: center;
+  grid-area: GA230;
+  justify-self: center;
 }
 .GA2Rank {
-	grid-area: GA2Rank;
-	align-self: center;
-	justify-self: center;
+  grid-area: GA2Rank;
+  align-self: center;
+  justify-self: center;
 }
 
 .grid-aspect-footer {
-	display: grid;
-	font-family: typography.$font-primary;
-	border: solid 1px black;
-	grid-template-areas: 'GAF1label GAF11 GAF12 GAF13 GAF14 GAF15 GAF16 GAF1Rank';
-	grid-template-columns: 156px 50px 100px 150px 150px 200px 100px 66px;
+  display: grid;
+  font-family: typography.$font-primary;
+  border: solid 1px black;
+  grid-template-areas: "GAF1label GAF11 GAF12 GAF13 GAF14 GAF15 GAF16 GAF1Rank";
+  grid-template-columns: 156px 50px 100px 150px 150px 200px 100px 66px;
 }
 
 .GAF1label {
-	grid-area: GAF1label;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-weight: bolder;
-	text-align: center;
+  grid-area: GAF1label;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-weight: bolder;
+  text-align: center;
 }
 .GAF11 {
-	grid-area: GAF11;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF12 {
-	grid-area: GAF12;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF13 {
-	grid-area: GAF13;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF14 {
-	grid-area: GAF14;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF15 {
-	grid-area: GAF15;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF16 {
-	grid-area: GAF16;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: GAF16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .GAF1Rank {
-	grid-area: GAF1Rank;
-	height: max-content;
-	justify-self: top;
-	text-align: center;
-	font-size: smaller;
+  grid-area: GAF1Rank;
+  height: max-content;
+  justify-self: top;
+  text-align: center;
+  font-size: smaller;
 }
 
 .grid-prosperity-totals {
-	display: grid;
-	font-family: typography.$font-primary;
-	border: solid 1px black;
-	grid-template-areas: 'PTS1label PTS11 PTS12 PTS13 PTS14 PTS15 PTS16 PTS17 PTS1Rank';
-	grid-template-columns: 206px 100px 100px 100px 100px 100px 100px 100px 66px;
+  display: grid;
+  font-family: typography.$font-primary;
+  border: solid 1px black;
+  grid-template-areas: "PTS1label PTS11 PTS12 PTS13 PTS14 PTS15 PTS16 PTS17 PTS1Rank";
+  grid-template-columns: 206px 100px 100px 100px 100px 100px 100px 100px 66px;
 }
 
 .PTS1label {
-	grid-area: PTS1label;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-weight: bolder;
+  grid-area: PTS1label;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-weight: bolder;
 }
 .PTS11 {
-	grid-area: PTS11;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS12 {
-	grid-area: PTS12;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS13 {
-	grid-area: PTS13;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS14 {
-	grid-area: PTS14;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS14;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS15 {
-	grid-area: PTS15;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS16 {
-	grid-area: PTS16;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS17 {
-	grid-area: PTS17;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-right: 2px solid black;
-	font-size: 1.3em;
+  grid-area: PTS17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+  font-size: 1.3em;
 }
 .PTS1Rank {
-	grid-area: PTS1Rank;
-	height: max-content;
-	justify-self: top;
-	text-align: center;
-	font-size: smaller;
+  grid-area: PTS1Rank;
+  height: max-content;
+  justify-self: top;
+  text-align: center;
+  font-size: smaller;
 }
 
 .grid-amenities-modifiers {
-	display: grid;
-	grid-template-areas:
-		'AMCol11 AMCol12 AMCol13 AMCol14 '
-		'AMCol21 AMCol22 AMCol23 AMCol24 '
-		'AMCol31 AMCol32 AMCol33 AMCol34 ';
-	//                      l1   l2  l3    l4
-	grid-template-columns: 151px 60px 150px 60px;
-	row-gap: 5px;
+  display: grid;
+  grid-template-areas:
+    "AMCol11 AMCol12 AMCol13 AMCol14 "
+    "AMCol21 AMCol22 AMCol23 AMCol24 "
+    "AMCol31 AMCol32 AMCol33 AMCol34 ";
+  //                      l1   l2  l3    l4
+  grid-template-columns: 151px 60px 150px 60px;
+  row-gap: 5px;
 }
 
 .AMCol11 {
-	grid-area: AMCol11;
-	align-self: center;
+  grid-area: AMCol11;
+  align-self: center;
 }
 .AMCol12 {
-	grid-area: AMCol12;
-	align-self: center;
+  grid-area: AMCol12;
+  align-self: center;
 }
 .AMCol13 {
-	grid-area: AMCol13;
-	align-self: center;
+  grid-area: AMCol13;
+  align-self: center;
 }
 .AMCol14 {
-	grid-area: AMCol14;
-	align-self: center;
+  grid-area: AMCol14;
+  align-self: center;
 }
 .AMCol21 {
-	grid-area: AMCol21;
-	align-self: center;
+  grid-area: AMCol21;
+  align-self: center;
 }
 .AMCol22 {
-	grid-area: AMCol22;
-	align-self: center;
+  grid-area: AMCol22;
+  align-self: center;
 }
 .AMCol23 {
-	grid-area: AMCol23;
-	align-self: center;
+  grid-area: AMCol23;
+  align-self: center;
 }
 .AMCol24 {
-	grid-area: AMCol24;
-	align-self: center;
+  grid-area: AMCol24;
+  align-self: center;
 }
 .AMCol31 {
-	grid-area: AMCol31;
-	align-self: center;
+  grid-area: AMCol31;
+  align-self: center;
 }
 .AMCol32 {
-	grid-area: AMCol32;
-	align-self: center;
+  grid-area: AMCol32;
+  align-self: center;
 }
 .AMCol33 {
-	grid-area: AMCol33;
-	align-self: center;
+  grid-area: AMCol33;
+  align-self: center;
 }
 .AMCol34 {
-	grid-area: AMCol34;
-	align-self: center;
+  grid-area: AMCol34;
+  align-self: center;
 }
 .grid-amenities-header {
-	display: grid;
-	grid-template-areas:
-		'AHCol11 AHCol12 AHCol13 AHCol14 '
-		'AHCol21 AHCol22 AHCol23 AHCol24 '
-		'AHCol31 AHCol31 AHCol31 AHCol31 ';
-	//                      l1   l2  l3    l4
-	grid-template-columns: 84px 96px 100px 100px;
-	row-gap: 5px;
-	column-gap: 10px;
+  display: grid;
+  grid-template-areas:
+    "AHCol11 AHCol12 AHCol13 AHCol14 "
+    "AHCol21 AHCol22 AHCol23 AHCol24 "
+    "AHCol31 AHCol31 AHCol31 AHCol31 ";
+  //                      l1   l2  l3    l4
+  grid-template-columns: 84px 96px 100px 100px;
+  row-gap: 5px;
+  column-gap: 10px;
 }
 
 .AHCol11 {
-	grid-area: AHCol11;
-	align-self: center;
-	text-align: right;
+  grid-area: AHCol11;
+  align-self: center;
+  text-align: right;
 }
 .AHCol12 {
-	grid-area: AHCol12;
-	align-self: center;
+  grid-area: AHCol12;
+  align-self: center;
 }
 .AHCol13 {
-	grid-area: AHCol13;
-	align-self: center;
-	text-align: right;
+  grid-area: AHCol13;
+  align-self: center;
+  text-align: right;
 }
 .AHCol14 {
-	grid-area: AHCol14;
-	align-self: center;
+  grid-area: AHCol14;
+  align-self: center;
 }
 .AHCol21 {
-	grid-area: AHCol21;
-	align-self: center;
-	text-align: right;
+  grid-area: AHCol21;
+  align-self: center;
+  text-align: right;
 }
 .AHCol22 {
-	grid-area: AHCol22;
-	align-self: center;
+  grid-area: AHCol22;
+  align-self: center;
 }
 .AHCol23 {
-	grid-area: AHCol23;
-	align-self: center;
-	text-align: right;
+  grid-area: AHCol23;
+  align-self: center;
+  text-align: right;
 }
 .AHCol24 {
-	grid-area: AHCol24;
-	align-self: center;
+  grid-area: AHCol24;
+  align-self: center;
 }
 .AHCol31 {
-	grid-area: AHCol31;
-	align-self: center;
+  grid-area: AHCol31;
+  align-self: center;
 }
 
 .grid-conGrid {
-	display: grid;
-	grid-template-areas: 'con1 con2 con3';
-	//                      l1   l2
-	grid-template-columns: 29px 101px 267px;
+  display: grid;
+  grid-template-areas: "con1 con2 con3";
+  //                      l1   l2
+  grid-template-columns: 29px 101px 267px;
 }
 
 .con1 {
-	grid-area: con1;
+  grid-area: con1;
 }
 .con2 {
-	grid-area: con2;
+  grid-area: con2;
 }
 .con3 {
-	grid-area: con3;
+  grid-area: con3;
 }
