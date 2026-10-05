@@ -14,7 +14,7 @@ const data = await DialogV2.prompt({
   position: { width: 800 },
   content: "<fieldset>" + nameInput + "</fieldset>" + "<fieldset>" + textInput + "</fieldset>",
   ok: {
-    callback: (event, button) => new FormDataExtended(button.form).object,
+    callback: (event, button) => new foundry.applications.ux.FormDataExtended(button.form).object,
   },
   rejectClose: false,
 });
