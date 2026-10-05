@@ -131,6 +131,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
       template: "systems/talesoftheoldwest/templates/actor/parts/actor-horse-saddlebag.hbs",
       scrollable: [""],
     },
+    horseitems: {
+      template: "systems/talesoftheoldwest/templates/actor/parts/horse-items-inline.hbs",
+      scrollable: [""],
+    },
     actorhorsequality: {
       template: "systems/talesoftheoldwest/templates/actor/parts/actor-horse-quality-options.hbs",
       scrollable: [""],
@@ -200,6 +204,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
       if (context.actor.type === "pc") {
         this._prepareCompadres(context);
         this._prepareRemuda(context);
+        context.statuses = await this._prepareStatusEffects();
+        context.effects = await this._prepareActiveEffectCategories();
+      }
+      if (context.actor.type === "npc") {
         context.statuses = await this._prepareStatusEffects();
         context.effects = await this._prepareActiveEffectCategories();
       }
@@ -507,10 +515,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
               itemDescription: mods.description,
               value: mods.value,
               stored: i.system.stored,
-              basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
-              advisActive: i.system.advisActive ? i.system.advisActive : false,
-              basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, "") ? i.system.basicAction.replace(/<[^>]*>?/gm, "") : "",
-              advAction: i.system.advAction.replace(/<[^>]*>?/gm, "") ? i.system.advAction.replace(/<[^>]*>?/gm, "") : "",
+              // basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+              // advisActive: i.system.advisActive ? i.system.advisActive : false,
+              // basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, "") ? i.system.basicAction.replace(/<[^>]*>?/gm, "") : "",
+              // advAction: i.system.advAction.replace(/<[^>]*>?/gm, "") ? i.system.advAction.replace(/<[^>]*>?/gm, "") : "",
             });
           }
         }
@@ -527,10 +535,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
                 itemDescription: feature.description,
                 value: mods.value,
                 stored: i.system.stored,
-                basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
-                advisActive: i.system.advisActive ? i.system.advisActive : false,
-                basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, "") ? i.system.basicAction.replace(/<[^>]*>?/gm, "") : "",
-                advAction: i.system.advAction.replace(/<[^>]*>?/gm, "") ? i.system.advAction.replace(/<[^>]*>?/gm, "") : "",
+                // basicisActive: i.system.basicisActive ? i.system.basicisActive : false,
+                // advisActive: i.system.advisActive ? i.system.advisActive : false,
+                // basicAction: i.system.basicAction.replace(/<[^>]*>?/gm, "") ? i.system.basicAction.replace(/<[^>]*>?/gm, "") : "",
+                // advAction: i.system.advAction.replace(/<[^>]*>?/gm, "") ? i.system.advAction.replace(/<[^>]*>?/gm, "") : "",
               });
             }
           }

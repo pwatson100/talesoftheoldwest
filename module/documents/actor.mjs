@@ -88,7 +88,7 @@ export class totowActor extends Actor {
    * @param {boolean} [options.active]          Force the effect to be active or inactive regardless of its current state.
    * @param {boolean} [options.overlay=false]   Display the toggled effect as an overlay.
    * @param {string} [options.effectEnd]        Value for `system.end.type`.
-   * @returns {PromiseAlienRPGActiveEffect|boolean|undefined>}  A promise which resolves to one of the following values:
+   * @returns {PromiseTOTOWActiveEffect|boolean|undefined>}  A promise which resolves to one of the following values:
    *                                 - ActiveEffect if a new effect need to be created
    *                                 - true if was already an existing effect
    *                                 - false if an existing effect needed to be removed
@@ -119,22 +119,6 @@ export class totowActor extends Actor {
     if (existing.length) {
       if (active) return true;
       await this.deleteEmbeddedDocuments("ActiveEffect", existing);
-      // for (const effect of this.effects) {
-      //   for (const effectList of CONFIG.statusEffects) {
-      //     if (effectList.id === effect.name.toLowerCase()) {
-      //       hitList.push(effectList.tableNumber);
-      //     }
-      //   }
-      // }
-      // hitList.sort().reverse();
-      // await this.update({ "system.general.panic.lastRoll": hitList[0] });
-      // if (hitList.length === 0) {
-      //   if (status.resp === "panic") {
-      //     await this.update({ "system.general.panic.lastRoll": -1 });
-      //   } else {
-      //     await this.update({ "system.general.stressresponse.value": -1 });
-      //   }
-      // }
       return false;
     }
 
@@ -143,17 +127,6 @@ export class totowActor extends Actor {
     const effect = await TOTOWActiveEffect.fromStatusEffect(statusId);
     if (overlay) effect.updateSource({ "flags.core.overlay": true });
     if (effectEnd) effect.updateSource({ "system.end.type": effectEnd });
-    // if (this.type === "character") {
-    //   if (status.resp === "panic") {
-    //     if (status.tableNumber > this.system.general.panic.lastRoll) {
-    //       await this.update({ "system.general.panic.lastRoll": status.tableNumber });
-    //     }
-    //   } else {
-    //     if (status.tableNumber > this.system.general.stressresponse.value) {
-    //       await this.update({ "system.general.stressresponse.value": status.tableNumber });
-    //     }
-    //   }
-    // }
     return TOTOWActiveEffect.create(effect, { parent: this, keepId: true });
   }
 
@@ -549,6 +522,7 @@ export class totowActor extends Actor {
     dataset.conditional = "";
     dataset.talent = "";
     dataset.myHorse = "false";
+    dataset.shootmodifiermod = "0";
     // const targetActor = actor.getRollData();
     if (actor.type === "pc") {
       dataset.faithpoints = actor.system.general.faithpoints.value;
@@ -627,8 +601,6 @@ export class totowActor extends Actor {
             });
             response = await foundry.applications.api.DialogV2.wait({
               window: { title: "TALESOFTHEOLDWEST.Item.General.roll-modifiers" },
-              // position: { width: 'auto' },
-              // classes: ["my-special-class"],
               content,
               rejectClose: false,
               buttons: [
@@ -651,8 +623,6 @@ export class totowActor extends Actor {
             });
             response = await foundry.applications.api.DialogV2.wait({
               window: { title: "TALESOFTHEOLDWEST.Item.General.roll-modifiers" },
-              // position: { width: 'auto' },
-              // classes: ["my-special-class"],
               content,
               rejectClose: false,
               buttons: [
@@ -712,6 +682,7 @@ export class totowActor extends Actor {
           }
           const msg = await ChatMessage.create(chatData);
           result[1].messageNo = msg.id;
+          await msg.setFlag("talesoftheoldwest", "modifiers", result[1].modifiers.mod);
           await msg.setFlag("talesoftheoldwest", "results", result);
           await msg.setFlag("talesoftheoldwest", "isType", actor.type);
 
@@ -779,7 +750,7 @@ export class totowActor extends Actor {
       sound: CONFIG.sounds.lock,
     };
 
-    ChatMessage.applyRollMode(chatData, game.settings.get("core", "rollMode"));
+    ChatMessage.applyMode(chatData, game.settings.get("core", "rollMode"));
     return ChatMessage.create(chatData);
   }
 

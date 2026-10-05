@@ -7,7 +7,7 @@ export const adventurePack = "talesoftheoldwest.totow-system-assets";
 export const adventurePackName = "Tales Of The Old West - System Assets";
 export const moduleTitle = "Tales Of The Old West RPG Core System"; // Module Title, is not referenced beyond giving a title to HTML dialog, so can be anything
 export const welcomeJournalEntry = "How To Use This System"; // The name of a journal entry you want to display after import.
-export const sceneToActivate = "Core Rules Cover"; // The name of the scene you want to display after import. Not needed if the Adventure was saved with the scene active.
+export const sceneToActivate = "Tales of the Old West"; // The name of the scene you want to display after import. Not needed if the Adventure was saved with the scene active.
 
 export class TOTOWSystemImportFormWrapper extends foundry.applications.api.ApplicationV2 {
   static DEFAULT_OPTIONS = {
@@ -68,16 +68,12 @@ Hooks.on("ready", () => {
 
 export async function FirstTimeSetup() {
   const pack = game.packs.get(adventurePack);
-  const adventureId = pack.index.find((a) => a.name === adventurePackName)?._id;
-  const adventure = await pack.getDocument(adventureId);
   await pack.getDocuments();
-  // await pack.getName(adventurePackName).sheet._updateObject({}, new FormData());
-  // let mypack = pack.getName(adventurePackName);
-  await pack.import(new FormData());
+  await pack.getName(adventurePackName).sheet._updateObject({}, new FormData());
   await game.settings.set(moduleKey, "imported", true);
   await game.settings.set(moduleKey, "migrationVersion", game.system.version);
-  await createThumbs(adventure);
   ui.notifications.notify("Import Complete");
+  game.scenes.getName(sceneToActivate).activate(); // Not required if you save the Adventure with the desired scene active.
   game.journal.getName(welcomeJournalEntry).show();
 }
 
@@ -100,6 +96,8 @@ export async function ModuleImport() {
       if (created || updated) {
         game.settings.set(moduleKey, "imported", true);
         game.settings.set(moduleKey, "migrationVersion", game.system.version);
+        createThumbs(adventure);
+        game.scenes.getName(sceneToActivate).activate(); // Not required if you save the Adventure with the desired scene active.
         ui.notifications.notify("Import Complete");
         game.journal.getName(welcomeJournalEntry).show();
         return;

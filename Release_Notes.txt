@@ -1,3 +1,22 @@
-Version 1.0.0
 
+Version 1.0.4
+Corrected issues with Talents and Weapon Features not applying modifiers as expected.  
+Corrected issue with Conditions not operating properly on he NPC sheet. 
+
+
+Version 1.0.3
+Corrected issue on the Town Charter Actor calculating the Natural Resources
+
+Version 1.0.2
+Squashed the following bugs:
+FireFox- in Dark mode firefox does not display the dialog boxes
+Firefox - Horse description box is the wrong size
+Active Effects on criticals not working
+Actor rolls not showing actor name
+NPC's rolling from the PC sheet should not have push etc. in the chat window
+
+Version 1.0.1
+Corrected issue with Pause and Target marker in V13.
+
+Version 1.0.0
 * Initial Release

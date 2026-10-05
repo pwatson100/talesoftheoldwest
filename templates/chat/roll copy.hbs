@@ -5,207 +5,157 @@
 		<h2 style='white-space: pre-wrap'>{{title}}</h2>
 	</div>
 	{{#if (gt modifiers.mod 0)}}
-		{{#ifSetting 'debug'}}
-			<div style='position: relative'>
-				<details>
-					<summary>Expand To See Roll Stats</summary>
-					<br />
-					<span>Trouble Dice Success ({{troubleSucc}})</span><br />
-					<span>Trouble Dice({{trouble}})</span><br />
-					<span>Trouble Rest ({{troubleRest}})</span><br />
-					<span>Normal Dice Success ({{normalSucc}})</span><br />
-					<span>Normal Rest ({{rest}})</span><br />
-					<span>Total Success({{totalSuccess}})</span><br />
-					<span>Total Trouble({{totalTrouble}})</span><br />
-					<span style='font-size: large; font-weight: bold'>trouble ({{trouble}})</span><br />
-					<span style='font-size: large; font-weight: bold'>canPush ({{canPush}})</span>
-				</details>
-			</div>
-		{{/ifSetting}}
+	{{#ifSetting 'debug'}}
+	<div style='position: relative'>
+		<details>
+			<summary>Expand To See Roll Stats</summary>
+			<br />
+			<span>Trouble Dice Success ({{troubleSucc}})</span><br />
+			<span>Trouble Dice({{trouble}})</span><br />
+			<span>Trouble Rest ({{troubleRest}})</span><br />
+			<span>Normal Dice Success ({{normalSucc}})</span><br />
+			<span>Normal Rest ({{rest}})</span><br />
+			<span>Total Success({{totalSuccess}})</span><br />
+			<span>Total Trouble({{totalTrouble}})</span><br />
+			<span style='font-size: large; font-weight: bold'>trouble ({{trouble}})</span><br />
+			<span style='font-size: large; font-weight: bold'>canPush ({{canPush}})</span>
+		</details>
+	</div>
+	{{/ifSetting}}
 
-		<div class='chat roll'>
-			{{#if successes}}
-				<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.success')}}</h4>
-				{{#if (eq rollType 'weapon')}}
-					<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
-					<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
+	<div class='chat roll'>
+		{{#if successes}}
+		<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.success')}}</h4>
+		{{#if (eq rollType 'weapon')}}
+		<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
+		<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
 
-				{{/if}}
-			{{/if}}
-			{{#if criticalSuccess}}
-				<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.critsuccess')}}</h4>
-				{{#if (eq rollType 'weapon')}}
-					<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
-					<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
+		{{/if}}
+		{{/if}}
+		{{#if criticalSuccess}}
+		<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.critsuccess')}}</h4>
+		{{#if (eq rollType 'weapon')}}
+		<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.damage')}} ({{itemData.damage}})</h4>
+		<h4 style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.crit')}} ({{itemData.crit}})</h4>
 
-				{{/if}}
-			{{/if}}
-			{{#if failure}}
-				<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.failed')}}</h4>
-			{{/if}}
+		{{/if}}
+		{{/if}}
+		{{#if failure}}
+		<h4 style='font-size: x-large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.failed')}}</h4>
+		{{/if}}
 
-			<div class='roll'>
-				{{#times troubleBlank}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-blank.webp' />
-				{{/times}}
-				{{#times troubleSucc}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-face.webp' />
-				{{/times}}
-				{{#times trouble}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-face.webp' />
-				{{/times}}
-				{{#times troubleFive}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-face.webp' />
-				{{/times}}
-				{{#times troubleFour}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-face.webp' />
-				{{/times}}
-				{{#times troubleThree}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-face.webp' />
-				{{/times}}
-				{{#times troubleTwo}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-face.webp' />
-				{{/times}}
+		<div class='roll'>
+			{{#times troubleBlank}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-blank.webp' />
+			{{/times}}
+			{{#times troubleSucc}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-face.webp' />
+			{{/times}}
+			{{#times trouble}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/trouble-face.webp' />
+			{{/times}}
+			{{#times troubleFive}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-face.webp' />
+			{{/times}}
+			{{#times troubleFour}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-face.webp' />
+			{{/times}}
+			{{#times troubleThree}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-face.webp' />
+			{{/times}}
+			{{#times troubleTwo}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-face.webp' />
+			{{/times}}
+			<br />
+			{{#times normalSucc}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-normal.webp' />
+			{{/times}}
+			{{#times normalFive}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-normal.webp' />
+			{{/times}}
+			{{#times normalFour}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-normal.webp' />
+			{{/times}}
+			{{#times normalThree}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-normal.webp' />
+			{{/times}}
+			{{#times normalTwo}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-normal.webp' />
+			{{/times}}
+			{{#times normalOne}}
+			<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/1-normal.webp' />
+			{{/times}}
+		</div>
+		{{#if modifiers.talent}}
+		<div style='position: relative'>
+			<details>
+				<summary style='font-size: large'>Talents/Weapon Features</summary>
 				<br />
-				{{#times normalSucc}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/6-normal.webp' />
-				{{/times}}
-				{{#times normalFive}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/5-normal.webp' />
-				{{/times}}
-				{{#times normalFour}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/4-normal.webp' />
-				{{/times}}
-				{{#times normalThree}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/3-normal.webp' />
-				{{/times}}
-				{{#times normalTwo}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/2-normal.webp' />
-				{{/times}}
-				{{#times normalOne}}
-					<img class='portrait' src='systems/talesoftheoldwest/ui/DsN/1-normal.webp' />
-				{{/times}}
-			</div>
-			{{#if modifiers.talent}}
-				<div style='position: relative'>
-					<details>
-						<summary style='font-size: large'>Talents/Weapon Features</summary>
-						<br />
-						{{keepMarkup modifiers.talent}}
-					</details>
-				</div>
-			{{/if}}
-			{{#if (gt totalSuccess 1)}}
-				{{#if (ne stunts 'None')}}
-					<div style='position: relative'>
-						<details>
-							<summary style='font-size: large'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
-							{{{stunts}}}
-						</details>
-					</div>
-				{{/if}}
-			{{/if}}
-			{{#if (eq itemData.actorType 'pc')}}
-
-				<hr />
-				<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
-				<hr />
-
-				{{#if (gt faithpoints 0)}}
-					{{#if (gt trouble 0)}}
-						<div class='dice-formula dice-roll'>
-							<a>
-								<span class='dice-formula dice-roll buy-off' style='font-size: large; font-weight: bold'>{{toUpperCase
-										(localize 'TALESOFTHEOLDWEST.dialog.Buy-OffTrouble')
-									}}</span>
-							</a>
-						</div>
-					{{/if}}
-					{{! If totalTrouble > 0 }}
-					{{#if (eq canPush 'push')}}
-						<div class='dice-formula dice-roll'>
-							<a>
-								<span class='dice-formula dice-roll dice-push' style='font-size: large; font-weight: bold'>{{toUpperCase
-										(localize 'TALESOFTHEOLDWEST.General.push')
-									}}</span>
-							</a>
-						</div>
-					{{/if}}
-					{{! If Push }}
-				{{else}}
-					<div class='dice-formula dice-roll'>
-						<a>
-							<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{toUpperCase
-									(localize 'TALESOFTHEOLDWEST.General.lackFaith')
-								}}</span>
-						</a>
-					</div>
-				{{/if}}
-				{{! If Faith >0 }}
-				{{#if (eq canPush 'pushed')}}
-					<div class='dice-formula dice-roll'>
-						<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{toUpperCase
-								(localize 'TALESOFTHEOLDWEST.General.pushed')
-							}}</span>
-					</div>
-					{{#if (gt totalTrouble 0)}}
-						<div class='dice-formula dice-roll'>
-							<a>
-								<span class='dice-formula dice-roll roll-trouble' style='font-size: large; font-weight: bold'>{{toUpperCase
-										(localize 'TALESOFTHEOLDWEST.General.rollTrouble')
-									}}</span>
-							</a>
-						</div>
-					{{/if}}
-					{{! Roll Trouble after Push If totalTrouble > 0 }}
-				{{/if}}
-				{{! If Pushed }}
-
-			{{/if}}
+				{{keepMarkup modifiers.talent}}
+			</details>
 		</div>
+		{{/if}}
+		{{#if (gt totalSuccess 1)}}
+		{{#if (ne stunts 'None')}}
+		<div style='position: relative'>
+			<details>
+				<summary style='font-size: large'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.stunts')}}</summary>
+				{{{stunts}}}
+			</details>
+		</div>
+		{{/if}}
+		{{/if}}
+		{{#if (eq itemData.actorType 'pc')}}
+
+		<hr />
+		<h4 style='font-size: large; font-weight: bold'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.faithPoints')}} ({{faithpoints}})</h4>
+		<hr />
+		<div id='buttonlist'></div>
+		{{/if}}
+	</div>
 	{{else}}
-		<div class='dice-formula dice-roll'>
-			<a>
-				<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.noDice')}}</span>
-			</a>
-		</div>
+	<div class='dice-formula dice-roll'>
+		<a>
+			<span class='dice-formula dice-roll' style='font-size: large; font-weight: bold'>{{capitalise (localize 'TALESOFTHEOLDWEST.General.noDice')}}</span>
+		</a>
+	</div>
 	{{/if}}
 	{{#ifSetting 'debug'}}
-		{{#if (eq modifiers.subtype 'shootin')}}
-			<div style='position: relative'>
-				<details>
-					<summary>Expand To See Roll modifiers</summary>
-					<br />
-					<span>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</span><br />
-					<span>Success Mod ({{modifiers.successMod}})</span><br />
-					<span>Trouble Mod ({{modifiers.troubleMod}})</span><br />
-					<span>Range ({{modifiers.shootrangeMod}})</span><br />
-					<span>Called Shots ({{modifiers.shootcalledShotsMod}})</span><br />
-					<span>Target Cover ({{modifiers.shootcoverMod}})</span><br />
-					<span>Target Size ({{modifiers.shootsizeMod}})</span><br />
-					<span>Target Visibility ({{modifiers.shootvisibilityMod}})</span><br />
-					<span>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.shootmodifierMod}})</span><br />
-					<span>Total Dice ({{modifiers.mod}})</span>
-				</details>
-			</div>
-		{{/if}}
-		{{#if (eq modifiers.subtype 'fightin')}}
-			<div style='position: relative'>
-				<details>
-					<summary>Expand To See Roll modifiers</summary>
-					<br />
-					<span style='font-size: large; font-weight: bold'>trouble ({{trouble}})</span><br />
-					<span style='font-size: large; font-weight: bold'>canPush ({{canPush}})</span><br />
-					<span>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</span><br />
-					<span>Success Mod ({{modifiers.successMod}})</span><br />
-					<span>Trouble Mod ({{modifiers.troubleMod}})</span><br />
-					<span>Target prone ({{modifiers.fightProneMod}})</span><br />
-					<span>All-Out Attack ({{modifiers.fightAlloutattackMod}})</span><br />
-					<span>Called Strike ({{modifiers.fightCalledstrikeMod}})</span><br />
-					<span>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.fightmodifierMod}})</span><br />
-					<span>Total Dice ({{modifiers.mod}})</span>
-				</details>
-			</div>
-		{{/if}}
+	{{#if (eq modifiers.subtype 'shootin')}}
+	<div style='position: relative'>
+		<details>
+			<summary>Expand To See Roll modifiers</summary>
+			<br />
+			<span>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</span><br />
+			<span>Success Mod ({{modifiers.successMod}})</span><br />
+			<span>Trouble Mod ({{modifiers.troubleMod}})</span><br />
+			<span>Range ({{modifiers.shootrangeMod}})</span><br />
+			<span>Called Shots ({{modifiers.shootcalledShotsMod}})</span><br />
+			<span>Target Cover ({{modifiers.shootcoverMod}})</span><br />
+			<span>Target Size ({{modifiers.shootsizeMod}})</span><br />
+			<span>Target Visibility ({{modifiers.shootvisibilityMod}})</span><br />
+			<span>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.shootmodifierMod}})</span><br />
+			<span>Total Dice ({{modifiers.mod}})</span>
+		</details>
+	</div>
+	{{/if}}
+	{{#if (eq modifiers.subtype 'fightin')}}
+	<div style='position: relative'>
+		<details>
+			<summary>Expand To See Roll modifiers</summary>
+			<br />
+			<span style='font-size: large; font-weight: bold'>trouble ({{trouble}})</span><br />
+			<span style='font-size: large; font-weight: bold'>canPush ({{canPush}})</span><br />
+			<span>Attribute+Skill+Talent+AttackMod ({{modifiers.baseMod}})</span><br />
+			<span>Success Mod ({{modifiers.successMod}})</span><br />
+			<span>Trouble Mod ({{modifiers.troubleMod}})</span><br />
+			<span>Target prone ({{modifiers.fightProneMod}})</span><br />
+			<span>All-Out Attack ({{modifiers.fightAlloutattackMod}})</span><br />
+			<span>Called Strike ({{modifiers.fightCalledstrikeMod}})</span><br />
+			<span>{{localize 'TALESOFTHEOLDWEST.DiceMod'}}({{modifiers.fightmodifierMod}})</span><br />
+			<span>Total Dice ({{modifiers.mod}})</span>
+		</details>
+	</div>
+	{{/if}}
 	{{/ifSetting}}
 </div>

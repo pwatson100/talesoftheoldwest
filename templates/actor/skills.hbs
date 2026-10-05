@@ -6,7 +6,7 @@
 	</div>
 	<div class="sheet-main-attributes">
 		<div class="A1 main-attributes">
-			<label for="system.attributes.grit" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}' data-mod="{{system.attributes.grit.mod}}" data-key="{{localize " TALESOFTHEOLDWEST.Attributes.grit.listName"}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
+			<label for="system.attributes.grit" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}' data-mod="{{system.attributes.grit.mod}}" data-key="{{toLowerCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
 		</div>
 		<div class="B1">
 			<input class="statnum" type='number' name="system.attributes.grit.value" value="{{system.attributes.grit.value}}" data-dtype='Number' />
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="A2 main-attributes">
-			<label for="system.attributes.quick" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}' data-mod="{{system.attributes.quick.mod}}" data-key="{{localize " TALESOFTHEOLDWEST.Attributes.quick.listName"}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
+			<label for="system.attributes.quick" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}' data-mod="{{system.attributes.quick.mod}}" data-key="{{toLowerCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
 		</div>
 		<div class="B2">
 			<input class="statnum" type='number' name="system.attributes.quick.value" value="{{system.attributes.quick.value}}" data-dtype='Number' />
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="A3 main-attributes">
-			<label for="system.attributes.cunning" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}' data-mod="{{system.attributes.cunning.mod}}" data-key="{{localize " TALESOFTHEOLDWEST.Attributes.cunning.listName"}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
+			<label for="system.attributes.cunning" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}' data-mod="{{system.attributes.cunning.mod}}" data-key="{{toLowerCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
 		</div>
 		<div class="B3">
 			<input class="statnum" type='number' name="system.attributes.cunning.value" value="{{system.attributes.cunning.value}}" data-dtype='Number' />
@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="A4 main-attributes">
-			<label for="system.attributes.docity" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}' data-mod="{{system.attributes.docity.mod}}" data-key="{{localize " TALESOFTHEOLDWEST.Attributes.docity.listName"}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label>
+			<label for="system.attributes.docity" class="resource-label rollable align-left" data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}' data-roll-type="attribute" data-action="roll" data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}' data-mod="{{system.attributes.docity.mod}}" data-key="{{toLowerCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}" data-speaker='{{actor.id}}'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label>
 		</div>
 		<div class="B4">
 			<input class="statnum" type='number' name="system.attributes.docity.value" value="{{system.attributes.docity.value}}" data-dtype='Number' />
@@ -210,55 +210,76 @@
 		<div class="TSplit1 " style="padding-left: 10px; margin-bottom: 10px">
 			<div class="heading" style="width: 264px">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.conditions')}}</div>
 			<div class="conditions-split heading">
-				<label class="dots resource-label CSplit11 " data-key="starving" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit11" data-key="starving" data-status-id="starving" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Starving'}}
 				</label>
-				<a class="overwatch-toggle CSplit12" data-action="toggleCondition" data-key="starving">
-					{{#if (eq system.conditions.starving true)}}
+				<a class="overwatch-toggle CSplit12" data-action="toggleCondition" data-key="starving" data-status-id="starving">
+					{{#each statuses as |status id|}}
+					{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Starving')}}
+					{{#if status.active}}
 					<i class="far fa-dot-circle"></i>
 					{{else}}
 					<i class="far fa-circle"></i>
 					{{/if}}
+					{{/if}}
+					{{/each}}
+
 				</a>
-				<label class="dots resource-label CSplit21" data-key="dehydrated" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit21" data-key="dehydrated" data-status-id="dehydrated" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Dehydrated'}}
 				</label>
-				<a class="overwatch-toggle CSplit22" data-action="toggleCondition" data-key="dehydrated">
-					{{#if (eq system.conditions.dehydrated true)}}
+				<a class="overwatch-toggle CSplit22" data-action="toggleCondition" data-key="dehydrated" data-status-id="dehydrated">
+					{{#each statuses as |status id|}}
+					{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Dehydrated')}}
+					{{#if status.active}}
 					<i class="far fa-dot-circle"></i>
 					{{else}}
 					<i class="far fa-circle"></i>
 					{{/if}}
+					{{/if}}
+					{{/each}}
 				</a>
-				<label class="dots resource-label CSplit31" data-key="exhausted" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit31" data-key="exhausted" data-status-id="exhausted" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Exhausted'}}
 				</label>
-				<a class="overwatch-toggle CSplit32" data-action="toggleCondition" data-key="exhausted">
-					{{#if (eq system.conditions.exhausted true)}}
+				<a class="overwatch-toggle CSplit32" data-action="toggleCondition" data-key="exhausted" data-status-id="exhausted">
+					{{#each statuses as |status id|}}
+					{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Exhausted')}}
+					{{#if status.active}}
 					<i class="far fa-dot-circle"></i>
 					{{else}}
 					<i class="far fa-circle"></i>
 					{{/if}}
+					{{/if}}
+					{{/each}}
 				</a>
-				<label class="dots resource-label CSplit41" data-key="freezing" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit41" data-key="freezing" data-status-id="freezing" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Freezing'}}
 				</label>
-				<a class="overwatch-toggle CSplit42" data-action="toggleCondition" data-key="freezing">
-					{{#if (eq system.conditions.freezing true)}}
+				<a class="overwatch-toggle CSplit42" data-action="toggleCondition" data-key="freezing" data-status-id="freezing">
+					{{#each statuses as |status id|}}
+					{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Freezing')}}
+					{{#if status.active}}
 					<i class="far fa-dot-circle"></i>
 					{{else}}
 					<i class="far fa-circle"></i>
 					{{/if}}
+					{{/if}}
+					{{/each}}
 				</a>
-				<label class="dots resource-label CSplit51" data-key="heatstroke" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
+				<label class="dots resource-label CSplit51" data-key="heatstroke" data-status-id="heatstroke" data-tooltip="{{ localize 'TALESOFTHEOLDWEST.General.leftToAdd'}}">
 					{{ localize 'TALESOFTHEOLDWEST.Conditions.Heatstroke'}}
 				</label>
-				<a class="overwatch-toggle CSplit52" data-action="toggleCondition" data-key="heatstroke">
-					{{#if (eq system.conditions.heatstroke true)}}
+				<a class="overwatch-toggle CSplit52" data-action="toggleCondition" data-key="heatstroke" data-status-id="heatstroke">
+					{{#each statuses as |status id|}}
+					{{#if (eq status.name 'TALESOFTHEOLDWEST.Conditions.Heatstroke')}}
+					{{#if status.active}}
 					<i class="far fa-dot-circle"></i>
 					{{else}}
 					<i class="far fa-circle"></i>
 					{{/if}}
+					{{/if}}
+					{{/each}}
 				</a>
 			</div>
 		</div>
@@ -314,11 +335,11 @@
 			<input class="statnum" type='number' name="system.abilities.fightin.value" value="{{system.abilities.fightin.value}}" data-dtype='Number' />
 		</div>
 	</div>
-	<div class="horse-quality-split" style="height: 243px;">
+	<div class="horse-quality-split horse-quality-split-height">
 		<div class="HQSplit11">{{>"systems/talesoftheoldwest/templates/actor/parts/horse-quality-options.hbs"}}</div>
 		<div class="HQSplit12">
 			<div class='heading' style="padding-top: 3px;">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.saddlebag')}}</div>
-			{{>"systems/talesoftheoldwest/templates/actor/parts/actor-items-inline.hbs"}}
+			{{>"systems/talesoftheoldwest/templates/actor/parts/horse-items-inline.hbs"}}
 		</div>
 	</div>
 
@@ -359,7 +380,7 @@
 	<div style="justify-self: anchor-center">
 		<label for="system.biography" class="heading">{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.description')}}</label>
 	</div>
-	<div class="div-border" style="height: 277px; width: 850px; justify-self: anchor-center">
+	<div class="div-border horse-description-box">
 		{{#if editable}}
 		<prose-mirror name="system.biography" style="height: -webkit-fill-available;" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.biography}}" collaborate='true' toggled="true">
 			{{{enrichedBiography}}}
