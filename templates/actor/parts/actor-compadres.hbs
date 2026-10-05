@@ -13,13 +13,9 @@
 					<div class='scaA1 main-attributes'>
 						<label
 							for='actor.system.attributes.grit'
-							class='resource-label rollable align-left'
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-							data-roll-type='attribute'
-							data-action='roll'
+							class='resource-label align-left'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.name"}}'
 							data-mod='{{actor.system.attributes.grit.mod}}'
-							data-speaker='{{actor.id}}'
 						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.grit.name')}}</label>
 					</div>
 					<div class='scaB1'>
@@ -30,13 +26,9 @@
 					<div class='scaA2 main-attributes'>
 						<label
 							for='actor.system.attributes.quick'
-							class='resource-label rollable align-left'
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-							data-roll-type='attribute'
-							data-action='roll'
+							class='resource-label align-left'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.name"}}'
 							data-mod='{{actor.system.attributes.quick.mod}}'
-							data-speaker='{{actor.id}}'
 						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.quick.name')}}</label>
 					</div>
 					<div class='scaB2'>
@@ -47,14 +39,10 @@
 					<div class='scaA3 main-attributes'>
 						<label
 							for='actor.system.attributes.cunning'
-							class='resource-label rollable align-left'
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-							data-roll-type='attribute'
-							data-action='roll'
+							class='resource-label align-left'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.name"}}'
 							data-mod='{{actor.system.attributes.cunning.mod}}'
-							data-speaker='{{actor.id}}'
-						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
+										>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.cunning.name')}}</label>
 					</div>
 					<div class='scaB3'>
 						<input class='statnum' name='actor.system.attributes.cunning.value' value='{{actor.system.attributes.cunning.value}}' data-dtype='Number' type='number'  disabled/>
@@ -64,13 +52,9 @@
 					<div class='scaA4 main-attributes'>
 						<label
 							for='actor.system.attributes.docity'
-							class='resource-label rollable align-left'
-							data-tooltip='{{localize "TALESOFTHEOLDWEST.General.rightclicktomodify"}}'
-							data-roll-type='attribute'
-							data-action='roll'
+							class='resource-label align-left'
 							data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.name"}}'
 							data-mod='{{actor.system.attributes.docity.mod}}'
-							data-speaker='{{actor.id}}'
 						>{{toUpperCase (localize 'TALESOFTHEOLDWEST.Attributes.docity.name')}}</label>
 					</div>
 					<div class='scaB4'>
@@ -84,9 +68,8 @@
 					</div>
 					<div
 						class='scaH2 newdots HedCol12'
-						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'
-						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-attribute='{{localize "TALESOFTHEOLDWEST.Attributes.grit.listName"}}'
 					>
 						{{#times actor.system.damage.hurts.value}}
 							<a class='far fa-dot-circle'></a>
@@ -99,9 +82,8 @@
 					</div>
 					<div
 						class='scaS2 newdots HedCol12'
-						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.quick.type"}}'
-						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-attribute='{{localize "TALESOFTHEOLDWEST.Attributes.quick.listName"}}'
 					>
 						{{#times actor.system.damage.shakes.value}}
 							<a class='far fa-dot-circle'></a>
@@ -114,9 +96,8 @@
 					</div>
 					<div
 						class='scaV2 newdots HedCol12'
-						data-action='changeDamage'
 						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.type"}}'
-						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-attribute='{{localize "TALESOFTHEOLDWEST.Attributes.cunning.listName"}}'
 					>
 						{{#times actor.system.damage.vexes.value}}
 							<a class='far fa-dot-circle'></a>
@@ -130,8 +111,7 @@
 					<div
 						class='scaD2 newdots HedCol12'
 						data-action='changeDamage'
-						data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'
-						data-tooltip='{{localize "TALESOFTHEOLDWEST.General.leftToAdd"}}'
+						data-attribute='{{localize "TALESOFTHEOLDWEST.Attributes.docity.listName"}}'
 					>
 						{{#times actor.system.damage.doubts.value}}
 							<a class='far fa-dot-circle'></a>
