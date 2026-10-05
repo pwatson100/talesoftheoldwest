@@ -31,8 +31,7 @@ export class TOTOWMacros {
 						const formula = table.formula;
 						const modifier = parseInt(html.find('#inputMod')[0].value || '0');
 						for (let i = 0; i < drawNumber; i++) {
-							const roll = new Roll(formula + ' + ' + modifier);
-							roll.evaluate({ async: false });
+							const roll = new Roll(formula + ' + ' + modifier).evaluate();
 							await table.draw({ roll: roll });
 						}
 					},

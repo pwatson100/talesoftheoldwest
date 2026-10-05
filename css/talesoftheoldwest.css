@@ -153,7 +153,8 @@
 }
 
 body.theme-dark input[type=number],
-body.theme-light input[type=number] {
+body.theme-light input[type=number],
+input:disabled {
   background-color: white;
   color: black;
 }
@@ -193,7 +194,6 @@ body .application.dialog {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: 100% 100%;
   border: transparent;
-  filter: drop-shadow(8px 12px 8px #353232);
 }
 body .dialog-form.standard-form .form-footer,
 body .dialog-buttons {
@@ -285,6 +285,10 @@ body .application input[type=number] {
   background-image: url("../assets/background/header-plank.webp");
   width: 97%;
   justify-self: anchor-center;
+}
+
+.talesoftheoldwest nav.tabs [data-tab] {
+  color: #000;
 }
 
 .talesoftheoldwest .tab.description {
@@ -1479,7 +1483,7 @@ body .application input[type=number] {
   width: 897px;
   justify-self: center;
   grid-template-areas: "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 " "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
-  grid-template-columns: 101px 108px 105px 108px 130px 108px 111px 108px;
+  grid-template-columns: 101px 111px 105px 111px 130px 111px 111px 111px;
   background: rgba(139, 106, 44, 0.21);
 }
 
