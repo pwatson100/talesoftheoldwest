@@ -134,7 +134,7 @@ export class totowItem extends Item {
           buttons: [
             {
               label: "TALESOFTHEOLDWEST.dialog.roll",
-              callback: (event, button) => new FormDataExtended(button.form).object,
+              callback: (event, button) => new foundry.applications.ux.FormDataExtended(button.form).object,
             },
             {
               label: "TALESOFTHEOLDWEST.dialog.cancel",
@@ -158,7 +158,7 @@ export class totowItem extends Item {
           buttons: [
             {
               label: "TALESOFTHEOLDWEST.dialog.roll",
-              callback: (event, button) => new FormDataExtended(button.form).object,
+              callback: (event, button) => new foundry.applications.ux.FormDataExtended(button.form).object,
             },
             {
               label: "TALESOFTHEOLDWEST.dialog.cancel",
@@ -248,7 +248,7 @@ export class totowItem extends Item {
           buttons: [
             {
               label: "TALESOFTHEOLDWEST.dialog.roll",
-              callback: (event, button) => new FormDataExtended(button.form).object,
+              callback: (event, button) => new foundry.applications.ux.FormDataExtended(button.form).object,
             },
             {
               label: "TALESOFTHEOLDWEST.dialog.cancel",
