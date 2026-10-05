@@ -1,3 +1,9 @@
+
+Version 1.0.4
+Corrected issues with Talents and Weapon Features not applying modifiers as expected.  
+Corrected issue with Conditions not operating properly on he NPC sheet. 
+
+
 Version 1.0.3
 Corrected issue on the Town Charter Actor calculating the Natural Resources
 

@@ -17,16 +17,10 @@ export default async function updateModule() {
    * { assetType: 'items', assetName: 'Alien - Roll on selected Creature table V10: 'update' },
    * { assetType: 'journal', assetName: 'Alien - Roll on selected Mother table V10', action: 'update' },
    * { assetType: 'scenes', assetName: 'Station Layout', action: 'update' },
-   * { assetType: "tables", assetName: "THE DAMNED CARDS", action: "update" },
    *
    */
 
-  const updateAssets = [
-    // { assetType: "tables", assetName: "THE DAMNED CARDS", action: "update" },
-    // { assetType: "tables", assetName: "YOUR TOWN - PERSONAL FORTUNES", action: "update" },
-    // { assetType: "tables", assetName: "YOUR TOWN - TOWN FORTUNES", action: "update" },
-    // { assetType: "items", assetName: "Dead Eye", action: "update" },
-  ];
+  const updateAssets = [];
 
   const updateNotes = `
 		`;

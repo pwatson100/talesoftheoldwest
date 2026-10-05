@@ -7,10 +7,11 @@
       "name": "Paul Watson"
     }
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "compatibility": {
-    "minimum": "12",
-    "verified": "13"
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
   },
   "esmodules": ["module/talesoftheoldwest.mjs"],
   "styles": ["css/talesoftheoldwest.css"],

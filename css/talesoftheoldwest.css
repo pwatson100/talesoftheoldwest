@@ -211,8 +211,7 @@ body .application.sheet.actor.talesoftheoldwest .window-content,
 body .application.sheet.item.talesoftheoldwest .window-content {
   display: block;
   overflow: auto;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   scrollbar-color: #d36913 transparent;
   scrollbar-width: thin;
   background-image: url("../assets/background/sheet-background.webp");
@@ -1279,7 +1278,7 @@ body .application input[type=number] {
   display: grid;
   margin-top: 5px;
   grid-template-areas: "Ow1 Ow2";
-  grid-template-columns: 116px 687px;
+  grid-template-columns: 122px 684px;
 }
 
 .Ow1 {
@@ -1481,7 +1480,7 @@ body .application input[type=number] {
 .sheet-compadres-attributes {
   display: grid;
   align-items: center;
-  width: 894px;
+  width: 897px;
   justify-self: center;
   grid-template-areas: "scaA1 scaB1 scaA2 scaB2 scaA3 scaB3 scaA4 scaB4 " "scaH1 scaH2 scaS1 scaS2 scaV1 scaV2  scaD1 scaD2 ";
   grid-template-columns: 101px 111px 105px 111px 130px 111px 111px 111px;
@@ -1915,7 +1914,7 @@ body .application input[type=number] {
   display: grid;
   font-family: "Fraunces", serif;
   grid-template-areas: "TCColh1 TCColh1 TCColh2 TCColh2 TCCol21" "TCCol1 TCCol2 TCCol3 TCCol4 TCCol17" "TCCol5 TCCol6 TCCol7 TCCol8 TCCol18" "TCCol9 TCCol10 TCCol11 TCCol12 TCCol19" "TCCol13 TCCol14 TCCol15 TCCol16 TCCol20";
-  grid-template-columns: 120px 280px 55px 280px 209px;
+  grid-template-columns: 120px 280px 55px 280px 230px;
 }
 
 .TCCol1 {
@@ -3559,7 +3558,7 @@ a.content-link {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 1.74em;
+  font-size: 19px;
   padding: 10px;
 }
 .talesoftheoldwest .newdots-town-charter {
@@ -3595,6 +3594,14 @@ a.content-link {
   font-weight: bold;
   font-size: 1em;
   font-style: italic;
+}
+.talesoftheoldwest .horse-quality-split-height {
+  height: 179px;
+}
+.talesoftheoldwest .horse-description-box {
+  height: 308px;
+  width: 850px;
+  justify-self: anchor-center;
 }
 .talesoftheoldwest .resource-label {
   font-weight: bold;
