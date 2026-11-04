@@ -1231,7 +1231,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
     if (crew.type === "pc") return ui.notifications.info("PC inceptions are not allowed!");
     if (crew.type !== "animal") return;
     if (actorData.type === "pc") {
-      if (actorData.system.remuda.remudaQty >= 4) {
+      if (actorData.system.remuda.remudaQty >= 3) {
         return ui.notifications.warn(game.i18n.localize("TALESOFTHEOLDWEST.fullCrew"));
       }
       return await actorData.addRemuda(actorId);

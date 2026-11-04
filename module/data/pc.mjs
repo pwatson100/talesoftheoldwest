@@ -60,7 +60,7 @@ export default class totowPC extends totowCreatureBase {
 					id: new fields.StringField({ required: true, blank: false }),
 				})
 			),
-			compadresQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 }),
+			compadresQty: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
 		});
 		schema.remuda = new fields.SchemaField({
 			details: new fields.ArrayField(
