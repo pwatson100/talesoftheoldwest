@@ -359,7 +359,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
       allGear.push(i);
     }
     if (context.actor.type === "pc" && context.system.remuda.remudaMounted !== "false") {
-      for (const modItems of Object.values(context.system.remuda.details).filter(m => m.actor.system.general.mounted === true)) {
+      for (const modItems of Object.values(context.system.remuda.details).filter(m => m.actor?.system?.general?.mounted === true)) {
         for (const i of modItems.actor.items) {
           findMods(i, itemMods);
         }
