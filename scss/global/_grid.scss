@@ -834,118 +834,24 @@
   text-align: center;
 }
 
-.sheet-gear-cash {
-  display: grid;
-  row-gap: 5px;
-  column-gap: 5px;
+.gear-cash-row {
+  display: flex;
   align-items: center;
-  grid-template-areas:
-    "L1C1 L1C2 L1C3 L1C4"
-    "L2C1 L2C2 L2C3 L2C4"
-    "L3C1 L3C2 L3C3 L3C4"
-    "L4C1 L4C2 L4C2 L4C2"
-    "L5C1 L5C2 L5C2 L5C2"
-    "L6C1 L6C2 L6C2 L6C2"
-    "L7C1 L7C2 L7C2 L7C2";
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 15px;
+  .currency {
+    width: 90px;
+  }
+}
 
-  grid-template-columns: 150px 50px 150px 60px;
-  // margin: 10px 0px 10px 0px;
-}
-.L1C1 {
-  grid-area: L1C1;
-  // font-size: large;
-  text-align: right;
-}
-.L1C2 {
-  grid-area: L1C2;
-  // text-align: center;
-}
-.L1C3 {
-  grid-area: L1C3;
-  // font-size: large;
-  text-align: right;
-}
-.L1C4 {
-  grid-area: L1C4;
-  // font-size: large;
-  // text-align: right;
-}
-.L2C1 {
-  grid-area: L2C1;
-  // font-size: large;
-  text-align: right;
-}
-.L12C2 {
-  grid-area: L2C2;
-  // font-size: large;
-  // text-align: right;
-}
-.L2C3 {
-  grid-area: L2C3;
-  // font-size: large;
-  text-align: right;
-}
-.L2C4 {
-  grid-area: L2C4;
-  // font-size: large;
-  // text-align: right;
-}
-.L3C1 {
-  grid-area: L3C1;
-  // font-size: large;
-  text-align: right;
-}
-.L3C2 {
-  grid-area: L3C2;
-  // font-size: large;
-  // text-align: right;
-}
-.L3C3 {
-  grid-area: L3C3;
-  // font-size: large;
-  text-align: right;
-}
-.L3C4 {
-  grid-area: L3C4;
-  // font-size: large;
-  // text-align: right;
-}
-.L4C1 {
-  grid-area: L4C1;
-  // font-size: large;
-  text-align: right;
-}
-.L4C2 {
-  grid-area: L4C2;
-  // font-size: large;
-}
-.L5C1 {
-  grid-area: L5C1;
-  // font-size: large;
-  text-align: right;
-}
-.L5C2 {
-  grid-area: L5C2;
-  // font-size: large;
-  text-align: center;
-}
-.L6C1 {
-  grid-area: L6C1;
-  // font-size: large;
-  text-align: right;
-}
-.L6C2 {
-  grid-area: L6C2;
-  // text-align: center;
-}
-.L7C1 {
-  grid-area: L7C1;
-  // font-size: large;
-  text-align: right;
-}
-.L7C2 {
-  grid-area: L7C2;
-  // text-align: center;
+.gear-list-full {
+  width: 80%;
+  margin: 0 auto;
+  overflow-x: auto;
+  .grid-talent-items {
+    grid-template-columns: 28px 1fr 5px 88px;
+  }
 }
 
 .sheet-compadres-header {
@@ -1243,19 +1149,6 @@
   grid-area: aHawkeye2;
 }
 
-.gear-split {
-  display: grid;
-  // padding-left: 10px;
-  grid-template-areas: "gearSplit1 gearSplit2";
-  grid-template-columns: 531px 352px;
-}
-.gearSplit1 {
-  grid-area: gearSplit1;
-}
-.gearSplit2 {
-  grid-area: gearSplit2;
-  justify-self: center;
-}
 .riding-bonus {
   display: grid;
   // padding-left: 10px;

@@ -1,40 +1,13 @@
 <section class='tab items {{tab.cssClass}}' data-group='primary' data-tab='gear'>
-	<div class='gear-split'>
-		<div class='gearSplit1 sheet-gear-cash'>
+	<div class='gear-cash-row'>
+		<label for='system.general.cash' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}}</label>
+		<input class='currency' name='system.general.cash' value='{{system.general.cash}}' data-dtype='String' type='text' />
 
-			<label for='system.general.age.value' class='resource-label L1C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.age')}}</label>
-			<input class='statnum L1C2' name='system.general.age.value' value='{{system.general.age.value}}' data-dtype='Number' type='number' />
-
-			<label for='system.general.fame.value' class='resource-label L1C3 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.fame')}}</label>
-			<input class='statnum L1C4' name='system.general.fame.value' value='{{system.general.fame.value}}' data-dtype='Number' type='number' />
-
-			<label for='system.general.cash' class='resource-label L2C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.cash')}} </label>
-			<input class='currency L2C2' style="width: 90px;" name='system.general.cash' value='{{system.general.cash}}' data-dtype='String' type='text' />
-
-			<label for='system.general.capital' class='resource-label L2C3 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}} </label>
-			<input class='currency L2C4' style="width: 90px;"  name='system.general.capital' value='{{system.general.capital}}' data-dtype='String' type='text' />
-
-			<label for='system.general.morals.value' class='resource-label L3C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.morals')}}</label>
-			<input class='statnum L3C2' name='system.general.morals.value' value='{{system.general.morals.value}}' data-dtype='Number' type='number' />
-
-			<label for='system.general.publicspirit.value' class='resource-label L3C3 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.publicspirit')}}</label>
-			<input class='statnum L3C4' name='system.general.publicspirit.value' value='{{system.general.publicspirit.value}}' data-dtype='Number' type='number' />
-
-			<label for='system.general.reputation' class='resource-label L4C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.reputation')}}</label>
-			<input name='system.general.reputation' class=' L4C2' type='text' style='width: 300px' value='{{system.general.reputation}}' data-dtype='String' type='text' />
-
-			<label for='system.general.lifestyle' class='resource-label L5C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.lifestyle')}}</label>
-			<input name='system.general.lifestyle' class=' L5C2' type='text' style='width: 300px' value='{{system.general.lifestyle}}' data-dtype='String' type='text' />
-
-			<label for='system.general.bigdream' class='resource-label L6C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.bigDream')}}</label>
-			<input name='system.general.bigdream' class=' L6C2' type='text' style='width: 300px' value='{{system.general.bigdream}}' data-dtype='String' type='text' />
-
-			<label for='system.general.xp.value' class='resource-label L7C1 abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
-			<input class='statnum L7C2' name='system.general.xp.value' value='{{system.general.xp.value}}' data-dtype='Number' type='number' />
-		</div>
-		<div class="gearSplit2" style="overflow-x: auto"> 
-	{{>"systems/talesoftheoldwest/templates/actor/parts/actor-gear-list.hbs"}}
-	</div> 
+		<label for='system.general.capital' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.capital')}}</label>
+		<input class='currency' name='system.general.capital' value='{{system.general.capital}}' data-dtype='String' type='text' />
+	</div>
+	<div class='gear-list-full'>
+		{{>"systems/talesoftheoldwest/templates/actor/parts/actor-gear-list.hbs"}}
 	</div>
 	<div style="margin-left:15px; margin-top:5px;border-top: black solid;">{{>"systems/talesoftheoldwest/templates/actor/parts/actor-horse.hbs"}}</div>
 

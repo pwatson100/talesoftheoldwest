@@ -139,6 +139,7 @@
 			"quick": { "name": "Quick", "type": "shakes", "listName": "quick" }
 		},
 		"General": {
+			"notes": "Notes",
 			"name": "name",
 			"yes": "Yes",
 			"no": "No",

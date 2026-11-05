@@ -162,6 +162,33 @@ body {
 	}
 }
 
+.talesoftheoldwest .tab.description {
+	.bio-stats {
+		display: grid;
+		grid-template-columns: 20% 20% 1fr;
+		column-gap: 15px;
+		margin-bottom: 5px;
+	}
+	.bio-stats-col {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 5px;
+		row-gap: 5px;
+		align-items: center;
+		align-content: start;
+	}
+	.bio-stats .abilities-name {
+		font-size: 1em;
+	}
+	.bio-stats-wide {
+		width: 100%;
+	}
+	.bio-stats-lifestyle {
+		width: 12ch;
+		min-width: 0;
+	}
+}
+
 .talesoftheoldwest .chat-buttons {
 	font-size: 25px;
 	font-weight: bold;

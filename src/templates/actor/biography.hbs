@@ -1,7 +1,42 @@
 {{! Biography Tab }}
 <section class='tab description {{tab.cssClass}}' style='width: 850px; justify-self: anchor-center;' data-group='primary' data-tab='description'>
+	{{#if (eq actor.type 'pc')}}
+		<div class='bio-stats'>
+			<div class='bio-stats-col'>
+				<label for='system.general.age.value' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.age')}}</label>
+				<input class='statnum' name='system.general.age.value' value='{{system.general.age.value}}' data-dtype='Number' type='number' />
+
+				<label for='system.general.xp.value' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.experience')}}</label>
+				<input class='statnum' name='system.general.xp.value' value='{{system.general.xp.value}}' data-dtype='Number' type='number' />
+			</div>
+
+			<div class='bio-stats-col'>
+				<label for='system.general.morals.value' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.morals')}}</label>
+				<input class='statnum' name='system.general.morals.value' value='{{system.general.morals.value}}' data-dtype='Number' type='number' />
+
+				<label for='system.general.publicspirit.value' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.publicspirit')}}</label>
+				<input class='statnum' name='system.general.publicspirit.value' value='{{system.general.publicspirit.value}}' data-dtype='Number' type='number' />
+				
+				<label for='system.general.fame.value' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.fame')}}</label>
+				<input class='statnum' name='system.general.fame.value' value='{{system.general.fame.value}}' data-dtype='Number' type='number' />
+			</div>
+
+			<div class='bio-stats-col'>
+				<label for='system.general.reputation' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.reputation')}}</label>
+				<input name='system.general.reputation' class='bio-stats-wide' type='text' value='{{system.general.reputation}}' data-dtype='String' />
+
+				<label for='system.general.bigdream' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.bigDream')}}</label>
+				<input name='system.general.bigdream' class='bio-stats-wide' type='text' value='{{system.general.bigdream}}' data-dtype='String' />
+
+				<label for='system.general.lifestyle' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.lifestyle')}}</label>
+				<input name='system.general.lifestyle' class='bio-stats-lifestyle' type='text' maxlength='12' value='{{system.general.lifestyle}}' data-dtype='String' />
+			</div>
+		</div>
+	{{/if}}
+
 	{{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
-	<div class='div-border' style='height: 600px;'>
+	<div class='div-border' style='height: {{#if (eq actor.type "pc")}}470px{{else}}600px{{/if}};'>
+	<label for='system.general.lifestyle' class='resource-label abilities-name'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.notes')}}</label>
 		{{#if editable}}
 			<prose-mirror name='system.biography' data-document-u-u-i-d='{{actor.uuid}}' value='{{system.biography}}' collaborate='true' toggled='true'>
 				{{{enrichedBiography}}}
