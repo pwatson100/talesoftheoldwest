@@ -5,6 +5,7 @@
 	"description": "CSS compiler for the totow system",
 	"scripts": {
 		"build": "gulp build",
+		"test": "node --test \"test/**/*.test.mjs\"",
 		"LDB-to-JSON": "node ./tools/pushLDBtoJSON.mjs",
 		"JSON-to-LDB": "node ./tools/pullJSONtoLDB.mjs"
 	},
