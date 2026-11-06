@@ -27,7 +27,7 @@ export default class totowCreatureBase extends totowActorBase {
 	static DAMAGE_TRACKS = {
 		hurts: { attr: 'grit', value: 5, max: 5 },
 		shakes: { attr: 'quick', value: 5, max: 5 },
-		vexes: { attr: 'cunning', value: 15, max: 5 },
+		vexes: { attr: 'cunning', value: 5, max: 5 },
 		doubts: { attr: 'docity', value: 5, max: 5 },
 	};
 
