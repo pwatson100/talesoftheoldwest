@@ -20,20 +20,20 @@ const isNum = (v) => typeof v === "number" && Number.isFinite(v);
 
 const escapeHtml = (s) =>
   String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll("\"", "&quot;")
+    .replaceAll("'", "&#39;");
 
 /** Plain text -> `<p>` paragraphs (blank-line separated; single newlines become `<br>`). */
 function paragraphs(text) {
   return String(text ?? "")
-    .replace(/\r\n/g, "\n")
+    .replaceAll("\r\n", "\n")
     .split(/\n\s*\n/)
     .map((p) => p.trim())
     .filter(Boolean)
-    .map((p) => `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`)
+    .map((p) => `<p>${escapeHtml(p).replaceAll("\n", "<br>")}</p>`)
     .join("");
 }
 
@@ -162,7 +162,7 @@ export function toFoundry(character, campaign, options = {}) {
     const slug = custom ? "" : String(t.talentId);
     return {
       slug,
-      reference: slug.replace(/-/g, ""),
+      reference: slug.replaceAll("-", ""),
       name: t.name ?? "",
       rank: t.rank === "advanced" ? "advanced" : "basic",
       custom,

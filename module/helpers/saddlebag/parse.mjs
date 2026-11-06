@@ -9,7 +9,7 @@ const fail = (error, detail) => (detail === undefined ? { ok: false, error } : {
 
 const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 
-const clean = (text) => String(text ?? "").replace(/^\uFEFF/, "").replace(/\r\n/g, "\n");
+const clean = (text) => String(text ?? "").replace(/^\uFEFF/, "").replaceAll("\r\n", "\n");
 
 function parseJson(raw) {
   try {
