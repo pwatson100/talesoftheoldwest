@@ -1,5 +1,6 @@
 import totowActorBase from './actor-base.mjs';
 import { calculateMods } from '../helpers/utils.mjs';
+import { TALESOFTHEOLDWEST } from '../helpers/config.mjs';
 
 const requiredInteger = { required: true, nullable: false, integer: true };
 
@@ -24,12 +25,9 @@ export default class totowCreatureBase extends totowActorBase {
 	 * bounds the track; `value` and `max` are the schema caps for that track.
 	 * The attributes of the actor are the unique `attr` values listed here.
 	 */
-	static DAMAGE_TRACKS = {
-		hurts: { attr: 'grit', value: 5, max: 5 },
-		shakes: { attr: 'quick', value: 5, max: 5 },
-		vexes: { attr: 'cunning', value: 5, max: 5 },
-		doubts: { attr: 'docity', value: 5, max: 5 },
-	};
+	static DAMAGE_TRACKS = Object.fromEntries(
+		Object.entries(TALESOFTHEOLDWEST.damageTracks).map(([track, { attr, max }]) => [track, { attr, value: max, max }])
+	);
 
 	/** Boolean condition flags. */
 	static CONDITIONS = ['starving', 'dehydrated', 'exhausted', 'freezing', 'encumbered', 'overwatch', 'heatstroke', 'broken'];

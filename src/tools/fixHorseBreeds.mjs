@@ -19,27 +19,14 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { TALESOFTHEOLDWEST } from '../../module/helpers/config.mjs';
 
 const dryRun = process.argv.includes('--dry-run');
 
 const SEARCH_DIRS = ['src/packs', 'packs_backup'];
 
 // Keys of TALESOFTHEOLDWEST.animal_breed_list (module/helpers/config.mjs), minus "other".
-const BREED_KEYS = [
-	'americanquarter',
-	'americansaddlebred',
-	'appaloosa',
-	'arabian',
-	'cayuse',
-	'criollo',
-	'missourifoxtrotter',
-	'morgan',
-	'mustang',
-	'paintpinto',
-	'palomino',
-	'tennesseewalker',
-	'donkeymule',
-];
+const BREED_KEYS = Object.keys(TALESOFTHEOLDWEST.animal_breed_list).filter((key) => key !== 'other');
 
 /** "Paint /  Pinto" -> "paintpinto"; "Appaloosa  (rare)" -> "appaloosarare". */
 const squash = (s) => String(s ?? '').toLowerCase().replace(/[^a-z]/g, '');

@@ -21,6 +21,8 @@ import { enrichTextEditors } from "./helpers/enricher.js";
 import { TOTOWMacros } from "./helpers/macro.js";
 import { TOTWBuyOffDialog, TOTWWhichTroubleDialog, TOTWManualTroubleDialog } from "./helpers/chatmodifier.mjs";
 import { runMigrationIfNeeded } from "./helpers/migration.mjs";
+import { importFile, registerSaddlebagDirectoryButton } from "./applications/apps/saddlebag-import-dialog.mjs";
+import { exportActor } from "./helpers/saddlebag/apply.mjs";
 
 const collections = foundry.documents.collections;
 
@@ -120,6 +122,7 @@ Hooks.once("init", function () {
 
   registerSettings();
   enrichTextEditors();
+  registerSaddlebagDirectoryButton();
 
   Hooks.on("renderChatMessageHTML", async (msg, html, msgContent) => {
     await totowDiceButtons(msg, html, msgContent);
@@ -173,7 +176,7 @@ Hooks.once("ready", async () => {
   Hooks.on("hotbarDrop", (bar, data, slot) => createDocMacro(data, slot));
   // clear the minimum resolution message faster
 
-  game.talesoftheoldwest = { TOTOWMacros };
+  game.talesoftheoldwest = { TOTOWMacros, saddlebag: { importFile, exportActor } };
 
   setTimeout(() => {
     $(".notification.error").each((index, item) => {
