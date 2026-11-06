@@ -25,15 +25,20 @@ async function inflateRaw(bytes, expectedSize) {
   const reader = stream.getReader();
   const chunks = [];
   let total = 0;
+  let tooLarge = false;
   for (;;) {
     const { done, value } = await reader.read();
     if (done) break;
     total += value.length;
     if (total > MAX_ENTRY_BYTES) {
-      await reader.cancel();
-      throw new ZipError("too-large");
+      tooLarge = true;
+      break;
     }
     chunks.push(value);
+  }
+  if (tooLarge) {
+    await reader.cancel();
+    throw new ZipError("too-large");
   }
   const out = new Uint8Array(total);
   let offset = 0;
@@ -137,13 +142,14 @@ export async function readSaddlebagZip(buffer) {
     if (result.ok) campaign = result.data.campaign;
   }
 
-  const characters = [];
-  for (const { name } of zip.entries) {
-    if (!CHARACTER_PATH.test(name)) continue;
-    const parsed = parseSaddlebagMarkdown(await zip.readText(name));
-    const portraitId = parsed.ok ? parsed.data.character.portraitId : null;
-    characters.push({ path: name, parsed, portrait: (portraitId && portraits.get(portraitId)) || null });
-  }
+  const characterEntries = zip.entries.filter(({ name }) => CHARACTER_PATH.test(name));
+  const characters = await Promise.all(
+    characterEntries.map(async ({ name }) => {
+      const parsed = parseSaddlebagMarkdown(await zip.readText(name));
+      const portraitId = parsed.ok ? parsed.data.character.portraitId : null;
+      return { path: name, parsed, portrait: (portraitId && portraits.get(portraitId)) || null };
+    }),
+  );
   characters.sort((a, b) => a.path.localeCompare(b.path));
 
   if (!characters.length) throw new ZipError("no-characters");
