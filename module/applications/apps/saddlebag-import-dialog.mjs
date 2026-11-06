@@ -184,6 +184,10 @@ export async function importFile() {
         ui.notifications.error(S(err.code === "no-characters" ? "Error.zip-empty" : "Error.zip-bad"), { console: false });
         return;
       }
+      if (archive.campaignError) {
+        logger.warning(false, "Saddlebag campaign.json failed", archive.campaignError);
+        ui.notifications.warn(S("CampaignFileUnreadable", { reason: S(`Error.${archive.campaignError}`) }));
+      }
       const chosen = await pickCharacters(archive.characters);
       if (!chosen) return;
       await chosen.reduce(

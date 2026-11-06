@@ -123,6 +123,7 @@ export function openZip(buffer) {
  * @param {ArrayBuffer|Uint8Array} buffer
  * @returns {Promise<{
  *   campaign: object|null,
+ *   campaignError: string|null,   // parse error code when campaign.json was present but unusable
  *   characters: {path: string, parsed: object, portrait: {entry: string, mime: string, filename: string}|null}[],
  *   zip: ReturnType<typeof openZip>
  * }>}
@@ -137,9 +138,11 @@ export async function readSaddlebagZip(buffer) {
   }
 
   let campaign = null;
+  let campaignError = null;
   if (zip.has("campaign.json")) {
     const result = parseCampaignJson(await zip.readText("campaign.json"));
     if (result.ok) campaign = result.data.campaign;
+    else campaignError = result.error;
   }
 
   const characterEntries = zip.entries.filter(({ name }) => CHARACTER_PATH.test(name));
@@ -153,5 +156,5 @@ export async function readSaddlebagZip(buffer) {
   characters.sort((a, b) => a.path.localeCompare(b.path));
 
   if (!characters.length) throw new ZipError("no-characters");
-  return { campaign, characters, zip };
+  return { campaign, campaignError, characters, zip };
 }

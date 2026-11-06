@@ -1,4 +1,4 @@
-import { normaliseName } from "../../helpers/saddlebag/catalog.mjs";
+import { legacySaddlebagId, normaliseName } from "../../helpers/saddlebag/catalog.mjs";
 
 const { DialogV2 } = foundry.applications.api;
 const NS = "talesoftheoldwest";
@@ -23,7 +23,9 @@ export async function matchHorse(horse) {
   // Sure match: already flagged with this Saddlebag id.
   if (horse.saddlebagId) {
     const sure = game.actors.find(
-      (a) => a.type === "animal" && a.getFlag(NS, "saddlebagHorseId") === horse.saddlebagId,
+      (a) =>
+        a.type === "animal" &&
+        (a.getFlag(NS, "saddlebagHorseId") === horse.saddlebagId || legacySaddlebagId(a.flags) === horse.saddlebagId),
     );
     if (sure) return { action: "existing", actor: sure };
   }

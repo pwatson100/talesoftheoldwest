@@ -60,6 +60,7 @@ test("readSaddlebagZip returns the campaign, characters and portrait links", asy
     ["characters/bluey.md", "characters/clem-hale.md", "characters/mr-green.md"],
   );
   assert.ok(characters.every((c) => c.parsed.ok));
+  assert.equal((await readSaddlebagZip(zipBytes())).campaignError, null);
 
   const clem = characters.find((c) => c.path.endsWith("clem-hale.md"));
   assert.equal(clem.portrait.entry, "portraits/d1471d51-e5d0-4b33-89bb-96aca3a0711b.jpg");
@@ -110,4 +111,63 @@ test("readSaddlebagZip fails when the archive holds no characters", async () => 
   const empty = new Uint8Array(22);
   new DataView(empty.buffer).setUint32(0, 0x06054b50, true);
   await assert.rejects(readSaddlebagZip(empty), (e) => e.code === "no-characters");
+});
+
+/** Build a zip of stored (uncompressed) entries. */
+function storedZip(files) {
+  const enc = new TextEncoder();
+  const locals = [];
+  const centrals = [];
+  let offset = 0;
+  for (const [name, text] of Object.entries(files)) {
+    const n = enc.encode(name);
+    const b = enc.encode(text);
+    const local = new Uint8Array(30 + n.length + b.length);
+    const lv = new DataView(local.buffer);
+    lv.setUint32(0, 0x04034b50, true);
+    lv.setUint16(26, n.length, true);
+    lv.setUint32(18, b.length, true);
+    lv.setUint32(22, b.length, true);
+    local.set(n, 30);
+    local.set(b, 30 + n.length);
+    const central = new Uint8Array(46 + n.length);
+    const cv = new DataView(central.buffer);
+    cv.setUint32(0, 0x02014b50, true);
+    cv.setUint32(20, b.length, true);
+    cv.setUint32(24, b.length, true);
+    cv.setUint16(28, n.length, true);
+    cv.setUint32(42, offset, true);
+    central.set(n, 46);
+    locals.push(local);
+    centrals.push(central);
+    offset += local.length;
+  }
+  const centralSize = centrals.reduce((t, c) => t + c.length, 0);
+  const end = new Uint8Array(22);
+  const ev = new DataView(end.buffer);
+  ev.setUint32(0, 0x06054b50, true);
+  ev.setUint16(8, centrals.length, true);
+  ev.setUint16(10, centrals.length, true);
+  ev.setUint32(12, centralSize, true);
+  ev.setUint32(16, offset, true);
+  return Uint8Array.from([...locals, ...centrals, end].flatMap((a) => [...a]));
+}
+
+const v4Character = readFileSync(fixturePath("v4/mr-green.md"), "utf8");
+
+test("readSaddlebagZip reads a format 4 archive", async () => {
+  const campaign = JSON.stringify({ app: "saddlebag", kind: "campaign", formatVersion: 4, campaign: { name: "Great Western", npcs: [] } });
+  const { campaign: read, campaignError, characters } = await readSaddlebagZip(
+    storedZip({ "campaign.json": campaign, "characters/mr-green.md": v4Character }),
+  );
+  assert.equal(read.name, "Great Western");
+  assert.equal(campaignError, null);
+  assert.equal(characters[0].parsed.ok, true);
+});
+
+test("readSaddlebagZip reports an unreadable campaign.json instead of hiding it", async () => {
+  const result = await readSaddlebagZip(storedZip({ "campaign.json": "not json", "characters/mr-green.md": v4Character }));
+  assert.equal(result.campaign, null);
+  assert.equal(result.campaignError, "bad-json");
+  assert.equal(result.characters[0].parsed.ok, true);
 });

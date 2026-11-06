@@ -737,6 +737,7 @@
 			"ExportButton": "Export to Saddlebag",
 			"Exported": "Exported {name} for Saddlebag.",
 			"ExportedWarnings": "Exported {name} for Saddlebag with {count} notes. See the browser console for the list.",
+			"CampaignFileUnreadable": "The campaign details in this archive could not be read ({reason}). The characters can still be imported.",
 			"Error": {
 				"no-file": "No file was chosen.",
 				"zip-bad": "This archive could not be read. Export the campaign from Saddlebag again and try again.",

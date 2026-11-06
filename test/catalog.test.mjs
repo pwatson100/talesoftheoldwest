@@ -10,6 +10,7 @@ import {
   CONDITION_IDS,
   DAMAGE_CAPS,
   abilityKeyFromSaddlebag,
+  legacySaddlebagId,
   archetypeFromSlug,
   breedKeyFromSlug,
   normaliseName,
@@ -84,4 +85,12 @@ test("normaliseName", () => {
 test("weapon aliases are keyed by normalised Saddlebag names", () => {
   assert.equal(WEAPON_ALIASES[normaliseName("Winchester Model 1866")], "Winchester 1866");
   assert.equal(WEAPON_ALIASES[normaliseName("Winchester Model 1873")], "Winchester 1873");
+});
+
+test("legacySaddlebagId reads the id written by Saddlebag's own Foundry export", () => {
+  assert.equal(legacySaddlebagId({ saddlebag: { id: "abc", appVersion: "1", exportedAt: "x" } }), "abc");
+  assert.equal(legacySaddlebagId({ talesoftheoldwest: { saddlebag: { id: "abc" } } }), null);
+  assert.equal(legacySaddlebagId({ saddlebag: { id: "" } }), null);
+  assert.equal(legacySaddlebagId({ saddlebag: { ref: "x" } }), null);
+  assert.equal(legacySaddlebagId(undefined), null);
 });

@@ -3,7 +3,7 @@
 
 const MARKER = "<!-- saddlebag:data";
 const CLOSE = "-->";
-const SUPPORTED_FORMAT_VERSION = 1;
+const SUPPORTED_FORMAT_VERSION = 4;
 
 const fail = (error, detail) => (detail === undefined ? { ok: false, error } : { ok: false, error, detail });
 

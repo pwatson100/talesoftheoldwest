@@ -3,7 +3,7 @@
 
 import { CRIT_MODIFIERS } from "../../documents/actor.mjs";
 import { logger } from "../logger.mjs";
-import { ANIMAL_ABILITY_KEYS, CONDITION_IDS, BREED_KEYS, normaliseName } from "./catalog.mjs";
+import { ANIMAL_ABILITY_KEYS, CONDITION_IDS, BREED_KEYS, legacySaddlebagId, normaliseName } from "./catalog.mjs";
 import { parseCritResult } from "./crit.mjs";
 import { fromFoundry } from "./fromFoundry.mjs";
 import { renderSaddlebagMarkdown } from "./markdown.mjs";
@@ -50,10 +50,17 @@ async function findPackDocument(documentName, test, options) {
 /*  Lookups                                     */
 /* -------------------------------------------- */
 
-/** The PC actor already linked to this Saddlebag character id, or null. */
+/**
+ * The PC actor already linked to this Saddlebag character id, or null. Also recognises PCs created by
+ * Saddlebag's own Foundry export (`flags.saddlebag.id`), so re-importing the .md offers Replace.
+ */
 export function findExistingBySaddlebagId(id) {
   if (!id) return null;
-  return game.actors.find((a) => a.type === "pc" && a.getFlag(NS, "saddlebag")?.id === id) ?? null;
+  return (
+    game.actors.find(
+      (a) => a.type === "pc" && (a.getFlag(NS, "saddlebag")?.id === id || legacySaddlebagId(a.flags) === id),
+    ) ?? null
+  );
 }
 
 /** Candidate entries for one search tier. The promise is cached in `cache` for the duration of an import. */
@@ -527,7 +534,7 @@ function cleanupRemuda(plan, pc) {
   for (const entry of remuda) {
     const horseActor = game.actors.get(entry.id);
     if (!horseActor) continue;
-    const horseFlag = horseActor.getFlag(NS, "saddlebagHorseId");
+    const horseFlag = horseActor.getFlag(NS, "saddlebagHorseId") ?? legacySaddlebagId(horseActor.flags);
     // Only unlink if the actor came from Saddlebag and its id is no longer in the file.
     if (horseFlag && !fileIds.has(horseFlag)) {
       pc.removeRemuda(entry.id);
@@ -609,7 +616,10 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
     await replace.update({ name, system, ...(img && { img }) });
     await replace.unsetFlag(NS, "saddlebag");
     await replace.setFlag(NS, "saddlebag", flag);
-    const stale = replace.items.filter((i) => i.getFlag(NS, "saddlebagItemId") !== undefined).map((i) => i.id);
+    // Items tagged by this importer, or by Saddlebag's own Foundry export (`flags.saddlebag`).
+    const stale = replace.items
+      .filter((i) => i.getFlag(NS, "saddlebagItemId") !== undefined || i.flags?.saddlebag)
+      .map((i) => i.id);
     if (stale.length) await replace.deleteEmbeddedDocuments("Item", stale);
     await populate(replace, plan, items, warnings, { replacing: true });
     return { actor: replace, warnings };
@@ -665,7 +675,7 @@ export function snapshotActor(actor) {
     .filter((h) => h?.type === "animal")
     .map((h) => ({
       name: h.name,
-      saddlebagHorseId: h.getFlag(NS, "saddlebagHorseId") ?? null,
+      saddlebagHorseId: h.getFlag(NS, "saddlebagHorseId") ?? legacySaddlebagId(h.flags),
       ridingModifier: h.system.general?.ridingmodifier?.value,
       attributes: Object.fromEntries(
         ["grit", "quick", "cunning"].map((a) => [a, { value: h.system.attributes?.[a]?.value, max: h.system.attributes?.[a]?.max }]),

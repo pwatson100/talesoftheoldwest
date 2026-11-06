@@ -141,3 +141,13 @@ export function breedKeyFromSlug(slug) {
   const k = stripHyphens(slug);
   return BREED_KEYS.includes(k) ? k : null;
 }
+
+/**
+ * The Saddlebag id on a document written by Saddlebag's own "export for Foundry" zip, which tags
+ * actors with `flags.saddlebag.id` (character id for a PC, horse id for a horse).
+ * Read `document.flags` directly: `getFlag("saddlebag", …)` throws because it is not an active scope.
+ */
+export function legacySaddlebagId(flags) {
+  const id = flags?.saddlebag?.id;
+  return typeof id === "string" && id ? id : null;
+}
