@@ -44,11 +44,29 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
       remudaRemove: { handler: this._onRemudaRemove, buttons: [0, 2] },
       compadresView: { handler: this._onCompadresView, buttons: [0, 2] },
       compadresRemove: { handler: this._onCompadresRemove, buttons: [0, 2] },
+      exportSaddlebag: this._exportSaddlebag,
     },
     form: {
       submitOnChange: true,
     },
   };
+
+  /** @override */
+  _getHeaderControls() {
+    const controls = super._getHeaderControls();
+    controls.push({
+      icon: "fa-solid fa-file-export",
+      label: "TALESOFTHEOLDWEST.Saddlebag.ExportButton",
+      action: "exportSaddlebag",
+      visible: () => this.document.type === "pc",
+    });
+    return controls;
+  }
+
+  /** Download this PC as a Saddlebag Markdown file. */
+  static async _exportSaddlebag() {
+    await game.talesoftheoldwest.saddlebag.exportActor(this.document);
+  }
 
   /** @override */
   static PARTS = {

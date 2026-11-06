@@ -1,13 +1,13 @@
 import totowCreatureBase from './creature-base.mjs';
+import { TALESOFTHEOLDWEST } from '../helpers/config.mjs';
 
 export default class totowANIMAL extends totowCreatureBase {
 	static ATTRIBUTE_LIMITS = { initial: 0, valueMax: 10, maxMax: 10 };
 
-	static DAMAGE_TRACKS = {
-		hurts: { attr: 'grit', value: 10, max: 10 },
-		shakes: { attr: 'quick', value: 10, max: 10 },
-		vexes: { attr: 'cunning', value: 10, max: 10 },
-	};
+	// Animals have no doubts track.
+	static DAMAGE_TRACKS = Object.fromEntries(
+		['hurts', 'shakes', 'vexes'].map((track) => [track, { attr: TALESOFTHEOLDWEST.damageTracks[track].attr, value: 10, max: 10 }])
+	);
 
 	static CONDITIONS = ['broken'];
 

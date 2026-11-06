@@ -33,6 +33,17 @@ TALESOFTHEOLDWEST.abilities = {
   performin: { name: "TALESOFTHEOLDWEST.Ability.Performin.long", atob: "docity" },
 };
 
+/**
+ * Damage tracks: the attribute each one is bounded by and the highest `max` a PC or NPC track may have.
+ * Animals use a subset of these with their own caps (see module/data/animal.mjs).
+ */
+TALESOFTHEOLDWEST.damageTracks = {
+  hurts: { attr: "grit", max: 5 },
+  shakes: { attr: "quick", max: 5 },
+  vexes: { attr: "cunning", max: 5 },
+  doubts: { attr: "docity", max: 5 },
+};
+
 TALESOFTHEOLDWEST.animalabilities = {
   resilience: { name: "TALESOFTHEOLDWEST.Ability.Resilience.long", atob: "grit" },
   fightin: { name: "TALESOFTHEOLDWEST.Ability.Fightin.long", atob: "grit" },
