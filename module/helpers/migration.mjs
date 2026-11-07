@@ -41,7 +41,7 @@ export async function runMigrationIfNeeded() {
       logger.error(`Migration to version ${version} failed`, err);
       return;
     }
-    await game.settings.set('talesoftheoldwest', 'systemMigrationVersion', String(version));
+    await game.settings.set('talesoftheoldwest', 'systemMigrationVersion', String(version)); // NOSONAR - sequential by design
   }
 }
 
@@ -169,40 +169,27 @@ async function migrateAmmoMax() {
   );
   stats.world += worldWeapons.length;
 
-  // 2. Embedded weapons.
-  for (const actor of _collectActors()) {
-    for (const item of actor.items.contents.filter((i) => i.type === 'weapon')) {
-      const ammo = Number(item.system.ammo) || 0;
+  // 2. Embedded weapons: resolved and updated concurrently, then tallied in order.
+  const embedded = _collectActors().flatMap((actor) =>
+    actor.items.contents.filter((i) => i.type === 'weapon').map((item) => ({ actor, item }))
+  );
+  const results = await Promise.all(
+    embedded.map(({ item }) => _migrateEmbeddedWeaponAmmoMax(item, worldWeapons, options))
+  );
 
-      if (item.system.subtype === 'fightin') {
-        await item.update({ 'system.ammoMax': ammo }, options);
-        stats.fightin++;
-        continue;
-      }
+  results.forEach(({ source, ammo, ammoMax }, i) => {
+    const { actor, item } = embedded[i];
+    stats[source]++;
 
-      let ammoMax = await _resolveSourceAmmo(item);
-      if (ammoMax !== null) {
-        stats.source++;
-      } else {
-        ammoMax = _resolveByName(item, worldWeapons);
-        if (ammoMax !== null) {
-          stats.name++;
-        } else {
-          ammoMax = ammo;
-          stats.fallback++;
-          unresolved.push({ actor: actor.name, weapon: item.name, ammo });
-        }
-      }
-
-      if (ammo > ammoMax) {
-        // D8: keep the actor's ammo, only record it for the GM.
-        stats.overMax++;
-        overMax.push({ actor: actor.name, weapon: item.name, ammo, ammoMax });
-      }
-
-      await item.update({ 'system.ammoMax': ammoMax }, options);
+    if (source === 'fallback') {
+      unresolved.push({ actor: actor.name, weapon: item.name, ammo });
     }
-  }
+    if (ammo > ammoMax) {
+      // D8: keep the actor's ammo, only record it for the GM.
+      stats.overMax++;
+      overMax.push({ actor: actor.name, weapon: item.name, ammo, ammoMax });
+    }
+  });
 
   const embeddedCount = stats.source + stats.name + stats.fallback + stats.fightin;
   if (stats.world === 0 && embeddedCount === 0) {
@@ -218,6 +205,36 @@ async function migrateAmmoMax() {
   logger.info(msg, stats);
 
   if (unresolved.length || overMax.length) await _postAmmoMaxReview(msg, unresolved, overMax);
+}
+
+/**
+ * Resolve and store `system.ammoMax` for one embedded weapon.
+ * @param {Item} item
+ * @param {Item[]} worldWeapons
+ * @param {object} options  Update options.
+ * @returns {Promise<{source: 'fightin'|'source'|'name'|'fallback', ammo: number, ammoMax: number}>}
+ */
+async function _migrateEmbeddedWeaponAmmoMax(item, worldWeapons, options) {
+  const ammo = Number(item.system.ammo) || 0;
+  let source = 'fightin';
+  let ammoMax = ammo;
+
+  if (item.system.subtype !== 'fightin') {
+    const fromSource = await _resolveSourceAmmo(item);
+    const fromName = fromSource === null ? _resolveByName(item, worldWeapons) : null;
+    if (fromSource !== null) {
+      source = 'source';
+      ammoMax = fromSource;
+    } else if (fromName !== null) {
+      source = 'name';
+      ammoMax = fromName;
+    } else {
+      source = 'fallback';
+    }
+  }
+
+  await item.update({ 'system.ammoMax': ammoMax }, options);
+  return { source, ammo, ammoMax };
 }
 
 /**
@@ -249,17 +266,23 @@ async function _resolveSourceAmmo(item) {
       current = next;
       continue;
     }
-
-    let doc = null;
-    try {
-      doc = await fromUuid(source);
-    } catch {
-      return null;
-    }
-    if (doc?.type !== 'weapon') return null;
-    return Number(doc.system.ammoMax ?? doc.system.ammo) || 0;
+    return ammoFromUuid(source);
   }
   return null;
+}
+
+/**
+ * Resolve the reference ammo capacity of a weapon identified by an arbitrary UUID (e.g. a compendium entry).
+ * @param {string} source
+ * @returns {Promise<number|null>} null when the UUID can't be resolved or isn't a weapon
+ */
+async function ammoFromUuid(source) {
+  try {
+    const doc = await fromUuid(source);
+    return doc?.type === 'weapon' ? (Number(doc.system.ammoMax ?? doc.system.ammo) || 0) : null;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -289,10 +312,11 @@ async function _postAmmoMaxReview(summary, unresolved, overMax) {
     })),
   ];
 
+  const listItems = lines.map((l) => '<li>' + l + '</li>').join('');
   const content =
     `<div class="chatBG"><h3>${game.i18n.localize('TALESOFTHEOLDWEST.Migration.ammoMaxReviewTitle')}</h3>` +
     `<p>${esc(summary)}</p>` +
-    `<ul>${lines.map((l) => `<li>${l}</li>`).join('')}</ul></div>`;
+    `<ul>${listItems}</ul></div>`;
 
   await ChatMessage.create({
     content,

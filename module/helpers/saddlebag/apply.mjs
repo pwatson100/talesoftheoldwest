@@ -577,10 +577,55 @@ async function cleanupRemuda(plan, pc) {
 }
 
 /* -------------------------------------------- */
-/*  Compadres                                   */
+/*  Shared actor plumbing                       */
 /* -------------------------------------------- */
 
+/** Items tagged by this importer, or by Saddlebag's own Foundry export (`flags.saddlebag`). */
 const isSaddlebagItem = (i) => i.getFlag(NS, "saddlebagItemId") !== undefined || Boolean(i.flags?.saddlebag);
+
+/** Throw unless the user may update `replace`, or create actors when there is nothing to replace. */
+function assertCanImport(replace) {
+  if (replace ? !replace.isOwner : !game.user.can("ACTOR_CREATE")) {
+    throw new SaddlebagImportError(replace ? "not-owner" : "no-permission");
+  }
+}
+
+/** Create an actor from `actorData`, carrying the Saddlebag `flag` under `flagKey` and an optional portrait. */
+function createTaggedActor(actorData, flagKey, flag, img) {
+  const data = foundry.utils.deepClone(actorData);
+  data.flags = { [NS]: { [flagKey]: foundry.utils.deepClone(flag) } };
+  if (img) data.img = img;
+  return Actor.create(data, { renderSheet: false });
+}
+
+/** Apply `changes` (and an optional portrait) to an existing actor and swap in the new Saddlebag `flag`. */
+async function updateTaggedActor(actor, changes, flagKey, flag, img) {
+  await actor.update({ ...changes, ...(img && { img }) });
+  // Unset first: setFlag merges, which would keep keys the new flag no longer has.
+  await actor.unsetFlag(NS, flagKey);
+  await actor.setFlag(NS, flagKey, foundry.utils.deepClone(flag));
+}
+
+async function deleteSaddlebagItems(actor) {
+  const stale = actor.items.filter(isSaddlebagItem).map((i) => i.id);
+  if (stale.length) await actor.deleteEmbeddedDocuments("Item", stale);
+}
+
+/** Creation is not transactional: run `populate(actor)` and remove the half-built actor if it throws. */
+async function removeActorOnFailure(actor, populateActor) {
+  try {
+    await populateActor(actor);
+  } catch (err) {
+    logger.warning(false, "Saddlebag import failed; removing the partial actor", err);
+    await actor.delete();
+    throw err;
+  }
+  return actor;
+}
+
+/* -------------------------------------------- */
+/*  Compadres                                   */
+/* -------------------------------------------- */
 
 /** Talents (humans) or animal qualities (animals) as item data. Warnings are pushed onto `warnings`. */
 async function buildCompadreItems(c, warnings) {
@@ -607,11 +652,8 @@ async function buildCompadreItems(c, warnings) {
 }
 
 async function createCompadre(c, warnings) {
-  const data = foundry.utils.deepClone(c.actorData);
-  data.flags = { [NS]: { saddlebagCompadre: foundry.utils.deepClone(c.flag) } };
-  if (c.img) data.img = c.img;
-  const actor = await Actor.create(data, { renderSheet: false });
-  try {
+  const actor = await createTaggedActor(c.actorData, "saddlebagCompadre", c.flag, c.img);
+  return removeActorOnFailure(actor, async () => {
     // The NPC data model forces a hostile, unlinked token after creation; a compadre travels with the PC.
     if (c.kind === "human") {
       await actor.update({
@@ -621,23 +663,38 @@ async function createCompadre(c, warnings) {
     }
     const items = await buildCompadreItems(c, warnings);
     if (items.length) await actor.createEmbeddedDocuments("Item", items);
-  } catch (err) {
-    await actor.delete();
-    throw err;
-  }
-  return actor;
+  });
 }
 
 /** Overwrite name, picture, stats, biography and Saddlebag-tagged items. Token, owner, folder and hand-added items are untouched. */
 async function updateCompadre(actor, c, warnings) {
   const { name, system } = c.actorData;
-  await actor.update({ name, system, ...(c.img && { img: c.img }) });
-  await actor.unsetFlag(NS, "saddlebagCompadre");
-  await actor.setFlag(NS, "saddlebagCompadre", foundry.utils.deepClone(c.flag));
-  const stale = actor.items.filter(isSaddlebagItem).map((i) => i.id);
-  if (stale.length) await actor.deleteEmbeddedDocuments("Item", stale);
+  await updateTaggedActor(actor, { name, system }, "saddlebagCompadre", c.flag, c.img);
+  await deleteSaddlebagItems(actor);
   const items = await buildCompadreItems(c, warnings);
   if (items.length) await actor.createEmbeddedDocuments("Item", items);
+}
+
+/**
+ * Create or update one compadre actor, given the ids already linked to the PC.
+ * @returns {Promise<Actor|null>}  The actor to link, or null when it was skipped (a warning is pushed).
+ */
+async function upsertCompadre(c, links, warnings) {
+  const existing = findExistingCompadre(c.saddlebagId, c.actorData.type);
+  if (!(existing && links.includes(existing.id)) && links.length >= MAX_COMPADRES) {
+    warnings.push({ code: "compadre-limit", message: `"${c.name}" was not imported: the PC already has ${MAX_COMPADRES} compadres.` });
+    return null;
+  }
+  if (existing) {
+    if (existing.isOwner) await updateCompadre(existing, c, warnings);
+    else warnings.push({ code: "compadre-not-owner", message: `"${c.name}" was not updated: you do not own that actor.` });
+    return existing;
+  }
+  if (!game.user.can("ACTOR_CREATE")) {
+    warnings.push({ code: "compadre-no-permission", message: `"${c.name}" was not created: you may not create actors.` });
+    return null;
+  }
+  return createCompadre(c, warnings);
 }
 
 /**
@@ -661,23 +718,8 @@ async function importCompadres(pc, compadres, warnings, { replacing }) {
 
   for (const c of compadres) {
     try {
-      const type = c.actorData.type;
-      const existing = findExistingCompadre(c.saddlebagId, type);
-      if (!(existing && links.includes(existing.id)) && links.length >= MAX_COMPADRES) {
-        warnings.push({ code: "compadre-limit", message: `"${c.name}" was not imported: the PC already has ${MAX_COMPADRES} compadres.` });
-        continue;
-      }
-      let actor = existing;
-      if (existing) {
-        if (existing.isOwner) await updateCompadre(existing, c, warnings); // NOSONAR - sequential by design
-        else warnings.push({ code: "compadre-not-owner", message: `"${c.name}" was not updated: you do not own that actor.` });
-      } else if (game.user.can("ACTOR_CREATE")) {
-        actor = await createCompadre(c, warnings); // NOSONAR - sequential by design
-      } else {
-        warnings.push({ code: "compadre-no-permission", message: `"${c.name}" was not created: you may not create actors.` });
-        continue;
-      }
-      if (!links.includes(actor.id)) links.push(actor.id);
+      const actor = await upsertCompadre(c, links, warnings); // NOSONAR - sequential by design
+      if (actor && !links.includes(actor.id)) links.push(actor.id);
     } catch (err) {
       logger.warning(false, "Saddlebag compadre import failed", err);
       warnings.push({ code: "compadre-failed", message: `"${c.name}" could not be imported: ${err.message}` });
@@ -748,9 +790,7 @@ export async function uploadPortrait(zip, portrait) {
  */
 export async function importCharacter(plan, { replace = null, asCopy = false, img = null, compadreImgs = {} } = {}) {
   if (replace && asCopy) throw new Error("replace and asCopy are mutually exclusive");
-  if (replace ? !replace.isOwner : !game.user.can("ACTOR_CREATE")) {
-    throw new SaddlebagImportError(replace ? "not-owner" : "no-permission");
-  }
+  assertCanImport(replace);
 
   // Read-only phase: nothing is created until every item has been looked up.
   const { items, warnings: itemWarnings, resolvedCore, expectedCore } = await buildItems(plan);
@@ -777,30 +817,14 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
 
   if (replace) {
     const { name, system } = plan.actorData;
-    await replace.update({ name, system, ...(img && { img }) });
-    await replace.unsetFlag(NS, "saddlebag");
-    await replace.setFlag(NS, "saddlebag", flag);
-    // Items tagged by this importer, or by Saddlebag's own Foundry export (`flags.saddlebag`).
-    const stale = replace.items
-      .filter((i) => i.getFlag(NS, "saddlebagItemId") !== undefined || i.flags?.saddlebag)
-      .map((i) => i.id);
-    if (stale.length) await replace.deleteEmbeddedDocuments("Item", stale);
+    await updateTaggedActor(replace, { name, system }, "saddlebag", flag, img);
+    await deleteSaddlebagItems(replace);
     await populate(replace, plan, items, warnings, { replacing: true, compadres });
     return { actor: replace, warnings };
   }
 
-  const actorData = foundry.utils.deepClone(plan.actorData);
-  actorData.flags = { [NS]: { saddlebag: flag } };
-  if (img) actorData.img = img;
-  const actor = await Actor.create(actorData, { renderSheet: false });
-  try {
-    await populate(actor, plan, items, warnings, { replacing: false, compadres });
-  } catch (err) {
-    // Creation is not transactional: remove the half-built actor.
-    logger.warning(false, "Saddlebag import failed; removing the partial actor", err);
-    await actor.delete();
-    throw err;
-  }
+  const actor = await createTaggedActor(plan.actorData, "saddlebag", flag, img);
+  await removeActorOnFailure(actor, () => populate(actor, plan, items, warnings, { replacing: false, compadres }));
   return { actor, warnings };
 }
 
@@ -814,24 +838,16 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
  * @returns {Promise<{actor: Actor, warnings: object[]}>}
  */
 export async function importNpc(plan, { replace = null, img = null } = {}) {
-  if (replace ? !replace.isOwner : !game.user.can("ACTOR_CREATE")) {
-    throw new SaddlebagImportError(replace ? "not-owner" : "no-permission");
-  }
-  const flag = foundry.utils.deepClone(plan.flag);
+  assertCanImport(replace);
   const warnings = [...plan.warnings];
 
   if (replace) {
     const { name, system } = plan.actorData;
-    await replace.update({ name, "system.biography": system.biography, ...(img && { img }) });
-    await replace.unsetFlag(NS, "saddlebagNpc");
-    await replace.setFlag(NS, "saddlebagNpc", flag);
+    await updateTaggedActor(replace, { name, "system.biography": system.biography }, "saddlebagNpc", plan.flag, img);
     return { actor: replace, warnings };
   }
 
-  const actorData = foundry.utils.deepClone(plan.actorData);
-  actorData.flags = { [NS]: { saddlebagNpc: flag } };
-  if (img) actorData.img = img;
-  return { actor: await Actor.create(actorData, { renderSheet: false }), warnings };
+  return { actor: await createTaggedActor(plan.actorData, "saddlebagNpc", plan.flag, img), warnings };
 }
 
 /* -------------------------------------------- */

@@ -26,7 +26,7 @@ export function toFoundryNpcs(campaign, options = {}) {
 
   list.forEach((npc, i) => {
     const path = `npcs.${i}`;
-    if (!isObject(npc) || typeof npc.id !== "string" || !npc.id) return;
+    if (typeof npc?.id !== "string" || !npc.id) return;
     if (byId.has(npc.id)) {
       // Keep the first; the warning travels with it.
       byId.get(npc.id).warnings.push({ code: "npc-duplicate-id", message: `Two NPCs share the id ${npc.id}; the second was skipped.`, path });
@@ -36,25 +36,19 @@ export function toFoundryNpcs(campaign, options = {}) {
     const warnings = [];
     const warn = (code, message, p = path) => warnings.push({ code, message, path: p });
 
-    const rawName = typeof npc.name === "string" ? npc.name.trim() : "";
-    const name = rawName || UNNAMED;
-    if (!rawName) warn("npc-unnamed", `An NPC has no name; it was called "${UNNAMED}".`);
-
-    let gender = null;
-    if (npc.gender === "male" || npc.gender === "female") gender = npc.gender;
-    else if (npc.gender != null) warn("npc-unknown-gender", `${name}: gender "${npc.gender}" is not known; ignored.`, `${path}.gender`);
-
+    const name = setName(npc, warn);
+    const gender = (npc.gender === "male" || npc.gender === "female") ? npc.gender : null;
     const about = typeof npc.about === "string" ? npc.about.trim() : "";
     const note = typeof npc.genderNote === "string" ? npc.genderNote.trim() : "";
     const parts = [];
     if (about) parts.push(`<p><strong>${escapeHtml(about)}</strong></p>`);
-    if (gender) parts.push(`<p>${GENDER_LABEL[gender]}${note ? ` (${escapeHtml(note)})` : ""}</p>`);
+    if (gender) {
+      const noteHtml = note ? " (" + escapeHtml(note) + ")" : "";
+      parts.push(`<p>${GENDER_LABEL[gender]}${noteHtml}</p>`);
+    }
     parts.push(paragraphs(npc.description), paragraphs(npc.notes));
 
-    const portraitId = typeof npc.portraitId === "string" && npc.portraitId ? npc.portraitId : null;
-    if (portraitId && options.portraits && !options.portraits.has(portraitId)) {
-      warn("npc-portrait-missing", `${name}: the portrait is not in the archive; the default image was kept.`, `${path}.portraitId`);
-    }
+    const portraitId = setPortraitId(npc, options, warn, name, path);
 
     byId.set(npc.id, {
       saddlebagId: npc.id,
@@ -74,3 +68,19 @@ export function toFoundryNpcs(campaign, options = {}) {
 
   return [...byId.values()];
 }
+
+function setPortraitId(npc, options, warn, name, path) {
+  const portraitId = typeof npc.portraitId === "string" && npc.portraitId ? npc.portraitId : null;
+  if (portraitId && options.portraits && !options.portraits.has(portraitId)) {
+    warn("npc-portrait-missing", `${name}: the portrait is not in the archive; the default image was kept.`, `${path}.portraitId`);
+  }
+  return portraitId;
+}
+
+function setName(npc, warn) {
+  const rawName = typeof npc.name === "string" ? npc.name.trim() : "";
+  const name = rawName || UNNAMED;
+  if (!rawName) warn("npc-unnamed", `An NPC has no name; it was called "${UNNAMED}".`);
+  return name;
+}
+

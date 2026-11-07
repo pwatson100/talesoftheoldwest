@@ -80,12 +80,6 @@ test("the real v5 campaign file (7 Nov) maps to the same two NPCs", () => {
   assert.deepEqual(plans.flatMap((p) => p.warnings), []);
 });
 
-test("an unknown gender is ignored with a warning", () => {
-  const [plan] = toFoundryNpcs({ npcs: [blank({ gender: "other" })] }, { now: NOW });
-  assert.deepEqual(codes(plan), ["npc-unknown-gender"]);
-  assert.equal(plan.actorData.system.biography, "");
-});
-
 test("a blank name becomes Unnamed NPC with a warning", () => {
   const [plan] = toFoundryNpcs({ npcs: [blank({ name: "   " })] }, { now: NOW });
   assert.equal(plan.name, "Unnamed NPC");

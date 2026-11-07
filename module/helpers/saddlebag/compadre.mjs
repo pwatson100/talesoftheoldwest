@@ -104,35 +104,12 @@ function buildCompadre(comp, i, character, importedAt, options) {
   }
 
   const parts = [];
-  if (animal && text(comp.coat)) parts.push(`<p>Coat &amp; markings: ${escapeHtml(text(comp.coat))}</p>`);
-  const gender = GENDER_LABEL[comp.gender];
-  if (gender) parts.push(`<p>${gender}${text(comp.genderNote) ? ` (${escapeHtml(text(comp.genderNote))})` : ""}</p>`);
-  if (!animal && text(comp.publicReputation)) parts.push(`<p>Public reputation: ${escapeHtml(text(comp.publicReputation))}</p>`);
-  if (!animal && text(comp.privatePersonality)) parts.push(`<p>Private personality: ${escapeHtml(text(comp.privatePersonality))}</p>`);
-  parts.push(paragraphs(comp.description), paragraphs(comp.notes));
-  if (comp.accompanying === false) {
-    parts.push(`<p>Not with the PC${text(comp.where) ? `: ${escapeHtml(text(comp.where))}` : ""}</p>`);
-  }
-  const biography = parts.join("");
+  const biography = setBiography(animal, comp, parts);
 
   const system = { attributes, damage, abilities, biography };
-  let talents = [];
-  let qualityNames = [];
-  if (animal) {
-    system.general = {
-      subtype: animalSubtype(rawName, comp.coat, comp.description, comp.notes),
-      attacks: attackHtml(comp.attack),
-    };
-    qualityNames = [...(comp.tags?.builtIn ?? []), ...(comp.tags?.acquired ?? [])].map(titleCase);
-  } else {
-    let archetype = "";
-    if (comp.categoryId != null) {
-      archetype = COMPADRE_CATEGORIES[comp.categoryId] ?? "";
-      if (!archetype) warn("compadre-unknown-category", `${name}: category "${comp.categoryId}" is not known; left blank.`, `${path}.categoryId`);
-    }
-    system.general = { archetype };
-    talents = setTalents(comp);
-  }
+
+  const qualityNames = animal ? setAnimalQualities(system, rawName, comp) : [];
+  const talents = animal ? [] : setHumanGeneral(system, name, comp, path, warn);
 
   const plan = {
     saddlebagId: comp.id,
@@ -154,6 +131,42 @@ function buildCompadre(comp, i, character, importedAt, options) {
   return { plan, warnings };
 }
 
+function setAnimalQualities(system, rawName, comp) {
+  system.general = {
+    subtype: animalSubtype(rawName, comp.coat, comp.description, comp.notes),
+    attacks: attackHtml(comp.attack),
+  };
+  return [...(comp.tags?.builtIn ?? []), ...(comp.tags?.acquired ?? [])].map(titleCase);
+}
+
+function setHumanGeneral(system, name, comp, path, warn) {
+  let archetype = "";
+  if (comp.categoryId != null) {
+    archetype = COMPADRE_CATEGORIES[comp.categoryId] ?? "";
+    if (!archetype) warn("compadre-unknown-category", `${name}: category "${comp.categoryId}" is not known; left blank.`, `${path}.categoryId`);
+  }
+  system.general = { archetype };
+  return setTalents(comp);
+}
+
+function setBiography(animal, comp, parts) {
+  if (animal && text(comp.coat)) parts.push(`<p>Coat &amp; markings: ${escapeHtml(text(comp.coat))}</p>`);
+  const gender = GENDER_LABEL[comp.gender];
+  if (gender) {
+    const genderNote = text(comp.genderNote) ? " (" + escapeHtml(text(comp.genderNote)) + ")" : "";
+    parts.push(`<p>${gender}${genderNote}</p>`);
+  }
+  if (!animal && text(comp.publicReputation)) parts.push(`<p>Public reputation: ${escapeHtml(text(comp.publicReputation))}</p>`);
+  if (!animal && text(comp.privatePersonality)) parts.push(`<p>Private personality: ${escapeHtml(text(comp.privatePersonality))}</p>`);
+  parts.push(paragraphs(comp.description), paragraphs(comp.notes));
+  if (comp.accompanying === false) {
+    const where = text(comp.where) ? ": " + escapeHtml(text(comp.where)) : "";
+    parts.push(`<p>Not with the PC${where}</p>`);
+  }
+  const biography = parts.join("");
+  return biography;
+}
+
 function mapAttributes(comp, animal, name, warn, clamp) {
   const attributes = {};
   const damage = {};
@@ -161,7 +174,10 @@ function mapAttributes(comp, animal, name, warn, clamp) {
   const cap = animal ? ANIMAL_ATTRIBUTE_CAP : HUMAN_ATTRIBUTE_CAP;
   for (const attr of names) {
     const src = comp.attributes?.[attr];
-    const rawMax = isObject(src) ? (isNum(src.max) ? src.max : src.current) : null;
+    let rawMax = null;
+    if (isObject(src)) {
+      rawMax = isNum(src.max) ? src.max : src.current;
+    }
     if (!isNum(rawMax)) {
       warn("compadre-missing-attribute", `${name}: ${attr} is blank; the Foundry default was kept.`, `attributes.${attr}`);
       continue;

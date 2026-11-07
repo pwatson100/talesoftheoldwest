@@ -23,28 +23,43 @@ const oneLine = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
 
 /** `-->` inside the JSON would close the HTML comment early. */
 export function escapeCommentClose(json) {
-  return json.replaceAll("-->", "--\\u003e");
+  return json.replaceAll("-->", String.raw`--\u003e`);
 }
 
 function body(c) {
   const out = [];
   out.push(`# ${oneLine(c.name)}`, "");
-
   const archetype = c.creation?.archetypeId ? titleCase(c.creation.archetypeId) : "";
   const parts = [archetype, isNum(c.ageAtCreation) ? `age ${c.ageAtCreation}` : ""].filter(Boolean);
   if (parts.length) out.push(parts.join(" · "), "");
   if (c.description) out.push(`> ${oneLine(c.description)}`, "");
+  addAttrs(out, c);
+  addTalents(c, out);
+  addDescriptives(out, c);
+  addInjuries(out, c);
+  addWeapons(c, out);
+  addGear(c, out);
+  addHorses(c, out);
+  addMoneyXP(c, out);
+  return out.join("\n");
+}
 
-  out.push("## Attributes", "");
-  out.push("| Grit | Quick | Cunning | Docity | Faith |", "|---|---|---|---|---|");
+function addMoneyXP(c, out) {
+  const cents = (c.ledger ?? []).reduce((sum, e) => sum + (isNum(e?.amount) ? e.amount : 0), 0);
+  out.push("## Money and living", "", `- **Cash in hand:** ${money(cents)}`, `- **In the bank:** ${money(isNum(c.bank) ? c.bank : 0)}`, "");
+  const earned = c.xp?.earned ?? 0;
+  const spent = c.xp?.spent ?? 0;
+  out.push("## Experience", "", `- **XP:** ${earned} earned, ${spent} spent, ${earned - spent} unspent`, "");
+}
+
+function addAttrs(out, c) {
+  out.push("## Attributes", "", "| Grit | Quick | Cunning | Docity | Faith |", "|---|---|---|---|---|");
   const cells = Object.keys(ATTRIBUTE_TRACKS).map((a) => {
     const at = c.attributes?.[a] ?? {};
     return `${at.current ?? at.max ?? 0}/${at.max ?? 0}`;
   });
-  out.push(`| ${[...cells, `${c.faith?.points ?? 0}/10`].join(" | ")} |`, "");
-
-  out.push("## Abilities", "");
-  out.push("| Ability | Attribute | Rank | Dice |", "|---|---|---|---|");
+  const faithCell = `${c.faith?.points ?? 0}/10`;
+  out.push(`| ${[...cells, faithCell].join(" | ")} |`, "", "## Abilities", "", "| Ability | Attribute | Rank | Dice |", "|---|---|---|---|");
   for (const key of ABILITY_KEYS) {
     const attr = ABILITY_ATTRIBUTE[key];
     const rank = c.abilities?.[abilityKeyToSaddlebag(key)] ?? 0;
@@ -52,43 +67,31 @@ function body(c) {
     out.push(`| ${titleCase(abilityKeyToSaddlebag(key))} | ${cap(attr)} | ${rank} | ${base + rank}D |`);
   }
   out.push("");
+}
 
+function addInjuries(out, c) {
+  out.push("", "## Injuries and conditions", "");
+  const injuries = (c.injuries ?? []).map((i) => `- Critical injury #${i.roll}`);
+  const conditions = (c.conditions ?? []).map((id) => `- ${titleCase(id)}`);
+  out.push(...(injuries.length || conditions.length ? [...injuries, ...conditions] : ["None."]), "");
+}
+
+function addDescriptives(out, c) {
+  out.push("## Fame, Reputation and Faith", "", `- **Fame:** ${c.fame ?? 0}`, `- **Reputation:** ${c.reputation?.morals ?? 0} · ${c.reputation?.publicSpirit ?? 0}`);
+  if (c.faith?.text) out.push(`- **Faith:** ${oneLine(c.faith.text)}`);
+  if (c.bigDream) out.push(`- **Big Dream:** ${oneLine(c.bigDream)}`);
+  if (c.pardner?.name) out.push(`- **Pardner:** ${oneLine(c.pardner.name)}`);
+}
+
+function addTalents(c, out) {
   if (c.talents?.length) {
     out.push("## Talents", "");
     for (const t of c.talents) out.push(`- **${oneLine(t.name)}** (${cap(t.rank ?? "basic")})`);
     out.push("");
   }
+}
 
-  out.push("## Fame, Reputation and Faith", "");
-  out.push(`- **Fame:** ${c.fame ?? 0}`);
-  out.push(`- **Reputation:** ${c.reputation?.morals ?? 0} · ${c.reputation?.publicSpirit ?? 0}`);
-  if (c.faith?.text) out.push(`- **Faith:** ${oneLine(c.faith.text)}`);
-  if (c.bigDream) out.push(`- **Big Dream:** ${oneLine(c.bigDream)}`);
-  if (c.pardner?.name) out.push(`- **Pardner:** ${oneLine(c.pardner.name)}`);
-  out.push("");
-
-  out.push("## Injuries and conditions", "");
-  const injuries = (c.injuries ?? []).map((i) => `- Critical injury #${i.roll}`);
-  const conditions = (c.conditions ?? []).map((id) => `- ${titleCase(id)}`);
-  out.push(...(injuries.length || conditions.length ? [...injuries, ...conditions] : ["None."]), "");
-
-  const weapons = (c.items ?? []).filter((i) => i.kind === "weapon");
-  if (weapons.length) {
-    out.push("## Weapons", "");
-    for (const w of weapons) {
-      const capacity = w.weapon?.capacity;
-      out.push(`- **${oneLine(w.name)}** · loaded ${w.weapon?.loaded ?? 0}${isNum(capacity) && capacity > 0 ? `/${capacity}` : ""}`);
-    }
-    out.push("");
-  }
-
-  const gear = (c.items ?? []).filter((i) => i.kind !== "weapon");
-  if (gear.length) {
-    out.push("## Gear", "");
-    for (const g of gear) out.push(`- ${oneLine(g.name)}${g.quantity > 1 ? ` ×${g.quantity}` : ""}`);
-    out.push("");
-  }
-
+function addHorses(c, out) {
   if (c.horses?.length) {
     out.push("## Posse", "");
     for (const h of c.horses) {
@@ -97,17 +100,31 @@ function body(c) {
     }
     out.push("");
   }
+}
 
-  const cents = (c.ledger ?? []).reduce((sum, e) => sum + (isNum(e?.amount) ? e.amount : 0), 0);
-  out.push("## Money and living", "");
-  out.push(`- **Cash in hand:** ${money(cents)}`);
-  out.push(`- **In the bank:** ${money(isNum(c.bank) ? c.bank : 0)}`, "");
+function addGear(c, out) {
+  const gear = (c.items ?? []).filter((i) => i.kind !== "weapon");
+  if (gear.length) {
+    out.push("## Gear", "");
+    for (const g of gear) {
+      const quantitySuffix = g.quantity > 1 ? " ×" + g.quantity : "";
+      out.push(`- ${oneLine(g.name)}${quantitySuffix}`);
+    }
+    out.push("");
+  }
+}
 
-  const earned = c.xp?.earned ?? 0;
-  const spent = c.xp?.spent ?? 0;
-  out.push("## Experience", "");
-  out.push(`- **XP:** ${earned} earned, ${spent} spent, ${earned - spent} unspent`, "");
-  return out.join("\n");
+function addWeapons(c, out) {
+  const weapons = (c.items ?? []).filter((i) => i.kind === "weapon");
+  if (weapons.length) {
+    out.push("## Weapons", "");
+    for (const w of weapons) {
+      const capacity = w.weapon?.capacity;
+      const capacitySuffix = isNum(capacity) && capacity > 0 ? "/" + capacity : "";
+      out.push(`- **${oneLine(w.name)}** · loaded ${w.weapon?.loaded ?? 0}${capacitySuffix}`);
+    }
+    out.push("");
+  }
 }
 
 /**

@@ -43,6 +43,11 @@ async function pickFile() {
 
 const isZip = (file) => /\.zip$/i.test(file.name) || file.type === "application/zip";
 
+/** The small "has a portrait" icon shown beside an archive entry. */
+function portraitIconHtml() {
+  return `<i class="fa-solid fa-image" title="${esc(S("HasPortrait"))}"></i>`;
+}
+
 /**
  * Choose what to import from an archive: characters and campaign NPCs.
  * @param {object[]} characters
@@ -54,9 +59,10 @@ async function pickFromArchive(characters, npcs) {
     .map((c, i) => {
       const errorText = c.parsed.ok ? "" : S(`Error.${c.parsed.error}`);
       const label = c.parsed.ok ? c.parsed.data.character.name || c.path : `${c.path} (${errorText})`;
+      const portraitIcon = c.portrait ? portraitIconHtml() : "";
       return `<label class="checkbox" style="display: block;">
         <input type="checkbox" name="pick" value="${i}" ${c.parsed.ok ? "checked" : "disabled"}> ${esc(label)}
-        ${c.portrait ? `<i class="fa-solid fa-image" title="${esc(S("HasPortrait"))}"></i>` : ""}
+        ${portraitIcon}
       </label>`;
     })
     .join("");
@@ -70,9 +76,10 @@ async function pickFromArchive(characters, npcs) {
         const statusKey = existing.isOwner ? "NpcExisting" : "NpcNotOwner";
         status = ` <em>${esc(S(statusKey))}</em>`;
       }
+      const portraitIcon = plan.portraitId ? portraitIconHtml() : "";
       return `<label class="checkbox" style="display: block;">
         <input type="checkbox" name="pickNpc" value="${i}" ${allowed ? "checked" : "disabled"}> ${esc(plan.name)}${status}
-        ${plan.portraitId ? `<i class="fa-solid fa-image" title="${esc(S("HasPortrait"))}"></i>` : ""}
+        ${portraitIcon}
       </label>`;
     })
     .join("");
