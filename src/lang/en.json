@@ -141,6 +141,7 @@
 		"General": {
 			"notes": "Notes",
 			"name": "name",
+			"total": "total",
 			"yes": "Yes",
 			"no": "No",
 			"faithPoints": "faith points",

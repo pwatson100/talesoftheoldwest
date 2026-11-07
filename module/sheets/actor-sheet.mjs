@@ -386,6 +386,10 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 
     context.allGear = allGear.toSorted((a, b) => (a.sort || 0) - (b.sort || 0));
     context.gear = gear.toSorted((a, b) => (a.sort || 0) - (b.sort || 0));
+    // Total of the weights shown in the carried gear list (stored items are excluded)
+    context.gearWeightTotal = Math.round(
+      gear.filter((i) => !i.system.stored).reduce((sum, i) => sum + (i.system.weight || 0), 0) * 100
+    ) / 100;
     context.weapon = weapon.toSorted((a, b) => (a.sort || 0) - (b.sort || 0));
     context.system.critInj = critInj.toSorted((a, b) => (a.sort || 0) - (b.sort || 0));
     context.talent = talent.toSorted((a, b) => (a.sort || 0) - (b.sort || 0));

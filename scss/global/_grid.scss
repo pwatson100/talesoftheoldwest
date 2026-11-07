@@ -269,6 +269,26 @@
   text-align: center;
 }
 
+// Gear list: same as .grid-talent-items with an extra weight column
+.grid-gear-items {
+  display: grid;
+  grid-template-areas:
+    "TCol1 TCol2 TCol5 TCol3 TCol4 "
+    "TCol11 TCol12 TCol15 TCol13 TCol14 ";
+  padding-bottom: 2px;
+  //                      l1   l2    weight l3  l4
+  grid-template-columns: 28px 167px 70px 5px 88px;
+  align-items: center;
+}
+.TCol5 {
+  grid-area: TCol5;
+  text-align: center;
+}
+.TCol15 {
+  grid-area: TCol15;
+  text-align: center;
+}
+
 .grid-talent-quality {
   display: grid;
   grid-template-areas:
@@ -851,6 +871,9 @@
   overflow-x: auto;
   .grid-talent-items {
     grid-template-columns: 28px 1fr 5px 88px;
+  }
+  .grid-gear-items {
+    grid-template-columns: 28px 1fr 70px 5px 88px;
   }
 }
 
