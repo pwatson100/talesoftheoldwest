@@ -117,10 +117,23 @@ test("Bluey: Quality Bow is a weapon", () => {
   assert.ok(!plan.gear.some((g) => g.name === "Quality Bow"));
 });
 
-test("Bluey: compadre warned, not imported", () => {
+test("Bluey: the blank compadre is imported as \"Compadre\" with a warning", () => {
   const { plan } = run("bluey");
-  assert.deepEqual(plan.compadres, []);
-  assert.equal(codes(plan).filter((c) => c === "unsupported-compadre").length, 1);
+  assert.equal(plan.compadres.length, 1);
+  assert.equal(plan.compadres[0].name, "Compadre");
+  assert.equal(plan.compadres[0].actorData.type, "npc");
+  assert.equal(codes(plan).filter((c) => c === "compadre-unnamed").length, 1);
+  assert.ok(!codes(plan).includes("unsupported-compadre"));
+});
+
+test("pardner kinds compadre and npc are understood; an unknown kind still warns", () => {
+  const { character, campaign } = loadFixture("bluey");
+  for (const kind of ["compadre", "npc", "pc"]) {
+    character.pardner = { kind, id: "x", name: "Somebody" };
+    assert.ok(!codes(toFoundry(character, campaign, {})).includes("unsupported-pardner"), kind);
+  }
+  character.pardner = { kind: "alien", id: "x", name: "Somebody" };
+  assert.ok(codes(toFoundry(character, campaign, {})).includes("unsupported-pardner"));
 });
 
 test("Bluey: biography is escaped HTML", () => {

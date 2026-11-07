@@ -71,8 +71,8 @@ test("fails with missing-campaign", () => {
   assert.equal(result.error, "missing-campaign");
 });
 
-test("fails with unsupported-version for formatVersion 5", () => {
-  const result = parseSaddlebagMarkdown(marker(JSON.stringify(envelope({ formatVersion: 5 }))));
+test("fails with unsupported-version for formatVersion 6", () => {
+  const result = parseSaddlebagMarkdown(marker(JSON.stringify(envelope({ formatVersion: 6 }))));
   assert.equal(result.ok, false);
   assert.equal(result.error, "unsupported-version");
 });
@@ -114,7 +114,7 @@ test("parseCampaignJson rejects bad input", () => {
   assert.equal(parseCampaignJson("nope").error, "bad-json");
   assert.equal(parseCampaignJson(JSON.stringify({ app: "x", formatVersion: 1 })).error, "wrong-app");
   assert.equal(
-    parseCampaignJson(JSON.stringify({ app: "saddlebag", formatVersion: 5, kind: "campaign", campaign: {} })).error,
+    parseCampaignJson(JSON.stringify({ app: "saddlebag", formatVersion: 6, kind: "campaign", campaign: {} })).error,
     "unsupported-version",
   );
   assert.equal(

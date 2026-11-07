@@ -8,7 +8,8 @@
 //   flag: null | { id, formatVersion, importedAt, character, campaign },
 //   exportIds: null | { characterId, campaignId },   // ids minted by an earlier export of a native PC
 //   statuses: string[],                        // active status ids
-//   items: [{ type, name, flagId|null, system: { quantity, weight, ammo, ammoMax, stored,
+//   legacyCharacterId: string|null,          // `flags.saddlebag.id` written by Saddlebag's own Foundry export
+//   items: [{ type, name, flagId|null, legacy: null | {ref, kind, id|null, rank, book}, system: { quantity, weight, ammo, ammoMax, stored,
 //                                                 basicisActive, advisActive,
 //                                                 // weapons only:
 //                                                 subtype, range, damage, crit, attackbonus, bonusdraw,
@@ -23,6 +24,7 @@ import {
   CONDITION_IDS,
   abilityKeyToSaddlebag,
   weaponBookEntry,
+  weaponBookEntryById,
   weaponQualityId,
 } from "./catalog.mjs";
 
@@ -82,6 +84,19 @@ function customGear({ name, quantity, weight, stored }, uuid) {
   };
 }
 
+/** Gear or ammo that Saddlebag's own Foundry export wrote: its Saddlebag id and book id are kept. */
+function legacyGear(item, uuid) {
+  const { ref, kind, id, book } = item.legacy;
+  return {
+    ...customGear({ name: item.name, quantity: item.system?.quantity, weight: item.system?.weight, stored: item.system?.stored }, () => id ?? uuid()),
+    bookId: book ? ref : null,
+    custom: !book,
+    kind: kind === "ammo" ? "ammo" : "gear",
+    // Saddlebag's own export drops the quiver's contents; a book quiver is rebuilt empty.
+    quiver: book && ref === "quiver" ? { capacity: 20, loaded: 0 } : null,
+  };
+}
+
 const WEAPON_RANGES = { armslength: "arms-length" };
 const handsFor = (kind) => {
   if (kind === "unarmed") return 0;
@@ -107,7 +122,7 @@ function inferWeaponAction(kind) {
 /** The Saddlebag weapon item for a Foundry weapon. Numbers come from the Foundry item; the book entry gives identity and structure. */
 function weaponItem(item, ctx) {
   const sys = item.system ?? {};
-  const entry = weaponBookEntry(item.name);
+  const entry = (item.legacy?.book && weaponBookEntryById(item.legacy.ref)) || weaponBookEntry(item.name);
   const num = (v) => (isNum(v) ? v : 0);
 
   let kind;
@@ -132,12 +147,13 @@ function weaponItem(item, ctx) {
     processWeaponQuality(q, kind, ctx, item, builtIn);
   }
 
-  const capacity = Math.max(0, Math.round(num(sys.ammoMax)));
+  // Saddlebag's own export writes the capacity into `ammo` and leaves `ammoMax` at 0.
+  const capacity = Math.max(0, Math.round(num(sys.ammoMax) || (item.legacy ? num(sys.ammo) : 0)));
   const ammoType = capacity > 0 ? (ammoTypes[0] ?? null) : null;
   const loaded = Math.max(0, Math.round(num(sys.ammo)));
   const stored = Boolean(sys.stored);
   return {
-    id: ctx.uuid(),
+    id: item.legacy?.id ?? ctx.uuid(),
     bookId: entry ? entry.bookId : null,
     custom: !entry,
     kind: "weapon",
@@ -187,6 +203,12 @@ function customTalent(item) {
 
 const talentRank = (item) => (item.system?.advisActive ? "advanced" : "basic");
 
+/** A talent that Saddlebag's own Foundry export wrote: a book talent keeps its id, any other stays custom. */
+const legacyTalent = (item) =>
+  item.legacy.book
+    ? { talentId: item.legacy.ref, name: item.name, rank: talentRank(item), custom: false, notes: "" }
+    : customTalent(item);
+
 /** Injuries, items and talents are shared by both branches; each takes the stored lists (or empty ones). */
 function mergeInjuries(stored, snap, ctx) {
   const crits = snap.items.filter((i) => i.type === "crit");
@@ -234,7 +256,7 @@ function mergeTalents(stored, snap) {
   for (const item of snap.items) {
     if (item.type !== "talent") continue;
     if (item.flagId && storedKeys.has(item.flagId)) continue;
-    out.push(customTalent(item));
+    out.push(item.legacy ? legacyTalent(item) : customTalent(item));
   }
   return out;
 }
@@ -256,6 +278,10 @@ function mergeItems(stored, snap, ctx) {
     if (item.flagId && storedIds.has(item.flagId)) continue;
     if (item.type === "weapon") {
       out.push(weaponItem(item, ctx));
+      continue;
+    }
+    if (item.legacy) {
+      out.push(legacyGear(item, ctx.uuid));
       continue;
     }
     out.push(customGear({ name: item.name, quantity: item.system?.quantity, weight: item.system?.weight, stored: item.system?.stored }, ctx.uuid));
@@ -528,9 +554,10 @@ export function fromFoundry(snapshot, options = {}) {
     overlayCharacter(character, snap, ctx);
   } else {
     // Reuse the ids from the first export so Saddlebag recognises a later export as the same character.
+    // A PC made by Saddlebag's own Foundry export has no stored ids; its `flags.saddlebag.id` is the character id.
     const ids = snap.exportIds;
     campaign = unassignedCampaign(ids?.campaignId || ctx.uuid());
-    character = buildFreshCharacter(snap, campaign.id, ids?.characterId || ctx.uuid(), ctx);
+    character = buildFreshCharacter(snap, campaign.id, ids?.characterId || snap.legacyCharacterId || ctx.uuid(), ctx);
     ctx.warn("exported-as-unassigned", "This character did not come from Saddlebag; it is exported as Unassigned.");
   }
 

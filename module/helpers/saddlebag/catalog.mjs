@@ -27,6 +27,16 @@ export const ABILITY_ATTRIBUTE = Object.freeze(
   Object.fromEntries(Object.entries(TALESOFTHEOLDWEST.abilities).map(([key, { atob }]) => [key, atob]))
 );
 
+/** Saddlebag compadre `categoryId` -> category name. Ids and names only; no rules text. */
+export const COMPADRE_CATEGORIES = Object.freeze({
+  "cowboy-rancher-frontiersman": "Cowboy, Rancher or Frontiersman",
+  "engineer": "Engineer",
+  "laborer-farm-worker": "Laborer or Farm Worker",
+  "grifter-outlaw-lawman": "Grifter, Outlaw or Lawman",
+  "gentlefolk-professional": "Gentlefolk or Professional",
+  "trader": "Trader",
+});
+
 /** Conditions shared by Saddlebag and Foundry status ids. */
 export const CONDITION_IDS = Object.freeze(["starving", "dehydrated", "exhausted", "freezing", "heatstroke"]);
 
@@ -150,4 +160,26 @@ export function breedKeyFromSlug(slug) {
 export function legacySaddlebagId(flags) {
   const id = flags?.saddlebag?.id;
   return typeof id === "string" && id ? id : null;
+}
+
+/**
+ * What Saddlebag's own "export for Foundry" zip wrote on an item as `flags.saddlebag`:
+ * `{ref, kind, id?, rank?}`. `ref` is the book id, or the item's name when Saddlebag had no book entry;
+ * `system.reference` is empty for those, so it decides `book`. Returns null when the item is not tagged.
+ */
+export function legacyItemTag(flags, reference) {
+  const tag = flags?.saddlebag;
+  if (!tag || typeof tag.ref !== "string" || !tag.ref) return null;
+  return {
+    ref: tag.ref,
+    kind: typeof tag.kind === "string" ? tag.kind : null,
+    id: typeof tag.id === "string" && tag.id ? tag.id : null,
+    rank: tag.rank === "advanced" ? "advanced" : "basic",
+    book: typeof reference === "string" && reference !== "",
+  };
+}
+
+/** The Saddlebag weapon book entry with this book id, or null. */
+export function weaponBookEntryById(bookId) {
+  return WEAPON_BOOK.find((e) => e.bookId === bookId) ?? null;
 }

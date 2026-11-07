@@ -171,3 +171,13 @@ test("readSaddlebagZip reports an unreadable campaign.json instead of hiding it"
   assert.equal(result.campaignError, "bad-json");
   assert.equal(result.characters[0].parsed.ok, true);
 });
+
+test("readSaddlebagZip exposes portraits that no character uses (campaign NPC portraits)", async () => {
+  const { portraits, characters } = await readSaddlebagZip(
+    storedZip({ "characters/mr-green.md": v4Character, "portraits/npc-1.jpg": "x", "portraits/npc-2.PNG": "y", "portraits/readme.txt": "z" }),
+  );
+  assert.deepEqual([...portraits.keys()].sort(), ["npc-1", "npc-2"]);
+  assert.deepEqual(portraits.get("npc-1"), { entry: "portraits/npc-1.jpg", mime: "image/jpeg", filename: "npc-1.jpg" });
+  assert.equal(portraits.get("npc-2").mime, "image/png");
+  assert.equal(characters[0].portrait, null);
+});

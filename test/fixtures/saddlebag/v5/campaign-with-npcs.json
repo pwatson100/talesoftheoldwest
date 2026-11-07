@@ -1,0 +1,107 @@
+{
+ "app": "saddlebag",
+ "kind": "campaign",
+ "formatVersion": 5,
+ "exportedAt": "2026-11-07T14:00:21.264Z",
+ "campaign": {
+  "formatVersion": 5,
+  "id": "98c70d0d-5796-4a91-80f1-b11266a18dbd",
+  "kind": "campaign",
+  "name": "Great Western",
+  "notes": "",
+  "eraId": "1873-rulebook",
+  "season": {
+   "season": "spring",
+   "year": 1873
+  },
+  "settings": {
+   "holsterLimits": true,
+   "bulkRule": true,
+   "compadreLoadLimits": true,
+   "animalCompadres": true,
+   "drifterMode": false
+  },
+  "lodgings": [
+   {
+    "id": "on-the-trail",
+    "builtIn": "trail",
+    "type": "Trail",
+    "tier": "very-poor",
+    "name": "On the trail",
+    "location": "",
+    "nightly": 0,
+    "weekly": null,
+    "mealsIncluded": false
+   },
+   {
+    "id": "guest-of-someone",
+    "builtIn": "guest",
+    "type": "Guest",
+    "tier": null,
+    "name": "Guest of someone",
+    "location": "",
+    "nightly": 0,
+    "weekly": null,
+    "mealsIncluded": false
+   }
+  ],
+  "createdAt": "2026-11-04T11:52:40.875Z",
+  "updatedAt": "2026-11-07T13:59:34.111Z",
+  "npcs": [
+   {
+    "id": "8aa47bd8-9732-45f8-9a2c-79b7e770c4e1",
+    "name": "Joseph Pike",
+    "gender": "male",
+    "genderNote": "",
+    "about": "",
+    "description": "",
+    "portraitId": "cd53032b-04a3-46f2-9af5-9a150950a7fb",
+    "portraitFace": {
+     "x": 0.28589638157894737,
+     "y": 0.014790296052631574,
+     "size": 0.5
+    },
+    "portraitPrompt": {
+     "outfit": "",
+     "hair": "",
+     "hairstyle": "",
+     "haircut": "",
+     "facialHair": "",
+     "expression": "",
+     "pose": "",
+     "background": "",
+     "tack": "",
+     "prompt": null,
+     "negative": null
+    },
+    "createdAt": "2026-11-06T20:59:39.864Z",
+    "notes": ""
+   },
+   {
+    "id": "6ffef01a-f120-4ff0-9bf0-f83e49d07e81",
+    "name": "Prescott Delaney",
+    "gender": null,
+    "genderNote": "",
+    "about": "Sherrif",
+    "description": "Tall",
+    "portraitId": null,
+    "portraitFace": null,
+    "portraitPrompt": {
+     "outfit": "",
+     "hair": "",
+     "hairstyle": "",
+     "haircut": "",
+     "facialHair": "",
+     "expression": "",
+     "pose": "",
+     "background": "",
+     "tack": "",
+     "prompt": null,
+     "negative": null
+    },
+    "createdAt": "2026-11-06T21:00:04.076Z",
+    "notes": ""
+   }
+  ]
+ }
+}

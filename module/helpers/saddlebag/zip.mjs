@@ -122,6 +122,7 @@ export function openZip(buffer) {
  * A character that fails to parse is listed with its error instead of failing the whole archive.
  * @param {ArrayBuffer|Uint8Array} buffer
  * @returns {Promise<{
+ *   portraits: Map<string, {entry: string, mime: string, filename: string}>,   // every portrait, including NPC ones
  *   campaign: object|null,
  *   campaignError: string|null,   // parse error code when campaign.json was present but unusable
  *   characters: {path: string, parsed: object, portrait: {entry: string, mime: string, filename: string}|null}[],
@@ -156,5 +157,5 @@ export async function readSaddlebagZip(buffer) {
   characters.sort((a, b) => a.path.localeCompare(b.path));
 
   if (!characters.length) throw new ZipError("no-characters");
-  return { campaign, campaignError, characters, zip };
+  return { campaign, campaignError, characters, portraits, zip };
 }

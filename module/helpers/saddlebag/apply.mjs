@@ -3,10 +3,11 @@
 
 import { CRIT_MODIFIERS } from "../../documents/actor.mjs";
 import { logger } from "../logger.mjs";
-import { ANIMAL_ABILITY_KEYS, CONDITION_IDS, BREED_KEYS, legacySaddlebagId, normaliseName } from "./catalog.mjs";
+import { ANIMAL_ABILITY_KEYS, CONDITION_IDS, BREED_KEYS, legacyItemTag, legacySaddlebagId, normaliseName } from "./catalog.mjs";
 import { parseCritResult } from "./crit.mjs";
 import { fromFoundry } from "./fromFoundry.mjs";
 import { renderSaddlebagMarkdown } from "./markdown.mjs";
+import { MAX_COMPADRES, remapCompadreIds } from "./compadre.mjs";
 import { matchHorse } from "../../applications/apps/saddlebag-match-dialog.mjs";
 
 const NS = "talesoftheoldwest";
@@ -59,6 +60,35 @@ export function findExistingBySaddlebagId(id) {
   return (
     game.actors.find(
       (a) => a.type === "pc" && (a.getFlag(NS, "saddlebag")?.id === id || legacySaddlebagId(a.flags) === id),
+    ) ?? null
+  );
+}
+
+/**
+ * The NPC actor already linked to this Saddlebag campaign NPC id, or null.
+ * Compadres from Saddlebag's own export carry `flags.saddlebag` and are a different thing, so they never match.
+ */
+export function findExistingNpc(id) {
+  if (!id) return null;
+  return game.actors.find((a) => a.type === "npc" && a.getFlag(NS, "saddlebagNpc")?.id === id) ?? null;
+}
+
+/**
+ * The Saddlebag compadre id on an actor: ours (`saddlebagCompadre`) or from Saddlebag's own export (`flags.saddlebag.id`).
+ */
+const compadreSaddlebagId = (actor) => actor.getFlag(NS, "saddlebagCompadre")?.id ?? legacySaddlebagId(actor.flags);
+
+/**
+ * The compadre actor already linked to this Saddlebag compadre id, or null. Also recognises compadres created by
+ * Saddlebag's own Foundry export. Campaign NPC ids are different ids, so this cannot match them.
+ * @param {string} id
+ * @param {"npc"|"animal"} [type]  When given, the actor must also be of this type.
+ */
+export function findExistingCompadre(id, type) {
+  if (!id) return null;
+  return (
+    game.actors.find(
+      (a) => (type ? a.type === type : a.type === "npc" || a.type === "animal") && compadreSaddlebagId(a) === id,
     ) ?? null
   );
 }
@@ -480,12 +510,10 @@ function statDiffWarning(horse, actor) {
  * Returns warnings generated during horse handling.
  */
 async function importHorses(pc, plan, warnings, { replacing }) {
-  if (!plan.horses.length) return;
+  // On Replace: unlink horses that are no longer in the file, even when the file now has none.
+  if (replacing) await cleanupRemuda(plan, pc);
 
-  // On Replace: unlink horses that are no longer in the file.
-  if (replacing) {
-    cleanupRemuda(plan, pc);
-  }
+  if (!plan.horses.length) return;
 
   let mountedActorId = null;
 
@@ -528,21 +556,144 @@ function linkExistingHorse(existingActor, horse, warnings) {
   return existingActor;
 }
 
-function cleanupRemuda(plan, pc) {
+async function cleanupRemuda(plan, pc) {
   const fileIds = new Set(plan.horses.map((h) => h.saddlebagId).filter(Boolean));
-  const remuda = pc.system.remuda?.details ?? [];
-  for (const entry of remuda) {
-    const horseActor = game.actors.get(entry.id);
-    if (!horseActor) continue;
+  const before = (pc.system.remuda?.details ?? []).map((e) => e.id);
+  const kept = before.filter((id) => {
+    const horseActor = game.actors.get(id);
+    if (!horseActor) return true;
     const horseFlag = horseActor.getFlag(NS, "saddlebagHorseId") ?? legacySaddlebagId(horseActor.flags);
     // Only unlink if the actor came from Saddlebag and its id is no longer in the file.
-    if (horseFlag && !fileIds.has(horseFlag)) {
-      pc.removeRemuda(entry.id);
+    return !(horseFlag && !fileIds.has(horseFlag));
+  });
+  if (kept.length === before.length) return;
+  // One write: `removeRemuda` only changes the in-memory list.
+  const updates = {
+    "system.remuda.details": kept.map((id) => ({ id })),
+    "system.remuda.remudaQty": kept.length,
+  };
+  if (!kept.includes(pc.system.remuda.remudaMounted)) updates["system.remuda.remudaMounted"] = "false";
+  await pc.update(updates);
+}
+
+/* -------------------------------------------- */
+/*  Compadres                                   */
+/* -------------------------------------------- */
+
+const isSaddlebagItem = (i) => i.getFlag(NS, "saddlebagItemId") !== undefined || Boolean(i.flags?.saddlebag);
+
+/** Talents (humans) or animal qualities (animals) as item data. Warnings are pushed onto `warnings`. */
+async function buildCompadreItems(c, warnings) {
+  if (c.kind === "animal") {
+    const cache = new Map();
+    const found = await Promise.all(c.qualityNames.map((q) => resolveAnimalQuality(q, cache)));
+    return found.flatMap((data, i) => {
+      if (data) {
+        // Copy before tagging: the lookup cache hands out shared objects. The tag lets Replace find these again.
+        const copy = foundry.utils.deepClone(data);
+        tag(copy, `quality:${c.qualityNames[i]}`);
+        return [copy];
+      }
+      warnings.push({
+        code: "unmatched-quality",
+        message: `Animal quality "${c.qualityNames[i]}" for compadre "${c.name}" was not found in any Item pack; skipped.`,
+      });
+      return [];
+    });
+  }
+  const built = await buildItems({ talents: c.talents, weapons: [], gear: [] });
+  for (const w of built.warnings) warnings.push({ ...w, message: `${c.name}: ${w.message}` });
+  return built.items;
+}
+
+async function createCompadre(c, warnings) {
+  const data = foundry.utils.deepClone(c.actorData);
+  data.flags = { [NS]: { saddlebagCompadre: foundry.utils.deepClone(c.flag) } };
+  if (c.img) data.img = c.img;
+  const actor = await Actor.create(data, { renderSheet: false });
+  try {
+    // The NPC data model forces a hostile, unlinked token after creation; a compadre travels with the PC.
+    if (c.kind === "human") {
+      await actor.update({
+        "prototypeToken.actorLink": true,
+        "prototypeToken.disposition": CONST.TOKEN_DISPOSITIONS.FRIENDLY,
+      });
     }
+    const items = await buildCompadreItems(c, warnings);
+    if (items.length) await actor.createEmbeddedDocuments("Item", items);
+  } catch (err) {
+    await actor.delete();
+    throw err;
+  }
+  return actor;
+}
+
+/** Overwrite name, picture, stats, biography and Saddlebag-tagged items. Token, owner, folder and hand-added items are untouched. */
+async function updateCompadre(actor, c, warnings) {
+  const { name, system } = c.actorData;
+  await actor.update({ name, system, ...(c.img && { img: c.img }) });
+  await actor.unsetFlag(NS, "saddlebagCompadre");
+  await actor.setFlag(NS, "saddlebagCompadre", foundry.utils.deepClone(c.flag));
+  const stale = actor.items.filter(isSaddlebagItem).map((i) => i.id);
+  if (stale.length) await actor.deleteEmbeddedDocuments("Item", stale);
+  const items = await buildCompadreItems(c, warnings);
+  if (items.length) await actor.createEmbeddedDocuments("Item", items);
+}
+
+/**
+ * Create or update the compadre actors and link them into the PC's Compadres tab (at most three).
+ * Compadres are done one at a time on purpose, as for horses. A failure becomes a warning and never fails the PC import.
+ * An "Import as copy" arrives with fresh compadre ids, so it never matches the originals.
+ * On Replace, links to Saddlebag compadres no longer in the file (and links to deleted actors) are dropped; hand-added links stay.
+ */
+async function importCompadres(pc, compadres, warnings, { replacing }) {
+  if (!compadres.length && !replacing) return;
+  const before = (pc.system.compadres?.details ?? []).map((e) => e.id);
+  const fileIds = new Set(compadres.map((c) => c.saddlebagId));
+  const links = replacing
+    ? before.filter((id) => {
+        const actor = game.actors.get(id);
+        if (!actor) return false;
+        const sid = compadreSaddlebagId(actor);
+        return !sid || fileIds.has(sid);
+      })
+    : [...before];
+
+  for (const c of compadres) {
+    try {
+      const type = c.actorData.type;
+      const existing = findExistingCompadre(c.saddlebagId, type);
+      if (!(existing && links.includes(existing.id)) && links.length >= MAX_COMPADRES) {
+        warnings.push({ code: "compadre-limit", message: `"${c.name}" was not imported: the PC already has ${MAX_COMPADRES} compadres.` });
+        continue;
+      }
+      let actor = existing;
+      if (existing) {
+        if (existing.isOwner) await updateCompadre(existing, c, warnings); // NOSONAR - sequential by design
+        else warnings.push({ code: "compadre-not-owner", message: `"${c.name}" was not updated: you do not own that actor.` });
+      } else if (game.user.can("ACTOR_CREATE")) {
+        actor = await createCompadre(c, warnings); // NOSONAR - sequential by design
+      } else {
+        warnings.push({ code: "compadre-no-permission", message: `"${c.name}" was not created: you may not create actors.` });
+        continue;
+      }
+      if (!links.includes(actor.id)) links.push(actor.id);
+    } catch (err) {
+      logger.warning(false, "Saddlebag compadre import failed", err);
+      warnings.push({ code: "compadre-failed", message: `"${c.name}" could not be imported: ${err.message}` });
+    }
+  }
+
+  // One write, so the list and the count cannot drift. `removeCompadres` only changes the in-memory list.
+  if (links.length !== before.length || links.some((id, i) => id !== before[i])) {
+    await pc.update({
+      "system.compadres.details": links.map((id) => ({ id })),
+      "system.compadres.compadresQty": links.length,
+    });
   }
 }
 
-async function populate(actor, plan, items, warnings, { replacing }) {
+async function populate(actor, plan, items, warnings, { replacing, compadres = [] }) {
   if (items.length) await actor.createEmbeddedDocuments("Item", items);
   await createCrits(actor, plan, warnings);
 
@@ -557,6 +708,7 @@ async function populate(actor, plan, items, warnings, { replacing }) {
   else if (replacing) await actor.toggleStatusEffect("broken", { active: false });
 
   await importHorses(actor, plan, warnings, { replacing });
+  await importCompadres(actor, compadres, warnings, { replacing });
 }
 
 /**
@@ -591,9 +743,10 @@ export async function uploadPortrait(zip, portrait) {
  * @param {Actor|null} [options.replace]  Existing actor to update in place.
  * @param {boolean} [options.asCopy]      Create a new actor with a fresh Saddlebag id.
  * @param {string|null} [options.img]     Portrait path to set as the actor image.
+ * @param {Object<string,string>} [options.compadreImgs]  Uploaded portrait paths, by Saddlebag compadre id.
  * @returns {Promise<{actor: Actor, warnings: object[]}>}
  */
-export async function importCharacter(plan, { replace = null, asCopy = false, img = null } = {}) {
+export async function importCharacter(plan, { replace = null, asCopy = false, img = null, compadreImgs = {} } = {}) {
   if (replace && asCopy) throw new Error("replace and asCopy are mutually exclusive");
   if (replace ? !replace.isOwner : !game.user.can("ACTOR_CREATE")) {
     throw new SaddlebagImportError(replace ? "not-owner" : "no-permission");
@@ -611,6 +764,17 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
     flag.character.id = flag.id;
   }
 
+  // Compadres: take the portrait for each, and for a copy give them their own ids so the copy never shares actors with the original.
+  let compadres = plan.compadres.map((c) => ({ ...foundry.utils.deepClone(c), img: compadreImgs[c.saddlebagId] ?? null }));
+  if (asCopy) {
+    const idMap = new Map(compadres.map((c) => [c.saddlebagId, crypto.randomUUID()]));
+    flag.character = remapCompadreIds(flag.character, idMap);
+    compadres = compadres.map((c) => {
+      const id = idMap.get(c.saddlebagId);
+      return { ...c, saddlebagId: id, flag: { ...c.flag, id, characterId: flag.id, compadre: { ...c.flag.compadre, id } } };
+    });
+  }
+
   if (replace) {
     const { name, system } = plan.actorData;
     await replace.update({ name, system, ...(img && { img }) });
@@ -621,7 +785,7 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
       .filter((i) => i.getFlag(NS, "saddlebagItemId") !== undefined || i.flags?.saddlebag)
       .map((i) => i.id);
     if (stale.length) await replace.deleteEmbeddedDocuments("Item", stale);
-    await populate(replace, plan, items, warnings, { replacing: true });
+    await populate(replace, plan, items, warnings, { replacing: true, compadres });
     return { actor: replace, warnings };
   }
 
@@ -630,7 +794,7 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
   if (img) actorData.img = img;
   const actor = await Actor.create(actorData, { renderSheet: false });
   try {
-    await populate(actor, plan, items, warnings, { replacing: false });
+    await populate(actor, plan, items, warnings, { replacing: false, compadres });
   } catch (err) {
     // Creation is not transactional: remove the half-built actor.
     logger.warning(false, "Saddlebag import failed; removing the partial actor", err);
@@ -638,6 +802,36 @@ export async function importCharacter(plan, { replace = null, asCopy = false, im
     throw err;
   }
   return { actor, warnings };
+}
+
+/**
+ * Create or update a campaign NPC actor from an import plan (the output of `toFoundryNpcs`).
+ * Replace overwrites only the name, biography, picture and flag. Stats, token, ownership and folder are never touched.
+ * @param {object} plan
+ * @param {object} [options]
+ * @param {Actor|null} [options.replace]  Existing actor to update in place.
+ * @param {string|null} [options.img]     Portrait path to set as the actor image.
+ * @returns {Promise<{actor: Actor, warnings: object[]}>}
+ */
+export async function importNpc(plan, { replace = null, img = null } = {}) {
+  if (replace ? !replace.isOwner : !game.user.can("ACTOR_CREATE")) {
+    throw new SaddlebagImportError(replace ? "not-owner" : "no-permission");
+  }
+  const flag = foundry.utils.deepClone(plan.flag);
+  const warnings = [...plan.warnings];
+
+  if (replace) {
+    const { name, system } = plan.actorData;
+    await replace.update({ name, "system.biography": system.biography, ...(img && { img }) });
+    await replace.unsetFlag(NS, "saddlebagNpc");
+    await replace.setFlag(NS, "saddlebagNpc", flag);
+    return { actor: replace, warnings };
+  }
+
+  const actorData = foundry.utils.deepClone(plan.actorData);
+  actorData.flags = { [NS]: { saddlebagNpc: flag } };
+  if (img) actorData.img = img;
+  return { actor: await Actor.create(actorData, { renderSheet: false }), warnings };
 }
 
 /* -------------------------------------------- */
@@ -651,6 +845,7 @@ export function snapshotActor(actor) {
     type: i.type,
     name: i.name,
     flagId: i.getFlag(NS, "saddlebagItemId") ?? null,
+    legacy: legacyItemTag(i.flags, i.system.reference),
     system: {
       quantity: i.system.quantity,
       weight: i.system.weight,
@@ -687,6 +882,7 @@ export function snapshotActor(actor) {
     system: data.system,
     flag: foundry.utils.deepClone(actor.getFlag(NS, "saddlebag") ?? null),
     exportIds: foundry.utils.deepClone(actor.getFlag(NS, "saddlebagExport") ?? null),
+    legacyCharacterId: legacySaddlebagId(actor.flags),
     statuses: [...actor.statuses],
     items,
     horses,

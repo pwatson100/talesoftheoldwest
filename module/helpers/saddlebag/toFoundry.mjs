@@ -13,37 +13,12 @@ import {
   breedKeyFromSlug,
   normaliseName,
 } from "./catalog.mjs";
+import { toFoundryCompadres } from "./compadre.mjs";
+import { paragraphs, setTalents, titleCase } from "./shared.mjs";
 
 const MAX_HORSES = 3;
 const isObject = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
 const isNum = (v) => typeof v === "number" && Number.isFinite(v);
-
-const escapeHtml = (s) =>
-  String(s)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll("\"", "&quot;")
-    .replaceAll("'", "&#39;");
-
-/** Plain text -> `<p>` paragraphs (blank-line separated; single newlines become `<br>`). */
-function paragraphs(text) {
-  return String(text ?? "")
-    .replaceAll("\r\n", "\n")
-    .split(/\n\s*\n/)
-    .map((p) => p.trim())
-    .filter(Boolean)
-    .map((p) => `<p>${escapeHtml(p).replaceAll("\n", "<br>")}</p>`)
-    .join("");
-}
-
-/** `easy-to-ride` -> `Easy To Ride`. */
-const titleCase = (slug) =>
-  String(slug)
-    .split("-")
-    .filter(Boolean)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
 
 /** A valid d66 result: two digits, each 1-6. */
 const isD66 = (n) => Number.isInteger(n) && /^[1-6][1-6]$/.test(String(n));
@@ -80,11 +55,11 @@ export function toFoundry(character, campaign, options = {}) {
   // Horses
   const horses = setHorses(c, warn);
 
+  // Compadres
+  const { compadres, warnings: compadreWarnings } = toFoundryCompadres(c, options);
+  warnings.push(...compadreWarnings);
+
   // Things that are kept only in the flag
-  (c.compadres ?? []).forEach((comp, i) => {
-    const compadreLabel = comp?.name || `#${i + 1}`;
-    warn("unsupported-compadre", `Compadre "${compadreLabel}" is not imported; its shape is not yet supported.`, `compadres.${i}`);
-  });
   if (c.advancement?.length) warn("advancement-not-imported", "Advancement entries are kept in the flag only.", "advancement");
   if (c.relationships?.length) warn("relationships-not-imported", "Relationships are kept in the flag only.", "relationships");
   if (c.portraitId) warn("portrait-not-imported", "The portrait is not part of a standalone .md file.", "portraitId");
@@ -122,7 +97,7 @@ export function toFoundry(character, campaign, options = {}) {
     weapons,
     gear,
     horses,
-    compadres: [],
+    compadres,
     biographyHtml,
     flag: {
       id: c.id ?? null,
@@ -207,21 +182,6 @@ function setItems(c, warn) {
   return { weapons, gear };
 }
 
-function setTalents(c) {
-  return (c.talents ?? []).map((t) => {
-    const custom = Boolean(t.custom) || !t.talentId;
-    const slug = custom ? "" : String(t.talentId);
-    return {
-      slug,
-      reference: slug.replaceAll("-", ""),
-      name: t.name ?? "",
-      rank: t.rank === "advanced" ? "advanced" : "basic",
-      custom,
-      notes: t.notes ?? "",
-    };
-  });
-}
-
 function setInjuries(c, warn) {
   const injuries = [];
   for (const inj of c.injuries ?? []) {
@@ -249,7 +209,7 @@ function setPardner(c, warn) {
   const pardner = c.pardner;
   if (isObject(pardner) && pardner.kind && pardner.kind !== "none") {
     yourpardner = typeof pardner.name === "string" ? pardner.name : "";
-    if (pardner.kind !== "pc") {
+    if (!["pc", "compadre", "npc"].includes(pardner.kind)) {
       warn("unsupported-pardner", `Pardner kind "${pardner.kind}" has not been seen before; used its name only.`, "pardner");
     }
   }
