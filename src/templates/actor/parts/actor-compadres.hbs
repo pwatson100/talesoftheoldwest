@@ -5,7 +5,7 @@
 				<div class='sheet-compadres-header'  >
 					<div class='schA1'>{{actor.name}}</div>
 					<a class='button schA2' data-action='compadresView'
-									data-item-id='{{item._id}}' data-tooltip='{{localize "DOCUMENT.Update" type='NPC'}}'  data-action='viewDoc' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
+									data-item-id='{{item._id}}' data-tooltip='{{localize "DOCUMENT.Update" type=(localize (totowConcat 'TYPES.Actor.' actor.type))}}'  data-action='viewDoc' data-compId='{{id}}'> <i class='fas fa-edit'></i> </a>
 					<a class='button schA3' data-action='compadresRemove'
 									data-item-id='{{item._id}}' data-tooltip='{{localize "TALESOFTHEOLDWEST.General.remove"}}' data-compId='{{id}}'><i class='fas fa-trash'></i></a>
 				</div>
@@ -49,6 +49,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.cunning.max' value='{{actor.system.attributes.cunning.max}}' data-dtype='Number' type='number'  disabled/>
 					</div>
+					{{#unless (eq actor.type 'animal')}}
 					<div class='scaA4 main-attributes'>
 						<label
 							for='actor.system.attributes.docity'
@@ -62,6 +63,7 @@
 						<span style='font-weight: bolder; font-size: x-large'>/</span>
 						<input class='statnum' name='actor.system.attributes.docity.max' value='{{actor.system.attributes.docity.max}}' data-dtype='Number' type='number'  disabled/>
 					</div>
+					{{/unless}}
 					<div class='scaH1	heading'>
 						<label for='actor.system.attributes.grit.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.grit.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.grit.type')}}</em></label>
@@ -104,6 +106,7 @@
 						{{/times}}
 						{{#times actor.system.damage.vexes.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
+					{{#unless (eq actor.type 'animal')}}
 					<div class='scaD1 heading'>
 						<label for='actor.system.attributes.docity.type' class='resource-label' data-label='{{localize "TALESOFTHEOLDWEST.Attributes.docity.type"}}'><em
 							>{{capitalise (localize 'TALESOFTHEOLDWEST.Attributes.docity.type')}}</em></label>
@@ -118,12 +121,19 @@
 						{{/times}}
 						{{#times actor.system.damage.doubts.max}}<a class='far fa-circle'></a>{{/times}}
 					</div>
+					{{/unless}}
 				</div>
 				<div class='compadre-split  div-border'>
-					<label class='CompSplit11 sub-heading'>Talents</label>
+					{{#if (eq actor.type 'animal')}}
+						<label class='CompSplit11 sub-heading'>{{localize 'TALESOFTHEOLDWEST.Item.General.quality'}} / {{localize 'TALESOFTHEOLDWEST.Item.General.flaw'}}</label>
+					{{else}}
+						<label class='CompSplit11 sub-heading'>Talents</label>
+					{{/if}}
 					<div class='CompSplit21'>
 						{{#each actor.items}}
 							{{#if (eq type 'talent')}}
+								<span> {{name}} ||</span>
+							{{else if (eq type 'animalquality')}}
 								<span> {{name}} ||</span>
 							{{/if}}
 						{{/each}}
@@ -139,7 +149,17 @@
 					</div>
 				</div>
 
-				<div style="margin-left: 20px;">{{>"systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs"}}</div>
+				{{#if (eq actor.type 'animal')}}
+					<div style="margin-left: 20px;">
+						<div class='overwatch_header'>
+							<label class='Ow2'>{{toUpperCase (localize 'TALESOFTHEOLDWEST.General.attacks')}}</label>
+						</div>
+						<div>{{{actor.system.general.attacks}}}</div>
+						<hr class='hr-style' />
+					</div>
+				{{else}}
+					<div style="margin-left: 20px;">{{>"systems/talesoftheoldwest/templates/actor/parts/compadre-weapon.hbs"}}</div>
+				{{/if}}
 
 			</div>
 

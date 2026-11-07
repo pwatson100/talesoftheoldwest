@@ -1061,11 +1061,11 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
     if (!this.actor.isOwner) return false;
     const actor = await fromUuid(data.uuid);
 
-    if (actor.type === "npc") {
-      if (data.type === "Actor") return await this._dropCompadres(actor.id);
-    }
-    if (actor.type === "animal" && actor.system.general.subtype === "horse") {
-      if (data.type === "Actor") return await this._dropRemuda(actor.id);
+    if (data.type !== "Actor") return;
+    if (actor.type === "npc") return await this._dropCompadres(actor.id);
+    if (actor.type === "animal") {
+      if (actor.system.general.subtype === "horse") return await this._dropRemuda(actor.id);
+      return await this._dropCompadres(actor.id);
     }
   }
 
@@ -1230,7 +1230,7 @@ export class totowActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
     const actorData = this.actor;
     if (!crew) return;
     if (crew.type === "pc") return ui.notifications.info("PC inceptions are not allowed!");
-    if (crew.type !== "npc") return;
+    if (crew.type !== "npc" && !(crew.type === "animal" && crew.system.general.subtype !== "horse")) return;
     if (actorData.type === "pc") {
       if (actorData.system.compadres.compadresQty >= 3) {
         return ui.notifications.warn(game.i18n.localize("TALESOFTHEOLDWEST.fullCrew"));
