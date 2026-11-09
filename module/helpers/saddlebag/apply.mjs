@@ -9,6 +9,9 @@ import { fromFoundry } from "./fromFoundry.mjs";
 import { renderSaddlebagMarkdown } from "./markdown.mjs";
 import { MAX_COMPADRES, remapCompadreIds } from "./compadre.mjs";
 import { matchHorse } from "../../applications/apps/saddlebag-match-dialog.mjs";
+import { createZipArchive } from "./zip.mjs";
+import { planCampaignExport } from "./campaignExport.mjs";
+import { fileSlug } from "./shared.mjs";
 
 const NS = "talesoftheoldwest";
 const ITEM_TYPE = { talent: "talent", weapon: "weapon", gear: "item" };
@@ -905,13 +908,220 @@ export function snapshotActor(actor) {
   };
 }
 
-const fileSlug = (name) =>
-  String(name ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "") || "character";
+/** The plain-data view of an NPC actor that campaign export expects. */
+export function snapshotNpc(actor) {
+  const data = actor.toObject();
+  return {
+    id: actor.id,
+    name: actor.name,
+    system: data.system,
+    flag: foundry.utils.deepClone(actor.getFlag(NS, "saddlebagNpc") ?? null),
+    img: actor.img,
+  };
+}
+
+const MIME_TO_EXT = Object.freeze({
+  "image/jpeg": "jpg",
+  "image/jpg": "jpg",
+  "image/webp": "webp",
+  "image/gif": "gif",
+  "image/png": "png",
+});
+
+const IMAGE_EXT_REGEX = /\.(jpe?g|png|webp|gif)(?:[?#].*)?$/i;
+
+/**
+ * Determine the file extension from a Blob MIME type or image URL.
+ * @param {string} [blobType] - Blob MIME type.
+ * @param {string} [imgPath]  - Image source URL/path.
+ * @returns {string} File extension without leading dot (default: "png").
+ */
+export function getImageExtension(blobType, imgPath) {
+  const mime = blobType?.split(";")[0].trim().toLowerCase();
+  if (MIME_TO_EXT[mime]) return MIME_TO_EXT[mime];
+
+  if (imgPath) {
+    const match = IMAGE_EXT_REGEX.exec(imgPath);
+    if (match) {
+      const ext = match[1].toLowerCase();
+      return ext === "jpeg" ? "jpg" : ext;
+    }
+  }
+
+  return "png";
+}
+
+/**
+ * Fetch and extract the binary image buffer for an actor portrait.
+ * @param {Actor} actor
+ * @returns {Promise<{portraitId: string, filename: string, data: Uint8Array}|null>}
+ */
+export async function fetchActorPortrait(actor) {
+  const imgPath = actor?.img;
+  if (!imgPath || imgPath.includes("icons/svg/") || imgPath.endsWith(".svg")) {
+    return null;
+  }
+
+  let portraitId = null;
+  if (actor.type === "pc") {
+    portraitId = actor.getFlag(NS, "saddlebag")?.character?.portraitId;
+  } else if (actor.type === "npc") {
+    portraitId = actor.getFlag(NS, "saddlebagNpc")?.npc?.portraitId;
+  }
+  if (!portraitId || typeof portraitId !== "string") {
+    portraitId = crypto.randomUUID();
+  }
+
+  try {
+    const res = await fetch(imgPath);
+    if (!res.ok) return null;
+    const blob = await res.blob();
+    const buffer = await blob.arrayBuffer();
+    const ext = getImageExtension(blob.type, imgPath);
+
+    return {
+      portraitId,
+      filename: `portraits/${portraitId}.${ext}`,
+      data: new Uint8Array(buffer),
+    };
+  } catch (err) {
+    logger.warning(false, `Failed to fetch portrait for ${actor.name}: ${imgPath}`, err);
+    return null;
+  }
+}
+
+/**
+ * Read the Saddlebag campaign identity of an actor (PC or NPC), or null if unassigned.
+ * @param {Actor} actor
+ * @returns {{id: string, name: string, meta: object|null, type: "pc"|"npc"}|null}
+ */
+export function actorCampaignInfo(actor) {
+  if (actor?.type === "pc") {
+    const flagCampaign = actor.getFlag(NS, "saddlebag")?.campaign;
+    const exportIds = actor.getFlag(NS, "saddlebagExport");
+    const id = flagCampaign?.id || exportIds?.campaignId;
+    if (!id) return null;
+    return {
+      id,
+      name: flagCampaign?.name || "Campaign",
+      meta: flagCampaign ? foundry.utils.deepClone(flagCampaign) : null,
+      type: "pc",
+    };
+  }
+  if (actor?.type === "npc") {
+    const flagNpc = actor.getFlag(NS, "saddlebagNpc");
+    const id = flagNpc?.campaignId;
+    if (!id) return null;
+    return {
+      id,
+      name: flagNpc.campaignName || "Campaign",
+      meta: null,
+      type: "npc",
+    };
+  }
+  return null;
+}
+
+/**
+ * Scan all world actors and detect unique campaign memberships.
+ * @returns {Array<{id: string, name: string, campaignMeta: object|null, pcCount: number, npcCount: number}>}
+ */
+export function detectCampaigns() {
+  const campaigns = new Map();
+
+  for (const actor of game.actors) {
+    const info = actorCampaignInfo(actor);
+    if (!info) continue;
+
+    const entry = campaigns.get(info.id) ?? {
+      id: info.id,
+      name: info.name,
+      campaignMeta: info.meta,
+      pcCount: 0,
+      npcCount: 0,
+    };
+    if (info.meta && !entry.campaignMeta) entry.campaignMeta = info.meta;
+    if (info.type === "pc") entry.pcCount++;
+    else if (info.type === "npc") entry.npcCount++;
+    campaigns.set(info.id, entry);
+  }
+
+  return [...campaigns.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+async function collectActorExportData(actors, snapshotFn, includePortraits) {
+  const results = await Promise.all(
+    actors.map(async (actor) => {
+      const snap = snapshotFn(actor);
+      let portrait = null;
+      if (includePortraits) {
+        portrait = await fetchActorPortrait(actor);
+        if (portrait) snap.portraitId = portrait.portraitId;
+      }
+      return { snap, portrait };
+    }),
+  );
+
+  return {
+    snapshots: results.map((r) => r.snap),
+    portraits: results.filter((r) => r.portrait).map((r) => ({ name: r.portrait.filename, data: r.portrait.data })),
+  };
+}
+
+/**
+ * Export selected PCs and NPCs into a Saddlebag campaign.zip archive.
+ * @param {{campaign?: object, pcs?: Actor[], npcs?: Actor[], includePortraits?: boolean}} [options]
+ * @returns {Promise<{filename: string, warnings: object[]}|null>}
+ */
+export async function exportCampaign({ campaign, pcs = [], npcs = [], includePortraits = true } = {}) {
+  try {
+    const validPcs = pcs.filter((a) => a.type === "pc");
+    const validNpcs = npcs.filter((a) => a.type === "npc");
+
+    const [pcData, npcData] = await Promise.all([
+      collectActorExportData(validPcs, snapshotActor, includePortraits),
+      collectActorExportData(validNpcs, snapshotNpc, includePortraits),
+    ]);
+
+    const { files, campaignEnvelope, warnings } = planCampaignExport({
+      campaign,
+      pcs: pcData.snapshots,
+      npcs: npcData.snapshots,
+    });
+
+    const allZipEntries = [...files, ...pcData.portraits, ...npcData.portraits];
+    const zipBytes = await createZipArchive(allZipEntries);
+
+    const campaignSlug = fileSlug(campaignEnvelope.campaign.name || "campaign");
+    const filename = `${campaignSlug}.zip`;
+
+    foundry.utils.saveDataToFile(zipBytes, "application/zip", filename);
+
+    if (warnings.length) {
+      console.warn(`Saddlebag campaign export of ${campaignEnvelope.campaign.name}:`, warnings);
+      ui.notifications.warn(
+        game.i18n.format("TALESOFTHEOLDWEST.Saddlebag.ExportCampaignWarnings", {
+          name: campaignEnvelope.campaign.name,
+          count: warnings.length,
+        }),
+      );
+    } else {
+      ui.notifications.info(
+        game.i18n.format("TALESOFTHEOLDWEST.Saddlebag.ExportCampaignSuccess", {
+          name: campaignEnvelope.campaign.name,
+          pcCount: pcs.length,
+          npcCount: npcs.length,
+        }),
+      );
+    }
+
+    return { filename, warnings };
+  } catch (err) {
+    logger.warning(false, "Saddlebag campaign export failed", err);
+    ui.notifications.error(L("TALESOFTHEOLDWEST.Saddlebag.Error.export-failed"), { console: false });
+    return null;
+  }
+}
 
 /**
  * Build a Saddlebag Markdown export for a PC and download it.

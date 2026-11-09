@@ -740,6 +740,28 @@
 			"ExportButton": "Export to Saddlebag",
 			"Exported": "Exported {name} for Saddlebag.",
 			"ExportedWarnings": "Exported {name} for Saddlebag with {count} notes. See the browser console for the list.",
+			"ExportCampaignButton": "Export Campaign",
+			"ExportCampaignSuccess": "Exported campaign '{name}' ({pcCount} PCs, {npcCount} NPCs) for Saddlebag.",
+			"ExportCampaignWarnings": "Exported campaign '{name}' for Saddlebag with {count} notes. See the browser console for details.",
+			"Export": {
+				"DirectoryButton": "Export Campaign",
+				"DialogTitle": "Export Saddlebag Campaign",
+				"CampaignSelect": "Select Campaign",
+				"CustomCampaign": "Custom / Unassigned",
+				"CampaignName": "Campaign Name",
+				"Season": "Season",
+				"Year": "Year",
+				"Spring": "Spring",
+				"Summer": "Summer",
+				"Autumn": "Autumn",
+				"Winter": "Winter",
+				"IncludePortraits": "Include actor portraits in archive",
+				"FilterByCampaign": "Show only actors from selected campaign",
+				"PlayerCharacters": "Player Characters",
+				"CampaignNpcs": "Campaign NPCs",
+				"ExportButton": "Export ZIP",
+				"NoActorsSelected": "Please select at least one Player Character or NPC to export."
+			},
 			"NpcHeading": "Campaign NPCs",
 			"NpcExisting": "(already in this world: Replace)",
 			"NpcNotOwner": "(already in this world; you do not own it)",
@@ -762,7 +784,8 @@
 				"core-rules-missing": "None of this character's talents or weapons could be found. Import the Core Rules content into this world, then try again.",
 				"failed": "The import failed. Nothing was changed. See the browser console for details.",
 				"export-not-pc": "Only player characters can be exported to Saddlebag.",
-				"export-failed": "The export failed. See the browser console for details."
+				"export-failed": "The export failed. See the browser console for details.",
+				"export-no-actors": "There are no Player Characters or NPCs in this world to export."
 			}
 		}
 	},

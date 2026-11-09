@@ -22,7 +22,8 @@ import { TOTOWMacros } from "./helpers/macro.js";
 import { TOTWBuyOffDialog, TOTWWhichTroubleDialog, TOTWManualTroubleDialog } from "./helpers/chatmodifier.mjs";
 import { runMigrationIfNeeded } from "./helpers/migration.mjs";
 import { importFile, registerSaddlebagDirectoryButton } from "./applications/apps/saddlebag-import-dialog.mjs";
-import { exportActor } from "./helpers/saddlebag/apply.mjs";
+import { exportCampaignDialog } from "./applications/apps/saddlebag-export-dialog.mjs";
+import { exportActor, exportCampaign } from "./helpers/saddlebag/apply.mjs";
 
 const collections = foundry.documents.collections;
 
@@ -176,7 +177,7 @@ Hooks.once("ready", async () => {
   Hooks.on("hotbarDrop", (bar, data, slot) => createDocMacro(data, slot));
   // clear the minimum resolution message faster
 
-  game.talesoftheoldwest = { TOTOWMacros, saddlebag: { importFile, exportActor } };
+  game.talesoftheoldwest = { TOTOWMacros, saddlebag: { importFile, exportActor, exportCampaign, exportCampaignDialog } };
 
   setTimeout(() => {
     $(".notification.error").each((index, item) => {

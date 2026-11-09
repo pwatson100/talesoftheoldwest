@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { openZip, readSaddlebagZip, ZipError } from "../module/helpers/saddlebag/zip.mjs";
+import { openZip, readSaddlebagZip, createZipArchive, crc32, ZipError } from "../module/helpers/saddlebag/zip.mjs";
 
 const fixturePath = (name) => fileURLToPath(new URL(`./fixtures/saddlebag/${name}`, import.meta.url));
 const zipBytes = () => new Uint8Array(readFileSync(fixturePath("great-western.zip")));
@@ -180,4 +180,43 @@ test("readSaddlebagZip exposes portraits that no character uses (campaign NPC po
   assert.deepEqual(portraits.get("npc-1"), { entry: "portraits/npc-1.jpg", mime: "image/jpeg", filename: "npc-1.jpg" });
   assert.equal(portraits.get("npc-2").mime, "image/png");
   assert.equal(characters[0].portrait, null);
+});
+
+test("crc32 calculates standard IEEE 802.3 checksums", () => {
+  assert.equal(crc32(new Uint8Array(0)), 0);
+  assert.equal(crc32(new TextEncoder().encode("123456789")), 0xcbf43926);
+});
+
+test("createZipArchive builds a valid zip that openZip reads back", async () => {
+  const mdContent = "# Test Character\n\nSome bio text";
+  const jsonContent = JSON.stringify({ app: "saddlebag", kind: "campaign", formatVersion: 5 });
+  const rawBytes = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+  const zipBuffer = await createZipArchive([
+    { name: "campaign.json", data: jsonContent },
+    { name: "characters/test.md", data: mdContent },
+    { name: "portraits/test.bin", data: rawBytes },
+  ]);
+
+  const zip = openZip(zipBuffer);
+  assert.deepEqual(zip.entries.map((e) => e.name).sort(), [
+    "campaign.json",
+    "characters/test.md",
+    "portraits/test.bin",
+  ]);
+  assert.equal(await zip.readText("campaign.json"), jsonContent);
+  assert.equal(await zip.readText("characters/test.md"), mdContent);
+  assert.deepEqual(await zip.read("portraits/test.bin"), rawBytes);
+});
+
+test("createZipArchive accepts object map of files", async () => {
+  const zipBuffer = await createZipArchive({
+    "file1.txt": "hello world",
+    "file2.txt": "another test",
+  }, { compress: false });
+
+  const zip = openZip(zipBuffer);
+  assert.equal(await zip.readText("file1.txt"), "hello world");
+  assert.equal(await zip.readText("file2.txt"), "another test");
+  assert.ok(zip.entries.every((e) => e.method === 0));
 });

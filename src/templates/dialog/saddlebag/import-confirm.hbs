@@ -1,0 +1,11 @@
+{{#if existing}}
+<p><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.ExistingNote" name=existing.name}}</strong></p>
+{{#if notOwner}}<p>{{localize "TALESOFTHEOLDWEST.Saddlebag.ExistingNotOwner"}}</p>{{/if}}
+{{#if compadreNote}}<p>{{localize "TALESOFTHEOLDWEST.Saddlebag.CompadreReplaceNote"}}</p>{{/if}}
+{{/if}}
+<table>
+  {{#each counts}}
+  <tr><th style="text-align: left; padding-right: 1em;">{{label}}</th><td>{{value}}</td></tr>
+  {{/each}}
+</table>
+{{> "systems/talesoftheoldwest/templates/dialog/saddlebag/import-warnings.hbs"}}

@@ -1,0 +1,17 @@
+<p>{{localize "TALESOFTHEOLDWEST.Saddlebag.ZipChoose"}}</p>
+{{#each characters}}
+<label class="checkbox" style="display: block;">
+  <input type="checkbox" name="pick" value="{{index}}" {{#if ok}}checked{{else}}disabled{{/if}}> {{label}}
+  {{#if portrait}}<i class="fa-solid fa-image" title="{{localize "TALESOFTHEOLDWEST.Saddlebag.HasPortrait"}}"></i>{{/if}}
+</label>
+{{/each}}
+{{#if npcs.length}}
+<h4>{{localize "TALESOFTHEOLDWEST.Saddlebag.NpcHeading"}}</h4>
+{{#each npcs}}
+<label class="checkbox" style="display: block;">
+  <input type="checkbox" name="pickNpc" value="{{index}}" {{#if allowed}}checked{{else}}disabled{{/if}}> {{name}}{{#if status}} <em>{{status}}</em>{{/if}}
+  {{#if portrait}}<i class="fa-solid fa-image" title="{{localize "TALESOFTHEOLDWEST.Saddlebag.HasPortrait"}}"></i>{{/if}}
+</label>
+{{/each}}
+{{#if hasExistingNpc}}<p class="hint">{{localize "TALESOFTHEOLDWEST.Saddlebag.NpcReplaceNote"}}</p>{{/if}}
+{{/if}}

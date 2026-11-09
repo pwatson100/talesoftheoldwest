@@ -27,6 +27,15 @@ export const titleCase = (slug) =>
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
+/** Generate a clean URL/filename slug from a string. */
+export const fileSlug = (name) =>
+  String(name ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "character";
+
 /** The talents of a character-like object (`{ talents: [...] }`) as plan entries. */
 export function setTalents(c) {
   return (c.talents ?? []).map((t) => {

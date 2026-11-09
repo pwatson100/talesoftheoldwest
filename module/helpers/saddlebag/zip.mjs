@@ -117,6 +117,171 @@ export function openZip(buffer) {
   };
 }
 
+const CRC_TABLE = new Uint32Array(256);
+for (let i = 0; i < 256; i++) {
+  let c = i;
+  for (let k = 0; k < 8; k++) {
+    c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+  }
+  CRC_TABLE[i] = c >>> 0;
+}
+
+/**
+ * Calculate the CRC-32 checksum of a byte buffer.
+ * @param {Uint8Array} bytes
+ * @returns {number}
+ */
+export function crc32(bytes) {
+  let crc = 0xffffffff;
+  for (const element of bytes) {
+    crc = CRC_TABLE[(crc ^ element) & 0xff] ^ (crc >>> 8);
+  }
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+async function deflateRaw(bytes) {
+  const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream("deflate-raw"));
+  const reader = stream.getReader();
+  const chunks = [];
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
+  const total = chunks.reduce((t, c) => t + c.length, 0);
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.length;
+  }
+  return out;
+}
+
+/**
+ * Create a zip archive buffer from file entries.
+ * @param {Array<{name: string, data: string|Uint8Array|ArrayBuffer, compress?: boolean}>|Record<string, string|Uint8Array|ArrayBuffer>} entries
+ * @param {{compress?: boolean}} [options]
+ * @returns {Promise<Uint8Array>}
+ */
+export async function createZipArchive(entries, options = {}) {
+  const list = Array.isArray(entries)
+    ? entries
+    : Object.entries(entries).map(([name, data]) => ({ name, data }));
+
+  const encoder = new TextEncoder();
+  const defaultCompress = options.compress ?? true;
+
+  const processed = await Promise.all(list.map(async (entry) => {
+    const nameBytes = encoder.encode(entry.name);
+    let rawBytes;
+    if (typeof entry.data === "string") {
+      rawBytes = encoder.encode(entry.data);
+    } else if (entry.data instanceof Uint8Array) {
+      rawBytes = entry.data;
+    } else if (entry.data instanceof ArrayBuffer) {
+      rawBytes = new Uint8Array(entry.data);
+    } else {
+      rawBytes = new Uint8Array(0);
+    }
+
+    const shouldCompress = entry.compress ?? defaultCompress;
+    const checksum = crc32(rawBytes);
+    let method = 0;
+    let payload = rawBytes;
+
+    if (shouldCompress && rawBytes.length > 0) {
+      const deflated = await deflateRaw(rawBytes);
+      if (deflated.length < rawBytes.length) {
+        method = 8;
+        payload = deflated;
+      }
+    }
+
+    return {
+      nameBytes,
+      checksum,
+      uncompressedSize: rawBytes.length,
+      compressedSize: payload.length,
+      method,
+      payload,
+    };
+  }));
+
+  const localHeaders = [];
+  const centralHeaders = [];
+  let offset = 0;
+
+  for (const p of processed) {
+    const local = new Uint8Array(30 + p.nameBytes.length + p.payload.length);
+    const lv = new DataView(local.buffer);
+    lv.setUint32(0, SIG_LOCAL, true);
+    lv.setUint16(4, 20, true); // version needed
+    lv.setUint16(6, 0x0800, true); // UTF-8 filename flag
+    lv.setUint16(8, p.method, true);
+    lv.setUint16(10, 0, true); // mod time
+    lv.setUint16(12, 0, true); // mod date
+    lv.setUint32(14, p.checksum, true);
+    lv.setUint32(18, p.compressedSize, true);
+    lv.setUint32(22, p.uncompressedSize, true);
+    lv.setUint16(26, p.nameBytes.length, true);
+    lv.setUint16(28, 0, true); // extra length
+    local.set(p.nameBytes, 30);
+    local.set(p.payload, 30 + p.nameBytes.length);
+
+    const central = new Uint8Array(46 + p.nameBytes.length);
+    const cv = new DataView(central.buffer);
+    cv.setUint32(0, SIG_CENTRAL, true);
+    cv.setUint16(4, 20, true); // version made by
+    cv.setUint16(6, 20, true); // version needed
+    cv.setUint16(8, 0x0800, true); // UTF-8 filename flag
+    cv.setUint16(10, p.method, true);
+    cv.setUint16(12, 0, true);
+    cv.setUint16(14, 0, true);
+    cv.setUint32(16, p.checksum, true);
+    cv.setUint32(20, p.compressedSize, true);
+    cv.setUint32(24, p.uncompressedSize, true);
+    cv.setUint16(28, p.nameBytes.length, true);
+    cv.setUint16(30, 0, true); // extra
+    cv.setUint16(32, 0, true); // comment length
+    cv.setUint16(34, 0, true); // disk num
+    cv.setUint16(36, 0, true); // internal attr
+    cv.setUint32(38, 0, true); // external attr
+    cv.setUint32(42, offset, true); // local header offset
+    central.set(p.nameBytes, 46);
+
+    localHeaders.push(local);
+    centralHeaders.push(central);
+    offset += local.length;
+  }
+
+  const centralSize = centralHeaders.reduce((t, c) => t + c.length, 0);
+  const end = new Uint8Array(22);
+  const ev = new DataView(end.buffer);
+  ev.setUint32(0, SIG_EOCD, true);
+  ev.setUint16(4, 0, true); // disk num
+  ev.setUint16(6, 0, true); // disk start
+  ev.setUint16(8, centralHeaders.length, true);
+  ev.setUint16(10, centralHeaders.length, true);
+  ev.setUint32(12, centralSize, true);
+  ev.setUint32(16, offset, true);
+  ev.setUint16(20, 0, true); // comment length
+
+  const totalLength = offset + centralSize + end.length;
+  const out = new Uint8Array(totalLength);
+  let pos = 0;
+  for (const h of localHeaders) {
+    out.set(h, pos);
+    pos += h.length;
+  }
+  for (const c of centralHeaders) {
+    out.set(c, pos);
+    pos += c.length;
+  }
+  out.set(end, pos);
+  return out;
+}
+
 /**
  * Read a Saddlebag campaign archive: `campaign.json`, `characters/*.md` and `portraits/<portraitId>.<ext>`.
  * A character that fails to parse is listed with its error instead of failing the whole archive.

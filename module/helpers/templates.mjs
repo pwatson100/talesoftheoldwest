@@ -38,5 +38,12 @@ export const preloadHandlebarsTemplates = async function () {
 		'systems/talesoftheoldwest/templates/dialog/parts/conditional-modifiers.hbs',
 		'systems/talesoftheoldwest/templates/dialog/parts/talent-modifiers.hbs',
 		'systems/talesoftheoldwest/templates/dialog/crit-roll-modifiers.hbs',
+		// Saddlebag import/export dialogs
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/export-campaign.hbs',
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/import-pick-file.hbs',
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/import-pick-archive.hbs',
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/import-warnings.hbs',
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/import-confirm.hbs',
+		'systems/talesoftheoldwest/templates/dialog/saddlebag/horse-match.hbs',
 	]);
 };

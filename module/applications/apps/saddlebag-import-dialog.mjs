@@ -11,8 +11,11 @@ import {
   SaddlebagImportError,
 } from "../../helpers/saddlebag/apply.mjs";
 import { logger } from "../../helpers/logger.mjs";
+import { exportCampaignDialog } from "./saddlebag-export-dialog.mjs";
 
 const { DialogV2 } = foundry.applications.api;
+const { renderTemplate } = foundry.applications.handlebars;
+const TEMPLATE_DIR = "systems/talesoftheoldwest/templates/dialog/saddlebag";
 const S = (key, data) => {
   const full = `TALESOFTHEOLDWEST.Saddlebag.${key}`;
   return data ? game.i18n.format(full, data) : game.i18n.localize(full);
@@ -22,11 +25,7 @@ const esc = (value) => foundry.utils.escapeHTML(String(value ?? ""));
 async function pickFile() {
   const result = await DialogV2.prompt({
     window: { title: S("ImportTitle"), icon: "fa-solid fa-file-import" },
-    content: `
-      <p>${esc(S("ChooseFile"))}</p>
-      <div class="form-group">
-        <input type="file" name="file" accept=".md,.zip,text/markdown,text/plain,application/zip" autofocus>
-      </div>`,
+    content: await renderTemplate(`${TEMPLATE_DIR}/import-pick-file.hbs`, {}),
     ok: {
       label: S("Next"),
       icon: "fa-solid fa-arrow-right",
@@ -43,11 +42,6 @@ async function pickFile() {
 
 const isZip = (file) => /\.zip$/i.test(file.name) || file.type === "application/zip";
 
-/** The small "has a portrait" icon shown beside an archive entry. */
-function portraitIconHtml() {
-  return `<i class="fa-solid fa-image" title="${esc(S("HasPortrait"))}"></i>`;
-}
-
 /**
  * Choose what to import from an archive: characters and campaign NPCs.
  * @param {object[]} characters
@@ -55,46 +49,32 @@ function portraitIconHtml() {
  * @returns {Promise<{characters: object[], npcs: object[]}|null>}  null when nothing was chosen.
  */
 async function pickFromArchive(characters, npcs) {
-  const rows = characters
-    .map((c, i) => {
-      const errorText = c.parsed.ok ? "" : S(`Error.${c.parsed.error}`);
-      const label = c.parsed.ok ? c.parsed.data.character.name || c.path : `${c.path} (${errorText})`;
-      const portraitIcon = c.portrait ? portraitIconHtml() : "";
-      return `<label class="checkbox" style="display: block;">
-        <input type="checkbox" name="pick" value="${i}" ${c.parsed.ok ? "checked" : "disabled"}> ${esc(label)}
-        ${portraitIcon}
-      </label>`;
-    })
-    .join("");
+  const characterRows = characters.map((c, i) => ({
+    index: i,
+    ok: c.parsed.ok,
+    label: c.parsed.ok ? c.parsed.data.character.name || c.path : `${c.path} (${S(`Error.${c.parsed.error}`)})`,
+    portrait: Boolean(c.portrait),
+  }));
 
   const canCreate = game.user.can("ACTOR_CREATE");
-  const npcRows = npcs
-    .map(({ plan, existing }, i) => {
-      const allowed = existing ? existing.isOwner : canCreate;
-      let status = "";
-      if (existing) {
-        const statusKey = existing.isOwner ? "NpcExisting" : "NpcNotOwner";
-        status = ` <em>${esc(S(statusKey))}</em>`;
-      }
-      const portraitIcon = plan.portraitId ? portraitIconHtml() : "";
-      return `<label class="checkbox" style="display: block;">
-        <input type="checkbox" name="pickNpc" value="${i}" ${allowed ? "checked" : "disabled"}> ${esc(plan.name)}${status}
-        ${portraitIcon}
-      </label>`;
-    })
-    .join("");
-  let npcSection = "";
-  if (npcs.length) {
-    const replaceNote = npcs.some((n) => n.existing)
-      ? `<p class="hint">${esc(S("NpcReplaceNote"))}</p>`
-      : "";
-    npcSection = `<h4>${esc(S("NpcHeading"))}</h4>${npcRows}${replaceNote}`;
-  }
+  const npcRows = npcs.map(({ plan, existing }, i) => ({
+    index: i,
+    name: plan.name,
+    allowed: existing ? existing.isOwner : canCreate,
+    status: existing ? S(existing.isOwner ? "NpcExisting" : "NpcNotOwner") : "",
+    portrait: Boolean(plan.portraitId),
+  }));
+
+  const content = await renderTemplate(`${TEMPLATE_DIR}/import-pick-archive.hbs`, {
+    characters: characterRows,
+    npcs: npcRows,
+    hasExistingNpc: npcs.some((n) => n.existing),
+  });
 
   const result = await DialogV2.prompt({
     window: { title: S("ZipTitle"), icon: "fa-solid fa-file-zipper" },
     position: { width: 420 },
-    content: `<p>${esc(S("ZipChoose"))}</p>${rows}${npcSection}`,
+    content,
     ok: {
       label: S("Next"),
       icon: "fa-solid fa-arrow-right",
@@ -108,34 +88,28 @@ async function pickFromArchive(characters, npcs) {
   return result && (result.characters.length || result.npcs.length) ? result : null;
 }
 
-function warningList(warnings) {
-  if (!warnings.length) return "";
-  const items = warnings.map((w) => `<li>${esc(w.message)}</li>`).join("");
-  return `<h4>${esc(S("Warnings"))} (${warnings.length})</h4>
-    <ul style="max-height: 14em; overflow-y: auto; margin: 0; padding-left: 1.25em;">${items}</ul>`;
-}
+const renderWarnings = (warnings) => renderTemplate(`${TEMPLATE_DIR}/import-warnings.hbs`, { warnings });
 
 async function confirmPlan(plan, existing) {
   const canReplace = Boolean(existing?.isOwner);
-  const row = (label, value) =>
-    `<tr><th style="text-align: left; padding-right: 1em;">${esc(label)}</th><td>${esc(value)}</td></tr>`;
   const counts = [
-    row(S("Archetype"), plan.actorData.system.general.archetype || "–"),
-    row(S("Talents"), plan.talents.length),
-    row(S("Weapons"), plan.weapons.length),
-    row(S("Gear"), plan.gear.length),
-    row(S("Injuries"), plan.injuries.length),
-    row(S("Conditions"), plan.conditions.length),
-    row(S("Horses"), plan.horses.length),
-    row(S("Compadres"), plan.compadres.length),
-  ].join("");
+    [S("Archetype"), plan.actorData.system.general.archetype || "–"],
+    [S("Talents"), plan.talents.length],
+    [S("Weapons"), plan.weapons.length],
+    [S("Gear"), plan.gear.length],
+    [S("Injuries"), plan.injuries.length],
+    [S("Conditions"), plan.conditions.length],
+    [S("Horses"), plan.horses.length],
+    [S("Compadres"), plan.compadres.length],
+  ].map(([label, value]) => ({ label, value }));
 
-  let note = "";
-  if (existing) {
-    note = `<p><strong>${esc(S("ExistingNote", { name: existing.name }))}</strong></p>`;
-    if (!canReplace) note += `<p>${esc(S("ExistingNotOwner"))}</p>`;
-    else if (plan.compadres.length) note += `<p>${esc(S("CompadreReplaceNote"))}</p>`;
-  }
+  const content = await renderTemplate(`${TEMPLATE_DIR}/import-confirm.hbs`, {
+    existing,
+    notOwner: Boolean(existing) && !canReplace,
+    compadreNote: Boolean(existing) && canReplace && plan.compadres.length > 0,
+    counts,
+    warnings: plan.warnings,
+  });
 
   const buttons = [];
   if (existing) {
@@ -149,7 +123,7 @@ async function confirmPlan(plan, existing) {
   const result = await DialogV2.wait({
     window: { title: `${S("ImportTitle")}: ${plan.actorName}`, icon: "fa-solid fa-file-import" },
     position: { width: 480 },
-    content: `${note}<table>${counts}</table>${warningList(plan.warnings)}`,
+    content,
     buttons,
     rejectClose: false,
   });
@@ -218,7 +192,7 @@ async function importParsed(parsed, archive = null) {
     await DialogV2.prompt({
       window: { title: S("WarningsTitle", { name: actor.name }), icon: "fa-solid fa-triangle-exclamation" },
       position: { width: 480 },
-      content: warningList(warnings),
+      content: await renderWarnings(warnings),
       ok: { label: S("Close") },
       rejectClose: false,
     });
@@ -259,7 +233,7 @@ async function importNpcs(chosen, archive) {
     await DialogV2.prompt({
       window: { title: S("NpcWarningsTitle"), icon: "fa-solid fa-triangle-exclamation" },
       position: { width: 480 },
-      content: warningList(warnings),
+      content: await renderWarnings(warnings),
       ok: { label: S("Close") },
       rejectClose: false,
     });
@@ -332,15 +306,26 @@ export function registerSaddlebagDirectoryButton() {
     const root = element instanceof HTMLElement ? element : element?.[0];
     if (!root || root.querySelector("[data-saddlebag-import]")) return;
 
-    const button = document.createElement("button");
-    button.type = "button";
-    button.dataset.saddlebagImport = "true";
-    button.innerHTML = `<i class="fa-solid fa-file-import"></i> ${esc(S("ImportButton"))}`;
-    button.addEventListener("click", () => importFile());
+    const importButton = document.createElement("button");
+    importButton.type = "button";
+    importButton.dataset.saddlebagImport = "true";
+    importButton.innerHTML = `<i class="fa-solid fa-file-import"></i> ${esc(S("ImportButton"))}`;
+    importButton.addEventListener("click", () => importFile());
+
+    const exportButton = document.createElement("button");
+    exportButton.type = "button";
+    exportButton.dataset.saddlebagExport = "true";
+    exportButton.innerHTML = `<i class="fa-solid fa-file-export"></i> ${esc(game.i18n.localize("TALESOFTHEOLDWEST.Saddlebag.Export.DirectoryButton"))}`;
+    exportButton.addEventListener("click", () => exportCampaignDialog());
 
     // The header markup is Foundry's. Fall back to the top of the tab if its action row is not found.
     const target = root.querySelector(".header-actions") ?? root.querySelector("header");
-    if (target) target.append(button);
-    else root.prepend(button);
+    if (target) {
+      target.append(importButton);
+      target.append(exportButton);
+    } else {
+      root.prepend(exportButton);
+      root.prepend(importButton);
+    }
   });
 }

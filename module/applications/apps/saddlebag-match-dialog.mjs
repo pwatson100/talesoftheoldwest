@@ -1,12 +1,12 @@
 import { legacySaddlebagId, normaliseName } from "../../helpers/saddlebag/catalog.mjs";
 
 const { DialogV2 } = foundry.applications.api;
+const { renderTemplate } = foundry.applications.handlebars;
 const NS = "talesoftheoldwest";
 const S = (key, data) => {
   const full = `TALESOFTHEOLDWEST.Saddlebag.${key}`;
   return data ? game.i18n.format(full, data) : game.i18n.localize(full);
 };
-const esc = (value) => foundry.utils.escapeHTML(String(value ?? ""));
 
 /**
  * For a single horse from the import plan, determine which world animal actor to use (or create).
@@ -51,25 +51,17 @@ export async function matchHorse(horse) {
   if (candidates.length === 0) return { action: "create" };
 
   // Show the match dialog.
-  const options = candidates
-    .map((a) => {
-      const breed = a.system.general?.breed;
-      const breedLabel = breed ? " (" + esc(breed) + ")" : "";
-      return `<option value="${esc(a.id)}">${esc(a.name)}${breedLabel}</option>`;
-    })
-    .join("");
+  const content = await renderTemplate("systems/talesoftheoldwest/templates/dialog/saddlebag/horse-match.hbs", {
+    horseName: horse.name,
+    candidates: candidates.map((a) => ({ id: a.id, name: a.name, breed: a.system.general?.breed })),
+  });
 
   let selectedId = candidates[0].id;
 
   const result = await DialogV2.wait({
     window: { title: S("HorseMatchTitle", { name: horse.name }), icon: "fa-solid fa-horse" },
     position: { width: 440 },
-    content: `
-      <p>${esc(S("HorseMatchPrompt", { name: horse.name }))}</p>
-      <div class="form-group">
-        <label>${esc(S("HorseMatchSelect"))}</label>
-        <select name="actorId">${options}</select>
-      </div>`,
+    content,
     buttons: [
       {
         action: "use",

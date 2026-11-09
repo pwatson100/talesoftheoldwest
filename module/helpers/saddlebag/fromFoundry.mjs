@@ -561,6 +561,10 @@ export function fromFoundry(snapshot, options = {}) {
     ctx.warn("exported-as-unassigned", "This character did not come from Saddlebag; it is exported as Unassigned.");
   }
 
+  if (snap.portraitId !== undefined) {
+    character.portraitId = snap.portraitId;
+  }
+
   return {
     envelope: {
       app: "saddlebag",

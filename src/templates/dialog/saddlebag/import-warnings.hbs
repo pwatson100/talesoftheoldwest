@@ -1,0 +1,8 @@
+{{#if warnings.length}}
+<h4>{{localize "TALESOFTHEOLDWEST.Saddlebag.Warnings"}} ({{warnings.length}})</h4>
+<ul style="max-height: 14em; overflow-y: auto; margin: 0; padding-left: 1.25em;">
+  {{#each warnings}}
+  <li>{{message}}</li>
+  {{/each}}
+</ul>
+{{/if}}

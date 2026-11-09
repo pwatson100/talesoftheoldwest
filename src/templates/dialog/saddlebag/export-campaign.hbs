@@ -1,0 +1,73 @@
+<div class="saddlebag-export-form" style="display: flex; flex-direction: column; gap: 10px;">
+  <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+    <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.CampaignSelect"}}</strong></label>
+    <select name="campaignSelect" style="width: 100%;">
+      {{#each campaigns}}
+      <option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}} ({{pcCount}} PCs, {{npcCount}} NPCs)</option>
+      {{/each}}
+      <option value="custom" {{#if customSelected}}selected{{/if}}>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.CustomCampaign"}}</option>
+    </select>
+  </div>
+
+  <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+    <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.CampaignName"}}</strong></label>
+    <input type="text" name="campaignName" value="{{campaignName}}" style="width: 100%;">
+  </div>
+
+  <div style="display: flex; gap: 10px;">
+    <div class="form-group" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+      <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Season"}}</strong></label>
+      <select name="season" style="width: 100%;">
+        <option value="spring" selected>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Spring"}}</option>
+        <option value="summer">{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Summer"}}</option>
+        <option value="autumn">{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Autumn"}}</option>
+        <option value="winter">{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Winter"}}</option>
+      </select>
+    </div>
+    <div class="form-group" style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+      <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.Year"}}</strong></label>
+      <input type="number" name="year" value="1873" style="width: 100%;">
+    </div>
+  </div>
+
+  <div class="form-group" style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px;">
+    <label class="checkbox" style="display: flex; align-items: center; gap: 6px;">
+      <input type="checkbox" name="includePortraits" checked>
+      <span>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.IncludePortraits"}}</span>
+    </label>
+    <label class="checkbox" style="display: flex; align-items: center; gap: 6px;">
+      <input type="checkbox" name="filterByCampaign" checked>
+      <span>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.FilterByCampaign"}}</span>
+    </label>
+  </div>
+
+  <hr style="margin: 4px 0;">
+
+  {{#if pcs.length}}
+  <div class="form-group">
+    <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.PlayerCharacters"}} (<span class="pc-count">{{visiblePcs}}/{{visiblePcs}}</span>)</strong></label>
+    <div class="actor-list" style="max-height: 120px; overflow-y: auto; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 6px; margin-top: 4px;">
+      {{#each pcs}}
+      <label class="checkbox actor-row" data-actor-type="pc" data-campaign-id="{{campaignId}}" style="display: {{#if visible}}flex{{else}}none{{/if}}; align-items: center; gap: 6px; margin: 2px 0;">
+        <input type="checkbox" name="pcPick" value="{{id}}" {{#if visible}}checked{{/if}}>
+        <span>{{name}}</span> {{#if badge}}<span class="badge" style="font-size: 0.8em; opacity: 0.7;">[{{badge}}]</span>{{/if}}
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if npcs.length}}
+  <div class="form-group">
+    <label><strong>{{localize "TALESOFTHEOLDWEST.Saddlebag.Export.CampaignNpcs"}} (<span class="npc-count">{{visibleNpcs}}/{{visibleNpcs}}</span>)</strong></label>
+    <div class="actor-list" style="max-height: 120px; overflow-y: auto; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 6px; margin-top: 4px;">
+      {{#each npcs}}
+      <label class="checkbox actor-row" data-actor-type="npc" data-campaign-id="{{campaignId}}" style="display: {{#if visible}}flex{{else}}none{{/if}}; align-items: center; gap: 6px; margin: 2px 0;">
+        <input type="checkbox" name="npcPick" value="{{id}}" {{#if visible}}checked{{/if}}>
+        <span>{{name}}</span> {{#if badge}}<span class="badge" style="font-size: 0.8em; opacity: 0.7;">[{{badge}}]</span>{{/if}}
+      </label>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</div>

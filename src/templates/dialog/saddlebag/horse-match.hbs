@@ -1,0 +1,9 @@
+<p>{{localize "TALESOFTHEOLDWEST.Saddlebag.HorseMatchPrompt" name=horseName}}</p>
+<div class="form-group">
+  <label>{{localize "TALESOFTHEOLDWEST.Saddlebag.HorseMatchSelect"}}</label>
+  <select name="actorId">
+    {{#each candidates}}
+    <option value="{{id}}">{{name}}{{#if breed}} ({{breed}}){{/if}}</option>
+    {{/each}}
+  </select>
+</div>
